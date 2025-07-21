@@ -1,4 +1,4 @@
-import { CalendarDays, Globe, Tag, Clock, AlarmClock } from "lucide-react";
+import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock } from "lucide-react";
 import { Conference } from "@/types/conference";
 import { formatDistanceToNow, parseISO, isValid, isPast } from "date-fns";
 import ConferenceDialog from "./ConferenceDialog";
@@ -16,6 +16,7 @@ const ConferenceCard = ({
   link,
   note,
   abstract_deadline,
+  rankings,
   city,
   country,
   venue,
@@ -123,6 +124,12 @@ const ConferenceCard = ({
             <div className="flex items-center text-neutral">
               <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
               <span className="text-sm truncate">{location}</span>
+            </div>
+          )}
+          {rankings && (
+            <div className="flex items-center text-neutral">
+              <ChartNoAxesColumn className="h-4 w-4 mr-2 flex-shrink-0" />
+              <span className="text-sm truncate">{rankings}</span>
             </div>
           )}
           <div className="flex items-center text-neutral">

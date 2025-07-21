@@ -58,62 +58,12 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
         )}
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-neutral-600 py-4">
-            Countdowns to top CV/NLP/ML/Robotics/AI conference deadlines. To add/edit a conference, send in a{' '}
-            <a 
-              href="https://github.com/huggingface/ai-deadlines"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              pull request
-            </a>.
-            <br />
-            P.S. Is your paper already on Arxiv? Feel free to{' '}
-            <a
-              href="https://hf.co/papers/submit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              submit
-            </a>
-            {' '}it to{' '}
-            <a
-              href="https://hf.co/papers"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              hf.co/papers
-            </a>
-            {' '}and upload your artifacts such as{' '}
-            <a
-              href="https://huggingface.co/docs/hub/en/models-uploading"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              models
-            </a>
-            {', '}
-            <a
-              href="https://huggingface.co/docs/datasets/loading"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              datasets
-            </a>
-            {' '}and{' '}
-            <a
-              href="https://huggingface.co/docs/hub/en/spaces-sdks-gradio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              demos
-            </a>
+            A dỏm, yếu kém, phản cảm countdowns to <span class="line-through">top</span> CV/NLP/ML/Robotics/AI conference deadlines.
+<br/>
+Due to my incompetent in science, these conferences are mostly CORE B-ranked.
           </p>
+          <p className="text-sm text-neutral-600 py-4">Give the original <a href="https://huggingface.co/spaces/huggingface/ai-deadlines">space</a> and <a href="https://github.com/huggingface/ai-deadlines">repository</a> a star for their awesome work!
+</p>
         </div>
       </div>
     </header>

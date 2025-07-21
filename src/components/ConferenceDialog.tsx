@@ -5,7 +5,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { CalendarDays, Globe, Tag, Clock, AlarmClock, CalendarPlus } from "lucide-react";
+import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock, CalendarPlus } from "lucide-react";
 import { Conference } from "@/types/conference";
 import { formatDistanceToNow, parseISO, isValid, format, parse, addDays } from "date-fns";
 import { Button } from "@/components/ui/button";
@@ -225,6 +225,15 @@ END:VCALENDAR`;
         
         <div className="space-y-6 mt-4">
           <div className="space-y-4">
+            {conference.rankings && (
+            <div className="flex items-start gap-2">
+              <ChartNoAxesColumn className="h-5 w-5 mt-0.5 text-gray-500" />
+              <div>
+                <p className="font-medium">Ranking</p>
+                <p className="text-sm text-gray-500">{conference.rankings}</p>
+              </div>
+            </div>)}
+            
             <div className="flex items-start gap-2">
               <CalendarDays className="h-5 w-5 mt-0.5 text-gray-500" />
               <div>
