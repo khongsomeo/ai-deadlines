@@ -24,17 +24,13 @@ const Index = () => {
   // Category buttons configuration
   const categoryButtons = [
     { id: "machine-learning", label: "Machine Learning" },
-    { id: "lifelong-learning", label: "Lifelong Learning" },
     { id: "robotics", label: "Robotics" },
     { id: "computer-vision", label: "Computer Vision" },
-    { id: "web-search", label: "Web Search" },
     { id: "data-mining", label: "Data Mining" },
     { id: "natural-language-processing", label: "Natural Language Processing" },
     { id: "signal-processing", label: "Signal Processing" },
+    { id: "speech-processing", label: "Speech Processing" },
     { id: "human-computer-interaction", label: "Human Computer Interaction" },
-    { id: "computer-graphics", label: "Computer Graphics" },
-    { id: "mathematics", label: "Mathematics" },
-    { id: "reinforcement-learning", label: "Reinforcement Learning" },
   ];
 
   const filteredConferences = useMemo(() => {

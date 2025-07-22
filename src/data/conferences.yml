@@ -1,3 +1,71 @@
+- title: RIVF
+  year: 2025
+  id: rivf2025
+  full_name: RIVF International Conference on Computing and Communication Technologies
+  link: 'https://rivf2025.org/'
+  deadline: '2025-07-30 23:59:00'
+  final_decision_date: '2025-10-15 07:59:59' 
+  timezone: UTC+7
+  city: Ho Chi Minh City
+  country: Vietnam
+  venue: Van Lang University
+  date: December 18-20, 2025
+  start: 2025-12-18
+  end: 2025-12-20
+  tags:
+  - computer-vision
+  - machine-learning
+  - natural-language-processing
+  - speech-processing
+  - human-computer-interaction
+  - data-mining
+  rankings: 'None (IEEE Xplore)'
+
+
+- title: KSE
+  year: 2025
+  id: kse2025
+  full_name: International Conference on Knowledge and Systems Engineering
+  link: 'https://kse2025.kse-conferences.org'
+  deadline: '2025-07-31 23:59:00'
+  final_decision_date: '2025-09-01 07:59:59' 
+  timezone: UTC+7
+  city: Da Lat
+  country: Vietnam
+  venue: Da Lat University
+  date: November 6-8, 2025
+  start: 2025-11-06
+  end: 2025-11-08
+  tags:
+  - computer-vision
+  - machine-learning
+  - natural-language-processing
+  - human-computer-interaction
+  rankings: 'None (IEEE Xplore)'
+
+
+- title: SoICT
+  year: 2025
+  id: soict2025
+  full_name: International Symposium on Information and Communication Technology
+  link: 'https://soict.org'
+  abstract_deadline: '2025-09-05 23:59:00'
+  deadline: '2025-09-15 23:59:00'
+  final_decision_date: '2025-10-15 07:59:59' 
+  timezone: UTC+7
+  city: Nha Trang
+  country: Vietnam
+  venue: Sheraton Nha Trang Hotel & Spa 26-28 Tran Phu Street
+  date: December 12-14, 2025
+  start: 2025-12-12
+  end: 2025-12-14
+  tags:
+  - computer-vision
+  - machine-learning
+  - speech-processing
+  - human-computer-interaction
+  rankings: 'None (Springer CCIS - Scopus indexed)'
+
 - title: Interspeech
   year: 2026
   id: interspeech2026
@@ -13,29 +81,8 @@
   end: 2026-10-01
   tags:
   - signal-processing
-  rankings: 'CORE: A'
-
-- title: KES
-  year: 2026
-  id: kes2026
-  full_name: International Conference on Knowledge-Based and Intelligent Information & Engineering Systems
-  link: 'http://kes2026.kesinternational.org/'
-  deadline: TBD
-  timezone: UTC-12
-  city: TBD
-  country: TBD
-  venue: TBD
-  date: TBD
-  start: TBD
-  end: TBD
-  tags:
-  - natural-language-processing
-  - computer-vision
-  - machine-learning
-  - robotics
-  - data-mining
-  - signal-processing
-  rankings: 'CORE: B'
+  - speech-processing
+  rankings: 'CORE: A (2023)'
 
 - title: PACLIC
   year: 2025
@@ -53,7 +100,8 @@
   end: 2025-12-07
   tags:
   - natural-language-processing
-  rankings: 'CORE: C'
+  - speech-processing
+  rankings: 'CORE: C (2023)'
 
 - title: ICASSP
   year: 2026
@@ -70,8 +118,9 @@
   end: 2026-05-08
   tags:
   - signal-processing
+  - speech-processing
   - computer-vision
-  rankings: 'CORE: B'
+  rankings: 'CORE: B (2023)'
 
 - title: IJCNLP-AACL
   year: 2025
@@ -92,66 +141,9 @@
   end: 2025-12-24
   tags:
   - natural-language-processing
-  rankings: 'CORE: B'
+  - speech-processing
+  rankings: 'CORE: B (2023)'
   note: '<b>ACL Rolling Review</b>'
-
-- title: ICTAI
-  year: 2026
-  id: ictai2026
-  full_name: International Conference on Tools with Artificial Intelligence
-  link: 'https://ictai.computer.org/2026/'
-  deadline: TBD
-  timezone: UTC-12
-  city: TBD
-  country: TBD
-  venue: TBD
-  date: TBD
-  start: TBD
-  end: TBD
-  tags:
-  - machine-learning
-  - natural-language-processing
-  - computer-vision
-  rankings: 'CORE: B'
-
-- title: ICONIP
-  year: 2026
-  id: iconip2026
-  full_name: International Conference on Neural Information Processing
-  link: 'https://iconip2026.apnns.org/'
-  deadline: TBD
-  timezone: UTC-12
-  city: TBD
-  country: TBD
-  venue: TBD
-  date: TBD
-  start: TBD
-  end: TBD
-  tags:
-  - machine-learning
-  - natural-language-processing
-  - computer-vision
-  rankings: 'CORE: B'
-
-- title: ICCCI
-  year: 2026
-  id: iccci2026
-  full_name: International Conference on Computational Collective Intelligence 
-  link: 'https://iccci.pwr.edu.pl/2026/'
-  deadline: TBD
-  timezone: UTC-12
-  city: TBD
-  country: TBD
-  venue: TBD
-  date: TBD
-  start: TBD
-  end: TBD
-  tags:
-  - machine-learning
-  - natural-language-processing
-  - computer-vision
-  rankings: 'CORE: B'
-  note: 'Virtual participation allowed.'
 
 - title: ICAART
   year: 2026
@@ -171,8 +163,9 @@
   - machine-learning
   - natural-language-processing
   - computer-vision
-  - reinforcement-learning
-  rankings: 'CORE: B'
+  - data-mining
+  - robotics
+  rankings: 'CORE: B (2023)'
   note: 'Virtual participation allowed.'
 
 - title: ACIIDS
@@ -192,6 +185,8 @@
   tags:
   - machine-learning
   - natural-language-processing
+  - speech-processing
   - computer-vision
-  rankings: 'CORE: B'
+  - robotics
+  rankings: 'CORE: B (2023)'
   note: 'Virtual participation allowed.'

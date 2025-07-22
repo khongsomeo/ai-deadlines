@@ -16,12 +16,12 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
           <div className="flex items-center justify-center md:justify-start w-full md:w-auto gap-8">
             <Link to="/" className="flex items-center gap-2">
               <img 
-                src="https://huggingface.co/front/assets/huggingface_logo.svg" 
-                alt="Hugging Face Logo" 
+                src="/image.jpg" 
+                alt="Dom, Yeu Kem, Phan Cam Logo!" 
                 className="h-8 w-8"
               />
               <span className="text-2xl font-bold text-primary">
-                <span className="hidden md:inline">AI Conference Deadlines</span>
+                <span className="hidden md:inline">(Submit-able) AI Conference Deadlines</span>
                 <span className="md:hidden">AI Deadlines</span>
               </span>
             </Link>
@@ -60,9 +60,10 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
           <p className="text-sm text-neutral-600 py-4">
             A dỏm, yếu kém, phản cảm countdowns to <span class="line-through">top</span> CV/NLP/ML/Robotics/AI conference deadlines.
 <br/>
-Due to my incompetent in science, these conferences are mostly CORE B-ranked.
+Due to my incompetent in science, these conferences are mostly CORE B/non-ranked.
           </p>
-          <p className="text-sm text-neutral-600 py-4">Give the original <a href="https://huggingface.co/spaces/huggingface/ai-deadlines">space</a> and <a href="https://github.com/huggingface/ai-deadlines">repository</a> a star for their awesome work!
+          <p className="text-sm text-neutral-600 py-4">
+            <b>Important:</b> Please give the original <a className="text-primary" href="https://huggingface.co/spaces/huggingface/ai-deadlines">space</a> a <b>like</b> and <a className="text-primary" href="https://github.com/huggingface/ai-deadlines">repository</a> a <b>star</b> for their awesome work!
 </p>
         </div>
       </div>
