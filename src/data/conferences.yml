@@ -1,3 +1,88 @@
+- title: WCCI
+  year: 2026
+  id: wcci2026
+  full_name: IEEE World Congress on Computational Intelligence
+  link: 'https://attend.ieee.org/wcci-2026/'
+  deadline: '2026-01-31 23:59:00'
+  final_decision_date: '2026-03-15 07:59:59'
+  timezone: UTC-12
+  city: Maastricht
+  country: The Netherlands
+  venue: Maastricht Exhibition & Congress Centre (MECC), Forum 100, 6229 GV Maastricht, The Netherlands
+  date: June 21-26, 2026
+  start: 2026-06-21
+  end: 2026-06-26
+  tags:
+  - data-mining
+  - natural-language-processing
+  rankings: 'CORE: B (all of IJCNN, FUZZ-IEEE and IEEE CEC - 2023)'
+  note: '3 events at one: The International Joint Conference on Neural Networks (IJCNN), the IEEE International Conference on Fuzzy Systems (FUZZ-IEEE) and the IEEE Congress on Evolutionary Computation (IEEE CEC)'
+
+- title: IUKM
+  year: 2025
+  id: iukm2025
+  full_name: International Symposium on Integrated Uncertainty in Knowledge Modelling and Decision Making
+  link: 'https://www.jaist.ac.jp/IUKM/IUKM2025/'
+  deadline: '2024-11-30 23:59:00'
+  final_decision_date: '2025-01-10 07:59:59'
+  timezone: UTC-12
+  city: Ho Chi Minh City
+  country: Vietnam
+  venue: Ho Chi Minh City Industrial University
+  date: March 17-19, 2025 
+  start: 2025-03-17
+  end: 2025-03-19
+  tags:
+  - data-mining
+  - natural-language-processing
+  rankings: 'None (Springer LNAI - Scopus indexed)'
+  note: 'Hybrid format'
+
+- title: ESANN
+  year: 2025
+  id: esann2025
+  full_name: European Symposium on Artificial Neural Networks 
+  link: 'https://www.esann.org/'
+  deadline: '2024-11-27 23:59:00'
+  final_decision_date: '2025-01-24 07:59:59' 
+  timezone: UTC-12
+  city: Brugge
+  country: Belgium
+  venue: Crowne Plaza Bruges, Burg 10, 8000 Brugge (Belgium)
+  date: April 23-25, 2025
+  start: 2025-04-23
+  end: 2025-04-25
+  tags:
+  - machine-learning 
+  - signal-processing
+  - natural-language-processing
+  - computer-vision
+  - data-mining
+  rankings: 'CORE: B (2023)'
+  note: 'Hybrid format'
+
+- title: ISM
+  year: 2025
+  id: ism2025
+  full_name: IEEE International Symposium on Multimedia
+  link: 'https://www.multimediacomputing.org/'
+  deadline: '2025-09-01 23:59:00'
+  final_decision_date: '2025-10-01 07:59:59' 
+  timezone: UTC-8
+  city: Naples
+  country: Italy
+  venue: Roral Continental Hotel
+  date: December 8-10, 2025
+  start: 2025-12-08
+  end: 2025-12-10
+  tags:
+  - signal-processing
+  - speech-processing
+  - computer-vision
+  rankings: 'CORE: C (2023)'
+  note: 'Hybrid format'
+
+
 - title: RIVF
   year: 2025
   id: rivf2025
@@ -190,3 +275,91 @@
   - robotics
   rankings: 'CORE: B (2023)'
   note: 'Virtual participation allowed.'
+
+- title: ICCCI
+  year: 2025
+  id: iccci2025
+  full_name: International Conference on Computational Collective Intelligence
+  link: 'https://iccci.pwr.edu.pl/2025/'
+  deadline: '2025-04-01 23:59:00'
+  final_decision_date: '2025-06-02 07:59:59'
+  timezone: UTC-12
+  city: Ho Chi Minh City
+  country: Vietnam
+  venue: Caravelle Hotel Saigon, 19-23 Lam Son Square, District 1, Ho Chi Minh City, Vietnam 
+  date: November 12-15, 2025
+  start: 2025-11-12
+  end: 2025-11-15
+  tags:
+  - machine-learning
+  - natural-language-processing
+  - computer-vision
+  - data-mining
+  rankings: 'CORE: B (2023)'
+  note: 'Virtual participation allowed.'
+
+- title: PRICAI
+  year: 2025
+  id: pricai2025
+  full_name: Pacific Rim International Conference on Artificial Intelligence 
+  link: 'https://pricai.org/2025'
+  deadline: '2025-06-27 23:59:00'
+  final_decision_date: '2025-08-22 07:59:59'
+  timezone: UTC-12
+  city: Wellington
+  country: New Zealand
+  venue: Victoria University of Wellington (VUW), Wellington, New Zealand 
+  date: November 17-21, 2025
+  start: 2025-11-17
+  end: 2025-11-21
+  tags:
+  - machine-learning
+  - natural-language-processing
+  - speech-processing
+  - computer-vision
+  - data-mining
+  - robotics
+  rankings: 'CORE: B (2023)'
+
+- title: ICANN
+  year: 2025
+  id: icann2025
+  full_name: International Conference on Artificial Neural Networks
+  link: 'https://e-nns.org/icann2025/'
+  deadline: '2025-03-29 23:59:00'
+  final_decision_date: '2025-06-22 07:59:59'
+  timezone: UTC-12
+  city: Kaunas
+  country: Lithuania
+  venue: Campus of Vytautas Magnus University and Lithuanian University of Health Sciences, Kaunas, Lithuania
+  date: September 9-12, 2025
+  start: 2025-09-09
+  end: 2025-09-12
+  tags:
+  - machine-learning
+  - natural-language-processing
+  - speech-processing
+  - computer-vision
+  - robotics
+  - human-computer-interaction
+  rankings: 'CORE: C (2023)'
+
+- title: ICONIP
+  year: 2025
+  id: iconip2025
+  full_name: International Conference on Neural Information Processing
+  link: 'https://iconip2025.apnns.org/'
+  deadline: '2025-05-22 23:59:00'
+  final_decision_date: '2025-07-25 07:59:59'
+  timezone: UTC-12
+  city: Okinawa
+  country: Japan
+  venue: OIST Conference Center, 1919-1 Tancha, Onna-son, Kunigami-gun, Okinawa, 904-0495, Japan
+  date: November 20-24, 2025
+  start: 2025-11-20
+  end: 2025-11-24
+  tags:
+  - machine-learning
+  - natural-language-processing
+  rankings: 'CORE: B (2023)'
+  note: 'OpenReview submission'
