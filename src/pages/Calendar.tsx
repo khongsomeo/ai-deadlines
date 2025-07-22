@@ -36,10 +36,9 @@ const categoryNames: Record<string, string> = {
   "computer-vision": "Computer Vision",
   "natural-language-processing": "NLP",
   "robotics": "Robotics",
-  "signal-processing": "Speech/Signal Processing",
+  "speech-processing": "Speech Processing",
+  "signal-processing": "Signal Processing",
   "data-mining": "Data Mining",
-  "reinforcement-learning": "Reinforcement Learning",
-  "automated-planning": "Automated Planning",
   "other": "Other"
 };
 
