@@ -1,3 +1,71 @@
+- title: ICTAI
+  year: 2025
+  id: ictai2025
+  full_name: IEEE International Conference on Tools with Artificial Intelligence
+  link: 'https://ictai.computer.org/2025/'
+  deadline: '2025-07-15 23:59:00'
+  final_decision_date: '2025-08-30 07:59:59'
+  timezone: UTC-12
+  city: Athens
+  country: Greece
+  venue: Royal Olympic Hotel, Athens, Greece
+  date: November 03-05, 2025
+  start: 2025-11-03
+  end: 2025-11-05
+  tags:
+  - machine-learning
+  - natural-language-processing
+  - computer-vision
+  - robotics
+  rankings: 'CORE: B (2023)'
+
+- title: KES
+  year: 2025
+  id: kes2025
+  full_name: International Conference on Knowledge-Based and Intelligent Information & Engineering Systems
+  link: 'http://kes2025.kesinternational.org/'
+  deadline: '2025-04-14 23:59:00'
+  final_decision_date: '2025-05-22 07:59:59'
+  timezone: UTC-12
+  city: Osaka
+  country: Japan
+  venue: Ritsumeikan University - Osaka Ibaraki Campus (OIC), 2-150 Iwakuracho, Ibaraki, Osaka 567-8570, Japan
+  date: September 12-15, 2025
+  start: 2025-09-12
+  end: 2025-09-15
+  tags:
+  - data-mining
+  - machine-learning
+  - natural-language-processing
+  - speech-processing
+  - signal-processing
+  - computer-vision
+  - robotics
+  rankings: 'CORE: B (2023)'
+
+- title: ACL
+  year: 2025
+  id: acl2025
+  full_name: Annual Meeting of the Association for Computational Linguistics 
+  link: 'https://2025.aclweb.org/'
+  deadline: '2025-02-15 23:59:00'
+  rebuttal_period_start: '2025-03-27 07:59:59'
+  rebuttal_period_end: '2025-04-03 23:59:00'
+  commitment_deadline: '2025-04-20 23:59:59' 
+  final_decision_date: '2025-05-15 07:59:59'
+  timezone: UTC-12
+  city: Vienna
+  country: Austria
+  venue: Austria Center Vienna Bruno-Kreisky-Platz 1, 1220 Wien, Austria
+  date: July 28-30, 2025
+  start: 2025-07-27
+  end: 2025-07-30
+  tags:
+  - natural-language-processing
+  - speech-processing
+  rankings: 'CORE: A* (2023)'
+  note: '<b>ACL Rolling Review</b>; Hybrid format'
+
 - title: NAACL
   year: 2025
   id: naacl2025
