@@ -24,10 +24,9 @@ const categoryColors: Record<string, string> = {
   "computer-vision": "bg-orange-500",
   "natural-language-processing": "bg-blue-500",
   "robotics": "bg-green-500",
+  "speech-processing": "bg-yellow-500",
   "signal-processing": "bg-cyan-500",
   "data-mining": "bg-pink-500",
-  "reinforcement-learning": "bg-yellow-500",
-  "automated-planning": "bg-amber-500",
   "other": "bg-gray-500"
 };
 
@@ -48,18 +47,15 @@ const orderedCategories = [
   "computer-vision",
   "natural-language-processing",
   "robotics",
-  "reinforcement-learning",
+  "speech-processing",
   "signal-processing",
   "data-mining",
-  "automated-planning",
   "other"
 ] as const;
 
 const mapLegacyTag = (tag: string): string => {
   const legacyTagMapping: Record<string, string> = {
-    "web-search": "other",
     "human-computer-interaction": "other",
-    "computer-graphics": "other",
     // reinforcement-learning is already a proper tag, so no mapping needed
     // Add any other legacy mappings here
   };
