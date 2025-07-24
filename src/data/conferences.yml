@@ -51,6 +51,7 @@
   deadline: '2025-02-15 23:59:00'
   rebuttal_period_start: '2025-03-27 07:59:59'
   rebuttal_period_end: '2025-04-03 23:59:00'
+  review_release_date: '2025-04-15 07:59:59'
   commitment_deadline: '2025-04-20 23:59:59' 
   final_decision_date: '2025-05-15 07:59:59'
   timezone: UTC-12
@@ -74,6 +75,7 @@
   deadline: '2024-10-15 23:59:00'
   rebuttal_period_start: '2024-11-22 07:59:59'
   rebuttal_period_end: '2024-11-26 23:59:00'
+  review_release_date: '2024-12-12 07:59:59'
   commitment_deadline: '2024-12-16 23:59:59' 
   final_decision_date: '2025-01-22 07:59:59'
   timezone: UTC-12
@@ -347,7 +349,6 @@
   - human-computer-interaction
   rankings: 'None (IEEE Xplore)'
 
-
 - title: SoICT
   year: 2025
   id: soict2025
@@ -376,6 +377,7 @@
   full_name: Interspeech
   link: 'https://interspeech2026.org'
   deadline: '2026-02-25 23:59:00' 
+  final_decision_date: TBD
   timezone: UTC-12
   city: Sydney
   country: Australia
@@ -413,14 +415,17 @@
   full_name: International Conference on Acoustics, Speech and Signal Processing
   link: 'https://2026.ieeeicassp.org/'
   deadline: '2025-09-17 23:59:00'
+  rebuttal_period_end: '2025-12-24 23:59:00'
+  final_decision_date: '2026-01-16 07:59:59'
   timezone: UTC-12
   city: Barcelona
   country: Spain
-  venue: TBD
+  venue: Barcelona International Convention Centre (CCIB), Plaça de Willy Brandt, 11-14, Sant Martí, 08019 Barcelona, Spain
   date: May 4-8, 2026
   start: 2026-05-04
   end: 2026-05-08
   tags:
+  - machine-learning
   - signal-processing
   - speech-processing
   - computer-vision

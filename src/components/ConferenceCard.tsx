@@ -4,6 +4,7 @@ import { formatDistanceToNow, parseISO, isValid, isPast } from "date-fns";
 import ConferenceDialog from "./ConferenceDialog";
 import { useState } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
+import DeadlineProgress from './DeadlineProgress';
 
 const ConferenceCard = ({
   title,
@@ -115,7 +116,7 @@ const ConferenceCard = ({
           )}
         </div>
         
-        <div className="flex flex-col gap-2 mb-3">
+        <div className="flex flex-col gap-2 mb-6">
           <div className="flex items-center text-neutral">
             <CalendarDays className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">{date}</span>
@@ -145,6 +146,41 @@ const ConferenceCard = ({
             </span>
           </div>
         </div>
+
+        <DeadlineProgress
+          steps={[
+            ...(abstract_deadline ? [{
+              label: 'Abstract Submission',
+              date: abstract_deadline,
+              timezone
+            }] : []),
+            {
+              label: 'Full Paper Submission',
+              date: deadline,
+              timezone
+            },
+            ...(conferenceProps.review_release_date ? [{
+              label: 'Reviews Released',
+              date: conferenceProps.review_release_date,
+              timezone
+            }] : []),
+            ...(conferenceProps.rebuttal_period_start ? [{
+              label: 'Rebuttal Start',
+              date: conferenceProps.rebuttal_period_start,
+              timezone
+            }] : []),
+            ...(conferenceProps.rebuttal_period_end ? [{
+              label: 'Rebuttal End',
+              date: conferenceProps.rebuttal_period_end,
+              timezone
+            }] : []),
+            ...(conferenceProps.final_decision_date ? [{
+              label: 'Final Decision',
+              date: conferenceProps.final_decision_date,
+              timezone
+            }] : [])
+          ].filter(step => step.date && step.date !== 'TBD')}
+        />
 
         {Array.isArray(tags) && tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
