@@ -2,9 +2,9 @@
   year: 2025
   id: ictai2025
   full_name: IEEE International Conference on Tools with Artificial Intelligence
-  link: 'https://ictai.computer.org/2025/'
-  deadline: '2025-07-15 23:59:00'
-  final_decision_date: '2025-08-30 07:59:59'
+  link: "https://ictai.computer.org/2025/"
+  deadline: "2025-07-15 23:59:00"
+  final_decision_date: "2025-08-30 07:59:59"
   timezone: UTC-12
   city: Athens
   country: Greece
@@ -13,19 +13,22 @@
   start: 2025-11-03
   end: 2025-11-05
   tags:
-  - machine-learning
-  - natural-language-processing
-  - computer-vision
-  - robotics
-  rankings: 'CORE: B (2023)'
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1251/
 
 - title: KES
   year: 2025
   id: kes2025
   full_name: International Conference on Knowledge-Based and Intelligent Information & Engineering Systems
-  link: 'http://kes2025.kesinternational.org/'
-  deadline: '2025-04-14 23:59:00'
-  final_decision_date: '2025-05-22 07:59:59'
+  link: "http://kes2025.kesinternational.org/"
+  deadline: "2025-04-14 23:59:00"
+  final_decision_date: "2025-05-22 07:59:59"
   timezone: UTC-12
   city: Osaka
   country: Japan
@@ -34,26 +37,29 @@
   start: 2025-09-12
   end: 2025-09-15
   tags:
-  - data-mining
-  - machine-learning
-  - natural-language-processing
-  - speech-processing
-  - signal-processing
-  - computer-vision
-  - robotics
-  rankings: 'CORE: B (2023)'
+      - data-mining
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - signal-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1113/
 
 - title: ACL
   year: 2025
   id: acl2025
-  full_name: Annual Meeting of the Association for Computational Linguistics 
-  link: 'https://2025.aclweb.org/'
-  deadline: '2025-02-15 23:59:00'
-  rebuttal_period_start: '2025-03-27 07:59:59'
-  rebuttal_period_end: '2025-04-03 23:59:00'
-  review_release_date: '2025-04-15 07:59:59'
-  commitment_deadline: '2025-04-20 23:59:59' 
-  final_decision_date: '2025-05-15 07:59:59'
+  full_name: Annual Meeting of the Association for Computational Linguistics
+  link: "https://2025.aclweb.org/"
+  deadline: "2025-02-15 23:59:00"
+  rebuttal_period_start: "2025-03-27 07:59:59"
+  rebuttal_period_end: "2025-04-03 23:59:00"
+  review_release_date: "2025-04-15 07:59:59"
+  commitment_deadline: "2025-04-20 23:59:59"
+  final_decision_date: "2025-05-15 07:59:59"
   timezone: UTC-12
   city: Vienna
   country: Austria
@@ -62,22 +68,25 @@
   start: 2025-07-27
   end: 2025-07-30
   tags:
-  - natural-language-processing
-  - speech-processing
-  rankings: 'CORE: A* (2023)'
-  note: '<b>ACL Rolling Review</b>; Hybrid format'
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/196/
+  note: "<b>ACL Rolling Review</b>; Hybrid format"
 
 - title: NAACL
   year: 2025
   id: naacl2025
-  full_name: Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics 
-  link: 'https://2025.naacl.org/'
-  deadline: '2024-10-15 23:59:00'
-  rebuttal_period_start: '2024-11-22 07:59:59'
-  rebuttal_period_end: '2024-11-26 23:59:00'
-  review_release_date: '2024-12-12 07:59:59'
-  commitment_deadline: '2024-12-16 23:59:59' 
-  final_decision_date: '2025-01-22 07:59:59'
+  full_name: Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics
+  link: "https://2025.naacl.org/"
+  deadline: "2024-10-15 23:59:00"
+  rebuttal_period_start: "2024-11-22 07:59:59"
+  rebuttal_period_end: "2024-11-26 23:59:00"
+  review_release_date: "2024-12-12 07:59:59"
+  commitment_deadline: "2024-12-16 23:59:59"
+  final_decision_date: "2025-01-22 07:59:59"
   timezone: UTC-12
   city: Albuquerque
   country: United States
@@ -86,19 +95,22 @@
   start: 2025-05-03
   end: 2025-05-04
   tags:
-  - natural-language-processing
-  - speech-processing
-  rankings: 'CORE: A (2023)'
-  note: '<b>ACL Rolling Review</b>; Hybrid format'
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1648/
+  note: "<b>ACL Rolling Review</b>; Hybrid format"
 
 - title: INLG
   year: 2025
   id: inlg2025
   full_name: International Natural Language Generation Conference
-  link: 'https://2025.inlgmeeting.org/'
-  deadline: '2025-07-18 23:59:00'
-  commitment_deadline: '2025-08-07 23:59:59' 
-  final_decision_date: '2025-08-21 07:59:59'
+  link: "https://2025.inlgmeeting.org/"
+  deadline: "2025-07-18 23:59:00"
+  commitment_deadline: "2025-08-07 23:59:59"
+  final_decision_date: "2025-08-21 07:59:59"
   timezone: UTC-12
   city: Hanoi
   country: Vietnam
@@ -107,18 +119,21 @@
   start: 2025-10-29
   end: 2025-11-02
   tags:
-  - natural-language-processing
-  - speech-processing
-  rankings: 'CORE: B (2023)'
-  note: 'Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>'
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1327/
+  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>"
 
 - title: MAPR
   year: 2025
   id: mapr2025
   full_name: International Conference on Multimedia Analysis and Pattern Recognition
-  link: 'https://mapr.uit.edu.vn/'
-  deadline: '2025-05-15 23:59:00'
-  final_decision_date: '2025-07-01 07:59:59'
+  link: "https://mapr.uit.edu.vn/"
+  deadline: "2025-05-15 23:59:00"
+  final_decision_date: "2025-07-01 07:59:59"
   timezone: UTC+7
   city: Nha Trang
   country: Vietnam
@@ -127,20 +142,23 @@
   start: 2025-08-14
   end: 2025-08-15
   tags:
-  - machine-learning
-  - natural-language-processing
-  - speech-processing
-  - computer-vision
-  - robotics
-  rankings: 'None (IEEE Xplore - Scopus indexed)'
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: Non-ranked
+      rank_source: IEEE Xplore - Scopus indexed
+      rank_source_url: https://dblp.org/db/conf/mapr/index.html
 
 - title: LREC
   year: 2026
   id: lrec2026
   full_name: Language Resources and Evaluation Conference
-  link: 'https://www.elra.info/lrec2026/'
-  deadline: '2025-10-17 23:59:00'
-  final_decision_date: '2026-02-13 07:59:59'
+  link: "https://www.elra.info/lrec2026/"
+  deadline: "2025-10-17 23:59:00"
+  final_decision_date: "2026-02-13 07:59:59"
   timezone: UTC-12
   city: Palma
   country: Spain
@@ -149,19 +167,22 @@
   start: 2026-05-11
   end: 2026-05-16
   tags:
-  - natural-language-processing
-  rankings: 'CORE: B (2023)'
+      - natural-language-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2092/
 
 - title: EMNLP
   year: 2025
   id: emnlp2025
-  full_name: Conference on Empirical Methods in Natural Language Processing 
-  link: 'https://2025.emnlp.org/'
-  deadline: '2025-05-19 23:59:00'
-  rebuttal_period_start: '2025-06-26 07:59:59'
-  rebuttal_period_end: '2025-07-02 23:59:00'
-  commitment_deadline: '2025-08-01 23:59:59' 
-  final_decision_date: '2025-08-20 07:59:59'
+  full_name: Conference on Empirical Methods in Natural Language Processing
+  link: "https://2025.emnlp.org/"
+  deadline: "2025-05-19 23:59:00"
+  rebuttal_period_start: "2025-06-26 07:59:59"
+  rebuttal_period_end: "2025-07-02 23:59:00"
+  commitment_deadline: "2025-08-01 23:59:59"
+  final_decision_date: "2025-08-20 07:59:59"
   timezone: UTC-12
   city: Suzhou
   country: China
@@ -170,19 +191,22 @@
   start: 2025-11-05
   end: 2025-11-09
   tags:
-  - natural-language-processing
-  - speech-processing
-  rankings: 'CORE: A* (2023)'
-  note: '<b>ACL Rolling Review</b>'
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/448/
+  note: "<b>ACL Rolling Review</b>"
 
 - title: COLING
   year: 2025
   id: coling2025
   full_name: International Conference on Computational Linguistics
-  link: 'https://coling2025.org/'
-  deadline: '2024-09-16 23:59:00'
-  commitment_deadline: '2024-10-20 23:59:59' 
-  final_decision_date: '2024-11-29 07:59:59'
+  link: "https://coling2025.org/"
+  deadline: "2024-09-16 23:59:00"
+  commitment_deadline: "2024-10-20 23:59:59"
+  final_decision_date: "2024-11-29 07:59:59"
   timezone: UTC-12
   city: Abu Dhabi
   country: UAE
@@ -191,20 +215,22 @@
   start: 2025-01-19
   end: 2025-01-24
   tags:
-  - natural-language-processing
-  - speech-processing
-  rankings: 'CORE: B (2023)'
-  note: 'Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format (January 27-28)'
-
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/949/
+  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format (January 27-28)"
 
 - title: ECIR
   year: 2026
   id: ecir2026
   full_name: European Conference on Information Retrieval
-  link: 'https://ecir2026.eu/'
-  abstract_deadline: '2025-10-02 23:59:00'
-  deadline: '2025-10-09 23:59:00'
-  final_decision_date: '2025-12-16 07:59:59'
+  link: "https://ecir2026.eu/"
+  abstract_deadline: "2025-10-02 23:59:00"
+  deadline: "2025-10-09 23:59:00"
+  final_decision_date: "2025-12-16 07:59:59"
   timezone: UTC-12
   city: Delft
   country: The Netherlands
@@ -213,17 +239,20 @@
   start: 2026-03-29
   end: 2026-04-02
   tags:
-  - data-mining
-  - natural-language-processing
-  rankings: 'CORE: A (2023)'
+      - data-mining
+      - natural-language-processing
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/483/
 
-- title: WCCI
+- title: IJCNN-WCCI
   year: 2026
-  id: wcci2026
+  id: ijcnn2026
   full_name: IEEE World Congress on Computational Intelligence
-  link: 'https://attend.ieee.org/wcci-2026/'
-  deadline: '2026-01-31 23:59:00'
-  final_decision_date: '2026-03-15 07:59:59'
+  link: "https://attend.ieee.org/wcci-2026/"
+  deadline: "2026-01-31 23:59:00"
+  final_decision_date: "2026-03-15 07:59:59"
   timezone: UTC-12
   city: Maastricht
   country: The Netherlands
@@ -232,40 +261,46 @@
   start: 2026-06-21
   end: 2026-06-26
   tags:
-  - machine-learning
-  - speech-processing
-  - computer-vision
-  - robotics
-  rankings: 'CORE: B (all of IJCNN, FUZZ-IEEE and IEEE CEC - 2023)'
-  note: '3 events at one: The International Joint Conference on Neural Networks (IJCNN), the IEEE International Conference on Fuzzy Systems (FUZZ-IEEE) and the IEEE Congress on Evolutionary Computation (IEEE CEC)'
+      - machine-learning
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/685/
+  note: "3 events at WCCI: The International Joint Conference on Neural Networks (IJCNN), the IEEE International Conference on Fuzzy Systems (FUZZ-IEEE) and the IEEE Congress on Evolutionary Computation (IEEE CEC) - all 3 ranked B in CORE2023."
 
 - title: IUKM
   year: 2025
   id: iukm2025
   full_name: International Symposium on Integrated Uncertainty in Knowledge Modelling and Decision Making
-  link: 'https://www.jaist.ac.jp/IUKM/IUKM2025/'
-  deadline: '2024-11-30 23:59:00'
-  final_decision_date: '2025-01-10 07:59:59'
+  link: "https://www.jaist.ac.jp/IUKM/IUKM2025/"
+  deadline: "2024-11-30 23:59:00"
+  final_decision_date: "2025-01-10 07:59:59"
   timezone: UTC-12
   city: Ho Chi Minh City
   country: Vietnam
   venue: Ho Chi Minh City Industrial University
-  date: March 17-19, 2025 
+  date: March 17-19, 2025
   start: 2025-03-17
   end: 2025-03-19
   tags:
-  - data-mining
-  - natural-language-processing
-  rankings: 'None (Springer LNAI - Scopus indexed)'
-  note: 'Hybrid format'
+      - data-mining
+      - natural-language-processing
+  rankings:
+      rank_name: Non-ranked
+      rank_source: Springer LNAI - Scopus indexed
+      rank_source_url: https://link.springer.com/conference/iukm
+  note: "Hybrid format"
 
 - title: ESANN
   year: 2025
   id: esann2025
-  full_name: European Symposium on Artificial Neural Networks 
-  link: 'https://www.esann.org/'
-  deadline: '2024-11-27 23:59:00'
-  final_decision_date: '2025-01-24 07:59:59' 
+  full_name: European Symposium on Artificial Neural Networks
+  link: "https://www.esann.org/"
+  deadline: "2024-11-27 23:59:00"
+  final_decision_date: "2025-01-24 07:59:59"
   timezone: UTC-12
   city: Brugge
   country: Belgium
@@ -274,21 +309,24 @@
   start: 2025-04-23
   end: 2025-04-25
   tags:
-  - machine-learning 
-  - signal-processing
-  - natural-language-processing
-  - computer-vision
-  - data-mining
-  rankings: 'CORE: B (2023)'
-  note: 'Hybrid format'
+      - machine-learning
+      - signal-processing
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/512/
+  note: "Hybrid format"
 
 - title: ISM
   year: 2025
   id: ism2025
   full_name: IEEE International Symposium on Multimedia
-  link: 'https://www.multimediacomputing.org/'
-  deadline: '2025-09-01 23:59:00'
-  final_decision_date: '2025-10-01 07:59:59' 
+  link: "https://www.multimediacomputing.org/"
+  deadline: "2025-09-01 23:59:00"
+  final_decision_date: "2025-10-01 07:59:59"
   timezone: UTC-8
   city: Naples
   country: Italy
@@ -297,20 +335,22 @@
   start: 2025-12-08
   end: 2025-12-10
   tags:
-  - signal-processing
-  - speech-processing
-  - computer-vision
-  rankings: 'CORE: C (2023)'
-  note: 'Hybrid format'
-
+      - signal-processing
+      - speech-processing
+      - computer-vision
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/701/
+  note: "Hybrid format"
 
 - title: RIVF
   year: 2025
   id: rivf2025
   full_name: RIVF International Conference on Computing and Communication Technologies
-  link: 'https://rivf2025.org/'
-  deadline: '2025-07-30 23:59:00'
-  final_decision_date: '2025-10-15 07:59:59' 
+  link: "https://rivf2025.org/"
+  deadline: "2025-07-30 23:59:00"
+  final_decision_date: "2025-10-15 07:59:59"
   timezone: UTC+7
   city: Ho Chi Minh City
   country: Vietnam
@@ -319,22 +359,24 @@
   start: 2025-12-18
   end: 2025-12-20
   tags:
-  - computer-vision
-  - machine-learning
-  - natural-language-processing
-  - speech-processing
-  - human-computer-interaction
-  - data-mining
-  rankings: 'None (IEEE Xplore)'
-
+      - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - human-computer-interaction
+      - data-mining
+  rankings:
+      rank_name: Non-ranked
+      rank_source: IEEE Xplore
+      rank_source_url: https://ieeexplore.ieee.org/xpl/conhome/1001965/all-proceedings
 
 - title: KSE
   year: 2025
   id: kse2025
   full_name: International Conference on Knowledge and Systems Engineering
-  link: 'https://kse2025.kse-conferences.org'
-  deadline: '2025-07-31 23:59:00'
-  final_decision_date: '2025-09-01 07:59:59' 
+  link: "https://kse2025.kse-conferences.org"
+  deadline: "2025-07-31 23:59:00"
+  final_decision_date: "2025-09-01 07:59:59"
   timezone: UTC+7
   city: Da Lat
   country: Vietnam
@@ -343,20 +385,23 @@
   start: 2025-11-06
   end: 2025-11-08
   tags:
-  - computer-vision
-  - machine-learning
-  - natural-language-processing
-  - human-computer-interaction
-  rankings: 'None (IEEE Xplore)'
+      - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - human-computer-interaction
+  rankings:
+      rank_name: Non-ranked
+      rank_source: IEEE Xplore
+      rank_source_url: https://ieeexplore.ieee.org/xpl/conhome/1003010/all-proceedings
 
 - title: SoICT
   year: 2025
   id: soict2025
   full_name: International Symposium on Information and Communication Technology
-  link: 'https://soict.org'
-  abstract_deadline: '2025-09-05 23:59:00'
-  deadline: '2025-09-15 23:59:00'
-  final_decision_date: '2025-10-15 07:59:59' 
+  link: "https://soict.org"
+  abstract_deadline: "2025-09-05 23:59:00"
+  deadline: "2025-09-15 23:59:00"
+  final_decision_date: "2025-10-15 07:59:59"
   timezone: UTC+7
   city: Nha Trang
   country: Vietnam
@@ -365,18 +410,21 @@
   start: 2025-12-12
   end: 2025-12-14
   tags:
-  - computer-vision
-  - machine-learning
-  - speech-processing
-  - human-computer-interaction
-  rankings: 'None (Springer CCIS - Scopus indexed)'
+      - computer-vision
+      - machine-learning
+      - speech-processing
+      - human-computer-interaction
+  rankings:
+      rank_name: Non-ranked
+      rank_source: Springer CCIS - Scopus indexed
+      rank_source_url: https://link.springer.com/conference/soict
 
 - title: Interspeech
   year: 2026
   id: interspeech2026
   full_name: Interspeech
-  link: 'https://interspeech2026.org'
-  deadline: '2026-02-25 23:59:00' 
+  link: "https://interspeech2026.org"
+  deadline: "2026-02-25 23:59:00"
   final_decision_date: TBD
   timezone: UTC-12
   city: Sydney
@@ -386,17 +434,20 @@
   start: 2026-09-27
   end: 2026-10-01
   tags:
-  - signal-processing
-  - speech-processing
-  rankings: 'CORE: A (2023)'
+      - signal-processing
+      - speech-processing
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/494/
 
 - title: PACLIC
   year: 2025
   id: paclic39
   full_name: Pacific Asia Conference on Language, Information and Computation
-  link: 'https://vlsp.org.vn/paclic2025/home'
-  deadline: '2025-08-02 23:59:00'
-  final_decision_date: '2025-09-20'
+  link: "https://vlsp.org.vn/paclic2025/home"
+  deadline: "2025-08-02 23:59:00"
+  final_decision_date: "2025-09-20"
   timezone: UTC-12
   city: Hanoi
   country: Vietnam
@@ -405,18 +456,21 @@
   start: 2025-12-05
   end: 2025-12-07
   tags:
-  - natural-language-processing
-  - speech-processing
-  rankings: 'CORE: C (2023)'
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1658/
 
 - title: ICASSP
   year: 2026
   id: icassp26
   full_name: International Conference on Acoustics, Speech and Signal Processing
-  link: 'https://2026.ieeeicassp.org/'
-  deadline: '2025-09-17 23:59:00'
-  rebuttal_period_end: '2025-12-24 23:59:00'
-  final_decision_date: '2026-01-16 07:59:59'
+  link: "https://2026.ieeeicassp.org/"
+  deadline: "2025-09-17 23:59:00"
+  rebuttal_period_end: "2025-12-24 23:59:00"
+  final_decision_date: "2026-01-16 07:59:59"
   timezone: UTC-12
   city: Barcelona
   country: Spain
@@ -425,22 +479,25 @@
   start: 2026-05-04
   end: 2026-05-08
   tags:
-  - machine-learning
-  - signal-processing
-  - speech-processing
-  - computer-vision
-  rankings: 'CORE: B (2023)'
+      - machine-learning
+      - signal-processing
+      - speech-processing
+      - computer-vision
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2042/
 
 - title: IJCNLP-AACL
   year: 2025
   id: icjcnp2025
   full_name: International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics
-  link: 'https://2025.aaclnet.org/'
-  deadline: '2025-07-28 23:59:00'
-  commitment_deadline: '2025-10-10 23:59:00'
-  rebuttal_period_start: '2025-09-04 07:59:59'
-  rebuttal_period_end: '2025-09-10 23:59:00'
-  final_decision_date: '2025-10-25'
+  link: "https://2025.aaclnet.org/"
+  deadline: "2025-07-28 23:59:00"
+  commitment_deadline: "2025-10-10 23:59:00"
+  rebuttal_period_start: "2025-09-04 07:59:59"
+  rebuttal_period_end: "2025-09-10 23:59:00"
+  final_decision_date: "2025-10-25"
   timezone: UTC-12
   city: Mumbai
   country: India
@@ -449,18 +506,21 @@
   start: 2025-12-20
   end: 2025-12-24
   tags:
-  - natural-language-processing
-  - speech-processing
-  rankings: 'CORE: B (2023)'
-  note: '<b>ACL Rolling Review</b>'
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1317/
+  note: "<b>ACL Rolling Review</b>"
 
 - title: ICAART
   year: 2026
   id: icaart2026
-  full_name: International Conference on Agents and Artificial Intelligence 
-  link: 'https://icaart.scitevents.org'
-  deadline: '2025-10-02 23:59:00'
-  final_decision_date: '2025-12-04 07:59:59'
+  full_name: International Conference on Agents and Artificial Intelligence
+  link: "https://icaart.scitevents.org"
+  deadline: "2025-10-02 23:59:00"
+  final_decision_date: "2025-12-04 07:59:59"
   timezone: UTC-12
   city: Marbella
   country: Spain
@@ -469,21 +529,24 @@
   start: 2026-03-05
   end: 2026-03-07
   tags:
-  - machine-learning
-  - natural-language-processing
-  - computer-vision
-  - data-mining
-  - robotics
-  rankings: 'CORE: B (2023)'
-  note: 'Virtual participation allowed.'
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/902/
+  note: "Virtual participation allowed."
 
 - title: ACIIDS
   year: 2026
   id: aciids2026
-  full_name: Asian Conference on Intelligent Information and Database Systems 
-  link: 'https://aciids.pwr.edu.pl/2026/'
-  deadline: '2025-09-30 23:59:00'
-  final_decision_date: '2026-01'
+  full_name: Asian Conference on Intelligent Information and Database Systems
+  link: "https://aciids.pwr.edu.pl/2026/"
+  deadline: "2025-09-30 23:59:00"
+  final_decision_date: "2026-01"
   timezone: UTC-12
   city: Kaohsiung
   country: Taiwan
@@ -492,66 +555,75 @@
   start: 2026-04-13
   end: 2026-04-15
   tags:
-  - machine-learning
-  - natural-language-processing
-  - speech-processing
-  - computer-vision
-  - robotics
-  rankings: 'CORE: B (2023)'
-  note: 'Virtual participation allowed.'
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2188/
+  note: "Virtual participation allowed."
 
 - title: ICCCI
   year: 2025
   id: iccci2025
   full_name: International Conference on Computational Collective Intelligence
-  link: 'https://iccci.pwr.edu.pl/2025/'
-  deadline: '2025-04-01 23:59:00'
-  final_decision_date: '2025-06-02 07:59:59'
+  link: "https://iccci.pwr.edu.pl/2025/"
+  deadline: "2025-04-01 23:59:00"
+  final_decision_date: "2025-06-02 07:59:59"
   timezone: UTC-12
   city: Ho Chi Minh City
   country: Vietnam
-  venue: Caravelle Hotel Saigon, 19-23 Lam Son Square, District 1, Ho Chi Minh City, Vietnam 
+  venue: Caravelle Hotel Saigon, 19-23 Lam Son Square, District 1, Ho Chi Minh City, Vietnam
   date: November 12-15, 2025
   start: 2025-11-12
   end: 2025-11-15
   tags:
-  - machine-learning
-  - natural-language-processing
-  - computer-vision
-  - data-mining
-  rankings: 'CORE: B (2023)'
-  note: 'Virtual participation allowed.'
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/942/
+  note: "Virtual participation allowed."
 
 - title: PRICAI
   year: 2025
   id: pricai2025
-  full_name: Pacific Rim International Conference on Artificial Intelligence 
-  link: 'https://pricai.org/2025'
-  deadline: '2025-06-27 23:59:00'
-  final_decision_date: '2025-08-22 07:59:59'
+  full_name: Pacific Rim International Conference on Artificial Intelligence
+  link: "https://pricai.org/2025"
+  deadline: "2025-06-27 23:59:00"
+  final_decision_date: "2025-08-22 07:59:59"
   timezone: UTC-12
   city: Wellington
   country: New Zealand
-  venue: Victoria University of Wellington (VUW), Wellington, New Zealand 
+  venue: Victoria University of Wellington (VUW), Wellington, New Zealand
   date: November 17-21, 2025
   start: 2025-11-17
   end: 2025-11-21
   tags:
-  - machine-learning
-  - natural-language-processing
-  - speech-processing
-  - computer-vision
-  - data-mining
-  - robotics
-  rankings: 'CORE: B (2023)'
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - data-mining
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1661/
 
 - title: ICANN
   year: 2025
   id: icann2025
   full_name: International Conference on Artificial Neural Networks
-  link: 'https://e-nns.org/icann2025/'
-  deadline: '2025-03-29 23:59:00'
-  final_decision_date: '2025-06-22 07:59:59'
+  link: "https://e-nns.org/icann2025/"
+  deadline: "2025-03-29 23:59:00"
+  final_decision_date: "2025-06-22 07:59:59"
   timezone: UTC-12
   city: Kaunas
   country: Lithuania
@@ -560,21 +632,24 @@
   start: 2025-09-09
   end: 2025-09-12
   tags:
-  - machine-learning
-  - natural-language-processing
-  - speech-processing
-  - computer-vision
-  - robotics
-  - human-computer-interaction
-  rankings: 'CORE: C (2023)'
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/915/
 
 - title: ICONIP
   year: 2025
   id: iconip2025
   full_name: International Conference on Neural Information Processing
-  link: 'https://iconip2025.apnns.org/'
-  deadline: '2025-05-22 23:59:00'
-  final_decision_date: '2025-07-25 07:59:59'
+  link: "https://iconip2025.apnns.org/"
+  deadline: "2025-05-22 23:59:00"
+  final_decision_date: "2025-07-25 07:59:59"
   timezone: UTC-12
   city: Okinawa
   country: Japan
@@ -583,7 +658,10 @@
   start: 2025-11-20
   end: 2025-11-24
   tags:
-  - machine-learning
-  - natural-language-processing
-  rankings: 'CORE: B (2023)'
-  note: 'OpenReview submission'
+      - machine-learning
+      - natural-language-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1152/
+  note: "OpenReview submission"

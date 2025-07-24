@@ -130,7 +130,15 @@ const ConferenceCard = ({
           {rankings && (
             <div className="flex items-center text-neutral">
               <ChartNoAxesColumn className="h-4 w-4 mr-2 flex-shrink-0" />
-              <span className="text-sm truncate">{rankings}</span>
+              <span className="text-sm truncate">
+                Rank: {rankings.rank_name} <a 
+                  href={rankings.rank_source_url}
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-primary"
+                  onClick={(e) => e.stopPropagation()}  
+                >({rankings.rank_source})</a>
+              </span>
             </div>
           )}
           <div className="flex items-center text-neutral">
