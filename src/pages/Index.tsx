@@ -10,16 +10,18 @@ import { extractCountry } from "@/utils/countryExtractor";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { X, ChevronRight, Filter, Globe } from "lucide-react";
+import { X, ChevronRight, Filter, Globe, ChartNoAxesColumn } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
 import { getDeadlineInLocalTime } from "@/utils/dateUtils";
 import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
+import { getAllRanks } from "@/utils/rankExtractor";
 
 const Index = () => {
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
   const [selectedCountries, setSelectedCountries] = useState<Set<string>>(new Set());
   const [searchQuery, setSearchQuery] = useState("");
   const [showPastConferences, setShowPastConferences] = useState(false);
+  const [selectedRanks, setSelectedRanks] = useState<Set<string>>(new Set());
 
   // Category buttons configuration
   const categoryButtons = [
@@ -59,7 +61,11 @@ const Index = () => {
           conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
           (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()));
         
-        return matchesTags && matchesCountry && matchesSearch;
+        // Add rank filter
+        const matchesRank = selectedRanks.size === 0 || 
+          (conf.rankings?.rank_name && selectedRanks.has(conf.rankings.rank_name));
+        
+        return matchesTags && matchesCountry && matchesRank && matchesSearch;
       })
       .sort((a: Conference, b: Conference) => {
         const aDeadline = getDeadlineInLocalTime(a.deadline, a.timezone);
@@ -76,7 +82,7 @@ const Index = () => {
         
         return 0;
       });
-  }, [selectedTags, selectedCountries, searchQuery, showPastConferences]);
+  }, [selectedTags, selectedCountries, selectedRanks, searchQuery, showPastConferences]);
 
   // Update handleTagsChange to handle multiple tags
   const handleTagsChange = (newTags: Set<string>) => {
@@ -101,6 +107,17 @@ const Index = () => {
     window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
   };
 
+  const handleRanksChange = (newRanks: Set<string>) => {
+    setSelectedRanks(newRanks);
+    const searchParams = new URLSearchParams(window.location.search);
+    if (newRanks.size > 0) {
+      searchParams.set('ranks', Array.from(newRanks).join(','));
+    } else {
+      searchParams.delete('ranks');
+    }
+    window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
+  };
+
   // Toggle a single tag
   const toggleTag = (tag: string) => {
     const newTags = new Set(selectedTags);
@@ -117,7 +134,8 @@ const Index = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const tagsParam = searchParams.get('tags');
     const countriesParam = searchParams.get('countries');
-    
+    const ranksParam = searchParams.get('ranks');
+
     if (tagsParam) {
       const tags = tagsParam.split(',');
       setSelectedTags(new Set(tags));
@@ -126,6 +144,11 @@ const Index = () => {
     if (countriesParam) {
       const countries = countriesParam.split(',');
       setSelectedCountries(new Set(countries));
+    }
+
+    if (ranksParam) {
+      const ranks = ranksParam.split(',');
+      setSelectedRanks(new Set(ranks));
     }
   }, []);
 
@@ -243,15 +266,79 @@ const Index = () => {
                   <X className="ml-1 h-3 w-3" />
                 </button>
               ))}
-              
+
+              {/* Rank filter popover */}
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline" size="sm" className="h-8 gap-1">
+                    <ChartNoAxesColumn className="h-4 w-4" />
+                    Filter by Rank
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-64 p-4 bg-white" align="start">
+                  <div className="space-y-4">
+                    <div>
+                      <div className="mb-4">
+                        <h4 className="text-sm font-medium text-gray-800">Rank</h4>
+                      </div>
+                      <div 
+                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y" 
+                        style={{ WebkitOverflowScrolling: "touch" }}
+                      >
+                        {getAllRanks(conferencesData as Conference[]).map(rank => (
+                          <div key={rank} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                            <Checkbox 
+                              id={`rank-${rank}`}
+                              checked={selectedRanks.has(rank)}
+                              onCheckedChange={() => {
+                                const newRanks = new Set(selectedRanks);
+                                if (newRanks.has(rank)) {
+                                  newRanks.delete(rank);
+                                } else {
+                                  newRanks.add(rank);
+                                }
+                                handleRanksChange(newRanks);
+                              }}
+                            />
+                            <label 
+                              htmlFor={`rank-${rank}`}
+                              className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
+                            >
+                              {rank}
+                            </label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
+
+              {/* Display selected ranks */}
+              {Array.from(selectedRanks).map(rank => (
+                <button
+                  key={rank}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 font-medium"
+                  onClick={() => {
+                    const newRanks = new Set(selectedRanks);
+                    newRanks.delete(rank);
+                    handleRanksChange(newRanks);
+                  }}
+                >
+                  {rank}
+                  <X className="ml-1 h-3 w-3" />
+                </button>
+              ))}
+
               {/* Clear all filters button */}
-              {(selectedTags.size > 0 || selectedCountries.size > 0) && (
+              {(selectedTags.size > 0 || selectedCountries.size > 0 || selectedRanks.size > 0) && (
                 <Button 
                   variant="ghost" 
                   size="sm" 
                   onClick={() => {
                     handleTagsChange(new Set());
                     handleCountriesChange(new Set());
+                    handleRanksChange(new Set());
                   }}
                   className="text-neutral-500 hover:text-neutral-700"
                 >
