@@ -21,6 +21,7 @@ const ConferenceCard = ({
   city,
   country,
   venue,
+  format,
   ...conferenceProps
 }: Conference) => {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -124,7 +125,7 @@ const ConferenceCard = ({
           {location && (
             <div className="flex items-center text-neutral">
               <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
-              <span className="text-sm truncate">{location}</span>
+              <span className="text-sm truncate">{location} ({format})</span>
             </div>
           )}
           {rankings && (

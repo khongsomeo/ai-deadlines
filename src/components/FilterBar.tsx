@@ -3,6 +3,7 @@ import conferencesData from "@/data/conferences.yml";
 import { X, ChevronRight, Filter } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
 import { getAllRanks } from "@/utils/rankExtractor";
+import { getAllFormats } from "@/utils/formatExtractor";
 import {
   Popover,
   PopoverContent,
@@ -15,19 +16,23 @@ import { Conference } from "@/types/conference";
 interface FilterBarProps {
   selectedTags: Set<string>;
   selectedCountries: Set<string>;
-  selectedRanks: Set<string>; // Add this
+  selectedRanks: Set<string>;
+  selectedFormats: Set<string>; // Add this
   onTagSelect: (tags: Set<string>) => void;
   onCountrySelect: (countries: Set<string>) => void;
-  onRankSelect: (ranks: Set<string>) => void; // Add this
+  onRankSelect: (ranks: Set<string>) => void;
+  onFormatSelect: (formats: Set<string>) => void; // Add this
 }
 
 const FilterBar = ({ 
   selectedTags = new Set(), 
   selectedCountries = new Set(),
-  selectedRanks = new Set(), // Add this
+  selectedRanks = new Set(),
+  selectedFormats = new Set(),
   onTagSelect,
   onCountrySelect,
-  onRankSelect // Add this
+  onRankSelect,
+  onFormatSelect
 }: FilterBarProps) => {
   const uniqueTags = useMemo(() => {
     const tags = new Set<string>();
@@ -54,6 +59,13 @@ const FilterBar = ({
     return [];
   }, []);
 
+  const formats = useMemo(() => {
+    if (Array.isArray(conferencesData)) {
+      return getAllFormats(conferencesData);
+    }
+    return [];
+  }, []);
+
   const isTagSelected = (tagId: string) => {
     return selectedTags?.has(tagId) ?? false;
   };
@@ -71,7 +83,8 @@ const FilterBar = ({
   const clearAllFilters = () => {
     onTagSelect(new Set());
     onCountrySelect(new Set());
-    onRankSelect(new Set()); // Add this
+    onRankSelect(new Set());
+    onFormatSelect(new Set()); // Add this
   };
 
   return (
@@ -159,8 +172,56 @@ const FilterBar = ({
             </PopoverContent>
           </Popover>
 
+          {/* Add Format Filter Popover */}
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" size="sm" className="h-8 gap-1">
+                <Filter className="h-4 w-4" />
+                Filter by Format
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-64 p-4" align="start">
+              <div className="space-y-4">
+                <div>
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-gray-800">Format</h4>
+                  </div>
+                  <div 
+                    className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y" 
+                    style={{ WebkitOverflowScrolling: "touch" }}
+                  >
+                    {formats.map(format => (
+                      <div key={format} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                        <Checkbox 
+                          id={`format-${format}`}
+                          checked={selectedFormats.has(format)}
+                          onCheckedChange={() => {
+                            const newFormats = new Set(selectedFormats);
+                            if (newFormats.has(format)) {
+                              newFormats.delete(format);
+                            } else {
+                              newFormats.add(format);
+                            }
+                            onFormatSelect(newFormats);
+                          }}
+                        />
+                        <label 
+                          htmlFor={`format-${format}`}
+                          className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
+                        >
+                          {format}
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
+
           {/* Clear all filters button */}
-          {(selectedTags.size > 0 || selectedCountries.size > 0 || selectedRanks.size > 0) && (
+          {(selectedTags.size > 0 || selectedCountries.size > 0 || 
+            selectedRanks.size > 0 || selectedFormats.size > 0) && (
             <Button 
               variant="ghost" 
               size="sm" 
@@ -197,6 +258,22 @@ const FilterBar = ({
               }}
             >
               {rank}
+              <X className="ml-1 h-3 w-3" />
+            </button>
+          ))}
+
+          {/* Display selected formats */}
+          {Array.from(selectedFormats).map(format => (
+            <button
+              key={format}
+              className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 font-medium"
+              onClick={() => {
+                const newFormats = new Set(selectedFormats);
+                newFormats.delete(format);
+                onFormatSelect(newFormats);
+              }}
+            >
+              {format}
               <X className="ml-1 h-3 w-3" />
             </button>
           ))}

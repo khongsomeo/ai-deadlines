@@ -6,15 +6,14 @@ import { Conference } from "@/types/conference";
 import { useState, useMemo, useEffect } from "react";
 import { Switch } from "@/components/ui/switch"
 import { parseISO, isValid, isPast } from "date-fns";
-import { extractCountry } from "@/utils/countryExtractor";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { X, ChevronRight, Filter, Globe, ChartNoAxesColumn } from "lucide-react";
+import { X, Globe, ChartNoAxesColumn } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
 import { getDeadlineInLocalTime } from "@/utils/dateUtils";
-import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
 import { getAllRanks } from "@/utils/rankExtractor";
+import { getAllFormats } from "@/utils/formatExtractor";
 
 const Index = () => {
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
@@ -22,6 +21,7 @@ const Index = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showPastConferences, setShowPastConferences] = useState(false);
   const [selectedRanks, setSelectedRanks] = useState<Set<string>>(new Set());
+  const [selectedFormats, setSelectedFormats] = useState<Set<string>>(new Set());
 
   // Category buttons configuration
   const categoryButtons = [
@@ -65,7 +65,11 @@ const Index = () => {
         const matchesRank = selectedRanks.size === 0 || 
           (conf.rankings?.rank_name && selectedRanks.has(conf.rankings.rank_name));
         
-        return matchesTags && matchesCountry && matchesRank && matchesSearch;
+        // Add format filter
+        const matchesFormat = selectedFormats.size === 0 || 
+          (conf.format && selectedFormats.has(conf.format));
+        
+        return matchesTags && matchesCountry && matchesRank && matchesFormat && matchesSearch;
       })
       .sort((a: Conference, b: Conference) => {
         const aDeadline = getDeadlineInLocalTime(a.deadline, a.timezone);
@@ -82,7 +86,7 @@ const Index = () => {
         
         return 0;
       });
-  }, [selectedTags, selectedCountries, selectedRanks, searchQuery, showPastConferences]);
+  }, [selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences]);
 
   // Update handleTagsChange to handle multiple tags
   const handleTagsChange = (newTags: Set<string>) => {
@@ -118,6 +122,17 @@ const Index = () => {
     window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
   };
 
+  const handleFormatsChange = (newFormats: Set<string>) => {
+    setSelectedFormats(newFormats);
+    const searchParams = new URLSearchParams(window.location.search);
+    if (newFormats.size > 0) {
+      searchParams.set('formats', Array.from(newFormats).join(','));
+    } else {
+      searchParams.delete('formats');
+    }
+    window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
+  };
+
   // Toggle a single tag
   const toggleTag = (tag: string) => {
     const newTags = new Set(selectedTags);
@@ -135,6 +150,7 @@ const Index = () => {
     const tagsParam = searchParams.get('tags');
     const countriesParam = searchParams.get('countries');
     const ranksParam = searchParams.get('ranks');
+    const formatsParam = searchParams.get('formats');
 
     if (tagsParam) {
       const tags = tagsParam.split(',');
@@ -150,6 +166,11 @@ const Index = () => {
       const ranks = ranksParam.split(',');
       setSelectedRanks(new Set(ranks));
     }
+
+    if (formatsParam) {
+      const formats = formatsParam.split(',');
+      setSelectedFormats(new Set(formats));
+    }
   }, []);
 
   if (!Array.isArray(conferencesData)) {
@@ -158,10 +179,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-neutral-light">
-      <Header 
-        onSearch={setSearchQuery} 
-        showEmptyMessage={false}
-      />
+      <Header onSearch={setSearchQuery} showEmptyMessage={false} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 py-4">
           {/* Category filter buttons */}
@@ -267,6 +285,70 @@ const Index = () => {
                 </button>
               ))}
 
+
+              {/* Format filter popover */}
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline" size="sm" className="h-8 gap-1">
+                    <Globe className="h-4 w-4" />
+                    Filter by Format
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-64 p-4 bg-white" align="start">
+                  <div className="space-y-4">
+                    <div>
+                      <div className="mb-4">
+                        <h4 className="text-sm font-medium text-gray-800">Format</h4>
+                      </div>
+                      <div 
+                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y" 
+                        style={{ WebkitOverflowScrolling: "touch" }}
+                      >
+                        {getAllFormats(conferencesData as Conference[]).map(format => (
+                          <div key={format} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                            <Checkbox 
+                              id={`format-${format}`}
+                              checked={selectedFormats.has(format)}
+                              onCheckedChange={() => {
+                                const newFormats = new Set(selectedFormats);
+                                if (newFormats.has(format)) {
+                                  newFormats.delete(format);
+                                } else {
+                                  newFormats.add(format);
+                                }
+                                handleFormatsChange(newFormats);
+                              }}
+                            />
+                            <label 
+                              htmlFor={`format-${format}`}
+                              className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
+                            >
+                              {format}
+                            </label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
+
+              {/* Display selected formats */}
+              {Array.from(selectedFormats).map(format => (
+                <button
+                  key={format}
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 font-medium"
+                  onClick={() => {
+                    const newFormats = new Set(selectedFormats);
+                    newFormats.delete(format);
+                    handleFormatsChange(newFormats);
+                  }}
+                >
+                  {format}
+                  <X className="ml-1 h-3 w-3" />
+                </button>
+              ))}
+
               {/* Rank filter popover */}
               <Popover>
                 <PopoverTrigger asChild>
@@ -331,7 +413,7 @@ const Index = () => {
               ))}
 
               {/* Clear all filters button */}
-              {(selectedTags.size > 0 || selectedCountries.size > 0 || selectedRanks.size > 0) && (
+              {(selectedTags.size > 0 || selectedCountries.size > 0 || selectedRanks.size > 0 || selectedFormats.size > 0) && (
                 <Button 
                   variant="ghost" 
                   size="sm" 
@@ -339,6 +421,7 @@ const Index = () => {
                     handleTagsChange(new Set());
                     handleCountriesChange(new Set());
                     handleRanksChange(new Set());
+                    handleFormatsChange(new Set());
                   }}
                   className="text-neutral-500 hover:text-neutral-700"
                 >

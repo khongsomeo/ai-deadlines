@@ -11,6 +11,7 @@ export interface Conference {
   city?: string;
   country?: string;
   venue?: string;
+  format?: string;
   tags?: string[];
   note?: string;
   abstract_deadline?: string;
