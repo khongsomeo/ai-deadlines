@@ -16,7 +16,18 @@ interface DeadlineProgressProps {
 const DAYS_BEFORE_START = 30; // Number of days to extend the timeline before the first deadline
 
 const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
-  const validSteps = steps.filter(step => step.date !== 'TBD');
+  // Filter out TBD steps
+  const validSteps = steps.filter(step => {
+    const date = step.date !== 'TBD' ? getDeadlineInLocalTime(step.date, step.timezone) : null;
+    return date && isValid(date);
+  }).sort((a, b) => {
+    // Sort steps by date to ensure proper progression
+    const dateA = getDeadlineInLocalTime(a.date, a.timezone);
+    const dateB = getDeadlineInLocalTime(b.date, b.timezone);
+    if (!dateA || !dateB) return 0;
+    return dateA.getTime() - dateB.getTime();
+  });
+
   const barRef = useRef<HTMLDivElement>(null);
   const [barWidth, setBarWidth] = useState(0);
 
@@ -35,27 +46,35 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
   if (validSteps.length === 0) return null;
 
   const now = new Date();
+  const singleDeadline = validSteps.length === 1;
   const firstStepDate = getDeadlineInLocalTime(validSteps[0].date, validSteps[0].timezone);
-  const lastStepDate = getDeadlineInLocalTime(validSteps[validSteps.length - 1].date, validSteps[validSteps.length - 1].timezone);
+  const lastStepDate = singleDeadline 
+    ? firstStepDate // Use same date for lastStepDate in single deadline case
+    : getDeadlineInLocalTime(validSteps[validSteps.length - 1].date, validSteps[validSteps.length - 1].timezone);
+
+  if (!firstStepDate || !lastStepDate || !isValid(firstStepDate) || !isValid(lastStepDate)) {
+    return null;
+  }
 
   // Calculate extended start date (30 days before first deadline)
-  const extendedStartDate = firstStepDate && isValid(firstStepDate) 
-    ? new Date(firstStepDate.getTime() - (DAYS_BEFORE_START * 24 * 60 * 60 * 1000))
-    : null;
+  const extendedStartDate = new Date(firstStepDate.getTime() - (DAYS_BEFORE_START * 24 * 60 * 60 * 1000));
 
   // Calculate progress position in px with extended timeline
   let progressPx = 0;
-  if (extendedStartDate && firstStepDate && lastStepDate && 
-      isValid(extendedStartDate) && isValid(firstStepDate) && isValid(lastStepDate) && 
-      barWidth > 0) {
+  if (barWidth > 0) {
     const totalWidth = barWidth;
-    const preDeadlineWidth = totalWidth * 0.2; // 20% of bar for pre-deadline period
-    const deadlineWidth = totalWidth * 0.8; // 80% of bar for actual deadlines
+    const preDeadlineWidth = totalWidth * 0.2;
+    const deadlineWidth = totalWidth * 0.8;
 
     if (now <= extendedStartDate) {
       progressPx = 0;
     } else if (now >= lastStepDate) {
       progressPx = totalWidth;
+    } else if (singleDeadline) {
+      // Special handling for single deadline
+      const progress = (now.getTime() - extendedStartDate.getTime()) / 
+                      (firstStepDate.getTime() - extendedStartDate.getTime());
+      progressPx = Math.min(totalWidth, progress * totalWidth);
     } else if (now < firstStepDate) {
       // Calculate progress in pre-deadline period
       const progress = (now.getTime() - extendedStartDate.getTime()) / 
@@ -69,19 +88,21 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     }
   }
 
-  // Adjust step positions to account for extended timeline
+  // Calculate step positions
   const stepPositions = validSteps.map(step => {
     const stepDate = getDeadlineInLocalTime(step.date, step.timezone);
-    if (firstStepDate && lastStepDate && stepDate && 
-        isValid(firstStepDate) && isValid(lastStepDate) && isValid(stepDate) && 
-        barWidth > 0) {
+    if (!stepDate || !isValid(stepDate)) return 0;
+
+    if (singleDeadline) {
+      // Place single deadline at the end
+      return barWidth;
+    } else {
       const preDeadlineWidth = barWidth * 0.2;
       const deadlineWidth = barWidth * 0.8;
       return preDeadlineWidth + 
              ((differenceInMilliseconds(stepDate, firstStepDate) / 
                differenceInMilliseconds(lastStepDate, firstStepDate)) * deadlineWidth);
     }
-    return 0;
   });
 
   return (
