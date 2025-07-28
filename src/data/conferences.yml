@@ -28,6 +28,31 @@
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/473/
 
+- title: DATA
+  year: 2026
+  id: data2026
+  full_name: International Conference on Data Science, Technology and Applications 
+  link: "https://data.scitevents.org/"
+  deadline: "2026-03-03 23:59:00"
+  final_decision_date: "2026-04-30 07:59:59"
+  timezone: UTC-12
+  city: Porto
+  country: Portugal
+  venue: TBD
+  format: hybrid
+  date: July 16-18, 2026
+  start: 2026-07-16
+  end: 2026-07-18
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - computer-vision
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2302/
+
 - title: ICPRAM
   year: 2026
   id: icpram2026
@@ -429,7 +454,7 @@
   city: Osaka
   country: Japan
   venue: Ritsumeikan University - Osaka Ibaraki Campus (OIC), 2-150 Iwakuracho, Ibaraki
-  format: in-person
+  format: hybrid
   date: September 12-15, 2025
   start: 2025-09-12
   end: 2025-09-15
