@@ -1,3 +1,62 @@
+- title: ECAI
+  year: 2025
+  id: ecai2025
+  full_name: European Conference on Artificial Intelligence
+  link: "https://ecai2025.org/"
+  abstact_deadline: "2025-04-29 23:59:00"
+  deadline: "2025-05-06 23:59:00"
+  rebuttal_period_start: "2025-06-23 07:59:59"
+  rebuttal_period_end: "2025-06-25 23:59:00"
+  final_decision_date: "2025-07-10 07:59:59"
+  timezone: UTC-12
+  city: Bologna
+  country: Italy
+  venue: Bologna Congress Center, P.za della Costituzione, 4 
+  format: in-person
+  date: October 25-30, 2025
+  start: 2025-10-25
+  end: 2025-10-30
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/473/
+
+- title: ICPRAM
+  year: 2026
+  id: icpram2026
+  full_name: International Conference on Pattern Recognition Applications and Methods 
+  link: "https://icpram.scitevents.org/"
+  deadline: "2025-10-02 23:59:00"
+  final_decision_date: "2025-12-04 07:59:59"
+  timezone: UTC-12
+  city: Marbella
+  country: Spain
+  venue: Barceló Marbella, Urbanizacion Guadalmina Alta 29670 
+  format: hybrid
+  date: March 02-04, 2026
+  start: 2026-03-02
+  end: 2026-03-04
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - speech-processing
+      - signal-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2230/
+
 - title: AIAI
   year: 2026
   id: aiai2025
@@ -25,7 +84,6 @@
       rank_name: C
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/2186/
-  note: "Hybrid format"
 
 - title: MIWAI
   year: 2025
@@ -53,7 +111,6 @@
       rank_name: Non-ranked
       rank_source: Springer LNAI - Scopus indexed
       rank_source_url: https://link.springer.com/conference/miwai
-  note: "Hybrid format"
 
 - title: NeurIPS
   year: 2025
@@ -880,7 +937,7 @@
   timezone: UTC-12
   city: Marbella
   country: Spain
-  venue: TBD
+  venue: Barceló Marbella, Urbanizacion Guadalmina Alta 29670 
   format: hybrid
   date: March 5-7, 2026
   start: 2026-03-05

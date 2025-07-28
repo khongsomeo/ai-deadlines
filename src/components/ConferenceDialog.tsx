@@ -25,25 +25,24 @@ interface ConferenceDialogProps {
 }
 
 const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogProps) => {
-  console.log('Conference object:', conference);
   const deadlineDate = getDeadlineInLocalTime(conference.deadline, conference.timezone);
   const [countdown, setCountdown] = useState<string>('');
 
   // Replace the current location string creation with this more verbose version
   const getLocationString = () => {
-    console.log('Venue:', conference.venue);
-    console.log('City:', conference.city);
-    console.log('Country:', conference.country);
+    // console.log('Venue:', conference.venue);
+    // console.log('City:', conference.city);
+    // console.log('Country:', conference.country);
 
     if (conference.venue) {
       return conference.venue;
     }
 
     const cityCountryArray = [conference.city, conference.country].filter(Boolean);
-    console.log('City/Country array after filter:', cityCountryArray);
+    // console.log('City/Country array after filter:', cityCountryArray);
     
     const cityCountryString = cityCountryArray.join(", ");
-    console.log('Final location string:', cityCountryString);
+    // console.log('Final location string:', cityCountryString);
 
     return cityCountryString || "Location TBD"; // Fallback if everything is empty
   };
