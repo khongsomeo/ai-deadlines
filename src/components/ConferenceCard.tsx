@@ -94,6 +94,24 @@ const ConferenceCard = ({
     window.dispatchEvent(new CustomEvent('urlchange', { detail: { tag } }));
   };
 
+  // Add this function inside ConferenceCard component, before the render return
+  const getRankBadgeStyles = () => {
+    if (!rankings?.rank_name) return "text-gray-600 bg-gray-100";
+    
+    switch (rankings.rank_name.toUpperCase()) {
+      case "A*":
+        return "text-red-600";
+      case "A":
+        return "text-orange-600";
+      case "B":
+        return "text-blue-600";
+      case "C":
+        return "text-green-600";
+      default:
+        return "text-gray-600";
+    }
+  };
+
   return (
     <>
       <div 
@@ -131,15 +149,17 @@ const ConferenceCard = ({
           {rankings && (
             <div className="flex items-center text-neutral">
               <ChartNoAxesColumn className="h-4 w-4 mr-2 flex-shrink-0" />
-              <span className="text-sm truncate">
-                Rank: {rankings.rank_name} <a 
-                  href={rankings.rank_source_url}
+              <div className="flex items-center gap-2">
+                <a 
+                  href={rankings.rank_source_url} 
+                  className={`text-sm py-0.5 font-medium ${getRankBadgeStyles()} hover:underline`}
                   target="_blank"
                   rel="noopener noreferrer" 
-                  className="text-primary"
-                  onClick={(e) => e.stopPropagation()}  
-                >({rankings.rank_source})</a>
-              </span>
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {rankings.rank_name} ({rankings.rank_source})
+                </a>
+              </div>
             </div>
           )}
           <div className="flex items-center text-neutral">

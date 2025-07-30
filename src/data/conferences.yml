@@ -134,7 +134,7 @@
       - human-computer-interaction
   rankings:
       rank_name: Non-ranked
-      rank_source: Springer LNAI - Scopus indexed
+      rank_source: Springer LNAI
       rank_source_url: https://link.springer.com/conference/miwai
 
 - title: NeurIPS
@@ -575,7 +575,7 @@
       - robotics
   rankings:
       rank_name: Non-ranked
-      rank_source: IEEE Xplore - Scopus indexed
+      rank_source: IEEE Xplore
       rank_source_url: https://dblp.org/db/conf/mapr/index.html
 
 - title: LREC
@@ -722,7 +722,7 @@
       - natural-language-processing
   rankings:
       rank_name: Non-ranked
-      rank_source: Springer LNAI - Scopus indexed
+      rank_source: Springer LNAI
       rank_source_url: https://link.springer.com/conference/iukm
 
 - title: ESANN
@@ -850,7 +850,7 @@
       - human-computer-interaction
   rankings:
       rank_name: Non-ranked
-      rank_source: Springer CCIS - Scopus indexed
+      rank_source: Springer CCIS
       rank_source_url: https://link.springer.com/conference/soict
 
 - title: Interspeech
