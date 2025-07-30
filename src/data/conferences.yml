@@ -1,3 +1,49 @@
+- title: NLDB
+  year: 2025
+  id: nldb2025
+  full_name: International Conference on Natural Language & Information Systems
+  link: "https://www.jaist.ac.jp/event/nldb2025/about.html"
+  deadline: "2025-03-16 23:59:00"
+  final_decision_date: "2025-04-25 07:59:59"
+  timezone: UTC-12
+  city: Kanazawa
+  country: Japan
+  venue: Kanazawa Chamber of Commerce and Industry (9-13 Oyamamachi, Kanazawa, Ishikawa 920-0918, Japan)
+  format: in-person
+  date: July 04-06, 2025
+  start: 2025-07-04
+  end: 2025-07-06
+  tags:
+      - natural-language-processing
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/144/
+
+- title: EJC
+  year: 2025
+  id: ejc2025
+  full_name: International Conference on Information Modelling and Knowledge Bases
+  link: "https://ejc2025.vsb.cz/index.html"
+  deadline: "2025-02-05 23:59:00"
+  final_decision_date: "2025-04-30 07:59:59"
+  timezone: UTC-12
+  city: Ostrava – Poruba
+  country: Czech Republic   
+  venue: Faculty of Electrical Engineering and Computer Science (building FEI), VSB - Technical University of Ostrava, 17. listopadu 2172/15
+  format: in-person
+  date: June 09-13, 2025
+  start: 2025-06-09
+  end: 2025-06-13
+  tags:
+      - data-mining
+      - natural-language-processing
+      - computer-vision
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/524/
+
 - title: ECAI
   year: 2025
   id: ecai2025
