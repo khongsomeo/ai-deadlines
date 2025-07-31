@@ -93,9 +93,13 @@ const FilterBar = ({
         <div className="flex flex-wrap items-center gap-2">
           <Popover>
             <PopoverTrigger asChild>
-              <Button variant="outline" size="sm" className="h-8 gap-1">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className={`h-8 gap-1 ${selectedTags.size > 0 ? 'bg-blue-50 border-blue-200' : ''}`}
+              >
                 <Filter className="h-4 w-4" />
-                Filter by Tag
+                Filter by Tag {selectedTags.size > 0 && `(${selectedTags.size})`}
               </Button>
             </PopoverTrigger>
             <PopoverContent className="w-80 p-4" align="start">

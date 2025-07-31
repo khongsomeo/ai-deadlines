@@ -88,6 +88,25 @@ const Index = () => {
       });
   }, [selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences]);
 
+  // Add event listener for tag clicks
+  useEffect(() => {
+    const handleFilterByTag = (event: CustomEvent<{ tag: string }>) => {
+      const tag = event.detail.tag;
+      // Create new set with existing tags and add the new one
+      const newTags = new Set(selectedTags);
+      newTags.add(tag);
+      handleTagsChange(newTags);
+    };
+
+    // Add event listener
+    window.addEventListener('filterByTag', handleFilterByTag as EventListener);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('filterByTag', handleFilterByTag as EventListener);
+    };
+  }, [selectedTags]); // Add selectedTags to dependency array
+
   // Update handleTagsChange to handle multiple tags
   const handleTagsChange = (newTags: Set<string>) => {
     setSelectedTags(newTags);

@@ -73,25 +73,12 @@ const ConferenceCard = ({
 
   const handleTagClick = (e: React.MouseEvent, tag: string) => {
     e.stopPropagation();
-    const searchParams = new URLSearchParams(window.location.search);
-    const currentTags = searchParams.get('tags')?.split(',') || [];
     
-    let newTags;
-    if (currentTags.includes(tag)) {
-      newTags = currentTags.filter(t => t !== tag);
-    } else {
-      newTags = [...currentTags, tag];
-    }
-    
-    if (newTags.length > 0) {
-      searchParams.set('tags', newTags.join(','));
-    } else {
-      searchParams.delete('tags');
-    }
-    
-    const newUrl = `${window.location.pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ''}`;
-    window.history.pushState({}, '', newUrl);
-    window.dispatchEvent(new CustomEvent('urlchange', { detail: { tag } }));
+    // Create a custom event with the selected tag
+    const event = new CustomEvent('filterByTag', {
+      detail: { tag }
+    });
+    window.dispatchEvent(event);
   };
 
   // Add this function inside ConferenceCard component, before the render return
