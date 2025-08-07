@@ -497,19 +497,23 @@
   link: "https://iclr.cc/Conferences/2026"
   abstract_deadline: "2025-09-19 23:59:00"
   deadline: "2025-09-24 23:59:00"
-  review_release_date: "2025-11-11 07:59:59"
+  rebuttal_period_start: "2025-11-11 07:59:59"
   rebuttal_period_end: "2025-12-03 23:59:00"
   final_decision_date: "2026-01-22 07:59:59"
   timezone: UTC-12
-  city: TBD
-  country: TBD
+  city: Rio de Janeiro
+  country: Brazil
   venue: TBD
-  format: TBD
-  date: TBD
-  start: TBD
-  end: TBD
+  format: in-person
+  date: April 23-27, 2026
+  start: 2026-04-23
+  end: 2026-04-27
   tags:
       - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
   rankings:
       rank_name: A*
       rank_source: CORE2023
@@ -570,24 +574,24 @@
       rank_source_url: https://portal.core.edu.au/conf-ranks/1113/
 
 - title: ACL
-  year: 2025
-  id: acl2025
+  year: 2026
+  id: acl2026
   full_name: Annual Meeting of the Association for Computational Linguistics
-  link: "https://2025.aclweb.org/"
-  deadline: "2025-02-15 23:59:00"
-  rebuttal_period_start: "2025-03-27 07:59:59"
-  rebuttal_period_end: "2025-04-03 23:59:00"
-  review_release_date: "2025-04-15 07:59:59"
-  commitment_deadline: "2025-04-20 23:59:59"
-  final_decision_date: "2025-05-15 07:59:59"
+  link: "https://2026.aclweb.org/"
+  deadline: TBD
+  rebuttal_period_start: TBD
+  rebuttal_period_end: TBD
+  review_release_date: TBD
+  commitment_deadline: TBD
+  final_decision_date: TBD
   timezone: UTC-12
-  city: Vienna
-  country: Austria
-  venue: Austria Center Vienna Bruno-Kreisky-Platz 1, 1220 Wien, Austria
+  city: San Diego, CA
+  country: United States
+  venue: Grand Hyatt Manchester San Diego, 1 Market Place, San Diego, CA 92101
   format: hybrid
-  date: July 28-30, 2025
-  start: 2025-07-27
-  end: 2025-07-30
+  date: July 02-07, 2026
+  start: 2026-07-02
+  end: 2026-07-07
   tags:
       - natural-language-processing
       - speech-processing
@@ -595,7 +599,7 @@
       rank_name: A*
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/196/
-  note: "<b>ACL Rolling Review</b>; Hybrid format"
+  note: "<b>Janauary 2026 ACL Rolling Review</b>"
 
 - title: NAACL
   year: 2025
@@ -623,7 +627,7 @@
       rank_name: A
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/1648/
-  note: "<b>ACL Rolling Review</b>; Hybrid format"
+  note: "<b>ACL Rolling Review</b>"
 
 - title: INLG
   year: 2025
@@ -749,7 +753,7 @@
       rank_name: B
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/949/
-  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format (January 27-28)"
+  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>"
 
 - title: ECIR
   year: 2026
