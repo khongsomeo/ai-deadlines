@@ -1,3 +1,31 @@
+- title: IEA/AIE
+  year: 2026
+  id: iea_aie2026
+  full_name: International Conference on Industrial, Engineering & Other Applications of Applied Intelligent Systems
+  link: "https://www.i-somet.org/iea-aie2026"
+  deadline: "2025-12-25 23:59:00"
+  final_decision_date: "2026-03-12 23:59:00"
+  timezone: UTC-12
+  city: Kuala Lumpur
+  country: Malaysia
+  venue: TBA
+  format: hybrid
+  date: July 06-09, 2026
+  start: 2026-07-06
+  end: 2026-07-09
+  tags:
+      - machine-learning
+      - data-mining
+      - computer-vision
+      - natural-language-processing
+      - speech-processing
+      - human-computer-interaction
+      - robotics
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1064/
+
 - title: ICPR
   year: 2026
   id: icpr2026
