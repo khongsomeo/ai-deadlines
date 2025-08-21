@@ -106,7 +106,7 @@ const ConferenceCard = ({
         onClick={handleCardClick}
       >
         <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-semibold text-primary">
+          <h3 className={`text-lg font-semibold ${getRankBadgeStyles()}`}>
             {title} {year}
           </h3>
           {link && (
