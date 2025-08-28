@@ -1,3 +1,84 @@
+- title: SIGDIAL
+  year: 2025
+  id: sigdial2025
+  full_name: Annual Meeting of the Special Interest Group on Discourse and Dialogue
+  link: "https://2025.sigdial.org/"
+  deadline: "2025-04-21 23:59:00"
+  commitment_deadline: "2025-06-06 23:59:00"
+  final_decision_date: "2025-06-20 07:59:00"
+  timezone: UTC-12
+  city: Avignon
+  country: France
+  venue: Avignon Université, 74 Rue Louis Pasteur, 84029
+  format: in-person
+  date: August 25-27, 2025
+  start: 2025-08-25
+  end: 2025-08-27
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1729/
+  note: "ARR"
+
+- title: CIKM
+  year: 2025
+  id: cikm2025
+  full_name: ACM Conference on Information and Knowledge Management
+  link: "https://cikm2025.org/"
+  abstract_deadline: "2025-05-16 23:59:00"
+  deadline: "2025-05-23 23:59:00"
+  final_decision_date: "2025-08-04 07:59:00"
+  timezone: UTC-12
+  city: Seoul
+  country: Korea
+  venue: COEX, 513, Yeongdong-daero, Gangnam-gu 
+  format: in-person
+  date: November 10-14, 2025
+  start: 2025-11-10
+  end: 2025-11-14
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/25/
+
+- title: AAMAS
+  year: 2026
+  id: aamas2026
+  full_name: International Conference on Autonomous Agents and Multiagent Systems
+  link: "https://cyprusconferences.org/aamas2026/"
+  abstract_deadline: "2025-10-01 23:59:00"
+  deadline: "2025-10-08 23:59:00"
+  rebuttal_period_start: "2025-11-21 07:59:00"
+  rebuttal_period_end: "2025-11-25 23:59:00"
+  final_decision_date: "2025-12-22 07:59:00"
+  timezone: UTC-12
+  city: Paphos
+  country: Cyprus
+  venue: Coral Beach Hotel & Resort, Coral Bay Ave 70, Peyia 8575
+  format: in-person
+  date: May 25-29, 2026
+  start: 2026-05-25
+  end: 2026-05-29
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - robotics
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/922/
+  note: "OpenReview submission"
+
 - title: IEA/AIE
   year: 2026
   id: iea_aie2026
