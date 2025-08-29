@@ -1,3 +1,32 @@
+- title: AISTATS
+  year: 2026
+  id: aistats2025
+  full_name: Annual Conference on Artificial Intelligence and Statistics
+  link: "https://virtual.aistats.org/"
+  abstract_deadline: "2025-09-25 23:59:00"
+  deadline: "2025-10-02 23:59:00"
+  rebuttal_period_start: TBD
+  rebuttal_period_end: TBD
+  final_decision_date: TBD
+  timezone: UTC-12
+  city: Tangier
+  country: Morocco
+  venue: TBD
+  format: in-person
+  date: May 02-05, 2026
+  start: 2026-05-02
+  end: 2026-05-05
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - signal-processing
+      - computer-vision
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/913/
+  note: "OpenReview submission"
+
 - title: SIGDIAL
   year: 2025
   id: sigdial2025
