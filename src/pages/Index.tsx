@@ -241,7 +241,7 @@ const Index = () => {
               />
             </div>
             
-            <div className="flex items-center gap-2 bg-white p-2 rounded-md shadow-sm">
+            <div className="flex flex-wrap items-center gap-2 bg-white p-2 rounded-md shadow-sm">
               <Popover>
                 <PopoverTrigger asChild>
                   <Button variant="outline" size="sm" className="h-8 gap-1">
