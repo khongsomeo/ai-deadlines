@@ -569,23 +569,23 @@
   note: "OpenReview submission"
 
 - title: CVPR
-  year: 2025
-  id: cvpr2025
+  year: 2026
+  id: cvpr2026
   full_name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
   link: "https://cvpr.thecvf.com/"
-  abstract_deadline: "2024-11-08 23:59:00"
-  deadline: "2024-11-15 23:59:00"
-  review_release_date: "2024-11-23 07:59:59"
-  rebuttal_period_end: "2025-01-31 01:59:00"
-  final_decision_date: "2025-02-26 01:59:00"
-  timezone: UTC-7
-  city: Nashville TN
+  abstract_deadline: "2025-11-06 23:59:00"
+  deadline: "2025-11-13 23:59:00"
+  review_release_date: "2026-01-22 07:59:59"
+  rebuttal_period_end: "2026-01-29 23:59:00"
+  final_decision_date: "2026-02-20 07:59:00"
+  timezone: UTC-12
+  city: Denver CO
   country: United States
-  venue: Music City Center
+  venue: TBD
   format: in-person
-  date: June 11-15, 2025
-  start: 2025-06-11
-  end: 2025-06-15
+  date: June 05-07, 2025
+  start: 2025-06-05
+  end: 2025-06-07
   tags:
       - machine-learning
       - computer-vision
@@ -593,7 +593,7 @@
       rank_name: A*
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/604/
-  note: "OpenReview submission"
+  note: "<b>OpenReview submission</b>"
 
 - title: IJCAI
   year: 2025
