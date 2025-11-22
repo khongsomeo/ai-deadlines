@@ -192,6 +192,7 @@
       rank_name: B
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/1169/
+  note: "Review period start when reviews released."
 
 - title: ECML-PKDD
   year: 2025
@@ -276,7 +277,7 @@
   timezone: UTC-12
   city: Vaasa
   country: Finland
-  venue: TBD
+  venue: University of Vaasa, Wolffintie 32, 65200 Vaasa
   format: in-person
   date: June 08-12, 2026
   start: 2026-06-08
@@ -289,7 +290,7 @@
       rank_name: C
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/524/
-  note: "Submission site: http://ejc.komazawa-u.ac.jp/ejc2026review/ ; open in Autumn 2025."
+  note: "Submission site: http://ejc.komazawa-u.ac.jp/ejc2026review/"
 
 - title: ECAI
   year: 2025
@@ -1157,7 +1158,9 @@
   full_name: Interspeech
   link: "https://interspeech2026.org"
   deadline: "2026-02-25 23:59:00"
-  final_decision_date: TBD
+  rebuttal_period_start: "2026-04-24 07:59:00"
+  rebuttal_period_end: "2026-05-01 23:59:00"
+  final_decision_date: "2026-06-05 07:59:00"
   timezone: UTC-12
   city: Sydney
   country: Australia
@@ -1169,10 +1172,12 @@
   tags:
       - signal-processing
       - speech-processing
+      - natural-language-processing
   rankings:
       rank_name: A
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/494/
+  note: "Short paper maximum 4 pages, 8 pages to long paper."
 
 - title: PACLIC
   year: 2025
@@ -1281,7 +1286,7 @@
   id: aciids2026
   full_name: Asian Conference on Intelligent Information and Database Systems
   link: "https://aciids.pwr.edu.pl/2026/"
-  deadline: "2025-10-31 23:59:00"
+  deadline: "2025-11-30 23:59:00"
   final_decision_date: "2026-01-31 07:59:00"
   timezone: UTC-12
   city: Kaohsiung
@@ -1303,20 +1308,20 @@
       rank_source_url: https://portal.core.edu.au/conf-ranks/2188/
 
 - title: ICCCI
-  year: 2025
-  id: iccci2025
+  year: 2026
+  id: iccci2026
   full_name: International Conference on Computational Collective Intelligence
-  link: "https://iccci.pwr.edu.pl/2025/"
-  deadline: "2025-04-01 23:59:00"
-  final_decision_date: "2025-06-02 07:59:59"
+  link: "https://iccci.pwr.edu.pl/2026/"
+  deadline: "2026-02-01 23:59:00"
+  final_decision_date: "2026-04-01 07:59:59"
   timezone: UTC-12
-  city: Ho Chi Minh City
-  country: Vietnam
-  venue: Caravelle Hotel Saigon, 19-23 Lam Son Square, District 1
+  city: Crete
+  country: Greece
+  venue: Capsis Astoria Hotel 11 Eleftherias Sq., 712 01 Heraklion, Crete
   format: in-person
-  date: November 12-15, 2025
-  start: 2025-11-12
-  end: 2025-11-15
+  date: September 23-25, 2026
+  start: 2026-09-23
+  end: 2026-09-25
   tags:
       - machine-learning
       - natural-language-processing
