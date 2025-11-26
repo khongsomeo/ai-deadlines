@@ -1,3 +1,27 @@
+- title: KSEM
+  year: 2026
+  id: ksem2026
+  full_name: International Conference on Knowledge Science, Engineering and Management
+  link: "https://ksem2026.rosc.org.cn/"
+  deadline: "2026-01-15 23:59:00"
+  final_decision_date: "2026-03-15 07:59:00"
+  timezone: UTC-12
+  city: Beijing
+  country: PR China
+  venue: TBD
+  format: in-person
+  date: July 17-19, 2026
+  start: 2026-07-17
+  end: 2026-07-19
+  tags:
+      - natural-language-processing
+      - machine-learning
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1112/
+
+
 - title: EACL
   year: 2026
   id: eacl2026
@@ -597,23 +621,24 @@
   note: "<b>OpenReview submission</b>"
 
 - title: IJCAI
-  year: 2025
-  id: ijcai2025
+  year: 2026
+  id: ijcai2026
   full_name: International Joint Conference on Artificial Intelligence
-  link: "https://2025.ijcai.org/"
-  abstract_deadline: "2025-01-16 23:59:00"
-  deadline: "2025-01-23 23:59:00"
-  rebuttal_period_start: "2025-04-06 07:59:59"
-  rebuttal_period_end: "2025-04-09 23:59:00"
-  final_decision_date: "2025-04-28 07:59:59"
+  link: "https://2026.ijcai.org/"
+  abstract_deadline: "2026-01-12 23:59:00"
+  deadline: "2026-01-19 23:59:00"
+  review_release_date: "2026-03-04 07:59:00"
+  rebuttal_period_start: "2026-04-07 07:59:59"
+  rebuttal_period_end: "2026-04-10 23:59:00"
+  final_decision_date: "2026-04-29 07:59:59"
   timezone: UTC-12
-  city: Montreal
-  country: Canada
-  venue: Palais des congrès
+  city: Bremen
+  country: Germany
+  venue: TBD
   format: in-person
-  date: August 16-22, 2025
-  start: 2025-08-16
-  end: 2025-08-22
+  date: August 15-21, 2026
+  start: 2026-08-15
+  end: 2026-08-21
   tags:
       - machine-learning
       - natural-language-processing
@@ -661,15 +686,15 @@
   note: "OpenReview submission"
 
 - title: ICML
-  year: 2025
-  id: icml2025
+  year: 2026
+  id: icml2026
   full_name: International Conference on Machine Learning
-  link: "https://icml.cc/Conferences/2025"
-  abstract_deadline: "2025-01-23 23:59:00"
-  deadline: "2025-01-30 23:59:00"
-  rebuttal_period_start: "2025-03-25 07:59:59"
-  rebuttal_period_end: "2025-04-13 23:59:00"
-  final_decision_date: "2025-05-01 07:59:59"
+  link: "https://icml.cc/Conferences/2026"
+  abstract_deadline: "2026-01-23 23:59:00"
+  deadline: "2026-01-28 23:59:00"
+  rebuttal_period_start: "TBD"
+  rebuttal_period_end: "TBD"
+  final_decision_date: "TBD"
   timezone: UTC-12
   city: Vancouver
   country: Candada
@@ -1360,20 +1385,20 @@
       rank_source_url: https://portal.core.edu.au/conf-ranks/1661/
 
 - title: ICANN
-  year: 2025
-  id: icann2025
+  year: 2026
+  id: icann2026
   full_name: International Conference on Artificial Neural Networks
-  link: "https://e-nns.org/icann2025/"
-  deadline: "2025-03-29 23:59:00"
-  final_decision_date: "2025-06-22 07:59:59"
+  link: "https://e-nns.org/icann2026/"
+  deadline: "2026-03-16 23:59:00"
+  final_decision_date: "TBD"
   timezone: UTC-12
-  city: Kaunas
-  country: Lithuania
-  venue: Campus of Vytautas Magnus University and Lithuanian University of Health Sciences
+  city: Padua
+  country: Italy
+  venue: Conference center of the School of Psychology, University of Padua, Italy
   format: in-person
-  date: September 9-12, 2025
-  start: 2025-09-09
-  end: 2025-09-12
+  date: September 14-17, 2026
+  start: 2026-09-14
+  end: 2026-09-17
   tags:
       - machine-learning
       - natural-language-processing
