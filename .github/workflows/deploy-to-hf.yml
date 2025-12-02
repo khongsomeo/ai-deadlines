@@ -8,7 +8,7 @@ on:
 
 env:
   # Configure your Hugging Face Space here (format: username/space-name)
-  HF_SPACE: nielsr/ai-deadlines-hub
+  HF_SPACE: huggingface/ai-deadlines
 
 jobs:
   deploy:
