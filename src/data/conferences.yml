@@ -219,21 +219,21 @@
   note: "Review period start when reviews released."
 
 - title: ECML-PKDD
-  year: 2025
-  id: ecmlpkdd2025
+  year: 2026
+  id: ecmlpkdd2026
   full_name: European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
   link: "https://ecmlpkdd.org/2026/"
-  abstract_deadline: "2025-03-07 23:59:00"
-  deadline: "2025-03-14 23:59:00"
-  final_decision_date: "2025-05-26 07:59:59"
+  abstract_deadline: "TBD"
+  deadline: "TBD"
+  final_decision_date: "TBD"
   timezone: UTC-12
-  city: Porto
-  country: Portugal
-  venue: Alfândega Porto Congress Centre
+  city: Naples
+  country: Italy
+  venue: TBD
   format: in-person
-  date: September 15-19, 2025
-  start: 2025-09-15
-  end: 2025-09-19
+  date: TBD
+  start: TBD
+  end: TBD
   tags:
       - machine-learning
       - data-mining
@@ -767,20 +767,20 @@
       rank_source_url: https://portal.core.edu.au/conf-ranks/1251/
 
 - title: KES
-  year: 2025
-  id: kes2025
+  year: 2026
+  id: kes2026
   full_name: International Conference on Knowledge-Based and Intelligent Information & Engineering Systems
-  link: "http://kes2025.kesinternational.org/"
-  deadline: "2025-04-14 23:59:00"
-  final_decision_date: "2025-05-22 07:59:59"
+  link: "http://kes2026.kesinternational.org/"
+  deadline: "TBD"
+  final_decision_date: "TBD"
   timezone: UTC-12
-  city: Osaka
-  country: Japan
-  venue: Ritsumeikan University - Osaka Ibaraki Campus (OIC), 2-150 Iwakuracho, Ibaraki
+  city: Dublin
+  country: Ireland
+  venue: Royal Marine Hotel, Marine Rd, Dún Laoghaire, Dublin, A96 K063, Ireland
   format: hybrid
-  date: September 12-15, 2025
-  start: 2025-09-12
-  end: 2025-09-15
+  date: September 09-11, 2026
+  start: 2026-09-09
+  end: 2026-09-11
   tags:
       - data-mining
       - machine-learning
@@ -1027,20 +1027,20 @@
   note: "3 events at WCCI: The International Joint Conference on Neural Networks (IJCNN), the IEEE International Conference on Fuzzy Systems (FUZZ-IEEE) and the IEEE Congress on Evolutionary Computation (IEEE CEC) - all 3 ranked B in CORE2023."
 
 - title: IUKM
-  year: 2025
-  id: iukm2025
+  year: 2026
+  id: iukm2026
   full_name: International Symposium on Integrated Uncertainty in Knowledge Modelling and Decision Making
-  link: "https://www.jaist.ac.jp/IUKM/IUKM2025/"
-  deadline: "2024-11-30 23:59:00"
-  final_decision_date: "2025-01-10 07:59:59"
+  link: "https://www.jaist.ac.jp/IUKM/IUKM2026/"
+  deadline: "2026-03-15 23:59:00"
+  final_decision_date: "2026-06-10 07:59:59"
   timezone: UTC-12
-  city: Ho Chi Minh City
+  city: Quy Nhon
   country: Vietnam
-  venue: Ho Chi Minh City Industrial University
+  venue: Quy Nhon University
   format: hybrid
   date: March 17-19, 2025
-  start: 2025-03-17
-  end: 2025-03-19
+  start: 2026-09-14
+  end: 2026-09-17
   tags:
       - data-mining
       - natural-language-processing
@@ -1311,7 +1311,7 @@
   id: aciids2026
   full_name: Asian Conference on Intelligent Information and Database Systems
   link: "https://aciids.pwr.edu.pl/2026/"
-  deadline: "2025-11-30 23:59:00"
+  deadline: "2025-12-15 23:59:00"
   final_decision_date: "2026-01-31 07:59:00"
   timezone: UTC-12
   city: Kaohsiung
