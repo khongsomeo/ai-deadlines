@@ -1,6 +1,30 @@
+- title: ISIT
+  year: 2026
+  id: isit26
+  full_name: IEEE International Symposium on Information Theory
+  link: "https://2026.ieee-isit.org/"
+  deadline: "2026-01-16 23:59:00"
+  final_decision_date: "2026-04-01 07:59:00"
+  timezone: UTC-12
+  city: Guangzhou
+  country: China
+  venue: Guangzhou Yuexiu International Congress Center (GYICC).
+  format: in-person
+  date: June 28 - July 03, 2026
+  start: 2026-06-28
+  end: 2026-07-03
+  tags:
+      - information-theory
+      - machine-learning
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/699/
+  note: "Submitted manuscripts must not exceed 5 pages, plus an optional 6th page containing references and acknowledgments only."
+
 - title: ACCV
   year: 2026
-  id: accv2026
+  id: accv26
   full_name: Asian Conference on Computer Vision
   link: "https://accv2026.org/"
   deadline: "2026-07-05 23:59:00"
@@ -26,7 +50,7 @@
 
 - title: KSEM
   year: 2026
-  id: ksem2026
+  id: ksem26
   full_name: International Conference on Knowledge Science, Engineering and Management
   link: "https://ksem2026.rosc.org.cn/"
   deadline: "2026-01-15 23:59:00"
@@ -50,7 +74,7 @@
 
 - title: EACL
   year: 2026
-  id: eacl2026
+  id: eacl26
   full_name: Conference of the European Chapter of the Association for Computational Linguistics
   link: "https://2026.eacl.org/"
   deadline: "2025-10-06 23:59:00"
@@ -79,7 +103,7 @@
 
 - title: AISTATS
   year: 2026
-  id: aistats2025
+  id: aistats26
   full_name: Annual Conference on Artificial Intelligence and Statistics
   link: "https://virtual.aistats.org/"
   abstract_deadline: "2025-09-25 23:59:00"
@@ -108,7 +132,7 @@
 
 - title: SIGDIAL
   year: 2025
-  id: sigdial2025
+  id: sigdial25
   full_name: Annual Meeting of the Special Interest Group on Discourse and Dialogue
   link: "https://2025.sigdial.org/"
   deadline: "2025-04-21 23:59:00"
@@ -133,7 +157,7 @@
 
 - title: CIKM
   year: 2025
-  id: cikm2025
+  id: cikm25
   full_name: ACM Conference on Information and Knowledge Management
   link: "https://cikm2025.org/"
   abstract_deadline: "2025-05-16 23:59:00"
@@ -161,7 +185,7 @@
 
 - title: AAMAS
   year: 2026
-  id: aamas2026
+  id: aamas26
   full_name: International Conference on Autonomous Agents and Multiagent Systems
   link: "https://cyprusconferences.org/aamas2026/"
   abstract_deadline: "2025-10-01 23:59:00"
@@ -189,7 +213,7 @@
 
 - title: IEA/AIE
   year: 2026
-  id: iea_aie2026
+  id: iea_aie26
   full_name: International Conference on Industrial, Engineering & Other Applications of Applied Intelligent Systems
   link: "https://www.i-somet.org/iea-aie2026"
   deadline: "2025-12-25 23:59:00"
@@ -217,7 +241,7 @@
 
 - title: ICPR
   year: 2026
-  id: icpr2026
+  id: icpr26
   full_name: International Conference in Pattern Recognition
   link: "https://icpr2026.org/"
   deadline: "2025-12-20 23:59:00"
@@ -246,7 +270,7 @@
 
 - title: ECML-PKDD
   year: 2026
-  id: ecmlpkdd2026
+  id: ecmlpkdd26
   full_name: European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
   link: "https://ecmlpkdd.org/2026/"
   abstract_deadline: "TBD"
@@ -257,9 +281,9 @@
   country: Italy
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: September 07-11, 2026
+  start: 2026-09-07
+  end: 2026-09-11
   tags:
       - machine-learning
       - data-mining
@@ -270,7 +294,7 @@
 
 - title: PAKDD
   year: 2026
-  id: pakdd2026
+  id: pakdd26
   full_name: Pacific-Asia Conference on Knowledge Discovery and Data Mining
   link: "https://www.pakdd2026.org/"
   deadline: "2025-11-15 23:59:00"
@@ -297,7 +321,7 @@
 
 - title: NLDB
   year: 2025
-  id: nldb2025
+  id: nldb25
   full_name: International Conference on Natural Language & Information Systems
   link: "https://www.jaist.ac.jp/event/nldb2025/about.html"
   deadline: "2025-03-16 23:59:00"
@@ -319,7 +343,7 @@
 
 - title: EJC
   year: 2026
-  id: ejc2026
+  id: ejc26
   full_name: International Conference on Information Modelling and Knowledge Bases
   link: "https://ejc.um.si/"
   deadline: "2026-01-15 23:59:00"
@@ -344,7 +368,7 @@
 
 - title: ECAI
   year: 2025
-  id: ecai2025
+  id: ecai25
   full_name: European Conference on Artificial Intelligence
   link: "https://ecai2025.org/"
   abstact_deadline: "2025-04-29 23:59:00"
@@ -374,7 +398,7 @@
 
 - title: DATA
   year: 2026
-  id: data2026
+  id: data26
   full_name: International Conference on Data Science, Technology and Applications 
   link: "https://data.scitevents.org/"
   deadline: "2026-03-03 23:59:00"
@@ -399,7 +423,7 @@
 
 - title: ICPRAM
   year: 2026
-  id: icpram2026
+  id: icpram26
   full_name: International Conference on Pattern Recognition Applications and Methods 
   link: "https://icpram.scitevents.org/"
   deadline: "2025-10-02 23:59:00"
@@ -428,7 +452,7 @@
 
 - title: AIAI
   year: 2026
-  id: aiai2025
+  id: aiai26
   full_name: International Conference on Artificial Intelligence Applications and Innovations
   link: "https://ifipaiai.org/2026/"
   deadline: "2026-02-28 23:59:00"
@@ -456,7 +480,7 @@
 
 - title: MIWAI
   year: 2025
-  id: miwai2025
+  id: miwai25
   full_name: Multi-Disciplinary International Conference on Artificial Intelligence
   link: "https://miwai25.miwai.org/"
   deadline: "2025-08-05 23:59:00"
@@ -483,7 +507,7 @@
 
 - title: NeurIPS
   year: 2025
-  id: neurips2025
+  id: neurips25
   full_name: Annual Conference on Neural Information Processing Systems
   link: "https://neurips.cc/"
   abstract_deadline: "2025-05-11 23:59:00"
@@ -514,7 +538,7 @@
 
 - title: WACV (Round 1)
   year: 2026
-  id: wacv_r1_2026
+  id: wacv_r1_26
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
   link: "https://wacv.thecvf.com/"
   abstract_deadline: "2025-07-11 23:59:00"
@@ -539,34 +563,9 @@
       rank_source_url: https://portal.core.edu.au/conf-ranks/763/
   note: "OpenReview submission"
 
-- title: WACV (Round 2)
-  year: 2026
-  id: wacv_r2_2026
-  full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
-  link: "https://wacv.thecvf.com/"
-  abstract_deadline: "2025-09-12 23:59:00"
-  deadline: "2025-09-19 23:59:00"
-  final_decision_date: "2025-11-05 07:59:59"
-  timezone: UTC-12
-  city: Tucson AZ
-  country: United States
-  venue: JW Marriott Starpass
-  format: in-person
-  date: March 06-10, 2026
-  start: 2026-03-06
-  end: 2026-03-10
-  tags:
-      - machine-learning
-      - computer-vision
-  rankings:
-      rank_name: A
-      rank_source: CORE2023
-      rank_source_url: https://portal.core.edu.au/conf-ranks/763/
-  note: "OpenReview submission; <b>Round 1 papers should not re-register</b>"
-
 - title: ECCV
   year: 2026
-  id: eccv2026
+  id: eccv26
   full_name: European Conference on Computer Vision
   link: "https://eccv.ecva.net/"
   abstract_deadline: TBD
@@ -594,7 +593,7 @@
 
 - title: ICCV
   year: 2025
-  id: iccv2025
+  id: iccv25
   full_name: International Conference on Computer Vision
   link: "https://iccv.thecvf.com/"
   abstract_deadline: "2025-03-03 23:59:00"
@@ -621,7 +620,7 @@
 
 - title: CVPR
   year: 2026
-  id: cvpr2026
+  id: cvpr26
   full_name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
   link: "https://cvpr.thecvf.com/"
   abstract_deadline: "2025-11-06 23:59:00"
@@ -648,7 +647,7 @@
 
 - title: IJCAI
   year: 2026
-  id: ijcai2026
+  id: ijcai26
   full_name: International Joint Conference on Artificial Intelligence
   link: "https://2026.ijcai.org/"
   abstract_deadline: "2026-01-12 23:59:00"
@@ -682,7 +681,7 @@
 
 - title: AAAI
   year: 2026
-  id: aaai2026
+  id: aaai26
   full_name: Annual AAAI Conference on Artificial Intelligence
   link: "https://aaai.org/conference/aaai/aaai-26"
   abstract_deadline: "2025-07-25 23:59:00"
@@ -713,7 +712,7 @@
 
 - title: ICML
   year: 2026
-  id: icml2026
+  id: icml26
   full_name: International Conference on Machine Learning
   link: "https://icml.cc/Conferences/2026"
   abstract_deadline: "2026-01-23 23:59:00"
@@ -726,9 +725,9 @@
   country: Candada
   venue: Vancouver Convention Center
   format: in-person
-  date: July 13-19, 2025
-  start: 2025-07-13
-  end: 2025-07-19
+  date: July 06-12, 2026
+  start: 2026-07-06
+  end: 2026-07-12
   tags:
       - machine-learning
   rankings:
@@ -739,7 +738,7 @@
 
 - title: ICLR
   year: 2026
-  id: iclr2026
+  id: iclr26
   full_name: International Conference on Learning Representations
   link: "https://iclr.cc/Conferences/2026"
   abstract_deadline: "2025-09-19 23:59:00"
@@ -769,7 +768,7 @@
 
 - title: ICTAI
   year: 2025
-  id: ictai2025
+  id: ictai25
   full_name: IEEE International Conference on Tools with Artificial Intelligence
   link: "https://ictai.computer.org/2025/"
   deadline: "2025-07-15 23:59:00"
@@ -794,7 +793,7 @@
 
 - title: KES
   year: 2026
-  id: kes2026
+  id: kes26
   full_name: International Conference on Knowledge-Based and Intelligent Information & Engineering Systems
   link: "http://kes2026.kesinternational.org/"
   deadline: "TBD"
@@ -822,7 +821,7 @@
 
 - title: ACL
   year: 2026
-  id: acl2026
+  id: acl26
   full_name: Annual Meeting of the Association for Computational Linguistics
   link: "https://2026.aclweb.org/"
   deadline: "2026-01-05 23:59:00"
@@ -850,7 +849,7 @@
 
 - title: NAACL
   year: 2025
-  id: naacl2025
+  id: naacl25
   full_name: Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics
   link: "https://2025.naacl.org/"
   deadline: "2024-10-15 23:59:00"
@@ -878,7 +877,7 @@
 
 - title: INLG
   year: 2025
-  id: inlg2025
+  id: inlg25
   full_name: International Natural Language Generation Conference
   link: "https://2025.inlgmeeting.org/"
   deadline: "2025-07-18 23:59:00"
@@ -903,7 +902,7 @@
 
 - title: MAPR
   year: 2025
-  id: mapr2025
+  id: mapr25
   full_name: International Conference on Multimedia Analysis and Pattern Recognition
   link: "https://mapr.uit.edu.vn/"
   deadline: "2025-05-15 23:59:00"
@@ -929,7 +928,7 @@
 
 - title: LREC
   year: 2026
-  id: lrec2026
+  id: lrec26
   full_name: Language Resources and Evaluation Conference
   link: "https://www.elra.info/lrec2026/"
   deadline: "2025-10-17 23:59:00"
@@ -952,7 +951,7 @@
 
 - title: EMNLP
   year: 2025
-  id: emnlp2025
+  id: emnlp25
   full_name: Conference on Empirical Methods in Natural Language Processing
   link: "https://2025.emnlp.org/"
   deadline: "2025-05-19 23:59:00"
@@ -979,7 +978,7 @@
 
 - title: COLING
   year: 2025
-  id: coling2025
+  id: coling25
   full_name: International Conference on Computational Linguistics
   link: "https://coling2025.org/"
   deadline: "2024-09-16 23:59:00"
@@ -1004,7 +1003,7 @@
 
 - title: ECIR
   year: 2026
-  id: ecir2026
+  id: ecir26
   full_name: European Conference on Information Retrieval
   link: "https://ecir2026.eu/"
   abstract_deadline: "2025-10-02 23:59:00"
@@ -1028,7 +1027,7 @@
 
 - title: IJCNN-WCCI
   year: 2026
-  id: ijcnn2026
+  id: ijcnn26
   full_name: IEEE World Congress on Computational Intelligence
   link: "https://attend.ieee.org/wcci-2026/"
   deadline: "2026-01-31 23:59:00"
@@ -1054,7 +1053,7 @@
 
 - title: IUKM
   year: 2026
-  id: iukm2026
+  id: iukm26
   full_name: International Symposium on Integrated Uncertainty in Knowledge Modelling and Decision Making
   link: "https://www.jaist.ac.jp/IUKM/IUKM2026/"
   deadline: "2026-03-15 23:59:00"
@@ -1064,7 +1063,7 @@
   country: Vietnam
   venue: Quy Nhon University
   format: hybrid
-  date: March 17-19, 2025
+  date: September 14-17, 2026
   start: 2026-09-14
   end: 2026-09-17
   tags:
@@ -1077,7 +1076,7 @@
 
 - title: ESANN
   year: 2026
-  id: esann2026
+  id: esann26
   full_name: European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning
   link: "https://www.esann.org/"
   deadline: "2025-11-19 23:59:00"
@@ -1103,7 +1102,7 @@
 
 - title: ISM
   year: 2025
-  id: ism2025
+  id: ism25
   full_name: IEEE International Symposium on Multimedia
   link: "https://www.multimediacomputing.org/"
   deadline: "2025-09-01 23:59:00"
@@ -1127,7 +1126,7 @@
 
 - title: RIVF
   year: 2025
-  id: rivf2025
+  id: rivf25
   full_name: RIVF International Conference on Computing and Communication Technologies
   link: "https://rivf2025.org/"
   deadline: "2025-07-30 23:59:00"
@@ -1154,7 +1153,7 @@
 
 - title: KSE
   year: 2025
-  id: kse2025
+  id: kse25
   full_name: International Conference on Knowledge and Systems Engineering
   link: "https://kse2025.kse-conferences.org"
   deadline: "2025-07-31 23:59:00"
@@ -1179,7 +1178,7 @@
 
 - title: SoICT
   year: 2025
-  id: soict2025
+  id: soict25
   full_name: International Symposium on Information and Communication Technology
   link: "https://soict.org"
   abstract_deadline: "2025-09-05 23:59:00"
@@ -1205,7 +1204,7 @@
 
 - title: Interspeech
   year: 2026
-  id: interspeech2026
+  id: interspeech26
   full_name: Interspeech
   link: "https://interspeech2026.org"
   deadline: "2026-02-25 23:59:00"
@@ -1232,7 +1231,7 @@
 
 - title: PACLIC
   year: 2025
-  id: paclic39
+  id: paclic25
   full_name: Pacific Asia Conference on Language, Information and Computation
   link: "https://vlsp.org.vn/paclic2025/home"
   deadline: "2025-08-02 23:59:00"
@@ -1281,7 +1280,7 @@
 
 - title: IJCNLP-AACL
   year: 2025
-  id: icjcnp2025
+  id: ijcnlp25
   full_name: International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics
   link: "https://2025.aaclnet.org/"
   deadline: "2025-07-28 23:59:00"
@@ -1308,7 +1307,7 @@
 
 - title: ICAART
   year: 2026
-  id: icaart2026
+  id: icaart26
   full_name: International Conference on Agents and Artificial Intelligence
   link: "https://icaart.scitevents.org"
   deadline: "2025-10-02 23:59:00"
@@ -1334,7 +1333,7 @@
 
 - title: ACIIDS
   year: 2026
-  id: aciids2026
+  id: aciids26
   full_name: Asian Conference on Intelligent Information and Database Systems
   link: "https://aciids.pwr.edu.pl/2026/"
   deadline: "2025-12-15 23:59:00"
@@ -1360,7 +1359,7 @@
 
 - title: ICCCI
   year: 2026
-  id: iccci2026
+  id: iccci26
   full_name: International Conference on Computational Collective Intelligence
   link: "https://iccci.pwr.edu.pl/2026/"
   deadline: "2026-02-01 23:59:00"
@@ -1385,7 +1384,7 @@
 
 - title: PRICAI
   year: 2025
-  id: pricai2025
+  id: pricai25
   full_name: Pacific Rim International Conference on Artificial Intelligence
   link: "https://pricai.org/2025"
   deadline: "2025-06-27 23:59:00"
@@ -1412,7 +1411,7 @@
 
 - title: ICANN
   year: 2026
-  id: icann2026
+  id: icann26
   full_name: International Conference on Artificial Neural Networks
   link: "https://e-nns.org/icann2026/"
   deadline: "2026-03-16 23:59:00"
@@ -1439,7 +1438,7 @@
 
 - title: ICONIP
   year: 2025
-  id: iconip2025
+  id: iconip25
   full_name: International Conference on Neural Information Processing
   link: "https://iconip2025.apnns.org/"
   deadline: "2025-05-22 23:59:00"

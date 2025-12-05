@@ -27,6 +27,7 @@ const categoryColors: Record<string, string> = {
   "speech-processing": "bg-yellow-500",
   "signal-processing": "bg-cyan-500",
   "data-mining": "bg-pink-500",
+  "information-theory": "bg-red-500",
   "other": "bg-gray-500"
 };
 
@@ -38,6 +39,7 @@ const categoryNames: Record<string, string> = {
   "speech-processing": "Speech Processing",
   "signal-processing": "Signal Processing",
   "data-mining": "Data Mining",
+  "information-theory": "Information Theory",
   "other": "Other"
 };
 
@@ -50,6 +52,7 @@ const orderedCategories = [
   "speech-processing",
   "signal-processing",
   "data-mining",
+  "information-theory",
   "other"
 ] as const;
 
@@ -76,30 +79,30 @@ const CalendarPage = () => {
   );
   const [showDeadlines, setShowDeadlines] = useState(true);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-  
+
   const safeParseISO = (dateString: string | undefined | number): Date | null => {
     if (!dateString) return null;
     if (dateString === 'TBD') return null;
-    
+
     const isDate = (value: any): value is Date => {
       return value && Object.prototype.toString.call(value) === '[object Date]';
     };
 
     if (isDate(dateString)) return dateString;
-    
+
     try {
       if (typeof dateString === 'object') {
         return null;
       }
-      
+
       const dateStr = typeof dateString === 'number' ? dateString.toString() : dateString;
-      
+
       let normalizedDate = dateStr;
       const parts = dateStr.split('-');
       if (parts.length === 3) {
         normalizedDate = `${parts[0]}-${parts[1].padStart(2, '0')}-${parts[2].padStart(2, '0')}`;
       }
-      
+
       const parsedDate = parseISO(normalizedDate);
       return isValid(parsedDate) ? parsedDate : null;
     } catch (error) {
@@ -112,8 +115,8 @@ const CalendarPage = () => {
     return conferencesData.filter((conf: Conference) => {
       // Map the conference tags to our new category system
       const mappedTags = conf.tags?.map(mapLegacyTag) || [];
-      
-      const matchesSearch = searchQuery === "" || 
+
+      const matchesSearch = searchQuery === "" ||
         conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()));
 
@@ -138,11 +141,11 @@ const CalendarPage = () => {
 
       // Check if either deadline or conference dates are in the current year
       const deadlineInYear = showDeadlines && deadlineDate && isInCurrentYear(deadlineDate);
-      const conferenceInYear = (startDate && isInCurrentYear(startDate)) || 
-                             (endDate && isInCurrentYear(endDate)) ||
-                             (startDate && endDate && 
-                              startDate.getFullYear() <= currentYear && 
-                              endDate.getFullYear() >= currentYear);
+      const conferenceInYear = (startDate && isInCurrentYear(startDate)) ||
+        (endDate && isInCurrentYear(endDate)) ||
+        (startDate && endDate &&
+          startDate.getFullYear() <= currentYear &&
+          endDate.getFullYear() >= currentYear);
 
       return deadlineInYear || (selectedCategories.size > 0 && conferenceInYear);
     });
@@ -153,24 +156,24 @@ const CalendarPage = () => {
       const deadlineDate = safeParseISO(conf.deadline);
       const matchesCategory = selectedCategories.size === 0 ? true :
         (Array.isArray(conf.tags) && conf.tags.some(tag => selectedCategories.has(tag)));
-      return deadlineDate && 
-             isSameDay(deadlineDate, date) && 
-             deadlineDate.getFullYear() === currentYear && 
-             matchesCategory;
+      return deadlineDate &&
+        isSameDay(deadlineDate, date) &&
+        deadlineDate.getFullYear() === currentYear &&
+        matchesCategory;
     }) : [];
 
     const conferences = selectedCategories.size > 0 ? conferencesData.filter(conf => {
       const startDate = safeParseISO(conf.start);
       const endDate = safeParseISO(conf.end);
-      const matchesCategory = Array.isArray(conf.tags) && 
+      const matchesCategory = Array.isArray(conf.tags) &&
         conf.tags.some(tag => selectedCategories.has(tag));
 
       if (!matchesCategory) return false;
 
       if (startDate && endDate) {
-        return startDate.getFullYear() <= currentYear && 
-               endDate.getFullYear() >= currentYear &&
-               date >= startDate && date <= endDate;
+        return startDate.getFullYear() <= currentYear &&
+          endDate.getFullYear() >= currentYear &&
+          date >= startDate && date <= endDate;
       } else if (startDate) {
         return startDate.getFullYear() === currentYear && isSameDay(startDate, date);
       }
@@ -178,13 +181,13 @@ const CalendarPage = () => {
     }) : [];
 
     return {
-      deadlines: deadlines.filter(conf => 
-        searchQuery === "" || 
+      deadlines: deadlines.filter(conf =>
+        searchQuery === "" ||
         conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()))
       ),
-      conferences: conferences.filter(conf => 
-        searchQuery === "" || 
+      conferences: conferences.filter(conf =>
+        searchQuery === "" ||
         conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()))
       )
@@ -193,7 +196,7 @@ const CalendarPage = () => {
 
   const renderEventPreview = (events: { deadlines: Conference[], conferences: Conference[] }) => {
     if (events.deadlines.length === 0 && events.conferences.length === 0) return null;
-    
+
     return (
       <div className="p-2 max-w-[200px]">
         {events.deadlines.length > 0 && (
@@ -230,25 +233,25 @@ const CalendarPage = () => {
         const startDate = safeParseISO(conf.start);
         const endDate = safeParseISO(conf.end);
         // Only show conference dates if categories are selected
-        const matchesCategory = selectedCategories.size > 0 && 
+        const matchesCategory = selectedCategories.size > 0 &&
           (Array.isArray(conf.tags) && conf.tags.some(tag => selectedCategories.has(tag)));
         return startDate && endDate && date >= startDate && date <= endDate && matchesCategory;
       })
       .map(conf => {
         const startDate = safeParseISO(conf.start);
         const endDate = safeParseISO(conf.end);
-        
+
         if (!startDate || !endDate) return null;
 
         let style = "w-[calc(100%+1rem)] -left-2 relative";
-        
+
         if (isSameDay(date, startDate)) {
           style += " rounded-l-sm";
         }
         if (isSameDay(date, endDate)) {
           style += " rounded-r-sm";
         }
-        
+
         const color = conf.tags && conf.tags[0] ? categoryColors[conf.tags[0]] : "bg-gray-500";
 
         return { style, color };
@@ -273,7 +276,7 @@ const CalendarPage = () => {
     };
 
     return (
-      <div 
+      <div
         className="relative w-full h-full flex flex-col"
         onClick={handleDayClick}
       >
@@ -283,9 +286,9 @@ const CalendarPage = () => {
 
         <div className="absolute bottom-2 left-0 right-0 flex flex-col-reverse gap-[1px]">
           {conferenceStyles.map((style, index) => (
-            <div 
-              key={`conf-${index}`} 
-              className={`h-[2px] ${style.style} ${style.color}`} 
+            <div
+              key={`conf-${index}`}
+              className={`h-[2px] ${style.style} ${style.color}`}
             />
           ))}
           {hasDeadline && (
@@ -322,10 +325,10 @@ const CalendarPage = () => {
             )}
           </div>
           {conf.link && (
-            <a 
-              href={conf.link} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={conf.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-blue-500 hover:text-blue-600 flex items-center gap-1 text-sm"
             >
               Website
@@ -337,7 +340,7 @@ const CalendarPage = () => {
             </a>
           )}
         </div>
-        
+
         <div className="space-y-2 mt-3">
           {deadlineDate && (
             <div className="flex items-start gap-2">
@@ -352,14 +355,14 @@ const CalendarPage = () => {
               </div>
             </div>
           )}
-          
+
           {startDate && (
             <div className="flex items-start gap-2">
               <span className="font-medium text-sm text-neutral-900">Date:</span>
               <div className="text-sm text-neutral-900">
                 <div>
                   {format(startDate, 'MMMM d')}
-                  {endDate ? ` - ${format(endDate, 'MMMM d, yyyy')}` : 
+                  {endDate ? ` - ${format(endDate, 'MMMM d, yyyy')}` :
                     `, ${format(startDate, 'yyyy')}`}
                 </div>
               </div>
@@ -376,8 +379,8 @@ const CalendarPage = () => {
           {conf.note && (
             <div className="flex items-start gap-2 mt-2">
               <span className="font-medium text-sm text-neutral-900">Note:</span>
-              <div className="text-sm text-neutral-900" 
-                dangerouslySetInnerHTML={{ __html: conf.note }} 
+              <div className="text-sm text-neutral-900"
+                dangerouslySetInnerHTML={{ __html: conf.note }}
               />
             </div>
           )}
@@ -385,8 +388,8 @@ const CalendarPage = () => {
 
         <div className="mt-3 flex flex-wrap gap-2">
           {Array.isArray(conf.tags) && conf.tags.map((tag) => (
-            <span 
-              key={tag} 
+            <span
+              key={tag}
               className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-neutral-100 text-neutral-900"
             >
               <Tag className="h-3 w-3 mr-1" />
@@ -399,7 +402,7 @@ const CalendarPage = () => {
   };
 
   const categories = orderedCategories
-    .filter(category => 
+    .filter(category =>
       conferencesData.some(conf => conf.tags?.includes(category))
     )
     .map(category => [category, categoryColors[category]]);
@@ -508,26 +511,24 @@ const CalendarPage = () => {
         <div className="bg-neutral-100 rounded-lg p-1 inline-flex">
           <button
             onClick={() => setIsYearView(false)}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-              !isYearView 
-                ? 'bg-white shadow-sm text-primary' 
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${!isYearView
+                ? 'bg-white shadow-sm text-primary'
                 : 'text-neutral-600 hover:text-neutral-900'
-            }`}
+              }`}
           >
             Month View
           </button>
           <button
             onClick={() => setIsYearView(true)}
-            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-              isYearView 
-                ? 'bg-white shadow-sm text-primary' 
+            className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${isYearView
+                ? 'bg-white shadow-sm text-primary'
                 : 'text-neutral-600 hover:text-neutral-900'
-            }`}
+              }`}
           >
             Year View
           </button>
         </div>
-        
+
         {isYearView && (
           <div className="flex items-center gap-4">
             <button
@@ -540,7 +541,7 @@ const CalendarPage = () => {
               aria-label="Previous year"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <span className="text-lg font-semibold">{currentYear}</span>
@@ -554,7 +555,7 @@ const CalendarPage = () => {
               aria-label="Next year"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </div>
@@ -580,13 +581,13 @@ const CalendarPage = () => {
             </h2>
             <div className="space-y-4">
               {getEvents(new Date()).map((conf: Conference) => (
-                <div 
-                  key={conf.id || conf.title} 
+                <div
+                  key={conf.id || conf.title}
                   className="p-4 border rounded-lg hover:bg-neutral-50 cursor-pointer"
                   onClick={() => {
                     const deadlineDate = safeParseISO(conf.deadline);
                     const startDate = safeParseISO(conf.start);
-                    
+
                     if (deadlineDate) {
                       setSelectedDate(deadlineDate);
                       setSelectedDayEvents({
@@ -618,7 +619,7 @@ const CalendarPage = () => {
                   {Array.isArray(conf.tags) && conf.tags.length > 0 && (
                     <div className="mt-2 flex flex-wrap gap-2">
                       {conf.tags.map(tag => (
-                        <span 
+                        <span
                           key={tag}
                           className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-neutral-100"
                         >
@@ -664,10 +665,10 @@ const CalendarPage = () => {
                       return null;
                     }
                     return (
-                      <div 
+                      <div
                         role="button"
                         tabIndex={0}
-                        {...props} 
+                        {...props}
                         className="w-full h-full p-2 cursor-pointer"
                       >
                         {renderDayContent(date)}
@@ -698,11 +699,11 @@ const CalendarPage = () => {
         </div>
       </div>
 
-      <Dialog 
+      <Dialog
         open={selectedDayEvents.date !== null}
         onOpenChange={() => setSelectedDayEvents({ date: null, events: { deadlines: [], conferences: [] } })}
       >
-        <DialogContent 
+        <DialogContent
           className="max-w-2xl max-h-[80vh] overflow-y-auto"
           aria-describedby="dialog-description"
         >

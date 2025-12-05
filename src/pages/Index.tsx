@@ -33,6 +33,7 @@ const Index = () => {
     { id: "signal-processing", label: "Signal Processing" },
     { id: "speech-processing", label: "Speech Processing" },
     { id: "human-computer-interaction", label: "Human Computer Interaction" },
+    { id: "information-theory", label: "Information Theory" },
   ];
 
   const filteredConferences = useMemo(() => {
