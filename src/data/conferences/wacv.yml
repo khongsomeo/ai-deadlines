@@ -1,0 +1,26 @@
+- title: WACV
+  year: 2026
+  id: wacv26
+  full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
+  link: "https://wacv.thecvf.com/"
+  abstract_deadline: "2025-07-11 23:59:00"
+  deadline: "2025-07-18 23:59:00"
+  rebuttal_period_start: "2025-09-03 07:59:59"
+  rebuttal_period_end: "2025-09-19 23:59:00"
+  final_decision_date: "2025-11-05 07:59:59"
+  timezone: UTC-12
+  city: Tucson AZ
+  country: United States
+  venue: JW Marriott Starpass
+  format: in-person
+  date: March 06-10, 2026
+  start: 2026-03-06
+  end: 2026-03-10
+  tags:
+      - machine-learning
+      - computer-vision
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/763/
+  note: "OpenReview submission"

@@ -1,0 +1,21 @@
+- title: NLDB
+  year: 2025
+  id: nldb25
+  full_name: International Conference on Natural Language & Information Systems
+  link: "https://www.jaist.ac.jp/event/nldb2025/about.html"
+  deadline: "2025-03-16 23:59:00"
+  final_decision_date: "2025-04-25 07:59:59"
+  timezone: UTC-12
+  city: Kanazawa
+  country: Japan
+  venue: Kanazawa Chamber of Commerce and Industry (9-13 Oyamamachi, Kanazawa, Ishikawa 920-0918, Japan)
+  format: in-person
+  date: July 04-06, 2025
+  start: 2025-07-04
+  end: 2025-07-06
+  tags:
+      - natural-language-processing
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/144/

@@ -1,0 +1,26 @@
+- title: ICANN
+  year: 2026
+  id: icann26
+  full_name: International Conference on Artificial Neural Networks
+  link: "https://e-nns.org/icann2026/"
+  deadline: "2026-03-16 23:59:00"
+  final_decision_date: "2026-05-29 07:59:00"
+  timezone: UTC-12
+  city: Padua
+  country: Italy
+  venue: Conference center of the School of Psychology, University of Padua, Italy
+  format: in-person
+  date: September 14-17, 2026
+  start: 2026-09-14
+  end: 2026-09-17
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/915/

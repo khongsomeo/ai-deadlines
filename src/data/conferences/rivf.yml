@@ -1,0 +1,26 @@
+- title: RIVF
+  year: 2025
+  id: rivf25
+  full_name: RIVF International Conference on Computing and Communication Technologies
+  link: "https://rivf2025.org/"
+  deadline: "2025-07-30 23:59:00"
+  final_decision_date: "2025-10-15 07:59:59"
+  timezone: UTC+7
+  city: Ho Chi Minh City
+  country: Vietnam
+  venue: Van Lang University
+  format: in-person
+  date: December 18-20, 2025
+  start: 2025-12-18
+  end: 2025-12-20
+  tags:
+      - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - human-computer-interaction
+      - data-mining
+  rankings:
+      rank_name: Non-ranked
+      rank_source: IEEE Xplore
+      rank_source_url: https://ieeexplore.ieee.org/xpl/conhome/1001965/all-proceedings

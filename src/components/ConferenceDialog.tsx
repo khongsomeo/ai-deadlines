@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock, CalendarPlus } from "lucide-react";
 import { Conference } from "@/types/conference";
-import { formatDistanceToNow, parseISO, isValid, format, parse, addDays } from "date-fns";
+import { parseISO, isValid, format, parse } from "date-fns";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
+import { getNextUpcomingDeadline, getUpcomingDeadlines } from "@/utils/deadlineUtils";
 
 interface ConferenceDialogProps {
   conference: Conference;
@@ -25,7 +26,13 @@ interface ConferenceDialogProps {
 }
 
 const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogProps) => {
-  const deadlineDate = getDeadlineInLocalTime(conference.deadline, conference.timezone);
+  // console.log('Conference object:', conference);
+
+  // Get upcoming deadlines and the next upcoming one.
+  const upcomingDeadlines = getUpcomingDeadlines(conference);
+  const nextDeadline = getNextUpcomingDeadline(conference);
+  const deadlineDate = nextDeadline ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || conference.timezone) : null;
+
   const [countdown, setCountdown] = useState<string>('');
 
   // Replace the current location string creation with this more verbose version
@@ -40,7 +47,7 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 
     const cityCountryArray = [conference.city, conference.country].filter(Boolean);
     // console.log('City/Country array after filter:', cityCountryArray);
-    
+
     const cityCountryString = cityCountryArray.join(", ");
     // console.log('Final location string:', cityCountryString);
 
@@ -92,16 +99,16 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       const [monthDay, year] = dateStr.split(", ");
       const [month, dayRange] = monthDay.split(" ");
       const [startDay] = dayRange.split("-");
-      
+
       // Construct a date string in a format that can be parsed
       const dateString = `${month} ${startDay} ${year}`;
       const date = parse(dateString, 'MMMM d yyyy', new Date());
-      
+
       if (!isValid(date)) {
         // Try alternative format for abbreviated months
         return parse(dateString, 'MMM d yyyy', new Date());
       }
-      
+
       return date;
     } catch (error) {
       console.error("Error parsing date:", error);
@@ -157,7 +164,7 @@ DESCRIPTION:${description}
 LOCATION:${location}
 END:VEVENT
 END:VCALENDAR`;
-        
+
         const link = document.createElement('a');
         link.href = url;
         link.download = `${conference.title.toLowerCase().replace(/\s+/g, '-')}-deadline.ics`;
@@ -177,7 +184,7 @@ END:VCALENDAR`;
 
   const formatDeadlineDisplay = () => {
     if (!deadlineDate || !isValid(deadlineDate)) return null;
-    
+
     const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
     return (
       <div className="text-sm text-neutral-500">
@@ -200,17 +207,17 @@ END:VCALENDAR`;
   // Format any deadline date consistently
   const formatDeadlineDate = (dateString: string | undefined) => {
     if (!dateString || dateString === 'TBD') return dateString || 'TBD';
-    
+
     const localDate = getLocalDeadline(dateString);
     if (!localDate || !isValid(localDate)) return dateString;
-    
+
     const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
     return `${format(localDate, "MMMM d, yyyy")} (${localTZ})`;
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent 
+      <DialogContent
         className="max-w-md w-full"
       >
         <DialogHeader>
@@ -221,18 +228,18 @@ END:VCALENDAR`;
             {conference.full_name}
           </DialogDescription>
         </DialogHeader>
-        
+
         <div className="space-y-6 mt-4">
           <div className="space-y-4">
             {conference.rankings && (
-            <div className="flex items-start gap-2">
-              <ChartNoAxesColumn className="h-5 w-5 mt-0.5 text-gray-500" />
-              <div>
-                <p className="font-medium">Ranking</p>
-                <p className="text-sm text-gray-500">{conference.rankings}</p>
-              </div>
-            </div>)}
-            
+              <div className="flex items-start gap-2">
+                <ChartNoAxesColumn className="h-5 w-5 mt-0.5 text-gray-500" />
+                <div>
+                  <p className="font-medium">Ranking</p>
+                  <p className="text-sm text-gray-500">{conference.rankings}</p>
+                </div>
+              </div>)}
+
             <div className="flex items-start gap-2">
               <CalendarDays className="h-5 w-5 mt-0.5 text-gray-500" />
               <div>
@@ -244,7 +251,7 @@ END:VCALENDAR`;
             <div className="flex items-start gap-2">
               <Globe className="h-5 w-5 mt-0.5 text-gray-500" />
               <div>
-                <p className="font-medium">Location</p>
+                <p className="font-medium">Venue</p>
                 <p className="text-sm text-gray-500">
                   {conference.venue || [conference.city, conference.country].filter(Boolean).join(", ")}
                 </p>
@@ -256,32 +263,24 @@ END:VCALENDAR`;
               <div className="space-y-2 flex-1">
                 <p className="font-medium">Important Deadlines</p>
                 <div className="text-sm text-gray-500 space-y-2">
-                  {conference.abstract_deadline && (
+                  {upcomingDeadlines.length > 0 ? (
+                    upcomingDeadlines.map((deadline, index) => {
+                      const isNext = nextDeadline && deadline.date === nextDeadline.date && deadline.type === nextDeadline.type;
+                      return (
+                        <div
+                          key={`${deadline.type}-${index}`}
+                          className={`rounded-md p-2 ${isNext ? 'bg-blue-100 border border-blue-200' : 'bg-gray-100'}`}
+                        >
+                          <p className={isNext ? 'font-medium text-blue-800' : ''}>
+                            {deadline.label}: {formatDeadlineDate(deadline.date)}
+                            {isNext && <span className="ml-2 text-xs">(Next)</span>}
+                          </p>
+                        </div>
+                      );
+                    })
+                  ) : (
                     <div className="bg-gray-100 rounded-md p-2">
-                      <p>Abstract: {formatDeadlineDate(conference.abstract_deadline)}</p>
-                    </div>
-                  )}
-                  <div className="bg-gray-100 rounded-md p-2">
-                    <p>Submission: {formatDeadlineDate(conference.deadline)}</p>
-                  </div>
-                  {conference.commitment_deadline && (
-                    <div className="bg-gray-100 rounded-md p-2">
-                      <p>Commitment: {formatDeadlineDate(conference.commitment_deadline)}</p>
-                    </div>
-                  )}
-                  {conference.review_release_date && (
-                    <div className="bg-gray-100 rounded-md p-2">
-                      <p>Reviews Released: {formatDeadlineDate(conference.review_release_date)}</p>
-                    </div>
-                  )}
-                  {(conference.rebuttal_period_start || conference.rebuttal_period_end) && (
-                    <div className="bg-gray-100 rounded-md p-2">
-                      <p>Rebuttal Period: {formatDeadlineDate(conference.rebuttal_period_start)} - {formatDeadlineDate(conference.rebuttal_period_end)}</p>
-                    </div>
-                  )}
-                  {conference.final_decision_date && (
-                    <div className="bg-gray-100 rounded-md p-2">
-                      <p>Final Decision: {formatDeadlineDate(conference.final_decision_date)}</p>
+                      <p>No upcoming deadlines</p>
                     </div>
                   )}
                 </div>
@@ -311,22 +310,22 @@ END:VCALENDAR`;
           )}
 
           {conference.note && (
-            <div 
+            <div
               className="text-sm text-neutral-600 mt-2 p-3 bg-neutral-50 rounded-lg"
-              dangerouslySetInnerHTML={{ 
+              dangerouslySetInnerHTML={{
                 __html: conference.note.replace(
-                  /<a(.*?)>/g, 
+                  /<a(.*?)>/g,
                   '<a$1 style="color: #3b82f6; font-weight: 500; text-decoration: underline; text-underline-offset: 2px;">'
-                ) 
+                )
               }}
             />
           )}
 
           <div className="flex items-center justify-between pt-2">
             {conference.link && (
-              <Button 
-                variant="ghost" 
-                size="sm" 
+              <Button
+                variant="ghost"
+                size="sm"
                 className="text-base text-primary hover:underline p-0"
                 asChild
               >
@@ -339,12 +338,12 @@ END:VCALENDAR`;
                 </a>
               </Button>
             )}
-            
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
+                <Button
+                  variant="ghost"
+                  size="sm"
                   className="text-sm focus-visible:ring-0 focus:outline-none"
                 >
                   <CalendarPlus className="h-4 w-4 mr-2" />
@@ -352,13 +351,13 @@ END:VCALENDAR`;
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white" align="end">
-                <DropdownMenuItem 
+                <DropdownMenuItem
                   className="text-neutral-800 hover:bg-neutral-100"
                   onClick={() => createCalendarEvent('google')}
                 >
                   Add to Google Calendar
                 </DropdownMenuItem>
-                <DropdownMenuItem 
+                <DropdownMenuItem
                   className="text-neutral-800 hover:bg-neutral-100"
                   onClick={() => createCalendarEvent('apple')}
                 >

@@ -1,0 +1,23 @@
+- title: ICONIP
+  year: 2026
+  id: iconip26
+  full_name: International Conference on Neural Information Processing
+  link: "https://iconip2026.apnns.org/"
+  deadline: "TBD"
+  final_decision_date: "TBD"
+  timezone: UTC-12
+  city: Melbourne
+  country: Australia
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - natural-language-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1152/
+  note: "OpenReview submission"

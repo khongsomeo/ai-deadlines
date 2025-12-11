@@ -1,0 +1,24 @@
+- title: SIGDIAL
+  year: 2025
+  id: sigdial25
+  full_name: Annual Meeting of the Special Interest Group on Discourse and Dialogue
+  link: "https://2025.sigdial.org/"
+  deadline: "2025-04-21 23:59:00"
+  commitment_deadline: "2025-06-06 23:59:00"
+  final_decision_date: "2025-06-20 07:59:00"
+  timezone: UTC-12
+  city: Avignon
+  country: France
+  venue: Avignon Université, 74 Rue Louis Pasteur, 84029
+  format: in-person
+  date: August 25-27, 2025
+  start: 2025-08-25
+  end: 2025-08-27
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1729/
+  note: "ARR"

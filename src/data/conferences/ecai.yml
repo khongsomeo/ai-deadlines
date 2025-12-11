@@ -1,0 +1,29 @@
+- title: ECAI
+  year: 2025
+  id: ecai25
+  full_name: European Conference on Artificial Intelligence
+  link: "https://ecai2025.org/"
+  abstact_deadline: "2025-04-29 23:59:00"
+  deadline: "2025-05-06 23:59:00"
+  rebuttal_period_start: "2025-06-23 07:59:59"
+  rebuttal_period_end: "2025-06-25 23:59:00"
+  final_decision_date: "2025-07-10 07:59:59"
+  timezone: UTC-12
+  city: Bologna
+  country: Italy
+  venue: Bologna Congress Center, P.za della Costituzione, 4 
+  format: in-person
+  date: October 25-30, 2025
+  start: 2025-10-25
+  end: 2025-10-30
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/473/

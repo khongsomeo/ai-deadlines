@@ -1,0 +1,28 @@
+- title: ICPR
+  year: 2026
+  id: icpr26
+  full_name: International Conference in Pattern Recognition
+  link: "https://icpr2026.org/"
+  deadline: "2025-12-20 23:59:00"
+  rebuttal_period_start: "2026-03-02 07:59:59"
+  rebuttal_period_end: "2026-03-16 23:59:00"
+  final_decision_date: "2026-03-31 07:59:59"
+  timezone: UTC-12
+  city: Lyon
+  country: France
+  venue: International Convention Center
+  format: in-person
+  date: August 17-21, 2026
+  start: 2026-08-17
+  end: 2026-08-21
+  tags:
+      - machine-learning
+      - computer-vision
+      - natural-language-processing
+      - speech-processing
+      - human-computer-interaction
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1169/
+  note: "Review period start when reviews released."

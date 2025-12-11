@@ -1,0 +1,30 @@
+- title: AAAI
+  year: 2026
+  id: aaai26
+  full_name: Annual AAAI Conference on Artificial Intelligence
+  link: "https://aaai.org/conference/aaai/aaai-26"
+  abstract_deadline: "2025-07-25 23:59:00"
+  deadline: "2025-08-01 23:59:00"
+  rebuttal_period_start: "2025-10-02 07:59:59"
+  rebuttal_period_end: "2025-10-08 23:59:00"
+  final_decision_date: "2025-11-03 07:59:59"
+  timezone: UTC-12
+  city: Singapore
+  country: Singapore
+  venue: Singapore EXPO
+  format: in-person
+  date: January 20-27, 2026
+  start: 2026-01-20
+  end: 2026-01-27
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1629/
+  note: "OpenReview submission"

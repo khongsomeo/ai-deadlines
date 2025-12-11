@@ -5,6 +5,7 @@ import ConferenceDialog from "./ConferenceDialog";
 import { useState } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import DeadlineProgress from './DeadlineProgress';
+import { getNextUpcomingDeadline, getPrimaryDeadline } from "@/utils/deadlineUtils";
 
 const ConferenceCard = ({
   title,
@@ -25,18 +26,25 @@ const ConferenceCard = ({
   ...conferenceProps
 }: Conference) => {
   const [dialogOpen, setDialogOpen] = useState(false);
-  const deadlineDate = getDeadlineInLocalTime(deadline, timezone);
-  
+
+  // Get the next upcoming deadline or primary deadline for dialog
+  const conference = {
+    title, full_name, year, date, deadline, timezone, tags, link, note,
+    abstract_deadline, city, country, venue, ...conferenceProps
+  };
+  const nextDeadline = getNextUpcomingDeadline(conference) || getPrimaryDeadline(conference);
+  const deadlineDate = nextDeadline ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || timezone) : null;
+
   // Add validation before using formatDistanceToNow
   const getTimeRemaining = () => {
     if (!deadlineDate || !isValid(deadlineDate)) {
       return 'TBD';
     }
-    
+
     if (isPast(deadlineDate)) {
       return 'Deadline passed';
     }
-    
+
     try {
       return formatDistanceToNow(deadlineDate, { addSuffix: true });
     } catch (error) {
@@ -65,15 +73,15 @@ const ConferenceCard = ({
   };
 
   const handleCardClick = (e: React.MouseEvent) => {
-    if (!(e.target as HTMLElement).closest('a') && 
-        !(e.target as HTMLElement).closest('.tag-button')) {
+    if (!(e.target as HTMLElement).closest('a') &&
+      !(e.target as HTMLElement).closest('.tag-button')) {
       setDialogOpen(true);
     }
   };
 
   const handleTagClick = (e: React.MouseEvent, tag: string) => {
     e.stopPropagation();
-    
+
     // Create a custom event with the selected tag
     const event = new CustomEvent('filterByTag', {
       detail: { tag }
@@ -84,7 +92,7 @@ const ConferenceCard = ({
   // Add this function inside ConferenceCard component, before the render return
   const getRankBadgeStyles = () => {
     if (!rankings?.rank_name) return "text-gray-600 bg-gray-100";
-    
+
     switch (rankings.rank_name.toUpperCase()) {
       case "A*":
         return "text-red-600";
@@ -101,7 +109,7 @@ const ConferenceCard = ({
 
   return (
     <>
-      <div 
+      <div
         className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col cursor-pointer"
         onClick={handleCardClick}
       >
@@ -110,10 +118,10 @@ const ConferenceCard = ({
             {title} {year}
           </h3>
           {link && (
-            <a 
+            <a
               href={link}
               target="_blank"
-              rel="noopener noreferrer" 
+              rel="noopener noreferrer"
               className="hover:underline"
               onClick={(e) => e.stopPropagation()}
             >
@@ -121,7 +129,7 @@ const ConferenceCard = ({
             </a>
           )}
         </div>
-        
+
         <div className="flex flex-col gap-2 mb-6">
           <div className="flex items-center text-neutral">
             <CalendarDays className="h-4 w-4 mr-2 flex-shrink-0" />
@@ -130,18 +138,18 @@ const ConferenceCard = ({
           {location && (
             <div className="flex items-center text-neutral">
               <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
-              <span className="text-sm truncate">{location} ({format})</span>
+              <span className="text-sm truncate">{location} <span className={`font-semibold`}>({format})</span></span>
             </div>
           )}
           {rankings && (
             <div className="flex items-center text-neutral">
               <ChartNoAxesColumn className="h-4 w-4 mr-2 flex-shrink-0" />
               <div className="flex items-center gap-2">
-                <a 
-                  href={rankings.rank_source_url} 
+                <a
+                  href={rankings.rank_source_url}
                   className={`text-sm py-0.5 font-medium ${getRankBadgeStyles()} hover:underline`}
                   target="_blank"
-                  rel="noopener noreferrer" 
+                  rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {rankings.rank_name} ({rankings.rank_source})
@@ -152,7 +160,7 @@ const ConferenceCard = ({
           <div className="flex items-center text-neutral">
             <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">
-              {deadline === 'TBD' ? 'TBD' : deadline}
+              {nextDeadline ? `${nextDeadline.label}: ${nextDeadline.date}` : (deadline === 'TBD' ? 'TBD' : deadline)}
             </span>
           </div>
           <div className="flex items-center">

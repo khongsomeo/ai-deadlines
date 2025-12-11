@@ -1,0 +1,23 @@
+- title: ECIR
+  year: 2026
+  id: ecir26
+  full_name: European Conference on Information Retrieval
+  link: "https://ecir2026.eu/"
+  abstract_deadline: "2025-10-02 23:59:00"
+  deadline: "2025-10-09 23:59:00"
+  final_decision_date: "2025-12-16 07:59:59"
+  timezone: UTC-12
+  city: Delft
+  country: The Netherlands
+  venue: Lijm & Cultuur, Rotterdamseweg 272, 2628 AT Delft, The Netherlands
+  format: in-person
+  date: March 29 - April 02, 2026
+  start: 2026-03-29
+  end: 2026-04-02
+  tags:
+      - data-mining
+      - natural-language-processing
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/483/

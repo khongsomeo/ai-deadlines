@@ -1,0 +1,22 @@
+- title: PACLIC
+  year: 2026
+  id: paclic26
+  full_name: Pacific Asia Conference on Language, Information and Computation
+  link: "https://example.com"
+  deadline: "TBD"
+  final_decision_date: "TBD"
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: hybrid
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1658/

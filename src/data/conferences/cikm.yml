@@ -1,0 +1,27 @@
+- title: CIKM
+  year: 2026
+  id: cikm26
+  full_name: ACM Conference on Information and Knowledge Management
+  link: "https://cikm2026.org/"
+  abstract_deadline: "TBD"
+  deadline: "TBD"
+  final_decision_date: "TBD"
+  timezone: UTC-12
+  city: Rome
+  country: Italy
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/25/

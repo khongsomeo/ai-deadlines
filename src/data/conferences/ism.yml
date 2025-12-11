@@ -1,0 +1,23 @@
+- title: ISM
+  year: 2025
+  id: ism25
+  full_name: IEEE International Symposium on Multimedia
+  link: "https://www.multimediacomputing.org/"
+  deadline: "2025-09-01 23:59:00"
+  final_decision_date: "2025-10-01 07:59:59"
+  timezone: UTC-8
+  city: Naples
+  country: Italy
+  venue: Roral Continental Hotel
+  format: hybrid
+  date: December 8-10, 2025
+  start: 2025-12-08
+  end: 2025-12-10
+  tags:
+      - signal-processing
+      - speech-processing
+      - computer-vision
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/701/

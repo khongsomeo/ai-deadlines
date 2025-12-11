@@ -1,0 +1,23 @@
+- title: ECML-PKDD
+  year: 2026
+  id: ecmlpkdd26
+  full_name: European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
+  link: "https://ecmlpkdd.org/2026/"
+  abstract_deadline: "TBD"
+  deadline: "TBD"
+  final_decision_date: "TBD"
+  timezone: UTC-12
+  city: Naples
+  country: Italy
+  venue: TBD
+  format: in-person
+  date: September 07-11, 2026
+  start: 2026-09-07
+  end: 2026-09-11
+  tags:
+      - machine-learning
+      - data-mining
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/491/

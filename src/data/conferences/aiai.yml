@@ -1,0 +1,27 @@
+- title: AIAI
+  year: 2026
+  id: aiai26
+  full_name: International Conference on Artificial Intelligence Applications and Innovations
+  link: "https://ifipaiai.org/2026/"
+  deadline: "2026-02-28 23:59:00"
+  final_decision_date: "2026-04-19 07:59:59"
+  timezone: UTC-12
+  city: Crete
+  country: Greece
+  venue: Conference Center of CIHEAM MAI.Chani
+  format: hybrid
+  date: July 16-19, 2026
+  start: 2026-07-16
+  end: 2026-07-19
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - signal-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2186/

@@ -1,0 +1,30 @@
+- title: NeurIPS
+  year: 2025
+  id: neurips25
+  full_name: Annual Conference on Neural Information Processing Systems
+  link: "https://neurips.cc/"
+  abstract_deadline: "2025-05-11 23:59:00"
+  deadline: "2025-05-15 23:59:00"
+  rebuttal_period_start: "2025-07-24 07:59:59"
+  rebuttal_period_end: "2025-08-06 23:59:00"
+  final_decision_date: "2025-09-18 07:59:59"
+  timezone: UTC-12
+  city: San Diego CA
+  country: United States
+  venue: San Diego Convention Center.
+  format: in-person
+  date: December 02-07, 2025
+  start: 2025-12-02
+  end: 2025-12-07
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/98/
+  note: "OpenReview submission"

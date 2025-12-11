@@ -1,0 +1,24 @@
+- title: KSE
+  year: 2025
+  id: kse25
+  full_name: International Conference on Knowledge and Systems Engineering
+  link: "https://kse2025.kse-conferences.org"
+  deadline: "2025-07-31 23:59:00"
+  final_decision_date: "2025-09-01 07:59:59"
+  timezone: UTC+7
+  city: Da Lat
+  country: Vietnam
+  venue: Da Lat University
+  format: in-person
+  date: November 6-8, 2025
+  start: 2025-11-06
+  end: 2025-11-08
+  tags:
+      - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - human-computer-interaction
+  rankings:
+      rank_name: Non-ranked
+      rank_source: IEEE Xplore
+      rank_source_url: https://ieeexplore.ieee.org/xpl/conhome/1003010/all-proceedings

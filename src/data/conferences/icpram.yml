@@ -1,0 +1,28 @@
+- title: ICPRAM
+  year: 2026
+  id: icpram26
+  full_name: International Conference on Pattern Recognition Applications and Methods 
+  link: "https://icpram.scitevents.org/"
+  deadline: "2025-10-02 23:59:00"
+  final_decision_date: "2025-12-04 07:59:59"
+  timezone: UTC-12
+  city: Marbella
+  country: Spain
+  venue: Barceló Marbella, Urbanizacion Guadalmina Alta 29670 
+  format: hybrid
+  date: March 02-04, 2026
+  start: 2026-03-02
+  end: 2026-03-04
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - speech-processing
+      - signal-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2230/

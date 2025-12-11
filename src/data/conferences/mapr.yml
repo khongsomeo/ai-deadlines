@@ -1,0 +1,25 @@
+- title: MAPR
+  year: 2025
+  id: mapr25
+  full_name: International Conference on Multimedia Analysis and Pattern Recognition
+  link: "https://mapr.uit.edu.vn/"
+  deadline: "2025-05-15 23:59:00"
+  final_decision_date: "2025-07-01 07:59:59"
+  timezone: UTC+7
+  city: Nha Trang
+  country: Vietnam
+  venue: Novotel, Nha Trang , Vietnam
+  format: hybrid
+  date: August 14-15, 2025
+  start: 2025-08-14
+  end: 2025-08-15
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: Non-ranked
+      rank_source: IEEE Xplore
+      rank_source_url: https://dblp.org/db/conf/mapr/index.html

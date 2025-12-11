@@ -1,0 +1,26 @@
+- title: IJCNLP-AACL
+  year: 2025
+  id: ijcnlp25
+  full_name: International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics
+  link: "https://2025.aaclnet.org/"
+  deadline: "2025-07-28 23:59:00"
+  commitment_deadline: "2025-10-10 23:59:00"
+  rebuttal_period_start: "2025-09-04 07:59:59"
+  rebuttal_period_end: "2025-09-10 23:59:00"
+  final_decision_date: "2025-10-25"
+  timezone: UTC-12
+  city: Mumbai
+  country: India
+  venue: Victor Menezes Convention Centre (VMCC), IIT Bombay
+  format: hybrid
+  date: December 20-24, 2025
+  start: 2025-12-20
+  end: 2025-12-24
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1317/
+  note: "<b>ACL Rolling Review</b>"

@@ -1,0 +1,27 @@
+- title: KES
+  year: 2026
+  id: kes26
+  full_name: International Conference on Knowledge-Based and Intelligent Information & Engineering Systems
+  link: "http://kes2026.kesinternational.org/"
+  deadline: "2026-03-30 23:59:00"
+  final_decision_date: "2026-05-04 07:59:00"
+  timezone: UTC-12
+  city: Dublin
+  country: Ireland
+  venue: Royal Marine Hotel, Marine Rd, Dún Laoghaire, Dublin, A96 K063, Ireland
+  format: hybrid
+  date: September 09-11, 2026
+  start: 2026-09-09
+  end: 2026-09-11
+  tags:
+      - data-mining
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - signal-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1113/

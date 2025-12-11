@@ -1,0 +1,22 @@
+- title: LREC
+  year: 2026
+  id: lrec26
+  full_name: Language Resources and Evaluation Conference
+  link: "https://www.elra.info/lrec2026/"
+  deadline: "2025-10-17 23:59:00"
+  final_decision_date: "2026-02-13 07:59:59"
+  timezone: UTC-12
+  city: Palma
+  country: Spain
+  venue: Palau de Congressos de Palma, Palma de Mallorca, Spain
+  format: hybrid
+  date: May 11-16, 2026
+  start: 2026-05-11
+  end: 2026-05-16
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2092/

@@ -1,0 +1,26 @@
+- title: PAKDD
+  year: 2026
+  id: pakdd26
+  full_name: Pacific-Asia Conference on Knowledge Discovery and Data Mining
+  link: "https://www.pakdd2026.org/"
+  deadline: "2025-11-15 23:59:00"
+  final_decision_date: "2026-02-08 07:59:59"
+  timezone: UTC-8
+  city: Hong Kong
+  country: PR China
+  venue: Regal Riverside Hotel, 34–36 Tai Chung Kiu Road, Sha Tin
+  format: in-person
+  date: June 09-12, 2026
+  start: 2026-06-09
+  end: 2026-06-12
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - computer-vision
+      - human-computer-interaction
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1667/

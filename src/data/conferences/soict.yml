@@ -1,0 +1,25 @@
+- title: SoICT
+  year: 2025
+  id: soict25
+  full_name: International Symposium on Information and Communication Technology
+  link: "https://soict.org"
+  abstract_deadline: "2025-09-05 23:59:00"
+  deadline: "2025-09-15 23:59:00"
+  final_decision_date: "2025-10-15 07:59:59"
+  timezone: UTC+7
+  city: Nha Trang
+  country: Vietnam
+  venue: Sheraton Nha Trang Hotel & Spa 26-28 Tran Phu Street
+  format: in-person
+  date: December 12-14, 2025
+  start: 2025-12-12
+  end: 2025-12-14
+  tags:
+      - computer-vision
+      - machine-learning
+      - speech-processing
+      - human-computer-interaction
+  rankings:
+      rank_name: Non-ranked
+      rank_source: Springer CCIS
+      rank_source_url: https://link.springer.com/conference/soict

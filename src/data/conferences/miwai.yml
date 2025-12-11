@@ -1,0 +1,26 @@
+- title: MIWAI
+  year: 2025
+  id: miwai25
+  full_name: Multi-Disciplinary International Conference on Artificial Intelligence
+  link: "https://miwai25.miwai.org/"
+  deadline: "2025-08-05 23:59:00"
+  final_decision_date: "2025-09-01 07:59:59"
+  timezone: UTC-12
+  city: Ho Chi Minh City
+  country: Vietnam
+  venue: Saigon Prince Hotel & VNUHCM - University of Technology
+  format: hybrid
+  date: December 03-05, 2025
+  start: 2025-12-03
+  end: 2025-12-05
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: Non-ranked
+      rank_source: Springer LNAI
+      rank_source_url: https://link.springer.com/conference/miwai

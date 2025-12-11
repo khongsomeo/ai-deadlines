@@ -1,0 +1,24 @@
+- title: COLING
+  year: 2025
+  id: coling25
+  full_name: International Conference on Computational Linguistics
+  link: "https://coling2025.org/"
+  deadline: "2024-09-16 23:59:00"
+  commitment_deadline: "2024-10-20 23:59:59"
+  final_decision_date: "2024-11-29 07:59:59"
+  timezone: UTC-12
+  city: Abu Dhabi
+  country: UAE
+  venue: Abu Dhabi National Exhibitions Company, Khaleej Al Arabi Street, P.O. Box 5546, Abu Dhabi, United Arab Emirates
+  format: hybrid
+  date: January 19-24, 2025
+  start: 2025-01-19
+  end: 2025-01-24
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/949/
+  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>"

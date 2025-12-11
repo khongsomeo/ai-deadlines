@@ -1,0 +1,23 @@
+- title: ISIT
+  year: 2026
+  id: isit26
+  full_name: IEEE International Symposium on Information Theory
+  link: "https://2026.ieee-isit.org/"
+  deadline: "2026-01-16 23:59:00"
+  final_decision_date: "2026-04-01 07:59:00"
+  timezone: UTC-12
+  city: Guangzhou
+  country: PR China
+  venue: Guangzhou Yuexiu International Congress Center (GYICC).
+  format: in-person
+  date: June 28 - July 03, 2026
+  start: 2026-06-28
+  end: 2026-07-03
+  tags:
+      - information-theory
+      - machine-learning
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/699/
+  note: "Submitted manuscripts must not exceed 5 pages, plus an optional 6th page containing references and acknowledgments only."

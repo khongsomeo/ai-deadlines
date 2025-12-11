@@ -1,0 +1,26 @@
+- title: EMNLP
+  year: 2026
+  id: emnlp26
+  full_name: Conference on Empirical Methods in Natural Language Processing
+  link: "https://2026.emnlp.org/"
+  deadline: "TBD"
+  rebuttal_period_start: "TBD"
+  rebuttal_period_end: "TBD"
+  commitment_deadline: "TBD"
+  final_decision_date: "TBD"
+  timezone: UTC-12
+  city: Budapest
+  country: Hungary
+  venue: TBD
+  format: hybrid
+  date: October 22-29, 2026
+  start: 2026-10-22
+  end: 2026-10-29
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/448/
+  note: "<b>ACL Rolling Review</b>"

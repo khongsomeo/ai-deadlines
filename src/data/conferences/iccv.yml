@@ -1,0 +1,26 @@
+- title: ICCV
+  year: 2025
+  id: iccv25
+  full_name: International Conference on Computer Vision
+  link: "https://iccv.thecvf.com/"
+  abstract_deadline: "2025-03-03 23:59:00"
+  deadline: "2025-03-07 23:59:00"
+  review_release_date: "2025-05-09 07:59:59"
+  rebuttal_period_start: "2025-05-10 07:59:59"
+  rebuttal_period_end: "2025-05-16 23:59:00"
+  final_decision_date: "2025-06-26 07:59:59"
+  timezone: UTC-12
+  city: Honolulu HI
+  country: United States
+  venue: Hawai'i Convention Center, Honolulu
+  format: in-person
+  date: October 19-23, 2025
+  start: 2025-10-19
+  end: 2025-10-23
+  tags:
+      - computer-vision
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/638/
+  note: "OpenReview submission"

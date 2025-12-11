@@ -1,0 +1,26 @@
+- title: ACIIDS
+  year: 2026
+  id: aciids26
+  full_name: Asian Conference on Intelligent Information and Database Systems
+  link: "https://aciids.pwr.edu.pl/2026/"
+  deadline: "2025-12-15 23:59:00"
+  final_decision_date: "2026-01-31 07:59:00"
+  timezone: UTC-12
+  city: Kaohsiung
+  country: Taiwan
+  venue: TBD
+  format: hybrid
+  date: April 13-15, 2026
+  start: 2026-04-13
+  end: 2026-04-15
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2188/
+  note: "<b>Hard deadline; Submission max. 15 pages;</b>"

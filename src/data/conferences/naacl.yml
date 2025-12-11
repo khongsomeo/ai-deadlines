@@ -1,0 +1,27 @@
+- title: NAACL
+  year: 2026
+  id: naacl26
+  full_name: Annual Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics
+  link: "https://2026.naacl.org/"
+  deadline: "TBD"
+  rebuttal_period_start: "TBD"
+  rebuttal_period_end: "TBD"
+  review_release_date: "TBD"
+  commitment_deadline: "TBD"
+  final_decision_date: "TBD"
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: hybrid
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1648/
+  note: "<b>ACL Rolling Review</b>"

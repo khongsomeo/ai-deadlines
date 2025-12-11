@@ -1,0 +1,26 @@
+- title: Interspeech
+  year: 2026
+  id: interspeech26
+  full_name: Interspeech
+  link: "https://interspeech2026.org"
+  deadline: "2026-02-25 23:59:00"
+  rebuttal_period_start: "2026-04-24 07:59:00"
+  rebuttal_period_end: "2026-05-01 23:59:00"
+  final_decision_date: "2026-06-05 07:59:00"
+  timezone: UTC-12
+  city: Sydney
+  country: Australia
+  venue: International Convention Centre Sydney (ICC Sydney), 14 Darling Drive, Sydney NSW 2000
+  format: in-person
+  date: September 27 - October 1, 2026
+  start: 2026-09-27
+  end: 2026-10-01
+  tags:
+      - signal-processing
+      - speech-processing
+      - natural-language-processing
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/494/
+  note: "Short paper maximum 4 pages, 8 pages to long paper."

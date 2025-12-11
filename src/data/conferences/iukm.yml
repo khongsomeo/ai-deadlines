@@ -1,0 +1,22 @@
+- title: IUKM
+  year: 2026
+  id: iukm26
+  full_name: International Symposium on Integrated Uncertainty in Knowledge Modelling and Decision Making
+  link: "https://www.jaist.ac.jp/IUKM/IUKM2026/"
+  deadline: "2026-03-15 23:59:00"
+  final_decision_date: "2026-06-10 07:59:59"
+  timezone: UTC-12
+  city: Quy Nhon
+  country: Vietnam
+  venue: Quy Nhon University
+  format: hybrid
+  date: September 14-17, 2026
+  start: 2026-09-14
+  end: 2026-09-17
+  tags:
+      - data-mining
+      - natural-language-processing
+  rankings:
+      rank_name: Non-ranked
+      rank_source: Springer LNAI
+      rank_source_url: https://link.springer.com/conference/iukm

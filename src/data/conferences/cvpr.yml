@@ -1,0 +1,26 @@
+- title: CVPR
+  year: 2026
+  id: cvpr26
+  full_name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  link: "https://cvpr.thecvf.com/"
+  abstract_deadline: "2025-11-06 23:59:00"
+  deadline: "2025-11-13 23:59:00"
+  rebuttal_period_start: "2026-01-22 07:59:59"
+  rebuttal_period_end: "2026-01-29 23:59:00"
+  final_decision_date: "2026-02-20 07:59:00"
+  timezone: UTC-12
+  city: Denver CO
+  country: United States
+  venue: TBD
+  format: in-person
+  date: June 05-07, 2025
+  start: 2025-06-05
+  end: 2025-06-07
+  tags:
+      - machine-learning
+      - computer-vision
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/604/
+  note: "<b>OpenReview submission</b>; Rebuttal start when review released."

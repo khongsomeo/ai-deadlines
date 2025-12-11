@@ -1,10 +1,18 @@
+export interface Deadline {
+  type: string;
+  label: string;
+  date: string;
+  timezone?: string;
+};
+
 export interface Conference {
   id: string;
   title: string;
   full_name?: string;
   year: number;
   link?: string;
-  deadline: string;
+  deadline: string; // Keep for backward compatibility
+  deadlines?: Deadline[]; // New multiple deadlines support
   timezone?: string;
   date: string;
   place?: string;
@@ -14,7 +22,7 @@ export interface Conference {
   format?: string;
   tags?: string[];
   note?: string;
-  abstract_deadline?: string;
+  abstract_deadline?: string; // Keep for backward compatibility
   start?: string;
   end?: string;
   rankings?: string;

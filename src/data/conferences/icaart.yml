@@ -1,0 +1,25 @@
+- title: ICAART
+  year: 2026
+  id: icaart26
+  full_name: International Conference on Agents and Artificial Intelligence
+  link: "https://icaart.scitevents.org"
+  deadline: "2025-10-02 23:59:00"
+  final_decision_date: "2025-12-04 07:59:59"
+  timezone: UTC-12
+  city: Marbella
+  country: Spain
+  venue: Barceló Marbella, Urbanizacion Guadalmina Alta 29670 
+  format: hybrid
+  date: March 5-7, 2026
+  start: 2026-03-05
+  end: 2026-03-07
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/902/

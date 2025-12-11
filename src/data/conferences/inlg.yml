@@ -1,0 +1,24 @@
+- title: INLG
+  year: 2025
+  id: inlg25
+  full_name: International Natural Language Generation Conference
+  link: "https://2025.inlgmeeting.org/"
+  deadline: "2025-07-18 23:59:00"
+  commitment_deadline: "2025-08-07 23:59:59"
+  final_decision_date: "2025-08-21 07:59:59"
+  timezone: UTC-12
+  city: Hanoi
+  country: Vietnam
+  venue: Vietnam Institute for Advanced Study in Mathematics, Hanoi, Vietnam
+  format: in-person
+  date: October 29 - November 02, 2025
+  start: 2025-10-29
+  end: 2025-11-02
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1327/
+  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format with allowance from organizer."

@@ -1,0 +1,24 @@
+- title: ICTAI
+  year: 2026
+  id: ictai26
+  full_name: IEEE International Conference on Tools with Artificial Intelligence
+  link: "https://ictai.computer.org/2026/"
+  deadline: "TBD"
+  final_decision_date: "TBD"
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1251/

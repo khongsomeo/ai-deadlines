@@ -1,0 +1,25 @@
+- title: IJCNN-WCCI
+  year: 2026
+  id: ijcnn26
+  full_name: IEEE World Congress on Computational Intelligence
+  link: "https://attend.ieee.org/wcci-2026/"
+  deadline: "2026-01-31 23:59:00"
+  final_decision_date: "2026-03-15 07:59:59"
+  timezone: UTC-12
+  city: Maastricht
+  country: The Netherlands
+  venue: Maastricht Exhibition & Congress Centre (MECC), Forum 100, 6229 GV Maastricht, The Netherlands
+  format: hybrid
+  date: June 21-26, 2026
+  start: 2026-06-21
+  end: 2026-06-26
+  tags:
+      - machine-learning
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/685/
+  note: "3 events at WCCI: The International Joint Conference on Neural Networks (IJCNN), the IEEE International Conference on Fuzzy Systems (FUZZ-IEEE) and the IEEE Congress on Evolutionary Computation (IEEE CEC) - all 3 ranked B in CORE2023."

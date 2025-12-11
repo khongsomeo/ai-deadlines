@@ -1,0 +1,25 @@
+- title: ICML
+  year: 2026
+  id: icml26
+  full_name: International Conference on Machine Learning
+  link: "https://icml.cc/Conferences/2026"
+  abstract_deadline: "2026-01-23 23:59:00"
+  deadline: "2026-01-28 23:59:00"
+  rebuttal_period_start: "TBD"
+  rebuttal_period_end: "TBD"
+  final_decision_date: "TBD"
+  timezone: UTC-12
+  city: Seoul
+  country: South Korea
+  venue: COEX Convention & Exhibition Center
+  format: in-person
+  date: July 06-12, 2026
+  start: 2026-07-06
+  end: 2026-07-12
+  tags:
+      - machine-learning
+  rankings:
+      rank_name: A*
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1121/
+  note: "OpenReview submission"

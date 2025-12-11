@@ -1,7 +1,6 @@
 import { useMemo } from "react";
-import conferencesData from "@/data/conferences.yml";
+import conferencesData from "@/utils/conferenceLoader";
 import { X, ChevronRight, Filter } from "lucide-react";
-import { getAllCountries } from "@/utils/countryExtractor";
 import { getAllRanks } from "@/utils/rankExtractor";
 import { getAllFormats } from "@/utils/formatExtractor";
 import {

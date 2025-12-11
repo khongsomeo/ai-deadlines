@@ -1,0 +1,25 @@
+- title: ICASSP
+  year: 2026
+  id: icassp26
+  full_name: International Conference on Acoustics, Speech and Signal Processing
+  link: "https://2026.ieeeicassp.org/"
+  deadline: "2025-09-17 23:59:00"
+  rebuttal_period_end: "2025-12-24 23:59:00"
+  final_decision_date: "2026-01-16 07:59:59"
+  timezone: UTC-12
+  city: Barcelona
+  country: Spain
+  venue: Barcelona International Convention Centre (CCIB), Plaça de Willy Brandt, 11-14, Sant Martí
+  format: in-person
+  date: May 4-8, 2026
+  start: 2026-05-04
+  end: 2026-05-08
+  tags:
+      - machine-learning
+      - signal-processing
+      - speech-processing
+      - computer-vision
+  rankings:
+      rank_name: B
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2042/
