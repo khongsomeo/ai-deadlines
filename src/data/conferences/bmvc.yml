@@ -1,0 +1,24 @@
+- title: BMVC
+  year: 2026
+  id: bmvc26
+  full_name: The British Machine Vision Conference
+  link: "https://bmvc2026.bmva.org/"
+  abstract_deadline: "TBD"
+  deadline: "TBD"
+  rebuttal_period_start: "TBD"
+  rebuttal_period_end: "TBD"
+  final_decision_date: "TBD"
+  timezone: GMT+0
+  city: Lancaster
+  country: United Kingdom
+  venue: Lancaster Town Hall
+  format: in-person
+  date: November 23-26, 2026
+  start: 2026-11-23
+  end: 2026-11-26
+  tags:
+      - computer-vision
+  rankings:
+      rank_name: A
+      rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/296/
