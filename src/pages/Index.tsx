@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import FilterBar from "@/components/FilterBar";
 import ConferenceCard from "@/components/ConferenceCard";
 import conferencesData from "@/utils/conferenceLoader";
 import { Conference } from "@/types/conference";
@@ -12,8 +11,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { X, Globe, ChartNoAxesColumn } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
 import { getDeadlineInLocalTime } from "@/utils/dateUtils";
+import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
 import { getAllRanks } from "@/utils/rankExtractor";
 import { getAllFormats } from "@/utils/formatExtractor";
+import { hasUpcomingDeadlines } from "@/utils/deadlineUtils";
 
 const Index = () => {
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
@@ -42,51 +43,37 @@ const Index = () => {
       return [];
     }
 
-    return conferencesData
+    const filtered = conferencesData
       .filter((conf: Conference) => {
-        // Filter by deadline (past/future)
-        const deadlineDate = conf.deadline && conf.deadline !== 'TBD' ? parseISO(conf.deadline) : null;
-        const isUpcoming = !deadlineDate || !isValid(deadlineDate) || !isPast(deadlineDate);
-        if (!showPastConferences && !isUpcoming) return false;
+        // Filter by deadline (past/future) - use new deadline logic
+        if (!showPastConferences && !hasUpcomingDeadlines(conf)) return false;
 
         // Filter by tags
-        const matchesTags = selectedTags.size === 0 || 
+        const matchesTags = selectedTags.size === 0 ||
           (Array.isArray(conf.tags) && conf.tags.some(tag => selectedTags.has(tag)));
-        
+
         // Filter by countries
-        const matchesCountry = selectedCountries.size === 0 || 
+        const matchesCountry = selectedCountries.size === 0 ||
           (conf.country && selectedCountries.has(conf.country));
-        
+
         // Filter by search query
-        const matchesSearch = searchQuery === "" || 
+        const matchesSearch = searchQuery === "" ||
           conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
           (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()));
-        
+
         // Add rank filter
-        const matchesRank = selectedRanks.size === 0 || 
+        const matchesRank = selectedRanks.size === 0 ||
           (conf.rankings?.rank_name && selectedRanks.has(conf.rankings.rank_name));
-        
+
         // Add format filter
-        const matchesFormat = selectedFormats.size === 0 || 
+        const matchesFormat = selectedFormats.size === 0 ||
           (conf.format && selectedFormats.has(conf.format));
-        
+
         return matchesTags && matchesCountry && matchesRank && matchesFormat && matchesSearch;
-      })
-      .sort((a: Conference, b: Conference) => {
-        const aDeadline = getDeadlineInLocalTime(a.deadline, a.timezone);
-        const bDeadline = getDeadlineInLocalTime(b.deadline, b.timezone);
-        
-        if (aDeadline && bDeadline) {
-          return aDeadline.getTime() - bDeadline.getTime();
-        }
-        
-        // Handle cases where one or both deadlines are invalid
-        if (!aDeadline && !bDeadline) return 0;
-        if (!aDeadline) return 1;
-        if (!bDeadline) return -1;
-        
-        return 0;
       });
+
+    // Use the proper sorting function that handles both deadline formats
+    return sortConferencesByDeadline(filtered);
   }, [selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences]);
 
   // Add event listener for tag clicks
@@ -176,7 +163,7 @@ const Index = () => {
       const tags = tagsParam.split(',');
       setSelectedTags(new Set(tags));
     }
-    
+
     if (countriesParam) {
       const countries = countriesParam.split(',');
       setSelectedCountries(new Set(countries));
@@ -208,11 +195,10 @@ const Index = () => {
               {categoryButtons.map(category => (
                 <button
                   key={category.id}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                    selectedTags.has(category.id) 
-                      ? 'bg-blue-100 text-blue-800 hover:bg-blue-200' 
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${selectedTags.has(category.id)
+                      ? 'bg-blue-100 text-blue-800 hover:bg-blue-200'
                       : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
-                  }`}
+                    }`}
                   onClick={() => {
                     const newTags = new Set(selectedTags);
                     if (newTags.has(category.id)) {
@@ -228,7 +214,7 @@ const Index = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Controls row with past conferences toggle and country filter */}
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2 bg-white p-2 rounded-md shadow-sm">
@@ -241,7 +227,7 @@ const Index = () => {
                 onCheckedChange={setShowPastConferences}
               />
             </div>
-            
+
             <div className="flex flex-wrap items-center gap-2 bg-white p-2 rounded-md shadow-sm">
               <Popover>
                 <PopoverTrigger asChild>
@@ -256,13 +242,13 @@ const Index = () => {
                       <div className="mb-4">
                         <h4 className="text-sm font-medium text-gray-800">Country</h4>
                       </div>
-                      <div 
-                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y" 
+                      <div
+                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllCountries(conferencesData as Conference[]).map(country => (
                           <div key={country} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
-                            <Checkbox 
+                            <Checkbox
                               id={`country-${country}`}
                               checked={selectedCountries.has(country)}
                               onCheckedChange={() => {
@@ -275,7 +261,7 @@ const Index = () => {
                                 handleCountriesChange(newCountries);
                               }}
                             />
-                            <label 
+                            <label
                               htmlFor={`country-${country}`}
                               className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
                             >
@@ -288,7 +274,7 @@ const Index = () => {
                   </div>
                 </PopoverContent>
               </Popover>
-              
+
               {/* Display selected countries */}
               {Array.from(selectedCountries).map(country => (
                 <button
@@ -320,13 +306,13 @@ const Index = () => {
                       <div className="mb-4">
                         <h4 className="text-sm font-medium text-gray-800">Format</h4>
                       </div>
-                      <div 
-                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y" 
+                      <div
+                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllFormats(conferencesData as Conference[]).map(format => (
                           <div key={format} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
-                            <Checkbox 
+                            <Checkbox
                               id={`format-${format}`}
                               checked={selectedFormats.has(format)}
                               onCheckedChange={() => {
@@ -339,7 +325,7 @@ const Index = () => {
                                 handleFormatsChange(newFormats);
                               }}
                             />
-                            <label 
+                            <label
                               htmlFor={`format-${format}`}
                               className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
                             >
@@ -383,13 +369,13 @@ const Index = () => {
                       <div className="mb-4">
                         <h4 className="text-sm font-medium text-gray-800">Rank</h4>
                       </div>
-                      <div 
-                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y" 
+                      <div
+                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllRanks(conferencesData as Conference[]).map(rank => (
                           <div key={rank} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
-                            <Checkbox 
+                            <Checkbox
                               id={`rank-${rank}`}
                               checked={selectedRanks.has(rank)}
                               onCheckedChange={() => {
@@ -402,7 +388,7 @@ const Index = () => {
                                 handleRanksChange(newRanks);
                               }}
                             />
-                            <label 
+                            <label
                               htmlFor={`rank-${rank}`}
                               className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
                             >
@@ -434,9 +420,9 @@ const Index = () => {
 
               {/* Clear all filters button */}
               {(selectedTags.size > 0 || selectedCountries.size > 0 || selectedRanks.size > 0 || selectedFormats.size > 0) && (
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
+                <Button
+                  variant="ghost"
+                  size="sm"
                   onClick={() => {
                     handleTagsChange(new Set());
                     handleCountriesChange(new Set());
@@ -460,7 +446,7 @@ const Index = () => {
             </p>
           </div>
         )}
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredConferences.map((conference: Conference) => (
             <ConferenceCard key={conference.id} {...conference} />

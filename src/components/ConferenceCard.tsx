@@ -1,11 +1,11 @@
 import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock } from "lucide-react";
 import { Conference } from "@/types/conference";
-import { formatDistanceToNow, parseISO, isValid, isPast } from "date-fns";
+import { formatDistanceToNow, isValid, isPast } from "date-fns";
 import ConferenceDialog from "./ConferenceDialog";
 import { useState } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import DeadlineProgress from './DeadlineProgress';
-import { getNextUpcomingDeadline, getPrimaryDeadline } from "@/utils/deadlineUtils";
+import { getNextUpcomingDeadline, getPrimaryDeadline, getAllDeadlines } from "@/utils/deadlineUtils";
 
 const ConferenceCard = ({
   title,
@@ -172,38 +172,11 @@ const ConferenceCard = ({
         </div>
 
         <DeadlineProgress
-          steps={[
-            ...(abstract_deadline ? [{
-              label: 'Abstract Submission',
-              date: abstract_deadline,
-              timezone
-            }] : []),
-            {
-              label: 'Full Paper Submission',
-              date: deadline,
-              timezone
-            },
-            ...(conferenceProps.review_release_date ? [{
-              label: 'Reviews Released',
-              date: conferenceProps.review_release_date,
-              timezone
-            }] : []),
-            ...(conferenceProps.rebuttal_period_start ? [{
-              label: 'Rebuttal Start',
-              date: conferenceProps.rebuttal_period_start,
-              timezone
-            }] : []),
-            ...(conferenceProps.rebuttal_period_end ? [{
-              label: 'Rebuttal End',
-              date: conferenceProps.rebuttal_period_end,
-              timezone
-            }] : []),
-            ...(conferenceProps.final_decision_date ? [{
-              label: 'Final Decision',
-              date: conferenceProps.final_decision_date,
-              timezone
-            }] : [])
-          ].filter(step => step.date && step.date !== 'TBD')}
+          steps={getAllDeadlines(conference).map(deadline => ({
+            label: deadline.label,
+            date: deadline.date,
+            timezone: deadline.timezone || conference.timezone
+          }))}
         />
 
         {Array.isArray(tags) && tags.length > 0 && (
