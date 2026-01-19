@@ -2,17 +2,24 @@
   year: 2026
   id: iconip26
   full_name: International Conference on Neural Information Processing
-  link: "https://iconip2026.apnns.org/"
-  deadline: "TBD"
-  final_decision_date: "TBD"
+  link: "https://dems-iconip-2026.eventsair.site/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-05-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-07-15 23:59:00"
+      timezone: UTC-12
   timezone: UTC-12
   city: Melbourne
   country: Australia
-  venue: TBD
+  venue: Melbourne Convention and Exhibition Center
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: November 23-27, 2026
+  start: 2026-11-23
+  end: 2026-11-27
   tags:
       - machine-learning
       - natural-language-processing

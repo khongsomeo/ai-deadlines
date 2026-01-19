@@ -3,11 +3,27 @@
   id: interspeech26
   full_name: Interspeech
   link: "https://interspeech2026.org"
-  deadline: "2026-02-25 23:59:00"
-  rebuttal_period_start: "2026-04-24 07:59:00"
-  rebuttal_period_end: "2026-05-01 23:59:00"
-  final_decision_date: "2026-06-05 07:59:00"
-  timezone: UTC-12
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-02-25 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Update Deadline
+      date: "2026-03-04 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "2026-04-24 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2026-05-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-06-05 07:59:00"
+      timezone: UTC-12
   city: Sydney
   country: Australia
   venue: International Convention Centre Sydney (ICC Sydney), 14 Darling Drive, Sydney NSW 2000

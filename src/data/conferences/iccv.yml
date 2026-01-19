@@ -3,13 +3,31 @@
   id: iccv25
   full_name: International Conference on Computer Vision
   link: "https://iccv.thecvf.com/"
-  abstract_deadline: "2025-03-03 23:59:00"
-  deadline: "2025-03-07 23:59:00"
-  review_release_date: "2025-05-09 07:59:59"
-  rebuttal_period_start: "2025-05-10 07:59:59"
-  rebuttal_period_end: "2025-05-16 23:59:00"
-  final_decision_date: "2025-06-26 07:59:59"
-  timezone: UTC-12
+  deadlines:
+    - type: abstract
+      label: Abstract Deadline
+      date: "2025-03-03 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2025-03-07 23:59:00"
+      timezone: UTC-12
+    - type: review_release
+      label: Reviews Released
+      date: "2025-05-09 07:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "2025-05-10 07:59:59"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2025-05-16 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2025-06-26 07:59:59"
+      timezone: UTC-12
   city: Honolulu HI
   country: United States
   venue: Hawai'i Convention Center, Honolulu

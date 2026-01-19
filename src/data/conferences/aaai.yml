@@ -3,12 +3,27 @@
   id: aaai26
   full_name: Annual AAAI Conference on Artificial Intelligence
   link: "https://aaai.org/conference/aaai/aaai-26"
-  abstract_deadline: "2025-07-25 23:59:00"
-  deadline: "2025-08-01 23:59:00"
-  rebuttal_period_start: "2025-10-02 07:59:59"
-  rebuttal_period_end: "2025-10-08 23:59:00"
-  final_decision_date: "2025-11-03 07:59:59"
-  timezone: UTC-12
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2025-07-25 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2025-08-01 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "2025-10-02 07:59:59"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2025-10-08 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2025-11-03 07:59:59"
+      timezone: UTC-12
   city: Singapore
   country: Singapore
   venue: Singapore EXPO

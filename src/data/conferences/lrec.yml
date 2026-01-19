@@ -3,9 +3,19 @@
   id: lrec26
   full_name: Language Resources and Evaluation Conference
   link: "https://www.elra.info/lrec2026/"
-  deadline: "2025-10-17 23:59:00"
-  final_decision_date: "2026-02-13 07:59:59"
-  timezone: UTC-12
+  deadlines:
+    - type: submission
+      label: Second Call - Paper Submission
+      date: "2025-10-17 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Third Call - Paper Submission
+      date: "2025-10-24 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-02-13 07:59:59"
+      timezone: UTC-12
   city: Palma
   country: Spain
   venue: Palau de Congressos de Palma, Palma de Mallorca, Spain
