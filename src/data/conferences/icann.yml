@@ -3,9 +3,15 @@
   id: icann26
   full_name: International Conference on Artificial Neural Networks
   link: "https://e-nns.org/icann2026/"
-  deadline: "2026-03-16 23:59:00"
-  final_decision_date: "2026-05-29 07:59:00"
-  timezone: UTC-12
+  deadlines: 
+    - type: submission
+      label: Paper Submission
+      date: "2026-03-16 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-05-29 07:59:00"
+      timezone: UTC-12
   city: Padua
   country: Italy
   venue: Conference center of the School of Psychology, University of Padua, Italy

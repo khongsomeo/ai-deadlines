@@ -3,13 +3,23 @@
   id: ecmlpkdd26
   full_name: European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
   link: "https://ecmlpkdd.org/2026/"
-  abstract_deadline: "TBD"
-  deadline: "TBD"
-  final_decision_date: "TBD"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-03-05 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission (CMT)
+      date: "2026-03-12 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-05-27 07:59:00"
+      timezone: UTC-12
   timezone: UTC-12
   city: Naples
   country: Italy
-  venue: TBD
+  venue: Department of Electrical Engineering and Information Technology, University of Federico II, Via Claudio 21, 80125 Naples
   format: in-person
   date: September 07-11, 2026
   start: 2026-09-07

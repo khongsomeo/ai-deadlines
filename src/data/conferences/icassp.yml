@@ -3,10 +3,23 @@
   id: icassp26
   full_name: International Conference on Acoustics, Speech and Signal Processing
   link: "https://2026.ieeeicassp.org/"
-  deadline: "2025-09-17 23:59:00"
-  rebuttal_period_end: "2025-12-24 23:59:00"
-  final_decision_date: "2026-01-16 07:59:59"
-  timezone: UTC-12
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2025-09-17 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "2025-12-22 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2025-12-24 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-01-16 07:59:59"
+      timezone: UTC-12
   city: Barcelona
   country: Spain
   venue: Barcelona International Convention Centre (CCIB), Plaça de Willy Brandt, 11-14, Sant Martí

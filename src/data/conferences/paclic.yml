@@ -3,9 +3,15 @@
   id: paclic26
   full_name: Pacific Asia Conference on Language, Information and Computation
   link: "https://example.com"
-  deadline: "TBD"
-  final_decision_date: "TBD"
-  timezone: UTC-12
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12    
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
   city: TBD
   country: TBD
   venue: TBD

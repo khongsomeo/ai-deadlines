@@ -3,11 +3,27 @@
   id: accv26
   full_name: Asian Conference on Computer Vision
   link: "https://accv2026.org/"
-  deadline: "2026-07-05 23:59:00"
-  rebuttal_period_start: "2026-08-26 07:59:00"
-  rebuttal_period_end: "2026-09-02 23:59:00"
-  final_decision_date: "2026-09-20 07:59:00"
-  timezone: UTC-12
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-07-05 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Supplementary Material Deadline
+      date: "2026-07-08 23:59:00"
+      timezone: UTC-12
+    - type: review_release
+      label: Reviews Released
+      date: "2026-08-26 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2026-09-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-09-20 07:59:00"
+      timezone: UTC-12
   city: Osaka
   country: Japan
   venue: Osaka International Convention Center (Grand Cube Osaka).

@@ -3,9 +3,15 @@
   id: iccci26
   full_name: International Conference on Computational Collective Intelligence
   link: "https://iccci.pwr.edu.pl/2026/"
-  deadline: "2026-02-01 23:59:00"
-  final_decision_date: "2026-04-01 07:59:59"
-  timezone: UTC-12
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-02-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-04-01 07:59:59"
+      timezone: UTC-12
   city: Crete
   country: Greece
   venue: Capsis Astoria Hotel 11 Eleftherias Sq., 712 01 Heraklion, Crete
