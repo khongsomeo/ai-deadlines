@@ -26,6 +26,6 @@
       - data-mining
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/942/
   note: "Springer LNAI/LNCS 12-15 pages;"

@@ -3,9 +3,19 @@
   id: inlg25
   full_name: International Natural Language Generation Conference
   link: "https://2025.inlgmeeting.org/"
-  deadline: "2025-07-18 23:59:00"
-  commitment_deadline: "2025-08-07 23:59:59"
-  final_decision_date: "2025-08-21 07:59:59"
+  deadlines:
+    - type: submission
+      date: "2025-07-18 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: commitment
+      date: "2025-08-07 23:59:59"
+      label: "Commitment Deadline"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2025-08-21 07:59:59"
+      label: "Final Decision"
+      timezone: UTC-12
   timezone: UTC-12
   city: Hanoi
   country: Vietnam
@@ -20,5 +30,40 @@
   rankings:
       rank_name: B
       rank_source: CORE2023
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1327/
+  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format with allowance from organizer."
+
+- title: INLG
+  year: 2026
+  id: inlg26
+  full_name: International Natural Language Generation Conference
+  link: "https://2026.inlgmeeting.org/"
+  deadlines:
+    - type: submission
+      date: TBD
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: commitment
+      date: TBD
+      label: "Commitment Deadline"
+      timezone: UTC-12
+    - type: final_decision
+      date: TBD
+      label: "Final Decision"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1327/
   note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format with allowance from organizer."

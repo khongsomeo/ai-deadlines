@@ -3,12 +3,48 @@
   id: wacv26
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
   link: "https://wacv.thecvf.com/"
-  abstract_deadline: "2025-07-11 23:59:00"
-  deadline: "2025-07-18 23:59:00"
-  rebuttal_period_start: "2025-09-03 07:59:59"
-  rebuttal_period_end: "2025-09-19 23:59:00"
-  final_decision_date: "2025-11-05 07:59:59"
-  timezone: UTC-12
+  deadlines:
+    - type: abstract
+      label: Abstract Submission (Round 1)
+      date:  "2025-07-11 23:59:00"
+      timezone: UTC+0
+    - type: submission
+      label: Paper Submission (Round 1)
+      date: "2025-07-18 23:59:00"
+      timezone: UTC+0
+    - type: submission
+      label: Supplementary Material Submission (Round 1)
+      date: "2025-07-18 23:59:00"
+      timezone: UTC+0
+    - type: review_released
+      label: Reviews and Decisions To Authors (Round 1)
+      date: "2025-09-05 06:39:00"
+      timezone: UTC+0
+    - type: abstract
+      label: Abstract Submission (Round 2)
+      date: "2025-09-12 23:59:00"
+      timezone: UTC+0
+    - type: submission
+      label: Paper Submission (Round 2)
+      date: "2025-09-19 23:59:00"
+      timezone: UTC+0
+    - type: submission
+      label: Supplementary Material Submission (Round 2)
+      date: "2025-09-19 23:59:00"
+      timezone: UTC+0
+    - type: rebuttal_period_end
+      label: Rebuttal and Revision Submission (Round 1)
+      date: "2025-09-19 23:59:00"
+      timezone: UTC+0
+    - type: final_decision
+      label: Final Decisions released to Authors (Round 1)
+      date: "2025-11-06 07:59:00"
+      timezone: UTC+0
+    - type: final_decision
+      label: Reviews and Final Decisions released to Authors (Round 2)
+      date: "2025-11-06 07:59:00"
+      timezone: UTC+0
+  timezone: UTC+0
   city: Tucson AZ
   country: United States
   venue: JW Marriott Starpass

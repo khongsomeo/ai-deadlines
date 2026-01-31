@@ -27,6 +27,7 @@ const Index = () => {
   // Category buttons configuration
   const categoryButtons = [
     { id: "machine-learning", label: "Machine Learning" },
+    { id: "multimedia", label: "Multimedia" }, 
     { id: "robotics", label: "Robotics" },
     { id: "computer-vision", label: "Computer Vision" },
     { id: "data-mining", label: "Data Mining" },
@@ -35,6 +36,7 @@ const Index = () => {
     { id: "speech-processing", label: "Speech Processing" },
     { id: "human-computer-interaction", label: "Human Computer Interaction" },
     { id: "information-theory", label: "Information Theory" },
+    { id: "information-retrieval", label: "Information Retrieval" },
   ];
 
   const filteredConferences = useMemo(() => {

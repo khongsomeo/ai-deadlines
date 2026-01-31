@@ -1,0 +1,82 @@
+- title: ACML
+  year: 2025
+  id: acml25
+  full_name: The 17th Asian Conference in Machine Learning
+  link: "https://www.acml-conf.org/"
+  deadlines:
+    - type: submission
+      label: "Paper Submission"
+      date: "2025-06-26 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Period Start"
+      date: "2025-08-04 07:59:59"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal Period End"
+      date: "2025-08-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification"
+      date: "2025-09-01 07:59:59"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Taipei
+  country: Taiwan
+  venue: HNBK International Convention Center
+  format: in-person
+  date: December 09-12
+  start: 2025-12-09
+  end: 2025-12-12
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2174/
+
+- title: ACML
+  year: 2026
+  id: acml26
+  full_name: The 18th Asian Conference in Machine Learning
+  link: "https://www.acml-conf.org/"
+  deadlines:
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Period Start"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal Period End"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2174/
+

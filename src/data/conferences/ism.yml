@@ -3,8 +3,15 @@
   id: ism25
   full_name: IEEE International Symposium on Multimedia
   link: "https://www.multimediacomputing.org/"
-  deadline: "2025-09-01 23:59:00"
-  final_decision_date: "2025-10-01 07:59:59"
+  deadlines:
+    - type: submission
+      date: "2025-09-01 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-8
+    - type: final_decision
+      date: "2025-10-01 07:59:59"
+      label: Author Notification
+      timezone: UTC-8
   timezone: UTC-8
   city: Naples
   country: Italy
@@ -17,6 +24,7 @@
       - signal-processing
       - speech-processing
       - computer-vision
+      - multimedia
   rankings:
       rank_name: C
       rank_source: CORE2023

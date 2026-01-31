@@ -3,11 +3,31 @@
   id: bmvc26
   full_name: The British Machine Vision Conference
   link: "https://bmvc2026.bmva.org/"
-  abstract_deadline: "TBD"
-  deadline: "TBD"
-  rebuttal_period_start: "TBD"
-  rebuttal_period_end: "TBD"
-  final_decision_date: "TBD"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "TBD"
+      timezone: GMT+0
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: GMT+0
+    - type: submission
+      label: Supplementary Material Submission
+      date: "TBD"
+      timezone: GMT+0
+    - type: rebuttal_start
+      label: Rebuttal Start
+      date: "TBD"
+      timezone: GMT+0
+    - type: rebuttal_end
+      label: Rebuttal End
+      date: "TBD"
+      timezone: GMT+0
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: GMT+0
   timezone: GMT+0
   city: Lancaster
   country: United Kingdom

@@ -3,8 +3,15 @@
   id: pricai26
   full_name: Pacific Rim International Conference on Artificial Intelligence
   link: "https://pricai.org/2026"
-  deadline: "TBD"
-  final_decision_date: "TBD"
+  deadlines:
+    - type: submission
+      date: "TBD"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "TBD"
+      label: "Author Notification"
+      timezone: UTC-12
   timezone: UTC-12
   city: Guangzhou
   country: PR China
@@ -22,6 +29,6 @@
       - robotics
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1661/
   note: "Virtual participant allowed, but limited;"

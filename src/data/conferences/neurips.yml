@@ -3,11 +3,31 @@
   id: neurips25
   full_name: Annual Conference on Neural Information Processing Systems
   link: "https://neurips.cc/"
-  abstract_deadline: "2025-05-11 23:59:00"
-  deadline: "2025-05-15 23:59:00"
-  rebuttal_period_start: "2025-07-24 07:59:59"
-  rebuttal_period_end: "2025-08-06 23:59:00"
-  final_decision_date: "2025-09-18 07:59:59"
+  deadlines:
+    - type: abstract
+      date: "2025-05-11 23:59:00"
+      label: Abstract Submission
+      timezone: UTC-12
+    - type: submission
+      date: "2025-05-15 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: submission
+      date: "2025-05-22 23:59:00"
+      label: Supplemental Material Submission
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Start
+      date: "2025-07-24 07:59:59"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal End
+      date: "2025-08-06 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2025-09-18 07:59:59"
+      timezone: UTC-12
   timezone: UTC-12
   city: San Diego CA
   country: United States
@@ -25,6 +45,6 @@
       - human-computer-interaction
   rankings:
       rank_name: A*
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/98/
   note: "OpenReview submission"

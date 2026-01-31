@@ -1,11 +1,21 @@
 - title: SIGDIAL
   year: 2025
   id: sigdial25
-  full_name: Annual Meeting of the Special Interest Group on Discourse and Dialogue
+  full_name: 26th Annual Meeting of the Special Interest Group on Discourse and Dialogue
   link: "https://2025.sigdial.org/"
-  deadline: "2025-04-21 23:59:00"
-  commitment_deadline: "2025-06-06 23:59:00"
-  final_decision_date: "2025-06-20 07:59:00"
+  deadlines:
+    - type: submission
+      label: "Paper Submission"
+      date: "2025-04-21 23:59:00"
+      timezone: UTC-12
+    - type: commitment
+      label: "Commitment Deadline"
+      date: "2025-06-06 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification"
+      date: "2025-06-20 07:59:00"
+      timezone: UTC-12
   timezone: UTC-12
   city: Avignon
   country: France
@@ -22,3 +32,44 @@
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/1729/
   note: "ARR"
+
+- title: SIGDIAL
+  year: 2026
+  id: sigdial26
+  full_name: 27th Annual Meeting of the Special Interest Group on Discourse and Dialogue
+  link: "https://2026.sigdial.org/"
+  deadlines:
+    - type: abstract_deadline
+      label: "Abstract and Title Submission"
+      date: "2026-03-16 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission (pdf only)"
+      date: "2026-03-23 23:59:00"
+      timezone: UTC-12
+    - type: commitment
+      label: "Commitment Deadline"
+      date: "2026-05-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification"
+      date: "2026-05-25 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Atlanta, GA
+  country: United States
+  venue: Emory Student Center - 605 Asbury Cir, Atlanta, GA 30322
+  format: hybrid
+  date: July 13-15, 2026
+  start: 2026-07-13
+  end: 2026-07-15
+  tags:
+      - natural-language-processing
+      - speech-processing
+      - information-retrieval
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1729/
+  note: "ARR January Cycle; <b>Remote presentations will only be considered in exceptional circumstances (e.g., visa or health issues) with prior approval from the organizers.</b>"
+

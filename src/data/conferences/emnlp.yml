@@ -3,11 +3,27 @@
   id: emnlp26
   full_name: Conference on Empirical Methods in Natural Language Processing
   link: "https://2026.emnlp.org/"
-  deadline: "TBD"
-  rebuttal_period_start: "TBD"
-  rebuttal_period_end: "TBD"
-  commitment_deadline: "TBD"
-  final_decision_date: "TBD"
+  deadlines:
+    - type: submission
+      date: "TBD"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: rebuttal_start
+      date: "TBD"
+      label: Rebuttal Period Start
+      timezone: UTC-12
+    - type: rebuttal_end
+      date: "TBD"
+      label: Rebuttal Period End
+      timezone: UTC-12
+    - type: commitment
+      date: "TBD"
+      label: Commitment Deadline
+      timezone: UTC-12
+    - type: final_decision
+      date: "TBD"
+      label: Author Notification
+      timeezone: UTC-12
   timezone: UTC-12
   city: Budapest
   country: Hungary
@@ -19,8 +35,9 @@
   tags:
       - natural-language-processing
       - speech-processing
+      - information-retrieval
   rankings:
       rank_name: A*
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/448/
   note: "<b>ACL Rolling Review</b>"

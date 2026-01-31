@@ -1,10 +1,17 @@
 - title: PAKDD
   year: 2026
   id: pakdd26
-  full_name: Pacific-Asia Conference on Knowledge Discovery and Data Mining
+  full_name: The 30th Pacific-Asia Conference on Knowledge Discovery and Data Mining
   link: "https://www.pakdd2026.org/"
-  deadline: "2025-11-15 23:59:00"
-  final_decision_date: "2026-02-08 07:59:59"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2025-11-25 23:59:00"
+      timezone: UTC-8
+    - type: final_decision
+      label: Paper Acceptance Notification
+      date:  "2026-02-08 07:59:59"
+      timezone: UTC-8
   timezone: UTC-8
   city: Hong Kong
   country: PR China
@@ -15,6 +22,7 @@
   end: 2026-06-12
   tags:
       - machine-learning
+      - information-retrieval
       - data-mining
       - natural-language-processing
       - computer-vision
@@ -22,5 +30,5 @@
       - robotics
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1667/

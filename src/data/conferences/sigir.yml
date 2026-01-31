@@ -1,0 +1,38 @@
+- title: SIGIR
+  year: 2026
+  id: sigir2026
+  full_name: 49th International ACM SIGIR Conference on Research and Development in Information Retrieval
+  link: "https://sigir2026.org"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission (Full Paper Track)"
+      date: "2026-01-15 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission (Full Paper Track)"
+      date: "2026-01-22 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission (Doctoral Colloquium Track)"
+      date: "2026-01-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification (All Tracks)"
+      date: "2026-04-02 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Melbourne
+  country: Australia
+  venue: Melbourne Convention and Exhibition Centre, 1 Convention Centre Place, South Wharf 3006
+  format: in-person
+  date: July 20-24, 2026
+  start: 2026-07-20
+  end: 2026-07-24
+  tags:
+      - natural-language-processing
+      - machine-learning
+      - information-retrieval
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/29/

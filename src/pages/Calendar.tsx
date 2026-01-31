@@ -20,6 +20,7 @@ import {
 
 const categoryColors: Record<string, string> = {
   "machine-learning": "bg-purple-500",
+  "multimedia": "bg-black-500",
   "computer-vision": "bg-orange-500",
   "natural-language-processing": "bg-blue-500",
   "robotics": "bg-green-500",
@@ -27,11 +28,13 @@ const categoryColors: Record<string, string> = {
   "signal-processing": "bg-cyan-500",
   "data-mining": "bg-pink-500",
   "information-theory": "bg-red-500",
+  "information-retrieval": "bg-brown-500",
   "other": "bg-gray-500"
 };
 
 const categoryNames: Record<string, string> = {
   "machine-learning": "Machine Learning",
+  "multimedia": "Multimedia",
   "computer-vision": "Computer Vision",
   "natural-language-processing": "NLP",
   "robotics": "Robotics",
@@ -39,12 +42,14 @@ const categoryNames: Record<string, string> = {
   "signal-processing": "Signal Processing",
   "data-mining": "Data Mining",
   "information-theory": "Information Theory",
+  "information-retrieval": "Information Retrieval",
   "other": "Other"
 };
 
 // Add this array to maintain the exact order we want
 const orderedCategories = [
   "machine-learning",
+  "multimedia",
   "computer-vision",
   "natural-language-processing",
   "robotics",
@@ -52,6 +57,7 @@ const orderedCategories = [
   "signal-processing",
   "data-mining",
   "information-theory",
+  "information-retrieval",
   "other"
 ] as const;
 

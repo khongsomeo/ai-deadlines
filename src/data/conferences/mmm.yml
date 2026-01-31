@@ -1,0 +1,29 @@
+- title: MMM
+  year: 2026
+  id: mmm26
+  full_name: International Conference on Multimedia Modelling
+  link: "https://acmmm2025.org//"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2025-09-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2025-10-29 07:59:00"
+      timezone: UTC-12
+  city: Prague
+  country: Czech Republic
+  venue: Orea Hotel Pyramida, Bělohorská 24, 169 00, Prague 6
+  format: hybrid
+  date: January 29-31, 2026
+  start: 2026-01-29
+  end: 2026-01-31
+  tags:
+      - multimedia
+      - speech-processing
+      - signal-processing
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1143/

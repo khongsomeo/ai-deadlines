@@ -14,7 +14,7 @@
       timezone: UTC-12
   city: Kaohsiung
   country: Taiwan
-  venue: TBD
+  venue: No. 311號, Qixian 1st Rd, Sinsing District, Kaohsiung City, Taiwan 800
   format: hybrid
   date: April 13-15, 2026
   start: 2026-04-13
@@ -27,6 +27,6 @@
       - robotics
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/2188/
   note: "<b>Hard deadline; Submission max. 15 pages;</b>"

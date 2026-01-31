@@ -27,6 +27,7 @@
       - signal-processing
       - computer-vision
       - robotics
+      - multimedia
   rankings:
       rank_name: B
       rank_source: CORE2023

@@ -1,0 +1,52 @@
+- title: ACMMM
+  year: 2025
+  id: acmmm25
+  full_name: 33rd ACM International Conference on Multimedia
+  link: "https://acmmm2025.org//"
+  deadlines:
+    - type: abstract_deadline
+      label: Paper Registration
+      date: "2025-04-04 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Regular Paper Submission
+      date: "2025-04-11 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Reproducibility Companion Paper Submission
+      date: "2025-04-18 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Dataset Paper Submission
+      date: "2025-05-30 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2025-06-09 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2025-06-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision (Regular Paper)
+      date: "2025-07-04 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision (DS & Reproducibility Companion Paper)
+      date: "2025-08-26 07:59:00"
+      timezone: UTC-12
+  city: Dublin
+  country: Ireland
+  venue: Dublin Royal Convention Centre / Radisson
+  format: hybrid
+  date: October 27-31, 2025
+  start: 2025-10-27
+  end: 2025-10-31
+  tags:
+      - multimedia
+      - speech-processing
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/37/

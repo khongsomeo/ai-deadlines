@@ -3,9 +3,19 @@
   id: soict25
   full_name: International Symposium on Information and Communication Technology
   link: "https://soict.org"
-  abstract_deadline: "2025-09-05 23:59:00"
-  deadline: "2025-09-15 23:59:00"
-  final_decision_date: "2025-10-15 07:59:59"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2025-09-05 23:59:00"
+      timezone: UTC+7
+    - type: submission
+      label: Paper Submission
+      date: "2025-09-15 23:59:00"
+      timezone: UTC+7
+    - type: final_decision
+      label: Author Notification
+      date: "2025-10-15 07:59:59"
+      timezone: UTC+7
   timezone: UTC+7
   city: Nha Trang
   country: Vietnam
@@ -19,6 +29,7 @@
       - machine-learning
       - speech-processing
       - human-computer-interaction
+      - multimedia
   rankings:
       rank_name: Non-ranked
       rank_source: Springer CCIS
