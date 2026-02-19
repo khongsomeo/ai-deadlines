@@ -5,4 +5,10 @@ services:
     image: ai-deadlines:latest
     container_name: ai-deadlines
     ports:
-      - "80:8080"
+      - "80:8080"       # Frontend on port 80
+      - "3001:3001"     # API on port 3001
+    environment:
+      - NODE_ENV=production
+      - API_PORT=3001    # Explicitly set API port (not PORT)
+    volumes:
+      - ./src/data:/app/src/data:ro  # Optional: mount data directory for live updates

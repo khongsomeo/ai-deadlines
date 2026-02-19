@@ -5,7 +5,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock, CalendarPlus } from "lucide-react";
+import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock, CalendarPlus, Bell } from "lucide-react";
 import { Conference } from "@/types/conference";
 import { parseISO, isValid, format, parse, formatDistanceToNow } from "date-fns";
 import { Button } from "@/components/ui/button";
@@ -14,10 +14,13 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import { getNextUpcomingDeadline, getUpcomingDeadlines, getDaysRemaining, getCountdownColorClass, formatDeadlineDate } from "@/utils/deadlineUtils";
+import { getCalendarSubscriptionLink } from "@/utils/calendarUtils";
 
 interface ConferenceDialogProps {
   conference: Conference;
@@ -152,6 +155,16 @@ END:VCALENDAR`;
 
   const generateGoogleMapsUrl = (venue: string | undefined, place: string): string => {
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue || place)}`;
+  };
+
+  const handleSubscribeCalendar = (calendarType: 'google' | 'apple' | 'outlook') => {
+    try {
+      const subscriptionUrl = getCalendarSubscriptionLink(conference.id, calendarType);
+      window.open(subscriptionUrl, '_blank');
+    } catch (error) {
+      console.error('Error subscribing to calendar:', error);
+      alert('Failed to subscribe to calendar. Please try again.');
+    }
   };
 
   const formatDeadlineDisplay = () => {
@@ -317,6 +330,9 @@ END:VCALENDAR`;
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white" align="end">
+                <DropdownMenuLabel className="text-xs text-gray-500 font-medium">
+                  Add Single Event
+                </DropdownMenuLabel>
                 <DropdownMenuItem
                   className="text-neutral-800 hover:bg-neutral-100"
                   onClick={() => createCalendarEvent('google')}
@@ -328,6 +344,33 @@ END:VCALENDAR`;
                   onClick={() => createCalendarEvent('apple')}
                 >
                   Add to Apple Calendar
+                </DropdownMenuItem>
+
+                <DropdownMenuSeparator />
+
+                <DropdownMenuLabel className="text-xs text-gray-500 font-medium">
+                  Subscribe to Updates
+                </DropdownMenuLabel>
+                <DropdownMenuItem
+                  className="text-neutral-800 hover:bg-neutral-100"
+                  onClick={() => handleSubscribeCalendar('google')}
+                >
+                  <Bell className="h-4 w-4 mr-2" />
+                  Google Calendar
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="text-neutral-800 hover:bg-neutral-100"
+                  onClick={() => handleSubscribeCalendar('apple')}
+                >
+                  <Bell className="h-4 w-4 mr-2" />
+                  Apple Calendar
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  className="text-neutral-800 hover:bg-neutral-100"
+                  onClick={() => handleSubscribeCalendar('outlook')}
+                >
+                  <Bell className="h-4 w-4 mr-2" />
+                  Outlook
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
