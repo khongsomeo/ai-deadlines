@@ -1,14 +1,51 @@
 version: "3.8"
 services:
-  ai-deadlines:
-    build: .
-    image: ai-deadlines:latest
-    container_name: ai-deadlines
+  # Frontend service - serves React app
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: ai-deadlines-frontend
+    image: ai-deadlines-frontend:latest
     ports:
-      - "80:8080"       # Frontend on port 80
-      - "3001:3001"     # API on port 3001
+      - "80:8080"    # Frontend on port 80 (mapped from 8080)
     environment:
       - NODE_ENV=production
-      - API_PORT=3001    # Explicitly set API port (not PORT)
+    depends_on:
+      - api
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # API service - Express backend
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: ai-deadlines-api
+    image: ai-deadlines-api:latest
+    ports:
+      - "3001:3001"  # API on port 3001
+    environment:
+      - NODE_ENV=production
+      - API_PORT=3001
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     volumes:
-      - ./src/data:/app/src/data:ro  # Optional: mount data directory for live updates
+      - ./src/data:/app/src/data:ro  # Mount data directory for live updates
+
+# Network created automatically by docker-compose
+# Services can communicate: frontend calls http://api:3001
+networks:
+  default:
+    name: ai-deadlines-network
+
