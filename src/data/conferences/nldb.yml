@@ -1,4 +1,34 @@
 - title: NLDB
+  year: 2026
+  id: nldb26
+  full_name: International Conference on Natural Language & Information Systems
+  link: "https://www.ntnu.edu/nldb2026/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-02-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-03-20 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Trondheim
+  country: Norway
+  venue: Elektro A, O. S. Bragstads Plass, 7034 Trondheim
+  format: in-person
+  date: June 17-19, 2026
+  start: 2026-06-17
+  end: 2026-06-19
+  tags:
+      - natural-language-processing
+      - information-retrieval
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/144/
+
+- title: NLDB
   year: 2025
   id: nldb25
   full_name: International Conference on Natural Language & Information Systems
@@ -19,3 +49,4 @@
       rank_name: C
       rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/144/
+

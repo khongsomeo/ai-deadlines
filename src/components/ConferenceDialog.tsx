@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock, CalendarPlus } from "lucide-react";
 import { Conference } from "@/types/conference";
-import { parseISO, isValid, format, parse } from "date-fns";
+import { parseISO, isValid, format, parse, formatDistanceToNow } from "date-fns";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
-import { getNextUpcomingDeadline, getUpcomingDeadlines } from "@/utils/deadlineUtils";
+import { getNextUpcomingDeadline, getUpcomingDeadlines, getDaysRemaining, getCountdownColorClass, formatDeadlineDate } from "@/utils/deadlineUtils";
 
 interface ConferenceDialogProps {
   conference: Conference;
@@ -91,29 +91,6 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
     if (daysRemaining <= 7) return "text-red-600";
     if (daysRemaining <= 30) return "text-orange-600";
     return "text-green-600";
-  };
-
-  const parseDateFromString = (dateStr: string) => {
-    try {
-      // Handle formats like "October 19-25, 2025" or "Sept 9-12, 2025"
-      const [monthDay, year] = dateStr.split(", ");
-      const [month, dayRange] = monthDay.split(" ");
-      const [startDay] = dayRange.split("-");
-
-      // Construct a date string in a format that can be parsed
-      const dateString = `${month} ${startDay} ${year}`;
-      const date = parse(dateString, 'MMMM d yyyy', new Date());
-
-      if (!isValid(date)) {
-        // Try alternative format for abbreviated months
-        return parse(dateString, 'MMM d yyyy', new Date());
-      }
-
-      return date;
-    } catch (error) {
-      console.error("Error parsing date:", error);
-      return new Date();
-    }
   };
 
   const createCalendarEvent = (type: 'google' | 'apple') => {
@@ -198,27 +175,12 @@ END:VCALENDAR`;
     );
   };
 
-  // Add these new functions to handle consistent date conversion
-  const getLocalDeadline = (dateString: string | undefined) => {
-    if (!dateString || dateString === 'TBD') return null;
-    return getDeadlineInLocalTime(dateString, conference.timezone);
-  };
 
-  // Format any deadline date consistently
-  const formatDeadlineDate = (dateString: string | undefined) => {
-    if (!dateString || dateString === 'TBD') return dateString || 'TBD';
-
-    const localDate = getLocalDeadline(dateString);
-    if (!localDate || !isValid(localDate)) return dateString;
-
-    const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    return `${format(localDate, "MMMM d, yyyy")} (${localTZ})`;
-  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
-        className="max-w-md w-full"
+        className="max-w-lg w-full"
       >
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-blue-600">
@@ -266,15 +228,24 @@ END:VCALENDAR`;
                   {upcomingDeadlines.length > 0 ? (
                     upcomingDeadlines.map((deadline, index) => {
                       const isNext = nextDeadline && deadline.date === nextDeadline.date && deadline.type === nextDeadline.type;
+                      const daysRemaining = getDaysRemaining(deadline, conference.timezone);
+                      const daysColorClass = getCountdownColorClass(daysRemaining);
                       return (
                         <div
                           key={`${deadline.type}-${index}`}
                           className={`rounded-md p-2 ${isNext ? 'bg-blue-100 border border-blue-200' : 'bg-gray-100'}`}
                         >
-                          <p className={isNext ? 'font-medium text-blue-800' : ''}>
-                            {deadline.label}: {formatDeadlineDate(deadline.date)}
-                            {isNext && <span className="ml-2 text-xs">(Next)</span>}
-                          </p>
+                          <div className="flex items-center justify-between gap-2">
+                            <p className={`flex-1 ${isNext ? 'font-medium text-blue-800' : ''}`}>
+                              {deadline.label}: {formatDeadlineDate(deadline.date, deadline.timezone || conference.timezone)}
+                              {isNext && <span className="ml-2 text-xs">(Next)</span>}
+                            </p>
+                            {daysRemaining !== null && daysRemaining > 0 && (
+                              <span className={`text-xs font-medium whitespace-nowrap ${daysColorClass}`}>
+                                {formatDistanceToNow(getDeadlineInLocalTime(deadline.date, deadline.timezone), { addSuffix: true })}
+                              </span>
+                            )}
+                          </div>
                         </div>
                       );
                     })

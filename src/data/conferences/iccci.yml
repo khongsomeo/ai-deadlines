@@ -6,7 +6,7 @@
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "2026-02-01 23:59:00"
+      date: "2026-03-01 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Decision

@@ -6,27 +6,23 @@
   deadlines:
     - type: abstract
       label: Abstract Submission
-      date: "TBD"
+      date: "2026-05-22 23:59:00"
       timezone: GMT+0
     - type: submission
-      label: Paper Submission
-      date: "TBD"
-      timezone: GMT+0
-    - type: submission
-      label: Supplementary Material Submission
-      date: "TBD"
+      label: Paper and Supplementary Material Submission
+      date: "2026-05-29 23:59:00"
       timezone: GMT+0
     - type: rebuttal_start
       label: Rebuttal Start
-      date: "TBD"
+      date: "2026-07-03 07:59:00"
       timezone: GMT+0
     - type: rebuttal_end
       label: Rebuttal End
-      date: "TBD"
+      date: "2026-07-10 23:59:00"
       timezone: GMT+0
     - type: final_decision
       label: Author Notification
-      date: "TBD"
+      date: "2026-08-07 07:59:00"
       timezone: GMT+0
   timezone: GMT+0
   city: Lancaster
@@ -38,7 +34,8 @@
   end: 2026-11-26
   tags:
       - computer-vision
+      - multimedia
   rankings:
       rank_name: A
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/296/

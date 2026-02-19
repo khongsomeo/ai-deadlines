@@ -5,7 +5,7 @@ import ConferenceDialog from "./ConferenceDialog";
 import { useState } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import DeadlineProgress from './DeadlineProgress';
-import { getNextUpcomingDeadline, getPrimaryDeadline, getAllDeadlines } from "@/utils/deadlineUtils";
+import { getNextUpcomingDeadline, getPrimaryDeadline, getAllDeadlines, getCountdownColorClass, getDaysRemaining, formatDeadlineDate } from "@/utils/deadlineUtils";
 
 const ConferenceCard = ({
   title,
@@ -59,18 +59,7 @@ const ConferenceCard = ({
   const location = [city, country].filter(Boolean).join(", ");
 
   // Determine countdown color based on days remaining
-  const getCountdownColor = () => {
-    if (!deadlineDate || !isValid(deadlineDate)) return "text-neutral-600";
-    try {
-      const daysRemaining = Math.ceil((deadlineDate.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
-      if (daysRemaining <= 7) return "text-red-600";
-      if (daysRemaining <= 30) return "text-orange-600";
-      return "text-green-600";
-    } catch (error) {
-      console.error('Error calculating countdown color:', error);
-      return "text-neutral-600";
-    }
-  };
+  const countdownColorClass = getCountdownColorClass(getDaysRemaining(nextDeadline, timezone));
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (!(e.target as HTMLElement).closest('a') &&
@@ -160,12 +149,12 @@ const ConferenceCard = ({
           <div className="flex items-center text-neutral">
             <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">
-              {nextDeadline ? `${nextDeadline.label}: ${nextDeadline.date}` : (deadline === 'TBD' ? 'TBD' : deadline)}
+              {nextDeadline ? `${nextDeadline.label}: ${formatDeadlineDate(nextDeadline.date, nextDeadline.timezone || timezone, false)}` : (deadline === 'TBD' ? 'TBD' : `${formatDeadlineDate(deadline, timezone, false)}`)}
             </span>
           </div>
           <div className="flex items-center">
-            <AlarmClock className={`h-4 w-4 mr-2 flex-shrink-0 ${getCountdownColor()}`} />
-            <span className={`text-sm font-medium truncate ${getCountdownColor()}`}>
+            <AlarmClock className={`h-4 w-4 mr-2 flex-shrink-0 ${countdownColorClass}`} />
+            <span className={`text-sm font-medium truncate ${countdownColorClass}`}>
               {timeRemaining}
             </span>
           </div>

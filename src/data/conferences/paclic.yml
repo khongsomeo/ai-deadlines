@@ -1,7 +1,7 @@
 - title: PACLIC
   year: 2026
   id: paclic26
-  full_name: Pacific Asia Conference on Language, Information and Computation
+  full_name: The 40th Pacific Asia Conference on Language, Information and Computation
   link: "https://example.com"
   deadlines:
     - type: submission
@@ -12,9 +12,9 @@
       label: Final Decision
       date: "TBD"
       timezone: UTC-12
-  city: TBD
-  country: TBD
-  venue: TBD
+  city: Taipei
+  country: Taiwan
+  venue: National Taiwan University
   format: hybrid
   date: TBD
   start: TBD
@@ -24,5 +24,5 @@
       - speech-processing
   rankings:
       rank_name: C
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1658/

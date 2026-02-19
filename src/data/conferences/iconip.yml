@@ -1,7 +1,7 @@
 - title: ICONIP
   year: 2026
   id: iconip26
-  full_name: International Conference on Neural Information Processing
+  full_name: The 33rd International Conference on Neural Information Processing
   link: "https://dems-iconip-2026.eventsair.site/"
   deadlines:
     - type: submission
@@ -25,6 +25,6 @@
       - natural-language-processing
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1152/
   note: "OpenReview submission"

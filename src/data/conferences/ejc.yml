@@ -26,6 +26,6 @@
       - computer-vision
   rankings:
       rank_name: C
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/524/
   note: "Submission site: http://ejc.komazawa-u.ac.jp/ejc2026review/"

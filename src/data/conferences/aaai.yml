@@ -40,6 +40,6 @@
       - human-computer-interaction
   rankings:
       rank_name: A*
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1629/
   note: "OpenReview submission"

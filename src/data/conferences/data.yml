@@ -3,12 +3,19 @@
   id: data26
   full_name: International Conference on Data Science, Technology and Applications 
   link: "https://data.scitevents.org/"
-  deadline: "2026-03-03 23:59:00"
-  final_decision_date: "2026-04-30 07:59:59"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-03-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-04-30 07:59:59"
+      timezone: UTC-12
   timezone: UTC-12
   city: Porto
   country: Portugal
-  venue: TBD
+  venue: Vila Galé Porto Hotel Av. Fernão de Magalhães, nº 7 4300-190 Porto
   format: hybrid
   date: July 16-18, 2026
   start: 2026-07-16
@@ -20,5 +27,5 @@
       - computer-vision
   rankings:
       rank_name: C
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/2302/

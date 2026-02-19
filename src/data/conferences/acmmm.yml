@@ -1,4 +1,49 @@
 - title: ACMMM
+  year: 2026
+  id: acmmm26
+  full_name: 34th ACM International Conference on Multimedia
+  link: "https://2026.acmmm.org//"
+  deadlines:
+    - type: abstract_deadline
+      label: Paper Registration
+      date: "2026-03-25 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Regular Paper Submission
+      date: "2026-04-01 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Supplementary Material Submission
+      date: "2026-04-08 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2026-06-04 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2026-06-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification (Main Track)
+      date: "2026-07-09 07:59:00"
+      timezone: UTC-12
+  city: Rio de Janeiro
+  country: Brazil
+  venue: TBD
+  format: hybrid
+  date: November 10-14, 2026
+  start: 2026-11-10
+  end: 2026-11-14
+  tags:
+      - multimedia
+      - speech-processing
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/37/
+
+- title: ACMMM
   year: 2025
   id: acmmm25
   full_name: 33rd ACM International Conference on Multimedia
@@ -50,3 +95,4 @@
       rank_name: A*
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/37/
+

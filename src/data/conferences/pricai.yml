@@ -1,25 +1,25 @@
 - title: PRICAI
   year: 2026
   id: pricai26
-  full_name: Pacific Rim International Conference on Artificial Intelligence
-  link: "https://pricai.org/2026"
+  full_name: The 23rd Pacific Rim International Conference on Artificial Intelligence
+  link: "https://2026.pricai.org"
   deadlines:
     - type: submission
-      date: "TBD"
+      date: "2026-06-13 23:59:00"
       label: "Paper Submission"
       timezone: UTC-12
     - type: final_decision
-      date: "TBD"
+      date: "2026-08-08 07:59:00"
       label: "Author Notification"
       timezone: UTC-12
   timezone: UTC-12
   city: Guangzhou
   country: PR China
-  venue: TBD
+  venue: South China Normal University
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: November 17-20, 2026
+  start: 2026-11-17
+  end: 2026-11-20
   tags:
       - machine-learning
       - natural-language-processing
@@ -31,4 +31,4 @@
       rank_name: B
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1661/
-  note: "Virtual participant allowed, but limited;"
+  note: "Springer LNCS/LNAI <b>maximum 16 pages</b>, no additional pages allowed. Some were allowed to present virtually last year, not sure if it is allowed this year."
