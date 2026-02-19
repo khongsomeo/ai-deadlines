@@ -95,14 +95,9 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 
   const createCalendarEvent = (type: 'google' | 'apple') => {
     try {
-      if (!conference.deadline || conference.deadline === 'TBD') {
-        throw new Error('No valid deadline found');
-      }
-
-      // Parse the deadline date
-      const deadlineDate = parseISO(conference.deadline);
-      if (!isValid(deadlineDate)) {
-        throw new Error('Invalid deadline date');
+      // Use the already-calculated nextDeadline and deadlineDate
+      if (!nextDeadline || !deadlineDate || !isValid(deadlineDate)) {
+        throw new Error('No valid upcoming deadline found');
       }
 
       // Create an end date 1 hour after the deadline
@@ -111,12 +106,12 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       const formatDateForGoogle = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
       const formatDateForApple = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
 
-      const title = encodeURIComponent(`${conference.title} deadline`);
+      const title = encodeURIComponent(`${conference.title} - ${nextDeadline.label}`);
       const locationStr = encodeURIComponent(location);
       const description = encodeURIComponent(
-        `Paper Submission Deadline for ${conference.full_name || conference.title}\n` +
-        (conference.abstract_deadline ? `Abstract Deadline: ${conference.abstract_deadline}\n` : '') +
-        `Dates: ${conference.date}\n` +
+        `${nextDeadline.label} for ${conference.full_name || conference.title}\n` +
+        `Deadline: ${formatDeadlineDate(nextDeadline.date, nextDeadline.timezone || conference.timezone)}\n` +
+        `Event Dates: ${conference.date}\n` +
         `Location: ${location}\n` +
         (conference.link ? `Website: ${conference.link}` : '')
       );
@@ -144,7 +139,7 @@ END:VCALENDAR`;
 
         const link = document.createElement('a');
         link.href = url;
-        link.download = `${conference.title.toLowerCase().replace(/\s+/g, '-')}-deadline.ics`;
+        link.download = `${conference.title.toLowerCase().replace(/\s+/g, '-')}-${nextDeadline.type}-deadline.ics`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
