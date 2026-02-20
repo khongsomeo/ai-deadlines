@@ -3,8 +3,15 @@
   id: isit26
   full_name: IEEE International Symposium on Information Theory
   link: "https://2026.ieee-isit.org/"
-  deadline: "2026-01-16 23:59:00"
-  final_decision_date: "2026-04-01 07:59:00"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-01-16 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-04-01 07:59:00"
+      timezone: UTC-12
   timezone: UTC-12
   city: Guangzhou
   country: PR China

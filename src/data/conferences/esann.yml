@@ -3,8 +3,15 @@
   id: esann26
   full_name: European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning
   link: "https://www.esann.org/"
-  deadline: "2025-11-19 23:59:00"
-  final_decision_date: "2026-01-23 07:59:59"
+  deadlines:
+    - type: submission
+      date: "2025-11-19 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-01-23 07:59:59"
+      timezone: UTC-12
   timezone: UTC-12
   city: Brugge
   country: Belgium

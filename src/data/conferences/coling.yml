@@ -3,9 +3,19 @@
   id: coling25
   full_name: International Conference on Computational Linguistics
   link: "https://coling2025.org/"
-  deadline: "2024-09-16 23:59:00"
-  commitment_deadline: "2024-10-20 23:59:59"
-  final_decision_date: "2024-11-29 07:59:59"
+  deadlines:
+    - type: submission
+      date: "2024-09-16 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: commitment
+      label: Commitment Deadline
+      date: "2024-10-20 23:59:59"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2024-11-29 07:59:59"
+      timezone: UTC-12
   timezone: UTC-12
   city: Abu Dhabi
   country: UAE

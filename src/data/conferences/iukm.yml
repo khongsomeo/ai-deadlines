@@ -3,8 +3,15 @@
   id: iukm26
   full_name: International Symposium on Integrated Uncertainty in Knowledge Modelling and Decision Making
   link: "https://www.jaist.ac.jp/IUKM/IUKM2026/"
-  deadline: "2026-03-15 23:59:00"
-  final_decision_date: "2026-06-10 07:59:59"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-03-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-06-10 07:59:59"
+      timezone: UTC-12
   timezone: UTC-12
   city: Quy Nhon
   country: Vietnam

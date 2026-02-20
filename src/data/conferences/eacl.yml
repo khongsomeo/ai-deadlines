@@ -3,16 +3,35 @@
   id: eacl26
   full_name: Conference of the European Chapter of the Association for Computational Linguistics
   link: "https://2026.eacl.org/"
-  deadline: "2025-10-06 23:59:00"
-  rebuttal_period_start: "2025-11-18 07:59:00"
-  rebuttal_period_end: "2025-11-24 23:59:00"
-  review_release_date: "2025-12-11 07:59:00"
-  commitment_deadline: "2025-12-14 23:59:00"
-  final_decision_date: "2026-01-03 07:59:00"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2025-10-06 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2025-11-18 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "2025-11-24 23:59:00"
+      timezone: UTC-12
+    - type: review_release
+      label: Review Release Date
+      date: "2025-12-11 07:59:00"
+      timezone: UTC-12
+    - type: commitment
+      label: Commitment Deadline
+      date: "2025-12-14 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-01-03 07:59:00"
+      timezone: UTC-12
   timezone: UTC-12
   city: Rabat
   country: Morocco
-  venue: TBD
+  venue: Palais des Congrès Rabat Bouregreg
   format: hybrid
   date: March 24-29, 2026
   start: 2026-03-24
@@ -22,6 +41,6 @@
       - speech-processing
   rankings:
       rank_name: A
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/468/
   note: "<b>November 2025 ACL Rolling Review</b>"

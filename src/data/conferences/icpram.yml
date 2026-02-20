@@ -3,8 +3,15 @@
   id: icpram26
   full_name: International Conference on Pattern Recognition Applications and Methods 
   link: "https://icpram.scitevents.org/"
-  deadline: "2025-10-02 23:59:00"
-  final_decision_date: "2025-12-04 07:59:59"
+  deadlines:
+    - type: submission
+      date: "2025-10-02 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: final_decision
+      date: "2025-12-04 07:59:59"
+      label: Author Notification
+      timezone: UTC-12
   timezone: UTC-12
   city: Marbella
   country: Spain

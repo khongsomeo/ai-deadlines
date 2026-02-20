@@ -3,12 +3,31 @@
   id: ijcai26
   full_name: International Joint Conference on Artificial Intelligence
   link: "https://2026.ijcai.org/"
-  abstract_deadline: "2026-01-12 23:59:00"
-  deadline: "2026-01-19 23:59:00"
-  review_release_date: "2026-03-04 07:59:00"
-  rebuttal_period_start: "2026-04-07 07:59:59"
-  rebuttal_period_end: "2026-04-10 23:59:00"
-  final_decision_date: "2026-04-29 07:59:59"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-01-12 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-01-19 23:59:00"
+      timezone: UTC-12
+    - type: review_release
+      label: Review Released
+      date: "2026-03-04 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2026-04-07 07:59:59"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "2026-04-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-04-29 07:59:59"
+      timezone: UTC-12
   timezone: UTC-12
   city: Bremen
   country: Germany

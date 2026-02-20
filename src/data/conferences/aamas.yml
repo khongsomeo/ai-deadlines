@@ -1,27 +1,27 @@
 - title: AAMAS
   year: 2026
   id: aamas26
-  full_name: International Conference on Autonomous Agents and Multiagent Systems
+  full_name: The 25th International Conference on Autonomous Agents and Multiagent Systems
   link: "https://cyprusconferences.org/aamas2026/"
   deadlines:
     - type: abstract
       label: Abstract Submission
-      deadline: "2025-10-01 23:59:00"
+      date: "2025-10-01 23:59:00"
       timezone: UTC-12
-    - type: deadline
+    - type: submission
       label: Paper Submission
-      deadline: "2025-10-08 23:59:00"
+      date: "2025-10-08 23:59:00"
       timezone: UTC-12
     - type: rebuttal_start
-      deadline: "2025-11-21 07:59:00"
+      date: "2025-11-21 07:59:00"
       label: Rebuttal Period Start
       timezone: UTC-12
     - type: rebuttal_end
-      deadline: "2025-11-25 23:59:00"
+      date: "2025-11-25 23:59:00"
       label: Rebuttal Period End
       timezone: UTC-12
     - type: final_decision
-      deadline:  "2025-12-22 07:59:00"
+      date:  "2025-12-22 07:59:00"
       label: Author Notification
       timezone: UTC-12
   timezone: UTC-12
@@ -38,6 +38,6 @@
       - robotics
   rankings:
       rank_name: A*
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/922/
   note: "OpenReview submission"

@@ -3,8 +3,15 @@
   id: mapr25
   full_name: International Conference on Multimedia Analysis and Pattern Recognition
   link: "https://mapr.uit.edu.vn/"
-  deadline: "2025-05-15 23:59:00"
-  final_decision_date: "2025-07-01 07:59:59"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2025-05-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2025-07-01 07:59:59"
+      timezone: UTC-12
   timezone: UTC+7
   city: Nha Trang
   country: Vietnam

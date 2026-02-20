@@ -3,11 +3,27 @@
   id: ecai25
   full_name: European Conference on Artificial Intelligence
   link: "https://ecai2025.org/"
-  abstact_deadline: "2025-04-29 23:59:00"
-  deadline: "2025-05-06 23:59:00"
-  rebuttal_period_start: "2025-06-23 07:59:59"
-  rebuttal_period_end: "2025-06-25 23:59:00"
-  final_decision_date: "2025-07-10 07:59:59"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2025-04-29 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2025-05-06 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2025-06-23 07:59:59"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "2025-06-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2025-07-10 07:59:59"
+      timezone: UTC-12
   timezone: UTC-12
   city: Bologna
   country: Italy
