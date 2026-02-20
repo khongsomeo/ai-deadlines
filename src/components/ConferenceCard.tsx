@@ -59,7 +59,7 @@ const ConferenceCard = ({
   const location = [city, country].filter(Boolean).join(", ");
 
   // Determine countdown color based on days remaining
-  const countdownColorClass = getCountdownColorClass(getDaysRemaining(nextDeadline, timezone));
+  const countdownColorClass = getCountdownColorClass(nextDeadline ? getDaysRemaining(nextDeadline, timezone) : null);
 
   const handleCardClick = (e: React.MouseEvent) => {
     if (!(e.target as HTMLElement).closest('a') &&
