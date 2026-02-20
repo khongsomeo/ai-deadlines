@@ -118,7 +118,7 @@ export function getCalendarSubscriptionLink(
 
   switch (calendarType) {
     case 'google':
-      return `https://calendar.google.com/calendar/u/0/r/settings/addbyurl?url=${encodeURIComponent(icsUrl)}`;
+      return `https://www.google.com/calendar/render?cid=${encodeURIComponent(icsUrl)}`;
     case 'apple':
       return `webcal://${icsUrl.replace(/^https?:\/\//, '')}`;
     case 'outlook':

@@ -14,8 +14,9 @@ export function getApiBaseUrl(): string {
   // In browser environment
   if (typeof window !== 'undefined') {
     // Check for explicit API URL (set via environment variable during build)
-    const apiUrl = import.meta.env.VITE_API_URL;
-    if (apiUrl) {
+    const apiUrl = window.APP_CONFIG?.API_URL || import.meta.env.VITE_API_URL;
+    
+    if (apiUrl && typeof apiUrl === 'string' && apiUrl.trim()) {
       return apiUrl;
     }
 

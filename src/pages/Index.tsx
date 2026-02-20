@@ -4,25 +4,44 @@ import conferencesData from "@/utils/conferenceLoader";
 import { Conference } from "@/types/conference";
 import { useState, useMemo, useEffect } from "react";
 import { Switch } from "@/components/ui/switch"
-import { parseISO, isValid, isPast } from "date-fns";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { X, Globe, ChartNoAxesColumn } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
-import { getDeadlineInLocalTime } from "@/utils/dateUtils";
 import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
 import { getAllRanks } from "@/utils/rankExtractor";
 import { getAllFormats } from "@/utils/formatExtractor";
 import { hasUpcomingDeadlines } from "@/utils/deadlineUtils";
+import { useToast } from "@/components/ui/use-toast";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { getApiBaseUrl } from "@/utils/apiClient";
 
 const Index = () => {
+  const { toast } = useToast();
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
   const [selectedCountries, setSelectedCountries] = useState<Set<string>>(new Set());
   const [searchQuery, setSearchQuery] = useState("");
   const [showPastConferences, setShowPastConferences] = useState(false);
   const [selectedRanks, setSelectedRanks] = useState<Set<string>>(new Set());
   const [selectedFormats, setSelectedFormats] = useState<Set<string>>(new Set());
+
+  // Construct the calendar API URL
+  const calendarUrl = `${getApiBaseUrl()}/api/calendar/all.ics`;
+
+  // Handle copying calendar URL to clipboard
+  const handleCopyCalendarUrl = () => {
+    navigator.clipboard.writeText(calendarUrl).then(() => {
+      toast({
+        description: "Calendar URL copied to clipboard!",
+      });
+    }).catch(() => {
+      toast({
+        description: "Failed to copy to clipboard",
+        variant: "destructive",
+      });
+    });
+  };
 
   // Category buttons configuration
   const categoryButtons = [
@@ -190,6 +209,30 @@ const Index = () => {
     <div className="min-h-screen bg-neutral-light">
       <Header onSearch={setSearchQuery} showEmptyMessage={false} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Calendar subscription notification */}
+        <Alert className="mt-4 bg-blue-50 border-blue-200">
+          <AlertDescription className="space-y-3">
+            <div>
+              <p className="text-blue-900 font-semibold mb-2">
+                📅 Update: Subscribe to AI Deadlines Calendar
+              </p>
+              <p className="text-blue-800 text-sm mb-3">
+                Never miss an important deadline! Copy the URL below and add it to your favorite calendar app:
+              </p>
+              <ul className="text-blue-800 text-sm space-y-1 ml-4 mb-3">
+                <li><strong>Google Calendar:</strong> Click "+" → "From URL" → Paste the URL</li>
+                <li><strong>Apple Calendar:</strong> File → "New Calendar Subscription" → Paste the URL</li>
+                <li><strong>Other Apps:</strong> Look for "Add calendar by URL" or "Subscribe to calendar" option</li>
+              </ul>
+            </div>
+            <button
+              onClick={handleCopyCalendarUrl}
+              className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 transition-colors"
+            >
+              Copy Calendar URL
+            </button>
+          </AlertDescription>
+        </Alert>
         <div className="space-y-4 py-4">
           {/* Category filter buttons */}
           <div className="bg-white shadow rounded-lg p-4">
