@@ -18,7 +18,7 @@ import {
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
 import { useState, useEffect } from "react";
-import { getDeadlineInLocalTime } from '@/utils/dateUtils';
+import { getDeadlineInLocalTime, getDeadlineInUTC } from '@/utils/dateUtils';
 import { getNextUpcomingDeadline, getUpcomingDeadlines, getDaysRemaining, getCountdownColorClass, formatDeadlineDate } from "@/utils/deadlineUtils";
 import { getCalendarSubscriptionLink } from "@/utils/calendarUtils";
 
@@ -98,13 +98,20 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 
   const createCalendarEvent = (type: 'google' | 'apple') => {
     try {
-      // Use the already-calculated nextDeadline and deadlineDate
-      if (!nextDeadline || !deadlineDate || !isValid(deadlineDate)) {
+      // Use the already-calculated nextDeadline
+      if (!nextDeadline) {
         throw new Error('No valid upcoming deadline found');
       }
 
-      // Create an end date 1 hour after the deadline
-      const endDate = new Date(deadlineDate.getTime() + (60 * 60 * 1000));
+      // Get UTC deadline time for calendar event
+      const utcDeadlineDate = getDeadlineInUTC(nextDeadline.date, nextDeadline.timezone || conference.timezone);
+      
+      if (!utcDeadlineDate || !isValid(utcDeadlineDate)) {
+        throw new Error('Failed to convert deadline to UTC');
+      }
+
+      // Create an end date 1 minute after the deadline
+      const utcEndDate = new Date(utcDeadlineDate.getTime() + (60 * 1000));
 
       const formatDateForGoogle = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
       const formatDateForApple = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
@@ -122,7 +129,7 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       if (type === 'google') {
         const url = `https://calendar.google.com/calendar/render?action=TEMPLATE` +
           `&text=${title}` +
-          `&dates=${formatDateForGoogle(deadlineDate)}/${formatDateForGoogle(endDate)}` +
+          `&dates=${formatDateForGoogle(utcDeadlineDate)}/${formatDateForGoogle(utcEndDate)}` +
           `&details=${description}` +
           `&location=${locationStr}` +
           `&sprop=website:${encodeURIComponent(conference.link || '')}`;
@@ -132,8 +139,8 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 VERSION:2.0
 BEGIN:VEVENT
 URL:${conference.link || ''}
-DTSTART:${formatDateForApple(deadlineDate)}
-DTEND:${formatDateForApple(endDate)}
+DTSTART:${formatDateForApple(utcDeadlineDate)}
+DTEND:${formatDateForApple(utcEndDate)}
 SUMMARY:${title}
 DESCRIPTION:${description}
 LOCATION:${location}

@@ -2,7 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
-import { generateICalendarFeed } from './calendarGenerator.js';
+import { generateICalendarFeed, generateAllConferencesCalendarFeed } from './calendarGenerator.js';
 
 // Get __dirname equivalent
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
@@ -100,7 +100,43 @@ setInterval(() => {
 }, CACHE_REFRESH_INTERVAL);
 
 /**
- * Calendar API endpoint - Get .ics file for a conference
+ * General calendar API endpoint - Get .ics file with all upcoming deadlines
+ * Must be defined BEFORE the parameterized route to avoid routing conflicts
+ */
+app.get('/api/calendar/all.ics', (req: Request, res: Response) => {
+  try {
+    // Get all conferences from cache
+    const allConferences = Array.from(conferencesCache.values());
+
+    if (allConferences.length === 0) {
+      return res.status(503).json({
+        error: 'No conferences loaded',
+        message: 'Please try again later',
+      });
+    }
+
+    // Generate iCalendar content for all conferences
+    const icsContent = generateAllConferencesCalendarFeed(allConferences);
+
+    // Set proper headers for iCalendar file
+    res.setHeader('Content-Type', 'text/calendar; charset=utf-8');
+    res.setHeader(
+      'Content-Disposition',
+      `inline; filename="ai-deadlines-all-conferences.ics"`
+    );
+    res.setHeader('Cache-Control', 'max-age=3600, public'); // Cache for 1 hour
+    res.status(200).send(icsContent);
+  } catch (error) {
+    console.error('Error generating all conferences calendar feed:', error);
+    res.status(500).json({
+      error: 'Failed to generate calendar feed',
+      message: error instanceof Error ? error.message : 'Unknown error',
+    });
+  }
+});
+
+/**
+ * Calendar API endpoint - Get .ics file for a specific conference
  */
 app.get('/api/calendar/:conferenceId.ics', (req: Request, res: Response) => {
   try {
