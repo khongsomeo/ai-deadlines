@@ -167,7 +167,7 @@ END:VCALENDAR`;
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue || place)}`;
   };
 
-  const handleSubscribeCalendar = (calendarType: 'google' | 'apple' | 'outlook') => {
+  const handleSubscribeCalendar = (calendarType: 'google' | 'apple') => {
     try {
       const subscriptionUrl = getCalendarSubscriptionLink(conference.id, calendarType);
       window.open(subscriptionUrl, '_blank');
@@ -365,13 +365,6 @@ END:VCALENDAR`;
                 >
                   <Bell className="h-4 w-4 mr-2" />
                   Apple Calendar
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  className="text-neutral-800 hover:bg-neutral-100"
-                  onClick={() => handleSubscribeCalendar('outlook')}
-                >
-                  <Bell className="h-4 w-4 mr-2" />
-                  Outlook
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
