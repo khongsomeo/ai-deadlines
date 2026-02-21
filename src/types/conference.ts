@@ -5,6 +5,12 @@ export interface Deadline {
   timezone?: string;
 };
 
+export interface Rankings {
+  rank_name?: string;
+  rank_source?: string;
+  rank_source_url?: string;
+}
+
 export interface Conference {
   id: string;
   title: string;
@@ -25,7 +31,7 @@ export interface Conference {
   abstract_deadline?: string; // Keep for backward compatibility
   start?: string;
   end?: string;
-  rankings?: string;
+  rankings?: Rankings;
   hindex?: number;
   rebuttal_period_start?: string;
   rebuttal_period_end?: string;
