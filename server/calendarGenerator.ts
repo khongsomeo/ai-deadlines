@@ -178,9 +178,13 @@ export function generateVEvent(
     'TBD';
 
   const summary = escapeICalText(`${conference.title} - ${deadline.label}`);
+  const rankingInfo = conference.rankings 
+    ? `Rankings: ${conference.rankings.rank_name || ''} (${conference.rankings.rank_source || ''})`.trim()
+    : '';
   const description = escapeICalText(
     `${deadline.label} for ${conference.full_name || conference.title}\n` +
-    `Event: ${conference.date}\n` +
+    `Event Dates: ${conference.date}\n` +
+    (rankingInfo ? `${rankingInfo}\n` : '') +
     `Location: ${location}\n` +
     `${conference.link ? `Website: ${conference.link}` : ''}`
   );

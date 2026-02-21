@@ -30,7 +30,7 @@ const ConferenceCard = ({
   // Get the next upcoming deadline or primary deadline for dialog
   const conference = {
     title, full_name, year, date, deadline, timezone, tags, link, note,
-    abstract_deadline, city, country, venue, ...conferenceProps
+    abstract_deadline, city, country, venue, rankings, ...conferenceProps
   };
   const nextDeadline = getNextUpcomingDeadline(conference) || getPrimaryDeadline(conference);
   const deadlineDate = nextDeadline ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || timezone) : null;
@@ -196,6 +196,7 @@ const ConferenceCard = ({
           link,
           note,
           abstract_deadline,
+          rankings,
           city,
           country,
           venue,

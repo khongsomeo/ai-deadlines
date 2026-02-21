@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock, CalendarPlus, Bell } from "lucide-react";
 import { Conference } from "@/types/conference";
-import { parseISO, isValid, format, parse, formatDistanceToNow } from "date-fns";
+import { isValid, format, formatDistanceToNow } from "date-fns";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -118,10 +118,13 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 
       const title = encodeURIComponent(`${conference.title} - ${nextDeadline.label}`);
       const locationStr = encodeURIComponent(location);
+      const rankingInfo = conference.rankings 
+        ? `Rankings: ${conference.rankings.rank_name || ''} (${conference.rankings.rank_source || ''})`.trim()
+        : '';
       const description = encodeURIComponent(
         `${nextDeadline.label} for ${conference.full_name || conference.title}\n` +
-        `Deadline: ${formatDeadlineDate(nextDeadline.date, nextDeadline.timezone || conference.timezone)}\n` +
         `Event Dates: ${conference.date}\n` +
+        (rankingInfo ? `${rankingInfo}\n` : '') +
         `Location: ${location}\n` +
         (conference.link ? `Website: ${conference.link}` : '')
       );
@@ -208,15 +211,6 @@ END:VCALENDAR`;
 
         <div className="space-y-6 mt-4">
           <div className="space-y-4">
-            {conference.rankings && (
-              <div className="flex items-start gap-2">
-                <ChartNoAxesColumn className="h-5 w-5 mt-0.5 text-gray-500" />
-                <div>
-                  <p className="font-medium">Ranking</p>
-                  <p className="text-sm text-gray-500">{conference.rankings}</p>
-                </div>
-              </div>)}
-
             <div className="flex items-start gap-2">
               <CalendarDays className="h-5 w-5 mt-0.5 text-gray-500" />
               <div>
