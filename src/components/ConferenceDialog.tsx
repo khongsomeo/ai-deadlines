@@ -118,15 +118,17 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 
       const title = encodeURIComponent(`${conference.title} - ${nextDeadline.label}`);
       const locationStr = encodeURIComponent(location);
+      const tags = conference.tags ? `Category: ${conference.tags.join(", ")}`.trim() : '';
       const rankingInfo = conference.rankings 
         ? `Rankings: ${conference.rankings.rank_name || ''} (${conference.rankings.rank_source || ''})`.trim()
         : '';
       const description = encodeURIComponent(
         `${nextDeadline.label} for ${conference.full_name || conference.title}\n` +
-        `Event Dates: ${conference.date}\n` +
-        (rankingInfo ? `${rankingInfo}\n` : '') +
-        `Location: ${location}\n` +
-        (conference.link ? `Website: ${conference.link}` : '')
+        `🗓️ Event Dates: ${conference.date}\n` +
+        `📍 Location: ${location}\n` +
+        (rankingInfo ? `📈 ${rankingInfo}\n` : '') +
+        (tags ? `🏷️ ${tags}\n` : '') +
+        (conference.link ? `🌐 Website: ${conference.link}` : '')
       );
 
       if (type === 'google') {
