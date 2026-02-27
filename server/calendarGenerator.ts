@@ -186,6 +186,7 @@ export function generateVEvent(
     `${deadline.label} for ${conference.full_name || conference.title}\n` +
     `🗓️ Event Dates: ${conference.date}\n` +
     `📍 Location: ${location}\n` +
+    `⏰ Deadline (${deadline.timezone || conference.timezone}): ${deadline.date}\n` +
     (rankingInfo ? `📈 ${rankingInfo}\n` : '') +
     (tags ? `🏷️ ${tags}\n` : '') +
     (conference.link ? `🌐 Website: ${conference.link}` : '')

@@ -126,6 +126,7 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
         `${nextDeadline.label} for ${conference.full_name || conference.title}\n` +
         `🗓️ Event Dates: ${conference.date}\n` +
         `📍 Location: ${location}\n` +
+        `⏰ Deadline (${nextDeadline.timezone || conference.timezone}): ${nextDeadline.date}\n` +
         (rankingInfo ? `📈 ${rankingInfo}\n` : '') +
         (tags ? `🏷️ ${tags}\n` : '') +
         (conference.link ? `🌐 Website: ${conference.link}` : '')
