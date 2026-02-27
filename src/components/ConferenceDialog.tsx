@@ -116,8 +116,11 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       const formatDateForGoogle = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
       const formatDateForApple = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
 
+      const venue = conference.venue || '';
+      const cityCountry = [conference.city, conference.country].filter(Boolean).join(', ') || 'TBD';
+      
       const title = encodeURIComponent(`${conference.title} - ${nextDeadline.label}`);
-      const locationStr = encodeURIComponent(location);
+      const locationStr = encodeURIComponent(venue || cityCountry);
       const tags = conference.tags ? `Category: ${conference.tags.join(", ")}`.trim() : '';
       const rankingInfo = conference.rankings 
         ? `Rankings: ${conference.rankings.rank_name || ''} (${conference.rankings.rank_source || ''})`.trim()
@@ -125,7 +128,7 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       const description = encodeURIComponent(
         `${nextDeadline.label} for ${conference.full_name || conference.title}\n` +
         `🗓️ Event Dates: ${conference.date}\n` +
-        `📍 Location: ${location}\n` +
+        `📍 Location: ${cityCountry}\n` +
         `⏰ Deadline (${nextDeadline.timezone || conference.timezone}): ${nextDeadline.date}\n` +
         (rankingInfo ? `📈 ${rankingInfo}\n` : '') +
         (tags ? `🏷️ ${tags}\n` : '') +
@@ -141,6 +144,7 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
           `&sprop=website:${encodeURIComponent(conference.link || '')}`;
         window.open(url, '_blank');
       } else {
+        const venueForLocation = venue || cityCountry;
         const url = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR
 VERSION:2.0
 BEGIN:VEVENT
@@ -149,7 +153,7 @@ DTSTART:${formatDateForApple(utcDeadlineDate)}
 DTEND:${formatDateForApple(utcEndDate)}
 SUMMARY:${title}
 DESCRIPTION:${description}
-LOCATION:${location}
+LOCATION:${venueForLocation}
 END:VEVENT
 END:VCALENDAR`;
 

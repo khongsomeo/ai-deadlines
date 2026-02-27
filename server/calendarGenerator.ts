@@ -173,9 +173,9 @@ export function generateVEvent(
   const uid = generateEventUid(conference.id, deadline.type);
   const now = formatICalDate(new Date());
 
-  const location = conference.venue ||
-    [conference.city, conference.country].filter(Boolean).join(', ') ||
-    'TBD';
+  const venue = conference.venue || '';
+  const cityCountry = [conference.city, conference.country].filter(Boolean).join(', ') || 'TBD';
+  const location = venue || cityCountry;
 
   const summary = escapeICalText(`${conference.title} - ${deadline.label}`);
   const tags = conference.tags ? `Category: ${conference.tags.join(", ")}`.trim() : '';
@@ -185,7 +185,7 @@ export function generateVEvent(
   const description = escapeICalText(
     `${deadline.label} for ${conference.full_name || conference.title}\n` +
     `🗓️ Event Dates: ${conference.date}\n` +
-    `📍 Location: ${location}\n` +
+    `📍 Location: ${cityCountry}\n` +
     `⏰ Deadline (${deadline.timezone || conference.timezone}): ${deadline.date}\n` +
     (rankingInfo ? `📈 ${rankingInfo}\n` : '') +
     (tags ? `🏷️ ${tags}\n` : '') +
