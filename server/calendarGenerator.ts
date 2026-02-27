@@ -169,7 +169,7 @@ export function generateVEvent(
     return null;
   }
 
-  const endDate = new Date(deadlineDate.getTime() + 60 * 1000); // 1 minute after deadline
+  const endDate = new Date(deadlineDate.getTime() + 60 * 60 * 1000); // 1 hour after deadline
   const uid = generateEventUid(conference.id, deadline.type);
   const now = formatICalDate(new Date());
 

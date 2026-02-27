@@ -111,7 +111,7 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       }
 
       // Create an end date 1 minute after the deadline
-      const utcEndDate = new Date(utcDeadlineDate.getTime() + (60 * 1000));
+      const utcEndDate = new Date(utcDeadlineDate.getTime() + (60 * 60 * 1000));
 
       const formatDateForGoogle = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
       const formatDateForApple = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
