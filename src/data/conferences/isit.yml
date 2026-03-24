@@ -25,6 +25,6 @@
       - machine-learning
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/699/
   note: "Submitted manuscripts must not exceed 5 pages, plus an optional 6th page containing references and acknowledgments only."

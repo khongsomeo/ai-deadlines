@@ -1,4 +1,36 @@
 - title: KSE
+  year: 2026
+  id: kse26
+  full_name: The 18th International Conference on Knowledge and Systems Engineering
+  link: "https://kse2026.kse-conferences.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Kanazawa
+  country: Japan
+  venue: Japan Advanced Institute of Science and Technology (JAIST)
+  format: in-person
+  date: November 11-14, 2026
+  start: 2026-11-11
+  end: 2026-11-14
+  tags:
+      - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - human-computer-interaction
+  rankings:
+      rank_name: Non-ranked
+      rank_source: IEEE Xplore
+      rank_source_url: https://ieeexplore.ieee.org/xpl/conhome/1003010/all-proceedings
+
+- title: KSE
   year: 2025
   id: kse25
   full_name: International Conference on Knowledge and Systems Engineering

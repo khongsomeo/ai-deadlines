@@ -1,4 +1,50 @@
 - title: AAAI
+  year: 2027
+  id: aaai27
+  full_name: The 41st AAAI Conference on Artificial Intelligence
+  link: "https://aaai.org/conference/aaai/aaai-27"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: Montréal
+  country: Canada
+  venue: TBD
+  format: in-person
+  date: February 16-23, 2027
+  start: 2027-02-16
+  end: 2027-02-23
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1629/
+  note: "OpenReview submission"
+
+- title: AAAI
   year: 2026
   id: aaai26
   full_name: Annual AAAI Conference on Artificial Intelligence

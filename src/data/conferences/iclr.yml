@@ -40,6 +40,6 @@
       - robotics
   rankings:
       rank_name: A*
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/2273/
   note: "OpenReview submission; Rebuttal period start at the same time reviews released."

@@ -1,27 +1,31 @@
 - title: EMNLP
   year: 2026
   id: emnlp26
-  full_name: Conference on Empirical Methods in Natural Language Processing
+  full_name: The 2026 Conference on Empirical Methods in Natural Language Processing
   link: "https://2026.emnlp.org/"
   deadlines:
     - type: submission
-      date: "TBD"
+      date: "2026-05-25 23:59:00"
       label: Paper Submission
       timezone: UTC-12
     - type: rebuttal_start
-      date: "TBD"
+      date: "2026-07-07 07:59:00"
       label: Rebuttal Period Start
       timezone: UTC-12
     - type: rebuttal_end
-      date: "TBD"
+      date: "2026-07-13 23:59:00"
       label: Rebuttal Period End
       timezone: UTC-12
+    - type: review_released
+      date: "2026-07-30 07:59:00"
+      label: "Meta Review Released"
+      timezone: UTC-12
     - type: commitment
-      date: "TBD"
+      date: "2026-08-02 07:59:00"
       label: Commitment Deadline
       timezone: UTC-12
     - type: final_decision
-      date: "TBD"
+      date: "2026-08-20 07:59:00"
       label: Author Notification
       timeezone: UTC-12
   timezone: UTC-12
@@ -29,9 +33,9 @@
   country: Hungary
   venue: TBD
   format: hybrid
-  date: October 22-29, 2026
+  date: October 22-26, 2026
   start: 2026-10-22
-  end: 2026-10-29
+  end: 2026-10-26
   tags:
       - natural-language-processing
       - speech-processing
@@ -40,4 +44,4 @@
       rank_name: A*
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/448/
-  note: "<b>ACL Rolling Review</b>"
+  note: "<b>ACL Rolling Review:</b> May Cycle;"

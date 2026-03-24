@@ -1,4 +1,44 @@
 - title: ICASSP
+  year: 2027
+  id: icassp27
+  full_name: 2027 IEEE International Conference on Acoustics, Speech and Signal Processing
+  link: "https://2027.ieeeicassp.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: Toronto
+  country: Canada
+  venue: TBD
+  format: in-person
+  date: May 16-21, 2027
+  start: 2027-05-16
+  end: 2027-05-21
+  tags:
+      - machine-learning
+      - signal-processing
+      - speech-processing
+      - computer-vision
+  rankings:
+      rank_name: Multiconference
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2042/
+  note: Ranked B back in CORE2023, now considered as a series of conferences.
+
+- title: ICASSP
   year: 2026
   id: icassp26
   full_name: International Conference on Acoustics, Speech and Signal Processing
@@ -34,5 +74,5 @@
       - computer-vision
   rankings:
       rank_name: B
-      rank_source: ICORE2026
+      rank_source: CORE2023
       rank_source_url: https://portal.core.edu.au/conf-ranks/2042/

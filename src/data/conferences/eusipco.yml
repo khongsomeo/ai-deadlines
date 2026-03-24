@@ -1,0 +1,37 @@
+- title: EUSIPCO
+  year: 2026
+  id: eusipco26
+  full_name: 34th European Signal Processing Conference
+  link: "https://eusipco2026.org"
+  deadlines:
+    - type: submission
+      label: Conference Paper Submission
+      date: "2026-02-06 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Journal Paper Submission
+      date: "2026-04-30 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Conference Paper - Author Notification
+      date: "2026-05-12 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Journal Paper - Author Notification
+      date: "2026-05-19 07:59:00"
+      timezone: UTC-12
+  city: Bruges
+  country: Belgium
+  venue: Concertgebouw, 'T Zand 34 | 8000 Bruges
+  format: in-person
+  date: August 31 - September 04, 2026
+  start: 2026-08-31
+  end: 2026-09-04
+  tags:
+      - signal-processing
+      - speech-processing
+  rankings:
+      rank_name: Non-ranked
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/506/
+  note: Ranked B in CORE2018, discontinued from CORE ranking after that due to "Not CS", still, a well-known SP conference.

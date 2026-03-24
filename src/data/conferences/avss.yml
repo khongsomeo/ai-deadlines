@@ -1,0 +1,39 @@
+- title: AVSS
+  year: 2026
+  id: avss26
+  full_name: The 22nd IEEE International Conference on Advanced Visual and Signal-Based Systems 
+  link: "https://www.avss2026.org/"
+  deadlines:
+    - type: submission
+      label: "(Round 1) Paper Submission"
+      date: "2026-02-28 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Round 1) Author Notification"
+      date: "2026-03-20 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(Round 2) Paper Submission"
+      date: "2026-04-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Round 2) Author Notification"
+      date: "2026-05-11 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Lecce
+  country: Italy
+  venue: Charles V Castle
+  format: in-person
+  date: September 01-03, 2026
+  start: 2026-09-01
+  end: 2026-09-03
+  tags:
+      - speech-processing
+      - signal-processing
+      - computer-vision
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/92/
+

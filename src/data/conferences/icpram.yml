@@ -1,4 +1,40 @@
 - title: ICPRAM
+  year: 2027
+  id: icpram27
+  full_name: The 16th International Conference on Pattern Recognition Applications and Methods 
+  link: "https://icpram.scitevents.org/"
+  deadlines:
+    - type: submission
+      date: "2026-09-30 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-11-27 07:59:59"
+      label: Author Notification
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Valleta
+  country: Malta
+  venue: TBD
+  format: in-person
+  date: February 20-22, 2027
+  start: 2027-02-20
+  end: 2027-02-22
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - speech-processing
+      - signal-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2230/
+
+- title: ICPRAM
   year: 2026
   id: icpram26
   full_name: International Conference on Pattern Recognition Applications and Methods 
@@ -31,5 +67,5 @@
       - human-computer-interaction
   rankings:
       rank_name: C
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/2230/

@@ -1,4 +1,47 @@
 - title: IJCNLP-AACL
+  year: 2026
+  id: ijcnlp26
+  full_name: The 15th International Joint Conference on Natural Language Processing & the 5th Asia-Pacific Chapter of the Association for Computational Linguistics
+  link: "https://2026.aaclnet.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: commitment
+      label: Commitment Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: Hengqin
+  country: PR China
+  venue: TBD
+  format: hybrid
+  date: November 06-10, 2026
+  start: 2026-11-06
+  end: 2026-11-10
+  tags:
+      - natural-language-processing
+      - speech-processing
+      - information-retrieval
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1317/
+  note: "<b>ACL Rolling Review</b>"
+
+- title: IJCNLP-AACL
   year: 2025
   id: ijcnlp25
   full_name: International Joint Conference on Natural Language Processing & Asia-Pacific Chapter of the Association for Computational Linguistics
@@ -36,6 +79,6 @@
       - speech-processing
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1317/
   note: "<b>ACL Rolling Review</b>"

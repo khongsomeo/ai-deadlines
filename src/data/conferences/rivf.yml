@@ -39,17 +39,21 @@
   link: "https://rivf2026.org/"
   deadlines:
     - type: submission
-      date: "TBD"
+      date: "2026-07-15 23:59:00"
       label: Paper Submission
       timezone: UTC+7
+    - type: submission
+      date: "2026-07-30 23:59:00"
+      label: Paper Submission (Extended)
+      timezone: UTC+7
     - type: final_decision
-      date: "TBD"
+      date: "2026-09-30 07:59:00"
       label: Author Notification
       timezone: UTC+7
   timezone: UTC+7
   city: Hanoi
   country: Vietnam
-  venue: VinUniversity
+  venue: VinUniversity Vinhomes Ocean Park, Gia Lam District
   format: in-person
   date: December 18-20, 2026
   start: 2026-12-18

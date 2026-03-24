@@ -2,20 +2,28 @@
   year: 2026
   id: cikm26
   full_name: The 35th ACM Conference on Information and Knowledge Management
-  link: "https://cikm2026.org/"
+  link: "https://cikm2026.diag.uniroma1.it/"
   deadlines:
+    - type: abstract_deadline
+      label: Abstract Deadline
+      date: "2026-05-18 23:59:00"
+      timezone: UTC-12
     - type: deadline
-      label: Paper Submission (planned)
-      date: "2026-05-15 23:59:00"
+      label: Full Paper Submission
+      date: "2026-05-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-08-06 07:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: Rome
   country: Italy
-  venue: TBD
+  venue: SAN PIETRO IN VINCOLI, SAPIENZA UNIVERSITY OF ROME, ENGINEERING DEPARTMENT, Via Eudossiana 18, 00184 Roma
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: November 7-11, 2026
+  start: 2026-11-07
+  end: 2026-11-11
   tags:
       - machine-learning
       - data-mining

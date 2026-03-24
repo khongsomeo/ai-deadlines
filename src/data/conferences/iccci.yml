@@ -5,8 +5,8 @@
   link: "https://iccci.pwr.edu.pl/2026/"
   deadlines:
     - type: submission
-      label: Paper Submission
-      date: "2026-03-01 23:59:00"
+      label: Paper Submission (Hard Deadline)
+      date: "2026-03-15 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Decision

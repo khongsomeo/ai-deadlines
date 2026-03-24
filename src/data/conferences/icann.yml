@@ -6,7 +6,7 @@
   deadlines: 
     - type: submission
       label: Paper Submission
-      date: "2026-03-16 23:59:00"
+      date: "2026-03-30 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Decision
@@ -28,5 +28,5 @@
       - human-computer-interaction
   rankings:
       rank_name: C
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/915/

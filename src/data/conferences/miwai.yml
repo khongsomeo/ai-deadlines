@@ -1,4 +1,39 @@
 - title: MIWAI
+  year: 2026
+  id: miwai26
+  full_name: The 19th International Conference on Multi-disciplinary Trends in Artificial Intelligence
+  link: "https://miwai26.miwai.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-06-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-08-07 07:59:59"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Halifax
+  country: Canada
+  venue: Halifax, Nova Scotia, Canada
+  format: hybrid
+  date: October 10-12, 2026
+  start: 2026-10-10
+  end: 2026-10-12
+  tags:
+      - machine-learning
+      - multimedia
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: Non-ranked
+      rank_source: Springer LNAI
+      rank_source_url: https://link.springer.com/conference/miwai
+
+- title: MIWAI
   year: 2025
   id: miwai25
   full_name: Multi-Disciplinary International Conference on Artificial Intelligence

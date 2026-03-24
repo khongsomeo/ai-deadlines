@@ -2,7 +2,7 @@
   year: 2026
   id: acmmm26
   full_name: 34th ACM International Conference on Multimedia
-  link: "https://2026.acmmm.org//"
+  link: "https://2026.acmmm.org/"
   deadlines:
     - type: abstract_deadline
       label: Paper Registration
@@ -47,7 +47,7 @@
   year: 2025
   id: acmmm25
   full_name: 33rd ACM International Conference on Multimedia
-  link: "https://acmmm2025.org//"
+  link: "https://acmmm2025.org/"
   deadlines:
     - type: abstract_deadline
       label: Paper Registration

@@ -15,7 +15,7 @@
   timezone: UTC-12
   city: Kuala Lumpur
   country: Malaysia
-  venue: TBA
+  venue: Grand Millennium Kuala Lumpur
   format: hybrid
   date: July 06-09, 2026
   start: 2026-07-06
@@ -30,5 +30,5 @@
       - robotics
   rankings:
       rank_name: C
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1064/

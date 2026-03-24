@@ -1,25 +1,25 @@
 - title: ICTAI
   year: 2026
   id: ictai26
-  full_name: IEEE International Conference on Tools with Artificial Intelligence
+  full_name: The 38th IEEE International Conference on Tools with Artificial Intelligence
   link: "https://ictai.computer.org/2026/"
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "TBD"
+      date: "2026-06-30 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Author Notification
-      date: "TBD"
+      date: "2026-09-10 07:59:00"
       timezone: UTC-12
   timezone: UTC-12
-  city: TBD
-  country: TBD
+  city: Boca Raton FL
+  country: United States
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: November 02-04, 2026
+  start: 2026-11-02
+  end: 2026-11-04
   tags:
       - machine-learning
       - natural-language-processing
@@ -27,5 +27,5 @@
       - robotics
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1251/

@@ -1,0 +1,30 @@
+- title: ACIVS
+  year: 2026
+  id: acivs26
+  full_name: 23rd Advanced Concepts for Intelligent Vision Systems
+  link: "https://acivsconf.org/acivs2026/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-06-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-06-21 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Okinawa
+  country: Japan
+  venue: TBD
+  format: in-person
+  date: December 15-17, 2026
+  start: 2026-12-15
+  end: 2026-12-17
+  tags:
+      - computer-vision
+      - multimedia
+      - information-retrieval
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/89/

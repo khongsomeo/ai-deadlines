@@ -1,7 +1,7 @@
 - title: Interspeech
   year: 2026
   id: interspeech26
-  full_name: Interspeech
+  full_name: Interspeech 2026
   link: "https://interspeech2026.org"
   deadlines:
     - type: submission
@@ -37,6 +37,6 @@
       - natural-language-processing
   rankings:
       rank_name: A
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/494/
   note: "Short paper maximum 4 pages, 8 pages to long paper."

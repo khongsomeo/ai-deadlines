@@ -1,0 +1,28 @@
+- title: KEOD
+  year: 2026
+  id: keod26
+  full_name: 18th International Conference on Knowledge Engineering and Ontology Development
+  link: "https://keod.scitevents.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-05-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-07-17 07:59:59"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Angers
+  country: France
+  venue: TBD
+  format: in-person
+  date: October 28-30, 2026
+  start: 2026-10-28
+  end: 2026-10-30
+  tags:
+      - natural-language-processing
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1111/

@@ -1,4 +1,36 @@
 - title: ICAART
+  year: 2027
+  id: icaart27
+  full_name: The 19th International Conference on Agents and Artificial Intelligence
+  link: "https://icaart.scitevents.org"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-09-30 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-11-13 07:59:59"
+      timezone: UTC-12
+  city: Valleta
+  country: Malta
+  venue: TBD 
+  format: in-person
+  date: February 23-25, 2027
+  start: 2027-02-23
+  end: 2027-02-25
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/902/
+
+- title: ICAART
   year: 2026
   id: icaart26
   full_name: International Conference on Agents and Artificial Intelligence
@@ -27,5 +59,5 @@
       - robotics
   rankings:
       rank_name: B
-      rank_source: CORE2023
+      rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/902/

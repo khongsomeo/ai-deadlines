@@ -1,8 +1,38 @@
 - title: MMM
+  year: 2027
+  id: mmm27
+  full_name: The 33rd International Conference on Multimedia Modelling
+  link: "hhttps://www.mmm2027.net/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-08-16 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-10-05 07:59:00"
+      timezone: UTC-12
+  city: Siem Reap
+  country: Cambodia
+  venue: TBD
+  format: hybrid
+  date: January 05-08, 2027
+  start: 2027-01-05
+  end: 2027-01-08
+  tags:
+      - multimedia
+      - speech-processing
+      - signal-processing
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1143/
+
+- title: MMM
   year: 2026
   id: mmm26
-  full_name: International Conference on Multimedia Modelling
-  link: "https://acmmm2025.org//"
+  full_name: The 32nd International Conference on Multimedia Modelling
+  link: "https://mmm2026.cz/"
   deadlines:
     - type: submission
       label: Paper Submission

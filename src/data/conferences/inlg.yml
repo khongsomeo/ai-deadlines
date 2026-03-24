@@ -1,4 +1,39 @@
 - title: INLG
+  year: 2026
+  id: inlg26
+  full_name: International Natural Language Generation Conference
+  link: "https://2026.inlgmeeting.org/"
+  deadlines:
+    - type: submission
+      date: TBD
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: commitment
+      date: TBD
+      label: "Commitment Deadline"
+      timezone: UTC-12
+    - type: final_decision
+      date: TBD
+      label: "Final Decision"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Utrecht
+  country: The Netherlands
+  venue: TBD
+  format: in-person
+  date: October 17-21, 2026
+  start: 2026-10-17
+  end: 2026-10-21
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1327/
+  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format with allowance from organizer."
+
+- title: INLG
   year: 2025
   id: inlg25
   full_name: International Natural Language Generation Conference
@@ -29,41 +64,7 @@
       - speech-processing
   rankings:
       rank_name: B
-      rank_source: CORE2023
-      rank_source_url: https://portal.core.edu.au/conf-ranks/1327/
-  note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format with allowance from organizer."
-
-- title: INLG
-  year: 2026
-  id: inlg26
-  full_name: International Natural Language Generation Conference
-  link: "https://2026.inlgmeeting.org/"
-  deadlines:
-    - type: submission
-      date: TBD
-      label: "Paper Submission"
-      timezone: UTC-12
-    - type: commitment
-      date: TBD
-      label: "Commitment Deadline"
-      timezone: UTC-12
-    - type: final_decision
-      date: TBD
-      label: "Final Decision"
-      timezone: UTC-12
-  timezone: UTC-12
-  city: Utrecht
-  country: The Netherlands
-  venue: TBD
-  format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
-  tags:
-      - natural-language-processing
-      - speech-processing
-  rankings:
-      rank_name: B
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1327/
   note: "Can submit in both <b>ACL Rolling Review</b> and <b>directly</b>; Hybrid format with allowance from organizer."
+

@@ -1,0 +1,30 @@
+- title: CoopIS
+  year: 2026
+  id: coopis26
+  full_name: 32nd International Conference on Cooperative Information Systems
+  link: "https://coopis.scitevents.org"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-05-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-07-17 07:59:00"
+      timezone: UTC-12
+  city: Angers
+  country: France
+  venue: TBD
+  format: in-person
+  date: October 26-28, 2026
+  start: 2026-10-26
+  end: 2026-10-28
+  tags:
+      - human-computer-interaction
+      - robotics
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/979/
+  note: Has a dedicated track for Knowledge Graph.

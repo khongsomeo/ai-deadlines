@@ -1,4 +1,55 @@
 - title: NeurIPS
+  year: 2026
+  id: neurips26
+  full_name: 40th Annual Conference on Neural Information Processing Systems
+  link: "https://neurips.cc/Conferences/2026"
+  deadlines:
+    - type: abstract
+      date: "2026-05-04 23:59:00"
+      label: Abstract Submission
+      timezone: UTC-12
+    - type: submission
+      date: "2026-05-06 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    # - type: submission
+    #   date: "TBD"
+    #   label: Supplemental Material Submission
+    #   timezone: UTC-12
+    # - type: rebuttal_start
+    #   label: Rebuttal Start
+    #   date: "TBD"
+    #   timezone: UTC-12
+    # - type: rebuttal_end
+    #   label: Rebuttal End
+    #   date: "TBD"
+    #   timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-09-24 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Sydney
+  country: Australia
+  venue: TBD
+  format: in-person
+  date: December 06-12, 2026
+  start: 2026-12-06
+  end: 2026-12-12
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/98/
+  note: "OpenReview submission"
+
+- title: NeurIPS
   year: 2025
   id: neurips25
   full_name: Annual Conference on Neural Information Processing Systems
