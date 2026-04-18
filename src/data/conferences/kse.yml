@@ -6,11 +6,11 @@
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "TBD"
+      date: "2026-07-15 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Author Notification
-      date: "TBD"
+      date: "2026-08-31 07:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: Kanazawa

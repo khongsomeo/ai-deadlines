@@ -2,7 +2,7 @@
   year: 2027
   id: mmm27
   full_name: The 33rd International Conference on Multimedia Modelling
-  link: "hhttps://www.mmm2027.net/"
+  link: "https://www.mmm2027.net/"
   deadlines:
     - type: submission
       label: Paper Submission
@@ -14,7 +14,7 @@
       timezone: UTC-12
   city: Siem Reap
   country: Cambodia
-  venue: TBD
+  venue: Sokha Angkor Resort
   format: hybrid
   date: January 05-08, 2027
   start: 2027-01-05

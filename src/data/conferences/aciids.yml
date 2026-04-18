@@ -1,7 +1,40 @@
 - title: ACIIDS
+  year: 2027
+  id: aciids27
+  full_name: 31st Asian Conference on Intelligent Information and Database Systems
+  link: "https://aciids.pwr.edu.pl/2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: hybrid
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2188/
+  note: "<b>Submission max. 15 pages;</b>"
+
+- title: ACIIDS
   year: 2026
   id: aciids26
-  full_name: Asian Conference on Intelligent Information and Database Systems
+  full_name: 30th Asian Conference on Intelligent Information and Database Systems
   link: "https://aciids.pwr.edu.pl/2026/"
   deadlines:
     - type: submission

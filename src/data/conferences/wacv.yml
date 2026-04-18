@@ -1,4 +1,67 @@
 - title: WACV
+  year: 2027
+  id: wacv27
+  full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
+  link: "https://wacv.thecvf.com/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission (Round 1)
+      date:  "TBD"
+      timezone: UTC+0
+    - type: submission
+      label: Paper Submission (Round 1)
+      date: "TBD"
+      timezone: UTC+0
+    - type: submission
+      label: Supplementary Material Submission (Round 1)
+      date: "TBD"
+      timezone: UTC+0
+    - type: review_released
+      label: Reviews and Decisions To Authors (Round 1)
+      date: "TBD"
+      timezone: UTC+0
+    - type: abstract
+      label: Abstract Submission (Round 2)
+      date: "TBD"
+      timezone: UTC+0
+    - type: submission
+      label: Paper Submission (Round 2)
+      date: "TBD"
+      timezone: UTC+0
+    - type: submission
+      label: Supplementary Material Submission (Round 2)
+      date: "TBD"
+      timezone: UTC+0
+    - type: rebuttal_period_end
+      label: Rebuttal and Revision Submission (Round 1)
+      date: "TBD"
+      timezone: UTC+0
+    - type: final_decision
+      label: Final Decisions released to Authors (Round 1)
+      date: "TBD"
+      timezone: UTC+0
+    - type: final_decision
+      label: Reviews and Final Decisions released to Authors (Round 2)
+      date: "TBD"
+      timezone: UTC+0
+  timezone: UTC+0
+  city: Orlando FL
+  country: United States
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - computer-vision
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/763/
+  note: "OpenReview submission"
+
+- title: WACV
   year: 2026
   id: wacv26
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision

@@ -1,0 +1,46 @@
+- title: MICCAI
+  year: 2026
+  id: miccai26
+  full_name: The 29th International Conference on Medical Image Computing and Computer Assisted Intervention
+  link: "https://conferences.miccai.org/2026"
+  deadlines:
+    - type: abstract
+      date: "2026-02-12 23:59:00"
+      label: Abstract Submission
+      timezone: America/Los_Angeles
+    - type: submission
+      label: Paper Submission
+      date: "2026-02-26 23:59:00"
+      timezone: America/Los_Angeles
+    - type: review_released
+      label: Review Released to Author
+      date: "2026-05-07 07:59:00"
+      timezone: America/Los_Angeles
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2026-05-08 07:59:00"
+      timezone: America/Los_Angeles
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "2026-05-14 23:59:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      date: "2026-06-12 07:59:00"
+      label: Author Notification
+      timezone: America/Los_Angeles
+  timezone: America/Los_Angeles
+  city: Abu Dhabi
+  country: UAE
+  venue: ANDEC Centre, Abu Dhabi - United Arab Emirates
+  format: in-person
+  date: October 04-08, 2026
+  start: 2026-10-04
+  end: 2026-10-08
+  tags:
+      - computer-vision
+      - multimedia
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1607/
+  note: "Topics related to Medical Imaging"

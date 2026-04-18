@@ -2,25 +2,25 @@
   year: 2026
   id: acml26
   full_name: The 18th Asian Conference in Machine Learning
-  link: "https://www.acml-conf.org/"
+  link: "https://www.acml-conf.org/2026/"
   deadlines:
     - type: submission
       label: "Paper Submission"
       date: "TBD"
-      timezone: UTC-12
+      timezone: America/Los_Angeles
     - type: rebuttal_start
       label: "Rebuttal Period Start"
       date: "TBD"
-      timezone: UTC-12
+      timezone: America/Los_Angeles
     - type: rebuttal_end
       label: "Rebuttal Period End"
       date: "TBD"
-      timezone: UTC-12
+      timezone: America/Los_Angeles
     - type: final_decision
       label: "Author Notification"
       date: "TBD"
-      timezone: UTC-12
-  timezone: UTC-12
+      timezone: America/Los_Angeles
+  timezone: America/Los_Angeles
   city: Melbourne
   country: Australia
   venue: TBD
@@ -79,45 +79,3 @@
       rank_name: C
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/2174/
-
-- title: ACML
-  year: 2026
-  id: acml26
-  full_name: The 18th Asian Conference in Machine Learning
-  link: "https://www.acml-conf.org/"
-  deadlines:
-    - type: submission
-      label: "Paper Submission"
-      date: "TBD"
-      timezone: UTC-12
-    - type: rebuttal_start
-      label: "Rebuttal Period Start"
-      date: "TBD"
-      timezone: UTC-12
-    - type: rebuttal_end
-      label: "Rebuttal Period End"
-      date: "TBD"
-      timezone: UTC-12
-    - type: final_decision
-      label: "Author Notification"
-      date: "TBD"
-      timezone: UTC-12
-  timezone: UTC-12
-  city: TBD
-  country: TBD
-  venue: TBD
-  format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
-  tags:
-      - machine-learning
-      - natural-language-processing
-      - speech-processing
-      - computer-vision
-      - robotics
-  rankings:
-      rank_name: C
-      rank_source: ICORE2026
-      rank_source_url: https://portal.core.edu.au/conf-ranks/2174/
-

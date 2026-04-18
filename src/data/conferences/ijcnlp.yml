@@ -6,27 +6,31 @@
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "TBD"
-      timezone: UTC-12
-    - type: commitment
-      label: Commitment Deadline
-      date: "TBD"
+      date: "2026-05-25 23:59:00"
       timezone: UTC-12
     - type: rebuttal_start
       label: Rebuttal Period Starts
-      date: "TBD"
+      date: "2026-07-07 07:59:00"
       timezone: UTC-12
     - type: rebuttal_end
       label: Rebuttal Period Ends
-      date: "TBD"
+      date: "2026-07-13 23:59:00"
+      timezone: UTC-12
+    - type: review_released
+      label: Meta-review Released
+      date: "2026-07-30 07:59:00"
+      timezone: UTC-12
+    - type: commitment
+      label: Commitment Deadline
+      date: "2026-08-26 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Decision
-      date: "TBD"
+      date: "2026-09-07 07:59:00"
       timezone: UTC-12
   city: Hengqin
   country: PR China
-  venue: TBD
+  venue: Tianmu Melody Convention Exhibition Center, Artificial Island, Tianmu River, Hengqin Island, Zhuhai, PR China
   format: hybrid
   date: November 06-10, 2026
   start: 2026-11-06

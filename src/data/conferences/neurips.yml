@@ -12,10 +12,6 @@
       date: "2026-05-06 23:59:00"
       label: Paper Submission
       timezone: UTC-12
-    # - type: submission
-    #   date: "TBD"
-    #   label: Supplemental Material Submission
-    #   timezone: UTC-12
     # - type: rebuttal_start
     #   label: Rebuttal Start
     #   date: "TBD"

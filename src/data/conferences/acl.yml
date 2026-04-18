@@ -1,4 +1,42 @@
 - title: ACL
+  year: 2027
+  id: acl27
+  full_name: Annual Meeting of the Association for Computational Linguistics
+  link: "https://2027.aclweb.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission (ARR) 
+      date: "TBD"
+      timezone: UTC-12
+    - type: review_release
+      label: Reviews Released (ARR)
+      date: "TBD"
+      timezone: UTC-12
+    - type: commitment
+      label: Commitment Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: TBD
+  country: Japan
+  venue: TBD
+  format: hybrid
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - natural-language-processing
+      - speech-processing
+      - information-retrieval
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/196/
+
+- title: ACL
   year: 2026
   id: acl26
   full_name: Annual Meeting of the Association for Computational Linguistics
@@ -35,4 +73,4 @@
       rank_name: A*
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/196/
-  note: "<b>Janauary 2026 ACL Rolling Review</b>"
+  note: "<b>January 2026 ACL Rolling Review</b>"

@@ -1,4 +1,49 @@
 - title: ICCV
+  year: 2027
+  id: iccv27
+  full_name: International Conference on Computer Vision
+  link: "https://iccv.thecvf.com/"
+  deadlines:
+    - type: abstract
+      label: Abstract Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: review_release
+      label: Reviews Released
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: Hong Kong
+  country: Hong Kong
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - computer-vision
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/638/
+  note: "OpenReview submission"
+
+- title: ICCV
   year: 2025
   id: iccv25
   full_name: International Conference on Computer Vision

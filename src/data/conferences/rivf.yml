@@ -7,12 +7,12 @@
     - type: submission
       date: "2025-07-30 23:59:00"
       label: Paper Submission
-      timezone: UTC+7
+      timezone: Asia/Saigon
     - type: final_decision
       date: "2025-10-15 07:59:59"
       label: Author Notification
-      timezone: UTC+7
-  timezone: UTC+7
+      timezone: Asia/Saigon
+  timezone: Asia/Saigon
   city: Ho Chi Minh City
   country: Vietnam
   venue: Van Lang University
@@ -41,16 +41,16 @@
     - type: submission
       date: "2026-07-15 23:59:00"
       label: Paper Submission
-      timezone: UTC+7
+      timezone: Asia/Saigon
     - type: submission
       date: "2026-07-30 23:59:00"
       label: Paper Submission (Extended)
-      timezone: UTC+7
+      timezone: Asia/Saigon
     - type: final_decision
       date: "2026-09-30 07:59:00"
       label: Author Notification
-      timezone: UTC+7
-  timezone: UTC+7
+      timezone: Asia/Saigon
+  timezone: Asia/Saigon
   city: Hanoi
   country: Vietnam
   venue: VinUniversity Vinhomes Ocean Park, Gia Lam District

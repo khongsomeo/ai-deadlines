@@ -1,4 +1,36 @@
 - title: ICCCI
+  year: 2027
+  id: iccci27
+  full_name: International Conference on Computational Collective Intelligence
+  link: "https://iccci.pwr.edu.pl/2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/942/
+  note: "Springer LNAI/LNCS 12-15 pages;"
+
+- title: ICCCI
   year: 2026
   id: iccci26
   full_name: International Conference on Computational Collective Intelligence

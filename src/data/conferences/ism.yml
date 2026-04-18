@@ -1,7 +1,39 @@
 - title: ISM
+  year: 2026
+  id: ism26
+  full_name: The 28th IEEE International Symposium on Multimedia
+  link: "https://www.multimediacomputing.org/"
+  deadlines:
+    - type: submission
+      date: "2026-09-01 23:59:00"
+      label: "Paper Submission"
+      timezone: "America/Los_Angeles"
+    - type: final_decision
+      date: "2026-10-01 07:59:59"
+      label: Author Notification
+      timezone: "America/Los_Angeles"
+  timezone: "America/Los_Angeles"
+  city: Laguna Hills, CA
+  country: United States
+  venue: 25205 La Paz Rd, Laguna Hills, CA 92653
+  format: hybrid
+  date: December 7-9, 2026
+  start: 2026-12-07
+  end: 2026-12-09
+  tags:
+      - signal-processing
+      - speech-processing
+      - computer-vision
+      - multimedia
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/701/
+
+- title: ISM
   year: 2025
   id: ism25
-  full_name: IEEE International Symposium on Multimedia
+  full_name: The 27th IEEE International Symposium on Multimedia
   link: "https://www.multimediacomputing.org/"
   deadlines:
     - type: submission

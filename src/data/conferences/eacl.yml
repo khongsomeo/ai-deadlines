@@ -1,4 +1,50 @@
 - title: EACL
+  year: 2027
+  id: eacl27
+  full_name: The 20th Conference of the European Chapter of the Association for Computational Linguistics
+  link: "https://2027.eacl.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "TBD"
+      timezone: UTC-12
+    - type: review_release
+      label: Review Release Date
+      date: "TBD"
+      timezone: UTC-12
+    - type: commitment
+      label: Commitment Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Athens
+  country: Greece
+  venue: TBD
+  format: hybrid
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - natural-language-processing
+      - speech-processing
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/468/
+  
+- title: EACL
   year: 2026
   id: eacl26
   full_name: Conference of the European Chapter of the Association for Computational Linguistics
