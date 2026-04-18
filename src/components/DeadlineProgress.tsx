@@ -130,10 +130,10 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
   return (
     <div className="flex justify-center w-full my-4">
       <div className="relative w-full max-w-xl px-2">
-        <div ref={barRef} className="relative w-full h-2 bg-neutral-200 rounded-full mx-auto">
+        <div ref={barRef} className="relative w-full h-2 bg-muted dark:bg-muted rounded-full mx-auto">
           {/* Progress fill */}
           <div
-            className="absolute top-0 left-0 h-2 bg-primary rounded-full transition-all"
+            className="absolute top-0 left-0 h-2 bg-primary dark:bg-iris rounded-full transition-all"
             style={{ width: `${progressPx}px`, zIndex: 1 }}
           />
           
@@ -148,9 +148,9 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                 zIndex: 2
               }}
             >
-              <div className="w-3 h-3 bg-neutral-100 rounded-full border-2 border-neutral-300" />
+              <div className="w-3 h-3 bg-muted dark:bg-muted rounded-full border-2 border-border dark:border-border" />
               <span 
-                className="absolute whitespace-nowrap text-[10px] text-neutral-600"
+                className="absolute whitespace-nowrap text-[10px] text-muted-foreground dark:text-muted-foreground"
                 style={{
                   top: "-24px",
                   transform: "rotate(-45deg)",
@@ -187,7 +187,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                     >
                       {/* Date label above - now diagonal */}
                       <span 
-                        className="absolute whitespace-nowrap text-[10px] text-neutral-600"
+                        className="absolute whitespace-nowrap text-[10px] text-muted-foreground dark:text-muted-foreground"
                         style={{
                           top: "-24px",
                           transform: "rotate(-45deg)",
@@ -202,16 +202,16 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                       <div
                         className={`w-4 h-4 rounded-full ${
                           status === 'past' 
-                            ? 'bg-primary border-2 border-primary'
-                            : 'bg-neutral-200 border-2 border-neutral-300' 
+                            ? 'bg-primary dark:bg-iris border-2 border-primary dark:border-iris'
+                            : 'bg-muted dark:bg-muted border-2 border-border dark:border-border' 
                         }`}
                       />
                     </div>
                   </TooltipTrigger>
                   <TooltipContent>
-                    <p className="font-medium">{step.label}</p>
-                    <p>{stepDate ? format(stepDate, "MMMM d, yyyy") : 'TBD'}</p>
-                    <p className="text-xs text-neutral-500">Timezone: {step.timezone || localTZ}</p>
+                    <p className="font-medium text-foreground">{step.label}</p>
+                    <p className="text-foreground">{stepDate ? format(stepDate, "MMMM d, yyyy") : 'TBD'}</p>
+                    <p className="text-xs text-muted-foreground">Timezone: {step.timezone || localTZ}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -229,7 +229,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                 zIndex: 3
               }}
             >
-              <div className="w-3 h-3 bg-white rounded-full border-2 border-primary shadow-sm" />
+              <div className="w-3 h-3 bg-card dark:bg-card rounded-full border-2 border-primary dark:border-iris shadow-sm" />
             </div>
           )}
         </div>

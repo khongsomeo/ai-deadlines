@@ -4,26 +4,64 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Rose Pine Pine Light Mode Colors */
+    --background: 243 23% 96%;
+    --foreground: 278 20% 20%;
+    --card: 243 23% 98%;
+    --card-foreground: 278 20% 15%;
+    --popover: 243 23% 98%;
+    --popover-foreground: 278 20% 20%;
+    --primary: 196 46% 51%;
+    --primary-foreground: 243 23% 18%;
+    --secondary: 12 61% 79%;
+    --secondary-foreground: 278 20% 15%;
+    --muted: 243 17% 85%;
+    --muted-foreground: 278 10% 50%;
+    --accent: 196 46% 51%;
+    --accent-foreground: 243 23% 18%;
+    --destructive: 355 75% 59%;
+    --destructive-foreground: 243 23% 98%;
+    --border: 243 17% 85%;
+    --input: 243 17% 90%;
+    --ring: 196 46% 51%;
     --radius: 0.5rem;
+    
+    /* Rose Pine Pine Color Palette */
+    --rose-pine-base: 278 23% 9%;
+    --rose-pine-surface: 279 14% 18%;
+    --rose-pine-overlay: 280 11% 22%;
+    --rose-pine-muted: 269 5% 33%;
+    --rose-pine-subtle: 271 5% 52%;
+    --rose-pine-text: 243 16% 88%;
+    --rose-pine-love: 355 75% 59%;
+    --rose-pine-gold: 40 84% 67%;
+    --rose-pine-rose: 12 61% 79%;
+    --rose-pine-pine: 196 46% 51%;
+    --rose-pine-foam: 188 44% 70%;
+    --rose-pine-iris: 261 62% 76%;
+  }
+
+  html.dark {
+    /* Rose Pine Dark Mode Colors - Iris Violet */
+    --background: 278 23% 9%;
+    --foreground: 243 16% 88%;
+    --card: 279 14% 18%;
+    --card-foreground: 243 16% 88%;
+    --popover: 279 14% 18%;
+    --popover-foreground: 243 16% 88%;
+    --primary: 276 36% 70%;
+    --primary-foreground: 278 23% 9%;
+    --secondary: 276 36% 70%;
+    --secondary-foreground: 278 23% 9%;
+    --muted: 280 11% 22%;
+    --muted-foreground: 271 5% 52%;
+    --accent: 276 36% 70%;
+    --accent-foreground: 278 23% 9%;
+    --destructive: 355 75% 59%;
+    --destructive-foreground: 278 23% 9%;
+    --border: 280 11% 22%;
+    --input: 279 14% 22%;
+    --ring: 276 36% 70%;
   }
 
   html, body {
@@ -34,20 +72,22 @@
   }
 
   body {
-    @apply bg-neutral-light text-neutral-dark antialiased;
+    @apply bg-background text-foreground antialiased transition-colors duration-200;
   }
 }
 
 .conference-card {
-  @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 p-4 flex flex-col;
+  @apply bg-card text-card-foreground rounded-lg shadow-sm hover:shadow-md transition-all duration-300 p-4 flex flex-col;
 }
 
 .tag {
-  @apply inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary;
+  @apply inline-flex items-center px-2 py-1 rounded-full text-sm font-medium transition-colors duration-200;
+  @apply bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris;
 }
 
 .countdown {
-  @apply text-2xl font-semibold text-primary;
+  @apply text-2xl font-semibold transition-colors duration-200;
+  @apply text-primary dark:text-primary;
 }
 
 @keyframes scale-up {

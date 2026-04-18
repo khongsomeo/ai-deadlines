@@ -87,7 +87,7 @@ const FilterBar = ({
   };
 
   return (
-    <div className="bg-white shadow rounded-lg p-4">
+    <div className="bg-card dark:bg-card shadow rounded-lg p-4">
       <div className="flex flex-col space-y-4">
         <div className="flex flex-wrap items-center gap-2">
           <Popover>
@@ -95,7 +95,7 @@ const FilterBar = ({
               <Button 
                 variant="outline" 
                 size="sm" 
-                className={`h-8 gap-1 ${selectedTags.size > 0 ? 'bg-blue-50 border-blue-200' : ''}`}
+                className={`h-8 gap-1 ${selectedTags.size > 0 ? 'bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800' : ''}`}
               >
                 <Filter className="h-4 w-4" />
                 Filter by Tag {selectedTags.size > 0 && `(${selectedTags.size})`}
@@ -105,12 +105,12 @@ const FilterBar = ({
               <div className="space-y-4">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-medium text-gray-800">Tags</h4>
-                    <ChevronRight className="h-4 w-4 text-gray-500" />
+                    <h4 className="text-sm font-medium text-foreground">Tags</h4>
+                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   </div>
                   <div className="max-h-60 overflow-y-auto space-y-2">
                     {uniqueTags.map(tag => (
-                      <div key={tag.id} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                      <div key={tag.id} className="flex items-center space-x-2 hover:bg-muted p-1 rounded dark:hover:bg-muted">
                         <Checkbox 
                           id={`tag-${tag.id}`}
                           checked={isTagSelected(tag.id)}
@@ -118,7 +118,7 @@ const FilterBar = ({
                         />
                         <label 
                           htmlFor={`tag-${tag.id}`}
-                          className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
+                          className="text-sm font-medium text-foreground cursor-pointer w-full py-1"
                         >
                           {tag.label}
                         </label>
@@ -142,12 +142,12 @@ const FilterBar = ({
               <div className="space-y-4">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-sm font-medium text-gray-800">Ranks</h4>
-                    <ChevronRight className="h-4 w-4 text-gray-500" />
+                    <h4 className="text-sm font-medium text-foreground">Ranks</h4>
+                    <ChevronRight className="h-4 w-4 text-muted-foreground" />
                   </div>
                   <div className="max-h-60 overflow-y-auto space-y-2">
                     {ranks.map(rank => (
-                      <div key={rank} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                      <div key={rank} className="flex items-center space-x-2 hover:bg-muted p-1 rounded dark:hover:bg-muted">
                         <Checkbox 
                           id={`rank-${rank}`}
                           checked={selectedRanks.has(rank)}
@@ -187,10 +187,10 @@ const FilterBar = ({
               <div className="space-y-4">
                 <div>
                   <div className="mb-4">
-                    <h4 className="text-sm font-medium text-gray-800">Format</h4>
+                    <h4 className="text-sm font-medium text-foreground dark:text-foreground">Format</h4>
                   </div>
                   <div 
-                    className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y" 
+                    className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y" 
                     style={{ WebkitOverflowScrolling: "touch" }}
                   >
                     {formats.map(format => (
@@ -229,7 +229,7 @@ const FilterBar = ({
               variant="ghost" 
               size="sm" 
               onClick={clearAllFilters}
-              className="text-neutral-500 hover:text-neutral-700"
+              className="text-muted-foreground dark:text-muted-foreground hover:text-foreground dark:hover:text-foreground"
             >
               Clear all
             </Button>

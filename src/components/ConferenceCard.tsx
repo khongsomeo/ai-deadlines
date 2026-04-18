@@ -80,26 +80,26 @@ const ConferenceCard = ({
 
   // Add this function inside ConferenceCard component, before the render return
   const getRankBadgeStyles = () => {
-    if (!rankings?.rank_name) return "text-gray-600 bg-gray-100";
+    if (!rankings?.rank_name) return "text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800";
 
     switch (rankings.rank_name.toUpperCase()) {
       case "A*":
-        return "text-red-600";
+        return "text-red-600 dark:text-red-400";
       case "A":
-        return "text-orange-600";
+        return "text-orange-600 dark:text-orange-400";
       case "B":
-        return "text-blue-600";
+        return "text-blue-600 dark:text-blue-400";
       case "C":
-        return "text-green-600";
+        return "text-green-600 dark:text-green-400";
       default:
-        return "text-gray-600";
+        return "text-gray-600 dark:text-gray-400";
     }
   };
 
   return (
     <>
       <div
-        className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col cursor-pointer"
+        className="bg-card dark:bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col cursor-pointer"
         onClick={handleCardClick}
       >
         <div className="flex justify-between items-start mb-2">
@@ -111,7 +111,7 @@ const ConferenceCard = ({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="text-foreground hover:underline"
               onClick={(e) => e.stopPropagation()}
             >
               <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
@@ -120,18 +120,18 @@ const ConferenceCard = ({
         </div>
 
         <div className="flex flex-col gap-2 mb-6">
-          <div className="flex items-center text-neutral">
+          <div className="flex items-center text-muted-foreground">
             <CalendarDays className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">{date}</span>
           </div>
           {location && (
-            <div className="flex items-center text-neutral">
+            <div className="flex items-center text-muted-foreground">
               <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
               <span className="text-sm truncate">{location} <span className={`font-semibold`}>({format})</span></span>
             </div>
           )}
           {rankings && (
-            <div className="flex items-center text-neutral">
+            <div className="flex items-center text-muted-foreground">
               <ChartNoAxesColumn className="h-4 w-4 mr-2 flex-shrink-0" />
               <div className="flex items-center gap-2">
                 <a
@@ -146,7 +146,7 @@ const ConferenceCard = ({
               </div>
             </div>
           )}
-          <div className="flex items-center text-neutral">
+          <div className="flex items-center text-muted-foreground">
             <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">
               {nextDeadline ? `${nextDeadline.label}: ${formatDeadlineDate(nextDeadline.date, nextDeadline.timezone || timezone, false)}` : (deadline === 'TBD' ? 'TBD' : `${formatDeadlineDate(deadline, timezone, false)}`)}

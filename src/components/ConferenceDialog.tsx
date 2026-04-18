@@ -189,7 +189,7 @@ END:VCALENDAR`;
 
     const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
     return (
-      <div className="text-sm text-neutral-500">
+      <div className="text-sm text-muted-foreground dark:text-muted-foreground">
         <div>{format(deadlineDate, "MMMM d, yyyy 'at' HH:mm:ss")} ({localTZ})</div>
         {conference.timezone && conference.timezone !== localTZ && (
           <div className="text-xs">
@@ -208,10 +208,10 @@ END:VCALENDAR`;
         className="max-w-lg w-full"
       >
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-blue-600">
+          <DialogTitle className="text-2xl font-bold text-primary dark:text-iris">
             {conference.title} {conference.year}
           </DialogTitle>
-          <DialogDescription className="text-base text-gray-700">
+          <DialogDescription className="text-base text-foreground dark:text-foreground">
             {conference.full_name}
           </DialogDescription>
         </DialogHeader>
@@ -219,28 +219,28 @@ END:VCALENDAR`;
         <div className="space-y-6 mt-4">
           <div className="space-y-4">
             <div className="flex items-start gap-2">
-              <CalendarDays className="h-5 w-5 mt-0.5 text-gray-500" />
+              <CalendarDays className="h-5 w-5 mt-0.5 text-muted-foreground" />
               <div>
-                <p className="font-medium">Dates</p>
-                <p className="text-sm text-gray-500">{conference.date}</p>
+                <p className="font-medium text-foreground">Dates</p>
+                <p className="text-sm text-muted-foreground">{conference.date}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-2">
-              <Globe className="h-5 w-5 mt-0.5 text-gray-500" />
+              <Globe className="h-5 w-5 mt-0.5 text-muted-foreground" />
               <div>
-                <p className="font-medium">Venue</p>
-                <p className="text-sm text-gray-500">
+                <p className="font-medium text-foreground">Venue</p>
+                <p className="text-sm text-muted-foreground">
                   {conference.venue || [conference.city, conference.country].filter(Boolean).join(", ")}
                 </p>
               </div>
             </div>
 
             <div className="flex items-start gap-2">
-              <Clock className="h-5 w-5 mt-0.5 text-gray-500" />
+              <Clock className="h-5 w-5 mt-0.5 text-muted-foreground" />
               <div className="space-y-2 flex-1">
-                <p className="font-medium">Important Deadlines</p>
-                <div className="text-sm text-gray-500 space-y-2">
+                <p className="font-medium text-foreground">Important Deadlines</p>
+                <div className="text-sm text-muted-foreground space-y-2">
                   {upcomingDeadlines.length > 0 ? (
                     upcomingDeadlines.map((deadline, index) => {
                       const isNext = nextDeadline && deadline.date === nextDeadline.date && deadline.type === nextDeadline.type;
@@ -249,10 +249,10 @@ END:VCALENDAR`;
                       return (
                         <div
                           key={`${deadline.type}-${index}`}
-                          className={`rounded-md p-2 ${isNext ? 'bg-blue-100 border border-blue-200' : 'bg-gray-100'}`}
+                          className={`rounded-md p-2 ${isNext ? 'bg-blue-100 dark:bg-blue-900 border border-blue-200 dark:border-blue-800' : 'bg-gray-100 dark:bg-gray-800'}`}
                         >
                           <div className="flex items-center justify-between gap-2">
-                            <p className={`flex-1 ${isNext ? 'font-medium text-blue-800' : ''}`}>
+                            <p className={`flex-1 ${isNext ? 'font-medium text-blue-800 dark:text-blue-200' : 'text-foreground'}`}>
                               {deadline.label}: {formatDeadlineDate(deadline.date, deadline.timezone || conference.timezone)}
                               {isNext && <span className="ml-2 text-xs">(Next)</span>}
                             </p>
@@ -266,7 +266,7 @@ END:VCALENDAR`;
                       );
                     })
                   ) : (
-                    <div className="bg-gray-100 rounded-md p-2">
+                    <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-2">
                       <p>No upcoming deadlines</p>
                     </div>
                   )}
@@ -298,7 +298,7 @@ END:VCALENDAR`;
 
           {conference.note && (
             <div
-              className="text-sm text-neutral-600 mt-2 p-3 bg-neutral-50 rounded-lg"
+              className="text-sm text-muted-foreground mt-2 p-3 bg-muted dark:bg-muted rounded-lg"
               dangerouslySetInnerHTML={{
                 __html: conference.note.replace(
                   /<a(.*?)>/g,
@@ -337,18 +337,18 @@ END:VCALENDAR`;
                   Add to Calendar
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-white" align="end">
-                <DropdownMenuLabel className="text-xs text-gray-500 font-medium">
+              <DropdownMenuContent className="bg-card dark:bg-card" align="end">
+                <DropdownMenuLabel className="text-xs text-muted-foreground font-medium">
                   Add Single Event
                 </DropdownMenuLabel>
                 <DropdownMenuItem
-                  className="text-neutral-800 hover:bg-neutral-100"
+                  className="text-foreground hover:bg-muted dark:hover:bg-muted"
                   onClick={() => createCalendarEvent('google')}
                 >
                   Add to Google Calendar
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="text-neutral-800 hover:bg-neutral-100"
+                  className="text-foreground hover:bg-muted dark:hover:bg-muted"
                   onClick={() => createCalendarEvent('apple')}
                 >
                   Add to Apple Calendar
@@ -356,18 +356,18 @@ END:VCALENDAR`;
 
                 <DropdownMenuSeparator />
 
-                <DropdownMenuLabel className="text-xs text-gray-500 font-medium">
+                <DropdownMenuLabel className="text-xs text-muted-foreground font-medium">
                   Subscribe to Updates
                 </DropdownMenuLabel>
                 <DropdownMenuItem
-                  className="text-neutral-800 hover:bg-neutral-100"
+                  className="text-foreground hover:bg-muted dark:hover:bg-muted"
                   onClick={() => handleSubscribeCalendar('google')}
                 >
                   <Bell className="h-4 w-4 mr-2" />
                   Google Calendar
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="text-neutral-800 hover:bg-neutral-100"
+                  className="text-foreground hover:bg-muted dark:hover:bg-muted"
                   onClick={() => handleSubscribeCalendar('apple')}
                 >
                   <Bell className="h-4 w-4 mr-2" />

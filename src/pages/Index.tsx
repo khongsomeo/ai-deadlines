@@ -206,20 +206,20 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-light">
+    <div className="min-h-screen bg-background dark:bg-background">
       <Header onSearch={setSearchQuery} showEmptyMessage={false} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Calendar subscription notification */}
-        <Alert className="mt-4 bg-blue-50 border-blue-200">
+        <Alert className="mt-4 bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
           <AlertDescription className="space-y-3">
             <div>
-              <p className="text-blue-900 font-semibold mb-2">
+              <p className="text-blue-900 dark:text-blue-200 font-semibold mb-2">
                 📅 Update: Subscribe to AI Deadlines Calendar
               </p>
-              <p className="text-blue-800 text-sm mb-3">
+              <p className="text-blue-800 dark:text-blue-300 text-sm mb-3">
                 Never miss an important deadline! Copy the URL below and add it to your favorite calendar app:
               </p>
-              <ul className="text-blue-800 text-sm space-y-1 ml-4 mb-3">
+              <ul className="text-blue-800 dark:text-blue-300 text-sm space-y-1 ml-4 mb-3">
                 <li><strong>Google Calendar:</strong> Click "+" → "From URL" → Paste the URL</li>
                 <li><strong>Apple Calendar:</strong> File → "New Calendar Subscription" → Paste the URL</li>
                 <li><strong>Other Apps:</strong> Look for "Add calendar by URL" or "Subscribe to calendar" option</li>
@@ -227,7 +227,7 @@ const Index = () => {
             </div>
             <button
               onClick={handleCopyCalendarUrl}
-              className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 transition-colors"
+              className="px-4 py-2 bg-blue-600 dark:bg-blue-700 text-white text-sm font-medium rounded hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors"
             >
               Copy Calendar URL
             </button>
@@ -235,14 +235,14 @@ const Index = () => {
         </Alert>
         <div className="space-y-4 py-4">
           {/* Category filter buttons */}
-          <div className="bg-white shadow rounded-lg p-4">
+          <div className="bg-card dark:bg-card shadow rounded-lg p-4">
             <div className="flex flex-wrap gap-2">
               {categoryButtons.map(category => (
                 <button
                   key={category.id}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${selectedTags.has(category.id)
-                      ? 'bg-blue-100 text-blue-800 hover:bg-blue-200'
-                      : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                      ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800'
+                      : 'bg-muted dark:bg-muted text-foreground hover:bg-muted/80 dark:hover:bg-muted/80'
                     }`}
                   onClick={() => {
                     const newTags = new Set(selectedTags);
@@ -262,8 +262,8 @@ const Index = () => {
 
           {/* Controls row with past conferences toggle and country filter */}
           <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-2 bg-white p-2 rounded-md shadow-sm">
-              <label htmlFor="show-past" className="text-sm text-neutral-600">
+            <div className="flex items-center gap-2 bg-card dark:bg-card p-2 rounded-md shadow-sm">
+              <label htmlFor="show-past" className="text-sm text-muted-foreground dark:text-muted-foreground">
                 Show past conferences
               </label>
               <Switch
@@ -273,7 +273,7 @@ const Index = () => {
               />
             </div>
 
-            <div className="flex flex-wrap items-center gap-2 bg-white p-2 rounded-md shadow-sm">
+            <div className="flex flex-wrap items-center gap-2 bg-card dark:bg-card p-2 rounded-md shadow-sm">
               <Popover>
                 <PopoverTrigger asChild>
                   <Button variant="outline" size="sm" className="h-8 gap-1">
@@ -281,18 +281,18 @@ const Index = () => {
                     Filter by Country
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-64 p-4 bg-white" align="start">
+                <PopoverContent className="w-64 p-4 bg-card dark:bg-card" align="start">
                   <div className="space-y-4">
                     <div>
                       <div className="mb-4">
-                        <h4 className="text-sm font-medium text-gray-800">Country</h4>
+                        <h4 className="text-sm font-medium text-foreground dark:text-foreground">Country</h4>
                       </div>
                       <div
-                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y"
+                        className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllCountries(conferencesData as Conference[]).map(country => (
-                          <div key={country} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                          <div key={country} className="flex items-center space-x-2 hover:bg-muted dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`country-${country}`}
                               checked={selectedCountries.has(country)}
@@ -308,7 +308,7 @@ const Index = () => {
                             />
                             <label
                               htmlFor={`country-${country}`}
-                              className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
+                              className="text-sm font-medium text-foreground dark:text-foreground cursor-pointer w-full py-1"
                             >
                               {country}
                             </label>
@@ -324,7 +324,7 @@ const Index = () => {
               {Array.from(selectedCountries).map(country => (
                 <button
                   key={country}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 font-medium"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 font-medium"
                   onClick={() => {
                     const newCountries = new Set(selectedCountries);
                     newCountries.delete(country);
@@ -345,18 +345,18 @@ const Index = () => {
                     Filter by Format
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-64 p-4 bg-white" align="start">
+                <PopoverContent className="w-64 p-4 bg-card dark:bg-card" align="start">
                   <div className="space-y-4">
                     <div>
                       <div className="mb-4">
-                        <h4 className="text-sm font-medium text-gray-800">Format</h4>
+                        <h4 className="text-sm font-medium text-foreground dark:text-foreground">Format</h4>
                       </div>
                       <div
-                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y"
+                        className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllFormats(conferencesData as Conference[]).map(format => (
-                          <div key={format} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                          <div key={format} className="flex items-center space-x-2 hover:bg-muted dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`format-${format}`}
                               checked={selectedFormats.has(format)}
@@ -372,7 +372,7 @@ const Index = () => {
                             />
                             <label
                               htmlFor={`format-${format}`}
-                              className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
+                              className="text-sm font-medium text-foreground dark:text-foreground cursor-pointer w-full py-1"
                             >
                               {format}
                             </label>
@@ -388,7 +388,7 @@ const Index = () => {
               {Array.from(selectedFormats).map(format => (
                 <button
                   key={format}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 font-medium"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 font-medium"
                   onClick={() => {
                     const newFormats = new Set(selectedFormats);
                     newFormats.delete(format);
@@ -408,18 +408,18 @@ const Index = () => {
                     Filter by Rank
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-64 p-4 bg-white" align="start">
+                <PopoverContent className="w-64 p-4 bg-card dark:bg-card" align="start">
                   <div className="space-y-4">
                     <div>
                       <div className="mb-4">
-                        <h4 className="text-sm font-medium text-gray-800">Rank</h4>
+                        <h4 className="text-sm font-medium text-foreground dark:text-foreground">Rank</h4>
                       </div>
                       <div
-                        className="max-h-60 overflow-y-auto space-y-2 bg-white overscroll-contain touch-pan-y"
+                        className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllRanks(conferencesData as Conference[]).map(rank => (
-                          <div key={rank} className="flex items-center space-x-2 hover:bg-gray-50 p-1 rounded">
+                          <div key={rank} className="flex items-center space-x-2 hover:bg-muted dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`rank-${rank}`}
                               checked={selectedRanks.has(rank)}
@@ -435,7 +435,7 @@ const Index = () => {
                             />
                             <label
                               htmlFor={`rank-${rank}`}
-                              className="text-sm font-medium text-gray-700 cursor-pointer w-full py-1"
+                              className="text-sm font-medium text-foreground dark:text-foreground cursor-pointer w-full py-1"
                             >
                               {rank}
                             </label>
@@ -451,7 +451,7 @@ const Index = () => {
               {Array.from(selectedRanks).map(rank => (
                 <button
                   key={rank}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800 hover:bg-blue-200 font-medium"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 font-medium"
                   onClick={() => {
                     const newRanks = new Set(selectedRanks);
                     newRanks.delete(rank);
@@ -474,7 +474,7 @@ const Index = () => {
                     handleRanksChange(new Set());
                     handleFormatsChange(new Set());
                   }}
-                  className="text-neutral-500 hover:text-neutral-700"
+                  className="text-muted-foreground dark:text-muted-foreground hover:text-foreground dark:hover:text-foreground"
                 >
                   Clear all filters
                 </Button>
@@ -485,7 +485,7 @@ const Index = () => {
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {filteredConferences.length === 0 && (
-          <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-md p-4 mb-6">
+          <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 rounded-md p-4 mb-6">
             <p className="text-center">
               There are no upcoming conferences for the selected categories - enable "Show past conferences" to see previous ones
             </p>

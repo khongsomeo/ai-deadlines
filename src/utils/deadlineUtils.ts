@@ -211,11 +211,11 @@ export function getDaysRemaining(deadline: Deadline, fallbackTimezone?: string):
  * Get the color class for a countdown based on days remaining
  */
 export function getCountdownColorClass(daysRemaining: number | null): string {
-  if (daysRemaining === null) return "text-neutral-600";
-  if (daysRemaining <= 0) return "text-neutral-600";
-  if (daysRemaining <= 7) return "text-red-600";
-  if (daysRemaining <= 30) return "text-orange-600";
-  return "text-green-600";
+  if (daysRemaining === null) return "text-muted-foreground dark:text-muted-foreground";
+  if (daysRemaining <= 0) return "text-muted-foreground dark:text-muted-foreground";
+  if (daysRemaining <= 7) return "text-red-600 dark:text-red-400";
+  if (daysRemaining <= 30) return "text-orange-600 dark:text-orange-400";
+  return "text-green-600 dark:text-green-400";
 }
 
 /**

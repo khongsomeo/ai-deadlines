@@ -25,16 +25,41 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        card: "hsl(var(--card))",
+        "card-foreground": "hsl(var(--card-foreground))",
+        popover: "hsl(var(--popover))",
+        "popover-foreground": "hsl(var(--popover-foreground))",
         primary: {
-          DEFAULT: "#0284C7", // Darker Ocean Blue
-          light: "#7DD3FC", // Adjusted Light Blue
-          dark: "#075985", // Deeper Dark Blue
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
         neutral: {
           DEFAULT: "#6B7280",
           light: "#F9FAFB",
           dark: "#111827",
         },
+        iris: "hsl(var(--rose-pine-iris))",
+        foam: "hsl(var(--rose-pine-foam))",
+        pine: "hsl(var(--rose-pine-pine))",
+        rose: "hsl(var(--rose-pine-rose))",
+        gold: "hsl(var(--rose-pine-gold))",
+        love: "hsl(var(--rose-pine-love))",
       },
       keyframes: {
         "fade-in": {

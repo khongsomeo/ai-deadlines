@@ -349,11 +349,11 @@ const CalendarPage = () => {
         <div className="space-y-2 mt-3">
           {deadlineDate && (
             <div className="flex items-start gap-2">
-              <span className="font-medium text-sm text-neutral-900">Deadline:</span>
-              <div className="text-sm text-neutral-900">
+              <span className="font-medium text-sm text-foreground dark:text-foreground">Deadline:</span>
+              <div className="text-sm text-foreground dark:text-foreground">
                 <div>{format(deadlineDate, 'MMMM d, yyyy')}</div>
                 {conf.timezone && (
-                  <div className="text-neutral-500 text-xs">
+                  <div className="text-muted-foreground dark:text-muted-foreground text-xs">
                     Timezone: {conf.timezone}
                   </div>
                 )}
@@ -363,8 +363,8 @@ const CalendarPage = () => {
 
           {startDate && (
             <div className="flex items-start gap-2">
-              <span className="font-medium text-sm text-neutral-900">Date:</span>
-              <div className="text-sm text-neutral-900">
+              <span className="font-medium text-sm text-foreground dark:text-foreground">Date:</span>
+              <div className="text-sm text-foreground dark:text-foreground">
                 <div>
                   {format(startDate, 'MMMM d')}
                   {endDate ? ` - ${format(endDate, 'MMMM d, yyyy')}` :
@@ -376,14 +376,14 @@ const CalendarPage = () => {
 
           {conf.place && (
             <div className="flex items-start gap-2">
-              <span className="font-medium text-sm text-neutral-900">Location:</span>
-              <span className="text-sm text-neutral-900">{conf.place}</span>
+              <span className="font-medium text-sm text-foreground dark:text-foreground">Location:</span>
+              <span className="text-sm text-foreground dark:text-foreground">{conf.place}</span>
             </div>
           )}
 
           {conf.note && (
             <div className="flex items-start gap-2 mt-2">
-              <span className="font-medium text-sm text-neutral-900">Note:</span>
+              <span className="font-medium text-sm text-foreground dark:text-foreground">Note:</span>
               <div className="text-sm text-neutral-900"
                 dangerouslySetInnerHTML={{ __html: conf.note }}
               />
@@ -423,11 +423,11 @@ const CalendarPage = () => {
                   onClick={() => setShowDeadlines(!showDeadlines)}
                   className={`
                     flex items-center gap-2 px-3 py-1.5 
-                    rounded-lg border border-red-200 
-                    bg-white hover:bg-red-50 
+                    rounded-lg border border-red-200 dark:border-red-800
+                    bg-card dark:bg-card hover:bg-red-50 dark:hover:bg-red-950
                     transition-all duration-200
                     cursor-pointer
-                    ${showDeadlines ? 'ring-2 ring-primary ring-offset-2' : ''}
+                    ${showDeadlines ? 'ring-2 ring-primary dark:ring-iris ring-offset-2' : ''}
                   `}
                 >
                   <div className="w-3 h-3 bg-red-500 rounded-full" />
@@ -459,11 +459,11 @@ const CalendarPage = () => {
                   }}
                   className={`
                     flex items-center gap-2 px-3 py-1.5 
-                    rounded-lg border border-neutral-200 
-                    bg-white hover:bg-neutral-50 
+                    rounded-lg border border-border dark:border-border
+                    bg-card dark:bg-card hover:bg-muted dark:hover:bg-muted
                     transition-all duration-200
                     cursor-pointer
-                    ${selectedCategories.has(tag) ? 'ring-2 ring-primary ring-offset-2' : ''}
+                    ${selectedCategories.has(tag) ? 'ring-2 ring-primary dark:ring-iris ring-offset-2' : ''}
                   `}
                 >
                   <div className={`w-3 h-3 rounded-full ${color}`} />
@@ -513,12 +513,12 @@ const CalendarPage = () => {
   const renderViewToggle = () => {
     return (
       <div className="flex flex-col items-center gap-4 mb-6">
-        <div className="bg-neutral-100 rounded-lg p-1 inline-flex">
+        <div className="bg-muted dark:bg-muted rounded-lg p-1 inline-flex">
           <button
             onClick={() => setIsYearView(false)}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${!isYearView
-                ? 'bg-white shadow-sm text-primary'
-                : 'text-neutral-600 hover:text-neutral-900'
+                ? 'bg-card dark:bg-card shadow-sm text-primary dark:text-iris'
+                : 'text-muted-foreground dark:text-muted-foreground hover:text-foreground dark:hover:text-foreground'
               }`}
           >
             Month View
@@ -526,8 +526,8 @@ const CalendarPage = () => {
           <button
             onClick={() => setIsYearView(true)}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${isYearView
-                ? 'bg-white shadow-sm text-primary'
-                : 'text-neutral-600 hover:text-neutral-900'
+                ? 'bg-card dark:bg-card shadow-sm text-primary dark:text-iris'
+                : 'text-muted-foreground dark:text-muted-foreground hover:text-foreground dark:hover:text-foreground'
               }`}
           >
             Year View
@@ -575,11 +575,11 @@ const CalendarPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-light">
+      <div className="min-h-screen bg-background dark:bg-background">
       <Header onSearch={setSearchQuery} />
 
       {searchQuery && (
-        <div className="p-6 bg-white border-b">
+        <div className="p-6 bg-card dark:bg-card border-b border-border">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-lg font-semibold mb-4">
               Search Results for "{searchQuery}"
@@ -662,7 +662,7 @@ const CalendarPage = () => {
                 onMonthChange={handleMonthChange}
                 fromMonth={isYearView ? new Date(currentYear, 0) : undefined}
                 toMonth={isYearView ? new Date(currentYear, 11) : undefined}
-                className="bg-white rounded-lg p-6 shadow-sm mx-auto w-full"
+                className="bg-card dark:bg-card rounded-lg p-6 shadow-sm mx-auto w-full"
                 components={{
                   Day: ({ date, displayMonth, ...props }) => {
                     const isOutsideDay = date.getMonth() !== displayMonth.getMonth();
