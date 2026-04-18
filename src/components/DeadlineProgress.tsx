@@ -88,8 +88,11 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     }
   }
 
-  // Calculate step positions
-  const stepPositions = validSteps.map(step => {
+  // Calculate step positions with minimum spacing enforcement
+  const MIN_STEP_DISTANCE = 18; // Minimum pixels between step centers
+
+  // First, calculate base positions using time ratios
+  const baseStepPositions = validSteps.map(step => {
     const stepDate = getDeadlineInLocalTime(step.date, step.timezone);
     if (!stepDate || !isValid(stepDate)) return 0;
 
@@ -104,6 +107,25 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                differenceInMilliseconds(lastStepDate, firstStepDate)) * deadlineWidth);
     }
   });
+
+  // Apply minimum spacing: ensure each step is at least MIN_STEP_DISTANCE from the previous
+  const adjustedPositions: number[] = [];
+  for (let i = 0; i < baseStepPositions.length; i++) {
+    if (i === 0) {
+      adjustedPositions.push(baseStepPositions[i]);
+    } else {
+      const minPos = adjustedPositions[i - 1] + MIN_STEP_DISTANCE;
+      adjustedPositions.push(Math.max(baseStepPositions[i], minPos));
+    }
+  }
+
+  // If adjusted positions exceed bar width, scale them down proportionally
+  // This maintains the ratio while ensuring minimum spacing is honored
+  let stepPositions = adjustedPositions;
+  if (adjustedPositions.length > 0 && adjustedPositions[adjustedPositions.length - 1] > barWidth) {
+    const scaleFactor = barWidth / adjustedPositions[adjustedPositions.length - 1];
+    stepPositions = adjustedPositions.map(pos => pos * scaleFactor);
+  }
 
   return (
     <div className="flex justify-center w-full my-4">
