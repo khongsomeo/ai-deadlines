@@ -2,26 +2,27 @@
   year: 2026
   id: paclic26
   full_name: The 40th Pacific Asia Conference on Language, Information and Computation
-  link: "https://example.com"
+  link: "https://paclic2026.github.io/"
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "TBD"
+      date: "2026-08-01 23:59:00"
       timezone: UTC-12    
     - type: final_decision
       label: Final Decision
-      date: "TBD"
+      date: "2026-09-30 23:59:00"
       timezone: UTC-12
   city: Taipei
   country: Taiwan
-  venue: National Taiwan University
-  format: hybrid
+  venue: National Taiwan University, No. 1, Sec. 4, Roosevelt Rd., Da'an District, Taipei City 106
+  format: in-person
   date: December 10-12, 2026
   start: 2026-11-10
   end: 2026-11-12
   tags:
       - natural-language-processing
       - speech-processing
+      - information-retrieval
   rankings:
       rank_name: C
       rank_source: ICORE2026

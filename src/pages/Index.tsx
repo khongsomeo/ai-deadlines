@@ -56,6 +56,7 @@ const Index = () => {
     { id: "human-computer-interaction", label: "Human Computer Interaction" },
     { id: "information-theory", label: "Information Theory" },
     { id: "information-retrieval", label: "Information Retrieval" },
+    { id: "cryptography", label: "Cryptography" },
   ];
 
   const filteredConferences = useMemo(() => {

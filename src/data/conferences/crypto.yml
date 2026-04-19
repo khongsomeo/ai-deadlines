@@ -1,0 +1,37 @@
+- title: CRYPTO
+  year: 2026
+  id: crypto26
+  full_name: The 46th Annual International Cryptology Conference
+  link: "https://crypto.iacr.org/2026"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-02-12 23:59:00"
+      timezone: America/Los_Angeles
+    - type: author_notification
+      label: First Round Notification
+      date: "2026-04-07 07:59:00"
+      timezone: America/Los_Angeles
+    - type: rebuttal_end
+      label: Rebuttal Deadline
+      date: "2026-04-13 11:59:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: Final Decision
+      date: "2026-05-04 07:59:00"
+      timezone: America/Los_Angeles
+  timezone: America/Los_Angeles
+  city: Santa Barbara, CA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: August 17-20, 2026
+  start: 2026-08-17
+  end: 2026-08-20
+  tags:
+      - cryptography
+      - information-theory
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/94/

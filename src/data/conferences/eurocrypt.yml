@@ -1,0 +1,36 @@
+- title: EUROCRYPT
+  year: 2026
+  id: eurocrypt26
+  full_name: The 45th Annual International Conference on the Theory and Applications of Cryptographic Techniques
+  link: "https://eurocrypt.iacr.org/2026/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2025-10-02 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2025-12-08 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "2025-12-12 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-01-29 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Rome
+  country: Italy
+  venue: Viale Pietro de Coubertin, 30 00196 Roma RM, Italy
+  format: in-person
+  date: May 10-14, 2026
+  start: 2026-05-10
+  end: 2026-05-14
+  tags:
+      - cryptography
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1242/

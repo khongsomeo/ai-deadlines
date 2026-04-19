@@ -1,0 +1,37 @@
+- title: ASIACRYPT
+  year: 2026
+  id: asiacrypt26
+  full_name: The 32nd International Conference on the Theory and Application of Cryptology and Information Security
+  link: "https://asiacrypt.iacr.org/2026"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-05-22 11:59:00"
+      timezone: UTC+0
+    - type: author_notification
+      label: First Round Notification
+      date: "2026-07-17 07:59:00"
+      timezone: UTC+0
+    - type: rebuttal_end
+      label: Rebuttal Deadline
+      date: "2026-07-22 11:59:00"
+      timezone: UTC+0
+    - type: final_decision
+      label: Final Decision
+      date: "2026-08-14 07:59:00"
+      timezone: UTC+0
+  timezone: UTC+0
+  city: Hong Kong
+  country: Hong Kong
+  venue: TBD
+  format: in-person
+  date: December 07-11, 2026
+  start: 2026-11-07
+  end: 2026-11-11
+  tags:
+      - cryptography
+      - information-theory
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1243/
