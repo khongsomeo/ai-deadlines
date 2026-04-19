@@ -242,7 +242,7 @@ const Index = () => {
                 <button
                   key={category.id}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${selectedTags.has(category.id)
-                      ? 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800'
+                      ? 'bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30'
                       : 'bg-muted dark:bg-muted text-foreground hover:bg-muted/80 dark:hover:bg-muted/80'
                     }`}
                   onClick={() => {
@@ -277,7 +277,7 @@ const Index = () => {
             <div className="flex flex-wrap items-center gap-2 bg-card dark:bg-card p-2 rounded-md shadow-sm">
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button variant="outline" size="sm" className="h-8 gap-1">
+                  <Button variant="outline" size="sm" className="h-8 gap-1 focus:outline-none hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
                     <Globe className="h-4 w-4" />
                     Filter by Country
                   </Button>
@@ -293,7 +293,7 @@ const Index = () => {
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllCountries(conferencesData as Conference[]).map(country => (
-                          <div key={country} className="flex items-center space-x-2 hover:bg-muted dark:hover:bg-muted p-1 rounded">
+                          <div key={country} className="flex items-center space-x-2 hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`country-${country}`}
                               checked={selectedCountries.has(country)}
@@ -325,7 +325,7 @@ const Index = () => {
               {Array.from(selectedCountries).map(country => (
                 <button
                   key={country}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 font-medium"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30 font-medium"
                   onClick={() => {
                     const newCountries = new Set(selectedCountries);
                     newCountries.delete(country);
@@ -341,7 +341,7 @@ const Index = () => {
               {/* Format filter popover */}
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button variant="outline" size="sm" className="h-8 gap-1">
+                  <Button variant="outline" size="sm" className="h-8 gap-1 hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
                     <Globe className="h-4 w-4" />
                     Filter by Format
                   </Button>
@@ -357,7 +357,7 @@ const Index = () => {
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllFormats(conferencesData as Conference[]).map(format => (
-                          <div key={format} className="flex items-center space-x-2 hover:bg-muted dark:hover:bg-muted p-1 rounded">
+                          <div key={format} className="flex items-center space-x-2 hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`format-${format}`}
                               checked={selectedFormats.has(format)}
@@ -389,7 +389,7 @@ const Index = () => {
               {Array.from(selectedFormats).map(format => (
                 <button
                   key={format}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 font-medium"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30 font-medium"
                   onClick={() => {
                     const newFormats = new Set(selectedFormats);
                     newFormats.delete(format);
@@ -404,7 +404,7 @@ const Index = () => {
               {/* Rank filter popover */}
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button variant="outline" size="sm" className="h-8 gap-1">
+                  <Button variant="outline" size="sm" className="h-8 gap-1 hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
                     <ChartNoAxesColumn className="h-4 w-4" />
                     Filter by Rank
                   </Button>
@@ -420,7 +420,7 @@ const Index = () => {
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
                         {getAllRanks(conferencesData as Conference[]).map(rank => (
-                          <div key={rank} className="flex items-center space-x-2 hover:bg-muted dark:hover:bg-muted p-1 rounded">
+                          <div key={rank} className="flex items-center space-x-2 hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`rank-${rank}`}
                               checked={selectedRanks.has(rank)}
@@ -452,7 +452,7 @@ const Index = () => {
               {Array.from(selectedRanks).map(rank => (
                 <button
                   key={rank}
-                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 hover:bg-blue-200 dark:hover:bg-blue-800 font-medium"
+                  className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30 font-medium"
                   onClick={() => {
                     const newRanks = new Set(selectedRanks);
                     newRanks.delete(rank);
@@ -475,7 +475,7 @@ const Index = () => {
                     handleRanksChange(new Set());
                     handleFormatsChange(new Set());
                   }}
-                  className="text-muted-foreground dark:text-muted-foreground hover:text-foreground dark:hover:text-foreground"
+                  className="text-muted-foreground dark:text-muted-foreground hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted dark:hover:text-foreground"
                 >
                   Clear all filters
                 </Button>

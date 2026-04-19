@@ -147,7 +147,7 @@ const FilterBar = ({
                   </div>
                   <div className="max-h-60 overflow-y-auto space-y-2">
                     {ranks.map(rank => (
-                      <div key={rank} className="flex items-center space-x-2 hover:bg-muted p-1 rounded dark:hover:bg-muted">
+                      <div key={rank} className="flex items-center space-x-2 [&[data-highlighted]]:bg-gray-200 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground">
                         <Checkbox 
                           id={`rank-${rank}`}
                           checked={selectedRanks.has(rank)}
