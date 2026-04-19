@@ -313,7 +313,7 @@ END:VCALENDAR`;
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-base text-primary p-0 hover:bg-transparent dark:hover:bg-transparent dark:hover:text-foam"
+                className="text-base text-primary p-0 hover:bg-transparent dark:hover:bg-transparent dark:hover:text-foreground"
                 asChild
               >
                 <a
@@ -331,7 +331,7 @@ END:VCALENDAR`;
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-sm focus-visible:ring-0 focus:outline-none hover:bg-gray-300 hover:text-foreground dark:hover:bg-muted dark:hover:text-foreground"
+                  className="text-sm focus-visible:ring-0 focus:outline-none hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted dark:hover:text-foreground"
                 >
                   <CalendarPlus className="h-4 w-4 mr-2" />
                   Add to Calendar
@@ -342,13 +342,13 @@ END:VCALENDAR`;
                   Add Single Event
                 </DropdownMenuLabel>
                 <DropdownMenuItem
-                  className="text-foreground cursor-pointer [&[data-highlighted]]:bg-gray-300 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground"
+                  className="text-foreground cursor-pointer [&[data-highlighted]]:bg-gray-200 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground"
                   onClick={() => createCalendarEvent('google')}
                 >
                   Add to Google Calendar
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="text-foreground cursor-pointer [&[data-highlighted]]:bg-gray-300 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground"
+                  className="text-foreground cursor-pointer [&[data-highlighted]]:bg-gray-200 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground"
                   onClick={() => createCalendarEvent('apple')}
                 >
                   Add to Apple Calendar
@@ -360,14 +360,14 @@ END:VCALENDAR`;
                   Subscribe to Updates
                 </DropdownMenuLabel>
                 <DropdownMenuItem
-                  className="text-foreground cursor-pointer [&[data-highlighted]]:bg-gray-300 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground"
+                  className="text-foreground cursor-pointer [&[data-highlighted]]:bg-gray-200 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground"
                   onClick={() => handleSubscribeCalendar('google')}
                 >
                   <Bell className="h-4 w-4 mr-2" />
                   Google Calendar
                 </DropdownMenuItem>
                 <DropdownMenuItem
-                  className="text-foreground cursor-pointer [&[data-highlighted]]:bg-gray-300 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground"
+                  className="text-foreground cursor-pointer [&[data-highlighted]]:bg-gray-200 dark:[&[data-highlighted]]:bg-muted dark:[&[data-highlighted]]:text-foreground"
                   onClick={() => handleSubscribeCalendar('apple')}
                 >
                   <Bell className="h-4 w-4 mr-2" />
