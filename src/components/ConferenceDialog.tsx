@@ -249,10 +249,10 @@ END:VCALENDAR`;
                       return (
                         <div
                           key={`${deadline.type}-${index}`}
-                          className={`rounded-md p-2 ${isNext ? 'bg-blue-100 dark:bg-blue-900 border border-blue-200 dark:border-blue-800' : 'bg-gray-100 dark:bg-gray-800'}`}
+                          className={`rounded-md p-2 ${isNext ? 'bg-blue-100 dark:bg-iris/30 border border-blue-200 dark:border-iris/50' : 'bg-gray-200 dark:bg-iris/20'}`}
                         >
                           <div className="flex items-center justify-between gap-2">
-                            <p className={`flex-1 ${isNext ? 'font-medium text-blue-800 dark:text-blue-200' : 'text-foreground'}`}>
+                            <p className={`flex-1 ${isNext ? 'font-medium text-blue-800 dark:text-white' : 'text-foreground'}`}>
                               {deadline.label}: {formatDeadlineDate(deadline.date, deadline.timezone || conference.timezone)}
                               {isNext && <span className="ml-2 text-xs">(Next)</span>}
                             </p>
@@ -298,7 +298,7 @@ END:VCALENDAR`;
 
           {conference.note && (
             <div
-              className="text-sm text-muted-foreground mt-2 p-3 bg-muted dark:bg-muted rounded-lg"
+              className="text-sm text-muted-foreground mt-2 p-3 bg-gray-200 dark:bg-muted rounded-lg"
               dangerouslySetInnerHTML={{
                 __html: conference.note.replace(
                   /<a(.*?)>/g,

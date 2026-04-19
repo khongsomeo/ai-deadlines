@@ -80,7 +80,7 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
           <p className="text-sm text-muted-foreground py-4">
             A dỏm, yếu kém, phản cảm countdowns to <span className="line-through">top</span> CV/NLP/ML/Robotics/AI conference deadlines.
 <br/>
-Due to my incompetent in science, these conferences are mostly CORE B/non-ranked.
+Due to my incompetent in science, these conferences are mostly CORE-B/non-ranked.
           </p>
           <p className="text-sm text-muted-foreground py-4">
             <b>Important:</b> Please give the original <a className="text-primary hover:underline" href="https://huggingface.co/spaces/huggingface/ai-deadlines">space</a> a <b>like</b> and <a className="text-primary hover:underline" href="https://github.com/huggingface/ai-deadlines">repository</a> a <b>star</b> for their awesome work!
