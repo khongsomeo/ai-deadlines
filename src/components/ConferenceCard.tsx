@@ -160,13 +160,15 @@ const ConferenceCard = ({
           </div>
         </div>
 
-        <DeadlineProgress
-          steps={getAllDeadlines(conference).map(deadline => ({
-            label: deadline.label,
-            date: deadline.date,
-            timezone: deadline.timezone || conference.timezone
-          }))}
-        />
+        <div className="mt-4">
+          <DeadlineProgress
+            steps={getAllDeadlines(conference).map(deadline => ({
+              label: deadline.label,
+              date: deadline.date,
+              timezone: deadline.timezone || conference.timezone
+            }))}
+          />
+        </div>
 
         {Array.isArray(tags) && tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
