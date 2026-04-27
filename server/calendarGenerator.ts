@@ -13,6 +13,22 @@ export function formatICalDate(date: Date): string {
 }
 
 /**
+ * Format a date for iCalendar all-day event format (RFC 5545)
+ * All-day events use VALUE=DATE format: YYYYMMDD
+ */
+export function formatICalAllDayDate(date: Date | string): string {
+  try {
+    const parsedDate = typeof date === 'string' ? parseISO(date) : date;
+    if (!isValid(parsedDate)) {
+      return '';
+    }
+    return format(parsedDate, 'yyyyMMdd');
+  } catch {
+    return '';
+  }
+}
+
+/**
  * Normalize timezone string to a standard format
  */
 function normalizeTimezone(tz: string | undefined): string {
@@ -205,14 +221,100 @@ END:VEVENT`;
 }
 
 /**
+ * Generate an iCalendar VEVENT for an all-day conference event
+ */
+export function generateAllDayConferenceVEvent(conference: Conference): string | null {
+  // Need both start and end dates for an all-day event
+  if (!conference.start || !conference.end) {
+    return null;
+  }
+
+  try {
+    // Handle both Date objects and string dates (YAML loader may convert to Date automatically)
+    let startDateObj: Date | null = null;
+    let endDateObj: Date | null = null;
+
+    // Try to parse as string first, otherwise treat as Date
+    if (typeof conference.start === 'string') {
+      startDateObj = parseISO(conference.start);
+    } else {
+      // Assume it's already a Date object
+      startDateObj = new Date(conference.start as any);
+    }
+
+    if (typeof conference.end === 'string') {
+      endDateObj = parseISO(conference.end);
+    } else {
+      // Assume it's already a Date object
+      endDateObj = new Date(conference.end as any);
+    }
+
+    if (!startDateObj || !isValid(startDateObj) || !endDateObj || !isValid(endDateObj)) {
+      return null;
+    }
+
+    const startDate = formatICalAllDayDate(startDateObj);
+    
+    // For all-day events, DTEND is exclusive, so we add 1 day
+    const endDateExclusive = new Date(endDateObj.getTime() + 24 * 60 * 60 * 1000);
+    const endDate = formatICalAllDayDate(endDateExclusive);
+
+    if (!startDate || !endDate) {
+      return null;
+    }
+
+    const uid = generateEventUid(conference.id, 'conference');
+    const now = formatICalDate(new Date());
+
+    const venue = conference.venue || '';
+    const cityCountry = [conference.city, conference.country].filter(Boolean).join(', ') || 'TBD';
+    const location = venue || cityCountry;
+
+    const summary = escapeICalText(`${conference.title} ${conference.year} - Conference Date`);
+    const tags = conference.tags ? `Category: ${conference.tags.join(", ")}`.trim() : '';
+    const rankingInfo = conference.rankings 
+      ? `Rankings: ${conference.rankings.rank_name || ''} (${conference.rankings.rank_source || ''})`.trim()
+      : '';
+    const description = escapeICalText(
+      `${conference.full_name || conference.title}\n` +
+      `📍 Location: ${cityCountry}\n` +
+      (rankingInfo ? `📈 ${rankingInfo}\n` : '') +
+      (tags ? `🏷️ ${tags}\n` : '') +
+      (conference.link ? `🌐 Website: ${conference.link}` : '')
+    );
+
+    return `BEGIN:VEVENT
+UID:${uid}
+DTSTAMP:${now}
+DTSTART;VALUE=DATE:${startDate}
+DTEND;VALUE=DATE:${endDate}
+SUMMARY:${summary}
+DESCRIPTION:${description}
+LOCATION:${escapeICalText(location)}
+URL:${conference.link || ''}
+END:VEVENT`;
+  } catch (error) {
+    console.error(`Failed to generate all-day conference event for "${conference.title}":`, error);
+    return null;
+  }
+}
+
+/**
  * Generate a complete iCalendar feed for a conference
  */
 export function generateICalendarFeed(conference: Conference): string {
   const deadlines = getConferenceDeadlines(conference);
-  const events = deadlines
+  const deadlineEvents = deadlines
     .map(deadline => generateVEvent(conference, deadline))
-    .filter(Boolean)
-    .join('\n');
+    .filter(Boolean);
+  
+  // Add the all-day conference event
+  const conferenceEvent = generateAllDayConferenceVEvent(conference);
+  if (conferenceEvent) {
+    deadlineEvents.unshift(conferenceEvent);
+  }
+  
+  const events = deadlineEvents.join('\n');
 
   const calendarName = escapeICalText(`${conference.title} ${conference.year}`);
 
@@ -237,8 +339,19 @@ export function generateAllConferencesCalendarFeed(conferences: Conference[]): s
   const allEvents: string[] = [];
   const eventUids = new Set<string>(); // Track UIDs to prevent duplicates
 
-  // Collect all deadlines from all conferences
+  // Collect all deadlines and conference events from all conferences
   conferences.forEach(conference => {
+    // Add all-day conference event
+    const conferenceEvent = generateAllDayConferenceVEvent(conference);
+    if (conferenceEvent) {
+      const uid = generateEventUid(conference.id, 'conference');
+      if (!eventUids.has(uid)) {
+        allEvents.push(conferenceEvent);
+        eventUids.add(uid);
+      }
+    }
+
+    // Add deadline events
     const deadlines = getConferenceDeadlines(conference);
 
     deadlines.forEach(deadline => {
@@ -260,10 +373,20 @@ export function generateAllConferencesCalendarFeed(conferences: Conference[]): s
     });
   });
 
-  // Sort events by date (by extracting DTSTART)
+  // Sort events by date (handle both VALUE=DATE and VALUE=DATE-TIME formats)
   allEvents.sort((a, b) => {
-    const aMatch = a.match(/DTSTART:(\d{8}T\d{6}Z)/);
-    const bMatch = b.match(/DTSTART:(\d{8}T\d{6}Z)/);
+    // Try to extract DATE-TIME format first (DTSTART:20270405T000000Z)
+    let aMatch = a.match(/DTSTART:(\d{8}T\d{6}Z)/);
+    let bMatch = b.match(/DTSTART:(\d{8}T\d{6}Z)/);
+    
+    // If not found, try DATE format (DTSTART;VALUE=DATE:20270405)
+    if (!aMatch) {
+      aMatch = a.match(/DTSTART;VALUE=DATE:(\d{8})/);
+    }
+    if (!bMatch) {
+      bMatch = b.match(/DTSTART;VALUE=DATE:(\d{8})/);
+    }
+    
     if (!aMatch || !bMatch) return 0;
     return aMatch[1].localeCompare(bMatch[1]);
   });
