@@ -222,8 +222,9 @@ END:VEVENT`;
 
 /**
  * Generate an iCalendar VEVENT for an all-day conference event
+ * Only generates event if conference end date is today or in the future
  */
-export function generateAllDayConferenceVEvent(conference: Conference): string | null {
+export function generateAllDayConferenceVEvent(conference: Conference, filterByDate: boolean = false, now: Date = new Date()): string | null {
   // Need both start and end dates for an all-day event
   if (!conference.start || !conference.end) {
     return null;
@@ -253,6 +254,11 @@ export function generateAllDayConferenceVEvent(conference: Conference): string |
       return null;
     }
 
+    // Filter out conferences that have already ended (if filtering is enabled)
+    if (filterByDate && endDateObj < now) {
+      return null;
+    }
+
     const startDate = formatICalAllDayDate(startDateObj);
     
     // For all-day events, DTEND is exclusive, so we add 1 day
@@ -264,7 +270,7 @@ export function generateAllDayConferenceVEvent(conference: Conference): string |
     }
 
     const uid = generateEventUid(conference.id, 'conference');
-    const now = formatICalDate(new Date());
+    const nowFormatted = formatICalDate(new Date());
 
     const venue = conference.venue || '';
     const cityCountry = [conference.city, conference.country].filter(Boolean).join(', ') || 'TBD';
@@ -285,7 +291,7 @@ export function generateAllDayConferenceVEvent(conference: Conference): string |
 
     return `BEGIN:VEVENT
 UID:${uid}
-DTSTAMP:${now}
+DTSTAMP:${nowFormatted}
 DTSTART;VALUE=DATE:${startDate}
 DTEND;VALUE=DATE:${endDate}
 SUMMARY:${summary}
@@ -308,8 +314,9 @@ export function generateICalendarFeed(conference: Conference): string {
     .map(deadline => generateVEvent(conference, deadline))
     .filter(Boolean);
   
-  // Add the all-day conference event
-  const conferenceEvent = generateAllDayConferenceVEvent(conference);
+  // Add the all-day conference event (with date filtering enabled)
+  const now = new Date();
+  const conferenceEvent = generateAllDayConferenceVEvent(conference, true, now);
   if (conferenceEvent) {
     deadlineEvents.unshift(conferenceEvent);
   }
@@ -341,8 +348,8 @@ export function generateAllConferencesCalendarFeed(conferences: Conference[]): s
 
   // Collect all deadlines and conference events from all conferences
   conferences.forEach(conference => {
-    // Add all-day conference event
-    const conferenceEvent = generateAllDayConferenceVEvent(conference);
+    // Add all-day conference event (only if not ended, with date filtering enabled)
+    const conferenceEvent = generateAllDayConferenceVEvent(conference, true, now);
     if (conferenceEvent) {
       const uid = generateEventUid(conference.id, 'conference');
       if (!eventUids.has(uid)) {
