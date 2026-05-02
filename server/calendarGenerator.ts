@@ -1,7 +1,6 @@
 import { Conference, Deadline } from '../src/types/conference';
 import { format, isValid, parseISO } from 'date-fns';
 import { zonedTimeToUtc } from 'date-fns-tz';
-import { generateEventUid } from '../src/utils/calendarUtils';
 
 /**
  * Format a date for iCalendar format (RFC 5545)
@@ -30,12 +29,26 @@ export function formatICalAllDayDate(date: Date | string): string {
 }
 
 /**
+ * Generate a unique identifier for an iCalendar event
+ * Includes the deadline date to ensure uniqueness when a conference has multiple deadlines of the same type
+ */
+export function generateEventUid(conferenceId: string, deadlineType: string, deadlineDate?: string): string {
+  if (deadlineDate) {
+    // Extract YYYYMMDD from ISO string for unique identification
+    const dateMatch = deadlineDate.match(/^(\d{4}-\d{2}-\d{2})/);
+    const dateStr = dateMatch ? dateMatch[1].replace(/-/g, '') : '';
+    return `${conferenceId}-${deadlineType}-${dateStr}@trhgquan.xyz`;
+  }
+  return `${conferenceId}-${deadlineType}@trhgquan.xyz`;
+}
+
+/**
  * Normalize timezone string to a standard format
  */
 function normalizeTimezone(tz: string | undefined): string {
   if (!tz) return 'UTC';
   if (tz === 'AoE') return 'UTC-12';
-  
+
   // Handle GMT±XX format - convert to UTC±XX
   const gmtMatch = tz.match(/^GMT([+-])(\d+)$/);
   if (gmtMatch) {
@@ -85,13 +98,13 @@ function parseDeadlineDate(dateString: string, timezone?: string): Date | null {
       const [, sign, hours, minutes] = numericOffsetMatch;
       const offsetHours = parseInt(hours, 10);
       const offsetMinutes = parseInt(minutes || '0', 10);
-      
+
       // Calculate total offset in minutes
       let totalOffsetMinutes = offsetHours * 60 + offsetMinutes;
       if (sign === '-') {
         totalOffsetMinutes = -totalOffsetMinutes;
       }
-      
+
       // Convert from timezone to UTC by subtracting the offset
       // E.g., if timezone is UTC-12 (offset = -12 hours), we add 12 hours to get UTC
       // E.g., if timezone is UTC+5 (offset = +5 hours), we subtract 5 hours to get UTC
@@ -189,7 +202,7 @@ export function generateVEvent(
 
   const summary = escapeICalText(`${conference.title} - ${deadline.label}`);
   const tags = conference.tags ? `Category: ${conference.tags.join(", ")}`.trim() : '';
-  const rankingInfo = conference.rankings 
+  const rankingInfo = conference.rankings
     ? `Rankings: ${conference.rankings.rank_name || ''} (${conference.rankings.rank_source || ''})`.trim()
     : '';
   const description = escapeICalText(
@@ -254,7 +267,7 @@ export function generateAllDayConferenceVEvent(conference: Conference, filterByD
     }
 
     const startDate = formatICalAllDayDate(startDateObj);
-    
+
     // For all-day events, DTEND is exclusive, so we add 1 day
     const endDateExclusive = new Date(endDateObj.getTime() + 24 * 60 * 60 * 1000);
     const endDate = formatICalAllDayDate(endDateExclusive);
@@ -272,7 +285,7 @@ export function generateAllDayConferenceVEvent(conference: Conference, filterByD
 
     const summary = escapeICalText(`${conference.title} ${conference.year} - Conference Date`);
     const tags = conference.tags ? `Category: ${conference.tags.join(", ")}`.trim() : '';
-    const rankingInfo = conference.rankings 
+    const rankingInfo = conference.rankings
       ? `Rankings: ${conference.rankings.rank_name || ''} (${conference.rankings.rank_source || ''})`.trim()
       : '';
     const description = escapeICalText(
@@ -307,14 +320,14 @@ export function generateICalendarFeed(conference: Conference): string {
   const deadlineEvents = deadlines
     .map(deadline => generateVEvent(conference, deadline))
     .filter(Boolean);
-  
+
   // Add the all-day conference event (with date filtering enabled)
   const now = new Date();
   const conferenceEvent = generateAllDayConferenceVEvent(conference, true, now);
   if (conferenceEvent) {
     deadlineEvents.unshift(conferenceEvent);
   }
-  
+
   const events = deadlineEvents.join('\n');
 
   const calendarName = escapeICalText(`${conference.title} ${conference.year}`);
@@ -379,7 +392,7 @@ export function generateAllConferencesCalendarFeed(conferences: Conference[]): s
     // Try to extract DATE-TIME format first (DTSTART:20270405T000000Z)
     let aMatch = a.match(/DTSTART:(\d{8}T\d{6}Z)/);
     let bMatch = b.match(/DTSTART:(\d{8}T\d{6}Z)/);
-    
+
     // If not found, try DATE format (DTSTART;VALUE=DATE:20270405)
     if (!aMatch) {
       aMatch = a.match(/DTSTART;VALUE=DATE:(\d{8})/);
@@ -387,7 +400,7 @@ export function generateAllConferencesCalendarFeed(conferences: Conference[]): s
     if (!bMatch) {
       bMatch = b.match(/DTSTART;VALUE=DATE:(\d{8})/);
     }
-    
+
     if (!aMatch || !bMatch) return 0;
     return aMatch[1].localeCompare(bMatch[1]);
   });
