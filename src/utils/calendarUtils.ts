@@ -24,9 +24,16 @@ export function escapeICalText(text: string): string {
 
 /**
  * Generate a unique identifier for an iCalendar event
+ * Includes the deadline date to ensure uniqueness when a conference has multiple deadlines of the same type
  */
-export function generateEventUid(conferenceId: string, deadlineType: string): string {
-  return `${conferenceId}-${deadlineType}@ai-deadlines.com`;
+export function generateEventUid(conferenceId: string, deadlineType: string, deadlineDate?: string): string {
+  if (deadlineDate) {
+    // Extract YYYYMMDD from ISO string for unique identification
+    const dateMatch = deadlineDate.match(/^(\d{4}-\d{2}-\d{2})/);
+    const dateStr = dateMatch ? dateMatch[1].replace(/-/g, '') : '';
+    return `${conferenceId}-${deadlineType}-${dateStr}@trhgquan.xyz`;
+  }
+  return `${conferenceId}-${deadlineType}@trhgquan.xyz`;
 }
 
 /**
@@ -46,7 +53,7 @@ export function generateVEvent(
   }
 
   const endDate = new Date(deadlineDate.getTime() + 60 * 60 * 1000); // 1 hour after deadline
-  const uid = generateEventUid(conference.id, deadline.type);
+  const uid = generateEventUid(conference.id, deadline.type, deadline.date);
   const now = formatICalDate(new Date());
 
   const location = conference.venue ||

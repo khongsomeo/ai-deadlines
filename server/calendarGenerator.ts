@@ -1,6 +1,7 @@
 import { Conference, Deadline } from '../src/types/conference';
 import { format, isValid, parseISO } from 'date-fns';
 import { zonedTimeToUtc } from 'date-fns-tz';
+import { generateEventUid } from '../src/utils/calendarUtils';
 
 /**
  * Format a date for iCalendar format (RFC 5545)
@@ -125,13 +126,6 @@ export function escapeICalText(text: string): string {
 }
 
 /**
- * Generate a unique identifier for an iCalendar event
- */
-export function generateEventUid(conferenceId: string, deadlineType: string): string {
-  return `${conferenceId}-${deadlineType}@trhgquan.xyz`;
-}
-
-/**
  * Get all deadlines from a conference (supporting both new and legacy formats)
  */
 function getConferenceDeadlines(conference: Conference): Array<{ label: string; date: string; type: string; timezone?: string }> {
@@ -186,7 +180,7 @@ export function generateVEvent(
   }
 
   const endDate = new Date(deadlineDate.getTime() + 60 * 60 * 1000); // 1 hour after deadline
-  const uid = generateEventUid(conference.id, deadline.type);
+  const uid = generateEventUid(conference.id, deadline.type, deadline.date);
   const now = formatICalDate(new Date());
 
   const venue = conference.venue || '';
@@ -369,7 +363,7 @@ export function generateAllConferencesCalendarFeed(conferences: Conference[]): s
       if (deadlineDate && deadlineDate >= now) {
         const event = generateVEvent(conference, deadline);
         if (event) {
-          const uid = generateEventUid(conference.id, deadline.type);
+          const uid = generateEventUid(conference.id, deadline.type, deadline.date);
           // Avoid duplicate events
           if (!eventUids.has(uid)) {
             allEvents.push(event);
