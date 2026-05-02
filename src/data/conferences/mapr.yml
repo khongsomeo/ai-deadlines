@@ -7,12 +7,20 @@
     - type: submission
       label: Paper Submission
       date: "2026-04-30 23:59:00"
-      timezone: UTC-12
+      timezone: Asia/Saigon
+    - type: abstract
+      label: (Extended) Abstract Submission
+      date: "2026-05-10 23:59:00"
+      timezone: Asia/Saigon
+    - type: submission
+      label: (Extended) Paper Submission 
+      date: "2026-05-15 23:59:00"
+      timezone: Asia/Saigon
     - type: final_decision
       label: Author Notification
-      date: "2026-07-27 07:59:59"
-      timezone: UTC-12
-  timezone: UTC-12
+      date: "2026-06-30 07:59:59"
+      timezone: Asia/Saigon
+  timezone: Asia/Saigon
   city: Hue
   country: Vietnam
   venue: TBD
@@ -32,6 +40,8 @@
       rank_name: Non-ranked
       rank_source: IEEE Xplore
       rank_source_url: https://dblp.org/db/conf/mapr/index.html
+  note: "Authors are required to submit an abstract by <b>May 10, 2026</b> to allow for later editing of submissions"
+
 
 - title: MAPR
   year: 2025

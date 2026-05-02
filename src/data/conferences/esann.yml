@@ -1,7 +1,40 @@
 - title: ESANN
+  year: 2027
+  id: esann27
+  full_name: The 35th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning
+  link: "https://www.esann.org/"
+  deadlines:
+    - type: submission
+      date: "TBD"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Brugge
+  country: Belgium
+  venue: TBD
+  format: hybrid
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - signal-processing
+      - natural-language-processing
+      - computer-vision
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/512/
+
+- title: ESANN
   year: 2026
   id: esann26
-  full_name: European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning
+  full_name: The 34th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning
   link: "https://www.esann.org/"
   deadlines:
     - type: submission

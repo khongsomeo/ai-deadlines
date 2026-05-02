@@ -1,4 +1,39 @@
 - title: IEA/AIE
+  year: 2027
+  id: iea_aie27
+  full_name: The 40th International Conference on Industrial, Engineering & Other Applications of Applied Intelligent Systems
+  link: "https://www.i-somet.org/iea-aie2027"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-12-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2027-03-10 23:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Naples
+  country: Italy
+  venue: TBD
+  format: hybrid
+  date: July 20-22, 2027
+  start: 2027-07-20
+  end: 2027-07-22
+  tags:
+      - machine-learning
+      - data-mining
+      - computer-vision
+      - natural-language-processing
+      - speech-processing
+      - human-computer-interaction
+      - robotics
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1064/
+
+- title: IEA/AIE
   year: 2026
   id: iea_aie26
   full_name: International Conference on Industrial, Engineering & Other Applications of Applied Intelligent Systems

@@ -5,20 +5,16 @@
   link: "https://2027.ieeeicassp.org/"
   deadlines:
     - type: submission
-      label: Paper Submission
-      date: "TBD"
+      label: Full Paper Submission
+      date: "2026-09-16 23:59:00"
       timezone: UTC-12
-    - type: rebuttal_start
-      label: Rebuttal Period Starts
-      date: "TBD"
-      timezone: UTC-12
-    - type: rebuttal_end
-      label: Rebuttal Period Ends
-      date: "TBD"
+    - type: submission
+      label: Published Journal Papers and Letters Submission
+      date: "2027-01-06 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Decision
-      date: "TBD"
+      date: "2027-01-13 07:59:00"
       timezone: UTC-12
   city: Toronto
   country: Canada
@@ -36,7 +32,7 @@
       rank_name: Multiconference
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/2042/
-  note: Ranked B back in CORE2023, now considered as a series of conferences.
+  note: "Ranked B back in CORE2023, now considered as a series of conferences. Authors of papers published or accepted in IEEE SPS and Eurasip journals may present their work at ICASSP 2027. These papers will not be re-reviewed or included in the proceedings."
 
 - title: ICASSP
   year: 2026

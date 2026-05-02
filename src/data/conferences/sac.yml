@@ -1,0 +1,31 @@
+- title: SAC
+  year: 2027
+  id: sac2027
+  full_name: The 42nd ACM/SIGAPP Symposium On Applied Computing
+  link: "https://www.sigapp.org/sac/sac2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-10-02 23:59:00"
+      timezone: America/New_York
+    - type: final_decision
+      label: Final Decision
+      date: "2026-11-13 07:59:59"
+      timezone: America/New_York
+  city: Gwangju
+  country: South Korea
+  venue: TBD
+  format: in-person
+  date: April 05-09, 2027
+  start: 2027-04-05
+  end: 2027-04-09
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - multimedia
+      - signal-processing
+  rankings:
+      rank_name: Multiconference
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/59/
+  notes: "Multiconference from CORE2021, B from CORE2020 backwards"

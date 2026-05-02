@@ -12,6 +12,14 @@
       label: Author Notification
       date: "2026-04-30 07:59:59"
       timezone: UTC-12
+    - type: submission
+      label: (Late-Breaking) Paper Submission
+      date: "2026-05-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Late-Breaking) Author Notification
+      date: "2026-06-05 07:59:59"
+      timezone: UTC-12
   timezone: UTC-12
   city: Porto
   country: Portugal

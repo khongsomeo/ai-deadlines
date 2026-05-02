@@ -1,0 +1,95 @@
+- title: CHI
+  year: 2027
+  id: chi27
+  full_name: 2027 Conference on Human Factors in Computing Systems
+  link: "https://chi2027.acm.org/"
+  deadlines:
+    - type: submission
+      date: "2026-09-10 23:59:00"
+      label: (Paper) Submission
+      timezone: UTC-12
+    - type: review_released
+      label: (Paper) Reviews Released
+      date: "2026-11-05 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Paper) Resubmit Deadline
+      date: "2026-12-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-12-17 07:59:00"
+      label: (Paper) Author Notification
+      timezone: UTC-12
+    - type: submission
+      date: "2027-01-21 23:59:00"
+      label: Poster Submission
+      timezone: UTC-12
+    - type: final_decision
+      label: (Poster) Author Notification
+      date: "2027-02-18 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Pittsburgh, PA
+  country: United States
+  venue: David L. Lawrence Convention Center
+  format: in-person
+  date: May 10-14, 2027
+  start: 2027-05-10
+  end: 2027-05-14
+  tags:
+      - human-computer-interaction
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1053/
+  note: "<b>There will be no abstract submission this year.</b>"
+
+
+- title: CHI
+  year: 2026
+  id: chi26
+  full_name: 2026 Conference on Human Factors in Computing Systems
+  link: "https://chi2026.acm.org/"
+  deadlines:
+    - type: abstract
+      date: "2025-09-04 23:59:00"
+      label: Abstract Submission
+      timezone: UTC-12
+    - type: submission
+      date: "2025-09-11 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: review_released
+      label: Reviews Released
+      date: "2025-11-04 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Resubmit Deadline
+      date: "2025-12-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Paper) Author Notification
+      date: "2026-01-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      date: "2026-01-22 23:59:00"
+      label: Poster Submission
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-02-19 07:59:00"
+      label: (Poster) Author Notification
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Barcelona
+  country: Spain
+  venue: Centre de Convencions Internacional de Barcelona
+  format: in-person
+  date: April 13-17, 2026
+  start: 2026-04-13
+  end: 2026-04-17
+  tags:
+      - human-computer-interaction
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1053/
