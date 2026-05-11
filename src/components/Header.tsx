@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CalendarDays } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useState, useEffect } from "react";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
@@ -12,6 +13,31 @@ interface HeaderProps {
 
 const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
   const { theme, toggleTheme } = useTheme();
+  const [currentTime, setCurrentTime] = useState<string>("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
+      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      const month = monthNames[now.getMonth()];
+      const day = now.getDate();
+      const year = now.getFullYear();
+
+      const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+      setCurrentTime(
+        `${hours}:${minutes}:${seconds} ${month} ${day}, ${year} (${timezone})`
+      );
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <header className="bg-card border-b border-border">
@@ -81,6 +107,9 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
             A dỏm, yếu kém, phản cảm countdowns to <span className="line-through">top</span> CV/NLP/ML/Robotics/AI conference deadlines.
 <br/>
 Due to my incompetent in science, these conferences are mostly CORE-B/non-ranked.
+          </p>
+          <p className="text-base md:text-lg font-semibold bg-blue-50 dark:bg-blue-950 text-blue-900 dark:text-blue-100 py-3 px-4 rounded-md inline-block mb-4">
+            Current time: {currentTime}
           </p>
           <p className="text-sm text-muted-foreground py-4">
             <b>Important:</b> Please give the original <a className="text-primary hover:underline" href="https://huggingface.co/spaces/huggingface/ai-deadlines">space</a> a <b>like</b> and <a className="text-primary hover:underline" href="https://github.com/huggingface/ai-deadlines">repository</a> a <b>star</b> for their awesome work!
