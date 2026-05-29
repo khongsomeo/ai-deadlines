@@ -1,0 +1,30 @@
+- title: ICARCV
+  year: 2026
+  id: icarcv26
+  full_name: The 19th International Conference on Control, Automation, Robotics and Vision
+  link: "https://www.carvs-icarcv.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-06-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-08-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Halong Bay
+  country: Vietnam
+  venue: TBD 
+  format: in-person
+  date: November 14-17, 2026
+  start: 2026-11-14
+  end: 2026-11-17
+  tags:
+      - computer-vision
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/977/

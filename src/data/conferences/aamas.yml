@@ -2,42 +2,42 @@
   year: 2027
   id: aamas27
   full_name: The 26th International Conference on Autonomous Agents and Multiagent Systems
-  link: "https://cyprusconferences.org/aamas2027/"
+  link: https://openreview.net/group?id=ifaamas.org/AAMAS/2027/Conference#tab-recent-activity
   deadlines:
     - type: abstract
       label: Abstract Submission
-      date: "TBD"
-      timezone: UTC-12
+      date: "2026-10-02 11:59:00"
+      timezone: UTC-0
     - type: submission
       label: Paper Submission
-      date: "TBD"
-      timezone: UTC-12
+      date: "2026-10-09 11:59:00"
+      timezone: UTC-0
     - type: rebuttal_start
       date: "TBD"
       label: Rebuttal Period Start
-      timezone: UTC-12
+      timezone: UTC-0
     - type: rebuttal_end
       date: "TBD"
       label: Rebuttal Period End
-      timezone: UTC-12
+      timezone: UTC-0
     - type: final_decision
       date:  "TBD"
       label: Author Notification
-      timezone: UTC-12
-  timezone: UTC-12
+      timezone: UTC-0
+  timezone: UTC-0
   city: Hanoi
   country: Vietnam
-  venue: TBD
+  venue: East Asia University of Technology
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: May 03, 2027
+  start: 2027-05-03
+  end: 2027-05-03
   tags:
       - machine-learning
       - natural-language-processing
       - robotics
   rankings:
-      rank_name: A*
+      rank_name: A
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/922/
   note: "OpenReview submission"
@@ -81,7 +81,7 @@
       - natural-language-processing
       - robotics
   rankings:
-      rank_name: A*
+      rank_name: A
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/922/
   note: "OpenReview submission"

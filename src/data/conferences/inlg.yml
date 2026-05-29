@@ -1,20 +1,20 @@
 - title: INLG
   year: 2026
   id: inlg26
-  full_name: International Natural Language Generation Conference
+  full_name: The 19th International Natural Language Generation Conference
   link: "https://2026.inlgmeeting.org/"
   deadlines:
     - type: submission
-      date: TBD
-      label: "Paper Submission"
+      date: "2026-07-15 23:59:00"
+      label: (Regular & System Demo) Paper Submission
       timezone: UTC-12
     - type: commitment
-      date: TBD
-      label: "Commitment Deadline"
+      date: "2026-08-05 23:59:00"
+      label: ARR Commitment Deadline
       timezone: UTC-12
     - type: final_decision
-      date: TBD
-      label: "Final Decision"
+      date: "2026-08-15 07:59:00"
+      label: Author Notification
       timezone: UTC-12
   timezone: UTC-12
   city: Utrecht

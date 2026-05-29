@@ -5,11 +5,11 @@
   link: "https://icpram.scitevents.org/"
   deadlines:
     - type: submission
-      date: "2026-09-30 23:59:00"
+      date: "2026-09-15 23:59:00"
       label: Paper Submission
       timezone: UTC-12
     - type: final_decision
-      date: "2026-11-27 07:59:59"
+      date: "2026-11-13 07:59:59"
       label: Author Notification
       timezone: UTC-12
   timezone: UTC-12

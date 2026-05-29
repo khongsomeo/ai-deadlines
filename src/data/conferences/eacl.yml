@@ -5,8 +5,8 @@
   link: "https://2027.eacl.org/"
   deadlines:
     - type: submission
-      label: Paper Submission
-      date: "TBD"
+      label: ARR Submission
+      date: "2026-08-03 23:59:00"
       timezone: UTC-12
     - type: rebuttal_start
       label: Rebuttal Period Start
@@ -22,7 +22,7 @@
       timezone: UTC-12
     - type: commitment
       label: Commitment Deadline
-      date: "TBD"
+      date: "2026-10-11 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Author Notification
@@ -31,11 +31,11 @@
   timezone: UTC-12
   city: Athens
   country: Greece
-  venue: TBD
+  venue: Megaron Athens International Conference Centre (MAICC)
   format: hybrid
-  date: TBD
-  start: TBD
-  end: TBD
+  date: March 09-14, 2027
+  start: 2027-03-09
+  end: 2027-03-14
   tags:
       - natural-language-processing
       - speech-processing
@@ -43,6 +43,7 @@
       rank_name: A
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/468/
+  note: EACL 2026 aligns with the <a href="https://aclrollingreview.org/dates">2026 ARR August Cycle</a>.
   
 - title: EACL
   year: 2026

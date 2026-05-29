@@ -1,0 +1,67 @@
+- title: IDA
+  year: 2027
+  id: ida27
+  full_name: The 2027 Symposium on Intelligent Data Analysis
+  link: "https://ida2027.org"
+  deadlines:
+    - type: abstract
+      date: "TBD"
+      label: "Abstract Submission"
+      timezone: UTC-12
+    - type: submission
+      date: "TBD"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "TBD"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Pisa
+  country: Italy
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/845/
+
+- title: IDA
+  year: 2026
+  id: ida26
+  full_name: The 2026 Symposium on Intelligent Data Analysis
+  link: "https://ida2026.org"
+  deadlines:
+    - type: abstract
+      date: "2025-11-21 23:59:00"
+      label: "Abstract Submission"
+      timezone: UTC-12
+    - type: submission
+      date: "2025-11-28 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-01-23 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Leiden
+  country: The Netherlands
+  venue: Academy Building (Leiden University), Rapenburg 73, 2311 GJ Leiden, The Netherlands
+  format: in-person
+  date: April 22-24, 2026
+  start: 2026-04-22
+  end: 2026-04-24
+  tags:
+      - machine-learning
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/845/

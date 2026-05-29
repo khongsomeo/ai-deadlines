@@ -6,23 +6,31 @@
   deadlines:
     - type: abstract
       label: Abstract Submission
-      date: "TBD"
+      date: "2026-07-21 23:59:00"
       timezone: UTC-12
     - type: submission
       label: Paper Submission
-      date: "TBD"
+      date: "2026-07-28 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Supplementary Material and Code Submission
+      date: "2026-07-31 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Phase 1 rejections
+      date: "2026-09-24 07:59:00"
       timezone: UTC-12
     - type: rebuttal_start
       label: Rebuttal Period Starts
-      date: "TBD"
+      date: "2026-10-19 07:59:00"
       timezone: UTC-12
     - type: rebuttal_end
       label: Rebuttal Period Ends
-      date: "TBD"
+      date: "2026-10-25 23:59:00"
       timezone: UTC-12
     - type: final_decision
-      label: Final Decision
-      date: "TBD"
+      label: Notification of final acceptance or rejection
+      date: "2026-11-30 07:59:00"
       timezone: UTC-12
   city: Montréal
   country: Canada
@@ -42,7 +50,6 @@
       rank_name: A*
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1629/
-  note: "OpenReview submission"
 
 - title: AAAI
   year: 2026

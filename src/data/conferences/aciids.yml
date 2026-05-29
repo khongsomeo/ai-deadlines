@@ -1,7 +1,7 @@
 - title: ACIIDS
   year: 2027
   id: aciids27
-  full_name: 31st Asian Conference on Intelligent Information and Database Systems
+  full_name: The 31st Asian Conference on Intelligent Information and Database Systems
   link: "https://aciids.pwr.edu.pl/2027/"
   deadlines:
     - type: submission
@@ -29,7 +29,6 @@
       rank_name: B
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/2188/
-  note: "<b>Submission max. 15 pages;</b>"
 
 - title: ACIIDS
   year: 2026

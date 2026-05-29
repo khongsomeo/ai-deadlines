@@ -6,36 +6,52 @@
   deadlines:
     - type: submission
       date: "2026-05-25 23:59:00"
-      label: Paper Submission
+      label: (Main Conference) Paper Submission
       timezone: UTC-12
     - type: rebuttal_start
       date: "2026-07-07 07:59:00"
-      label: Rebuttal Period Start
+      label: (Main Conference) Rebuttal Period Start
       timezone: UTC-12
     - type: rebuttal_end
       date: "2026-07-13 23:59:00"
-      label: Rebuttal Period End
+      label: (Main Conference) Rebuttal Period End
       timezone: UTC-12
     - type: review_released
       date: "2026-07-30 07:59:00"
-      label: "Meta Review Released"
+      label: (Main Conference) Meta Review Released
       timezone: UTC-12
     - type: commitment
       date: "2026-08-02 07:59:00"
-      label: Commitment Deadline
+      label: (Main Conference) Commitment Deadline
+      timezone: UTC-12
+    - type: submission
+      date: "2026-06-16 23:59:00"
+      label: (Industry Track) Paper Submission
+      timezone: UTC-12
+    - type: rebuttal_start
+      date: "2026-07-30 07:59:00"
+      label: (Industry Track) Rebuttal Period Start
+      timezone: UTC-12
+    - type: rebuttal_end
+      date: "2026-08-06 23:59:00"
+      label: (Industry Track) Rebuttal Period End
+      timezone: UTC-12
+    - type: submission
+      date: "2026-07-10 23:59:00"
+      label: (System Demonstration) Paper Submission
       timezone: UTC-12
     - type: final_decision
       date: "2026-08-20 07:59:00"
-      label: Author Notification
-      timeezone: UTC-12
+      label: (Main Conference & Industry Track & System Demonstration) Author Notification
+      timezone: UTC-12
   timezone: UTC-12
   city: Budapest
   country: Hungary
   venue: TBD
   format: hybrid
-  date: October 22-26, 2026
-  start: 2026-10-22
-  end: 2026-10-26
+  date: October 24-29, 2026
+  start: 2026-10-24
+  end: 2026-10-29
   tags:
       - natural-language-processing
       - speech-processing

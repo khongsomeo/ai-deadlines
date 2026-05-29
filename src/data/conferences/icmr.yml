@@ -1,0 +1,55 @@
+- title: ICMR
+  year: 2027
+  id: icmr27
+  full_name: The 17th ACM International Conference on Multimedia Retrieval
+  link: "https://icmr2027.org/index.html"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: Singapore
+  country: Singapore
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - multimedia
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/44/
+
+- title: ICMR
+  year: 2026
+  id: icmr26
+  full_name: The 16th ACM International Conference on Multimedia Retrieval
+  link: "https://icmr2026.org/index.html"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-02-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2026-04-15 07:59:00"
+      timezone: UTC-12
+  city: Amsterdam
+  country: The Netherlands
+  venue: KIT Royal Tropical Institute, Mauritskade 64, 1092 AD Amsterdam, The Netherlands
+  format: in-person
+  date: June 16-19, 2026
+  start: 2026-06-16
+  end: 2026-06-19
+  tags:
+      - multimedia
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/44/

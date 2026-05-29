@@ -1,4 +1,47 @@
 - title: Interspeech
+  year: 2027
+  id: interspeech27
+  full_name: Interspeech 2027
+  link: "https://interspeech2027.org"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Update Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  city: São Paulo
+  country: Brazil
+  venue: Mercado Livre Arena Pacaembu
+  format: in-person
+  date: August 29 - September 2, 2027
+  start: 2027-08-29
+  end: 2027-09-02
+  tags:
+      - signal-processing
+      - speech-processing
+      - natural-language-processing
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/494/
+  note: "Short paper maximum 4 pages, 8 pages to long paper."
+
+- title: Interspeech
   year: 2026
   id: interspeech26
   full_name: Interspeech 2026

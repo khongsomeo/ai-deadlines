@@ -1,0 +1,29 @@
+- title: ICDM
+  year: 2026
+  id: icdm26
+  full_name: The 2026 IEEE International Conference on Data Mining
+  link: "https://icdm2026.neu.edu.cn/"
+  deadlines:
+    - type: submission
+      date: "2026-06-06 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-08-16 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Shenyang
+  country: PR China
+  venue: TBD
+  format: in-person
+  date: November 12-15, 2026
+  start: 2026-11-12
+  end: 2026-11-15
+  tags:
+      - machine-learning
+      - data-mining
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/642/

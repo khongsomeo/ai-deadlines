@@ -5,53 +5,45 @@
   link: "https://wacv.thecvf.com/"
   deadlines:
     - type: abstract
-      label: Abstract Submission (Round 1)
-      date:  "TBD"
-      timezone: UTC+0
+      label: (Round 1) Abstract Submission
+      date:  "2026-06-18 23:59:00"
+      timezone: UTC-12
     - type: submission
-      label: Paper Submission (Round 1)
-      date: "TBD"
-      timezone: UTC+0
+      label: (Round 1) Paper Submission
+      date: "2026-06-25 23:59:00"
+      timezone: UTC-12
     - type: submission
-      label: Supplementary Material Submission (Round 1)
-      date: "TBD"
-      timezone: UTC+0
+      label: (Round 1) Supplementary Material Submission
+      date: "2026-06-27 23:59:00"
+      timezone: UTC-12
     - type: review_released
-      label: Reviews and Decisions To Authors (Round 1)
-      date: "TBD"
+      label: (Round 1) Reviews and Decisions To Authors
+      date: "2026-08-08 07:59:00"
       timezone: UTC+0
     - type: abstract
-      label: Abstract Submission (Round 2)
-      date: "TBD"
-      timezone: UTC+0
+      label: (Round 1) Rebuttal and Revision Submission and (Round 2) Abstract Submission
+      date: "2026-08-20 23:59:00"
+      timezone: UTC-12
     - type: submission
-      label: Paper Submission (Round 2)
-      date: "TBD"
-      timezone: UTC+0
+      label: (Round 2) Paper Submission
+      date: "2026-08-27 23:59:00"
+      timezone: UTC-12
     - type: submission
-      label: Supplementary Material Submission (Round 2)
-      date: "TBD"
-      timezone: UTC+0
-    - type: rebuttal_period_end
-      label: Rebuttal and Revision Submission (Round 1)
-      date: "TBD"
-      timezone: UTC+0
+      label: (Round 2) Supplementary Material Submission
+      date: "2026-08-29 23:59:00"
+      timezone: UTC-12
     - type: final_decision
-      label: Final Decisions released to Authors (Round 1)
-      date: "TBD"
-      timezone: UTC+0
-    - type: final_decision
-      label: Reviews and Final Decisions released to Authors (Round 2)
-      date: "TBD"
+      label: (Round 1 & 2) Final Decisions released
+      date: "2026-10-09 07:59:00"
       timezone: UTC+0
   timezone: UTC+0
-  city: Orlando FL
+  city: Buena Vista, FL
   country: United States
-  venue: TBD
+  venue: Disney Springs
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: January 05-09, 2027
+  start: 2027-01-05
+  end: 2027-01-09
   tags:
       - machine-learning
       - computer-vision

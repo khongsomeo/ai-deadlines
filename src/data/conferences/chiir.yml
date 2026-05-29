@@ -1,0 +1,38 @@
+- title: CHIIR
+  year: 2027
+  id: chiir27
+  full_name: The 2027 ACM SIGIR Conference on Human Information Interaction and Retrieval
+  link: "https://chi2027.acm.org/"
+  deadlines:
+    - type: abstract
+      date: "2026-10-08 23:59:00"
+      label: (Full & Perspective Paper) Abstract Submission
+      timezone: UTC-12
+    - type: submission
+      date: "2026-10-15 23:59:00"
+      label: (Full & Perspective Paper) Submission 
+      timezone: UTC-12
+    - type: submission
+      date: "2026-10-29 23:59:00"
+      label: (Short Paper) Submission 
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-12-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Berlin
+  country: Germany
+  venue: Humboldt-Universität zu Berlin
+  format: in-person
+  date: March 07-11, 2027
+  start: 2027-03-07
+  end: 2027-03-11
+  tags:
+      - human-computer-interaction
+      - information-retrieval
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2335/
+  note: "Paper length: <= 4 (short) and <= 10 (full)"

@@ -1,0 +1,39 @@
+- title: ICRA
+  year: 2027
+  id: icra27
+  full_name: 2027 IEEE International Conference on Robotics & Automation 
+  link: "https://2027.ieee-icra.org/"
+  deadlines:
+    - type: abstract_deadline
+      label: Paper Registration
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Regular Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  city: Seoul
+  country: South Korea
+  venue: Coex, 513, Yeongdong-daero, Gangnam-gu, 06164 Seoul
+  format: in-person
+  date: May 24-28, 2027
+  start: 2027-05-24
+  end: 2027-05-28
+  tags:
+      - robotics
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2051/

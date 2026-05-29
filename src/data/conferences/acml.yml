@@ -1,33 +1,46 @@
-- title: ACML
+- title: ACML 
   year: 2026
   id: acml26
   full_name: The 18th Asian Conference in Machine Learning
   link: "https://www.acml-conf.org/2026/"
   deadlines:
     - type: submission
-      label: "Paper Submission"
-      date: "TBD"
-      timezone: America/Los_Angeles
+      label: (Conference Track) Paper Submission
+      date: "2026-06-26 23:59:00"
+      timezone: UTC-12
     - type: rebuttal_start
-      label: "Rebuttal Period Start"
-      date: "TBD"
-      timezone: America/Los_Angeles
+      label: (Conference Track) Reviews Released & Rebuttal Period Start
+      date: "2026-08-10 07:59:00"
+      timezone: UTC-12
     - type: rebuttal_end
-      label: "Rebuttal Period End"
-      date: "TBD"
-      timezone: America/Los_Angeles
+      label: (Conference Track) Rebuttal Period End; (Journal Track) Revised manuscript Submission (for minor review papers)
+      date: "2026-08-15 23:59:00"
+      timezone: UTC-12
     - type: final_decision
-      label: "Author Notification"
-      date: "TBD"
-      timezone: America/Los_Angeles
-  timezone: America/Los_Angeles
+      label: (Journal & Conference Track) Acceptance Notification
+      date: "2026-09-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal Track) Abstract and Paper Submission
+      date: "2026-06-06 23:59:00"
+      timezone: UTC-12
+    - type: reviews_released
+      label: (Journal Track) 1st round review results released to author
+      date: "2026-07-25 07:59:00"
+      timezone: UTC-12
+    - type: reviews_released
+      label: (Journal Track) 2nd round review results released to author
+      date: "2026-08-30 07:59:00"
+      timezone: UTC-12
+
+  timezone: UTC-12
   city: Melbourne
   country: Australia
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: December 01-04, 2026
+  start: 2026-12-01
+  end: 2026-12-04
   tags:
       - machine-learning
       - natural-language-processing

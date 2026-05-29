@@ -1,0 +1,30 @@
+- title: AINA
+  year: 2027
+  id: aina26
+  full_name: The 41st International Conference on Advanced Information Networking and Applications
+  link: "https://voyager.ce.fit.ac.jp/conf/aina/2027/"
+  deadlines:
+    - type: submission
+      date: "2026-11-10 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2027-01-10 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Tirana
+  country: Albania
+  venue: Polytechnic University of Tirana, Sheshi Nënë Tereza, Nr. 4, Tirana 1001, Albania
+  format: in-person
+  date: March 24-26, 2027
+  start: 2027-03-24
+  end: 2027-03-26
+  tags:
+      - information-theory
+      - multimedia
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/890/

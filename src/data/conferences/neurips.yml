@@ -1,7 +1,7 @@
 - title: NeurIPS
   year: 2026
   id: neurips26
-  full_name: 40th Annual Conference on Neural Information Processing Systems
+  full_name: The 40th Annual Conference on Neural Information Processing Systems
   link: "https://neurips.cc/Conferences/2026"
   deadlines:
     - type: abstract
@@ -12,14 +12,18 @@
       date: "2026-05-06 23:59:00"
       label: Paper Submission
       timezone: UTC-12
-    # - type: rebuttal_start
-    #   label: Rebuttal Start
-    #   date: "TBD"
-    #   timezone: UTC-12
-    # - type: rebuttal_end
-    #   label: Rebuttal End
-    #   date: "TBD"
-    #   timezone: UTC-12
+    - type: review_released
+      label: Reviews Released
+      date: "2026-07-22 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Start
+      date: "2026-07-27 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal End
+      date: "2026-08-03 23:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: Author Notification
       date: "2026-09-24 07:59:00"

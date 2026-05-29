@@ -1,0 +1,34 @@
+- title: ICMV
+  year: 2026
+  id: icmv26
+  full_name: The  19th International Conference on Machine Vision
+  link: "https://icmv.org"
+  deadlines:
+    - type: submission
+      date: "2026-05-20 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: submission
+      date: "2026-06-20 23:59:00"
+      label: "(Final Deadline) Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-07-10 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Budapest
+  country: Hungary
+  venue: TBD
+  format: in-person
+  date: October 15-18, 2026
+  start: 2026-10-15
+  end: 2026-10-18
+  tags:
+      - machine-learning
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1124/

@@ -1,4 +1,41 @@
 - title: SoICT
+  year: 2026
+  id: soict26
+  full_name: The 15th International Symposium on Information and Communication Technology
+  link: "https://soict.org"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-09-09 23:59:00"
+      timezone: UTC+7
+    - type: submission
+      label: Paper Submission
+      date: "2026-09-16 23:59:00"
+      timezone: UTC+7
+    - type: final_decision
+      label: Author Notification
+      date: "2026-10-12 07:59:00"
+      timezone: UTC+7
+  timezone: UTC+7
+  city: Ho Chi Minh City
+  country: Vietnam
+  venue: TBD
+  format: in-person
+  date: December 04-05, 2026
+  start: 2026-12-04
+  end: 2026-12-05
+  tags:
+      - computer-vision
+      - machine-learning
+      - speech-processing
+      - human-computer-interaction
+      - multimedia
+  rankings:
+      rank_name: Non-ranked
+      rank_source: Springer CCIS
+      rank_source_url: https://link.springer.com/conference/soict
+
+- title: SoICT
   year: 2025
   id: soict25
   full_name: International Symposium on Information and Communication Technology
