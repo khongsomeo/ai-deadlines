@@ -59,54 +59,25 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
   // Calculate extended start date (30 days before first deadline)
   const extendedStartDate = new Date(firstStepDate.getTime() - (DAYS_BEFORE_START * 24 * 60 * 60 * 1000));
 
-  // Calculate progress position in px with extended timeline
-  let progressPx = 0;
-  if (barWidth > 0) {
-    const totalWidth = barWidth;
-    const preDeadlineWidth = totalWidth * 0.2;
-    const deadlineWidth = totalWidth * 0.8;
-
-    if (now <= extendedStartDate) {
-      progressPx = 0;
-    } else if (now >= lastStepDate) {
-      progressPx = totalWidth;
-    } else if (singleDeadline) {
-      // Special handling for single deadline
-      const progress = (now.getTime() - extendedStartDate.getTime()) / 
-                      (firstStepDate.getTime() - extendedStartDate.getTime());
-      progressPx = Math.min(totalWidth, progress * totalWidth);
-    } else if (now < firstStepDate) {
-      // Calculate progress in pre-deadline period
-      const progress = (now.getTime() - extendedStartDate.getTime()) / 
-                      (firstStepDate.getTime() - extendedStartDate.getTime());
-      progressPx = progress * preDeadlineWidth;
-    } else {
-      // Calculate progress in deadline period
-      const progress = (now.getTime() - firstStepDate.getTime()) / 
-                      (lastStepDate.getTime() - firstStepDate.getTime());
-      progressPx = preDeadlineWidth + (progress * deadlineWidth);
-    }
-  }
-
   // Calculate step positions with minimum spacing enforcement
+  // (Must be done first so progressPx can interpolate against actual dot positions)
   const MIN_STEP_DISTANCE = 18; // Minimum pixels between step centers
 
   // First, calculate base positions using time ratios
-  const baseStepPositions = validSteps.map(step => {
+  const baseStepPositions = barWidth > 0 ? validSteps.map(step => {
     const stepDate = getDeadlineInLocalTime(step.date, step.timezone);
     if (!stepDate || !isValid(stepDate)) return 0;
 
     if (singleDeadline) {
-      // Place single deadline at the end
       return barWidth;
     } else {
       const preDeadlineWidth = barWidth * 0.2;
       const deadlineWidth = barWidth * 0.8;
-      return preDeadlineWidth + 
-             ((differenceInMilliseconds(stepDate, firstStepDate) / 
+      return preDeadlineWidth +
+             ((differenceInMilliseconds(stepDate, firstStepDate) /
                differenceInMilliseconds(lastStepDate, firstStepDate)) * deadlineWidth);
     }
-  });
+  }) : validSteps.map(() => 0);
 
   // Apply minimum spacing: ensure each step is at least MIN_STEP_DISTANCE from the previous
   const adjustedPositions: number[] = [];
@@ -120,11 +91,47 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
   }
 
   // If adjusted positions exceed bar width, scale them down proportionally
-  // This maintains the ratio while ensuring minimum spacing is honored
   let stepPositions = adjustedPositions;
   if (adjustedPositions.length > 0 && adjustedPositions[adjustedPositions.length - 1] > barWidth) {
     const scaleFactor = barWidth / adjustedPositions[adjustedPositions.length - 1];
     stepPositions = adjustedPositions.map(pos => pos * scaleFactor);
+  }
+
+  // Build a mapping from time → pixel using the same coordinate system as the step dots.
+  // Anchor points: extendedStartDate → 0px, each stepDate → its stepPositions[i] pixel.
+  // progressPx is then derived by linear interpolation between these anchors.
+  const anchorTimes: number[] = [extendedStartDate.getTime()];
+  const anchorPx: number[] = [0];
+  validSteps.forEach((step, i) => {
+    const stepDate = getDeadlineInLocalTime(step.date, step.timezone);
+    if (stepDate && isValid(stepDate)) {
+      anchorTimes.push(stepDate.getTime());
+      anchorPx.push(stepPositions[i]);
+    }
+  });
+  // Final anchor: last step → barWidth (end of bar)
+  if (anchorTimes[anchorTimes.length - 1] !== lastStepDate.getTime()) {
+    anchorTimes.push(lastStepDate.getTime());
+    anchorPx.push(barWidth);
+  }
+
+  let progressPx = 0;
+  if (barWidth > 0) {
+    const nowMs = now.getTime();
+    if (nowMs <= anchorTimes[0]) {
+      progressPx = 0;
+    } else if (nowMs >= anchorTimes[anchorTimes.length - 1]) {
+      progressPx = barWidth;
+    } else {
+      // Find the two anchors that bracket `now` and interpolate
+      for (let i = 1; i < anchorTimes.length; i++) {
+        if (nowMs <= anchorTimes[i]) {
+          const segT = (nowMs - anchorTimes[i - 1]) / (anchorTimes[i] - anchorTimes[i - 1]);
+          progressPx = anchorPx[i - 1] + segT * (anchorPx[i] - anchorPx[i - 1]);
+          break;
+        }
+      }
+    }
   }
 
   return (
