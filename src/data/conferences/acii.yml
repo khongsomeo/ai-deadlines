@@ -1,0 +1,40 @@
+- title: ACII
+  year: 2026
+  id: acii26
+  full_name: The 14th International Conference on Affective Computing and Intelligent Interaction
+  link: "https://acii-conf.net/2026/index.php"
+  deadlines:
+    - type: submission
+      date: "2026-04-24 23:59:00"
+      label: (Paper) Submission
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2026-06-10 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "2026-06-14 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-06-23 07:59:00"
+      label: Author Notification
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Puebla
+  country: Mexico
+  venue: CENTRO DE CONVENCIONES DE PUEBLA WILLIAM O. JENKINS
+  format: in-person
+  date: May 10-14, 2027
+  start: 2027-05-10
+  end: 2027-05-14
+  tags:
+      - natural-language-processing
+      - speech-processing
+      - human-computer-interaction
+      - robotics
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/901/
+

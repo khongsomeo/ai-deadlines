@@ -1,0 +1,30 @@
+- title: IDEAL
+  year: 2026
+  id: ideal26
+  full_name: The 27th International Conference on Intelligent Data Engineering and Automated Learning
+  link: "https://www.ideal2026.org/home"
+  deadlines:
+    - type: submission
+      date: "2026-07-01 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-09-01 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Manchester
+  country: United Kingdom
+  venue: The University of Manchester, Oxford Road, Manchester M13 9PL 
+  format: in-person
+  date: November 19-21, 2026
+  start: 2026-11-19
+  end: 2026-11-21
+  tags:
+      - machine-learning
+      - data-mining
+      - information-retrieval
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1093/

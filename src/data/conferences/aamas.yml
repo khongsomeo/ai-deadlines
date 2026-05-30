@@ -2,7 +2,7 @@
   year: 2027
   id: aamas27
   full_name: The 26th International Conference on Autonomous Agents and Multiagent Systems
-  link: https://openreview.net/group?id=ifaamas.org/AAMAS/2027/Conference#tab-recent-activity
+  link: "https://warwick.ac.uk/fac/sci/dcs/aamas2027/"
   deadlines:
     - type: abstract
       label: Abstract Submission
@@ -27,11 +27,11 @@
   timezone: UTC-0
   city: Hanoi
   country: Vietnam
-  venue: East Asia University of Technology
+  venue: JW Marriott Hotel
   format: in-person
-  date: May 03, 2027
+  date: May 03-05, 2027
   start: 2027-05-03
-  end: 2027-05-03
+  end: 2027-05-05
   tags:
       - machine-learning
       - natural-language-processing

@@ -1,0 +1,40 @@
+- title: SODA
+  year: 2027
+  id: soda27
+  full_name: The 2027 ACM-SIAM Symposium on Discrete Algorithm
+  link: "https://www.siam.org/conferences-events/siam-conferences/soda27/"
+  deadlines:
+    - type: submission
+      date: "2026-07-09 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: rebuttal_start
+      date: "2026-09-01 07:59:00"
+      label: "Rebuttal Period Start"
+      timezone: UTC-12
+    - type: rebuttal_end
+      date: "2026-09-04 23:59:00"
+      label: "Rebuttal Period End"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-10-30 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Philadelphia, PA
+  country: United States
+  venue: Sheraton Philadelphia Downtown
+  format: in-person
+  date: January 24-27, 2027
+  start: 2027-01-24
+  end: 2027-01-27
+  tags:
+      - machine-learning
+      - data-mining
+      - cryptography
+      - information-retrieval
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/80/
+  note: "Algorithmic aspects of other areas of computer science. Conference theme mainly accepts combinatorics and discrete mathematics."

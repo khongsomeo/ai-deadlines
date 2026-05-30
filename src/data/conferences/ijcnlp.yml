@@ -24,6 +24,14 @@
       label: Commitment Deadline
       date: "2026-08-26 23:59:00"
       timezone: UTC-12
+    - type: submission
+      label: (System Demonstration) Paper Submission
+      date: "2026-07-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (System Demonstration) Final Decision
+      date: "2026-09-01 07:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: Final Decision
       date: "2026-09-07 07:59:00"

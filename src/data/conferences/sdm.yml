@@ -1,0 +1,33 @@
+- title: SDM
+  year: 2026
+  id: sdm26
+  full_name: The 2026 SIAM International Conference on Data Mining
+  link: "https://www.siam.org/conferences-events/siam-conferences/sdm26/"
+  deadlines:
+    - type: abstract
+      date: "2026-04-10 23:59:00"
+      label: "Abstract Submission"
+      timezone: UTC-12
+    - type: submission
+      date: "2026-04-17 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-07-01 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Salt Lake City, UT
+  country: United States
+  venue: Salt Palace Convention Center
+  format: in-person
+  date: November 19-20, 2026
+  start: 2026-11-19
+  end: 2026-11-20
+  tags:
+      - machine-learning
+      - data-mining
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1727/

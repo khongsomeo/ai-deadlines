@@ -1,7 +1,52 @@
 - title: AISTATS
+  year: 2027
+  id: aistats27
+  full_name: The 2027 Annual Conference on Artificial Intelligence and Statistics
+  link: "https://virtual.aistats.org/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      date: "TBD"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: rebuttal_start
+      date: "TBD"
+      label: Rebuttal Period Start
+      timezone: UTC-12
+    - type: rebuttal_end
+      date: "TBD"
+      label: Rebuttal Period End
+      timezone: UTC-12
+    - type: final_decision
+      date: "TBD"
+      label: Author Notification
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Montréal
+  country: Canada
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - signal-processing
+      - computer-vision
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/913/
+  note: "OpenReview submission"
+
+- title: AISTATS
   year: 2026
   id: aistats26
-  full_name: Annual Conference on Artificial Intelligence and Statistics
+  full_name: The 2026 Annual Conference on Artificial Intelligence and Statistics
   link: "https://virtual.aistats.org/"
   deadlines:
     - type: abstract

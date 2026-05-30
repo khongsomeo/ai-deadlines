@@ -1,0 +1,43 @@
+- title: ICDAR
+  year: 2026
+  id: icdar26
+  full_name: The 20th International Conference on Document Analysis and Recognition
+  link: "https://icdar2026.org/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-02-13 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      date: "2026-02-27 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: rebuttal_start
+      date: "2026-04-20 07:59:00"
+      label: Rebuttal Period Start
+      timezone: UTC-12
+    - type: rebuttal_end
+      date: "2026-04-24 23:59:00"
+      label: Rebuttal Period End
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-05-15 07:59:00"
+      label: Author Notification
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Vienna
+  country: Austria
+  venue: Campus Gußhaus – Faculty of Electrical Engineering and IT, YU Wien, Gußhausstraße 27-29, 1040 Vienna
+  format: in-person
+  date: August 30 - September 04, 2026
+  start: 2026-08-30
+  end: 2026-09-04
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - signal-processing
+      - computer-vision
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2047/

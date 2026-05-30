@@ -1,0 +1,31 @@
+- title: ISDA
+  year: 2026
+  id: isda26
+  full_name: The 2026 International Conference on Intelligent Systems and Digital Applications
+  link: "https://isda-conf.com/"
+  deadlines:
+    - type: submission
+      date: "2026-03-15 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-04-02 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Settat
+  country: Morocco
+  venue: Faculty of Sciences and Techniques, Hassan I University
+  format: hybrid
+  date: May 14-15, 2026
+  start: 2026-05-14
+  end: 2026-05-15
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - robotics
+      - cryptography
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1098/

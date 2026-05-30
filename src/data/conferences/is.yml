@@ -1,0 +1,31 @@
+- title: IS
+  year: 2026
+  id: is26
+  full_name: The 2026 IEEE 13th International Conference on Intelligent Systems (IS)
+  link: "https://www.ieee-is.org/"
+  deadlines:
+    - type: submission
+      date: "2026-06-08 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-07-20 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Varna
+  country: Bulgaria
+  venue: Hotel Cherno More, Boulevard Slivnitsa 33, Varna, Bulgaria
+  format: hybrid
+  date: September 03-06, 2026
+  start: 2026-09-03
+  end: 2026-09-06
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/661/

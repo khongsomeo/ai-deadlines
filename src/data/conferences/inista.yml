@@ -1,0 +1,32 @@
+- title: INISTA
+  year: 2026
+  id: inista26
+  full_name: The 2026 International Conference on Innovations in Intelligent Systems and Applications
+  link: "https://inista2026.di.uminho.pt/"
+  deadlines:
+    - type: submission
+      date: "2026-06-15 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-07-10 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Guimarães
+  country: Portugal
+  venue: Hotel de Guimarães, Rua Eduardo Manuel de Almeida, 4810-440 Guimarães 
+  format: in-person
+  date: September 17-19, 2026
+  start: 2026-09-17
+  end: 2026-09-19
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - speech-processing
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1391/
