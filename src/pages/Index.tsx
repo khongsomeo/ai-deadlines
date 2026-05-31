@@ -57,6 +57,7 @@ const Index = () => {
     { id: "information-theory", label: "Information Theory" },
     { id: "information-retrieval", label: "Information Retrieval" },
     { id: "cryptography", label: "Cryptography" },
+    { id: "security-and-privacy", label: "Security & Privacy" },
   ];
 
   const filteredConferences = useMemo(() => {

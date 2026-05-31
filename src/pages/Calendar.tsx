@@ -30,6 +30,7 @@ const categoryColors: Record<string, string> = {
   "information-theory": "bg-red-500",
   "information-retrieval": "bg-amber-500",
   "cryptography": "bg-indigo-500",
+  "security-and-privacy": "bg-teal-500",
   "other": "bg-gray-500"
 };
 
@@ -45,6 +46,7 @@ const categoryNames: Record<string, string> = {
   "information-theory": "Information Theory",
   "information-retrieval": "Information Retrieval",
   "cryptography": "Cryptography",
+  "security-and-privacy": "Security & Privacy",
   "other": "Other"
 };
 
@@ -61,6 +63,7 @@ const orderedCategories = [
   "information-theory",
   "information-retrieval",
   "cryptography",
+  "security-and-privacy",
   "other"
 ] as const;
 
