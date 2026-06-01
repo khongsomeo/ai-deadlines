@@ -37,6 +37,10 @@
   end: 2026-12-18
   tags:
       - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - signal-processing
+      - robotics
   rankings:
       rank_name: B
       rank_source: ICORE2026

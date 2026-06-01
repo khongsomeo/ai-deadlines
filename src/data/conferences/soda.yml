@@ -30,9 +30,10 @@
   end: 2027-01-27
   tags:
       - machine-learning
-      - data-mining
       - cryptography
+      - security-and-privacy
       - information-retrieval
+      - information-theory
   rankings:
       rank_name: A*
       rank_source: ICORE2026

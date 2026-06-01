@@ -1,0 +1,35 @@
+- title: CAISE
+  year: 2026
+  id: caise26
+  full_name: International Conference on Advanced Information Systems Engineering
+  link: "https://caise26.polimi.it/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission (mandatory)
+      date: "2025-11-21 23:59:59"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission (FIRM)
+      date: "2025-11-28 23:59:59"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-02-12 07:59:00"
+      timezone: UTC
+  timezone: UTC+02:00
+  city: Verona
+  country: Italy
+  venue: Camera di Commercio di Verona, Corso Porta Nuova, 96, 37122 Verona VR, Italy
+  format: in-person
+  date: "June 8-12, 2026"
+  start: 2026-06-08
+  end: 2026-06-12
+  tags:
+    - machine-learning
+    - data-mining
+    - information-retrieval
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/891/

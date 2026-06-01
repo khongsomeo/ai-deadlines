@@ -24,6 +24,8 @@
       - information-theory
       - multimedia
       - data-mining
+      - security-and-privacy
+      - machine-learning
   rankings:
       rank_name: B
       rank_source: ICORE2026

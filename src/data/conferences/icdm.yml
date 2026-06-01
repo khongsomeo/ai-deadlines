@@ -23,6 +23,10 @@
   tags:
       - machine-learning
       - data-mining
+      - natural-language-processing
+      - information-retrieval
+      - security-and-privacy
+      - multimedia
   rankings:
       rank_name: A*
       rank_source: ICORE2026

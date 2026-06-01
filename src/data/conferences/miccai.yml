@@ -29,16 +29,19 @@
       label: Author Notification
       timezone: America/Los_Angeles
   timezone: America/Los_Angeles
-  city: Abu Dhabi
-  country: UAE
-  venue: ANDEC Centre, Abu Dhabi - United Arab Emirates
+  city: Strasbourg
+  country: France
+  venue: Strasbourg Convention Centre
   format: in-person
-  date: October 04-08, 2026
-  start: 2026-10-04
-  end: 2026-10-08
+  date: September 29 - October 01, 2026
+  start: 2026-09-29
+  end: 2026-10-01
   tags:
       - computer-vision
-      - multimedia
+      - machine-learning
+      - signal-processing
+      - robotics
+      - security-and-privacy
   rankings:
       rank_name: A
       rank_source: ICORE2026

@@ -1,0 +1,81 @@
+- title: CCS
+  year: 2026
+  id: ccs26
+  full_name: The 33rd ACM Conference on Computer and Communications Security
+  link: "https://www.sigsac.org/ccs/CCS2026/"
+  deadlines:
+    - type: abstract
+      label: (1st cycle) Abstract Submission
+      date: "2026-01-07 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (1st cycle) Paper Submission
+      date: "2026-01-14 23:59:00"
+      timezone: UTC-12
+    - type: author_notification
+      label: (1st cycle) Early Rejection
+      date: "2026-02-20 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (1st cycle) Rebuttal Period Start
+      date: "2026-03-17 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (1st cycle) Rebuttal Period End
+      date: "2026-03-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st cycle) Author Notification
+      date: "2026-04-09 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st cycle) Minor Revision Notification
+      date: "2026-06-05 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd cycle) Abstract Submission
+      date: "2026-04-22 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd cycle) Paper Submission
+      date: "2026-04-29 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd cycle) Online Artifact Submission
+      date: "2026-05-02 23:59:00"
+      timezone: UTC-12
+    - type: author_notification
+      label: (2nd cycle) Early Rejection
+      date: "2026-06-12 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (2nd cycle) Rebuttal Period Start
+      date: "2026-06-29 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (2nd cycle) Rebuttal Period End
+      date: "2026-07-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd cycle) Author Notification
+      date: "2026-07-17 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd cycle) Minor Revision Notification
+      date: "2026-09-06 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: The Hague
+  country: The Netherlands
+  venue: The World Forum, Churchillplein 10, 2517 JW Den Haag
+  format: in-person
+  date: November 15-19, 2026
+  start: 2026-11-15
+  end: 2026-11-19
+  tags:
+      - cryptography
+      - security-and-privacy
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/12/

@@ -25,6 +25,8 @@
       - machine-learning
       - natural-language-processing
       - human-computer-interaction
+      - security-and-privacy
+      - cryptography
   rankings:
       rank_name: Non-ranked
       rank_source: IEEE Xplore

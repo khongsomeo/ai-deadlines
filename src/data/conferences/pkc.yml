@@ -1,0 +1,41 @@
+- title: PKC
+  year: 2027
+  id: pkc27
+  full_name: 30th International Conference on Practice and Theory of Public-Key Cryptography
+  link: "https://pkc.iacr.org/2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-08-03 23:59:59"
+      timezone: UTC-12
+    - type: final_decision
+      label: First Round Notification
+      date: "2026-09-28 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Start
+      date: "2026-10-05 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Deadline
+      date: "2026-10-12 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "2026-11-19 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Taipei
+  country: Taiwan
+  venue: TBD
+  format: in-person
+  date: March 1-4, 2027
+  start: 2027-03-01
+  end: 2027-03-04
+  tags:
+    - cryptography
+    - security-and-privacy
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1279/

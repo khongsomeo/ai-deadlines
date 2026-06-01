@@ -25,9 +25,13 @@
   start: 2027-03-22
   end: 2027-03-24
   tags:
-      - data-mining
       - information-retrieval
       - natural-language-processing
+      - data-mining
+      - machine-learning
+      - human-computer-interaction
+      - security-and-privacy
+      - multimedia
   rankings:
       rank_name: A
       rank_source: ICORE2026

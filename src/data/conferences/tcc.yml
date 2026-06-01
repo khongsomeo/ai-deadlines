@@ -1,0 +1,29 @@
+- title: TCC
+  year: 2026
+  id: tcc26
+  full_name: 24th Theory of Cryptography Conference
+  link: "https://tcc.iacr.org/2026/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-05-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-08-20 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: New York City
+  country: USA
+  venue: New York University (NYU)
+  format: in-person
+  date: "November 10-13, 2026"
+  start: 2026-11-10
+  end: 2026-11-13
+  tags:
+      - cryptography
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1815/
+  note: "No rebuttal phase. Authors encouraged to post on IACR ePrint Archive."

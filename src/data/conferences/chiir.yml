@@ -2,7 +2,7 @@
   year: 2027
   id: chiir27
   full_name: The 2027 ACM SIGIR Conference on Human Information Interaction and Retrieval
-  link: "https://chi2027.acm.org/"
+  link: "https://chiir2027.github.io/"
   deadlines:
     - type: abstract
       date: "2026-10-08 23:59:00"
@@ -31,6 +31,10 @@
   tags:
       - human-computer-interaction
       - information-retrieval
+      - natural-language-processing
+      - machine-learning
+      - security-and-privacy
+      - multimedia
   rankings:
       rank_name: B
       rank_source: ICORE2026

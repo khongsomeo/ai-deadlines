@@ -1,0 +1,34 @@
+- title: ADMA
+  year: 2026
+  id: adma26
+  full_name: The 22nd International Conference on Advanced Data Mining and Applications
+  link: "https://adma2026.github.io/"
+  deadlines:
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2026-06-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-08-21 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Hong Kong
+  country: Hong Kong
+  venue: TBD
+  format: in-person
+  date: "November 13-15, 2026"
+  start: 2026-11-13
+  end: 2026-11-15
+  tags:
+    - data-mining
+    - machine-learning
+    - multimedia
+    - computer-vision
+    - security-and-privacy
+    - information-retrieval
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/888/
+  note: "Double-blind review (research track) via Microsoft CMT. Springer LNAI format, max 15 pages including references."

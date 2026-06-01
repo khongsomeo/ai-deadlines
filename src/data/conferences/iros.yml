@@ -25,6 +25,10 @@
   end: 2026-10-01
   tags:
       - robotics
+      - machine-learning
+      - computer-vision
+      - signal-processing
+      - human-computer-interaction
   rankings:
       rank_name: A
       rank_source: ICORE2026

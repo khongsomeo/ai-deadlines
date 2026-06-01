@@ -35,6 +35,12 @@
   tags:
       - computer-vision
       - multimedia
+      - machine-learning
+      - natural-language-processing
+      - signal-processing
+      - robotics
+      - security-and-privacy
+      - information-retrieval
   rankings:
       rank_name: A
       rank_source: ICORE2026

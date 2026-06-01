@@ -1,0 +1,45 @@
+- title: IUI
+  year: 2027
+  id: iui27
+  full_name: The 2027 ACM Conference on Intelligent User Interfaces
+  link: "https://iui.acm.org/2027/"
+  deadlines:
+    - type: abstract
+      date: "2026-08-13 23:59:00"
+      label: Abstract Submission
+      timezone: UTC-12
+    - type: submission
+      date: "2026-08-20 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: review_released
+      label: Initial Notification
+      date: "2026-10-29 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Invited Rebuttal Deadline
+      date: "2026-11-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2026-11-23 07:59:00"
+      label: Author Notification
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Helsinski
+  country: Finland
+  venue: TBD
+  format: in-person
+  date: February 08-11, 2027
+  start: 2027-02-08
+  end: 2027-02-11
+  tags:
+      - human-computer-interaction
+      - natural-language-processing
+      - machine-learning
+      - security-and-privacy
+      - multimedia
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1101/
+  note: "NLP topics related to Large Language Models and Agentic AI - please check on the website."

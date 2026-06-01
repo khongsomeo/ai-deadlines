@@ -1,0 +1,45 @@
+- title: ISWC
+  year: 2026
+  id: iswc26
+  full_name: The 25th International Semantic Web Conference
+  link: "https://iswc2026.semanticweb.org/"
+  deadlines:
+    - type: abstract
+      label: "Research, Resource, In-Use Track Abstract Submission"
+      date: "2026-05-02 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Research, Resource, In-Use Track Full Paper Submission"
+      date: "2026-05-07 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Period Start"
+      date: "2026-06-11 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal Period End"
+      date: "2026-06-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Research, Resource, In-Use Track Notifications"
+      date: "2026-07-16 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Bari
+  country: Italy
+  venue: "The Nicolaus Hotel, Bari"
+  format: in-person
+  date: "October 25-29, 2026"
+  start: 2026-10-25
+  end: 2026-10-29
+  tags:
+    - data-mining
+    - natural-language-processing
+    - machine-learning
+    - information-retrieval
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1338/"
+  note: "Abstract submission is a strict requirement for Research, Resource, and In-Use tracks. Submission via EasyChair."

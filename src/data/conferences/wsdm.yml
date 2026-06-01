@@ -1,0 +1,38 @@
+- title: WSDM
+  year: 2027
+  id: wsdm27
+  full_name: The 20th ACM International Conference on Web Search and Data Mining
+  link: "https://wsdm-conference.org/2027/"
+  deadlines:
+    - type: abstract
+      label: Abstract Deadline
+      date: "2026-08-17 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-08-24 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notifications
+      date: "2026-11-02 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Hong Kong
+  country: Hong Kong
+  venue: Cordis, Hong Kong, 555 Shanghai St, Mong Kok
+  format: in-person
+  date: February 15-19, 2027
+  start: 2027-02-15
+  end: 2027-02-19
+  tags:
+      - information-retrieval
+      - data-mining
+      - machine-learning
+      - natural-language-processing
+      - human-computer-interaction
+      - security-and-privacy
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/31/
+  note: "Submission via CMT. Double-blind review for PC members. 9-page limit + ethical implications section."

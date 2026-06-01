@@ -30,6 +30,7 @@
       - speech-processing
       - human-computer-interaction
       - multimedia
+      - security-and-privacy
   rankings:
       rank_name: Non-ranked
       rank_source: Springer CCIS

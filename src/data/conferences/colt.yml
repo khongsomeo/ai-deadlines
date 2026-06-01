@@ -1,0 +1,24 @@
+- title: COLT
+  year: 2027
+  id: colt27
+  full_name: 40th Annual Conference on Learning Theory
+  link: "https://learningtheory.org/colt2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: TBD
+  timezone: TBD
+  city: Tokyo
+  country: Japan
+  venue: TBD
+  format: in-person
+  date: "June 28 - July 2, 2027"
+  start: 2027-06-28
+  end: 2027-07-02
+  tags:
+      - machine-learning
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/124/

@@ -1,0 +1,34 @@
+- title: WISE
+  year: 2026
+  id: wise26
+  full_name: The 27th International Conference on Web Information Systems Engineering
+  link: "https://conferences.sigappfr.org/wise2026/"
+  deadlines:
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2026-06-17 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Authors Notification
+      date: "2026-07-20 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Venice
+  country: Italy
+  venue: Venice International University on the Island of San Servolo
+  format: hybrid
+  date: "November 2-5, 2026"
+  start: 2026-11-02
+  end: 2026-11-05
+  tags:
+    - data-mining
+    - machine-learning
+    - information-retrieval
+    - security-and-privacy
+    - human-computer-interaction
+    - natural-language-processing
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1271/
+  note: "Double-blind review via Microsoft CMT. Springer LNCS format, max 15 pages including references."

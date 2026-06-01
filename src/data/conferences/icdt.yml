@@ -1,0 +1,47 @@
+- title: ICDT
+  year: 2027
+  id: icdt27
+  full_name: 30th International Conference on Database Theory
+  link: "https://edbticdt2027.github.io/"
+  deadlines:
+    - type: abstract
+      label: (Cycle 1) Abstract Submission
+      date: "2026-03-03 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Cycle 1) Paper Submission
+      date: "2026-03-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Cycle 1) Notification
+      date: "2026-06-01 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Cycle 2) Abstract Submission
+      date: "2026-09-03 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Cycle 2) Paper Submission
+      date: "2026-09-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Cycle 2) Notification
+      date: "2026-12-01 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Lille
+  country: France
+  venue: TBD
+  format: in-person
+  date: April 6-9, 2027
+  start: 2027-04-06
+  end: 2027-04-09
+  tags:
+    - data-mining
+    - machine-learning
+    - security-and-privacy
+    - information-retrieval
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/989/

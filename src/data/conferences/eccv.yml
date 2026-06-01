@@ -37,8 +37,13 @@
   start: 2026-09-08
   end: 2026-09-13
   tags:
-      - machine-learning
       - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - signal-processing
+      - robotics
+      - security-and-privacy
+      - multimedia
   rankings:
       rank_name: A*
       rank_source: ICORE2026

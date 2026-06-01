@@ -1,0 +1,137 @@
+- title: SIGMOD
+  year: 2027
+  id: sigmod27
+  full_name: The 2027 ACM SIGMOD/PODS Conference
+  link: "https://2027.sigmod.org/index.shtml"
+  deadlines:
+    - type: abstract
+      label: (Round 1) Abstract Submission & COI Declaration
+      date: "2026-01-10 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 1) Paper Submission
+      date: "2026-01-17 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 1) Author Feedback Start
+      date: "2026-03-10 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 1) Author Feedback End
+      date: "2026-03-17 23:59:00"
+      timezone: UTC-12
+    - type: author_notification
+      label: (Round 1) Notification of Accept/Reject/Revision
+      date: "2026-04-19 07:59:00"
+      timezone: UTC-12
+    - type: revision
+      label: (Round 1) Revised Paper Submission
+      date: "2026-05-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 1) Final Notification of Accept/Reject
+      date: "2026-06-12 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Round 2) Abstract Submission & COI Declaration
+      date: "2026-04-10 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 2) Paper Submission
+      date: "2026-04-17 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 2) Author Feedback Start
+      date: "2026-06-10 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 2) Author Feedback End
+      date: "2026-06-17 23:59:00"
+      timezone: UTC-12
+    - type: author_notification
+      label: (Round 2) Notification of Accept/Reject/Revision
+      date: "2026-07-19 07:59:00"
+      timezone: UTC-12
+    - type: revision
+      label: (Round 2) Revised Paper Submission
+      date: "2026-08-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 2) Final Notification of Accept/Reject
+      date: "2026-09-12 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Round 3) Abstract Submission & COI Declaration
+      date: "2026-07-10 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 3) Paper Submission
+      date: "2026-07-17 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 3) Author Feedback Start
+      date: "2026-09-10 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 3) Author Feedback End
+      date: "2026-09-17 23:59:00"
+      timezone: UTC-12
+    - type: author_notification
+      label: (Round 3) Notification of Accept/Reject/Revision
+      date: "2026-10-19 07:59:00"
+      timezone: UTC-12
+    - type: revision
+      label: (Round 3) Revised Paper Submission
+      date: "2026-11-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 3) Final Notification of Accept/Reject
+      date: "2026-12-12 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Round 4) Abstract Submission & COI Declaration
+      date: "2026-10-10 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 4) Paper Submission
+      date: "2026-10-17 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 4) Author Feedback Start
+      date: "2026-12-10 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 4) Author Feedback End
+      date: "2026-12-17 23:59:00"
+      timezone: UTC-12
+    - type: author_notification
+      label: (Round 4) Notification of Accept/Reject/Revision
+      date: "2027-01-19 07:59:00"
+      timezone: UTC-12
+    - type: revision
+      label: (Round 4) Revised Paper Submission
+      date: "2027-02-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 4) Final Notification of Accept/Reject
+      date: "2027-03-12 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Huntington Beach, CA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: June 13-19, 2027
+  start: 2027-06-13
+  end: 2027-06-19
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - data-mining
+      - information-retrieval
+      - security-and-privacy
+      - human-computer-interaction
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/56/

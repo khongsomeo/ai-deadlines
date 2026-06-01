@@ -33,6 +33,10 @@
       - speech-processing
       - human-computer-interaction
       - robotics
+      - machine-learning
+      - computer-vision
+      - security-and-privacy
+      - multimedia
   rankings:
       rank_name: B
       rank_source: ICORE2026

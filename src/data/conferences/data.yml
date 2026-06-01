@@ -33,6 +33,7 @@
       - data-mining
       - natural-language-processing
       - computer-vision
+      - security-and-privacy
   rankings:
       rank_name: C
       rank_source: ICORE2026

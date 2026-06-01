@@ -25,6 +25,7 @@
       - natural-language-processing
       - speech-processing
       - human-computer-interaction
+      - security-and-privacy
   rankings:
       rank_name: C
       rank_source: ICORE2026

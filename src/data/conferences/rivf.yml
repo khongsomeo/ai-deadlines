@@ -27,6 +27,8 @@
       - speech-processing
       - human-computer-interaction
       - data-mining
+      - security-and-privacy
+      - cryptography
   rankings:
       rank_name: Non-ranked
       rank_source: IEEE Xplore
@@ -65,6 +67,8 @@
       - speech-processing
       - human-computer-interaction
       - data-mining
+      - security-and-privacy
+      - cryptography
   rankings:
       rank_name: Non-ranked
       rank_source: IEEE Xplore

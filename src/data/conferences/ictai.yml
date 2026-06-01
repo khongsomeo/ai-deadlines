@@ -25,6 +25,9 @@
       - natural-language-processing
       - computer-vision
       - robotics
+      - data-mining
+      - information-retrieval
+      - security-and-privacy
   rankings:
       rank_name: B
       rank_source: ICORE2026

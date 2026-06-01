@@ -1,0 +1,33 @@
+- title: WI-IAT
+  year: 2026
+  id: wi-iat26
+  full_name: The 25th IEEE/WIC International Conference on Web Intelligence and Intelligent Agent Technology
+  link: "https://wi-iat.com/wi-iat2026/index.html"
+  deadlines:
+    - type: submission
+      label: Full Paper Submission Deadline
+      date: "2026-06-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Paper Acceptance Notification
+      date: "2026-07-31 07:59:00"
+      timezone: UTC-1
+  timezone: UTC-12
+  city: Brisbane
+  country: Australia
+  venue: TBD
+  format: hybrid
+  date: "December 3-6, 2026"
+  start: 2026-12-03
+  end: 2026-12-06
+  tags:
+    - machine-learning
+    - data-mining
+    - natural-language-processing
+    - information-retrieval
+    - human-computer-interaction
+    - security-and-privacy
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/794/

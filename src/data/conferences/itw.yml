@@ -1,0 +1,30 @@
+- title: ITW
+  year: 2026
+  id: itw26
+  full_name: The 2026 IEEE Information Theory Workshop
+  link: "https://2026.ieee-itw.org"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-05-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "2026-07-20 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Tempe
+  country: USA
+  venue: TBD
+  format: in-person
+  date: November 10-13, 2026
+  start: 2026-11-10
+  end: 2026-11-13
+  tags:
+    - information-theory
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/830/
