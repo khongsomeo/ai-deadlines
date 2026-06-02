@@ -1,0 +1,86 @@
+- title: SP
+  year: 2027
+  id: sp27
+  full_name: 48th IEEE Symposium on Security and Privacy
+  link: "https://sp2027.ieee-security.org"
+  deadlines:
+    - type: abstract
+      label: (1st cycle) Abstract Registration Deadline
+      date: "2026-06-04 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (1st cycle) Paper Submission Deadline
+      date: "2026-06-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st cycle) Early-reject Notification
+      date: "2026-07-27 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (1st cycle) Reviews Released
+      date: "2026-08-20 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (1st cycle) Rebuttal Text Due
+      date: "2026-08-25 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (1st cycle) Interactive Rebuttal Period Start
+      date: "2026-08-26 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (1st cycle) Interactive Rebuttal End & Revised Manuscript Due
+      date: "2026-09-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st cycle) Acceptance Notification
+      date: "2026-09-11 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (2nd cycle) Abstract Registration Deadline
+      date: "2026-11-10 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd cycle) Paper Submission Deadline
+      date: "2026-11-17 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd cycle) Early-reject Notification
+      date: "2027-01-18 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (2nd cycle) Reviews Released
+      date: "2027-02-11 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (2nd cycle) Rebuttal Text Due
+      date: "2027-02-16 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (2nd cycle) Interactive Rebuttal Period Start
+      date: "2027-02-17 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (2nd cycle) Interactive Rebuttal End & Revised Manuscript Due
+      date: "2027-02-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd cycle) Acceptance Notification
+      date: "2027-03-05 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Montreal
+  country: Canada
+  venue: TBD
+  format: in-person
+  date: May 2027
+  start: TBD
+  end: TBD
+  tags:
+      - security-and-privacy
+      - cryptography
+      - machine-learning
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/750/

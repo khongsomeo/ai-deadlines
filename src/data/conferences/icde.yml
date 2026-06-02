@@ -1,0 +1,54 @@
+- title: ICDE
+  year: 2027
+  id: icde27
+  full_name: 43rd IEEE International Conference on Data Engineering
+  link: "https://icde2027.github.io/"
+  deadlines:
+    - type: submission
+      label: (1st round) Paper Submission
+      date: "2026-06-11 17:00:00"
+      timezone: UTC-7
+    - type: rebuttal_start
+      label: (1st round) Author Rebuttal Period Start
+      date: "2026-08-08 07:59:00"
+      timezone: UTC-7
+    - type: rebuttal_end
+      label: (1st round) Author Rebuttal Period End
+      date: "2026-08-15 23:59:00"
+      timezone: UTC-7
+    - type: final_decision
+      label: (1st round) Notification
+      date: "2026-09-10 07:59:00"
+      timezone: UTC-7
+    - type: submission
+      label: (2nd round) Paper Submission
+      date: "2026-11-11 17:00:00"
+      timezone: UTC-8
+    - type: rebuttal_start
+      label: (2nd round) Author Rebuttal Period Start
+      date: "2027-01-08 07:59:00"
+      timezone: UTC-8
+    - type: rebuttal_end
+      label: (2nd round) Author Rebuttal Period End
+      date: "2027-01-15 23:59:00"
+      timezone: UTC-8
+    - type: final_decision
+      label: (2nd round) Notification
+      date: "2027-02-10 07:59:00"
+      timezone: UTC-8
+  timezone: UTC-7
+  city: Copenhagen
+  country: Denmark
+  venue: TBD
+  format: in-person
+  date: May 17-21, 2027
+  start: 2027-05-17
+  end: 2027-05-21
+  tags:
+      - data-mining
+      - machine-learning
+      - security-and-privacy
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/986/

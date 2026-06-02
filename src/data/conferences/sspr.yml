@@ -1,0 +1,31 @@
+- title: SSPR
+  year: 2026
+  id: sspr26
+  full_name: Joint IAPR International Workshops on Statistical Techniques in Pattern Recognition and Structural and Syntactic Pattern Recognition
+  link: "https://ssspr2026.inf.unibe.ch/"
+  deadlines:
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2026-05-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-06-30 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Bern
+  country: Switzerland
+  venue: Haus der Universität Bern, Schlösslistrasse 5, 3008 Bern
+  format: in-person
+  date: August 24-26, 2026
+  start: 2026-08-24
+  end: 2026-08-26
+  tags:
+      - machine-learning
+      - computer-vision
+      - multimedia
+      - information-retrieval
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1766/

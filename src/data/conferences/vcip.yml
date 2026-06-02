@@ -1,0 +1,33 @@
+- title: VCIP
+  year: 2026
+  id: vcip26
+  full_name: IEEE International Conference on Visual Communications and Image Processing
+  link: "https://vcip-2026.org/"
+  deadlines:
+    - type: submission
+      label: Submission of Papers for Regular, Demo and Special Sessions
+      date: "2026-06-19 23:59:00"
+      timezone: UTC+8
+    - type: final_decision
+      label: Paper Acceptance Notification
+      date: "2026-08-28 07:59:00"
+      timezone: UTC+8
+  timezone: UTC+8
+  city: Singapore
+  country: Singapore
+  venue: TBD
+  format: in-person
+  date: December 13-16, 2026
+  start: 2026-12-13
+  end: 2026-12-16
+  tags:
+      - computer-vision
+      - signal-processing
+      - multimedia
+      - machine-learning
+      - security-and-privacy
+      - human-computer-interaction
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1757/

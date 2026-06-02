@@ -1,0 +1,32 @@
+- title: FOCS
+  year: 2026
+  id: focs26
+  full_name: 67th Annual Symposium on Foundations of Computer Science
+  link: "https://focs.computer.org/2026/"
+  deadlines:
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2026-04-01 17:00:00"
+      timezone: UTC-4
+    - type: final_decision
+      label: Paper Notification
+      date: "2026-07-03 07:59:00"
+      timezone: UTC-4
+  timezone: UTC-4
+  city: New York City
+  country: USA
+  venue: NYU Kimmel Center, 60 Washington Square South, New York, NY 10012
+  format: in-person
+  date: November 8-11, 2026
+  start: 2026-11-08
+  end: 2026-11-11
+  tags:
+      - machine-learning
+      - cryptography
+      - information-theory
+      - information-retrieval
+      - security-and-privacy
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/745/
