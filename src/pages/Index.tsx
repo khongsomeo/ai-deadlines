@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import BackToTop from "@/components/BackToTop";
 import ConferenceCard from "@/components/ConferenceCard";
 import conferencesData from "@/utils/conferenceLoader";
 import { Conference } from "@/types/conference";
@@ -500,6 +501,7 @@ const Index = () => {
           ))}
         </div>
       </main>
+      <BackToTop />
     </div>
   );
 };

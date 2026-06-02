@@ -227,7 +227,7 @@ END:VCALENDAR`;
             </div>
 
             <div className="flex items-start gap-2">
-              <Globe className="h-5 w-5 mt-0.5 text-muted-foreground" />
+              <Globe className="h-5 w-5 mt-0.5 text-muted-foreground flex-shrink-0" />
               <div>
                 <p className="font-medium text-foreground">Venue</p>
                 <p className="text-sm text-muted-foreground">
