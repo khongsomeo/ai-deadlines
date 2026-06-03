@@ -1,10 +1,11 @@
 import { useState } from "react";
-import conferencesData from "@/utils/conferenceLoader";
+import { useConferences } from "@/hooks/useConferences";
 import { Conference } from "@/types/conference";
 import { Calendar as CalendarIcon, Tag, X, Plus } from "lucide-react"; // Added X and Plus imports
 import { Calendar } from "@/components/ui/calendar";
 import { parseISO, format, isValid, isSameMonth, isSameYear, isSameDay, isSameWeek } from "date-fns";
 import Header from "@/components/Header";
+import LoadingScreen from "@/components/LoadingScreen";
 import {
   Dialog,
   DialogContent,
@@ -90,6 +91,8 @@ const CalendarPage = () => {
   );
   const [showDeadlines, setShowDeadlines] = useState(true);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  const { data: conferencesData, isLoading } = useConferences();
 
   const safeParseISO = (dateString: string | undefined | number): Date | null => {
     if (!dateString) return null;
@@ -579,6 +582,10 @@ const CalendarPage = () => {
     setCurrentMonth(month);
     setSelectedDate(month);
   };
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
       <div className="min-h-screen bg-background dark:bg-background">

@@ -1,24 +1,25 @@
 import Header from "@/components/Header";
 import BackToTop from "@/components/BackToTop";
-import ConferenceCard from "@/components/ConferenceCard";
-import conferencesData from "@/utils/conferenceLoader";
+import { useConferences } from "@/hooks/useConferences";
+import LoadingScreen from "@/components/LoadingScreen";
+import VirtualConferenceGrid from "@/components/VirtualConferenceGrid";
 import { Conference } from "@/types/conference";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, startTransition } from "react";
 import { Switch } from "@/components/ui/switch"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { X, Globe, ChartNoAxesColumn } from "lucide-react";
 import { getAllCountries } from "@/utils/countryExtractor";
-import { sortConferencesByDeadline } from "@/utils/conferenceUtils";
+
 import { getAllRanks } from "@/utils/rankExtractor";
 import { getAllFormats } from "@/utils/formatExtractor";
-import { hasUpcomingDeadlines } from "@/utils/deadlineUtils";
 import { useToast } from "@/components/ui/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { getApiBaseUrl } from "@/utils/apiClient";
 
 const Index = () => {
+  const { data: conferencesData, isLoading, metaCache } = useConferences();
   const { toast } = useToast();
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
   const [selectedCountries, setSelectedCountries] = useState<Set<string>>(new Set());
@@ -69,8 +70,9 @@ const Index = () => {
 
     const filtered = conferencesData
       .filter((conf: Conference) => {
-        // Filter by deadline (past/future) - use new deadline logic
-        if (!showPastConferences && !hasUpcomingDeadlines(conf)) return false;
+        // Use pre-computed cache lookup (O(1)) instead of re-running getAllDeadlines every render
+        const meta = metaCache.get(conf.id);
+        if (!showPastConferences && !meta?.hasUpcoming) return false;
 
         // Filter by tags
         const matchesTags = selectedTags.size === 0 ||
@@ -80,7 +82,8 @@ const Index = () => {
         const matchesCountry = selectedCountries.size === 0 ||
           (conf.country && selectedCountries.has(conf.country));
 
-        // Filter by search query
+        // Filter by search query — Index.tsx receives an already-debounced
+        // value from Header, so this memo only runs when typing pauses.
         const matchesSearch = searchQuery === "" ||
           conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
           (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()));
@@ -96,9 +99,17 @@ const Index = () => {
         return matchesTags && matchesCountry && matchesRank && matchesFormat && matchesSearch;
       });
 
-    // Use the proper sorting function that handles both deadline formats
-    return sortConferencesByDeadline(filtered);
-  }, [selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences]);
+    // Cache-aware sort: O(N log N) with O(1) date lookups — avoids re-parsing
+    // dates and re-running getAllDeadlines on every comparison.
+    return [...filtered].sort((a, b) => {
+      const aDate = metaCache.get(a.id)?.primaryDeadlineDate ?? null;
+      const bDate = metaCache.get(b.id)?.primaryDeadlineDate ?? null;
+      if (!aDate && !bDate) return 0;
+      if (!aDate) return 1;
+      if (!bDate) return -1;
+      return aDate.getTime() - bDate.getTime();
+    });
+  }, [conferencesData, metaCache, selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences]);
 
   // Add event listener for tag clicks
   useEffect(() => {
@@ -121,7 +132,9 @@ const Index = () => {
 
   // Update handleTagsChange to handle multiple tags
   const handleTagsChange = (newTags: Set<string>) => {
-    setSelectedTags(newTags);
+    startTransition(() => {
+      setSelectedTags(newTags);
+    });
     const searchParams = new URLSearchParams(window.location.search);
     if (newTags.size > 0) {
       searchParams.set('tags', Array.from(newTags).join(','));
@@ -132,7 +145,9 @@ const Index = () => {
   };
 
   const handleCountriesChange = (newCountries: Set<string>) => {
-    setSelectedCountries(newCountries);
+    startTransition(() => {
+      setSelectedCountries(newCountries);
+    });
     const searchParams = new URLSearchParams(window.location.search);
     if (newCountries.size > 0) {
       searchParams.set('countries', Array.from(newCountries).join(','));
@@ -143,7 +158,9 @@ const Index = () => {
   };
 
   const handleRanksChange = (newRanks: Set<string>) => {
-    setSelectedRanks(newRanks);
+    startTransition(() => {
+      setSelectedRanks(newRanks);
+    });
     const searchParams = new URLSearchParams(window.location.search);
     if (newRanks.size > 0) {
       searchParams.set('ranks', Array.from(newRanks).join(','));
@@ -154,7 +171,9 @@ const Index = () => {
   };
 
   const handleFormatsChange = (newFormats: Set<string>) => {
-    setSelectedFormats(newFormats);
+    startTransition(() => {
+      setSelectedFormats(newFormats);
+    });
     const searchParams = new URLSearchParams(window.location.search);
     if (newFormats.size > 0) {
       searchParams.set('formats', Array.from(newFormats).join(','));
@@ -204,13 +223,19 @@ const Index = () => {
     }
   }, []);
 
-  if (!Array.isArray(conferencesData)) {
-    return <div>Loading conferences...</div>;
+  if (isLoading) {
+    return <LoadingScreen />;
   }
+
+  const handleSearch = (query: string) => {
+    startTransition(() => {
+      setSearchQuery(query);
+    });
+  };
 
   return (
     <div className="min-h-screen bg-background dark:bg-background">
-      <Header onSearch={setSearchQuery} showEmptyMessage={false} />
+      <Header onSearch={handleSearch} showEmptyMessage={false} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Calendar subscription notification */}
         <Alert className="mt-4 bg-blue-50 dark:bg-blue-950 border-blue-200 dark:border-blue-800">
@@ -272,7 +297,11 @@ const Index = () => {
               <Switch
                 id="show-past"
                 checked={showPastConferences}
-                onCheckedChange={setShowPastConferences}
+                onCheckedChange={(checked) => {
+                  startTransition(() => {
+                    setShowPastConferences(checked);
+                  });
+                }}
               />
             </div>
 
@@ -495,11 +524,7 @@ const Index = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredConferences.map((conference: Conference) => (
-            <ConferenceCard key={conference.id} {...conference} />
-          ))}
-        </div>
+        <VirtualConferenceGrid conferences={filteredConferences} />
       </main>
       <BackToTop />
     </div>

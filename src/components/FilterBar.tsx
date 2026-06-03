@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import conferencesData from "@/utils/conferenceLoader";
+
 import { X, ChevronRight, Filter } from "lucide-react";
 import { getAllRanks } from "@/utils/rankExtractor";
 import { getAllFormats } from "@/utils/formatExtractor";
@@ -13,6 +13,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Conference } from "@/types/conference";
 
 interface FilterBarProps {
+  conferencesData: Conference[];
   selectedTags: Set<string>;
   selectedCountries: Set<string>;
   selectedRanks: Set<string>;
@@ -24,6 +25,7 @@ interface FilterBarProps {
 }
 
 const FilterBar = ({ 
+  conferencesData,
   selectedTags = new Set(), 
   selectedCountries = new Set(),
   selectedRanks = new Set(),
@@ -49,21 +51,21 @@ const FilterBar = ({
       ).join(" "),
       description: `${tag} Conferences`
     }));
-  }, []);
+  }, [conferencesData]);
 
   const ranks = useMemo(() => {
     if (Array.isArray(conferencesData)) {
       return getAllRanks(conferencesData);
     }
     return [];
-  }, []);
+  }, [conferencesData]);
 
   const formats = useMemo(() => {
     if (Array.isArray(conferencesData)) {
       return getAllFormats(conferencesData);
     }
     return [];
-  }, []);
+  }, [conferencesData]);
 
   const isTagSelected = (tagId: string) => {
     return selectedTags?.has(tagId) ?? false;

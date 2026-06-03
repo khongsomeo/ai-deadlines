@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { CalendarDays } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useState, useEffect } from "react";
+import { useDebounce } from "@/hooks/useDebounce";
 
 interface HeaderProps {
   onSearch: (query: string) => void;
@@ -14,6 +15,16 @@ interface HeaderProps {
 const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
   const { theme, toggleTheme } = useTheme();
   const [currentTime, setCurrentTime] = useState<string>("");
+
+  // Own the raw input value so keystrokes only re-render Header (lightweight),
+  // not Index.tsx (520 lines, 10+ hooks). The debounced copy is propagated to
+  // the parent via onSearch — Index.tsx only re-renders every 250ms at most.
+  const [inputValue, setInputValue] = useState("");
+  const debouncedInputValue = useDebounce(inputValue, 250);
+
+  useEffect(() => {
+    onSearch(debouncedInputValue);
+  }, [debouncedInputValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const updateTime = () => {
@@ -75,7 +86,8 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
                   type="search"
                   placeholder="Search conferences..."
                   className="pl-10 w-full"
-                  onChange={(e) => onSearch(e.target.value)}
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
                 />
               </div>
             </div>

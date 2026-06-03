@@ -1,16 +1,14 @@
-import { Conference } from '@/types/conference';
+/**
+ * @deprecated Use the `useConferences` hook from `@/hooks/useConferences` instead.
+ *
+ * This file previously used `import.meta.glob` with `{ eager: true }`, which parsed
+ * and merged all 114+ YAML files synchronously at module initialisation time — blocking
+ * the main thread before the first render.
+ *
+ * The hook replaces this with a non-eager, async load triggered on component mount,
+ * which fixes the startup bottleneck (Problem 1 in IMPROVEMENTS.md).
+ *
+ * This file is kept only for reference and will be removed in a future cleanup.
+ */
 
-// Dynamically import all YAML files from the conferences directory
-const conferenceModules = import.meta.glob('@/data/conferences/*.yml', { eager: true });
-
-// Extract and combine all conference data into a single array
-const allConferencesData: Conference[] = [];
-
-for (const path in conferenceModules) {
-  const module = conferenceModules[path] as { default: Conference[] };
-  if (module.default && Array.isArray(module.default)) {
-    allConferencesData.push(...module.default);
-  }
-}
-
-export default allConferencesData;
+export default [];

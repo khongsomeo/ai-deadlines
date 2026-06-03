@@ -2,6 +2,7 @@ import { useRef, useLayoutEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { isValid, isPast, format, differenceInMilliseconds } from "date-fns";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
+import { useSharedResizeObserver } from "@/hooks/useSharedResizeObserver";
 
 interface DeadlineStep {
   label: string;
@@ -35,13 +36,11 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     if (barRef.current) {
       setBarWidth(barRef.current.offsetWidth);
     }
-    // Update on window resize
-    const handleResize = () => {
-      if (barRef.current) setBarWidth(barRef.current.offsetWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useSharedResizeObserver(barRef, (entry) => {
+    setBarWidth(Math.round(entry.contentRect.width));
+  });
 
   if (validSteps.length === 0) return null;
 
