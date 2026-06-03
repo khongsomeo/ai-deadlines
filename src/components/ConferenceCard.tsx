@@ -2,38 +2,46 @@ import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock } from "
 import { Conference } from "@/types/conference";
 import { formatDistanceToNow, isValid, isPast } from "date-fns";
 import ConferenceDialog from "./ConferenceDialog";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import DeadlineProgress from './DeadlineProgress';
 import { getNextUpcomingDeadline, getPrimaryDeadline, getAllDeadlines, getCountdownColorClass, getDaysRemaining, formatDeadlineDate } from "@/utils/deadlineUtils";
 
-const ConferenceCard = ({
-  title,
-  full_name,
-  year,
-  date,
-  deadline,
-  timezone,
-  tags = [],
-  link,
-  note,
-  abstract_deadline,
-  rankings,
-  city,
-  country,
-  venue,
-  format,
-  ...conferenceProps
-}: Conference) => {
+const ConferenceCard = (props: Conference) => {
+  const {
+    title,
+    full_name,
+    year,
+    date,
+    deadline,
+    timezone,
+    tags = [],
+    link,
+    note,
+    abstract_deadline,
+    rankings,
+    city,
+    country,
+    venue,
+    format,
+  } = props;
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  // Get the next upcoming deadline or primary deadline for dialog
-  const conference = {
-    title, full_name, year, date, deadline, timezone, tags, link, note,
-    abstract_deadline, city, country, venue, rankings, ...conferenceProps
-  };
+  // Use props directly to avoid recreating the object on every render
+  const conference = props;
   const nextDeadline = getNextUpcomingDeadline(conference) || getPrimaryDeadline(conference);
   const deadlineDate = nextDeadline ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || timezone) : null;
+
+  // Memoize steps array for DeadlineProgress.
+  // Use stable primitive deps instead of [conference] (which is `props` — a
+  // new object reference on every parent render, making useMemo a no-op).
+  const deadlineSteps = useMemo(() => {
+    return getAllDeadlines(props).map(d => ({
+      label: d.label,
+      date: d.date,
+      timezone: d.timezone || props.timezone
+    }));
+  }, [props.id, props.deadline, props.abstract_deadline, props.deadlines, props.timezone]);
 
   // Add validation before using formatDistanceToNow
   const getTimeRemaining = () => {
@@ -106,7 +114,7 @@ const ConferenceCard = ({
           <h3 className={`text-lg font-semibold ${getRankBadgeStyles()}`}>
             {title} {year}
           </h3>
-          {link && (
+          {link ? (
             <a
               href={link}
               target="_blank"
@@ -116,7 +124,7 @@ const ConferenceCard = ({
             >
               <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
             </a>
-          )}
+          ) : null}
         </div>
 
         <div className="flex flex-col gap-2 mb-6">
@@ -124,13 +132,13 @@ const ConferenceCard = ({
             <CalendarDays className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">{date}</span>
           </div>
-          {location && (
+          {location ? (
             <div className="flex items-center text-muted-foreground">
               <Globe className="h-4 w-4 mr-2 flex-shrink-0" />
               <span className="text-sm truncate">{location} <span className={`font-semibold`}>({format})</span></span>
             </div>
-          )}
-          {rankings && (
+          ) : null}
+          {rankings ? (
             <div className="flex items-center text-muted-foreground">
               <ChartNoAxesColumn className="h-4 w-4 mr-2 flex-shrink-0" />
               <div className="flex items-center gap-2">
@@ -145,7 +153,7 @@ const ConferenceCard = ({
                 </a>
               </div>
             </div>
-          )}
+          ) : null}
           <div className="flex items-center text-muted-foreground">
             <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">
@@ -161,16 +169,10 @@ const ConferenceCard = ({
         </div>
 
         <div className="mt-4">
-          <DeadlineProgress
-            steps={getAllDeadlines(conference).map(deadline => ({
-              label: deadline.label,
-              date: deadline.date,
-              timezone: deadline.timezone || conference.timezone
-            }))}
-          />
+          <DeadlineProgress steps={deadlineSteps} />
         </div>
 
-        {Array.isArray(tags) && tags.length > 0 && (
+        {Array.isArray(tags) && tags.length > 0 ? (
           <div className="flex flex-wrap gap-2">
             {tags.map((tag) => (
               <button
@@ -183,27 +185,11 @@ const ConferenceCard = ({
               </button>
             ))}
           </div>
-        )}
+        ) : null}
       </div>
 
       <ConferenceDialog
-        conference={{
-          title,
-          full_name,
-          year,
-          date,
-          deadline,
-          timezone,
-          tags,
-          link,
-          note,
-          abstract_deadline,
-          rankings,
-          city,
-          country,
-          venue,
-          ...conferenceProps
-        }}
+        conference={conference}
         open={dialogOpen}
         onOpenChange={setDialogOpen}
       />

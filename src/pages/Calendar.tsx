@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useConferences } from "@/hooks/useConferences";
 import { Conference } from "@/types/conference";
 import { Calendar as CalendarIcon, Tag, X, Plus } from "lucide-react"; // Added X and Plus imports
@@ -126,13 +126,14 @@ const CalendarPage = () => {
   };
 
   const getEvents = (date: Date) => {
+    const query = searchQuery.toLowerCase();
     return conferencesData.filter((conf: Conference) => {
       // Map the conference tags to our new category system
       const mappedTags = conf.tags?.map(mapLegacyTag) || [];
 
-      const matchesSearch = searchQuery === "" ||
-        conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()));
+      const matchesSearch = query === "" ||
+        conf.title.toLowerCase().includes(query) ||
+        (conf.full_name && conf.full_name.toLowerCase().includes(query));
 
       // Use mapped tags for category matching
       const matchesCategory = mappedTags.some(tag => selectedCategories.has(tag));
@@ -165,47 +166,66 @@ const CalendarPage = () => {
     });
   };
 
-  const getDayEvents = (date: Date) => {
-    const deadlines = showDeadlines ? conferencesData.filter(conf => {
-      const deadlineDate = safeParseISO(conf.deadline);
+  const eventsMap = useMemo(() => {
+    const map = new Map<string, { deadlines: Conference[], conferences: Conference[] }>();
+    const query = searchQuery.toLowerCase();
+
+    conferencesData.forEach((conf: Conference) => {
+      const matchesSearch = query === "" || 
+        conf.title.toLowerCase().includes(query) || 
+        (conf.full_name && conf.full_name.toLowerCase().includes(query));
+        
+      if (!matchesSearch) return;
+
       const matchesCategory = selectedCategories.size === 0 ? true :
         (Array.isArray(conf.tags) && conf.tags.some(tag => selectedCategories.has(tag)));
-      return deadlineDate &&
-        isSameDay(deadlineDate, date) &&
-        deadlineDate.getFullYear() === currentYear &&
-        matchesCategory;
-    }) : [];
 
-    const conferences = selectedCategories.size > 0 ? conferencesData.filter(conf => {
-      const startDate = safeParseISO(conf.start);
-      const endDate = safeParseISO(conf.end);
-      const matchesCategory = Array.isArray(conf.tags) &&
-        conf.tags.some(tag => selectedCategories.has(tag));
-
-      if (!matchesCategory) return false;
-
-      if (startDate && endDate) {
-        return startDate.getFullYear() <= currentYear &&
-          endDate.getFullYear() >= currentYear &&
-          date >= startDate && date <= endDate;
-      } else if (startDate) {
-        return startDate.getFullYear() === currentYear && isSameDay(startDate, date);
+      if (showDeadlines) {
+        const deadlineDate = safeParseISO(conf.deadline);
+        if (deadlineDate && deadlineDate.getFullYear() === currentYear && matchesCategory) {
+          const dateStr = format(deadlineDate, 'yyyy-MM-dd');
+          if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
+          map.get(dateStr)!.deadlines.push(conf);
+        }
       }
-      return false;
-    }) : [];
 
-    return {
-      deadlines: deadlines.filter(conf =>
-        searchQuery === "" ||
-        conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()))
-      ),
-      conferences: conferences.filter(conf =>
-        searchQuery === "" ||
-        conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()))
-      )
-    };
+      if (selectedCategories.size > 0 && matchesCategory) {
+        const startDate = safeParseISO(conf.start);
+        const endDate = safeParseISO(conf.end);
+        
+        if (startDate && endDate) {
+          if (startDate.getFullYear() <= currentYear && endDate.getFullYear() >= currentYear) {
+            const endLimit = new Date(currentYear, 11, 31);
+            const actualEnd = endDate > endLimit ? endLimit : endDate;
+            
+            let current = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+            const end = new Date(actualEnd.getFullYear(), actualEnd.getMonth(), actualEnd.getDate());
+            
+            while (current <= end) {
+              if (current.getFullYear() === currentYear) {
+                const dateStr = format(current, 'yyyy-MM-dd');
+                if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
+                map.get(dateStr)!.conferences.push(conf);
+              }
+              current.setDate(current.getDate() + 1);
+            }
+          }
+        } else if (startDate) {
+          if (startDate.getFullYear() === currentYear) {
+            const dateStr = format(startDate, 'yyyy-MM-dd');
+            if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
+            map.get(dateStr)!.conferences.push(conf);
+          }
+        }
+      }
+    });
+
+    return map;
+  }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
+
+  const getDayEvents = (date: Date) => {
+    const dateStr = format(date, 'yyyy-MM-dd');
+    return eventsMap.get(dateStr) || { deadlines: [], conferences: [] };
   };
 
   const renderEventPreview = (events: { deadlines: Conference[], conferences: Conference[] }) => {
@@ -213,22 +233,22 @@ const CalendarPage = () => {
 
     return (
       <div className="p-2 max-w-[200px]">
-        {events.deadlines.length > 0 && (
+        {events.deadlines.length > 0 ? (
           <div className="mb-2">
             <p className="font-semibold text-red-500">Deadlines:</p>
             {events.deadlines.map(conf => (
               <div key={conf.id} className="text-sm">{conf.title}</div>
             ))}
           </div>
-        )}
-        {events.conferences.length > 0 && (
+        ) : null}
+        {events.conferences.length > 0 ? (
           <div>
             <p className="font-semibold text-purple-600">Conferences:</p>
             {events.conferences.map(conf => (
               <div key={conf.id} className="text-sm">{conf.title}</div>
             ))}
           </div>
-        )}
+        ) : null}
       </div>
     );
   };
@@ -305,12 +325,12 @@ const CalendarPage = () => {
               className={`h-[2px] ${style.style} ${style.color}`}
             />
           ))}
-          {hasDeadline && (
+          {hasDeadline ? (
             <div className="h-[2px] w-[calc(100%+1rem)] -left-2 relative bg-red-500" />
-          )}
+          ) : null}
         </div>
 
-        {hasEvents && (
+        {hasEvents ? (
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger className="absolute inset-0" />
@@ -319,7 +339,7 @@ const CalendarPage = () => {
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-        )}
+        ) : null}
       </div>
     );
   };
@@ -334,11 +354,11 @@ const CalendarPage = () => {
         <div className="flex justify-between items-start">
           <div>
             <h3 className="font-semibold text-lg text-neutral-900">{conf.title}</h3>
-            {conf.full_name && (
+            {conf.full_name ? (
               <p className="text-sm text-neutral-600 mb-2">{conf.full_name}</p>
-            )}
+            ) : null}
           </div>
-          {conf.link && (
+          {conf.link ? (
             <a
               href={conf.link}
               target="_blank"
@@ -352,25 +372,25 @@ const CalendarPage = () => {
                 <line x1="10" y1="14" x2="21" y2="3" />
               </svg>
             </a>
-          )}
+          ) : null}
         </div>
 
         <div className="space-y-2 mt-3">
-          {deadlineDate && (
+          {deadlineDate ? (
             <div className="flex items-start gap-2">
               <span className="font-medium text-sm text-foreground dark:text-foreground">Deadline:</span>
               <div className="text-sm text-foreground dark:text-foreground">
                 <div>{format(deadlineDate, 'MMMM d, yyyy')}</div>
-                {conf.timezone && (
+                {conf.timezone ? (
                   <div className="text-muted-foreground dark:text-muted-foreground text-xs">
                     Timezone: {conf.timezone}
                   </div>
-                )}
+                ) : null}
               </div>
             </div>
-          )}
+          ) : null}
 
-          {startDate && (
+          {startDate ? (
             <div className="flex items-start gap-2">
               <span className="font-medium text-sm text-foreground dark:text-foreground">Date:</span>
               <div className="text-sm text-foreground dark:text-foreground">
@@ -381,23 +401,23 @@ const CalendarPage = () => {
                 </div>
               </div>
             </div>
-          )}
+          ) : null}
 
-          {conf.place && (
+          {conf.place ? (
             <div className="flex items-start gap-2">
               <span className="font-medium text-sm text-foreground dark:text-foreground">Location:</span>
               <span className="text-sm text-foreground dark:text-foreground">{conf.place}</span>
             </div>
-          )}
+          ) : null}
 
-          {conf.note && (
+          {conf.note ? (
             <div className="flex items-start gap-2 mt-2">
               <span className="font-medium text-sm text-foreground dark:text-foreground">Note:</span>
               <div className="text-sm text-neutral-900"
                 dangerouslySetInnerHTML={{ __html: conf.note }}
               />
             </div>
-          )}
+          ) : null}
         </div>
 
         <div className="mt-3 flex flex-wrap gap-2">
@@ -415,11 +435,11 @@ const CalendarPage = () => {
     );
   };
 
-  const categories = orderedCategories
-    .filter(category =>
-      conferencesData.some(conf => conf.tags?.includes(category))
-    )
-    .map(category => [category, categoryColors[category]]);
+  const categories = orderedCategories.flatMap(category =>
+    conferencesData.some(conf => conf.tags?.includes(category))
+      ? [[category, categoryColors[category]]]
+      : []
+  );
 
   const renderLegend = () => {
     return (
@@ -486,7 +506,7 @@ const CalendarPage = () => {
           </TooltipProvider>
         ))}
 
-        {selectedCategories.size < Object.keys(categoryColors).length && (
+        {selectedCategories.size < Object.keys(categoryColors).length ? (
           <button
             onClick={() => {
               setSelectedCategories(new Set(orderedCategories));
@@ -499,9 +519,9 @@ const CalendarPage = () => {
             <Plus className="h-4 w-4" />
             Select All
           </button>
-        )}
+        ) : null}
 
-        {selectedCategories.size > 0 && (
+        {selectedCategories.size > 0 ? (
           <button
             onClick={() => {
               setSelectedCategories(new Set());
@@ -514,7 +534,7 @@ const CalendarPage = () => {
             <X className="h-4 w-4" />
             Deselect All
           </button>
-        )}
+        ) : null}
       </div>
     );
   };
@@ -543,7 +563,7 @@ const CalendarPage = () => {
           </button>
         </div>
 
-        {isYearView && (
+        {isYearView ? (
           <div className="flex items-center gap-4">
             <button
               onClick={() => {
@@ -573,7 +593,7 @@ const CalendarPage = () => {
               </svg>
             </button>
           </div>
-        )}
+        ) : null}
       </div>
     );
   };
@@ -583,6 +603,10 @@ const CalendarPage = () => {
     setSelectedDate(month);
   };
 
+  const currentEvents = useMemo(() => {
+    return getEvents(new Date());
+  }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
+
   if (isLoading) {
     return <LoadingScreen />;
   }
@@ -591,14 +615,14 @@ const CalendarPage = () => {
       <div className="min-h-screen bg-background dark:bg-background">
       <Header onSearch={setSearchQuery} />
 
-      {searchQuery && (
+      {searchQuery ? (
         <div className="p-6 bg-card dark:bg-card border-b border-border">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-lg font-semibold mb-4">
               Search Results for "{searchQuery}"
             </h2>
             <div className="space-y-4">
-              {getEvents(new Date()).map((conf: Conference) => (
+              {currentEvents.map((conf: Conference) => (
                 <div
                   key={conf.id || conf.title}
                   className="p-4 border rounded-lg hover:bg-neutral-50 cursor-pointer"
@@ -624,17 +648,17 @@ const CalendarPage = () => {
                   <div className="flex justify-between items-start">
                     <div>
                       <h3 className="font-semibold">{conf.title}</h3>
-                      {conf.full_name && (
+                      {conf.full_name ? (
                         <p className="text-sm text-neutral-600">{conf.full_name}</p>
-                      )}
+                      ) : null}
                     </div>
-                    {conf.deadline && conf.deadline !== 'TBD' && (
+                    {conf.deadline && conf.deadline !== 'TBD' ? (
                       <span className="text-sm text-red-500">
                         Deadline: {format(safeParseISO(conf.deadline)!, 'MMM d, yyyy')}
                       </span>
-                    )}
+                    ) : null}
                   </div>
-                  {Array.isArray(conf.tags) && conf.tags.length > 0 && (
+                  {Array.isArray(conf.tags) && conf.tags.length > 0 ? (
                     <div className="mt-2 flex flex-wrap gap-2">
                       {conf.tags.map(tag => (
                         <span
@@ -646,16 +670,16 @@ const CalendarPage = () => {
                         </span>
                       ))}
                     </div>
-                  )}
+                  ) : null}
                 </div>
               ))}
-              {getEvents(new Date()).length === 0 && (
+              {currentEvents.length === 0 ? (
                 <p className="text-neutral-600">No conferences found matching your search.</p>
-              )}
+              ) : null}
             </div>
           </div>
         </div>
-      )}
+      ) : null}
 
       <div className="p-6">
         <div className="max-w-7xl mx-auto">
@@ -734,7 +758,7 @@ const CalendarPage = () => {
             </div>
           </DialogHeader>
           <div className="space-y-4">
-            {selectedDayEvents.events.deadlines.length > 0 && (
+            {selectedDayEvents.events.deadlines.length > 0 ? (
               <div>
                 <h3 className="text-lg font-semibold text-red-500 mb-3">Submission Deadlines</h3>
                 <div className="space-y-4">
@@ -745,8 +769,8 @@ const CalendarPage = () => {
                   ))}
                 </div>
               </div>
-            )}
-            {selectedDayEvents.events.conferences.length > 0 && (
+            ) : null}
+            {selectedDayEvents.events.conferences.length > 0 ? (
               <div>
                 <h3 className="text-lg font-semibold text-purple-600 mb-3">Conferences</h3>
                 <div className="space-y-4">
@@ -757,7 +781,7 @@ const CalendarPage = () => {
                   ))}
                 </div>
               </div>
-            )}
+            ) : null}
           </div>
         </DialogContent>
       </Dialog>

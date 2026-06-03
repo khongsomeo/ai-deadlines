@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { Conference, Deadline } from '@/types/conference';
 import { getAllDeadlines, getNextUpcomingDeadline, getPrimaryDeadline } from '@/utils/deadlineUtils';
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
@@ -74,14 +74,9 @@ function buildMetaCache(conferences: Conference[]): Map<string, ConferenceMeta> 
  *  - Problem 2: Expensive useMemo Re-computation on Every Filter Change
  */
 export function useConferences(): UseConferencesResult {
-  const [data, setData] = useState<Conference[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [metaCache, setMetaCache] = useState<Map<string, ConferenceMeta>>(new Map());
-
-  useEffect(() => {
-    let cancelled = false;
-
-    const load = async () => {
+  const { data, isLoading } = useQuery({
+    queryKey: ['conferences'],
+    queryFn: async () => {
       const all: Conference[] = [];
 
       await Promise.all(
@@ -93,22 +88,16 @@ export function useConferences(): UseConferencesResult {
         })
       );
 
-      if (!cancelled) {
-        // Build the metadata cache in the same tick as the data load —
-        // React 18 batches these three state updates into one re-render.
-        const cache = buildMetaCache(all);
-        setData(all);
-        setMetaCache(cache);
-        setIsLoading(false);
-      }
-    };
+      const cache = buildMetaCache(all);
+      return { data: all, metaCache: cache };
+    },
+    staleTime: Infinity,
+    gcTime: Infinity,
+  });
 
-    load();
-
-    return () => {
-      cancelled = true;
-    };
-  }, []); // Run once on mount
-
-  return { data, isLoading, metaCache };
+  return {
+    data: data?.data || [],
+    isLoading,
+    metaCache: data?.metaCache || new Map(),
+  };
 }

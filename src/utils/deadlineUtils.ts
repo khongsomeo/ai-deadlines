@@ -81,16 +81,18 @@ export function getAllDeadlines(conference: Conference): Deadline[] {
     });
   }
   
-  // Sort deadlines by date
-  deadlines.sort((a, b) => {
-    const aDate = getDeadlineInLocalTime(a.date, a.timezone || conference.timezone);
-    const bDate = getDeadlineInLocalTime(b.date, b.timezone || conference.timezone);
-    
-    if (!aDate || !bDate) return 0;
-    return aDate.getTime() - bDate.getTime();
+  // Sort deadlines by date (using Schwartzian transform to avoid re-calculating dates)
+  const mapped = deadlines.map(d => ({
+    d,
+    time: getDeadlineInLocalTime(d.date, d.timezone || conference.timezone)?.getTime()
+  }));
+
+  mapped.sort((a, b) => {
+    if (!a.time || !b.time) return 0;
+    return a.time - b.time;
   });
-  
-  return deadlines;
+
+  return mapped.map(m => m.d);
 }
 
 /**
@@ -114,15 +116,17 @@ export function getNextUpcomingDeadline(conference: Conference): Deadline | null
   }
   
   // Sort by date and return the earliest
-  upcomingDeadlines.sort((a, b) => {
-    const aDate = getDeadlineInLocalTime(a.date, a.timezone || conference.timezone);
-    const bDate = getDeadlineInLocalTime(b.date, b.timezone || conference.timezone);
-    
-    if (!aDate || !bDate) return 0;
-    return aDate.getTime() - bDate.getTime();
+  const mapped = upcomingDeadlines.map(d => ({
+    d,
+    time: getDeadlineInLocalTime(d.date, d.timezone || conference.timezone)?.getTime()
+  }));
+
+  mapped.sort((a, b) => {
+    if (!a.time || !b.time) return 0;
+    return a.time - b.time;
   });
-  
-  return upcomingDeadlines[0];
+
+  return mapped[0].d;
 }
 
 /**
@@ -152,15 +156,17 @@ export function getPrimaryDeadline(conference: Conference): Deadline | null {
     return null;
   }
   
-  validDeadlines.sort((a, b) => {
-    const aDate = getDeadlineInLocalTime(a.date, a.timezone || conference.timezone);
-    const bDate = getDeadlineInLocalTime(b.date, b.timezone || conference.timezone);
-    
-    if (!aDate || !bDate) return 0;
-    return bDate.getTime() - aDate.getTime(); // Most recent first
+  const mapped = validDeadlines.map(d => ({
+    d,
+    time: getDeadlineInLocalTime(d.date, d.timezone || conference.timezone)?.getTime()
+  }));
+
+  mapped.sort((a, b) => {
+    if (!a.time || !b.time) return 0;
+    return b.time - a.time; // Most recent first
   });
-  
-  return validDeadlines[0];
+
+  return mapped[0].d;
 }
 
 /**
@@ -183,15 +189,17 @@ export function getUpcomingDeadlines(conference: Conference): Deadline[] {
   });
   
   // Sort by date
-  upcomingDeadlines.sort((a, b) => {
-    const aDate = getDeadlineInLocalTime(a.date, a.timezone || conference.timezone);
-    const bDate = getDeadlineInLocalTime(b.date, b.timezone || conference.timezone);
-    
-    if (!aDate || !bDate) return 0;
-    return aDate.getTime() - bDate.getTime();
+  const mapped = upcomingDeadlines.map(d => ({
+    d,
+    time: getDeadlineInLocalTime(d.date, d.timezone || conference.timezone)?.getTime()
+  }));
+
+  mapped.sort((a, b) => {
+    if (!a.time || !b.time) return 0;
+    return a.time - b.time;
   });
-  
-  return upcomingDeadlines;
+
+  return mapped.map(m => m.d);
 }
 
 /**

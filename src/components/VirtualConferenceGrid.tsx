@@ -23,7 +23,7 @@ function useColumnCount(): number {
 
   useEffect(() => {
     const onResize = () => setCount(getCount());
-    window.addEventListener("resize", onResize);
+    window.addEventListener("resize", onResize, { passive: true });
     return () => window.removeEventListener("resize", onResize);
   }, []);
 

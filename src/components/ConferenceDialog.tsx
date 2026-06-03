@@ -191,11 +191,11 @@ END:VCALENDAR`;
     return (
       <div className="text-sm text-muted-foreground dark:text-muted-foreground">
         <div>{format(deadlineDate, "MMMM d, yyyy 'at' HH:mm:ss")} ({localTZ})</div>
-        {conference.timezone && conference.timezone !== localTZ && (
+        {conference.timezone && conference.timezone !== localTZ ? (
           <div className="text-xs">
             Conference timezone: {conference.timezone}
           </div>
-        )}
+        ) : null}
       </div>
     );
   };
@@ -254,13 +254,13 @@ END:VCALENDAR`;
                           <div className="flex items-center justify-between gap-2">
                             <p className={`flex-1 ${isNext ? 'font-medium text-blue-800 dark:text-white' : 'text-foreground'}`}>
                               {deadline.label}: {formatDeadlineDate(deadline.date, deadline.timezone || conference.timezone)}
-                              {isNext && <span className="ml-2 text-xs">(Next)</span>}
+                              {isNext ? <span className="ml-2 text-xs">(Next)</span> : null}
                             </p>
-                            {daysRemaining !== null && daysRemaining > 0 && (
+                            {daysRemaining !== null && daysRemaining > 0 ? (
                               <span className={`text-xs font-medium whitespace-nowrap ${daysColorClass}`}>
                                 {formatDistanceToNow(getDeadlineInLocalTime(deadline.date, deadline.timezone), { addSuffix: true })}
                               </span>
-                            )}
+                            ) : null}
                           </div>
                         </div>
                       );
@@ -285,7 +285,7 @@ END:VCALENDAR`;
             </div>
           </div>
 
-          {Array.isArray(conference.tags) && conference.tags.length > 0 && (
+          {Array.isArray(conference.tags) && conference.tags.length > 0 ? (
             <div className="flex flex-wrap gap-2">
               {conference.tags.map((tag) => (
                 <span key={tag} className="tag">
@@ -294,9 +294,9 @@ END:VCALENDAR`;
                 </span>
               ))}
             </div>
-          )}
+          ) : null}
 
-          {conference.note && (
+          {conference.note ? (
             <div
               className="text-sm text-muted-foreground mt-2 p-3 bg-gray-200 dark:bg-muted rounded-lg"
               dangerouslySetInnerHTML={{
@@ -306,10 +306,10 @@ END:VCALENDAR`;
                 )
               }}
             />
-          )}
+          ) : null}
 
           <div className="flex items-center justify-between pt-2">
-            {conference.link && (
+            {conference.link ? (
               <Button
                 variant="ghost"
                 size="sm"
@@ -324,7 +324,7 @@ END:VCALENDAR`;
                   Visit website
                 </a>
               </Button>
-            )}
+            ) : null}
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

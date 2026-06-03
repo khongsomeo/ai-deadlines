@@ -12,19 +12,8 @@ interface HeaderProps {
   showEmptyMessage?: boolean;
 }
 
-const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
-  const { theme, toggleTheme } = useTheme();
+const Clock = () => {
   const [currentTime, setCurrentTime] = useState<string>("");
-
-  // Own the raw input value so keystrokes only re-render Header (lightweight),
-  // not Index.tsx (520 lines, 10+ hooks). The debounced copy is propagated to
-  // the parent via onSearch — Index.tsx only re-renders every 250ms at most.
-  const [inputValue, setInputValue] = useState("");
-  const debouncedInputValue = useDebounce(inputValue, 250);
-
-  useEffect(() => {
-    onSearch(debouncedInputValue);
-  }, [debouncedInputValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const updateTime = () => {
@@ -49,6 +38,22 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
 
     return () => clearInterval(interval);
   }, []);
+
+  return <>{currentTime}</>;
+};
+
+const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
+  const { theme, toggleTheme } = useTheme();
+  
+  // Own the raw input value so keystrokes only re-render Header (lightweight),
+  // not Index.tsx (520 lines, 10+ hooks). The debounced copy is propagated to
+  // the parent via onSearch — Index.tsx only re-renders every 250ms at most.
+  const [inputValue, setInputValue] = useState("");
+  const debouncedInputValue = useDebounce(inputValue, 250);
+
+  useEffect(() => {
+    onSearch(debouncedInputValue);
+  }, [debouncedInputValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <header className="bg-card border-b border-border">
@@ -107,13 +112,13 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
             </Button>
           </div>
         </div>
-        {showEmptyMessage && (
+        {showEmptyMessage ? (
           <div className="max-w-4xl mx-auto mt-2 mb-0 text-center">
             <p className="text-sm bg-amber-50 dark:bg-amber-950 text-amber-800 dark:text-amber-200 py-2 px-4 rounded-md inline-block">
               There are no upcoming conferences for the selected categories - enable "Show past conferences" to see previous ones
             </p>
           </div>
-        )}
+        ) : null}
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-muted-foreground py-4">
             A dỏm, yếu kém, phản cảm countdowns to <span className="line-through">top</span> CV/NLP/ML/Robotics/AI conference deadlines.
@@ -121,7 +126,7 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
 Due to my incompetent in science, these conferences are mostly CORE-B/non-ranked.
           </p>
           <p className="text-base md:text-lg font-semibold bg-blue-50 dark:bg-blue-950 text-blue-900 dark:text-blue-100 py-3 px-4 rounded-md inline-block mb-4">
-            Current time: {currentTime}
+            Current time: <Clock />
           </p>
           <p className="text-sm text-muted-foreground py-4">
             <b>Important:</b> Please give the original <a className="text-primary hover:underline" href="https://huggingface.co/spaces/huggingface/ai-deadlines">space</a> a <b>like</b> and <a className="text-primary hover:underline" href="https://github.com/huggingface/ai-deadlines">repository</a> a <b>star</b> for their awesome work!

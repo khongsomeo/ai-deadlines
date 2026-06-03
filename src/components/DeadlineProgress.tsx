@@ -17,17 +17,13 @@ interface DeadlineProgressProps {
 const DAYS_BEFORE_START = 30; // Number of days to extend the timeline before the first deadline
 
 const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
-  // Filter out TBD steps
-  const validSteps = steps.filter(step => {
-    const date = step.date !== 'TBD' ? getDeadlineInLocalTime(step.date, step.timezone) : null;
-    return date && isValid(date);
-  }).sort((a, b) => {
-    // Sort steps by date to ensure proper progression
-    const dateA = getDeadlineInLocalTime(a.date, a.timezone);
-    const dateB = getDeadlineInLocalTime(b.date, b.timezone);
-    if (!dateA || !dateB) return 0;
-    return dateA.getTime() - dateB.getTime();
-  });
+  // Parse dates once and filter out TBD/invalid steps
+  const validSteps = steps.flatMap(step => {
+    if (step.date === 'TBD') return [];
+    const parsedDate = getDeadlineInLocalTime(step.date, step.timezone);
+    if (!parsedDate || !isValid(parsedDate)) return [];
+    return [{ ...step, parsedDate }];
+  }).sort((a, b) => a.parsedDate.getTime() - b.parsedDate.getTime());
 
   const barRef = useRef<HTMLDivElement>(null);
   const [barWidth, setBarWidth] = useState(0);
@@ -46,10 +42,10 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
 
   const now = new Date();
   const singleDeadline = validSteps.length === 1;
-  const firstStepDate = getDeadlineInLocalTime(validSteps[0].date, validSteps[0].timezone);
+  const firstStepDate = validSteps[0].parsedDate;
   const lastStepDate = singleDeadline 
     ? firstStepDate // Use same date for lastStepDate in single deadline case
-    : getDeadlineInLocalTime(validSteps[validSteps.length - 1].date, validSteps[validSteps.length - 1].timezone);
+    : validSteps[validSteps.length - 1].parsedDate;
 
   if (!firstStepDate || !lastStepDate || !isValid(firstStepDate) || !isValid(lastStepDate)) {
     return null;
@@ -64,7 +60,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
 
   // First, calculate base positions using time ratios
   const baseStepPositions = barWidth > 0 ? validSteps.map(step => {
-    const stepDate = getDeadlineInLocalTime(step.date, step.timezone);
+    const stepDate = step.parsedDate;
     if (!stepDate || !isValid(stepDate)) return 0;
 
     if (singleDeadline) {
@@ -144,7 +140,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
           />
           
           {/* Extended start marker */}
-          {extendedStartDate && (
+          {extendedStartDate ? (
             <div
               className="absolute"
               style={{
@@ -167,11 +163,11 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                 Start
               </span>
             </div>
-          )}
+          ) : null}
 
           {/* Step markers */}
           {validSteps.map((step, idx) => {
-            const stepDate = getDeadlineInLocalTime(step.date, step.timezone);
+            const stepDate = step.parsedDate;
             const status = stepDate && isPast(stepDate) ? 'past' : 'upcoming';
             const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
             const leftPx = stepPositions[idx];
@@ -225,7 +221,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
           })}
 
           {/* Today marker */}
-          {progressPx > 0 && progressPx < barWidth && (
+          {progressPx > 0 && progressPx < barWidth ? (
             <div
               className="absolute"
               style={{
@@ -237,7 +233,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
             >
               <div className="w-3 h-3 bg-card dark:bg-card rounded-full border-2 border-primary dark:border-iris shadow-sm" />
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     </div>

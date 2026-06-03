@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Conference } from "@/types/conference";
 import { parseISO, format, parse, startOfMonth } from "date-fns";
@@ -18,55 +18,57 @@ const ConferenceCalendar = ({ conferences }: ConferenceCalendarProps) => {
   };
 
   // Convert conference dates to calendar events
-  const conferenceEvents = conferences.map(conf => {
-    let startDate: Date | null = null;
-    let endDate: Date | null = null;
-    
-    try {
-      // Parse both start and end dates
-      if (conf.start && conf.end) {
-        startDate = parseISO(conf.start);
-        endDate = parseISO(conf.end);
-      } 
-      // If no start/end fields, try to parse from date field
-      else if (conf.date) {
-        const [startStr, endStr] = conf.date.split(/[-–]/).map(d => d.trim());
-        
-        try {
-          // Try parsing start date
-          startDate = parse(startStr, 'MMM d, yyyy', new Date()) ||
-                     parse(startStr, 'MMMM d, yyyy', new Date()) ||
-                     parseISO(startStr);
+  const conferenceEvents = useMemo(() => {
+    return conferences.map(conf => {
+      let startDate: Date | null = null;
+      let endDate: Date | null = null;
+      
+      try {
+        // Parse both start and end dates
+        if (conf.start && conf.end) {
+          startDate = parseISO(conf.start);
+          endDate = parseISO(conf.end);
+        } 
+        // If no start/end fields, try to parse from date field
+        else if (conf.date) {
+          const [startStr, endStr] = conf.date.split(/[-–]/).map(d => d.trim());
           
-          // Try parsing end date if it exists
-          if (endStr) {
-            endDate = parse(endStr, 'MMM d, yyyy', new Date()) ||
-                     parse(endStr, 'MMMM d, yyyy', new Date()) ||
-                     parseISO(endStr);
-          } else {
-            // If no end date, use start date
-            endDate = startDate;
+          try {
+            // Try parsing start date
+            startDate = parse(startStr, 'MMM d, yyyy', new Date()) ||
+                       parse(startStr, 'MMMM d, yyyy', new Date()) ||
+                       parseISO(startStr);
+            
+            // Try parsing end date if it exists
+            if (endStr) {
+              endDate = parse(endStr, 'MMM d, yyyy', new Date()) ||
+                       parse(endStr, 'MMMM d, yyyy', new Date()) ||
+                       parseISO(endStr);
+            } else {
+              // If no end date, use start date
+              endDate = startDate;
+            }
+          } catch (error) {
+            console.warn(`Failed to parse date range for conference ${conf.title}:`, error);
           }
-        } catch (error) {
-          console.warn(`Failed to parse date range for conference ${conf.title}:`, error);
         }
-      }
 
-      // Only return event if we successfully parsed both dates
-      if (startDate && endDate && isValidDate(startDate) && isValidDate(endDate)) {
-        return {
-          startDate,
-          endDate,
-          title: conf.title,
-          conference: conf
-        };
+        // Only return event if we successfully parsed both dates
+        if (startDate && endDate && isValidDate(startDate) && isValidDate(endDate)) {
+          return {
+            startDate,
+            endDate,
+            title: conf.title,
+            conference: conf
+          };
+        }
+        return null;
+      } catch (error) {
+        console.warn(`Failed to parse dates for conference ${conf.title}:`, error);
+        return null;
       }
-      return null;
-    } catch (error) {
-      console.warn(`Failed to parse dates for conference ${conf.title}:`, error);
-      return null;
-    }
-  }).filter(event => event !== null);
+    }).filter(event => event !== null);
+  }, [conferences]);
 
   // Helper function to check if date is valid
   function isValidDate(date: Date) {
@@ -116,7 +118,7 @@ const ConferenceCalendar = ({ conferences }: ConferenceCalendarProps) => {
       ) : (
         <p className="text-sm text-muted-foreground">No events this month</p>
       )}
-      {selectedDate && (
+      {selectedDate ? (
         <div className="mt-4">
           <h3 className="font-medium">
             Events on {format(selectedDate, 'MMMM d, yyyy')}:
@@ -137,7 +139,7 @@ const ConferenceCalendar = ({ conferences }: ConferenceCalendarProps) => {
             <p className="text-sm text-muted-foreground">No events on this date</p>
           )}
         </div>
-      )}
+      ) : null}
     </div>
   );
 

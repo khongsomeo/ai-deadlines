@@ -4,7 +4,7 @@ import { useConferences } from "@/hooks/useConferences";
 import LoadingScreen from "@/components/LoadingScreen";
 import VirtualConferenceGrid from "@/components/VirtualConferenceGrid";
 import { Conference } from "@/types/conference";
-import { useState, useMemo, useEffect, startTransition } from "react";
+import { useState, useMemo, useEffect, startTransition, useRef } from "react";
 import { Switch } from "@/components/ui/switch"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
@@ -21,12 +21,28 @@ import { getApiBaseUrl } from "@/utils/apiClient";
 const Index = () => {
   const { data: conferencesData, isLoading, metaCache } = useConferences();
   const { toast } = useToast();
-  const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
-  const [selectedCountries, setSelectedCountries] = useState<Set<string>>(new Set());
+  const [selectedTags, setSelectedTags] = useState<Set<string>>(() => {
+    if (typeof window === 'undefined') return new Set();
+    const param = new URLSearchParams(window.location.search).get('tags');
+    return param ? new Set(param.split(',')) : new Set();
+  });
+  const [selectedCountries, setSelectedCountries] = useState<Set<string>>(() => {
+    if (typeof window === 'undefined') return new Set();
+    const param = new URLSearchParams(window.location.search).get('countries');
+    return param ? new Set(param.split(',')) : new Set();
+  });
   const [searchQuery, setSearchQuery] = useState("");
   const [showPastConferences, setShowPastConferences] = useState(false);
-  const [selectedRanks, setSelectedRanks] = useState<Set<string>>(new Set());
-  const [selectedFormats, setSelectedFormats] = useState<Set<string>>(new Set());
+  const [selectedRanks, setSelectedRanks] = useState<Set<string>>(() => {
+    if (typeof window === 'undefined') return new Set();
+    const param = new URLSearchParams(window.location.search).get('ranks');
+    return param ? new Set(param.split(',')) : new Set();
+  });
+  const [selectedFormats, setSelectedFormats] = useState<Set<string>>(() => {
+    if (typeof window === 'undefined') return new Set();
+    const param = new URLSearchParams(window.location.search).get('formats');
+    return param ? new Set(param.split(',')) : new Set();
+  });
 
   // Construct the calendar API URL
   const calendarUrl = `${getApiBaseUrl()}/api/calendar/all.ics`;
@@ -68,6 +84,8 @@ const Index = () => {
       return [];
     }
 
+    const queryLower = searchQuery.toLowerCase();
+
     const filtered = conferencesData
       .filter((conf: Conference) => {
         // Use pre-computed cache lookup (O(1)) instead of re-running getAllDeadlines every render
@@ -84,9 +102,9 @@ const Index = () => {
 
         // Filter by search query — Index.tsx receives an already-debounced
         // value from Header, so this memo only runs when typing pauses.
-        const matchesSearch = searchQuery === "" ||
-          conf.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          (conf.full_name && conf.full_name.toLowerCase().includes(searchQuery.toLowerCase()));
+        const matchesSearch = queryLower === "" ||
+          conf.title.toLowerCase().includes(queryLower) ||
+          (conf.full_name && conf.full_name.toLowerCase().includes(queryLower));
 
         // Add rank filter
         const matchesRank = selectedRanks.size === 0 ||
@@ -111,14 +129,21 @@ const Index = () => {
     });
   }, [conferencesData, metaCache, selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences]);
 
-  // Add event listener for tag clicks
+  // Use a stable ref for the callback to prevent re-attaching the event listener
+  const handleFilterByTagRef = useRef((tag: string) => {});
+
   useEffect(() => {
-    const handleFilterByTag = (event: CustomEvent<{ tag: string }>) => {
-      const tag = event.detail.tag;
-      // Create new set with existing tags and add the new one
+    handleFilterByTagRef.current = (tag: string) => {
       const newTags = new Set(selectedTags);
       newTags.add(tag);
       handleTagsChange(newTags);
+    };
+  }, [selectedTags]); // handleTagsChange is stable (defined in component body, but we'll use it safely)
+
+  // Add event listener for tag clicks
+  useEffect(() => {
+    const handleFilterByTag = (event: CustomEvent<{ tag: string }>) => {
+      handleFilterByTagRef.current(event.detail.tag);
     };
 
     // Add event listener
@@ -128,7 +153,7 @@ const Index = () => {
     return () => {
       window.removeEventListener('filterByTag', handleFilterByTag as EventListener);
     };
-  }, [selectedTags]); // Add selectedTags to dependency array
+  }, []); // Empty dependency array ensures listener is only bound once
 
   // Update handleTagsChange to handle multiple tags
   const handleTagsChange = (newTags: Set<string>) => {
@@ -194,34 +219,10 @@ const Index = () => {
     handleTagsChange(newTags);
   };
 
-  // Load filters from URL on initial render
-  useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const tagsParam = searchParams.get('tags');
-    const countriesParam = searchParams.get('countries');
-    const ranksParam = searchParams.get('ranks');
-    const formatsParam = searchParams.get('formats');
 
-    if (tagsParam) {
-      const tags = tagsParam.split(',');
-      setSelectedTags(new Set(tags));
-    }
-
-    if (countriesParam) {
-      const countries = countriesParam.split(',');
-      setSelectedCountries(new Set(countries));
-    }
-
-    if (ranksParam) {
-      const ranks = ranksParam.split(',');
-      setSelectedRanks(new Set(ranks));
-    }
-
-    if (formatsParam) {
-      const formats = formatsParam.split(',');
-      setSelectedFormats(new Set(formats));
-    }
-  }, []);
+  const countries = useMemo(() => getAllCountries(conferencesData as Conference[]), [conferencesData]);
+  const formats = useMemo(() => getAllFormats(conferencesData as Conference[]), [conferencesData]);
+  const ranks = useMemo(() => getAllRanks(conferencesData as Conference[]), [conferencesData]);
 
   if (isLoading) {
     return <LoadingScreen />;
@@ -323,7 +324,7 @@ const Index = () => {
                         className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
-                        {getAllCountries(conferencesData as Conference[]).map(country => (
+                        {countries.map(country => (
                           <div key={country} className="flex items-center space-x-2 hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`country-${country}`}
@@ -387,7 +388,7 @@ const Index = () => {
                         className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
-                        {getAllFormats(conferencesData as Conference[]).map(format => (
+                        {formats.map(format => (
                           <div key={format} className="flex items-center space-x-2 hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`format-${format}`}
@@ -450,7 +451,7 @@ const Index = () => {
                         className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
-                        {getAllRanks(conferencesData as Conference[]).map(rank => (
+                        {ranks.map(rank => (
                           <div key={rank} className="flex items-center space-x-2 hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`rank-${rank}`}
@@ -496,7 +497,7 @@ const Index = () => {
               ))}
 
               {/* Clear all filters button */}
-              {(selectedTags.size > 0 || selectedCountries.size > 0 || selectedRanks.size > 0 || selectedFormats.size > 0) && (
+              {(selectedTags.size > 0 || selectedCountries.size > 0 || selectedRanks.size > 0 || selectedFormats.size > 0) ? (
                 <Button
                   variant="ghost"
                   size="sm"
@@ -510,19 +511,19 @@ const Index = () => {
                 >
                   Clear all filters
                 </Button>
-              )}
+              ) : null}
             </div>
           </div>
         </div>
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {filteredConferences.length === 0 && (
+        {filteredConferences.length === 0 ? (
           <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 rounded-md p-4 mb-6">
             <p className="text-center">
               There are no upcoming conferences for the selected categories - enable "Show past conferences" to see previous ones
             </p>
           </div>
-        )}
+        ) : null}
 
         <VirtualConferenceGrid conferences={filteredConferences} />
       </main>
