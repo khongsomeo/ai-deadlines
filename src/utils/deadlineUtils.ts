@@ -2,6 +2,8 @@ import { Conference, Deadline } from "@/types/conference";
 import { getDeadlineInLocalTime } from './dateUtils';
 import { isValid, isPast, format } from "date-fns";
 
+const LOCAL_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
 /**
  * Get all deadlines for a conference, including both new format and legacy format
  */
@@ -243,7 +245,6 @@ export function formatDeadlineDate(dateString: string | undefined, timezone?: st
   const localDate = getLocalDeadline(dateString, timezone);
   if (!localDate || !isValid(localDate)) return dateString;
 
-  const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  if (printTimezone) return `${format(localDate, "MMMM d, yyyy")} (${localTZ})`;
+  if (printTimezone) return `${format(localDate, "MMMM d, yyyy")} (${LOCAL_TZ})`;
   return `${format(localDate, "MMMM d, yyyy")}`
 }

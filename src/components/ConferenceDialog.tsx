@@ -17,10 +17,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuLabel,
 } from "@/components/ui/dropdown-menu";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { getDeadlineInLocalTime, getDeadlineInUTC } from '@/utils/dateUtils';
 import { getNextUpcomingDeadline, getUpcomingDeadlines, getDaysRemaining, getCountdownColorClass, formatDeadlineDate } from "@/utils/deadlineUtils";
 import { getCalendarSubscriptionLink } from "@/utils/calendarUtils";
+
+// 9.3 — Hoisted to module level: the user's timezone never changes during a session.
+const LOCAL_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 interface ConferenceDialogProps {
   conference: Conference;
@@ -28,37 +31,11 @@ interface ConferenceDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
-const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogProps) => {
-  // console.log('Conference object:', conference);
-
-  // Get upcoming deadlines and the next upcoming one.
-  const upcomingDeadlines = getUpcomingDeadlines(conference);
-  const nextDeadline = getNextUpcomingDeadline(conference);
-  const deadlineDate = nextDeadline ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || conference.timezone) : null;
-
-  const [countdown, setCountdown] = useState<string>('');
-
-  // Replace the current location string creation with this more verbose version
-  const getLocationString = () => {
-    // console.log('Venue:', conference.venue);
-    // console.log('City:', conference.city);
-    // console.log('Country:', conference.country);
-
-    if (conference.venue) {
-      return conference.venue;
-    }
-
-    const cityCountryArray = [conference.city, conference.country].filter(Boolean);
-    // console.log('City/Country array after filter:', cityCountryArray);
-
-    const cityCountryString = cityCountryArray.join(", ");
-    // console.log('Final location string:', cityCountryString);
-
-    return cityCountryString || "Location TBD"; // Fallback if everything is empty
-  };
-
-  // Use the function result
-  const location = getLocationString();
+// 9.5 — Extracted into its own micro-component so the 1-second setInterval
+// only re-renders this tiny text node, not the entire ConferenceDialog tree
+// (all deadline rows, dropdown menus, tags, etc.).
+const Countdown = ({ deadlineDate }: { deadlineDate: Date | null }) => {
+  const [countdown, setCountdown] = useState('');
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -66,27 +43,43 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
         setCountdown('TBD');
         return;
       }
-
       const now = new Date();
       const difference = deadlineDate.getTime() - now.getTime();
-
       if (difference <= 0) {
         setCountdown('Deadline passed');
         return;
       }
-
       const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
       setCountdown(`${days}d ${hours}h ${minutes}m ${seconds}s`);
     };
-
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(timer);
   }, [deadlineDate]);
+
+  return <>{countdown}</>;
+};
+
+const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogProps) => {
+  // 9.2 — Memoize the expensive O(N log N) deadline sorting so it does not
+  // re-run on every second when <Countdown> would previously tick the parent.
+  const { upcomingDeadlines, nextDeadline, deadlineDate } = useMemo(() => {
+    const upcomingDeadlines = getUpcomingDeadlines(conference);
+    const nextDeadline = getNextUpcomingDeadline(conference);
+    const deadlineDate = nextDeadline
+      ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || conference.timezone)
+      : null;
+    return { upcomingDeadlines, nextDeadline, deadlineDate };
+  }, [conference.id, conference.deadline, conference.abstract_deadline, conference.deadlines, conference.timezone]);
+
+  // 9.2 — Memoize location string (eliminates fresh function creation each render)
+  const location = useMemo(() => {
+    if (conference.venue) return conference.venue;
+    return [conference.city, conference.country].filter(Boolean).join(", ") || "Location TBD";
+  }, [conference.venue, conference.city, conference.country]);
 
   const getCountdownColor = () => {
     if (!deadlineDate || !isValid(deadlineDate)) return "text-neutral-600";
@@ -98,19 +91,16 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 
   const createCalendarEvent = (type: 'google' | 'apple') => {
     try {
-      // Use the already-calculated nextDeadline
       if (!nextDeadline) {
         throw new Error('No valid upcoming deadline found');
       }
 
-      // Get UTC deadline time for calendar event
       const utcDeadlineDate = getDeadlineInUTC(nextDeadline.date, nextDeadline.timezone || conference.timezone);
-      
+
       if (!utcDeadlineDate || !isValid(utcDeadlineDate)) {
         throw new Error('Failed to convert deadline to UTC');
       }
 
-      // Create an end date 1 minute after the deadline
       const utcEndDate = new Date(utcDeadlineDate.getTime() + (60 * 60 * 1000));
 
       const formatDateForGoogle = (date: Date) => format(date, "yyyyMMdd'T'HHmmss'Z'");
@@ -118,11 +108,11 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 
       const venue = conference.venue || '';
       const cityCountry = [conference.city, conference.country].filter(Boolean).join(', ') || 'TBD';
-      
+
       const title = encodeURIComponent(`${conference.title} - ${nextDeadline.label}`);
       const locationStr = encodeURIComponent(venue || cityCountry);
       const tags = conference.tags ? `Category: ${conference.tags.join(", ")}`.trim() : '';
-      const rankingInfo = conference.rankings 
+      const rankingInfo = conference.rankings
         ? `Rankings: ${conference.rankings.rank_name || ''} (${conference.rankings.rank_source || ''})`.trim()
         : '';
       const description = encodeURIComponent(
@@ -186,12 +176,11 @@ END:VCALENDAR`;
 
   const formatDeadlineDisplay = () => {
     if (!deadlineDate || !isValid(deadlineDate)) return null;
-
-    const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // 9.3 — Use module-level LOCAL_TZ instead of creating Intl object on every render
     return (
       <div className="text-sm text-muted-foreground dark:text-muted-foreground">
-        <div>{format(deadlineDate, "MMMM d, yyyy 'at' HH:mm:ss")} ({localTZ})</div>
-        {conference.timezone && conference.timezone !== localTZ ? (
+        <div>{format(deadlineDate, "MMMM d, yyyy 'at' HH:mm:ss")} ({LOCAL_TZ})</div>
+        {conference.timezone && conference.timezone !== LOCAL_TZ ? (
           <div className="text-xs">
             Conference timezone: {conference.timezone}
           </div>
@@ -199,8 +188,6 @@ END:VCALENDAR`;
       </div>
     );
   };
-
-
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -230,9 +217,7 @@ END:VCALENDAR`;
               <Globe className="h-5 w-5 mt-0.5 text-muted-foreground flex-shrink-0" />
               <div>
                 <p className="font-medium text-foreground">Venue</p>
-                <p className="text-sm text-muted-foreground">
-                  {conference.venue || [conference.city, conference.country].filter(Boolean).join(", ")}
-                </p>
+                <p className="text-sm text-muted-foreground">{location}</p>
               </div>
             </div>
 
@@ -275,11 +260,13 @@ END:VCALENDAR`;
             </div>
           </div>
 
+          {/* 9.5 — <Countdown> is a separate component; only its text node
+              re-renders every second instead of the entire dialog tree. */}
           <div className="flex items-center">
             <AlarmClock className={`h-5 w-5 mr-3 flex-shrink-0 ${getCountdownColor()}`} />
             <div>
               <span className={`font-medium ${getCountdownColor()}`}>
-                {countdown}
+                <Countdown deadlineDate={deadlineDate} />
               </span>
               {formatDeadlineDisplay()}
             </div>

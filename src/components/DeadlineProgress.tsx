@@ -1,8 +1,12 @@
-import { useRef, useLayoutEffect, useState } from "react";
+import { useRef, useLayoutEffect, useState, useMemo } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { isValid, isPast, format, differenceInMilliseconds } from "date-fns";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import { useSharedResizeObserver } from "@/hooks/useSharedResizeObserver";
+
+// 9.3 — Hoisted to module level: the user's timezone never changes during a session,
+// so creating a new Intl.DateTimeFormat object per step per render is pure waste.
+const LOCAL_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 interface DeadlineStep {
   label: string;
@@ -14,16 +18,20 @@ interface DeadlineProgressProps {
   steps: DeadlineStep[];
 }
 
-const DAYS_BEFORE_START = 30; // Number of days to extend the timeline before the first deadline
+const DAYS_BEFORE_START = 30;
+const MIN_STEP_DISTANCE = 18; // Minimum pixels between step centers
 
 const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
-  // Parse dates once and filter out TBD/invalid steps
-  const validSteps = steps.flatMap(step => {
-    if (step.date === 'TBD') return [];
-    const parsedDate = getDeadlineInLocalTime(step.date, step.timezone);
-    if (!parsedDate || !isValid(parsedDate)) return [];
-    return [{ ...step, parsedDate }];
-  }).sort((a, b) => a.parsedDate.getTime() - b.parsedDate.getTime());
+  // 9.1 — Memoize date parsing so it only re-runs when `steps` reference changes,
+  // not on every parent re-render (e.g. barWidth state updates).
+  const validSteps = useMemo(() => {
+    return steps.flatMap(step => {
+      if (step.date === 'TBD') return [];
+      const parsedDate = getDeadlineInLocalTime(step.date, step.timezone);
+      if (!parsedDate || !isValid(parsedDate)) return [];
+      return [{ ...step, parsedDate }];
+    }).sort((a, b) => a.parsedDate.getTime() - b.parsedDate.getTime());
+  }, [steps]);
 
   const barRef = useRef<HTMLDivElement>(null);
   const [barWidth, setBarWidth] = useState(0);
@@ -38,96 +46,103 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     setBarWidth(Math.round(entry.contentRect.width));
   });
 
-  if (validSteps.length === 0) return null;
+  // 9.1 — Wrap all coordinate math in a single useMemo so it only re-computes
+  //        when validSteps or barWidth changes.
+  // 9.4 — Use step.parsedDate in the anchor loop instead of re-calling
+  //        getDeadlineInLocalTime (which already ran during validSteps building).
+  const computed = useMemo(() => {
+    if (validSteps.length === 0) return null;
 
-  const now = new Date();
-  const singleDeadline = validSteps.length === 1;
-  const firstStepDate = validSteps[0].parsedDate;
-  const lastStepDate = singleDeadline 
-    ? firstStepDate // Use same date for lastStepDate in single deadline case
-    : validSteps[validSteps.length - 1].parsedDate;
+    const now = new Date();
+    const singleDeadline = validSteps.length === 1;
+    const firstStepDate = validSteps[0].parsedDate;
+    const lastStepDate = singleDeadline
+      ? firstStepDate
+      : validSteps[validSteps.length - 1].parsedDate;
 
-  if (!firstStepDate || !lastStepDate || !isValid(firstStepDate) || !isValid(lastStepDate)) {
-    return null;
-  }
-
-  // Calculate extended start date (30 days before first deadline)
-  const extendedStartDate = new Date(firstStepDate.getTime() - (DAYS_BEFORE_START * 24 * 60 * 60 * 1000));
-
-  // Calculate step positions with minimum spacing enforcement
-  // (Must be done first so progressPx can interpolate against actual dot positions)
-  const MIN_STEP_DISTANCE = 18; // Minimum pixels between step centers
-
-  // First, calculate base positions using time ratios
-  const baseStepPositions = barWidth > 0 ? validSteps.map(step => {
-    const stepDate = step.parsedDate;
-    if (!stepDate || !isValid(stepDate)) return 0;
-
-    if (singleDeadline) {
-      return barWidth;
-    } else {
-      const preDeadlineWidth = barWidth * 0.2;
-      const deadlineWidth = barWidth * 0.8;
-      return preDeadlineWidth +
-             ((differenceInMilliseconds(stepDate, firstStepDate) /
-               differenceInMilliseconds(lastStepDate, firstStepDate)) * deadlineWidth);
+    if (!firstStepDate || !lastStepDate || !isValid(firstStepDate) || !isValid(lastStepDate)) {
+      return null;
     }
-  }) : validSteps.map(() => 0);
 
-  // Apply minimum spacing: ensure each step is at least MIN_STEP_DISTANCE from the previous
-  const adjustedPositions: number[] = [];
-  for (let i = 0; i < baseStepPositions.length; i++) {
-    if (i === 0) {
-      adjustedPositions.push(baseStepPositions[i]);
-    } else {
-      const minPos = adjustedPositions[i - 1] + MIN_STEP_DISTANCE;
-      adjustedPositions.push(Math.max(baseStepPositions[i], minPos));
+    const extendedStartDate = new Date(
+      firstStepDate.getTime() - DAYS_BEFORE_START * 24 * 60 * 60 * 1000
+    );
+
+    // Calculate base positions using time ratios
+    const baseStepPositions = barWidth > 0
+      ? validSteps.map(step => {
+          const stepDate = step.parsedDate;
+          if (!stepDate || !isValid(stepDate)) return 0;
+          if (singleDeadline) return barWidth;
+          const preDeadlineWidth = barWidth * 0.2;
+          const deadlineWidth = barWidth * 0.8;
+          return preDeadlineWidth +
+            (differenceInMilliseconds(stepDate, firstStepDate) /
+              differenceInMilliseconds(lastStepDate, firstStepDate)) * deadlineWidth;
+        })
+      : validSteps.map(() => 0);
+
+    // Enforce minimum spacing between dots
+    const adjustedPositions: number[] = [];
+    for (let i = 0; i < baseStepPositions.length; i++) {
+      if (i === 0) {
+        adjustedPositions.push(baseStepPositions[i]);
+      } else {
+        const minPos = adjustedPositions[i - 1] + MIN_STEP_DISTANCE;
+        adjustedPositions.push(Math.max(baseStepPositions[i], minPos));
+      }
     }
-  }
 
-  // If adjusted positions exceed bar width, scale them down proportionally
-  let stepPositions = adjustedPositions;
-  if (adjustedPositions.length > 0 && adjustedPositions[adjustedPositions.length - 1] > barWidth) {
-    const scaleFactor = barWidth / adjustedPositions[adjustedPositions.length - 1];
-    stepPositions = adjustedPositions.map(pos => pos * scaleFactor);
-  }
-
-  // Build a mapping from time → pixel using the same coordinate system as the step dots.
-  // Anchor points: extendedStartDate → 0px, each stepDate → its stepPositions[i] pixel.
-  // progressPx is then derived by linear interpolation between these anchors.
-  const anchorTimes: number[] = [extendedStartDate.getTime()];
-  const anchorPx: number[] = [0];
-  validSteps.forEach((step, i) => {
-    const stepDate = getDeadlineInLocalTime(step.date, step.timezone);
-    if (stepDate && isValid(stepDate)) {
-      anchorTimes.push(stepDate.getTime());
-      anchorPx.push(stepPositions[i]);
+    // Scale down if adjusted positions exceed bar width
+    let stepPositions = adjustedPositions;
+    const lastAdj = adjustedPositions[adjustedPositions.length - 1];
+    if (adjustedPositions.length > 0 && lastAdj > barWidth) {
+      const scaleFactor = barWidth / lastAdj;
+      stepPositions = adjustedPositions.map(pos => pos * scaleFactor);
     }
-  });
-  // Final anchor: last step → barWidth (end of bar)
-  if (anchorTimes[anchorTimes.length - 1] !== lastStepDate.getTime()) {
-    anchorTimes.push(lastStepDate.getTime());
-    anchorPx.push(barWidth);
-  }
 
-  let progressPx = 0;
-  if (barWidth > 0) {
-    const nowMs = now.getTime();
-    if (nowMs <= anchorTimes[0]) {
-      progressPx = 0;
-    } else if (nowMs >= anchorTimes[anchorTimes.length - 1]) {
-      progressPx = barWidth;
-    } else {
-      // Find the two anchors that bracket `now` and interpolate
-      for (let i = 1; i < anchorTimes.length; i++) {
-        if (nowMs <= anchorTimes[i]) {
-          const segT = (nowMs - anchorTimes[i - 1]) / (anchorTimes[i] - anchorTimes[i - 1]);
-          progressPx = anchorPx[i - 1] + segT * (anchorPx[i] - anchorPx[i - 1]);
-          break;
+    // Build time→pixel anchor mapping for progress interpolation.
+    // 9.4 — Use step.parsedDate directly (already computed) instead of
+    //        re-calling getDeadlineInLocalTime in this loop.
+    const anchorTimes: number[] = [extendedStartDate.getTime()];
+    const anchorPx: number[] = [0];
+    validSteps.forEach((step, i) => {
+      const stepDate = step.parsedDate; // ← was: getDeadlineInLocalTime(step.date, step.timezone)
+      if (stepDate && isValid(stepDate)) {
+        anchorTimes.push(stepDate.getTime());
+        anchorPx.push(stepPositions[i]);
+      }
+    });
+    if (anchorTimes[anchorTimes.length - 1] !== lastStepDate.getTime()) {
+      anchorTimes.push(lastStepDate.getTime());
+      anchorPx.push(barWidth);
+    }
+
+    // Interpolate current progress position
+    let progressPx = 0;
+    if (barWidth > 0) {
+      const nowMs = now.getTime();
+      if (nowMs <= anchorTimes[0]) {
+        progressPx = 0;
+      } else if (nowMs >= anchorTimes[anchorTimes.length - 1]) {
+        progressPx = barWidth;
+      } else {
+        for (let i = 1; i < anchorTimes.length; i++) {
+          if (nowMs <= anchorTimes[i]) {
+            const segT = (nowMs - anchorTimes[i - 1]) / (anchorTimes[i] - anchorTimes[i - 1]);
+            progressPx = anchorPx[i - 1] + segT * (anchorPx[i] - anchorPx[i - 1]);
+            break;
+          }
         }
       }
     }
-  }
+
+    return { extendedStartDate, stepPositions, progressPx };
+  }, [validSteps, barWidth]);
+
+  if (validSteps.length === 0 || !computed) return null;
+
+  const { extendedStartDate, stepPositions, progressPx } = computed;
 
   return (
     <div className="flex justify-center w-full my-4">
@@ -138,27 +153,17 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
             className="absolute top-0 left-0 h-2 bg-primary dark:bg-iris rounded-full transition-all"
             style={{ width: `${progressPx}px`, zIndex: 1 }}
           />
-          
+
           {/* Extended start marker */}
           {extendedStartDate ? (
             <div
               className="absolute"
-              style={{
-                left: 0,
-                top: "50%",
-                transform: "translate(-50%, -50%)",
-                zIndex: 2
-              }}
+              style={{ left: 0, top: "50%", transform: "translate(-50%, -50%)", zIndex: 2 }}
             >
               <div className="w-3 h-3 bg-muted dark:bg-muted rounded-full border-2 border-border dark:border-border" />
-              <span 
+              <span
                 className="absolute whitespace-nowrap text-[10px] text-muted-foreground dark:text-muted-foreground"
-                style={{
-                  top: "-24px",
-                  transform: "rotate(-45deg)",
-                  transformOrigin: "left bottom",
-                  left: "10px"
-                }}
+                style={{ top: "-24px", transform: "rotate(-45deg)", transformOrigin: "left bottom", left: "10px" }}
               >
                 Start
               </span>
@@ -169,7 +174,6 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
           {validSteps.map((step, idx) => {
             const stepDate = step.parsedDate;
             const status = stepDate && isPast(stepDate) ? 'past' : 'upcoming';
-            const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
             const leftPx = stepPositions[idx];
             const dateLabel = stepDate ? format(stepDate, "MMM d") : 'TBD';
 
@@ -187,25 +191,17 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                         cursor: "pointer"
                       }}
                     >
-                      {/* Date label above - now diagonal */}
-                      <span 
+                      <span
                         className="absolute whitespace-nowrap text-[10px] text-muted-foreground dark:text-muted-foreground"
-                        style={{
-                          top: "-24px",
-                          transform: "rotate(-45deg)",
-                          transformOrigin: "left bottom",
-                          left: "10px" // Offset to prevent overlap with dot
-                        }}
+                        style={{ top: "-24px", transform: "rotate(-45deg)", transformOrigin: "left bottom", left: "10px" }}
                       >
                         {dateLabel}
                       </span>
-
-                      {/* Step marker dot */}
                       <div
                         className={`w-4 h-4 rounded-full ${
-                          status === 'past' 
+                          status === 'past'
                             ? 'bg-primary dark:bg-iris border-2 border-primary dark:border-iris'
-                            : 'bg-muted dark:bg-muted border-2 border-border dark:border-border' 
+                            : 'bg-muted dark:bg-muted border-2 border-border dark:border-border'
                         }`}
                       />
                     </div>
@@ -213,7 +209,8 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                   <TooltipContent>
                     <p className="font-medium text-foreground">{step.label}</p>
                     <p className="text-foreground">{stepDate ? format(stepDate, "MMMM d, yyyy") : 'TBD'}</p>
-                    <p className="text-xs text-muted-foreground">Timezone: {step.timezone || localTZ}</p>
+                    {/* 9.3 — Use module-level LOCAL_TZ instead of creating Intl object per step */}
+                    <p className="text-xs text-muted-foreground">Timezone: {step.timezone || LOCAL_TZ}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
@@ -224,12 +221,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
           {progressPx > 0 && progressPx < barWidth ? (
             <div
               className="absolute"
-              style={{
-                left: `${progressPx}px`,
-                top: "50%",
-                transform: "translate(-50%, -50%)",
-                zIndex: 3
-              }}
+              style={{ left: `${progressPx}px`, top: "50%", transform: "translate(-50%, -50%)", zIndex: 3 }}
             >
               <div className="w-3 h-3 bg-card dark:bg-card rounded-full border-2 border-primary dark:border-iris shadow-sm" />
             </div>

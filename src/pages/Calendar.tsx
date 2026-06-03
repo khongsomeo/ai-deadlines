@@ -136,7 +136,7 @@ const CalendarPage = () => {
         (conf.full_name && conf.full_name.toLowerCase().includes(query));
 
       // Use mapped tags for category matching
-      const matchesCategory = mappedTags.some(tag => selectedCategories.has(tag));
+      const matchesCategory = mappedTags.length > 0 && mappedTags.some(tag => selectedCategories.has(tag));
 
       const deadlineDate = safeParseISO(conf.deadline);
       const startDate = safeParseISO(conf.start);
@@ -178,7 +178,7 @@ const CalendarPage = () => {
       if (!matchesSearch) return;
 
       const matchesCategory = selectedCategories.size === 0 ? true :
-        (Array.isArray(conf.tags) && conf.tags.some(tag => selectedCategories.has(tag)));
+        (Array.isArray(conf.tags) && conf.tags.length > 0 && conf.tags.some(tag => selectedCategories.has(tag)));
 
       if (showDeadlines) {
         const deadlineDate = safeParseISO(conf.deadline);
@@ -268,7 +268,7 @@ const CalendarPage = () => {
         const endDate = safeParseISO(conf.end);
         // Only show conference dates if categories are selected
         const matchesCategory = selectedCategories.size > 0 &&
-          (Array.isArray(conf.tags) && conf.tags.some(tag => selectedCategories.has(tag)));
+          (Array.isArray(conf.tags) && conf.tags.length > 0 && conf.tags.some(tag => selectedCategories.has(tag)));
         return startDate && endDate && date >= startDate && date <= endDate && matchesCategory;
       })
       .map(conf => {
@@ -436,7 +436,7 @@ const CalendarPage = () => {
   };
 
   const categories = orderedCategories.flatMap(category =>
-    conferencesData.some(conf => conf.tags?.includes(category))
+    conferencesData.some(conf => conf.tags?.length > 0 && conf.tags.includes(category))
       ? [[category, categoryColors[category]]]
       : []
   );

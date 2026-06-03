@@ -14,23 +14,31 @@ export function formatICalDate(date: Date): string {
 /**
  * Escape special characters in iCalendar text fields
  */
+const ESCAPE_SLASH_RE = /\\/g;
+const ESCAPE_NEWLINE_RE = /\n/g;
+const ESCAPE_COMMA_RE = /,/g;
+const ESCAPE_SEMICOLON_RE = /;/g;
+
 export function escapeICalText(text: string): string {
   return text
-    .replace(/\\/g, '\\\\')
-    .replace(/\n/g, '\\n')
-    .replace(/,/g, '\\,')
-    .replace(/;/g, '\\;');
+    .replace(ESCAPE_SLASH_RE, '\\\\')
+    .replace(ESCAPE_NEWLINE_RE, '\\n')
+    .replace(ESCAPE_COMMA_RE, '\\,')
+    .replace(ESCAPE_SEMICOLON_RE, '\\;');
 }
 
 /**
  * Generate a unique identifier for an iCalendar event
  * Includes the deadline date to ensure uniqueness when a conference has multiple deadlines of the same type
  */
+const YYYYMMDD_RE = /^(\d{4}-\d{2}-\d{2})/;
+const HYPHEN_RE = /-/g;
+
 export function generateEventUid(conferenceId: string, deadlineType: string, deadlineDate?: string): string {
   if (deadlineDate) {
     // Extract YYYYMMDD from ISO string for unique identification
-    const dateMatch = deadlineDate.match(/^(\d{4}-\d{2}-\d{2})/);
-    const dateStr = dateMatch ? dateMatch[1].replace(/-/g, '') : '';
+    const dateMatch = deadlineDate.match(YYYYMMDD_RE);
+    const dateStr = dateMatch ? dateMatch[1].replace(HYPHEN_RE, '') : '';
     return `${conferenceId}-${deadlineType}-${dateStr}@trhgquan.xyz`;
   }
   return `${conferenceId}-${deadlineType}@trhgquan.xyz`;
