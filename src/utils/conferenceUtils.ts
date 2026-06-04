@@ -18,21 +18,15 @@ export function sortConferencesByDeadline(conferences: Conference[]): Conference
     }
     
     // Both have deadlines, compare them
-    if (aPrimaryDeadline && bPrimaryDeadline) {
-      const aDeadline = getDeadlineInLocalTime(aPrimaryDeadline.date, aPrimaryDeadline.timezone || a.timezone);
-      const bDeadline = getDeadlineInLocalTime(bPrimaryDeadline.date, bPrimaryDeadline.timezone || b.timezone);
-      
-      if (!aDeadline || !bDeadline) {
-        if (!aDeadline && !bDeadline) return 0;
-        if (!aDeadline) return 1;
-        if (!bDeadline) return -1;
-      }
-      
-      if (aDeadline && bDeadline) {
-        return aDeadline.getTime() - bDeadline.getTime();
-      }
+    const aDeadline = getDeadlineInLocalTime(aPrimaryDeadline.date, aPrimaryDeadline.timezone || a.timezone);
+    const bDeadline = getDeadlineInLocalTime(bPrimaryDeadline.date, bPrimaryDeadline.timezone || b.timezone);
+    
+    if (!aDeadline || !bDeadline) {
+      if (!aDeadline && !bDeadline) return 0;
+      if (!aDeadline) return 1;
+      if (!bDeadline) return -1;
     }
     
-    return 0;
+    return aDeadline.getTime() - bDeadline.getTime();
   });
 } 

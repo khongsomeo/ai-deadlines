@@ -5,7 +5,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock, CalendarPlus, Bell } from "lucide-react";
+import { CalendarDays, Globe, Tag, Clock, AlarmClock, CalendarPlus, Bell } from "lucide-react";
 import { Conference } from "@/types/conference";
 import { isValid, format, formatDistanceToNow } from "date-fns";
 import { Button } from "@/components/ui/button";
@@ -160,9 +160,6 @@ END:VCALENDAR`;
     }
   };
 
-  const generateGoogleMapsUrl = (venue: string | undefined, place: string): string => {
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue || place)}`;
-  };
 
   const handleSubscribeCalendar = (calendarType: 'google' | 'apple') => {
     try {

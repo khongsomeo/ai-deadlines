@@ -10,19 +10,15 @@ import { getNextUpcomingDeadline, getPrimaryDeadline, getAllDeadlines, getCountd
 const ConferenceCard = (props: Conference) => {
   const {
     title,
-    full_name,
     year,
     date,
     deadline,
     timezone,
     tags = [],
     link,
-    note,
-    abstract_deadline,
     rankings,
     city,
     country,
-    venue,
     format,
   } = props;
   const [dialogOpen, setDialogOpen] = useState(false);

@@ -1,9 +1,9 @@
 import { useState, useMemo } from "react";
 import { useConferences } from "@/hooks/useConferences";
 import { Conference } from "@/types/conference";
-import { Calendar as CalendarIcon, Tag, X, Plus } from "lucide-react"; // Added X and Plus imports
+import { Tag, X, Plus } from "lucide-react"; // Added X and Plus imports
 import { Calendar } from "@/components/ui/calendar";
-import { parseISO, format, isValid, isSameMonth, isSameYear, isSameDay, isSameWeek } from "date-fns";
+import { parseISO, format, isValid, isSameDay } from "date-fns";
 import Header from "@/components/Header";
 import LoadingScreen from "@/components/LoadingScreen";
 import {
@@ -253,8 +253,6 @@ const CalendarPage = () => {
     );
   };
 
-  const isEndOfWeek = (date: Date) => date.getDay() === 6; // Saturday
-  const isStartOfWeek = (date: Date) => date.getDay() === 0; // Sunday
 
   const getConferenceLineStyle = (date: Date) => {
     // If only showing deadlines and no categories are selected, don't show any conference lines

@@ -9,7 +9,7 @@ import { Switch } from "@/components/ui/switch"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { X, Globe, ChartNoAxesColumn, Tag } from "lucide-react";
+import { X, Globe, ChartNoAxesColumn, Tag, Monitor } from "lucide-react";
 // Extractors optimized directly within component to avoid O(N) repetition
 import { useToast } from "@/components/ui/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -391,7 +391,7 @@ const Index = () => {
               <Popover>
                 <PopoverTrigger asChild>
                   <Button variant="outline" size="sm" className="h-8 gap-1 hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
-                    <Globe className="h-4 w-4" />
+                    <Monitor className="h-4 w-4" />
                     Filter by Format
                   </Button>
                 </PopoverTrigger>
