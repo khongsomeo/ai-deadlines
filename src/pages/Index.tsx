@@ -87,6 +87,10 @@ const Index = () => {
   });
   const [searchQuery, setSearchQuery] = useState("");
   const [showPastConferences, setShowPastConferences] = useState(false);
+  const [showAcceptingSubmissions, setShowAcceptingSubmissions] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return new URLSearchParams(window.location.search).get('accepting_submissions') === 'true';
+  });
   const [selectedRanks, setSelectedRanks] = useState<Set<string>>(() => {
     if (typeof window === 'undefined') return new Set();
     const param = new URLSearchParams(window.location.search).get('ranks');
@@ -123,6 +127,7 @@ const Index = () => {
       .filter((conf: Conference) => {
         const meta = metaCache.get(conf.id);
         if (!showPastConferences && !meta?.hasUpcoming) return false;
+        if (showAcceptingSubmissions && !meta?.hasUpcomingSubmission) return false;
         const matchesTags = selectedTags.size === 0 ||
           (Array.isArray(conf.tags) && conf.tags.length > 0 && conf.tags.some(tag => selectedTags.has(tag)));
         const matchesCountry = selectedCountries.size === 0 ||
@@ -145,7 +150,7 @@ const Index = () => {
       if (!bDate) return -1;
       return aDate.getTime() - bDate.getTime();
     });
-  }, [conferencesData, metaCache, selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences]);
+  }, [conferencesData, metaCache, selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences, showAcceptingSubmissions]);
 
   // Unified filter toggle helper that updates state functionally and syncs URL
   const toggleFilter = (
@@ -254,6 +259,28 @@ const Index = () => {
                 onCheckedChange={(checked) => {
                   startTransition(() => {
                     setShowPastConferences(checked);
+                  });
+                }}
+              />
+            </div>
+
+            <div className="flex items-center gap-2 bg-card dark:bg-card p-2 rounded-md shadow-sm">
+              <label htmlFor="show-accepting" className="text-sm text-muted-foreground dark:text-muted-foreground">
+                Still accepting papers
+              </label>
+              <Switch
+                id="show-accepting"
+                checked={showAcceptingSubmissions}
+                onCheckedChange={(checked) => {
+                  startTransition(() => {
+                    setShowAcceptingSubmissions(checked);
+                    const searchParams = new URLSearchParams(window.location.search);
+                    if (checked) {
+                      searchParams.set('accepting_submissions', 'true');
+                    } else {
+                      searchParams.delete('accepting_submissions');
+                    }
+                    window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
                   });
                 }}
               />

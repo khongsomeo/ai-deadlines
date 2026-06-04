@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Conference, Deadline } from '@/types/conference';
 import { getAllDeadlines, getNextUpcomingDeadline, getPrimaryDeadline } from '@/utils/deadlineUtils';
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
+import { isPast, isValid } from 'date-fns';
 
 // Non-eager glob: each value is a () => Promise<module> factory.
 // Vite still bundles these files, but the actual parsing is deferred
@@ -22,6 +23,8 @@ export type ConferenceMeta = {
   primaryDeadlineDate: Date | null;
   /** Whether the conference has at least one future deadline. */
   hasUpcoming: boolean;
+  /** Whether the conference has a future abstract or submission deadline. */
+  hasUpcomingSubmission: boolean;
 };
 
 type UseConferencesResult = {
@@ -54,11 +57,23 @@ function buildMetaCache(conferences: Conference[]): Map<string, ConferenceMeta> 
         )
       : null;
 
+    let hasUpcomingSubmission = false;
+    for (const d of allDeadlines) {
+      if (d.type === 'abstract' || d.type === 'submission') {
+        const date = getDeadlineInLocalTime(d.date, d.timezone || conf.timezone);
+        if (date && isValid(date) && !isPast(date)) {
+          hasUpcomingSubmission = true;
+          break;
+        }
+      }
+    }
+
     cache.set(conf.id, {
       allDeadlines,
       primaryDeadline,
       primaryDeadlineDate,
       hasUpcoming: nextUpcoming !== null,
+      hasUpcomingSubmission,
     });
   }
 
