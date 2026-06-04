@@ -8,7 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci
 
 # Copy project files
 COPY . .
@@ -16,11 +17,20 @@ COPY . .
 # Build the app
 RUN npm run build
 
+# Runtime stage
+FROM node:20-slim
+
+WORKDIR /app
+
 # Install serve
-RUN npm install -g serve
+RUN --mount=type=cache,target=/root/.npm \
+    npm install -g serve
+
+# Copy built assets from builder
+COPY --from=builder /app/dist ./dist
 
 # Expose port 8080
 EXPOSE 8080
 
 # Start server
-CMD ["serve", "-s", "dist", "-l", "8080"] 
+CMD ["serve", "-s", "dist", "-l", "8080"]
