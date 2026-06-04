@@ -160,7 +160,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
               className="absolute"
               style={{ left: 0, top: "50%", transform: "translate(-50%, -50%)", zIndex: 2 }}
             >
-              <div className="w-3 h-3 bg-muted dark:bg-muted rounded-full border-2 border-border dark:border-border" />
+              <div className="w-3 h-3 bg-card dark:bg-card rounded-full border-2 border-muted dark:border-muted-foreground/50" />
               <span
                 className="absolute whitespace-nowrap text-[10px] text-muted-foreground dark:text-muted-foreground"
                 style={{ top: "-24px", transform: "rotate(-45deg)", transformOrigin: "left bottom", left: "10px" }}
@@ -200,8 +200,8 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                       <div
                         className={`w-4 h-4 rounded-full ${
                           status === 'past'
-                            ? 'bg-primary dark:bg-iris border-2 border-primary dark:border-iris'
-                            : 'bg-muted dark:bg-muted border-2 border-border dark:border-border'
+                            ? 'bg-primary dark:bg-iris brightness-110 dark:brightness-125 border border-black/10 dark:border-white/10 shadow-sm'
+                            : 'bg-card dark:bg-card border-2 border-muted dark:border-muted-foreground/50'
                         }`}
                       />
                     </div>
