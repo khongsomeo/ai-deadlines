@@ -9,7 +9,7 @@ import { Switch } from "@/components/ui/switch"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { X, Globe, ChartNoAxesColumn } from "lucide-react";
+import { X, Globe, ChartNoAxesColumn, Tag } from "lucide-react";
 // Extractors optimized directly within component to avoid O(N) repetition
 import { useToast } from "@/components/ui/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -31,6 +31,9 @@ const CATEGORY_BUTTONS = [
   { id: "cryptography", label: "Cryptography" },
   { id: "security-and-privacy", label: "Security & Privacy" },
 ];
+
+// Pre-compute map for O(1) lookups to avoid .find() in render (js-index-maps)
+const CATEGORY_MAP = new Map(CATEGORY_BUTTONS.map(c => [c.id, c.label]));
 
 // 9.9 - rendering-hoist-jsx: Static Alert JSX recreated every render
 const CALENDAR_ALERT_CONTENT = (
@@ -240,23 +243,6 @@ const Index = () => {
           </AlertDescription>
         </Alert>
         <div className="space-y-4 py-4">
-          <div className="bg-card dark:bg-card shadow rounded-lg p-4">
-            <div className="flex flex-wrap gap-2">
-              {CATEGORY_BUTTONS.map(category => (
-                <button
-                  key={category.id}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${selectedTags.has(category.id)
-                      ? 'bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30'
-                      : 'bg-muted dark:bg-muted text-foreground hover:bg-muted/80 dark:hover:bg-muted/80'
-                    }`}
-                  onClick={() => toggleFilter(setSelectedTags, 'tags', category.id)}
-                >
-                  {category.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2 bg-card dark:bg-card p-2 rounded-md shadow-sm">
               <label htmlFor="show-past" className="text-sm text-muted-foreground dark:text-muted-foreground">
@@ -274,6 +260,58 @@ const Index = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-2 bg-card dark:bg-card p-2 rounded-md shadow-sm">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline" size="sm" className="h-8 gap-1 focus:outline-none hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
+                    <Tag className="h-4 w-4" />
+                    Filter by Tag
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-64 p-4 bg-card dark:bg-card" align="start">
+                  <div className="space-y-4">
+                    <div>
+                      <div className="mb-4">
+                        <h4 className="text-sm font-medium text-foreground dark:text-foreground">Tag</h4>
+                      </div>
+                      <div
+                        className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y"
+                        style={{ WebkitOverflowScrolling: "touch" }}
+                      >
+                        {CATEGORY_BUTTONS.map(category => (
+                          <div key={category.id} className="flex items-center space-x-2 hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted p-1 rounded">
+                            <Checkbox
+                              id={`tag-${category.id}`}
+                              checked={selectedTags.has(category.id)}
+                              onCheckedChange={() => toggleFilter(setSelectedTags, 'tags', category.id)}
+                            />
+                            <label
+                              htmlFor={`tag-${category.id}`}
+                              className="text-sm font-medium text-foreground dark:text-foreground cursor-pointer w-full py-1"
+                            >
+                              {category.label}
+                            </label>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
+
+              {Array.from(selectedTags).map(tag => {
+                const label = CATEGORY_MAP.get(tag) || tag;
+                return (
+                  <button
+                    key={tag}
+                    className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30 font-medium"
+                    onClick={() => toggleFilter(setSelectedTags, 'tags', tag, false, true)}
+                  >
+                    {label}
+                    <X className="ml-1 h-3 w-3" />
+                  </button>
+                );
+              })}
+
               <Popover>
                 <PopoverTrigger asChild>
                   <Button variant="outline" size="sm" className="h-8 gap-1 focus:outline-none hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
