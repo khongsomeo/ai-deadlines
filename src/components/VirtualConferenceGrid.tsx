@@ -1,10 +1,12 @@
-import { useRef, useLayoutEffect, useState, useEffect, memo } from "react";
+import { useRef, useLayoutEffect, useState, useEffect, memo, useCallback } from "react";
 import { useWindowVirtualizer } from "@tanstack/react-virtual";
 import ConferenceCard from "./ConferenceCard";
+import ConferenceDialog from "./ConferenceDialog";
 import { Conference } from "@/types/conference";
 
 interface VirtualConferenceGridProps {
   conferences: Conference[];
+  onTagClick?: (tag: string) => void;
 }
 
 /**
@@ -63,7 +65,21 @@ const OVERSCAN_ROWS = 2;
  */
 function VirtualConferenceGrid({
   conferences,
+  onTagClick,
 }: VirtualConferenceGridProps) {
+  // ALL hooks must be called unconditionally before any early return.
+  // Previously these were after `if (conferences.length === 0) return ...`,
+  // which is a Rules of Hooks violation — React crashes when the list
+  // transitions between empty and non-empty while the component stays mounted
+  // (e.g. a filter change producing zero results, then being cleared).
+  const [selectedConference, setSelectedConference] = useState<Conference | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleCardClick = useCallback((conf: Conference) => {
+    setSelectedConference(conf);
+    setIsDialogOpen(true);
+  }, []);
+
   const columnCount = useColumnCount();
   const rowCount = Math.ceil(conferences.length / columnCount);
 
@@ -74,9 +90,6 @@ function VirtualConferenceGrid({
   const listOffsetRef = useRef(0);
 
   // Run once on mount to record the list's distance from the page top.
-  // The header height is static, so this value doesn't change on scroll.
-  // A resize listener in useColumnCount() already re-renders the component
-  // when the viewport width changes, which re-runs this effect via columnCount dep.
   useLayoutEffect(() => {
     listOffsetRef.current = listRef.current?.offsetTop ?? 0;
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
@@ -89,6 +102,17 @@ function VirtualConferenceGrid({
   });
 
   const virtualItems = virtualizer.getVirtualItems();
+
+  // Safe to early-return only after all hooks above have been called.
+  if (conferences.length === 0) {
+    return (
+      <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 rounded-md p-4 mb-6">
+        <p className="text-center">
+          There are no upcoming conferences for the selected categories - enable &quot;Show past conferences&quot; to see previous ones
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div ref={listRef}>
@@ -130,13 +154,26 @@ function VirtualConferenceGrid({
                */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-6">
                 {rowCards.map((conf) => (
-                  <ConferenceCard key={conf.id} {...conf} />
+                  <ConferenceCard 
+                    key={conf.id} 
+                    {...conf} 
+                    onTagClick={onTagClick} 
+                    onClick={handleCardClick}
+                  />
                 ))}
               </div>
             </div>
           );
         })}
       </div>
+      
+      {selectedConference && (
+        <ConferenceDialog
+          conference={selectedConference}
+          open={isDialogOpen}
+          onOpenChange={setIsDialogOpen}
+        />
+      )}
     </div>
   );
 }

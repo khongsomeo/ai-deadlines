@@ -30,6 +30,10 @@ export type ConferenceMeta = {
 type UseConferencesResult = {
   data: Conference[];
   isLoading: boolean;
+  /** True when the YAML loading query has thrown an unrecoverable error. */
+  isError: boolean;
+  /** The underlying error, if any. */
+  error: Error | null;
   /**
    * Map from conf.id → pre-computed deadline metadata.
    * Use this in filter/sort operations instead of calling getAllDeadlines,
@@ -89,7 +93,7 @@ function buildMetaCache(conferences: Conference[]): Map<string, ConferenceMeta> 
  *  - Problem 2: Expensive useMemo Re-computation on Every Filter Change
  */
 export function useConferences(): UseConferencesResult {
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ['conferences'],
     queryFn: async () => {
       const all: Conference[] = [];
@@ -113,6 +117,8 @@ export function useConferences(): UseConferencesResult {
   return {
     data: data?.data || [],
     isLoading,
+    isError,
+    error: (error as Error | null) ?? null,
     metaCache: data?.metaCache || new Map(),
   };
 }

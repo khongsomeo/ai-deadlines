@@ -4,7 +4,7 @@ import { useConferences } from "@/hooks/useConferences";
 import LoadingScreen from "@/components/LoadingScreen";
 import VirtualConferenceGrid from "@/components/VirtualConferenceGrid";
 import { Conference } from "@/types/conference";
-import { useState, useMemo, useEffect, startTransition, useRef } from "react";
+import { useState, useMemo, useEffect, startTransition, useRef, useCallback } from "react";
 import { Switch } from "@/components/ui/switch"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
@@ -73,7 +73,7 @@ const clearAllUrlFilters = () => {
 };
 
 const Index = () => {
-  const { data: conferencesData, isLoading, metaCache } = useConferences();
+  const { data: conferencesData, isLoading, isError, error, metaCache } = useConferences();
   const { toast } = useToast();
   const [selectedTags, setSelectedTags] = useState<Set<string>>(() => {
     if (typeof window === 'undefined') return new Set();
@@ -153,7 +153,7 @@ const Index = () => {
   }, [conferencesData, metaCache, selectedTags, selectedCountries, selectedRanks, selectedFormats, searchQuery, showPastConferences, showAcceptingSubmissions]);
 
   // Unified filter toggle helper that updates state functionally and syncs URL
-  const toggleFilter = (
+  const toggleFilter = useCallback((
     setState: React.Dispatch<React.SetStateAction<Set<string>>>,
     key: string,
     value: string,
@@ -175,24 +175,11 @@ const Index = () => {
         return next;
       });
     });
-  };
-
-  const handleFilterByTagRef = useRef((tag: string) => {});
-  useEffect(() => {
-    handleFilterByTagRef.current = (tag: string) => {
-      toggleFilter(setSelectedTags, 'tags', tag, true);
-    };
   }, []);
 
-  useEffect(() => {
-    const handleFilterByTag = (event: CustomEvent<{ tag: string }>) => {
-      handleFilterByTagRef.current(event.detail.tag);
-    };
-    window.addEventListener('filterByTag', handleFilterByTag as EventListener, { passive: true });
-    return () => {
-      window.removeEventListener('filterByTag', handleFilterByTag as EventListener);
-    };
-  }, []);
+  const handleTagClick = useCallback((tag: string) => {
+    toggleFilter(setSelectedTags, 'tags', tag, true);
+  }, [toggleFilter]);
 
   const clearAllFilters = () => {
     startTransition(() => {
@@ -221,6 +208,26 @@ const Index = () => {
       ranks: Array.from(rankSet).sort()
     };
   }, [conferencesData]);
+
+  if (isError) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-8">
+        <div className="flex flex-col items-center gap-4 text-center max-w-md">
+          <div className="text-4xl">⚠️</div>
+          <h2 className="text-xl font-semibold text-foreground">Failed to load conferences</h2>
+          <p className="text-sm text-muted-foreground">
+            {error?.message ?? 'An unexpected error occurred while loading conference data.'}
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 transition-opacity"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   if (isLoading) {
     return <LoadingScreen />;
@@ -501,15 +508,8 @@ const Index = () => {
         </div>
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {filteredConferences.length === 0 ? (
-          <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-200 rounded-md p-4 mb-6">
-            <p className="text-center">
-              There are no upcoming conferences for the selected categories - enable "Show past conferences" to see previous ones
-            </p>
-          </div>
-        ) : null}
 
-        <VirtualConferenceGrid conferences={filteredConferences} />
+        <VirtualConferenceGrid conferences={filteredConferences} onTagClick={handleTagClick} />
       </main>
       <BackToTop />
     </div>

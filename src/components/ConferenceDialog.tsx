@@ -21,6 +21,7 @@ import { useState, useEffect, useMemo } from "react";
 import { getDeadlineInLocalTime, getDeadlineInUTC } from '@/utils/dateUtils';
 import { getNextUpcomingDeadline, getUpcomingDeadlines, getDaysRemaining, getCountdownColorClass, formatDeadlineDate } from "@/utils/deadlineUtils";
 import { getCalendarSubscriptionLink } from "@/utils/calendarUtils";
+import { toast } from "@/components/ui/use-toast";
 
 // 9.3 — Hoisted to module level: the user's timezone never changes during a session.
 const LOCAL_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -156,7 +157,11 @@ END:VCALENDAR`;
       }
     } catch (error) {
       console.error("Error creating calendar event:", error);
-      alert("Sorry, there was an error creating the calendar event. Please try again.");
+      toast({
+        title: "Error creating event",
+        description: "Sorry, there was an error creating the calendar event. Please try again.",
+        variant: "destructive"
+      });
     }
   };
 
@@ -167,7 +172,11 @@ END:VCALENDAR`;
       window.open(subscriptionUrl, '_blank');
     } catch (error) {
       console.error('Error subscribing to calendar:', error);
-      alert('Failed to subscribe to calendar. Please try again.');
+      toast({
+        title: "Subscription failed",
+        description: "Failed to subscribe to calendar. Please try again.",
+        variant: "destructive"
+      });
     }
   };
 

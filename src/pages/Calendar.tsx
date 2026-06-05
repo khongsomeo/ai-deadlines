@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, startTransition } from "react";
 import { useConferences } from "@/hooks/useConferences";
 import { Conference } from "@/types/conference";
 import { Tag, X, Plus } from "lucide-react"; // Added X and Plus imports
@@ -92,7 +92,7 @@ const CalendarPage = () => {
   const [showDeadlines, setShowDeadlines] = useState(true);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
-  const { data: conferencesData, isLoading } = useConferences();
+  const { data: conferencesData, isLoading, isError, error } = useConferences();
 
   const safeParseISO = (dateString: string | undefined | number): Date | null => {
     if (!dateString) return null;
@@ -254,47 +254,44 @@ const CalendarPage = () => {
   };
 
 
-  const getConferenceLineStyle = (date: Date) => {
+  const getConferenceLineStyle = (dateStr: string, dayConferences: Conference[]) => {
     // If only showing deadlines and no categories are selected, don't show any conference lines
     if (selectedCategories.size === 0 && showDeadlines) {
       return [];
     }
 
-    return conferencesData
-      .filter(conf => {
-        const startDate = safeParseISO(conf.start);
-        const endDate = safeParseISO(conf.end);
-        // Only show conference dates if categories are selected
-        const matchesCategory = selectedCategories.size > 0 &&
-          (Array.isArray(conf.tags) && conf.tags.length > 0 && conf.tags.some(tag => selectedCategories.has(tag)));
-        return startDate && endDate && date >= startDate && date <= endDate && matchesCategory;
-      })
-      .map(conf => {
-        const startDate = safeParseISO(conf.start);
-        const endDate = safeParseISO(conf.end);
+    return dayConferences.map(conf => {
+      let style = "w-[calc(100%+1rem)] -left-2 relative";
 
-        if (!startDate || !endDate) return null;
+      const normalize = (d: string | number | undefined) => {
+        if (!d || d === 'TBD' || typeof d === 'object') return null;
+        const parts = d.toString().split('-');
+        if (parts.length === 3) return `${parts[0]}-${parts[1].padStart(2, '0')}-${parts[2].padStart(2, '0')}`;
+        return d.toString();
+      };
 
-        let style = "w-[calc(100%+1rem)] -left-2 relative";
+      const startStr = normalize(conf.start);
+      const endStr = normalize(conf.end);
 
-        if (isSameDay(date, startDate)) {
-          style += " rounded-l-sm";
-        }
-        if (isSameDay(date, endDate)) {
-          style += " rounded-r-sm";
-        }
+      if (startStr === dateStr) {
+        style += " rounded-l-sm";
+      }
+      if (endStr === dateStr) {
+        style += " rounded-r-sm";
+      }
 
-        const color = conf.tags && conf.tags[0] ? categoryColors[conf.tags[0]] : "bg-gray-500";
+      const color = conf.tags && conf.tags[0] ? categoryColors[conf.tags[0]] : "bg-gray-500";
 
-        return { style, color };
-      });
+      return { style, color };
+    });
   };
 
   const renderDayContent = (date: Date) => {
     const dayEvents = getDayEvents(date);
     const hasEvents = dayEvents.deadlines.length > 0 || dayEvents.conferences.length > 0;
 
-    const conferenceStyles = getConferenceLineStyle(date);
+    const dateStr = format(date, 'yyyy-MM-dd');
+    const conferenceStyles = getConferenceLineStyle(dateStr, dayEvents.conferences);
 
     const hasDeadline = showDeadlines && dayEvents.deadlines.length > 0;
 
@@ -433,11 +430,27 @@ const CalendarPage = () => {
     );
   };
 
-  const categories = orderedCategories.flatMap(category =>
-    conferencesData.some(conf => conf.tags?.length > 0 && conf.tags.includes(category))
-      ? [[category, categoryColors[category]]]
-      : []
-  );
+  const availableCategories = useMemo(() => {
+    const categoriesSet = new Set<string>();
+    if (!conferencesData) return categoriesSet;
+    for (let i = 0; i < conferencesData.length; i++) {
+      const tags = conferencesData[i].tags;
+      if (Array.isArray(tags)) {
+        for (let j = 0; j < tags.length; j++) {
+          categoriesSet.add(tags[j]);
+        }
+      }
+    }
+    return categoriesSet;
+  }, [conferencesData]);
+
+  const categories = useMemo(() => {
+    return orderedCategories.flatMap(category =>
+      availableCategories.has(category)
+        ? [[category, categoryColors[category]]]
+        : []
+    );
+  }, [availableCategories]);
 
   const renderLegend = () => {
     return (
@@ -605,13 +618,39 @@ const CalendarPage = () => {
     return getEvents(new Date());
   }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
 
-  if (isLoading) {
-    return <LoadingScreen />;
+  if (isError) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-8">
+        <div className="flex flex-col items-center gap-4 text-center max-w-md">
+          <div className="text-4xl">⚠️</div>
+          <h2 className="text-xl font-semibold text-foreground">Failed to load conferences</h2>
+          <p className="text-sm text-muted-foreground">
+            {error?.message ?? 'An unexpected error occurred while loading conference data.'}
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-2 px-5 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-md hover:opacity-90 transition-opacity"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
   }
+
+  if (isLoading) {
+    return <LoadingScreen layout="calendar" />;
+  }
+
+  const handleSearch = (query: string) => {
+    startTransition(() => {
+      setSearchQuery(query);
+    });
+  };
 
   return (
       <div className="min-h-screen bg-background dark:bg-background">
-      <Header onSearch={setSearchQuery} />
+      <Header onSearch={handleSearch} />
 
       {searchQuery ? (
         <div className="p-6 bg-card dark:bg-card border-b border-border">
