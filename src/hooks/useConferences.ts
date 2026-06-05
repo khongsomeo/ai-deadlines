@@ -7,7 +7,7 @@ import { isPast, isValid } from 'date-fns';
 // Non-eager glob: each value is a () => Promise<module> factory.
 // Vite still bundles these files, but the actual parsing is deferred
 // to when the factory is invoked — not at module initialisation time.
-const conferenceModules = import.meta.glob('@/data/conferences/*.yml');
+const conferenceModules = import.meta.glob('@/data/conferences/*.yml', { eager: false });
 
 /**
  * Pre-computed, stable metadata for a single conference entry.

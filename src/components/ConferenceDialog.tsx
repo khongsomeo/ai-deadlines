@@ -74,13 +74,13 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || conference.timezone)
       : null;
     return { upcomingDeadlines, nextDeadline, deadlineDate };
-  }, [conference.id, conference.deadline, conference.abstract_deadline, conference.deadlines, conference.timezone]);
+  }, [conference.id]);
 
   // 9.2 — Memoize location string (eliminates fresh function creation each render)
   const location = useMemo(() => {
     if (conference.venue) return conference.venue;
     return [conference.city, conference.country].filter(Boolean).join(", ") || "Location TBD";
-  }, [conference.venue, conference.city, conference.country]);
+  }, [conference.id]);
 
   const getCountdownColor = () => {
     if (!deadlineDate || !isValid(deadlineDate)) return "text-neutral-600";

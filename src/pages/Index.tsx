@@ -4,7 +4,7 @@ import { useConferences } from "@/hooks/useConferences";
 import LoadingScreen from "@/components/LoadingScreen";
 import VirtualConferenceGrid from "@/components/VirtualConferenceGrid";
 import { Conference } from "@/types/conference";
-import { useState, useMemo, useEffect, startTransition, useRef, useCallback } from "react";
+import { useState, useMemo, startTransition, useCallback } from "react";
 import { Switch } from "@/components/ui/switch"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
@@ -178,7 +178,7 @@ const Index = () => {
   }, []);
 
   const handleTagClick = useCallback((tag: string) => {
-    toggleFilter(setSelectedTags, 'tags', tag, true);
+    toggleFilter(setSelectedTags, 'tags', tag);
   }, [toggleFilter]);
 
   const clearAllFilters = () => {

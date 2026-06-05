@@ -55,8 +55,6 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
     tags = [],
     link,
     rankings,
-    city,
-    country,
     format,
     onClick,
   } = props;
@@ -64,7 +62,7 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
   // Memoize ALL expensive deadline/date computations under stable primitive deps.
   // Without this, getNextUpcomingDeadline (O(N log N) sort) and date parsing
   // run on every render even though memo() is wrapping this component.
-  const { nextDeadline, deadlineDate, timeRemaining, location, countdownColorClass } = useMemo(() => {
+  const { nextDeadline, timeRemaining, location, countdownColorClass } = useMemo(() => {
     const nextDeadline = getNextUpcomingDeadline(props) || getPrimaryDeadline(props);
     const deadlineDate = nextDeadline
       ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || props.timezone)

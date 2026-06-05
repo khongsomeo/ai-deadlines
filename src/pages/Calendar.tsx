@@ -1,9 +1,9 @@
-import { useState, useMemo, startTransition } from "react";
+import { useState, useMemo, startTransition, useCallback } from "react";
 import { useConferences } from "@/hooks/useConferences";
 import { Conference } from "@/types/conference";
-import { Tag, X, Plus } from "lucide-react"; // Added X and Plus imports
+import { Tag, X, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
-import { parseISO, format, isValid, isSameDay } from "date-fns";
+import { parseISO, format, isValid } from "date-fns";
 import Header from "@/components/Header";
 import LoadingScreen from "@/components/LoadingScreen";
 import {
@@ -77,6 +77,12 @@ const mapLegacyTag = (tag: string): string => {
   return legacyTagMapping[tag] || tag;
 };
 
+const checkCategoryMatch = (tags: string[] | undefined, selectedCategories: Set<string>): boolean => {
+  if (selectedCategories.size === 0) return true;
+  if (!Array.isArray(tags) || tags.length === 0) return false;
+  return tags.some(tag => selectedCategories.has(mapLegacyTag(tag)));
+};
+
 const CalendarPage = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [isYearView, setIsYearView] = useState(true);
@@ -125,36 +131,29 @@ const CalendarPage = () => {
     }
   };
 
-  const getEvents = (date: Date) => {
+  const getEvents = useCallback(() => {
     const query = searchQuery.toLowerCase();
     return conferencesData.filter((conf: Conference) => {
-      // Map the conference tags to our new category system
-      const mappedTags = conf.tags?.map(mapLegacyTag) || [];
-
       const matchesSearch = query === "" ||
         conf.title.toLowerCase().includes(query) ||
         (conf.full_name && conf.full_name.toLowerCase().includes(query));
 
-      // Use mapped tags for category matching
-      const matchesCategory = mappedTags.length > 0 && mappedTags.some(tag => selectedCategories.has(tag));
+      const matchesCategory = checkCategoryMatch(conf.tags, selectedCategories);
 
       const deadlineDate = safeParseISO(conf.deadline);
       const startDate = safeParseISO(conf.start);
       const endDate = safeParseISO(conf.end);
 
-      // Check if a date is in the current year
       const isInCurrentYear = (date: Date | null) => {
         return date && date.getFullYear() === currentYear;
       };
 
-      // If showing deadlines and no categories selected, only show deadlines
       if (showDeadlines && selectedCategories.size === 0) {
         return deadlineDate && isInCurrentYear(deadlineDate) && matchesSearch;
       }
 
       if (!matchesSearch || (!matchesCategory && selectedCategories.size > 0)) return false;
 
-      // Check if either deadline or conference dates are in the current year
       const deadlineInYear = showDeadlines && deadlineDate && isInCurrentYear(deadlineDate);
       const conferenceInYear = (startDate && isInCurrentYear(startDate)) ||
         (endDate && isInCurrentYear(endDate)) ||
@@ -164,7 +163,7 @@ const CalendarPage = () => {
 
       return deadlineInYear || (selectedCategories.size > 0 && conferenceInYear);
     });
-  };
+  }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
 
   const eventsMap = useMemo(() => {
     const map = new Map<string, { deadlines: Conference[], conferences: Conference[] }>();
@@ -177,8 +176,7 @@ const CalendarPage = () => {
         
       if (!matchesSearch) return;
 
-      const matchesCategory = selectedCategories.size === 0 ? true :
-        (Array.isArray(conf.tags) && conf.tags.length > 0 && conf.tags.some(tag => selectedCategories.has(tag)));
+      const matchesCategory = checkCategoryMatch(conf.tags, selectedCategories);
 
       if (showDeadlines) {
         const deadlineDate = safeParseISO(conf.deadline);
@@ -615,8 +613,8 @@ const CalendarPage = () => {
   };
 
   const currentEvents = useMemo(() => {
-    return getEvents(new Date());
-  }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
+    return getEvents();
+  }, [getEvents]);
 
   if (isError) {
     return (
