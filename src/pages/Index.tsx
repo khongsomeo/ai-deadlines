@@ -9,7 +9,8 @@ import { Switch } from "@/components/ui/switch"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { X, Globe, ChartNoAxesColumn, Tag, Monitor } from "lucide-react";
+import { X, Globe, ChartNoAxesColumn, Tag, Monitor, HelpCircle } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 // Extractors optimized directly within component to avoid O(N) repetition
 import { useToast } from "@/components/ui/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -272,8 +273,18 @@ const Index = () => {
             </div>
 
             <div className="flex items-center gap-2 bg-card dark:bg-card p-2 rounded-md shadow-sm">
-              <label htmlFor="show-accepting" className="text-sm text-muted-foreground dark:text-muted-foreground">
+              <label htmlFor="show-accepting" className="flex items-center gap-1.5 text-sm text-muted-foreground dark:text-muted-foreground">
                 Still accepting papers
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <HelpCircle className="h-4 w-4 cursor-help text-muted-foreground/70" />
+                    </TooltipTrigger>
+                    <TooltipContent side="top">
+                      <p>Show conferences with available submission deadlines</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </label>
               <Switch
                 id="show-accepting"
