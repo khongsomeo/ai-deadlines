@@ -132,6 +132,8 @@ const CalendarPage = () => {
   };
 
   const getEvents = useCallback(() => {
+    if (!conferencesData) return [];
+
     const query = searchQuery.toLowerCase();
     return conferencesData.filter((conf: Conference) => {
       const matchesSearch = query === "" ||

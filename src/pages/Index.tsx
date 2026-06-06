@@ -5,7 +5,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import VirtualConferenceGrid from "@/components/VirtualConferenceGrid";
 import { Conference } from "@/types/conference";
 import { useState, useMemo, startTransition, useCallback } from "react";
-import { Switch } from "@/components/ui/switch"
+import { Switch } from "@/components/ui/switch";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -197,8 +197,7 @@ const Index = () => {
     const countrySet = new Set<string>();
     const formatSet = new Set<string>();
     const rankSet = new Set<string>();
-    for (let i = 0; i < conferencesData.length; i++) {
-      const conf = conferencesData[i] as Conference;
+    for (const conf of conferencesData) {
       if (conf.country) countrySet.add(conf.country);
       if (conf.format) formatSet.add(conf.format);
       if (conf.rankings?.rank_name) rankSet.add(conf.rankings.rank_name);
@@ -307,7 +306,7 @@ const Index = () => {
             <div className="flex flex-wrap items-center gap-2 bg-card dark:bg-card p-2 rounded-md shadow-sm">
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button variant="outline" size="sm" className="h-8 gap-1 focus:outline-none hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
+                  <Button variant="outline" size="sm" className="h-8 gap-1 focus-visible:outline-none hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
                     <Tag className="h-4 w-4" />
                     Filter by Tag
                   </Button>
@@ -359,7 +358,7 @@ const Index = () => {
 
               <Popover>
                 <PopoverTrigger asChild>
-                  <Button variant="outline" size="sm" className="h-8 gap-1 focus:outline-none hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
+                  <Button variant="outline" size="sm" className="h-8 gap-1 focus-visible:outline-none hover:bg-gray-200 hover:text-foreground dark:hover:bg-card dark:hover:text-foreground">
                     <Globe className="h-4 w-4" />
                     Filter by Country
                   </Button>

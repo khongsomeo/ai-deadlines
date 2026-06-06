@@ -93,7 +93,7 @@ function VirtualConferenceGrid({
   // listRef is a ref object that never changes, so it does not need to be in the dependency array.
   useLayoutEffect(() => {
     listOffsetRef.current = listRef.current?.offsetTop ?? 0;
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   const virtualizer = useWindowVirtualizer({
     count: rowCount,

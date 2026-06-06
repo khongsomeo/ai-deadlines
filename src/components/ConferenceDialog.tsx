@@ -76,11 +76,9 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
     return { upcomingDeadlines, nextDeadline, deadlineDate };
   }, [conference.id]);
 
-  // 9.2 — Memoize location string (eliminates fresh function creation each render)
-  const location = useMemo(() => {
-    if (conference.venue) return conference.venue;
-    return [conference.city, conference.country].filter(Boolean).join(", ") || "Location TBD";
-  }, [conference.id]);
+  const location = conference.venue || 
+    [conference.city, conference.country].filter(Boolean).join(", ") || 
+    "Location TBD";
 
   const getCountdownColor = () => {
     if (!deadlineDate || !isValid(deadlineDate)) return "text-neutral-600";
