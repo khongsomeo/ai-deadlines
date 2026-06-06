@@ -6,6 +6,8 @@ import { Calendar } from "@/components/ui/calendar";
 import { parseISO, format, isValid } from "date-fns";
 import Header from "@/components/Header";
 import LoadingScreen from "@/components/LoadingScreen";
+import BackToTop from "@/components/BackToTop";
+import FAQButton from "@/components/FAQButton";
 import {
   Dialog,
   DialogContent,
@@ -825,6 +827,8 @@ const CalendarPage = () => {
           </div>
         </DialogContent>
       </Dialog>
+      <FAQButton />
+      <BackToTop />
     </div>
   );
 };

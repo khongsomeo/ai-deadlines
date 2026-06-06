@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import BackToTop from "@/components/BackToTop";
+import FAQButton from "@/components/FAQButton";
 import { useConferences } from "@/hooks/useConferences";
 import LoadingScreen from "@/components/LoadingScreen";
 import VirtualConferenceGrid from "@/components/VirtualConferenceGrid";
@@ -521,6 +522,7 @@ const Index = () => {
 
         <VirtualConferenceGrid conferences={filteredConferences} onTagClick={handleTagClick} />
       </main>
+      <FAQButton />
       <BackToTop />
     </div>
   );

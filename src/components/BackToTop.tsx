@@ -12,6 +12,9 @@ const BackToTop = () => {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    // Initialize state on mount in case the page is already scrolled
+    onScroll();
+    
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
