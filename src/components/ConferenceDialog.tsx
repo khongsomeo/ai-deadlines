@@ -247,7 +247,7 @@ END:VCALENDAR`;
                             </p>
                             {daysRemaining !== null && daysRemaining > 0 ? (
                               <span className={`text-xs font-medium whitespace-nowrap ${daysColorClass}`}>
-                                {formatDistanceToNow(getDeadlineInLocalTime(deadline.date, deadline.timezone), { addSuffix: true })}
+                                {formatDistanceToNow(getDeadlineInLocalTime(deadline.date, deadline.timezone || conference.timezone), { addSuffix: true })}
                               </span>
                             ) : null}
                           </div>

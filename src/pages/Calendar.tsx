@@ -169,6 +169,9 @@ const CalendarPage = () => {
 
   const eventsMap = useMemo(() => {
     const map = new Map<string, { deadlines: Conference[], conferences: Conference[] }>();
+    
+    if (!conferencesData) return map;
+    
     const query = searchQuery.toLowerCase();
 
     conferencesData.forEach((conf: Conference) => {
