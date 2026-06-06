@@ -83,6 +83,17 @@ const checkCategoryMatch = (tags: string[] | undefined, selectedCategories: Set<
   return tags.some(tag => selectedCategories.has(mapLegacyTag(tag)));
 };
 
+const isDate = (value: any): value is Date => {
+  return value instanceof Date;
+};
+
+const normalizeDateString = (d: string | number | undefined): string | null => {
+  if (!d || d === 'TBD' || typeof d === 'object') return null;
+  const parts = d.toString().split('-');
+  if (parts.length === 3) return `${parts[0]}-${parts[1].padStart(2, '0')}-${parts[2].padStart(2, '0')}`;
+  return d.toString();
+};
+
 const CalendarPage = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [isYearView, setIsYearView] = useState(true);
@@ -101,27 +112,11 @@ const CalendarPage = () => {
   const { data: conferencesData, isLoading, isError, error } = useConferences();
 
   const safeParseISO = (dateString: string | undefined | number): Date | null => {
-    if (!dateString) return null;
-    if (dateString === 'TBD') return null;
-
-    const isDate = (value: any): value is Date => {
-      return value && Object.prototype.toString.call(value) === '[object Date]';
-    };
-
     if (isDate(dateString)) return dateString;
 
     try {
-      if (typeof dateString === 'object') {
-        return null;
-      }
-
-      const dateStr = typeof dateString === 'number' ? dateString.toString() : dateString;
-
-      let normalizedDate = dateStr;
-      const parts = dateStr.split('-');
-      if (parts.length === 3) {
-        normalizedDate = `${parts[0]}-${parts[1].padStart(2, '0')}-${parts[2].padStart(2, '0')}`;
-      }
+      const normalizedDate = normalizeDateString(dateString);
+      if (!normalizedDate) return null;
 
       const parsedDate = parseISO(normalizedDate);
       return isValid(parsedDate) ? parsedDate : null;
@@ -266,15 +261,8 @@ const CalendarPage = () => {
     return dayConferences.map(conf => {
       let style = "w-[calc(100%+1rem)] -left-2 relative";
 
-      const normalize = (d: string | number | undefined) => {
-        if (!d || d === 'TBD' || typeof d === 'object') return null;
-        const parts = d.toString().split('-');
-        if (parts.length === 3) return `${parts[0]}-${parts[1].padStart(2, '0')}-${parts[2].padStart(2, '0')}`;
-        return d.toString();
-      };
-
-      const startStr = normalize(conf.start);
-      const endStr = normalize(conf.end);
+      const startStr = normalizeDateString(conf.start);
+      const endStr = normalizeDateString(conf.end);
 
       if (startStr === dateStr) {
         style += " rounded-l-sm";
@@ -692,11 +680,15 @@ const CalendarPage = () => {
                         <p className="text-sm text-neutral-600">{conf.full_name}</p>
                       ) : null}
                     </div>
-                    {conf.deadline && conf.deadline !== 'TBD' ? (
-                      <span className="text-sm text-red-500">
-                        Deadline: {format(safeParseISO(conf.deadline)!, 'MMM d, yyyy')}
-                      </span>
-                    ) : null}
+                    {(() => {
+                      if (!conf.deadline || conf.deadline === 'TBD') return null;
+                      const parsed = safeParseISO(conf.deadline);
+                      return parsed ? (
+                        <span className="text-sm text-red-500">
+                          Deadline: {format(parsed, 'MMM d, yyyy')}
+                        </span>
+                      ) : null;
+                    })()}
                   </div>
                   {Array.isArray(conf.tags) && conf.tags.length > 0 ? (
                     <div className="mt-2 flex flex-wrap gap-2">
