@@ -83,7 +83,7 @@ const checkCategoryMatch = (tags: string[] | undefined, selectedCategories: Set<
   return tags.some(tag => selectedCategories.has(mapLegacyTag(tag)));
 };
 
-const isDate = (value: any): value is Date => {
+const isDate = (value: unknown): value is Date => {
   return value instanceof Date;
 };
 
@@ -112,6 +112,9 @@ const CalendarPage = () => {
   const { data: conferencesData, isLoading, isError, error } = useConferences();
 
   const safeParseISO = (dateString: string | undefined | number): Date | null => {
+    if (!dateString) return null;
+    if (dateString === 'TBD') return null;
+
     if (isDate(dateString)) return dateString;
 
     try {
@@ -196,7 +199,7 @@ const CalendarPage = () => {
             const endLimit = new Date(currentYear, 11, 31);
             const actualEnd = endDate > endLimit ? endLimit : endDate;
             
-            let current = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+            const current = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
             const end = new Date(actualEnd.getFullYear(), actualEnd.getMonth(), actualEnd.getDate());
             
             while (current <= end) {
@@ -339,9 +342,9 @@ const CalendarPage = () => {
       <div className="border-b last:border-b-0 pb-4 last:pb-0 mb-4 last:mb-0">
         <div className="flex justify-between items-start">
           <div>
-            <h3 className="font-semibold text-lg text-neutral-900">{conf.title}</h3>
+            <h3 className="font-semibold text-lg text-foreground">{conf.title}</h3>
             {conf.full_name ? (
-              <p className="text-sm text-neutral-600 mb-2">{conf.full_name}</p>
+              <p className="text-sm text-muted-foreground mb-2">{conf.full_name}</p>
             ) : null}
           </div>
           {conf.link ? (
@@ -399,7 +402,7 @@ const CalendarPage = () => {
           {conf.note ? (
             <div className="flex items-start gap-2 mt-2">
               <span className="font-medium text-sm text-foreground dark:text-foreground">Note:</span>
-              <div className="text-sm text-neutral-900"
+              <div className="text-sm text-foreground"
                 dangerouslySetInnerHTML={{ __html: conf.note }}
               />
             </div>
@@ -410,7 +413,7 @@ const CalendarPage = () => {
           {Array.isArray(conf.tags) && conf.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-neutral-100 text-neutral-900"
+              className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100"
             >
               <Tag className="h-3 w-3 mr-1" />
               {categoryNames[tag] || tag}
@@ -758,9 +761,9 @@ const CalendarPage = () => {
                   head_row: "flex",
                   head_cell: "text-muted-foreground rounded-md w-10 font-normal text-[0.8rem]",
                   row: "flex w-full mt-2",
-                  cell: "h-16 w-10 text-center text-sm p-0 relative focus-within:relative focus-within:z-20 hover:bg-neutral-50",
-                  day: "h-16 w-10 p-0 font-normal hover:bg-neutral-100 rounded-lg transition-colors",
-                  day_today: "bg-neutral-100 text-primary font-semibold",
+                  cell: "h-16 w-10 text-center text-sm p-0 relative focus-within:relative focus-within:z-20 hover:bg-neutral-50 dark:hover:bg-neutral-800",
+                  day: "h-16 w-10 p-0 font-normal hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors",
+                  day_today: "bg-neutral-100 dark:bg-neutral-800 text-primary font-semibold",
                   day_outside: "hidden",
                   nav: "space-x-1 flex items-center",
                   nav_button: isYearView ? "hidden" : "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
@@ -790,6 +793,11 @@ const CalendarPage = () => {
             </div>
           </DialogHeader>
           <div className="space-y-4">
+            {selectedDayEvents.events.deadlines.length === 0 && selectedDayEvents.events.conferences.length === 0 ? (
+              <div className="text-center text-muted-foreground py-8">
+                No events or deadlines for this date.
+              </div>
+            ) : null}
             {selectedDayEvents.events.deadlines.length > 0 ? (
               <div>
                 <h3 className="text-lg font-semibold text-red-500 mb-3">Submission Deadlines</h3>
