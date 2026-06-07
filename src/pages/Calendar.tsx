@@ -312,23 +312,7 @@ const CalendarPage = () => {
 
   const { data: conferencesData, isLoading, isError, error } = useConferences();
 
-  const safeParseISO = (dateString: string | undefined | number): Date | null => {
-    if (!dateString) return null;
-    if (dateString === 'TBD') return null;
 
-    if (isDate(dateString)) return dateString;
-
-    try {
-      const normalizedDate = normalizeDateString(dateString);
-      if (!normalizedDate) return null;
-
-      const parsedDate = parseISO(normalizedDate);
-      return isValid(parsedDate) ? parsedDate : null;
-    } catch (error) {
-      console.error("Error parsing date:", dateString);
-      return null;
-    }
-  };
 
   const getEvents = useCallback(() => {
     if (!conferencesData) return [];
