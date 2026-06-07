@@ -23,6 +23,11 @@
   tags:
       - natural-language-processing
       - information-retrieval
+      - machine-learning
+      - multimedia
+      - security-and-privacy
+      - human-computer-interaction
+      - data-mining
   rankings:
       rank_name: C
       rank_source: ICORE2026
@@ -52,6 +57,13 @@
   end: 2025-07-06
   tags:
       - natural-language-processing
+      - machine-learning
+      - multimedia
+      - security-and-privacy
+      - human-computer-interaction
+      - data-mining
+      - information-retrieval
+      - robotics
   rankings:
       rank_name: C
       rank_source: CORE2023

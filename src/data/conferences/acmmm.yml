@@ -37,7 +37,16 @@
   end: 2026-11-14
   tags:
       - multimedia
+      - machine-learning
+      - data-mining
+      - information-retrieval
+      - robotics
+      - human-computer-interaction
+      - computer-vision
+      - natural-language-processing
       - speech-processing
+      - security-and-privacy
+      - signal-processing
   rankings:
       rank_name: A*
       rank_source: ICORE2026
@@ -90,7 +99,16 @@
   end: 2025-10-31
   tags:
       - multimedia
+      - machine-learning
+      - data-mining
+      - information-retrieval
+      - robotics
+      - human-computer-interaction
+      - computer-vision
+      - natural-language-processing
       - speech-processing
+      - security-and-privacy
+      - signal-processing
   rankings:
       rank_name: A*
       rank_source: ICORE2026

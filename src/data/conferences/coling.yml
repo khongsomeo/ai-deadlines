@@ -26,7 +26,15 @@
   end: TBD
   tags:
       - natural-language-processing
+      - human-computer-interaction
+      - data-mining
+      - security-and-privacy
+      - information-retrieval
+      - machine-learning
+      - multimedia
       - speech-processing
+      - computer-vision
+      - robotics
   rankings:
       rank_name: B
       rank_source: ICORE2026
@@ -60,7 +68,15 @@
   end: 2025-01-24
   tags:
       - natural-language-processing
+      - human-computer-interaction
+      - data-mining
+      - security-and-privacy
+      - information-retrieval
+      - machine-learning
+      - multimedia
       - speech-processing
+      - computer-vision
+      - robotics
   rankings:
       rank_name: B
       rank_source: ICORE2026

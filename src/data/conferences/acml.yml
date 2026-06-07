@@ -13,26 +13,33 @@
       date: "2026-08-10 07:59:00"
       timezone: UTC-12
     - type: rebuttal_end
-      label: (Conference Track) Rebuttal Period End; (Journal Track) Revised manuscript Submission (for minor review papers)
+      label: (Conference Track) Rebuttal Period End
       date: "2026-08-15 23:59:00"
       timezone: UTC-12
     - type: final_decision
-      label: (Journal & Conference Track) Acceptance Notification
+      label: (Conference Track) Acceptance Notification
       date: "2026-09-15 07:59:00"
       timezone: UTC-12
     - type: submission
-      label: (Journal Track) Abstract and Paper Submission
-      date: "2026-06-06 23:59:00"
+      label: (Journal Track) Submission Deadline
+      date: "2026-06-20 23:59:00"
       timezone: UTC-12
     - type: reviews_released
-      label: (Journal Track) 1st round review results released to author
-      date: "2026-07-25 07:59:00"
+      label: (Journal Track) 1st round review results released to author (accept, minor revision, or reject)
+      date: "2026-08-08 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal Track) Revised Manuscript Submission Deadline (for minor revision papers)
+      date: "2026-08-29 23:59:00"
       timezone: UTC-12
     - type: reviews_released
       label: (Journal Track) 2nd round review results released to author
-      date: "2026-08-30 07:59:00"
+      date: "2026-09-13 07:59:00"
       timezone: UTC-12
-
+    - type: final_decision
+      label: (Journal Track) Acceptance Notification
+      date: "2026-09-22 07:59:00"
+      timezone: UTC-12
   timezone: UTC-12
   city: Melbourne
   country: Australia

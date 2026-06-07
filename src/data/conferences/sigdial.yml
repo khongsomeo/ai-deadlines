@@ -27,6 +27,10 @@
   tags:
       - natural-language-processing
       - speech-processing
+      - information-retrieval
+      - human-computer-interaction
+      - robotics
+      - machine-learning
   rankings:
       rank_name: B
       rank_source: ICORE2026
@@ -67,6 +71,9 @@
       - natural-language-processing
       - speech-processing
       - information-retrieval
+      - human-computer-interaction
+      - robotics
+      - machine-learning
   rankings:
       rank_name: B
       rank_source: ICORE2026

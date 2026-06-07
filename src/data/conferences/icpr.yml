@@ -1,4 +1,79 @@
 - title: ICPR
+  year: 2028
+  id: icpr28
+  full_name: The 30th International Conference on Pattern Recognition
+  link: "https://icpr2028.org/"
+  timezone: UTC-12
+  city: Sydney
+  country: Australia
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - signal-processing
+      - human-computer-interaction
+      - multimedia
+      - robotics
+      - security-and-privacy
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1169/
+  note: "Deadlines and conference dates not yet announced."
+
+- title: ICPR
+  year: 2027
+  id: icpr27
+  full_name: The 29th International Conference on Pattern Recognition
+  link: "https://www.icpr2027.com/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2027-03-01 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Reviews Released & Rebuttal Period Starts
+      date: "2027-04-09 07:59:59"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2027-04-16 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2027-05-24 07:59:59"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: ""
+  country: Virtually
+  venue: Virtually
+  format: hybrid
+  date: October 4-5-6 and 14-15, 2027
+  start: 2027-10-04
+  end: 2027-10-15
+  tags:
+      - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - signal-processing
+      - human-computer-interaction
+      - multimedia
+      - robotics
+      - security-and-privacy
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1169/
+  note: "Virtual conference. Single-blind review (author names required). Short papers (8 pages, not included in Springer proceedings) and long papers (15 pages) accepted. Springer LNCS format."
+
+- title: ICPR
   year: 2026
   id: icpr26
   full_name: International Conference in Pattern Recognition

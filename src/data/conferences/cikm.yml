@@ -4,27 +4,27 @@
   full_name: The 35th ACM Conference on Information and Knowledge Management
   link: "https://cikm2026.diag.uniroma1.it/"
   deadlines:
-    - type: abstract_deadline
+    - type: abstract
       label: Full Research Paper - Abstract Deadline
       date: "2026-05-18 23:59:00"
       timezone: UTC-12
-    - type: deadline
+    - type: submission
       label: Full Research Paper - Submission
       date: "2026-05-25 23:59:00"
       timezone: UTC-12
-    - type: abstract_deadline
+    - type: abstract
       label: Appled Research Paper - Abstract Deadline
       date: "2026-05-16 23:59:00"
       timezone: UTC-12
-    - type: deadline
+    - type: submission
       label: Applied Research Paper - Submission
       date: "2026-05-23 23:59:00"
       timezone: UTC-12
-    - type: abstract_deadline
+    - type: abstract
       label: Short Research Paper - Abstract Deadline
       date: "2026-05-30 23:59:00"
       timezone: UTC-12
-    - type: deadline
+    - type: submission
       label: Short Research Paper - Submission
       date: "2026-06-06 23:59:00"
       timezone: UTC-12

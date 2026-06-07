@@ -37,6 +37,12 @@
   end: TBD
   tags:
       - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - human-computer-interaction
+      - multimedia
+      - robotics
+      - security-and-privacy
   rankings:
       rank_name: A*
       rank_source: ICORE2026
@@ -82,6 +88,12 @@
   end: 2025-10-23
   tags:
       - computer-vision
+      - machine-learning
+      - natural-language-processing
+      - human-computer-interaction
+      - multimedia
+      - robotics
+      - security-and-privacy
   rankings:
       rank_name: A*
       rank_source: ICORE2026

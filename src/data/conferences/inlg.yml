@@ -27,6 +27,11 @@
   tags:
       - natural-language-processing
       - speech-processing
+      - machine-learning
+      - security-and-privacy
+      - human-computer-interaction
+      - multimedia
+      - robotics
   rankings:
       rank_name: B
       rank_source: ICORE2026
@@ -62,6 +67,11 @@
   tags:
       - natural-language-processing
       - speech-processing
+      - machine-learning
+      - security-and-privacy
+      - human-computer-interaction
+      - multimedia
+      - robotics
   rankings:
       rank_name: B
       rank_source: ICORE2026

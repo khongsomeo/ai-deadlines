@@ -1,7 +1,7 @@
 - title: IJCNN
   year: 2027
   id: ijcnn27
-  full_name: The 2027 IEEE World Congress on Computational Intelligence
+  full_name: The 2027 IEEE International Joint Conference on Neural Networks
   link: "https://ijcnn.org/2027"
   deadlines:
     - type: submission
