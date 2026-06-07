@@ -1,4 +1,4 @@
-import { useState, useMemo, startTransition, useCallback } from "react";
+import React, { useState, useMemo, startTransition, useCallback } from "react";
 import { useConferences } from "@/hooks/useConferences";
 import { getDeadlineInLocalTime } from "@/utils/dateUtils";
 import { Conference } from "@/types/conference";
@@ -108,12 +108,199 @@ const extractValidDeadlines = (conf: Conference): { type: string; date: string; 
   return [];
 };
 
+export type ParsedDeadline = ReturnType<typeof extractValidDeadlines>[0] & { parsedDate: Date };
+export type DayEvents = { deadlines: { conf: Conference; parsedDeadline: ParsedDeadline }[], conferences: Conference[] };
+
+const safeParseISO = (dateString: string | undefined | number): Date | null => {
+  if (!dateString) return null;
+  if (dateString === 'TBD') return null;
+
+  if (isDate(dateString)) return dateString;
+
+  try {
+    const normalizedDate = normalizeDateString(dateString);
+    if (!normalizedDate) return null;
+
+    const parsedDate = parseISO(normalizedDate);
+    return isValid(parsedDate) ? parsedDate : null;
+  } catch (error) {
+    console.error("Error parsing date:", dateString);
+    return null;
+  }
+};
+
+const EventPreviewTooltip = React.memo(({ events }: { events: DayEvents }) => {
+  if (events.deadlines.length === 0 && events.conferences.length === 0) return null;
+
+  return (
+    <div className="p-2 max-w-[200px]">
+      {events.deadlines.length > 0 ? (
+        <div className="mb-2">
+          <p className="font-semibold text-red-500">Deadlines:</p>
+          {events.deadlines.map((item, i) => (
+            <div key={`${item.conf.id}-${i}`} className="text-sm">
+              {item.conf.title} ({item.parsedDeadline.type === 'abstract' ? 'Abstract' : 'Submission'})
+            </div>
+          ))}
+        </div>
+      ) : null}
+      {events.conferences.length > 0 ? (
+        <div>
+          <p className="font-semibold text-purple-600">Conferences:</p>
+          {events.conferences.map(conf => (
+            <div key={conf.id} className="text-sm">{conf.title}</div>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+});
+
+const EventDetails = React.memo(({ conf, deadlinesToDisplay }: { conf: Conference, deadlinesToDisplay?: ParsedDeadline[] }) => {
+  const startDate = safeParseISO(conf.start);
+  const endDate = safeParseISO(conf.end);
+
+  return (
+    <div className="border-b last:border-b-0 pb-4 last:pb-0 mb-4 last:mb-0">
+      <div className="flex justify-between items-start">
+        <div>
+          <h3 className="font-semibold text-lg text-foreground">{conf.title}</h3>
+          {conf.full_name ? (
+            <p className="text-sm text-muted-foreground mb-2">{conf.full_name}</p>
+          ) : null}
+        </div>
+        {conf.link ? (
+          <a
+            href={conf.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-600 flex items-center gap-1 text-sm"
+          >
+            Website
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
+        ) : null}
+      </div>
+
+      <div className="space-y-2 mt-3">
+        {deadlinesToDisplay?.map((deadline, idx) => (
+          <div key={`${deadline.type}-${idx}`} className="flex items-start gap-2">
+            <span className="font-medium text-sm text-foreground dark:text-foreground capitalize whitespace-nowrap">
+              {deadline.type === 'abstract' ? 'Abstract Submission' : 'Paper Submission'}:
+            </span>
+            <div className="text-sm text-foreground dark:text-foreground">
+              <div>{format(deadline.parsedDate, 'MMMM d, yyyy')}</div>
+              {deadline.timezone ? (
+                <div className="text-muted-foreground dark:text-muted-foreground text-xs">
+                  Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone} (Local Time)
+                </div>
+              ) : null}
+            </div>
+          </div>
+        ))}
+
+        {startDate ? (
+          <div className="flex items-start gap-2">
+            <span className="font-medium text-sm text-foreground dark:text-foreground">Date:</span>
+            <div className="text-sm text-foreground dark:text-foreground">
+              <div>
+                {format(startDate, 'MMMM d')}
+                {endDate ? ` - ${format(endDate, 'MMMM d, yyyy')}` :
+                  `, ${format(startDate, 'yyyy')}`}
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        {conf.place ? (
+          <div className="flex items-start gap-2">
+            <span className="font-medium text-sm text-foreground dark:text-foreground">Location:</span>
+            <span className="text-sm text-foreground dark:text-foreground">{conf.place}</span>
+          </div>
+        ) : null}
+
+        {conf.note ? (
+          <div className="flex items-start gap-2 mt-2">
+            <span className="font-medium text-sm text-foreground dark:text-foreground">Note:</span>
+            <div className="text-sm text-foreground"
+              dangerouslySetInnerHTML={{ __html: conf.note }}
+            />
+          </div>
+        ) : null}
+      </div>
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        {Array.isArray(conf.tags) && conf.tags.map((tag) => (
+          <span
+            key={tag}
+            className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100"
+          >
+            <Tag className="h-3 w-3 mr-1" />
+            {categoryNames[tag] || tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+});
+
+const DayEventsDialog = React.memo(({ selectedDayEvents, onClose }: { selectedDayEvents: { date: Date | null, events: DayEvents }, onClose: () => void }) => {
+  if (!selectedDayEvents.date) return null;
+  return (
+    <Dialog open={true} onOpenChange={onClose}>
+      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto" aria-describedby="dialog-description">
+        <DialogHeader>
+          <DialogTitle>Events for {format(selectedDayEvents.date, 'MMMM d, yyyy')}</DialogTitle>
+          <div id="dialog-description" className="text-sm text-neutral-600">
+            View conference details and deadlines for this date.
+          </div>
+        </DialogHeader>
+        <div className="space-y-4">
+          {selectedDayEvents.events.deadlines.length === 0 && selectedDayEvents.events.conferences.length === 0 ? (
+            <div className="text-center text-muted-foreground py-8">
+              No events or deadlines for this date.
+            </div>
+          ) : null}
+          {selectedDayEvents.events.deadlines.length > 0 ? (
+            <div>
+              <h3 className="text-lg font-semibold text-red-500 mb-3">Submission Deadlines</h3>
+              <div className="space-y-4">
+                {selectedDayEvents.events.deadlines.map((item, i) => (
+                  <div key={`${item.conf.id || item.conf.title}-${i}`}>
+                    <EventDetails conf={item.conf} deadlinesToDisplay={[item.parsedDeadline]} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {selectedDayEvents.events.conferences.length > 0 ? (
+            <div>
+              <h3 className="text-lg font-semibold text-purple-600 mb-3">Conferences</h3>
+              <div className="space-y-4">
+                {selectedDayEvents.events.conferences.map((conf, i) => (
+                  <div key={`${conf.id || conf.title}-${i}`}>
+                    <EventDetails conf={conf} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+});
+
 const CalendarPage = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [isYearView, setIsYearView] = useState(true);
   const [currentMonth, setCurrentMonth] = useState<Date>(new Date());
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedDayEvents, setSelectedDayEvents] = useState<{ date: Date | null, events: { deadlines: Conference[], conferences: Conference[] } }>({
+  const [selectedDayEvents, setSelectedDayEvents] = useState<{ date: Date | null, events: DayEvents }>({
     date: null,
     events: { deadlines: [], conferences: [] }
   });
@@ -186,7 +373,7 @@ const CalendarPage = () => {
   }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
 
   const eventsMap = useMemo(() => {
-    const map = new Map<string, { deadlines: Conference[], conferences: Conference[] }>();
+    const map = new Map<string, DayEvents>();
     
     if (!conferencesData) return map;
     
@@ -210,8 +397,8 @@ const CalendarPage = () => {
             if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
             
             const dayEvents = map.get(dateStr)!;
-            if (!dayEvents.deadlines.some(c => c.id === conf.id)) {
-              dayEvents.deadlines.push(conf);
+            if (!dayEvents.deadlines.some(c => c.conf.id === conf.id && c.parsedDeadline.type === deadline.type)) {
+              dayEvents.deadlines.push({ conf, parsedDeadline: { ...deadline, parsedDate: deadlineDate } });
             }
           }
         });
@@ -251,50 +438,9 @@ const CalendarPage = () => {
     return map;
   }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
 
-  const getDayEvents = (date: Date) => {
+  const getDayEvents = (date: Date): DayEvents => {
     const dateStr = format(date, 'yyyy-MM-dd');
     return eventsMap.get(dateStr) || { deadlines: [], conferences: [] };
-  };
-
-  const renderEventPreview = (events: { deadlines: Conference[], conferences: Conference[] }, targetDate: Date) => {
-    if (events.deadlines.length === 0 && events.conferences.length === 0) return null;
-
-    const targetStr = format(targetDate, 'yyyy-MM-dd');
-
-    return (
-      <div className="p-2 max-w-[200px]">
-        {events.deadlines.length > 0 ? (
-          <div className="mb-2">
-            <p className="font-semibold text-red-500">Deadlines:</p>
-            {events.deadlines.map(conf => {
-              const validDeadlines = extractValidDeadlines(conf);
-              const relevantDeadlines = validDeadlines.filter(d => {
-                const parsed = getDeadlineInLocalTime(d.date, d.timezone || conf.timezone);
-                return parsed && format(parsed, 'yyyy-MM-dd') === targetStr;
-              });
-              
-              if (relevantDeadlines.length === 0) {
-                return <div key={conf.id} className="text-sm">{conf.title}</div>;
-              }
-
-              return relevantDeadlines.map((rd, i) => (
-                <div key={`${conf.id}-${i}`} className="text-sm">
-                  {conf.title} ({rd.type === 'abstract' ? 'Abstract' : 'Submission'})
-                </div>
-              ));
-            })}
-          </div>
-        ) : null}
-        {events.conferences.length > 0 ? (
-          <div>
-            <p className="font-semibold text-purple-600">Conferences:</p>
-            {events.conferences.map(conf => (
-              <div key={conf.id} className="text-sm">{conf.title}</div>
-            ))}
-          </div>
-        ) : null}
-      </div>
-    );
   };
 
 
@@ -367,7 +513,7 @@ const CalendarPage = () => {
             <Tooltip>
               <TooltipTrigger className="absolute inset-0" />
               <TooltipContent>
-                {renderEventPreview(dayEvents, date)}
+                <EventPreviewTooltip events={dayEvents} />
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -376,113 +522,7 @@ const CalendarPage = () => {
     );
   };
 
-  const renderEventDetails = (conf: Conference, targetDate?: Date | null, isDeadlineSection?: boolean) => {
-    const validDeadlines = extractValidDeadlines(conf);
-    const parsedDeadlines = validDeadlines.map(d => ({
-      ...d,
-      parsedDate: getDeadlineInLocalTime(d.date, d.timezone || conf.timezone)
-    })).filter((d): d is typeof d & { parsedDate: Date } => d.parsedDate !== null);
 
-    let displayDeadlines = parsedDeadlines;
-    if (isDeadlineSection !== undefined) {
-      if (isDeadlineSection && targetDate) {
-        const targetStr = format(targetDate, 'yyyy-MM-dd');
-        displayDeadlines = parsedDeadlines.filter(d => format(d.parsedDate, 'yyyy-MM-dd') === targetStr);
-      } else if (!isDeadlineSection) {
-        displayDeadlines = [];
-      }
-    }
-
-    const startDate = safeParseISO(conf.start);
-    const endDate = safeParseISO(conf.end);
-
-    return (
-      <div className="border-b last:border-b-0 pb-4 last:pb-0 mb-4 last:mb-0">
-        <div className="flex justify-between items-start">
-          <div>
-            <h3 className="font-semibold text-lg text-foreground">{conf.title}</h3>
-            {conf.full_name ? (
-              <p className="text-sm text-muted-foreground mb-2">{conf.full_name}</p>
-            ) : null}
-          </div>
-          {conf.link ? (
-            <a
-              href={conf.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:text-blue-600 flex items-center gap-1 text-sm"
-            >
-              Website
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-          ) : null}
-        </div>
-
-        <div className="space-y-2 mt-3">
-          {displayDeadlines.map((deadline, idx) => (
-            <div key={`${deadline.type}-${idx}`} className="flex items-start gap-2">
-              <span className="font-medium text-sm text-foreground dark:text-foreground capitalize whitespace-nowrap">
-                {deadline.type === 'abstract' ? 'Abstract Submission' : 'Paper Submission'}:
-              </span>
-              <div className="text-sm text-foreground dark:text-foreground">
-                <div>{format(deadline.parsedDate, 'MMMM d, yyyy')}</div>
-                {deadline.timezone ? (
-                  <div className="text-muted-foreground dark:text-muted-foreground text-xs">
-                    Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone} (Local Time)
-                  </div>
-                ) : null}
-              </div>
-            </div>
-          ))}
-
-          {startDate ? (
-            <div className="flex items-start gap-2">
-              <span className="font-medium text-sm text-foreground dark:text-foreground">Date:</span>
-              <div className="text-sm text-foreground dark:text-foreground">
-                <div>
-                  {format(startDate, 'MMMM d')}
-                  {endDate ? ` - ${format(endDate, 'MMMM d, yyyy')}` :
-                    `, ${format(startDate, 'yyyy')}`}
-                </div>
-              </div>
-            </div>
-          ) : null}
-
-          {conf.place ? (
-            <div className="flex items-start gap-2">
-              <span className="font-medium text-sm text-foreground dark:text-foreground">Location:</span>
-              <span className="text-sm text-foreground dark:text-foreground">{conf.place}</span>
-            </div>
-          ) : null}
-
-          {conf.note ? (
-            <div className="flex items-start gap-2 mt-2">
-              <span className="font-medium text-sm text-foreground dark:text-foreground">Note:</span>
-              <div className="text-sm text-foreground"
-                dangerouslySetInnerHTML={{ __html: conf.note }}
-              />
-            </div>
-          ) : null}
-        </div>
-
-        <div className="mt-3 flex flex-wrap gap-2">
-          {Array.isArray(conf.tags) && conf.tags.map((tag) => (
-            <span
-              key={tag}
-              className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100"
-            >
-              <Tag className="h-3 w-3 mr-1" />
-              {categoryNames[tag] || tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    );
-  };
 
   const availableCategories = useMemo(() => {
     const categoriesSet = new Set<string>();
@@ -708,6 +748,43 @@ const CalendarPage = () => {
     });
   };
 
+  const calendarClassNames = useMemo(() => ({
+    months: `grid ${isYearView ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8' : ''} justify-center`,
+    month: "space-y-4",
+    caption: "flex justify-center pt-1 relative items-center mb-4",
+    caption_label: "text-lg font-semibold",
+    head_row: "flex",
+    head_cell: "text-muted-foreground rounded-md w-10 font-normal text-[0.8rem]",
+    row: "flex w-full mt-2",
+    cell: "h-16 w-10 text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
+    day: "h-16 w-10 p-0 font-normal hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg transition-colors",
+    day_today: "bg-neutral-100 dark:bg-neutral-800 text-primary font-semibold",
+    day_outside: "hidden",
+    nav: "space-x-1 flex items-center",
+    nav_button: isYearView ? "hidden" : "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
+    nav_button_previous: "absolute left-1",
+    nav_button_next: "absolute right-1"
+  }), [isYearView]);
+
+  const calendarComponents = useMemo(() => ({
+    Day: ({ date, displayMonth, ...props }: any) => {
+      const isOutsideDay = date.getMonth() !== displayMonth.getMonth();
+      if (isOutsideDay) {
+        return null;
+      }
+      return (
+        <div
+          role="button"
+          tabIndex={0}
+          {...props}
+          className="w-full h-full p-2 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg transition-colors"
+        >
+          {renderDayContent(date)}
+        </div>
+      );
+    },
+  }), [renderDayContent]);
+
   return (
       <div className="min-h-screen bg-background dark:bg-background">
       <Header onSearch={handleSearch} />
@@ -805,96 +882,18 @@ const CalendarPage = () => {
                 fromMonth={isYearView ? new Date(currentYear, 0) : undefined}
                 toMonth={isYearView ? new Date(currentYear, 11) : undefined}
                 className="bg-card dark:bg-card rounded-lg p-4 sm:p-6 shadow-sm mx-auto w-full overflow-x-auto"
-                components={{
-                  Day: ({ date, displayMonth, ...props }) => {
-                    const isOutsideDay = date.getMonth() !== displayMonth.getMonth();
-                    if (isOutsideDay) {
-                      return null;
-                    }
-                    return (
-                      <div
-                        role="button"
-                        tabIndex={0}
-                        {...props}
-                        className="w-full h-full p-2 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg transition-colors"
-                      >
-                        {renderDayContent(date)}
-                      </div>
-                    );
-                  },
-                }}
-                classNames={{
-                  months: `grid ${isYearView ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8' : ''} justify-center`,
-                  month: "space-y-4",
-                  caption: "flex justify-center pt-1 relative items-center mb-4",
-                  caption_label: "text-lg font-semibold",
-                  head_row: "flex",
-                  head_cell: "text-muted-foreground rounded-md w-10 font-normal text-[0.8rem]",
-                  row: "flex w-full mt-2",
-                  cell: "h-16 w-10 text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
-                  day: "h-16 w-10 p-0 font-normal hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg transition-colors",
-                  day_today: "bg-neutral-100 dark:bg-neutral-800 text-primary font-semibold",
-                  day_outside: "hidden",
-                  nav: "space-x-1 flex items-center",
-                  nav_button: isYearView ? "hidden" : "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100",
-                  nav_button_previous: "absolute left-1",
-                  nav_button_next: "absolute right-1"
-                }}
+                components={calendarComponents}
+                classNames={calendarClassNames}
               />
             </div>
           </div>
         </div>
       </div>
 
-      <Dialog
-        open={selectedDayEvents.date !== null}
-        onOpenChange={() => setSelectedDayEvents({ date: null, events: { deadlines: [], conferences: [] } })}
-      >
-        <DialogContent
-          className="max-w-2xl max-h-[80vh] overflow-y-auto"
-          aria-describedby="dialog-description"
-        >
-          <DialogHeader>
-            <DialogTitle>
-              Events for {selectedDayEvents.date ? format(selectedDayEvents.date, 'MMMM d, yyyy') : ''}
-            </DialogTitle>
-            <div id="dialog-description" className="text-sm text-neutral-600">
-              View conference details and deadlines for this date.
-            </div>
-          </DialogHeader>
-          <div className="space-y-4">
-            {selectedDayEvents.events.deadlines.length === 0 && selectedDayEvents.events.conferences.length === 0 ? (
-              <div className="text-center text-muted-foreground py-8">
-                No events or deadlines for this date.
-              </div>
-            ) : null}
-            {selectedDayEvents.events.deadlines.length > 0 ? (
-              <div>
-                <h3 className="text-lg font-semibold text-red-500 mb-3">Submission Deadlines</h3>
-                <div className="space-y-4">
-                  {selectedDayEvents.events.deadlines.map(conf => (
-                    <div key={conf.id || conf.title}>
-                      {renderEventDetails(conf, selectedDayEvents.date, true)}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-            {selectedDayEvents.events.conferences.length > 0 ? (
-              <div>
-                <h3 className="text-lg font-semibold text-purple-600 mb-3">Conferences</h3>
-                <div className="space-y-4">
-                  {selectedDayEvents.events.conferences.map(conf => (
-                    <div key={conf.id || conf.title}>
-                      {renderEventDetails(conf, selectedDayEvents.date, false)}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-          </div>
-        </DialogContent>
-      </Dialog>
+      <DayEventsDialog 
+        selectedDayEvents={selectedDayEvents} 
+        onClose={() => setSelectedDayEvents({ date: null, events: { deadlines: [], conferences: [] } })} 
+      />
       <FAQButton />
       <BackToTop />
     </div>
