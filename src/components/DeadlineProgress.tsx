@@ -29,6 +29,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
       if (step.date === 'TBD') return [];
       const parsedDate = getDeadlineInLocalTime(step.date, step.timezone);
       if (!parsedDate || !isValid(parsedDate)) return [];
+      if (isPast(parsedDate)) return []; // Only keep future deadlines
       return [{ ...step, parsedDate }];
     }).sort((a, b) => a.parsedDate.getTime() - b.parsedDate.getTime());
   }, [steps]);
@@ -140,12 +141,35 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     return { extendedStartDate, stepPositions, progressPx };
   }, [validSteps, barWidth]);
 
-  if (validSteps.length === 0 || !computed) return null;
+  if (validSteps.length === 0 || !computed) {
+    const hasTbdOrEmpty = steps.length === 0 || steps.every(s => s.date === 'TBD');
+    return (
+      <div className="w-full flex items-center justify-center mt-4 py-2 text-sm text-muted-foreground bg-neutral-50 dark:bg-neutral-800/50 rounded-md border border-dashed border-neutral-200 dark:border-neutral-700">
+        <span className="flex items-center gap-2">
+          {hasTbdOrEmpty ? (
+            <>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              No deadlines announced yet
+            </>
+          ) : (
+            <>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              All deadlines have passed
+            </>
+          )}
+        </span>
+      </div>
+    );
+  }
 
   const { extendedStartDate, stepPositions, progressPx } = computed;
 
   return (
-    <div className="flex justify-center w-full my-4">
+    <div className="flex justify-center w-full mt-14 mb-4">
       <div className="relative w-full max-w-xl px-2">
         <div ref={barRef} className="relative w-full h-2 bg-muted dark:bg-muted rounded-full mx-auto">
           {/* Progress fill */}

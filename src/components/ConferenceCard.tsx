@@ -129,7 +129,7 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
           ) : null}
         </div>
 
-        <div className="flex flex-col gap-2 mb-6">
+        <div className="flex flex-col gap-2">
           <div className="flex items-center text-muted-foreground">
             <CalendarDays className="h-4 w-4 mr-2 flex-shrink-0" />
             <span className="text-sm truncate">{date}</span>
@@ -170,12 +170,10 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
           </div>
         </div>
 
-        <div className="mt-4">
-          <DeadlineProgress steps={deadlineSteps} />
-        </div>
+        <DeadlineProgress steps={deadlineSteps} />
 
         {Array.isArray(tags) && tags.length > 0 ? (
-          <div className="flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => (
               <button
                 key={tag}
