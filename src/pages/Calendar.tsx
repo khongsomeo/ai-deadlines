@@ -1,5 +1,6 @@
 import { useState, useMemo, startTransition, useCallback } from "react";
 import { useConferences } from "@/hooks/useConferences";
+import { getDeadlineInLocalTime } from "@/utils/dateUtils";
 import { Conference } from "@/types/conference";
 import { Tag, X, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
@@ -96,6 +97,17 @@ const normalizeDateString = (d: string | number | undefined): string | null => {
   return d.toString();
 };
 
+const extractValidDeadlines = (conf: Conference): { type: string; date: string; timezone?: string; label?: string }[] => {
+  const validTypes = new Set(['abstract', 'submission']);
+  if (Array.isArray(conf.deadlines) && conf.deadlines.length > 0) {
+    return conf.deadlines.filter(d => validTypes.has(d.type));
+  }
+  if (conf.deadline && conf.deadline !== 'TBD') {
+    return [{ type: 'submission', date: conf.deadline, timezone: conf.timezone }];
+  }
+  return [];
+};
+
 const CalendarPage = () => {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [isYearView, setIsYearView] = useState(true);
@@ -142,7 +154,11 @@ const CalendarPage = () => {
 
       const matchesCategory = checkCategoryMatch(conf.tags, selectedCategories);
 
-      const deadlineDate = safeParseISO(conf.deadline);
+      const validDeadlines = extractValidDeadlines(conf);
+      const parsedDeadlines = validDeadlines
+        .map(d => getDeadlineInLocalTime(d.date, d.timezone || conf.timezone))
+        .filter((d): d is Date => d !== null);
+
       const startDate = safeParseISO(conf.start);
       const endDate = safeParseISO(conf.end);
 
@@ -150,13 +166,15 @@ const CalendarPage = () => {
         return date && date.getFullYear() === currentYear;
       };
 
+      const hasDeadlineInYear = parsedDeadlines.some(isInCurrentYear);
+
       if (showDeadlines && selectedCategories.size === 0) {
-        return deadlineDate && isInCurrentYear(deadlineDate) && matchesSearch;
+        return hasDeadlineInYear && matchesSearch;
       }
 
       if (!matchesSearch || (!matchesCategory && selectedCategories.size > 0)) return false;
 
-      const deadlineInYear = showDeadlines && deadlineDate && isInCurrentYear(deadlineDate);
+      const deadlineInYear = showDeadlines && hasDeadlineInYear;
       const conferenceInYear = (startDate && isInCurrentYear(startDate)) ||
         (endDate && isInCurrentYear(endDate)) ||
         (startDate && endDate &&
@@ -183,13 +201,20 @@ const CalendarPage = () => {
 
       const matchesCategory = checkCategoryMatch(conf.tags, selectedCategories);
 
-      if (showDeadlines) {
-        const deadlineDate = safeParseISO(conf.deadline);
-        if (deadlineDate && deadlineDate.getFullYear() === currentYear && matchesCategory) {
-          const dateStr = format(deadlineDate, 'yyyy-MM-dd');
-          if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
-          map.get(dateStr)!.deadlines.push(conf);
-        }
+      if (showDeadlines && matchesCategory) {
+        const validDeadlines = extractValidDeadlines(conf);
+        validDeadlines.forEach(deadline => {
+          const deadlineDate = getDeadlineInLocalTime(deadline.date, deadline.timezone || conf.timezone);
+          if (deadlineDate && deadlineDate.getFullYear() === currentYear) {
+            const dateStr = format(deadlineDate, 'yyyy-MM-dd');
+            if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
+            
+            const dayEvents = map.get(dateStr)!;
+            if (!dayEvents.deadlines.some(c => c.id === conf.id)) {
+              dayEvents.deadlines.push(conf);
+            }
+          }
+        });
       }
 
       if (selectedCategories.size > 0 && matchesCategory) {
@@ -231,17 +256,33 @@ const CalendarPage = () => {
     return eventsMap.get(dateStr) || { deadlines: [], conferences: [] };
   };
 
-  const renderEventPreview = (events: { deadlines: Conference[], conferences: Conference[] }) => {
+  const renderEventPreview = (events: { deadlines: Conference[], conferences: Conference[] }, targetDate: Date) => {
     if (events.deadlines.length === 0 && events.conferences.length === 0) return null;
+
+    const targetStr = format(targetDate, 'yyyy-MM-dd');
 
     return (
       <div className="p-2 max-w-[200px]">
         {events.deadlines.length > 0 ? (
           <div className="mb-2">
             <p className="font-semibold text-red-500">Deadlines:</p>
-            {events.deadlines.map(conf => (
-              <div key={conf.id} className="text-sm">{conf.title}</div>
-            ))}
+            {events.deadlines.map(conf => {
+              const validDeadlines = extractValidDeadlines(conf);
+              const relevantDeadlines = validDeadlines.filter(d => {
+                const parsed = getDeadlineInLocalTime(d.date, d.timezone || conf.timezone);
+                return parsed && format(parsed, 'yyyy-MM-dd') === targetStr;
+              });
+              
+              if (relevantDeadlines.length === 0) {
+                return <div key={conf.id} className="text-sm">{conf.title}</div>;
+              }
+
+              return relevantDeadlines.map((rd, i) => (
+                <div key={`${conf.id}-${i}`} className="text-sm">
+                  {conf.title} ({rd.type === 'abstract' ? 'Abstract' : 'Submission'})
+                </div>
+              ));
+            })}
           </div>
         ) : null}
         {events.conferences.length > 0 ? (
@@ -326,7 +367,7 @@ const CalendarPage = () => {
             <Tooltip>
               <TooltipTrigger className="absolute inset-0" />
               <TooltipContent>
-                {renderEventPreview(dayEvents)}
+                {renderEventPreview(dayEvents, date)}
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
@@ -335,8 +376,23 @@ const CalendarPage = () => {
     );
   };
 
-  const renderEventDetails = (conf: Conference) => {
-    const deadlineDate = safeParseISO(conf.deadline);
+  const renderEventDetails = (conf: Conference, targetDate?: Date | null, isDeadlineSection?: boolean) => {
+    const validDeadlines = extractValidDeadlines(conf);
+    const parsedDeadlines = validDeadlines.map(d => ({
+      ...d,
+      parsedDate: getDeadlineInLocalTime(d.date, d.timezone || conf.timezone)
+    })).filter((d): d is typeof d & { parsedDate: Date } => d.parsedDate !== null);
+
+    let displayDeadlines = parsedDeadlines;
+    if (isDeadlineSection !== undefined) {
+      if (isDeadlineSection && targetDate) {
+        const targetStr = format(targetDate, 'yyyy-MM-dd');
+        displayDeadlines = parsedDeadlines.filter(d => format(d.parsedDate, 'yyyy-MM-dd') === targetStr);
+      } else if (!isDeadlineSection) {
+        displayDeadlines = [];
+      }
+    }
+
     const startDate = safeParseISO(conf.start);
     const endDate = safeParseISO(conf.end);
 
@@ -367,19 +423,21 @@ const CalendarPage = () => {
         </div>
 
         <div className="space-y-2 mt-3">
-          {deadlineDate ? (
-            <div className="flex items-start gap-2">
-              <span className="font-medium text-sm text-foreground dark:text-foreground">Deadline:</span>
+          {displayDeadlines.map((deadline, idx) => (
+            <div key={`${deadline.type}-${idx}`} className="flex items-start gap-2">
+              <span className="font-medium text-sm text-foreground dark:text-foreground capitalize whitespace-nowrap">
+                {deadline.type === 'abstract' ? 'Abstract Submission' : 'Paper Submission'}:
+              </span>
               <div className="text-sm text-foreground dark:text-foreground">
-                <div>{format(deadlineDate, 'MMMM d, yyyy')}</div>
-                {conf.timezone ? (
+                <div>{format(deadline.parsedDate, 'MMMM d, yyyy')}</div>
+                {deadline.timezone ? (
                   <div className="text-muted-foreground dark:text-muted-foreground text-xs">
-                    Timezone: {conf.timezone}
+                    Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone} (Local Time)
                   </div>
                 ) : null}
               </div>
             </div>
-          ) : null}
+          ))}
 
           {startDate ? (
             <div className="flex items-start gap-2">
@@ -551,7 +609,10 @@ const CalendarPage = () => {
       <div className="flex flex-col items-center gap-4 mb-6">
         <div className="bg-muted dark:bg-muted rounded-lg p-1 inline-flex">
           <button
-            onClick={() => setIsYearView(false)}
+            onClick={() => {
+              setIsYearView(false);
+              setCurrentMonth(prev => new Date(currentYear, prev.getMonth()));
+            }}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${!isYearView
                 ? 'bg-card dark:bg-card shadow-sm text-primary dark:text-iris'
                 : 'text-muted-foreground dark:text-muted-foreground hover:text-foreground dark:hover:text-foreground'
@@ -578,7 +639,7 @@ const CalendarPage = () => {
                 setCurrentYear(newYear);
                 setSelectedDate(new Date(newYear, 0, 1)); // Set to January 1st of the new year
               }}
-              className="p-2 hover:bg-neutral-100 rounded-full transition-colors"
+              className="p-2 bg-transparent opacity-50 hover:opacity-100 transition-opacity"
               aria-label="Previous year"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -592,7 +653,7 @@ const CalendarPage = () => {
                 setCurrentYear(newYear);
                 setSelectedDate(new Date(newYear, 0, 1)); // Set to January 1st of the new year
               }}
-              className="p-2 hover:bg-neutral-100 rounded-full transition-colors"
+              className="p-2 bg-transparent opacity-50 hover:opacity-100 transition-opacity"
               aria-label="Next year"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -608,6 +669,9 @@ const CalendarPage = () => {
   const handleMonthChange = (month: Date) => {
     setCurrentMonth(month);
     setSelectedDate(month);
+    if (month.getFullYear() !== currentYear) {
+      setCurrentYear(month.getFullYear());
+    }
   };
 
   const currentEvents = useMemo(() => {
@@ -660,14 +724,17 @@ const CalendarPage = () => {
                   key={conf.id || conf.title}
                   className="p-4 border rounded-lg hover:bg-neutral-50 cursor-pointer"
                   onClick={() => {
-                    const deadlineDate = safeParseISO(conf.deadline);
+                    const validDeadlines = extractValidDeadlines(conf);
+                    const firstDeadline = validDeadlines.length > 0 
+                      ? getDeadlineInLocalTime(validDeadlines[0].date, validDeadlines[0].timezone || conf.timezone) 
+                      : null;
                     const startDate = safeParseISO(conf.start);
 
-                    if (deadlineDate) {
-                      setSelectedDate(deadlineDate);
+                    if (firstDeadline) {
+                      setSelectedDate(firstDeadline);
                       setSelectedDayEvents({
-                        date: deadlineDate,
-                        events: getDayEvents(deadlineDate)
+                        date: firstDeadline,
+                        events: getDayEvents(firstDeadline)
                       });
                     } else if (startDate) {
                       setSelectedDate(startDate);
@@ -686,11 +753,12 @@ const CalendarPage = () => {
                       ) : null}
                     </div>
                     {(() => {
-                      if (!conf.deadline || conf.deadline === 'TBD') return null;
-                      const parsed = safeParseISO(conf.deadline);
+                      const validDeadlines = extractValidDeadlines(conf);
+                      if (validDeadlines.length === 0) return null;
+                      const parsed = getDeadlineInLocalTime(validDeadlines[0].date, validDeadlines[0].timezone || conf.timezone);
                       return parsed ? (
-                        <span className="text-sm text-red-500">
-                          Deadline: {format(parsed, 'MMM d, yyyy')}
+                        <span className="text-sm text-red-500 capitalize">
+                          {validDeadlines[0].type === 'abstract' ? 'Abstract Submission' : 'Paper Submission'}: {format(parsed, 'MMM d, yyyy')}
                         </span>
                       ) : null;
                     })()}
@@ -736,7 +804,7 @@ const CalendarPage = () => {
                 onMonthChange={handleMonthChange}
                 fromMonth={isYearView ? new Date(currentYear, 0) : undefined}
                 toMonth={isYearView ? new Date(currentYear, 11) : undefined}
-                className="bg-card dark:bg-card rounded-lg p-6 shadow-sm mx-auto w-full"
+                className="bg-card dark:bg-card rounded-lg p-4 sm:p-6 shadow-sm mx-auto w-full overflow-x-auto"
                 components={{
                   Day: ({ date, displayMonth, ...props }) => {
                     const isOutsideDay = date.getMonth() !== displayMonth.getMonth();
@@ -748,7 +816,7 @@ const CalendarPage = () => {
                         role="button"
                         tabIndex={0}
                         {...props}
-                        className="w-full h-full p-2 cursor-pointer"
+                        className="w-full h-full p-2 cursor-pointer hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg transition-colors"
                       >
                         {renderDayContent(date)}
                       </div>
@@ -756,15 +824,15 @@ const CalendarPage = () => {
                   },
                 }}
                 classNames={{
-                  months: `grid ${isYearView ? 'grid-cols-3 gap-4' : ''} justify-center`,
+                  months: `grid ${isYearView ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8' : ''} justify-center`,
                   month: "space-y-4",
                   caption: "flex justify-center pt-1 relative items-center mb-4",
                   caption_label: "text-lg font-semibold",
                   head_row: "flex",
                   head_cell: "text-muted-foreground rounded-md w-10 font-normal text-[0.8rem]",
                   row: "flex w-full mt-2",
-                  cell: "h-16 w-10 text-center text-sm p-0 relative focus-within:relative focus-within:z-20 hover:bg-neutral-50 dark:hover:bg-neutral-800",
-                  day: "h-16 w-10 p-0 font-normal hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-colors",
+                  cell: "h-16 w-10 text-center text-sm p-0 relative focus-within:relative focus-within:z-20",
+                  day: "h-16 w-10 p-0 font-normal hover:bg-neutral-200 dark:hover:bg-neutral-700 rounded-lg transition-colors",
                   day_today: "bg-neutral-100 dark:bg-neutral-800 text-primary font-semibold",
                   day_outside: "hidden",
                   nav: "space-x-1 flex items-center",
@@ -806,7 +874,7 @@ const CalendarPage = () => {
                 <div className="space-y-4">
                   {selectedDayEvents.events.deadlines.map(conf => (
                     <div key={conf.id || conf.title}>
-                      {renderEventDetails(conf)}
+                      {renderEventDetails(conf, selectedDayEvents.date, true)}
                     </div>
                   ))}
                 </div>
@@ -818,7 +886,7 @@ const CalendarPage = () => {
                 <div className="space-y-4">
                   {selectedDayEvents.events.conferences.map(conf => (
                     <div key={conf.id || conf.title}>
-                      {renderEventDetails(conf)}
+                      {renderEventDetails(conf, selectedDayEvents.date, false)}
                     </div>
                   ))}
                 </div>
