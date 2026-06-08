@@ -53,7 +53,7 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
 
   useEffect(() => {
     onSearch(debouncedInputValue);
-  }, [debouncedInputValue]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [debouncedInputValue, onSearch]);
 
   return (
     <header className="bg-card border-b border-border">
@@ -135,7 +135,7 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
           <p className="text-sm text-muted-foreground py-4">
             A dỏm, yếu kém, phản cảm countdowns to <span className="line-through">top</span> CV/NLP/ML/Robotics/AI conference deadlines.
 <br/>
-Due to my incompetent in science, these conferences are mostly CORE-B/non-ranked.
+Due to my incompetence in science, these conferences are mostly CORE-B/non-ranked.
           </p>
           <p className="text-base md:text-lg font-semibold bg-blue-50 dark:bg-blue-950 text-blue-900 dark:text-blue-100 py-3 px-4 rounded-md inline-block mb-4">
             Current time: <Clock />

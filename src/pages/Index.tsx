@@ -55,12 +55,14 @@ const CALENDAR_ALERT_CONTENT = (
 );
 
 // 9.7 / 9.10 - Unified URL synchronization
-const syncFiltersToUrl = (key: string, values: Set<string>) => {
+const syncFiltersToUrl = (key: string, values: Set<string> | boolean) => {
   const searchParams = new URLSearchParams(window.location.search);
-  if (values.size > 0) {
-    searchParams.set(key, Array.from(values).join(','));
+  if (typeof values === 'boolean') {
+    if (values) searchParams.set(key, 'true');
+    else searchParams.delete(key);
   } else {
-    searchParams.delete(key);
+    if (values.size > 0) searchParams.set(key, Array.from(values).join(','));
+    else searchParams.delete(key);
   }
   window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
 };
@@ -209,6 +211,12 @@ const Index = () => {
     };
   }, [conferencesData]);
 
+  const handleSearch = useCallback((query: string) => {
+    startTransition(() => {
+      setSearchQuery(query);
+    });
+  }, []);
+
   if (isError) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-8">
@@ -232,12 +240,6 @@ const Index = () => {
   if (isLoading) {
     return <LoadingScreen />;
   }
-
-  const handleSearch = (query: string) => {
-    startTransition(() => {
-      setSearchQuery(query);
-    });
-  };
 
   return (
     <div className="min-h-screen bg-background dark:bg-background">
@@ -291,13 +293,7 @@ const Index = () => {
                 onCheckedChange={(checked) => {
                   startTransition(() => {
                     setShowAcceptingSubmissions(checked);
-                    const searchParams = new URLSearchParams(window.location.search);
-                    if (checked) {
-                      searchParams.set('accepting_submissions', 'true');
-                    } else {
-                      searchParams.delete('accepting_submissions');
-                    }
-                    window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
+                    syncFiltersToUrl('accepting_submissions', checked);
                   });
                 }}
               />
