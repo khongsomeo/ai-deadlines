@@ -97,6 +97,18 @@ const Header = ({ onSearch, showEmptyMessage = false }: HeaderProps) => {
               </div>
             </div>
             <Button
+              variant="ghost"
+              size="icon"
+              className="flex-shrink-0 md:hidden"
+              asChild
+              title="Calendar"
+              aria-label="View Calendar"
+            >
+              <Link to="/calendar">
+                <CalendarDays className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Button
               onClick={toggleTheme}
               variant="ghost"
               size="icon"

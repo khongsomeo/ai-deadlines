@@ -67,13 +67,11 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     // Calculate base positions using time ratios
     const baseStepPositions = barWidth > 0
       ? validSteps.map(step => {
-          const stepDate = step.parsedDate;
-          if (!stepDate || !isValid(stepDate)) return 0;
           if (singleDeadline) return barWidth;
           const preDeadlineWidth = barWidth * 0.2;
           const deadlineWidth = barWidth * 0.8;
           return preDeadlineWidth +
-            (differenceInMilliseconds(stepDate, firstStepDate) /
+            (differenceInMilliseconds(step.parsedDate, firstStepDate) /
               differenceInMilliseconds(lastStepDate, firstStepDate)) * deadlineWidth;
         })
       : validSteps.map(() => 0);

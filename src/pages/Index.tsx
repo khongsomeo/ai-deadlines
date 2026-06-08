@@ -159,15 +159,14 @@ const Index = () => {
     setState: React.Dispatch<React.SetStateAction<Set<string>>>,
     key: string,
     value: string,
-    forceAdd: boolean = false,
-    forceRemove: boolean = false
+    action: 'toggle' | 'add' | 'remove' = 'toggle'
   ) => {
     startTransition(() => {
       setState(prev => {
         const next = new Set(prev);
-        if (forceAdd) {
+        if (action === 'add') {
           next.add(value);
-        } else if (forceRemove) {
+        } else if (action === 'remove') {
           next.delete(value);
         } else {
           if (next.has(value)) next.delete(value);
@@ -349,7 +348,7 @@ const Index = () => {
                   <button
                     key={tag}
                     className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30 font-medium"
-                    onClick={() => toggleFilter(setSelectedTags, 'tags', tag, false, true)}
+                    onClick={() => toggleFilter(setSelectedTags, 'tags', tag, 'remove')}
                   >
                     {label}
                     <X className="ml-1 h-3 w-3" />
@@ -399,7 +398,7 @@ const Index = () => {
                 <button
                   key={country}
                   className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30 font-medium"
-                  onClick={() => toggleFilter(setSelectedCountries, 'countries', country, false, true)}
+                  onClick={() => toggleFilter(setSelectedCountries, 'countries', country, 'remove')}
                 >
                   {country}
                   <X className="ml-1 h-3 w-3" />
@@ -448,7 +447,7 @@ const Index = () => {
                 <button
                   key={format}
                   className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30 font-medium"
-                  onClick={() => toggleFilter(setSelectedFormats, 'formats', format, false, true)}
+                  onClick={() => toggleFilter(setSelectedFormats, 'formats', format, 'remove')}
                 >
                   {format}
                   <X className="ml-1 h-3 w-3" />
@@ -497,7 +496,7 @@ const Index = () => {
                 <button
                   key={rank}
                   className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-primary/10 text-primary dark:bg-iris/20 dark:text-iris hover:bg-primary/20 dark:hover:bg-iris/30 font-medium"
-                  onClick={() => toggleFilter(setSelectedRanks, 'ranks', rank, false, true)}
+                  onClick={() => toggleFilter(setSelectedRanks, 'ranks', rank, 'remove')}
                 >
                   {rank}
                   <X className="ml-1 h-3 w-3" />
