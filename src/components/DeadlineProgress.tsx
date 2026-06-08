@@ -29,7 +29,6 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
       if (step.date === 'TBD') return [];
       const parsedDate = getDeadlineInLocalTime(step.date, step.timezone);
       if (!parsedDate || !isValid(parsedDate)) return [];
-      if (isPast(parsedDate)) return []; // Only keep future deadlines
       return [{ ...step, parsedDate }];
     }).sort((a, b) => a.parsedDate.getTime() - b.parsedDate.getTime());
   }, [steps]);
@@ -60,10 +59,6 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     const lastStepDate = singleDeadline
       ? firstStepDate
       : validSteps[validSteps.length - 1].parsedDate;
-
-    if (!firstStepDate || !lastStepDate || !isValid(firstStepDate) || !isValid(lastStepDate)) {
-      return null;
-    }
 
     const extendedStartDate = new Date(
       firstStepDate.getTime() - DAYS_BEFORE_START * 24 * 60 * 60 * 1000
@@ -114,10 +109,6 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
         anchorPx.push(stepPositions[i]);
       }
     });
-    if (anchorTimes[anchorTimes.length - 1] !== lastStepDate.getTime()) {
-      anchorTimes.push(lastStepDate.getTime());
-      anchorPx.push(barWidth);
-    }
 
     // Interpolate current progress position
     let progressPx = 0;
@@ -141,10 +132,12 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     return { extendedStartDate, stepPositions, progressPx };
   }, [validSteps, barWidth]);
 
-  if (validSteps.length === 0 || !computed) {
+  const allPassed = validSteps.length > 0 && validSteps.every(s => s.parsedDate && isPast(s.parsedDate));
+
+  if (validSteps.length === 0 || !computed || allPassed) {
     const hasTbdOrEmpty = steps.length === 0 || steps.every(s => s.date === 'TBD');
     return (
-      <div className="w-full flex items-center justify-center mt-4 py-2 text-sm text-muted-foreground bg-neutral-50 dark:bg-neutral-800/50 rounded-md border border-dashed border-neutral-200 dark:border-neutral-700">
+      <div className={`w-full flex items-center justify-center mt-4 py-2 text-sm rounded-md border border-dashed ${hasTbdOrEmpty ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800/30' : 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800/30'}`}>
         <span className="flex items-center gap-2">
           {hasTbdOrEmpty ? (
             <>
@@ -170,7 +163,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
 
   return (
     <div className="flex justify-center w-full mt-14 mb-4">
-      <div className="relative w-full max-w-xl px-2">
+      <div className="relative w-full max-w-xl px-4">
         <div ref={barRef} className="relative w-full h-2 bg-muted dark:bg-muted rounded-full mx-auto">
           {/* Progress fill */}
           <div
@@ -187,7 +180,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
               <div className="w-3 h-3 bg-card dark:bg-card rounded-full border-2 border-muted dark:border-muted-foreground/50" />
               <span
                 className="absolute whitespace-nowrap text-[10px] text-muted-foreground dark:text-muted-foreground"
-                style={{ top: "-24px", transform: "rotate(-45deg)", transformOrigin: "left bottom", left: "10px" }}
+                style={{ top: "-24px", left: "50%", transform: "translateX(-50%) rotate(-45deg)", transformOrigin: "center bottom" }}
               >
                 Start
               </span>
@@ -197,7 +190,8 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
           {/* Step markers */}
           {validSteps.map((step, idx) => {
             const stepDate = step.parsedDate;
-            const status = stepDate && isPast(stepDate) ? 'past' : 'upcoming';
+            if (stepDate && isPast(stepDate)) return null;
+
             const leftPx = stepPositions[idx];
             const dateLabel = stepDate ? format(stepDate, "MMM d") : 'TBD';
 
@@ -217,24 +211,21 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
                     >
                       <span
                         className="absolute whitespace-nowrap text-[10px] text-muted-foreground dark:text-muted-foreground"
-                        style={{ top: "-24px", transform: "rotate(-45deg)", transformOrigin: "left bottom", left: "10px" }}
+                        style={{ top: "-24px", left: "50%", transform: "translateX(-50%) rotate(-45deg)", transformOrigin: "center bottom" }}
                       >
                         {dateLabel}
                       </span>
-                      <div
-                        className={`w-4 h-4 rounded-full ${
-                          status === 'past'
-                            ? 'bg-primary dark:bg-iris brightness-110 dark:brightness-125 border border-black/10 dark:border-white/10 shadow-sm'
-                            : 'bg-card dark:bg-card border-2 border-muted dark:border-muted-foreground/50'
-                        }`}
-                      />
+                      <div className="w-4 h-4 rounded-full bg-card dark:bg-card border-2 border-muted dark:border-muted-foreground/50" />
                     </div>
                   </TooltipTrigger>
                   <TooltipContent>
                     <p className="font-medium text-foreground">{step.label}</p>
-                    <p className="text-foreground">{stepDate ? format(stepDate, "MMMM d, yyyy") : 'TBD'}</p>
-                    {/* 9.3 — Use module-level LOCAL_TZ instead of creating Intl object per step */}
-                    <p className="text-xs text-muted-foreground">Timezone: {step.timezone || LOCAL_TZ}</p>
+                    <p className="text-foreground">{stepDate ? `${format(stepDate, "MMMM d, yyyy")} (${LOCAL_TZ})` : 'TBD'}</p>
+                    {step.date && step.date !== 'TBD' && (
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Official: {format(new Date(step.date.split(' ')[0] + 'T00:00:00'), "MMM d, yyyy")} ({step.timezone || LOCAL_TZ})
+                      </p>
+                    )}
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
