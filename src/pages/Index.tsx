@@ -64,7 +64,8 @@ const syncFiltersToUrl = (key: string, values: Set<string> | boolean) => {
     if (values.size > 0) searchParams.set(key, Array.from(values).join(','));
     else searchParams.delete(key);
   }
-  window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
+  const qs = searchParams.toString();
+  window.history.replaceState({}, '', `${window.location.pathname}${qs ? '?' + qs : ''}`);
 };
 
 const clearAllUrlFilters = () => {
@@ -73,7 +74,8 @@ const clearAllUrlFilters = () => {
   searchParams.delete('countries');
   searchParams.delete('ranks');
   searchParams.delete('formats');
-  window.history.replaceState({}, '', `${window.location.pathname}?${searchParams}`);
+  const qs = searchParams.toString();
+  window.history.replaceState({}, '', `${window.location.pathname}${qs ? '?' + qs : ''}`);
 };
 
 const Index = () => {
@@ -123,7 +125,7 @@ const Index = () => {
 
   const filteredConferences = useMemo(() => {
     if (!Array.isArray(conferencesData)) {
-      console.error("Conferences data is not an array:", conferencesData);
+      console.error("Conferences data is not an array. Type received:", typeof conferencesData);
       return [];
     }
     const queryLower = searchQuery.toLowerCase();
@@ -146,7 +148,7 @@ const Index = () => {
         return matchesTags && matchesCountry && matchesRank && matchesFormat && matchesSearch;
       });
 
-    return [...filtered].sort((a, b) => {
+    return filtered.sort((a, b) => {
       const aDate = metaCache.get(a.id)?.primaryDeadlineDate ?? null;
       const bDate = metaCache.get(b.id)?.primaryDeadlineDate ?? null;
       if (!aDate && !bDate) return 0;
