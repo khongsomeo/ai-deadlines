@@ -14,6 +14,10 @@ RUN --mount=type=cache,target=/root/.npm \
 # Copy project files
 COPY . .
 
+# Set build arguments for Vite
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
 # Build the app
 RUN npm run build
 
