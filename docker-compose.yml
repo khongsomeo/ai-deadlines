@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL}
     image: ai-deadlines:latest
     container_name: ai-deadlines
     ports:
