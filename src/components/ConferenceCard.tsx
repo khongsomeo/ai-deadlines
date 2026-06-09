@@ -5,22 +5,11 @@ import { useMemo, useCallback, memo } from "react";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import DeadlineProgress from './DeadlineProgress';
 import { getNextUpcomingDeadline, getPrimaryDeadline, getAllDeadlines, getCountdownColorClass, getDaysRemaining, formatDeadlineDate } from "@/utils/deadlineUtils";
+import { CATEGORY_LABELS, RANK_COLORS, DEFAULT_RANK_COLOR, UNRANKED_BADGE_COLOR } from "@/utils/constants";
 
 const getRankBadgeStyles = (rankName: string | undefined) => {
-  if (!rankName) return "text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800";
-
-  switch (rankName.toUpperCase()) {
-    case "A*":
-      return "text-red-600 dark:text-red-400";
-    case "A":
-      return "text-orange-600 dark:text-orange-400";
-    case "B":
-      return "text-blue-600 dark:text-blue-400";
-    case "C":
-      return "text-green-600 dark:text-green-400";
-    default:
-      return "text-gray-600 dark:text-gray-400";
-  }
+  if (!rankName) return UNRANKED_BADGE_COLOR;
+  return RANK_COLORS.get(rankName.toUpperCase()) || DEFAULT_RANK_COLOR;
 };
 
 const getTimeRemaining = (deadlineDate: Date | null) => {
@@ -181,7 +170,7 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
                 onClick={(e) => handleTagClick(e, tag)}
               >
                 <Tag className="h-3 w-3 mr-1" />
-                {tag}
+                {CATEGORY_LABELS.get(tag) || tag}
               </button>
             ))}
           </div>

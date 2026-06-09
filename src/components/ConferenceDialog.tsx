@@ -22,6 +22,7 @@ import { getDeadlineInLocalTime, getDeadlineInUTC } from '@/utils/dateUtils';
 import { getNextUpcomingDeadline, getUpcomingDeadlines, getDaysRemaining, getCountdownColorClass, formatDeadlineDate } from "@/utils/deadlineUtils";
 import { getCalendarSubscriptionLink } from "@/utils/calendarUtils";
 import { toast } from "@/components/ui/use-toast";
+import { CATEGORY_LABELS } from "@/utils/constants";
 
 // 9.3 — Hoisted to module level: the user's timezone never changes during a session.
 const LOCAL_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -281,7 +282,7 @@ END:VCALENDAR`;
               {conference.tags.map((tag) => (
                 <span key={tag} className="tag">
                   <Tag className="h-3 w-3 mr-1" />
-                  {tag}
+                  {CATEGORY_LABELS.get(tag) || tag}
                 </span>
               ))}
             </div>

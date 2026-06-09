@@ -21,59 +21,12 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { CATEGORY_LABELS, CATEGORY_COLORS, ORDERED_CATEGORIES } from "@/utils/constants";
 
-const categoryColors: Record<string, string> = {
-  "machine-learning": "bg-purple-500",
-  "multimedia": "bg-stone-500",
-  "computer-vision": "bg-orange-500",
-  "natural-language-processing": "bg-blue-500",
-  "robotics": "bg-green-500",
-  "speech-processing": "bg-yellow-500",
-  "signal-processing": "bg-cyan-500",
-  "data-mining": "bg-pink-500",
-  "information-theory": "bg-red-500",
-  "information-retrieval": "bg-amber-500",
-  "cryptography": "bg-indigo-500",
-  "security-and-privacy": "bg-teal-500",
-  "other": "bg-gray-500"
-};
-
-const categoryNames: Record<string, string> = {
-  "machine-learning": "Machine Learning",
-  "multimedia": "Multimedia",
-  "computer-vision": "Computer Vision",
-  "natural-language-processing": "NLP",
-  "robotics": "Robotics",
-  "speech-processing": "Speech Processing",
-  "signal-processing": "Signal Processing",
-  "data-mining": "Data Mining",
-  "information-theory": "Information Theory",
-  "information-retrieval": "Information Retrieval",
-  "cryptography": "Cryptography",
-  "security-and-privacy": "Security & Privacy",
-  "other": "Other"
-};
-
-// Add this array to maintain the exact order we want
-const orderedCategories = [
-  "machine-learning",
-  "multimedia",
-  "computer-vision",
-  "natural-language-processing",
-  "robotics",
-  "speech-processing",
-  "signal-processing",
-  "data-mining",
-  "information-theory",
-  "information-retrieval",
-  "cryptography",
-  "security-and-privacy",
-  "other"
-] as const;
+// Categories are now loaded from centralized constants @/utils/constants
 
 const mapLegacyTag = (tag: string): string => {
   const legacyTagMapping: Record<string, string> = {
-    "human-computer-interaction": "other",
     // reinforcement-learning is already a proper tag, so no mapping needed
     // Add any other legacy mappings here
   };
@@ -249,7 +202,7 @@ const EventDetails = React.memo(({ conf, deadlinesToDisplay }: { conf: Conferenc
             className="tag"
           >
             <Tag className="h-3 w-3 mr-1" />
-            {categoryNames[tag] || tag}
+            {CATEGORY_LABELS.get(tag) || tag}
           </span>
         ))}
       </div>
@@ -314,7 +267,7 @@ const CalendarPage = () => {
     events: { deadlines: [], conferences: [] }
   });
   const [selectedCategories, setSelectedCategories] = useState<Set<string>>(
-    new Set(orderedCategories)
+    new Set(ORDERED_CATEGORIES)
   );
   const [showDeadlines, setShowDeadlines] = useState(true);
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -370,9 +323,16 @@ const CalendarPage = () => {
     
     if (!conferencesData) return map;
     
+    // Deduplicate incoming data using a Map 
+    // to avoid expensive .some() scans inside tight loops.
+    const uniqueConferencesMap = new Map<string, Conference>();
+    conferencesData.forEach((conf: Conference) => {
+      uniqueConferencesMap.set(conf.id || conf.title, conf);
+    });
+
     const query = searchQuery.toLowerCase();
 
-    conferencesData.forEach((conf: Conference) => {
+    uniqueConferencesMap.forEach((conf: Conference) => {
       const matchesSearch = query === "" || 
         conf.title.toLowerCase().includes(query) || 
         (conf.full_name && conf.full_name.toLowerCase().includes(query));
@@ -390,7 +350,8 @@ const CalendarPage = () => {
             if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
             
             const dayEvents = map.get(dateStr)!;
-            if (!dayEvents.deadlines.some(c => c.conf.id === conf.id && c.parsedDeadline.type === deadline.type)) {
+            const confId = conf.id || conf.title;
+            if (!dayEvents.deadlines.some(c => (c.conf.id || c.conf.title) === confId && c.parsedDeadline.type === deadline.type)) {
               dayEvents.deadlines.push({ conf, parsedDeadline: { ...deadline, parsedDate: deadlineDate } });
             }
           }
@@ -456,7 +417,7 @@ const CalendarPage = () => {
         style += " rounded-r-sm";
       }
 
-      const color = conf.tags && conf.tags[0] ? categoryColors[conf.tags[0]] : "bg-gray-500";
+      const color = conf.tags && conf.tags[0] ? CATEGORY_COLORS.get(conf.tags[0]) : "bg-gray-500";
 
       return { style, color };
     });
@@ -532,9 +493,9 @@ const CalendarPage = () => {
   }, [conferencesData]);
 
   const categories = useMemo(() => {
-    return orderedCategories.flatMap(category =>
+    return ORDERED_CATEGORIES.flatMap(category =>
       availableCategories.has(category)
-        ? [[category, categoryColors[category]]]
+        ? [[category, CATEGORY_COLORS.get(category)]]
         : []
     );
   }, [availableCategories]);
@@ -594,20 +555,20 @@ const CalendarPage = () => {
                   `}
                 >
                   <div className={`w-3 h-3 rounded-full ${color}`} />
-                  <span className="text-sm">{categoryNames[tag] || tag}</span>
+                  <span className="text-sm">{CATEGORY_LABELS.get(tag) || tag}</span>
                 </button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Click to toggle {categoryNames[tag] || tag}</p>
+                <p>Click to toggle {CATEGORY_LABELS.get(tag) || tag}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         ))}
 
-        {selectedCategories.size < Object.keys(categoryColors).length ? (
+        {selectedCategories.size < CATEGORY_COLORS.size ? (
           <button
             onClick={() => {
-              setSelectedCategories(new Set(orderedCategories));
+              setSelectedCategories(new Set(ORDERED_CATEGORIES));
               setShowDeadlines(true);
             }}
             className="text-sm text-green-600 bg-green-50 hover:bg-green-100 hover:text-green-700
@@ -856,7 +817,7 @@ const CalendarPage = () => {
                           className="tag"
                         >
                           <Tag className="h-3 w-3 mr-1" />
-                          {categoryNames[tag] || tag}
+                          {CATEGORY_LABELS.get(tag) || tag}
                         </span>
                       ))}
                     </div>

@@ -16,26 +16,10 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { useToast } from "@/components/ui/use-toast";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { getApiBaseUrl } from "@/utils/apiClient";
+import { CATEGORY_CONFIG, CATEGORY_LABELS, RANK_PRIORITIES, DEFAULT_RANK_PRIORITY } from "@/utils/constants";
 
-// 9.8 - rendering-hoist-jsx / module const
-const CATEGORY_BUTTONS = [
-  { id: "machine-learning", label: "Machine Learning" },
-  { id: "multimedia", label: "Multimedia" }, 
-  { id: "robotics", label: "Robotics" },
-  { id: "computer-vision", label: "Computer Vision" },
-  { id: "data-mining", label: "Data Mining" },
-  { id: "natural-language-processing", label: "Natural Language Processing" },
-  { id: "signal-processing", label: "Signal Processing" },
-  { id: "speech-processing", label: "Speech Processing" },
-  { id: "human-computer-interaction", label: "Human Computer Interaction" },
-  { id: "information-theory", label: "Information Theory" },
-  { id: "information-retrieval", label: "Information Retrieval" },
-  { id: "cryptography", label: "Cryptography" },
-  { id: "security-and-privacy", label: "Security & Privacy" },
-];
-
-// Pre-compute map for O(1) lookups to avoid .find() in render (js-index-maps)
-const CATEGORY_MAP = new Map(CATEGORY_BUTTONS.map(c => [c.id, c.label]));
+// Categories are now loaded from centralized constants
+// (js-index-maps) - O(1) map available via CATEGORY_LABELS
 
 // 9.9 - rendering-hoist-jsx: Static Alert JSX recreated every render
 const CALENDAR_ALERT_CONTENT = (
@@ -113,6 +97,7 @@ const Index = () => {
   const handleCopyCalendarUrl = () => {
     navigator.clipboard.writeText(calendarUrl).then(() => {
       toast({
+        variant: "info",
         description: "Calendar URL copied to clipboard!",
       });
     }).catch(() => {
@@ -209,7 +194,13 @@ const Index = () => {
     return {
       countries: Array.from(countrySet).sort(),
       formats: Array.from(formatSet).sort(),
-      ranks: Array.from(rankSet).sort()
+      ranks: Array.from(rankSet).sort((a, b) => {
+        const orderA = RANK_PRIORITIES.get(a.toUpperCase()) ?? DEFAULT_RANK_PRIORITY;
+        const orderB = RANK_PRIORITIES.get(b.toUpperCase()) ?? DEFAULT_RANK_PRIORITY;
+        
+        if (orderA === orderB) return a.localeCompare(b);
+        return orderA - orderB;
+      })
     };
   }, [conferencesData]);
 
@@ -319,7 +310,7 @@ const Index = () => {
                         className="max-h-60 overflow-y-auto space-y-2 bg-card dark:bg-card overscroll-contain touch-pan-y"
                         style={{ WebkitOverflowScrolling: "touch" }}
                       >
-                        {CATEGORY_BUTTONS.map(category => (
+                        {CATEGORY_CONFIG.map(category => (
                           <div key={category.id} className="flex items-center space-x-2 hover:bg-gray-200 hover:text-foreground dark:hover:bg-muted p-1 rounded">
                             <Checkbox
                               id={`tag-${category.id}`}
@@ -341,7 +332,7 @@ const Index = () => {
               </Popover>
 
               {Array.from(selectedTags).map(tag => {
-                const label = CATEGORY_MAP.get(tag) || tag;
+                const label = CATEGORY_LABELS.get(tag) || tag;
                 return (
                   <button
                     key={tag}
