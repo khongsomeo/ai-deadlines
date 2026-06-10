@@ -75,7 +75,7 @@ export const getDeadlineInUTC = (deadline: string | undefined, timezone: string 
 
 // Cache the user's timezone to avoid calling Intl.DateTimeFormat repeatedly, which is a very slow operation
 let cachedUserTimezone: string | null = null;
-const getUserTimezone = () => {
+export const getUserTimezone = () => {
   if (!cachedUserTimezone) {
     cachedUserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }

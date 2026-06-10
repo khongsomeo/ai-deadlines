@@ -1,6 +1,6 @@
 import React, { useState, useMemo, startTransition, useCallback } from "react";
 import { useConferences } from "@/hooks/useConferences";
-import { getDeadlineInLocalTime } from "@/utils/dateUtils";
+import { getDeadlineInLocalTime, getUserTimezone } from "@/utils/dateUtils";
 import { Conference } from "@/types/conference";
 import { Tag, X, Plus } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
@@ -22,6 +22,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { CATEGORY_LABELS, CATEGORY_COLORS, ORDERED_CATEGORIES } from "@/utils/constants";
+
+const USER_TIMEZONE = getUserTimezone();
 
 // Categories are now loaded from centralized constants @/utils/constants
 
@@ -158,7 +160,7 @@ const EventDetails = React.memo(({ conf, deadlinesToDisplay }: { conf: Conferenc
               <div>{format(deadline.parsedDate, 'MMMM d, yyyy')}</div>
               {deadline.timezone ? (
                 <div className="text-muted-foreground dark:text-muted-foreground text-xs">
-                  Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone}
+                  Timezone: {USER_TIMEZONE}
                 </div>
               ) : null}
             </div>
@@ -392,13 +394,13 @@ const CalendarPage = () => {
     return map;
   }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
 
-  const getDayEvents = (date: Date): DayEvents => {
+  const getDayEvents = useCallback((date: Date): DayEvents => {
     const dateStr = format(date, 'yyyy-MM-dd');
     return eventsMap.get(dateStr) || { deadlines: [], conferences: [] };
-  };
+  }, [eventsMap]);
 
 
-  const getConferenceLineStyle = (dateStr: string, dayConferences: Conference[]) => {
+  const getConferenceLineStyle = useCallback((dateStr: string, dayConferences: Conference[]) => {
     // If only showing deadlines and no categories are selected, don't show any conference lines
     if (selectedCategories.size === 0 && showDeadlines) {
       return [];
@@ -421,9 +423,9 @@ const CalendarPage = () => {
 
       return { style, color };
     });
-  };
+  }, [selectedCategories, showDeadlines]);
 
-  const renderDayContent = (date: Date) => {
+  const renderDayContent = useCallback((date: Date) => {
     const dayEvents = getDayEvents(date);
     const hasEvents = dayEvents.deadlines.length > 0 || dayEvents.conferences.length > 0;
 
@@ -474,7 +476,7 @@ const CalendarPage = () => {
         ) : null}
       </div>
     );
-  };
+  }, [getDayEvents, getConferenceLineStyle, showDeadlines]);
 
 
 
