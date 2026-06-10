@@ -1,0 +1,56 @@
+- title: SIGGRAPH Asia
+  year: 2026
+  id: siggrapha26
+  full_name: 19th ACM SIGGRAPH Asia
+  link: "https://asia.siggraph.org/2026/"
+  timezone: UTC-12
+  city: "Kuala Lumpur"
+  country: Malaysia
+  venue: "KLCC"
+  format: in-person
+  date: "1 - 4 December 2026"
+  start: 2026-12-01
+  end: 2026-12-04
+  tags:
+    - human-computer-interaction
+    - robotics
+    - machine-learning
+    - computer-vision
+    - multimedia
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/957/"
+  deadlines:
+    - type: abstract
+      label: "Technical Papers Abstract Deadline"
+      date: "2026-05-05 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Technical Papers Submission Deadline"
+      date: "2026-05-12 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Technical Papers Upload Deadline"
+      date: "2026-05-13 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Technical Papers Rebuttal Begins"
+      date: "2026-06-29 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Technical Papers Rebuttals Due"
+      date: "2026-07-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Technical Papers Decisions Announced"
+      date: "2026-07-19 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Technical Communications Submission Deadline"
+      date: "2026-07-27 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Technical Communications Acceptance Notification"
+      date: "2026-09-08 07:59:00"
+      timezone: UTC-12

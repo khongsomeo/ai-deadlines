@@ -82,6 +82,15 @@ export const getDeadlineInUTC = (deadline: string | undefined, timezone: string 
   }
 };
 
+// Cache the user's timezone to avoid calling Intl.DateTimeFormat repeatedly, which is a very slow operation
+let cachedUserTimezone: string | null = null;
+const getUserTimezone = () => {
+  if (!cachedUserTimezone) {
+    cachedUserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  }
+  return cachedUserTimezone;
+};
+
 export const getDeadlineInLocalTime = (deadline: string | undefined, timezone: string | undefined): Date | null => {
   if (!deadline || deadline === 'TBD') {
     return null;
@@ -134,7 +143,7 @@ export const getDeadlineInLocalTime = (deadline: string | undefined, timezone: s
 
     try {
       // Get user's local timezone
-      const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const userTimezone = getUserTimezone();
 
       // We need to:
       // 1. Treat the parsed date as being in the conference's timezone

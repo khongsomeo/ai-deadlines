@@ -8,6 +8,26 @@
       label: Paper Submission
       date: "TBD"
       timezone: TBD
+    - type: reviews_released
+      label: Reviews Released
+      date: "TBD"
+      timezone: TBD
+    - type: submission
+      label: Initial Author Response
+      date: "TBD"
+      timezone: TBD
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "TBD"
+      timezone: TBD
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "TBD"
+      timezone: TBD
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: TBD
   timezone: TBD
   city: Tokyo
   country: Japan

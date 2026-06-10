@@ -1,0 +1,31 @@
+- title: STOC
+  year: 2026
+  id: stoc26
+  full_name: 58th ACM Symposium on Theory of Computing
+  link: "https://acm-stoc.org/stoc2026/"
+  timezone: UTC-5
+  city: "Salt Lake City, UT"
+  country: United States
+  venue: TBD
+  format: in-person
+  date: "June 22-27, 2026"
+  start: 2026-06-22
+  end: 2026-06-27
+  tags:
+    - machine-learning
+    - cryptography
+    - data-mining
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/65/"
+  deadlines:
+    - type: submission
+      label: "STOC Paper Submission Deadline"
+      date: "2025-11-04 16:59:00"
+      timezone: UTC-5
+    - type: final_decision
+      label: "Submitted Papers Notification"
+      date: "2026-02-01 07:59:00"
+      timezone: UTC-5

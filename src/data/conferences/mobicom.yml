@@ -1,0 +1,72 @@
+- title: MOBICOM
+  year: 2026
+  id: mobicom26
+  full_name: "The 32nd Annual International Conference on Mobile Computing and Networking"
+  link: "https://www.sigmobile.org/mobicom/2026/"
+  timezone: UTC-12
+  city: "Austin, TX"
+  country: United States
+  venue: TBD
+  format: in-person
+  date: "October 26-30, 2026"
+  start: 2026-10-26
+  end: 2026-10-30
+  tags:
+    - robotics
+    - machine-learning
+    - multimedia
+    - human-computer-interaction
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/27/"
+  deadlines:
+    - type: abstract
+      label: "(Summer) Abstract Registration"
+      date: "2025-08-27 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(Summer) Paper Submission"
+      date: "2025-09-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Summer) Early Rejection Notification"
+      date: "2025-10-28 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "(Summer) Rebuttal Period Starts"
+      date: "2025-11-11 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "(Summer) Rebuttal Period Ends"
+      date: "2025-11-14 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Summer) Final Notifications"
+      date: "2025-11-24 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: "(Winter) Abstract Registration"
+      date: "2026-03-06 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(Winter) Paper Submission"
+      date: "2026-03-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Winter) Early Rejection Notification"
+      date: "2026-05-21 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "(Winter) Rebuttal Period Starts"
+      date: "2026-06-04 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "(Winter) Rebuttal Period Ends"
+      date: "2026-06-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Winter) Final Notifications"
+      date: "2026-06-22 07:59:00"
+      timezone: UTC-12

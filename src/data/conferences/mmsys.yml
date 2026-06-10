@@ -1,0 +1,47 @@
+- title: MMSys
+  year: 2027
+  id: mmsys27
+  full_name: "The 18th ACM Multimedia Systems Conference"
+  link: "https://2027.acmmmsys.org/"
+  timezone: UTC-12
+  city: "Ghent"
+  country: "Belgium"
+  venue: "TBD"
+  format: in-person
+  date: "March 30 - April 2, 2027"
+  start: 2027-03-30
+  end: 2027-04-02
+  tags:
+    - machine-learning
+    - multimedia
+    - human-computer-interaction
+    - robotics
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/2336/"
+  deadlines:
+    - type: abstract
+      label: "(1st round) Registration"
+      date: "2026-09-10 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(1st round) Submission"
+      date: "2026-09-17 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(1st round) Notification"
+      date: "2026-10-24 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: "(2nd round) Registration"
+      date: "2026-11-12 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(2nd round) Submission"
+      date: "2026-11-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(2nd round) Notification"
+      date: "2026-12-22 07:59:00"
+      timezone: UTC-12

@@ -1,0 +1,31 @@
+- title: FAIR
+  year: 2026
+  id: fair26
+  full_name: "FAIR'2026: The National Conference on Fundamental and Applied IT Research"
+  link: "https://fair.conf.vn"
+  timezone: UTC-12
+  city: "Ho Chi Minh City"
+  country: "Vietnam"
+  venue: "HUIT-Ho Chi Minh City University of Industry and Trade"
+  format: in-person
+  date: "October 8-9, 2026"
+  start: 2026-10-08
+  end: 2026-10-09
+  tags:
+    - security-and-privacy
+    - computer-vision
+    - data-mining
+    - machine-learning
+  rankings:
+    rank_name: "Non-ranked"
+    rank_source: "National"
+    rank_source_url: "#"
+  deadlines:
+    - type: submission
+      label: "Submission deadline"
+      date: "2026-08-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Accepted Notifications"
+      date: "2026-09-15 07:59:00"
+      timezone: UTC-12

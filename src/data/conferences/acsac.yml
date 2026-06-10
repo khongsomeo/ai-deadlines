@@ -1,0 +1,46 @@
+- title: ACSAC
+  year: 2026
+  id: acsac26
+  full_name: "The IEEE Annual Computer Security Applications Conference"
+  link: "https://www.acsac.org/"
+  timezone: UTC-12
+  city: "Los Angeles, CA"
+  country: "United States"
+  venue: "TBD"
+  format: in-person
+  date: "December 7-11, 2026"
+  start: 2026-12-07
+  end: 2026-12-11
+  tags:
+    - security-and-privacy
+    - machine-learning
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/117/"
+  deadlines:
+    - type: submission
+      label: "Paper Submissions"
+      date: "2026-05-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Early Rejection Notification"
+      date: "2026-07-13 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Authors Response Period Starts"
+      date: "2026-08-18 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Authors Response Period Ends"
+      date: "2026-08-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2026-09-08 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Minor Revision Period Ends"
+      date: "2026-10-08 23:59:00"
+      timezone: UTC-12

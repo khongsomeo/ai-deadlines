@@ -1,0 +1,30 @@
+- title: VR
+  year: 2027
+  id: vr27
+  full_name: "The IEEE Conference on Virtual Reality and 3D User Interfaces"
+  link: "https://ieeevr.org/2027/"
+  timezone: UTC-12
+  city: Melbourne
+  country: Australia
+  venue: TBD
+  format: in-person
+  date: "February 27 - March 3, 2027"
+  start: 2027-02-27
+  end: 2027-03-03
+  tags:
+    - human-computer-interaction
+    - multimedia
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/758/"
+  deadlines:
+    - type: abstract
+      label: "Abstract due"
+      date: "2026-08-24 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Submission due"
+      date: "2026-08-31 23:59:00"
+      timezone: UTC-12
+  note: "Full CFP coming soon"

@@ -2,7 +2,7 @@
   year: 2027
   id: coling27
   full_name: The 32nd International Conference on Computational Linguistics
-  link: "https://coling2027.org/"
+  link: "https://2027.coling-iccl.org/"
   deadlines:
     - type: submission
       date: "TBD"
@@ -21,9 +21,9 @@
   country: Macau
   venue: TBD
   format: hybrid
-  date: TBD
-  start: TBD
-  end: TBD
+  date: May 09-14, 2027
+  start: 2027-05-09
+  end: 2027-05-14
   tags:
       - natural-language-processing
       - human-computer-interaction

@@ -1,0 +1,51 @@
+- title: VIS
+  year: 2026
+  id: vis26
+  full_name: "IEEE VIS: Visualization & Visual Analytics"
+  link: "https://ieeevis.org/year/2026/welcome/"
+  timezone: UTC-12
+  city: "Boston, MA"
+  country: "United States"
+  venue: "TBD"
+  format: in-person
+  date: "November 9-13, 2026"
+  start: 2026-11-09
+  end: 2026-11-13
+  note: |
+    <b>Important Submission Guidelines:</b><br>
+    <b>Page Limit:</b> Strictly 9 pages of content + up to 2 pages of references/acknowledgements/supplemental links.<br>
+    <b>Author List:</b> Must be final by the abstract deadline and cannot be changed later.<br>
+    <b>Anonymity:</b> Both double-blind (recommended) and single-blind submissions are allowed.<br>
+    <b>Revisions:</b> A two-cycle review process; accepted papers appear in a special issue of IEEE TVCG.
+  tags:
+    - human-computer-interaction
+    - machine-learning
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/759/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission (MANDATORY)"
+      date: "2026-03-21 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-03-31 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Supplementary Materials Submission"
+      date: "2026-04-07 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Results of First Review Cycle"
+      date: "2026-06-06 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission for Second Review Cycle"
+      date: "2026-07-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Final Notification"
+      date: "2026-07-15 07:59:00"
+      timezone: UTC-12

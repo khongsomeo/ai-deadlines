@@ -1,0 +1,28 @@
+- title: SIGGRAPH
+  year: 2026
+  id: siggraph26
+  full_name: 53rd International Conference & Exhibition On Computer Graphics & Interactive Techniques
+  link: "https://s2026.siggraph.org/"
+  timezone: UTC
+  city: "Los Angeles, CA"
+  country: United States
+  venue: L.A. Convention Center
+  format: in-person
+  date: "July 19-23, 2026"
+  start: 2026-07-19
+  end: 2026-07-23
+  tags:
+    - human-computer-interaction
+  rankings:
+    rank_name: A*
+    rank_source: CORE2023
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/38/"
+  deadlines:
+    - type: abstract_submission
+      label: "Submission form deadline"
+      date: "2026-01-15 22:00:00"
+      timezone: UTC
+    - type: submission
+      label: "Paper submission deadline"
+      date: "2026-01-22 22:00:00"
+      timezone: UTC

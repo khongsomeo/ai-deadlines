@@ -4,10 +4,10 @@ import { getAllDeadlines, getNextUpcomingDeadline, getPrimaryDeadline } from '@/
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import { isPast, isValid } from 'date-fns';
 
-// Non-eager glob: each value is a () => Promise<module> factory.
-// Vite still bundles these files, but the actual parsing is deferred
-// to when the factory is invoked — not at module initialisation time.
-const conferenceModules = import.meta.glob('@/data/conferences/*.yml', { eager: false });
+// Eager glob: all YAML files are bundled into a single chunk.
+// This prevents 100+ separate network requests from firing simultaneously
+// and causing a network waterfall when fetching the data.
+const conferenceModules = import.meta.glob('@/data/conferences/*.yml', { eager: true });
 
 /**
  * Pre-computed, stable metadata for a single conference entry.
@@ -98,14 +98,11 @@ export function useConferences(): UseConferencesResult {
     queryFn: async () => {
       const all: Conference[] = [];
 
-      await Promise.all(
-        Object.values(conferenceModules).map(async (factory) => {
-          const mod = (await factory()) as { default: Conference[] };
-          if (mod.default && Array.isArray(mod.default)) {
-            all.push(...mod.default);
-          }
-        })
-      );
+      for (const mod of Object.values(conferenceModules) as Array<{ default: Conference[] }>) {
+        if (mod.default && Array.isArray(mod.default)) {
+          all.push(...mod.default);
+        }
+      }
 
       const cache = buildMetaCache(all);
       return { data: all, metaCache: cache };
