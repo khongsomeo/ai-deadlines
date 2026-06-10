@@ -51,15 +51,18 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
   // Memoize ALL expensive deadline/date computations under stable primitive deps.
   // Without this, getNextUpcomingDeadline (O(N log N) sort) and date parsing
   // run on every render even though memo() is wrapping this component.
-  const { nextDeadline, timeRemaining, location, countdownColorClass } = useMemo(() => {
+  const { nextDeadline, deadlineDate, timeRemaining, location, countdownColorClass, hasActiveDeadline } = useMemo(() => {
     const nextDeadline = getNextUpcomingDeadline(props) || getPrimaryDeadline(props);
     const deadlineDate = nextDeadline
       ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || props.timezone)
       : null;
+    const timeRemaining = getTimeRemaining(deadlineDate);
     return {
       nextDeadline,
       deadlineDate,
-      timeRemaining: getTimeRemaining(deadlineDate),
+      timeRemaining,
+      // Derived from already-computed timeRemaining — zero extra function calls
+      hasActiveDeadline: timeRemaining !== 'TBD' && timeRemaining !== 'Deadline passed' && timeRemaining !== 'Invalid date',
       location: [props.city, props.country].filter(Boolean).join(", "),
       countdownColorClass: getCountdownColorClass(
         nextDeadline ? getDaysRemaining(nextDeadline, props.timezone) : null
@@ -92,8 +95,6 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
       props.onTagClick(tag);
     }
   };
-
-
 
   return (
     <>
@@ -145,18 +146,22 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
               </div>
             </div>
           ) : null}
-          <div className="flex items-center text-muted-foreground">
-            <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
-            <span className="text-sm truncate">
-              {nextDeadline ? `${nextDeadline.label}: ${formatDeadlineDate(nextDeadline.date, nextDeadline.timezone || timezone, false)}` : (deadline === 'TBD' ? 'TBD' : `${formatDeadlineDate(deadline, timezone, false)}`)}
-            </span>
-          </div>
-          <div className="flex items-center">
-            <AlarmClock className={`h-4 w-4 mr-2 flex-shrink-0 ${countdownColorClass}`} />
-            <span className={`text-sm font-medium truncate ${countdownColorClass}`}>
-              {timeRemaining}
-            </span>
-          </div>
+          {hasActiveDeadline ? (
+            <>
+              <div className="flex items-center text-muted-foreground">
+                <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
+                <span className="text-sm truncate">
+                  {nextDeadline ? `${nextDeadline.label}: ${formatDeadlineDate(nextDeadline.date, nextDeadline.timezone || timezone, false)}` : (deadline === 'TBD' ? 'TBD' : `${formatDeadlineDate(deadline, timezone, false)}`)}
+                </span>
+              </div>
+              <div className="flex items-center">
+                <AlarmClock className={`h-4 w-4 mr-2 flex-shrink-0 ${countdownColorClass}`} />
+                <span className={`text-sm font-medium truncate ${countdownColorClass}`}>
+                  {timeRemaining}
+                </span>
+              </div>
+            </>
+          ) : null}
         </div>
 
         <DeadlineProgress steps={deadlineSteps} />

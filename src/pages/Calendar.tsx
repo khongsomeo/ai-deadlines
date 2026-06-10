@@ -158,7 +158,7 @@ const EventDetails = React.memo(({ conf, deadlinesToDisplay }: { conf: Conferenc
               <div>{format(deadline.parsedDate, 'MMMM d, yyyy')}</div>
               {deadline.timezone ? (
                 <div className="text-muted-foreground dark:text-muted-foreground text-xs">
-                  Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone} (Local Time)
+                  Timezone: {Intl.DateTimeFormat().resolvedOptions().timeZone}
                 </div>
               ) : null}
             </div>

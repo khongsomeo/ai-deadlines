@@ -1,6 +1,41 @@
 import { parseISO, isValid } from 'date-fns';
 import { zonedTimeToUtc, utcToZonedTime } from 'date-fns-tz';
 
+export const normalizeTimezone = (tz: string | undefined): string => {
+  if (!tz) return 'UTC';
+
+  // Handle AoE (Anywhere on Earth) timezone
+  if (tz === 'AoE') return '-12:00';
+
+  // Handle GMT±XX format
+  const gmtMatch = tz.match(/^GMT([+-])(\d+)$/);
+  if (gmtMatch) {
+    const [, sign, hours] = gmtMatch;
+    const paddedHours = hours.padStart(2, '0');
+    return `${sign}${paddedHours}:00`;
+  }
+
+  const upperTz = tz.toUpperCase();
+
+  // If it's already an IANA timezone, return as is
+  if (!upperTz.startsWith('UTC') && !upperTz.startsWith('GMT')) return tz;
+
+  // Convert UTC±XX to proper format
+  const utcMatch = upperTz.match(/^UTC([+-])(\d+)$/);
+  if (utcMatch) {
+    const [, sign, hours] = utcMatch;
+    const paddedHours = hours.padStart(2, '0');
+    return `${sign}${paddedHours}:00`;
+  }
+
+  // Handle special case of UTC+0/UTC-0
+  if (upperTz === 'UTC+0' || upperTz === 'UTC-0' || upperTz === 'UTC+00' || upperTz === 'UTC-00') {
+    return 'UTC';
+  }
+
+  return 'UTC';
+};
+
 /**
  * Convert a deadline string from its specified timezone to UTC Date
  * Used for iCalendar events which require UTC times
@@ -22,53 +57,9 @@ export const getDeadlineInUTC = (deadline: string | undefined, timezone: string 
       return parsedDate;
     }
 
-    // Normalize the timezone string
-    const normalizeTimezone = (tz: string | undefined): string => {
-      if (!tz) return 'UTC';
-      if (tz === 'AoE') return 'UTC-12';
-      
-      // Handle GMT±XX format - convert to UTC±XX
-      const gmtMatch = tz.match(/^GMT([+-])(\d+)$/);
-      if (gmtMatch) {
-        const [, sign, hours] = gmtMatch;
-        return `UTC${sign}${hours}`;
-      }
-
-      // If it's already UTC±XX format, keep it
-      if (tz.match(/^UTC[+-]\d+$/)) {
-        return tz;
-      }
-
-      // Handle UTC+0, UTC-0 formats
-      if (tz === 'UTC+0' || tz === 'UTC-0' || tz === 'UTC+00' || tz === 'UTC-00') {
-        return 'UTC';
-      }
-
-      return tz;
-    };
-
     const normalizedTz = normalizeTimezone(timezone);
 
-    // Handle numeric UTC offsets (e.g., "UTC-12", "UTC+5")
-    const numericOffsetMatch = normalizedTz.match(/^UTC([+-])(\d{1,2})(?::(\d{2}))?$/);
-    if (numericOffsetMatch) {
-      const [, sign, hours, minutes] = numericOffsetMatch;
-      const offsetHours = parseInt(hours, 10);
-      const offsetMinutes = parseInt(minutes || '0', 10);
-      
-      // Calculate total offset in minutes
-      let totalOffsetMinutes = offsetHours * 60 + offsetMinutes;
-      if (sign === '-') {
-        totalOffsetMinutes = -totalOffsetMinutes;
-      }
-      
-      // Convert from timezone to UTC by subtracting the offset
-      // E.g., if timezone is UTC-12 (offset = -12 hours), we add 12 hours to get UTC
-      const utcDate = new Date(parsedDate.getTime() - totalOffsetMinutes * 60 * 1000);
-      return utcDate;
-    }
-
-    // For IANA timezone names, use zonedTimeToUtc
+    // For IANA timezone names and offset strings, use zonedTimeToUtc
     try {
       const utcDate = zonedTimeToUtc(parsedDate, normalizedTz);
       return utcDate;
@@ -104,40 +95,6 @@ export const getDeadlineInLocalTime = (deadline: string | undefined, timezone: s
       console.error('Invalid date parsed from deadline:', deadline);
       return null;
     }
-
-    // Handle timezone normalization
-    const normalizeTimezone = (tz: string | undefined): string => {
-      if (!tz) return 'UTC';
-
-      // Handle AoE (Anywhere on Earth) timezone
-      if (tz === 'AoE') return '-12:00';
-
-      // Handle GMT±XX format
-      const gmtMatch = tz.match(/^GMT([+-])(\d+)$/);
-      if (gmtMatch) {
-        const [, sign, hours] = gmtMatch;
-        const paddedHours = hours.padStart(2, '0');
-        return `${sign}${paddedHours}:00`;
-      }
-
-      // If it's already an IANA timezone, return as is
-      if (!tz.toUpperCase().startsWith('UTC') && !tz.toUpperCase().startsWith('GMT')) return tz;
-
-      // Convert UTC±XX to proper format
-      const utcMatch = tz.match(/^UTC([+-])(\d+)$/);
-      if (utcMatch) {
-        const [, sign, hours] = utcMatch;
-        const paddedHours = hours.padStart(2, '0');
-        return `${sign}${paddedHours}:00`;
-      }
-
-      // Handle special case of UTC+0/UTC-0
-      if (tz === 'UTC+0' || tz === 'UTC-0' || tz === 'UTC+00' || tz === 'UTC-00') {
-        return 'UTC';
-      }
-
-      return 'UTC';
-    };
 
     const normalizedTimezone = normalizeTimezone(timezone);
 
