@@ -64,7 +64,7 @@ const extractValidDeadlines = (conf: Conference): { type: string; date: string; 
 };
 
 export type ParsedDeadline = ReturnType<typeof extractValidDeadlines>[0] & { parsedDate: Date };
-export type DayEvents = { deadlines: { conf: Conference; parsedDeadline: ParsedDeadline }[], conferences: Conference[] };
+export type DayEvents = { deadlines: { conf: Conference; parsedDeadline: ParsedDeadline }[], conferences: Conference[], _deadlineKeys?: Set<string>, _confKeys?: Set<string> };
 
 const safeParseISO = (dateString: string | undefined | number): Date | null => {
   if (!dateString) return null;
@@ -329,7 +329,9 @@ const CalendarPage = () => {
     // to avoid expensive .some() scans inside tight loops.
     const uniqueConferencesMap = new Map<string, Conference>();
     conferencesData.forEach((conf: Conference) => {
-      uniqueConferencesMap.set(conf.id || conf.title, conf);
+      // Use strict check to avoid treating empty-string id as falsy
+      const key = conf.id != null && conf.id !== '' ? conf.id : conf.title;
+      uniqueConferencesMap.set(key, conf);
     });
 
     const query = searchQuery.toLowerCase();
@@ -342,6 +344,8 @@ const CalendarPage = () => {
       if (!matchesSearch) return;
 
       const matchesCategory = checkCategoryMatch(conf.tags, selectedCategories);
+      // Stable key for this conference, consistent with uniqueConferencesMap above
+      const confId = conf.id != null && conf.id !== '' ? conf.id : conf.title;
 
       if (showDeadlines && matchesCategory) {
         const validDeadlines = extractValidDeadlines(conf);
@@ -352,8 +356,11 @@ const CalendarPage = () => {
             if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
             
             const dayEvents = map.get(dateStr)!;
-            const confId = conf.id || conf.title;
-            if (!dayEvents.deadlines.some(c => (c.conf.id || c.conf.title) === confId && c.parsedDeadline.type === deadline.type)) {
+            // Use a Set for O(1) duplicate detection instead of O(n) .some()
+            const deadlineKey = `${confId}::${deadline.type}`;
+            if (!dayEvents._deadlineKeys) dayEvents._deadlineKeys = new Set();
+            if (!dayEvents._deadlineKeys.has(deadlineKey)) {
+              dayEvents._deadlineKeys.add(deadlineKey);
               dayEvents.deadlines.push({ conf, parsedDeadline: { ...deadline, parsedDate: deadlineDate } });
             }
           }
@@ -376,7 +383,13 @@ const CalendarPage = () => {
               if (current.getFullYear() === currentYear) {
                 const dateStr = format(current, 'yyyy-MM-dd');
                 if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
-                map.get(dateStr)!.conferences.push(conf);
+                const dayEvents = map.get(dateStr)!;
+                // Guard against duplicate conference entries on the same day
+                if (!dayEvents._confKeys) dayEvents._confKeys = new Set();
+                if (!dayEvents._confKeys.has(confId)) {
+                  dayEvents._confKeys.add(confId);
+                  dayEvents.conferences.push(conf);
+                }
               }
               current.setDate(current.getDate() + 1);
             }
@@ -385,7 +398,12 @@ const CalendarPage = () => {
           if (startDate.getFullYear() === currentYear) {
             const dateStr = format(startDate, 'yyyy-MM-dd');
             if (!map.has(dateStr)) map.set(dateStr, { deadlines: [], conferences: [] });
-            map.get(dateStr)!.conferences.push(conf);
+            const dayEvents = map.get(dateStr)!;
+            if (!dayEvents._confKeys) dayEvents._confKeys = new Set();
+            if (!dayEvents._confKeys.has(confId)) {
+              dayEvents._confKeys.add(confId);
+              dayEvents.conferences.push(conf);
+            }
           }
         }
       }
@@ -393,6 +411,7 @@ const CalendarPage = () => {
 
     return map;
   }, [conferencesData, searchQuery, selectedCategories, showDeadlines, currentYear]);
+
 
   const getDayEvents = useCallback((date: Date): DayEvents => {
     const dateStr = format(date, 'yyyy-MM-dd');
