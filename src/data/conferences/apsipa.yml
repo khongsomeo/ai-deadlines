@@ -1,0 +1,35 @@
+- title: APSIPA
+  year: 2026
+  id: apsipa26
+  full_name: "Asia-Pacific Signal and Information Processing Association Annual Summit and Conference 2026"
+  link: "https://www.apsipa2026.org/index.html"
+  deadlines:
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-06-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2026-07-31 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Bangkok
+  country: Thailand
+  venue: TBD
+  format: in-person
+  date: "November 9–12, 2026"
+  start: 2026-11-09
+  end: 2026-11-12
+  tags:
+    - signal-processing
+    - speech-processing
+    - natural-language-processing
+    - multimedia
+    - computer-vision
+    - machine-learning
+    - data-mining
+    - security-and-privacy
+  rankings:
+    rank_name: Non-ranked
+    rank_source: IEEE Xplore
+    rank_source_url: "https://ieeexplore.ieee.org/xpl/conhome/1803060/all-proceedings"

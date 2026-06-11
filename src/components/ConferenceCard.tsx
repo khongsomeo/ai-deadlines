@@ -1,7 +1,8 @@
 import { CalendarDays, ChartNoAxesColumn, Globe, Tag, Clock, AlarmClock } from "lucide-react";
 import { Conference } from "@/types/conference";
 import { formatDistanceToNow, isValid, isPast } from "date-fns";
-import { useMemo, useCallback, memo } from "react";
+import { useMemo, useCallback, useRef, memo } from "react";
+import { useClockTick } from "@/contexts/ClockContext";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import DeadlineProgress from './DeadlineProgress';
 import { getNextUpcomingDeadline, getPrimaryDeadline, getAllDeadlines, getCountdownColorClass, getDaysRemaining, formatDeadlineDate } from "@/utils/deadlineUtils";
@@ -51,6 +52,10 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
   // Memoize ALL expensive deadline/date computations under stable primitive deps.
   // Without this, getNextUpcomingDeadline (O(N log N) sort) and date parsing
   // run on every render even though memo() is wrapping this component.
+  // tickMinute (from useClockTick) causes this to re-run each minute so
+  // timeRemaining, color, and hasActiveDeadline stay current as time passes.
+  const now = useClockTick();
+  const tickMinute = Math.floor(now.getTime() / 60_000);
   const { nextDeadline, timeRemaining, location, countdownColorClass, hasActiveDeadline } = useMemo(() => {
     const nextDeadline = getNextUpcomingDeadline(props) || getPrimaryDeadline(props);
     const deadlineDate = nextDeadline
@@ -67,7 +72,7 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
         nextDeadline ? getDaysRemaining(nextDeadline, props.timezone) : null
       ),
     };
-  }, [props.id, props.deadline, props.abstract_deadline, props.deadlines, props.timezone, props.city, props.country]);
+  }, [props.id, props.deadline, props.abstract_deadline, props.deadlines, props.timezone, props.city, props.country, tickMinute]);
 
   // Memoize steps array for DeadlineProgress under the same stable primitive deps.
   const deadlineSteps = useMemo(() => {
@@ -78,14 +83,19 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
     }));
   }, [props.id, props.deadline, props.abstract_deadline, props.deadlines, props.timezone]);
 
-  // useCallback prevents a new function reference on every render; the deps
-  // are stable (onClick from VirtualConferenceGrid is itself useCallback-stable).
+  // Stable event handler pattern: synchronously keep `latestProps` current on
+  // every render so the callback closure can read the latest values without
+  // `props` in its dep array. This keeps the function reference stable across
+  // clock-tick re-renders, so memo(ConferenceCard) can bail out correctly.
+  const latestProps = useRef(props);
+  latestProps.current = props;
+
   const handleCardClick = useCallback((e: React.MouseEvent) => {
     if (!(e.target as HTMLElement).closest('a') &&
       !(e.target as HTMLElement).closest('.tag-button')) {
-      onClick?.(props);
+      latestProps.current.onClick?.(latestProps.current);
     }
-  }, [onClick, props]);
+  }, []); // stable — always reads latest props from ref, no deps needed
 
   const handleTagClick = (e: React.MouseEvent, tag: string) => {
     e.stopPropagation();

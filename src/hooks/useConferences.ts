@@ -1,8 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
+import { useMemo } from 'react';
 import { Conference, Deadline } from '@/types/conference';
 import { getAllDeadlines, getNextUpcomingDeadline, getPrimaryDeadline } from '@/utils/deadlineUtils';
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import { isPast, isValid } from 'date-fns';
+import { useClockTick } from '@/contexts/ClockContext';
 
 // Eager glob: all YAML files are bundled into a single chunk.
 // This prevents 100+ separate network requests from firing simultaneously
@@ -104,18 +106,34 @@ export function useConferences(): UseConferencesResult {
         }
       }
 
-      const cache = buildMetaCache(all);
-      return { data: all, metaCache: cache };
+      // Return raw data only. The meta-cache is built reactively below
+      // so it can be rebuilt on each clock tick without re-fetching YAML.
+      return { data: all };
     },
     staleTime: Infinity,
     gcTime: Infinity,
   });
+
+  // Rebuild the meta-cache on each 1-minute clock tick so that
+  // hasUpcoming / hasUpcomingSubmission / primaryDeadlineDate stay accurate
+  // as real time passes — without re-fetching the YAML data.
+  const now = useClockTick();
+  const tickMinute = Math.floor(now.getTime() / 60_000);
+
+  const metaCache = useMemo(() => {
+    if (!data?.data) return new Map<string, ConferenceMeta>();
+    return buildMetaCache(data.data);
+    // tickMinute is a clock-tick sentinel: it is intentionally in the dep array
+    // to invalidate this memo every minute without being read in the body.
+    // eslint-disable-next-line is NOT needed — React's exhaustive-deps rule only
+    // flags missing deps, not unused ones that are deliberately listed.
+  }, [data, tickMinute]);
 
   return {
     data: data?.data || [],
     isLoading,
     isError,
     error: (error as Error | null) ?? null,
-    metaCache: data?.metaCache || new Map(),
+    metaCache,
   };
 }

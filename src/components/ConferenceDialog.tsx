@@ -23,6 +23,7 @@ import { getNextUpcomingDeadline, getUpcomingDeadlines, getDaysRemaining, getCou
 import { getCalendarSubscriptionLink } from "@/utils/calendarUtils";
 import { toast } from "@/components/ui/use-toast";
 import { CATEGORY_LABELS } from "@/utils/constants";
+import { useClockTick } from "@/contexts/ClockContext";
 
 // 9.3 — Hoisted to module level: the user's timezone never changes during a session.
 const LOCAL_TZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -68,6 +69,10 @@ const Countdown = ({ deadlineDate }: { deadlineDate: Date | null }) => {
 const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogProps) => {
   // 9.2 — Memoize the expensive O(N log N) deadline sorting so it does not
   // re-run on every second when <Countdown> would previously tick the parent.
+  // tickMinute causes this to re-run each minute so the "Important Deadlines"
+  // list promotes the next entry after one passes — without closing the dialog.
+  const now = useClockTick();
+  const tickMinute = Math.floor(now.getTime() / 60_000);
   const { upcomingDeadlines, nextDeadline, deadlineDate } = useMemo(() => {
     const upcomingDeadlines = getUpcomingDeadlines(conference);
     const nextDeadline = getNextUpcomingDeadline(conference);
@@ -75,7 +80,8 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
       ? getDeadlineInLocalTime(nextDeadline.date, nextDeadline.timezone || conference.timezone)
       : null;
     return { upcomingDeadlines, nextDeadline, deadlineDate };
-  }, [conference.id]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [conference.id, tickMinute]);
 
   const location = conference.venue || 
     [conference.city, conference.country].filter(Boolean).join(", ") || 
@@ -83,7 +89,9 @@ const ConferenceDialog = ({ conference, open, onOpenChange }: ConferenceDialogPr
 
   const getCountdownColor = () => {
     if (!deadlineDate || !isValid(deadlineDate)) return "text-neutral-600";
-    const daysRemaining = Math.ceil((deadlineDate.getTime() - new Date().getTime()) / (1000 * 60 * 60 * 24));
+    // Use `now` from useClockTick (already in scope) instead of `new Date()`
+    // so there is exactly one "current time" value per render.
+    const daysRemaining = Math.ceil((deadlineDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
     if (daysRemaining <= 7) return "text-red-600";
     if (daysRemaining <= 30) return "text-orange-600";
     return "text-green-600";

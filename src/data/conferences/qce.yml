@@ -1,0 +1,34 @@
+- title: QCE
+  year: 2026
+  id: qce26
+  full_name: IEEE International Conference on Quantum Computing and Engineering
+  link: "https://qce.quantum.ieee.org/2026/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-04-20 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Technical Paper Submission
+      date: "2026-04-27 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "2026-07-06 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Toronto
+  country: Canada
+  venue: Metro Toronto Convention Centre (MTCC)
+  format: hybrid
+  date: September 13-18, 2026
+  start: 2026-09-13
+  end: 2026-09-18
+  tags:
+    - machine-learning
+    - cryptography
+    - security-and-privacy
+  rankings:
+    rank_name: Non-ranked
+    rank_source: National - ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2325/

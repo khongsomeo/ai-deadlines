@@ -1,4 +1,5 @@
 import { useRef, useLayoutEffect, useState, useMemo } from "react";
+import { useClockTick } from "@/contexts/ClockContext";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { isValid, isPast, format, differenceInMilliseconds } from "date-fns";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
@@ -46,6 +47,12 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     setBarWidth(Math.round(entry.contentRect.width));
   });
 
+  // tickMinute invalidates `computed` every minute so the today-dot advances
+  // and allPassed transitions to "All deadlines have passed" without a reload.
+  // Named `_tick` (not `now`) to prevent accidental shadowing inside the memo.
+  const _tick = useClockTick();
+  const tickMinute = Math.floor(_tick.getTime() / 60_000);
+
   // 9.1 — Wrap all coordinate math in a single useMemo so it only re-computes
   //        when validSteps or barWidth changes.
   // 9.4 — Use step.parsedDate in the anchor loop instead of re-calling
@@ -53,7 +60,15 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
   const computed = useMemo(() => {
     if (validSteps.length === 0) return null;
 
-    const now = new Date();
+    // Use Date.now() — no `const now = new Date()` to avoid shadowing the
+    // outer _tick variable and creating two separate "current time" values.
+    const nowMs = Date.now();
+
+    // allPassed lives here so its clock-reactivity is structural: this memo
+    // re-runs every minute via tickMinute, guaranteeing allPassed is never stale.
+    const allPassed = validSteps.every(s => s.parsedDate.getTime() < nowMs);
+    if (allPassed) return { allPassed, extendedStartDate: null, stepPositions: [] as number[], progressPx: 0 };
+
     const singleDeadline = validSteps.length === 1;
     const firstStepDate = validSteps[0].parsedDate;
     const lastStepDate = singleDeadline
@@ -111,7 +126,6 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     // Interpolate current progress position
     let progressPx = 0;
     if (barWidth > 0) {
-      const nowMs = now.getTime();
       if (nowMs <= anchorTimes[0]) {
         progressPx = 0;
       } else if (nowMs >= anchorTimes[anchorTimes.length - 1]) {
@@ -127,12 +141,10 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
       }
     }
 
-    return { extendedStartDate, stepPositions, progressPx };
-  }, [validSteps, barWidth]);
+    return { allPassed, extendedStartDate, stepPositions, progressPx };
+  }, [validSteps, barWidth, tickMinute]);
 
-  const allPassed = validSteps.length > 0 && validSteps.every(s => s.parsedDate && isPast(s.parsedDate));
-
-  if (validSteps.length === 0 || !computed || allPassed) {
+  if (validSteps.length === 0 || !computed || computed.allPassed) {
     const hasTbdOrEmpty = steps.length === 0 || steps.every(s => s.date === 'TBD');
     return (
       <div className={`w-full flex items-center justify-center mt-4 py-2 text-sm rounded-md border border-dashed ${hasTbdOrEmpty ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800/30' : 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800/30'}`}>

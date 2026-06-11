@@ -1,0 +1,29 @@
+- title: QAI
+  year: 2026
+  id: qai26
+  full_name: IEEE 2nd International Conference on Quantum Artificial Intelligence
+  link: "https://attend.ieee.org/qai-2026/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-06-30 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "2026-08-31 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Nottingham
+  country: United Kingdom
+  venue: Jubilee Conference Centre, Jubilee Campus, University of Nottingham
+  format: in-person
+  date: December 13-16, 2026
+  start: 2026-12-13
+  end: 2026-12-16
+  tags:
+    - machine-learning
+    - natural-language-processing
+  rankings:
+    rank_name: Non-ranked
+    rank_source: IEEEXplore
+    rank_source_url: https://ieeexplore.ieee.org/xpl/conhome/1858120/all-proceedings
