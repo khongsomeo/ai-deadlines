@@ -46,7 +46,6 @@ const ConferenceCard = memo((props: ConferenceCardProps) => {
     link,
     rankings,
     format,
-    onClick,
   } = props;
 
   // Memoize ALL expensive deadline/date computations under stable primitive deps.

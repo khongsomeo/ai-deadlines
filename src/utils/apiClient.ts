@@ -53,8 +53,32 @@ export async function apiRequest<T>(
   });
 
   if (!response.ok) {
-    throw new Error(`API Error: ${response.status} ${response.statusText}`);
+    let errorDetails = '';
+    const contentType = response.headers.get('Content-Type') || '';
+    try {
+      if (contentType.includes('application/json')) {
+        const errJson = await response.json();
+        errorDetails = errJson?.message || errJson?.error || JSON.stringify(errJson);
+      } else {
+        const text = await response.text();
+        errorDetails = text.slice(0, 200); // Safeguard: truncate large HTML/text pages
+      }
+    } catch {
+      // Silently fall back if the body is unreadable or connection drops
+    }
+
+    const detailMsg = errorDetails ? ` Details: ${errorDetails}` : '';
+    throw new Error(`API Error on ${url}: ${response.status} ${response.statusText}.${detailMsg}`);
   }
 
-  return response.json();
+  const text = await response.text();
+  if (!text) {
+    return {} as T; // Graceful fallback for 204 No Content or empty bodies
+  }
+
+  try {
+    return JSON.parse(text) as T;
+  } catch (err) {
+    throw new Error(`API Error on ${url}: Failed to parse JSON response. ${err instanceof Error ? err.message : ''}`);
+  }
 }
