@@ -1,0 +1,30 @@
+- title: MFCS
+  year: 2026
+  id: mfcs26
+  full_name: "International Symposium on Mathematical Foundations of Computer Science"
+  link: "https://mfcs2026.irif.fr/"
+  deadlines:
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-04-24 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification"
+      date: "2026-06-19 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Paris"
+  country: "France"
+  venue: "Université Paris Cité"
+  format: in-person
+  date: "August 24-28, 2026"
+  start: 2026-08-24
+  end: 2026-08-28
+  tags:
+    - machine-learning
+    - cryptography
+    - security-and-privacy
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1398/"

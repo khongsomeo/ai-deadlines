@@ -1,0 +1,40 @@
+- title: STACS
+  year: 2027
+  id: stacs27
+  full_name: "Symposium on Theoretical Aspects of Computer Science"
+  link: "https://stacs2026.imag.fr/slides/STACS2027.pdf"
+  deadlines:
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-09-24 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Period Start"
+      date: "2026-11-16 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal Period End"
+      date: "2026-11-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification/Decision"
+      date: "2026-12-14 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Göttingen"
+  country: "Germany"
+  venue: "Alte Mensa"
+  format: hybrid
+  date: "March 8-12, 2027"
+  start: 2027-03-08
+  end: 2027-03-12
+  tags:
+    - cryptography
+    - security-and-privacy
+    - machine-learning
+    - information-theory
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1426/"
+  note: "Conference website not on-air -> information from past conference's PDF slide"

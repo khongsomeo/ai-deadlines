@@ -1,0 +1,34 @@
+- title: ASONAM
+  year: 2026
+  id: asonam26
+  full_name: "The 18th International Conference on Advances in Social Networks Analysis and Mining"
+  link: "https://asonam.cpsc.ucalgary.ca/2026/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "2026-05-03 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-05-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Accept/Reject Notification"
+      date: "2026-06-27 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Rabat"
+  country: "Morocco"
+  venue: TBD
+  format: in-person
+  date: "August 24-27, 2026"
+  start: 2026-08-24
+  end: 2026-08-27
+  tags:
+    - machine-learning
+    - data-mining
+    - security-and-privacy
+  rankings:
+    rank_name: B
+    rank_source: ICORE2023
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/2311/"

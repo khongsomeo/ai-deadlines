@@ -1,0 +1,35 @@
+- title: RCIS
+  year: 2026
+  id: rcis26
+  full_name: "International Conference on Research Challenges in Information Science"
+  link: "https://www.rcis-conf.com/rcis2026/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "2026-01-18 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-01-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Accept/Reject Notification"
+      date: "2026-03-16 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Toulouse"
+  country: "France"
+  venue: "Toulouse Capitole University"
+  format: in-person
+  date: "May 26-29, 2026"
+  start: 2026-05-26
+  end: 2026-05-29
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: B
+    rank_source: ICORE2023
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1192/"

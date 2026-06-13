@@ -1,0 +1,30 @@
+- title: SIN
+  year: 2026
+  id: sin26
+  full_name: "International Conference on Security of Information and Networks"
+  link: "https://www.sinconf.org/sin2026/"
+  deadlines:
+    - type: submission
+      label: "Paper Submission Deadline"
+      date: "2026-08-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Acceptance"
+      date: "2026-09-01 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Istanbul"
+  country: "Turkey"
+  venue: "Istanbul Beykent University"
+  format: hybrid
+  date: "October 14–16, 2026"
+  start: 2026-10-14
+  end: 2026-10-16
+  tags:
+    - machine-learning
+    - cryptography
+    - security-and-privacy
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1200/"
