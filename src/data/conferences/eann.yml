@@ -1,0 +1,33 @@
+- title: EANN
+  year: 2026
+  id: eann26
+  full_name: 27th International Conference on Engineering Applications and Advances of Artificial Intelligence
+  link: "https://eannconf.org/2026"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-03-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance/Rejection
+      date: "2026-04-16 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Chania
+  country: Greece
+  venue: Mediterranean Agronomic Institute of Chania (MAICh)
+  format: hybrid
+  date: July 16-19, 2026
+  start: 2026-07-16
+  end: 2026-07-19
+  tags:
+    - machine-learning
+    - computer-vision
+    - natural-language-processing
+    - security-and-privacy
+    - data-mining
+    - speech-processing
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1011/

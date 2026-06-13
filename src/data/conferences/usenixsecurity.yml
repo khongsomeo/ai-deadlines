@@ -1,0 +1,37 @@
+- title: USENIX Security
+  year: 2027
+  id: usenixsecurity27
+  full_name: 36th USENIX Security Symposium
+  link: "https://www.usenix.org/conference/usenixsecurity27"
+  deadlines:
+    - type: abstract
+      label: (1st cycle) Paper Registration Deadline
+      date: "2026-08-18 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (1st cycle) Paper Submission Deadline
+      date: "2026-08-25 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (2nd cycle) Paper Registration Deadline
+      date: "2027-01-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd cycle) Paper Submission Deadline
+      date: "2027-01-26 23:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Denver, CO
+  country: United States
+  venue: Hyatt Regency Denver at Colorado Convention Center
+  format: in-person
+  date: August 11-13, 2027
+  start: 2027-08-11
+  end: 2027-08-13
+  tags:
+    - security-and-privacy
+    - cryptography
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1841/

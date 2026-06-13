@@ -1,0 +1,75 @@
+- title: ICSE
+  year: 2027
+  id: icse27
+  full_name: The 49th IEEE/ACM International Conference on Software Engineering
+  link: "https://conf.researchr.org/home/icse-2027"
+  deadlines:
+    - type: abstract
+      label: (Research Track) Mandatory Abstract Submission
+      date: "2026-06-23 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Paper Submission
+      date: "2026-06-30 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Research Track) Author Response Period Start
+      date: "2026-09-23 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Research Track) Author Response Period End
+      date: "2026-09-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Author Notification
+      date: "2026-10-20 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Major Revision Submission
+      date: "2026-11-17 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Final Decision (Major Revision Papers)
+      date: "2026-12-18 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (SEIP Track) Paper Submission
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (SEIP Track) Author Notification
+      date: "2026-12-11 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (NIER Track) Paper Submission
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (NIER Track) Author Notification
+      date: "2026-12-18 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal-First) Paper Submission
+      date: "2026-10-30 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Journal-First) Author Notification
+      date: "2026-12-11 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Dublin
+  country: Ireland
+  venue: The Convention Centre Dublin (CCD)
+  format: in-person
+  date: April 25 - May 1, 2027
+  start: 2027-04-25
+  end: 2027-05-01
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1209/

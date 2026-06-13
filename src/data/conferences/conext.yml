@@ -1,0 +1,46 @@
+- title: CoNEXT
+  year: 2026
+  id: conext26
+  full_name: ACM International Conference on emerging Networking EXperiments and Technologies
+  link: "https://conferences.sigcomm.org/co-next/2026"
+  deadlines:
+    - type: abstract
+      label: (December Cycle) Paper Registration
+      date: "2025-12-05 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (December Cycle) Paper Submission
+      date: "2025-12-12 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (December Cycle) Notification of Acceptance
+      date: "2026-03-31 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (June Cycle) Paper Registration
+      date: "2026-05-29 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (June Cycle) Paper Submission
+      date: "2026-06-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (June Cycle) Notification of Acceptance
+      date: "2026-09-11 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Utrecht
+  country: Netherlands
+  venue: TBD
+  format: in-person
+  date: December 7-10, 2026
+  start: 2026-12-07
+  end: 2026-12-10
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - multimedia
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/24/

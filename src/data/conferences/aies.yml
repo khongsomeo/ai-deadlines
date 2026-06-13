@@ -1,0 +1,35 @@
+- title: AIES
+  year: 2026
+  id: aies26
+  full_name: "AAAI/ACM Conference on AI, Ethics, and Society"
+  link: "https://www.aies-conference.com/2026/"
+  deadlines:
+    - type: abstract
+      label: Abstract Registration
+      date: "2026-05-14 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-05-21 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "2026-07-16 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Malmö"
+  country: "Sweden"
+  venue: "Malmö Live"
+  format: in-person
+  date: "October 12–14, 2026"
+  start: 2026-10-12
+  end: 2026-10-14
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - robotics
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2354/

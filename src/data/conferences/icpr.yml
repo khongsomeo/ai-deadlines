@@ -3,14 +3,23 @@
   id: icpr28
   full_name: The 30th International Conference on Pattern Recognition
   link: "https://icpr2028.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
   timezone: UTC-12
   city: Sydney
   country: Australia
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: August 17-22, 2028
+  start: 2028-08-17
+  end: 2028-08-22
   tags:
       - computer-vision
       - machine-learning
@@ -25,7 +34,7 @@
       rank_name: B
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1169/
-  note: "Deadlines and conference dates not yet announced."
+  note: "Deadlines not yet announced."
 
 - title: ICPR
   year: 2027

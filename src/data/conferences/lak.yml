@@ -1,0 +1,38 @@
+- title: LAK
+  year: 2026
+  id: lak26
+  full_name: International Conference on Learning Analytics & Knowledge
+  link: "https://www.solaresearch.org/events/lak/lak26/"
+  deadlines:
+    - type: submission
+      label: "Paper Submission Deadline"
+      date: "2025-09-29 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Submission Open"
+      date: "2025-11-03 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Deadline for Rebuttals"
+      date: "2025-11-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Acceptance"
+      date: "2025-12-04 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Bergen
+  country: Norway
+  venue: University of Bergen (SLATE)
+  format: in-person
+  date: April 27 - May 1, 2026
+  start: 2026-04-27
+  end: 2026-05-01
+  tags:
+    - machine-learning
+    - data-mining
+    - human-computer-interaction
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2268/

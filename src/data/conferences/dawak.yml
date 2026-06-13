@@ -1,0 +1,29 @@
+- title: DaWaK
+  year: 2026
+  id: dawak26
+  full_name: The 28th International Conference on Big Data Analytics and Knowledge Discovery
+  link: "https://www.dexa.org/2026/dawak2026.html"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-04-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-05-17 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Graz
+  country: Austria
+  venue: TBD
+  format: in-person
+  date: August 11-13, 2026
+  start: 2026-08-11
+  end: 2026-08-13
+  tags:
+    - data-mining
+    - machine-learning
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/410/

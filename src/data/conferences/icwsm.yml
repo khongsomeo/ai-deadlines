@@ -1,0 +1,100 @@
+- title: ICWSM
+  year: 2027
+  id: icwsm27
+  full_name: The 21st International AAAI Conference on Web and Social Media
+  link: "https://www.icwsm.org/2026/index.html"
+  deadlines:
+    - type: submission
+      label: (1st round) Paper Submission
+      date: "2026-05-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st round) Notification
+      date: "2026-07-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd round) Paper Submission
+      date: "2026-09-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd round) Notification
+      date: "2026-11-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (3rd round) Paper Submission
+      date: "2027-01-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (3rd round) Notification
+      date: "2027-03-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Edinburgh
+  country: United Kingdom
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+    - machine-learning
+    - natural-language-processing
+    - computer-vision
+    - data-mining
+    - human-computer-interaction
+    - multimedia
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2169/
+  note: "Dates are planned. AAAI style, double-blind review. Full papers up to 11 pages, references/ethics checklist excluded from count."
+
+- title: ICWSM
+  year: 2026
+  id: icwsm26
+  full_name: The 20th International AAAI Conference on Web and Social Media
+  link: "https://www.icwsm.org/2026/index.html"
+  deadlines:
+    - type: submission
+      label: (1st round) Paper Submission
+      date: "2025-05-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st round) Notification
+      date: "2025-07-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd round) Paper Submission
+      date: "2025-09-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd round) Notification
+      date: "2025-11-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (3rd round) Paper Submission
+      date: "2026-01-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (3rd round) Notification
+      date: "2026-03-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Los Angeles, CA
+  country: United States
+  venue: Los Angeles Airport Marriott
+  format: in-person
+  date: May 27-29, 2026
+  start: 2026-05-27
+  end: 2026-05-29
+  tags:
+    - machine-learning
+    - natural-language-processing
+    - computer-vision
+    - data-mining
+    - human-computer-interaction
+    - multimedia
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2169/

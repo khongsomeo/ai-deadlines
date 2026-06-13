@@ -1,0 +1,32 @@
+- title: ISNN
+  year: 2026
+  id: isnn26
+  full_name: "20th International Symposium on Neural Networks"
+  link: "https://conference.cs.cityu.edu.hk/isnn/"
+  deadlines:
+    - type: submission
+      label: "Paper Submission Deadline"
+      date: "2026-03-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Acceptance"
+      date: "2026-03-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Hanzhong
+  country: China
+  venue: TBD
+  format: in-person
+  date: "August 18-21, 2026"
+  start: 2026-08-18
+  end: 2026-08-21
+  tags:
+    - machine-learning
+    - computer-vision
+    - robotics
+    - signal-processing
+    - data-mining
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1402/

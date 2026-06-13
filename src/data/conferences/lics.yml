@@ -1,0 +1,40 @@
+- title: LICS
+  year: 2026
+  id: lics26
+  full_name: ACM/IEEE Symposium on Logic in Computer Science
+  link: "https://lics.siglog.org/lics26/index.php"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-01-15 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-01-22 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Response Period Start
+      date: "2026-03-26 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Response Period End
+      date: "2026-03-29 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-04-16 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Lisbon
+  country: Portugal
+  venue: ISCTE - University Institute of Lisbon
+  format: in-person
+  date: July 20-23, 2026
+  start: 2026-07-20
+  end: 2026-07-23
+  tags:
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/748/

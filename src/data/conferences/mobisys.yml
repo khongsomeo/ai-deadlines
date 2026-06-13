@@ -1,0 +1,48 @@
+- title: MOBISYS
+  year: 2026
+  id: mobisys26
+  full_name: "ACM International Conference on Mobile Systems, Applications, and Services"
+  link: "https://www.sigmobile.org/mobisys/2026/"
+  timezone: UTC-12
+  city: "Cambridge"
+  country: "United Kingdom"
+  venue: "Ray Dolby Centre and William Gates Building, University of Cambridge"
+  format: in-person
+  date: "June 21-25, 2026"
+  start: 2026-06-21
+  end: 2026-06-25
+  tags:
+    - robotics
+    - machine-learning
+    - multimedia
+    - human-computer-interaction
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/45/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Registration"
+      date: "2025-11-28 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "2025-12-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Early Rejection Notification"
+      date: "2026-01-26 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Period Starts"
+      date: "2026-02-09 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal Period Ends"
+      date: "2026-02-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Final Decision Notification"
+      date: "2026-03-02 07:59:00"
+      timezone: UTC-12
