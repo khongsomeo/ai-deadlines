@@ -23,13 +23,32 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <div className="min-h-screen w-full" style={{ WebkitOverflowScrolling: "touch" }}>
-              <Suspense fallback={<LoadingScreen />}>
-                <Routes>
-                  <Route path="/" element={<Index />} />
-                  <Route path="/calendar" element={<Calendar />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <Suspense fallback={<LoadingScreen layout="grid" />}>
+                      <Index />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="/calendar"
+                  element={
+                    <Suspense fallback={<LoadingScreen layout="calendar" />}>
+                      <Calendar />
+                    </Suspense>
+                  }
+                />
+                <Route
+                  path="*"
+                  element={
+                    <Suspense fallback={<LoadingScreen />}>
+                      <NotFound />
+                    </Suspense>
+                  }
+                />
+              </Routes>
             </div>
           </BrowserRouter>
         </TooltipProvider>
