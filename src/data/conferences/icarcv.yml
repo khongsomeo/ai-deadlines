@@ -6,7 +6,7 @@
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "2026-06-15 23:59:00"
+      date: "2026-06-30 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Author Notification
