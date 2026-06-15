@@ -1,0 +1,35 @@
+name: Trigger Deploy to Render
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Frontend Deploy Hook
+        if: env.HAS_FRONTEND_HOOK == 'true'
+        run: |
+          curl -f -s -S -X GET "${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND }}" > /dev/null
+          echo "Frontend deploy trigger sent successfully."
+        env:
+          HAS_FRONTEND_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND != '' }}
+
+      - name: Trigger API Deploy Hook
+        if: env.HAS_API_HOOK == 'true'
+        run: |
+          curl -f -s -S -X GET "${{ secrets.RENDER_DEPLOY_HOOK_API }}" > /dev/null
+          echo "API deploy trigger sent successfully."
+        env:
+          HAS_API_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_API != '' }}
+
+      - name: Verify Secret Setup
+        if: env.HAS_FRONTEND_HOOK == 'false' && env.HAS_API_HOOK == 'false'
+        run: |
+          echo "::error::Both RENDER_DEPLOY_HOOK_FRONTEND and RENDER_DEPLOY_HOOK_API secrets are empty or missing! Please add them under Repo Settings -> Secrets and variables -> Actions."
+          exit 1
+        env:
+          HAS_FRONTEND_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_FRONTEND != '' }}
+          HAS_API_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_API != '' }}

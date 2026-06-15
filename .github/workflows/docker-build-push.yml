@@ -1,0 +1,51 @@
+name: Build and Push Docker Images to GHCR
+
+on:
+  push:
+    branches:
+      - official-build
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Downcase Repository Owner for GHCR
+        run: |
+          echo "IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/ai-deadlines" | tr '[:upper:]' '[:lower:]' >> $GITHUB_ENV
+
+      - name: Build Images via Docker Compose
+        run: |
+          docker compose build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+
+      - name: Tag and Push Images to GHCR
+        run: |
+          # Tag and push Frontend
+          docker tag ai-deadlines:latest ${{ env.IMAGE_NAME }}:latest
+          docker tag ai-deadlines:latest ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          docker push ${{ env.IMAGE_NAME }}:latest
+          docker push ${{ env.IMAGE_NAME }}:${{ github.sha }}
+          
+          # Tag and push API
+          docker tag ai-deadlines:api-latest ${{ env.IMAGE_NAME }}:api-latest
+          docker tag ai-deadlines:api-latest ${{ env.IMAGE_NAME }}:api-${{ github.sha }}
+          docker push ${{ env.IMAGE_NAME }}:api-latest
+          docker push ${{ env.IMAGE_NAME }}:api-${{ github.sha }}
