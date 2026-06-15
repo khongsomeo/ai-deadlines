@@ -1,0 +1,33 @@
+- title: ICDCS
+  year: 2026
+  id: icdcs26
+  full_name: "IEEE International Conference on Distributed Computing Systems"
+  link: "https://icdcs2026.icdcs.org/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Registration"
+      date: "2026-01-21 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Submission"
+      date: "2026-01-21 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2026-04-27 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Seoul"
+  country: "South Korea"
+  venue: "Swiss Grand Hotel, Seoul"
+  format: in-person
+  date: "June 22–25, 2026"
+  start: 2026-06-22
+  end: 2026-06-25
+  tags:
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1002/"

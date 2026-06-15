@@ -1,0 +1,32 @@
+- title: HPDC
+  year: 2026
+  id: hpdc26
+  full_name: "ACM International Symposium on High-Performance Parallel and Distributed Computing"
+  link: "https://hpdc.sci.utah.edu/2026/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Registration"
+      date: "2026-01-29 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission (Firm)"
+      date: "2026-02-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Acceptance"
+      date: "2026-03-31 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Cleveland, OH"
+  country: "United States"
+  venue: "Linsalata Alumni Center, Case Western Reserve University"
+  format: in-person
+  date: "July 13–16, 2026"
+  start: 2026-07-13
+  end: 2026-07-16
+  tags:
+    - machine-learning
+  rankings:
+    rank_name: A
+    rank_source: ICORE2023
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/33/"

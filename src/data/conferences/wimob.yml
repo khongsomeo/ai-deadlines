@@ -1,0 +1,41 @@
+- title: WiMob
+  year: 2026
+  id: wimob26
+  full_name: "IEEE International Conference on Wireless and Mobile Computing, Networking and Communications"
+  link: "http://www.wimob.org/wimob2026/index.php"
+  deadlines:
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-06-22 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2026-07-30 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Short Papers, Posters & Demos Submission"
+      date: "2026-07-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Short Papers, Posters & Demos Acceptance Notification"
+      date: "2026-08-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Avignon"
+  country: "France"
+  venue: "Avignon Grand Hotel"
+  format: in-person
+  date: "October 14-16, 2026"
+  start: 2026-10-14
+  end: 2026-10-16
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - cryptography
+    - multimedia
+    - signal-processing
+    - information-theory
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/679/"

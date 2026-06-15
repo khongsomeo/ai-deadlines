@@ -1,0 +1,42 @@
+- title: SC
+  year: 2026
+  id: sc26
+  full_name: "International Conference for High Performance Computing, Networking, Storage and Analysis"
+  link: "https://sc26.supercomputing.org"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission Deadline"
+      date: "2026-04-01 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission Deadline"
+      date: "2026-04-08 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Period Start"
+      date: "2026-06-08 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal Period End"
+      date: "2026-06-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2026-07-01 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Chicago, IL"
+  country: "United States"
+  venue: "McCormick Place Convention Center"
+  format: in-person
+  date: "November 15–20, 2026"
+  start: 2026-11-15
+  end: 2026-11-20
+  tags:
+    - machine-learning
+    - data-mining
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2023
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/77/"

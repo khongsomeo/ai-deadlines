@@ -1,0 +1,42 @@
+- title: PERCOM
+  year: 2027
+  id: percom27
+  full_name: "IEEE International Conference on Pervasive Computing and Communications"
+  link: "https://percom.org/"
+  deadlines:
+    - type: abstract
+      label: "Paper Registration"
+      date: "2026-09-04 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-09-11 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Invitation / Early Rejection"
+      date: "2026-11-20 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal Submission"
+      date: "2026-11-27 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Final Notification"
+      date: "2026-12-18 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Goa"
+  country: "India"
+  venue: TBD
+  format: in-person
+  date: "March 8-12, 2027"
+  start: 2027-03-08
+  end: 2027-03-12
+  tags:
+    - machine-learning
+    - human-computer-interaction
+    - security-and-privacy
+  rankings:
+    rank_name: "A*"
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/669/"

@@ -1,0 +1,41 @@
+- title: MOBIHOC
+  year: 2026
+  id: mobihoc26
+  full_name: "International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing"
+  link: "https://www.sigmobile.org/mobihoc/2026/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "2026-04-13 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "2026-04-20 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Start"
+      date: "2026-07-20 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal End"
+      date: "2026-07-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2026-08-23 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Tokyo"
+  country: "Japan"
+  venue: TBD
+  format: in-person
+  date: "November 23–26, 2026"
+  start: 2026-11-23
+  end: 2026-11-26
+  tags:
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/58/"

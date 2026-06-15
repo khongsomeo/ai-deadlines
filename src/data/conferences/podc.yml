@@ -1,0 +1,34 @@
+- title: PODC
+  year: 2026
+  id: podc26
+  full_name: "ACM Symposium on Principles of Distributed Computing"
+  link: "https://www.podc.org/podc2026/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "2026-02-11 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Full Paper Submission"
+      date: "2026-02-16 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification"
+      date: "2026-04-29 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Egham"
+  country: "United Kingdom"
+  venue: "Royal Holloway, University of London"
+  format: in-person
+  date: "July 6-10, 2026"
+  start: 2026-07-06
+  end: 2026-07-10
+  tags:
+    - cryptography
+    - security-and-privacy
+    - machine-learning
+  rankings:
+    rank_name: "A*"
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/63/"

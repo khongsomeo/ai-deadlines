@@ -1,0 +1,29 @@
+- title: OP
+  year: 2026
+  id: op26
+  full_name: "SIAM Conference on Optimization"
+  link: "https://www.siam.org/conferences-events/siam-conferences/op26/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission Deadline"
+      date: "2025-11-13 23:59:00"
+      timezone: "UTC-5"
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2026-01-31 07:59:00"
+      timezone: "UTC-5"
+  timezone: "UTC-5"
+  city: "Edinburgh"
+  country: "United Kingdom"
+  venue: "University of Edinburgh"
+  format: in-person
+  date: "June 2-5, 2026"
+  start: 2026-06-02
+  end: 2026-06-05
+  tags:
+    - machine-learning
+    - data-mining
+  rankings:
+    rank_name: C
+    rank_source: ERA2010
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1726/"
