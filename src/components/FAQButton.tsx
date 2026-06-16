@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Heart, Star, HelpCircle, Sparkles, Mail, AlertTriangle } from "lucide-react";
 
@@ -48,6 +48,9 @@ const FAQButton = () => {
       <DialogContent className="sm:max-w-[500px] max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-2xl font-bold"><HelpCircle className="h-6 w-6 text-primary" /> FAQ</DialogTitle>
+          <DialogDescription className="sr-only">
+            Frequently Asked Questions about AI Conference Deadlines.
+          </DialogDescription>
         </DialogHeader>
         <div className="py-4 space-y-6">
           <div className="bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 rounded-lg p-4">

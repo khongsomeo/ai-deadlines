@@ -44,12 +44,11 @@ const BackToTop = () => {
         "shadow-lg",
         // Hover / active states
         "hover:bg-primary dark:hover:bg-iris/90",
-        "hover:opacity-100 active:scale-95",
         // Smooth transitions
         "transition-all duration-300 ease-in-out",
         // Visibility animation
         visible
-          ? "opacity-70 translate-y-0 pointer-events-auto"
+          ? "opacity-70 translate-y-0 pointer-events-auto hover:opacity-100 active:scale-95"
           : "opacity-0 translate-y-4 pointer-events-none",
       ].join(" ")}
     >

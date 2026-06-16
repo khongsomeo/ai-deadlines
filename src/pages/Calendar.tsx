@@ -14,6 +14,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import {
   Tooltip,
@@ -216,12 +217,12 @@ const DayEventsDialog = React.memo(({ selectedDayEvents, onClose }: { selectedDa
   if (!selectedDayEvents.date) return null;
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto" aria-describedby="dialog-description">
+      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Events for {format(selectedDayEvents.date, 'MMMM d, yyyy')}</DialogTitle>
-          <div id="dialog-description" className="text-sm text-neutral-600">
+          <DialogDescription className="text-sm text-neutral-600">
             View conference details and deadlines for this date.
-          </div>
+          </DialogDescription>
         </DialogHeader>
         <div className="space-y-4">
           {selectedDayEvents.events.deadlines.length === 0 && selectedDayEvents.events.conferences.length === 0 ? (
