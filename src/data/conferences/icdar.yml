@@ -1,4 +1,44 @@
 - title: ICDAR
+  year: 2027
+  id: icdar27
+  full_name: The 21st International Conference on Document Analysis and Recognition
+  link: "https://icdar2027.org/"
+  deadlines:
+    - type: submission
+      date: "2027-01-31 23:59:00"
+      label: Paper Submission
+      timezone: UTC-12
+    - type: rebuttal_start
+      date: "2027-04-20 07:59:00"
+      label: Rebuttal Period Start
+      timezone: UTC-12
+    - type: rebuttal_end
+      date: "2027-04-27 23:59:00"
+      label: Rebuttal Period End
+      timezone: UTC-12
+    - type: final_decision
+      date: "2027-05-15 07:59:00"
+      label: Author Notification
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Kuala Lumpur
+  country: Malaysia
+  venue: TBD
+  format: in-person
+  date: August 18–22, 2027
+  start: 2027-08-18
+  end: 2027-08-22
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - signal-processing
+      - computer-vision
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2047/
+
+- title: ICDAR
   year: 2026
   id: icdar26
   full_name: The 20th International Conference on Document Analysis and Recognition

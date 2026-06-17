@@ -1,4 +1,38 @@
 - title: EuroPar
+  year: 2027
+  id: europar27
+  full_name: "International European Conference on Parallel and Distributed Computing"
+  link: "https://2027.euro-par.org/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Acceptance"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+    - machine-learning
+    - data-mining
+  rankings:
+    rank_name: B
+    rank_source: ICORE2022
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/2022/"
+
+- title: EuroPar
   year: 2026
   id: europar26
   full_name: "International European Conference on Parallel and Distributed Computing"

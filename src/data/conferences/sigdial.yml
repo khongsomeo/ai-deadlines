@@ -1,4 +1,42 @@
 - title: SIGDIAL
+  year: 2027
+  id: sigdial27
+  full_name: 28th Annual Meeting of the Special Interest Group on Discourse and Dialogue
+  link: "https://2027.sigdial.org/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: hybrid
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - natural-language-processing
+      - speech-processing
+      - information-retrieval
+      - human-computer-interaction
+      - robotics
+      - machine-learning
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1729/
+
+- title: SIGDIAL
   year: 2025
   id: sigdial25
   full_name: 26th Annual Meeting of the Special Interest Group on Discourse and Dialogue

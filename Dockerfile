@@ -1,5 +1,5 @@
 # Build stage
-FROM node:20-slim AS builder
+FROM node:22-slim AS builder
 
 # Set working directory
 WORKDIR /app
@@ -22,7 +22,7 @@ ENV VITE_API_URL=$VITE_API_URL
 RUN npm run build
 
 # Runtime stage
-FROM node:20-slim
+FROM node:22-slim
 
 WORKDIR /app
 
