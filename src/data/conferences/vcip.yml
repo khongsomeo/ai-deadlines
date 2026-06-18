@@ -6,8 +6,8 @@
   deadlines:
     - type: submission
       label: Submission of Papers for Regular, Demo and Special Sessions
-      date: "2026-06-19 23:59:00"
-      timezone: UTC+8
+      date: "2026-07-03 23:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: Paper Acceptance Notification
       date: "2026-08-28 07:59:00"

@@ -5,7 +5,7 @@
   link: "https://www.ieee-is.org/"
   deadlines:
     - type: submission
-      date: "2026-06-08 23:59:00"
+      date: "2026-06-22 23:59:00"
       label: "Paper Submission"
       timezone: UTC-12
     - type: final_decision

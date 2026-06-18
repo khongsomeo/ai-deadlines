@@ -5,11 +5,11 @@
   link: "https://inista2026.di.uminho.pt/"
   deadlines:
     - type: submission
-      date: "2026-06-15 23:59:00"
+      date: "2026-06-25 23:59:00"
       label: "Paper Submission"
       timezone: UTC-12
     - type: final_decision
-      date: "2026-07-10 07:59:00"
+      date: "2026-07-15 07:59:00"
       label: "Author Notification"
       timezone: UTC-12
   timezone: UTC-12
