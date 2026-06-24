@@ -5,11 +5,11 @@
   link: "https://www.ieee-is.org/"
   deadlines:
     - type: submission
-      date: "2026-06-22 23:59:00"
+      date: "2026-07-05 23:59:00"
       label: "Paper Submission"
       timezone: UTC-12
     - type: final_decision
-      date: "2026-07-20 07:59:00"
+      date: "2026-07-20 23:59:00"
       label: "Author Notification"
       timezone: UTC-12
   timezone: UTC-12
@@ -17,9 +17,9 @@
   country: Bulgaria
   venue: Hotel Cherno More, Boulevard Slivnitsa 33, Varna, Bulgaria
   format: hybrid
-  date: September 03-06, 2026
+  date: September 03-05, 2026
   start: 2026-09-03
-  end: 2026-09-06
+  end: 2026-09-05
   tags:
       - machine-learning
       - natural-language-processing

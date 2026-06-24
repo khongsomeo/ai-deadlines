@@ -2,7 +2,7 @@
   year: 2027
   id: icwsm27
   full_name: The 21st International AAAI Conference on Web and Social Media
-  link: "https://www.icwsm.org/2026/index.html"
+  link: "https://www.icwsm.org/2027/"
   deadlines:
     - type: submission
       label: (1st round) Paper Submission
@@ -30,7 +30,7 @@
       timezone: UTC-12
   timezone: UTC-12
   city: Edinburgh
-  country: United Kingdom
+  country: Scotland, United Kingdom
   venue: TBD
   format: in-person
   date: TBD
