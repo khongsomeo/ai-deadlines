@@ -1,4 +1,69 @@
 - title: KDD
+  year: 2027
+  id: kdd27
+  full_name: The 33rd ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+  link: "https://kdd2027.kdd.org/"
+  deadlines:
+    - type: abstract
+      label: (July Cycle) Abstract Submission
+      date: "2026-07-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (July Cycle) Paper Submission
+      date: "2026-07-26 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (July Cycle) Rebuttal Start
+      date: "2026-09-29 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (July Cycle) Rebuttal End
+      date: "2026-10-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (July Cycle) Author Notification
+      date: "2026-11-14 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (February Cycle) Abstract Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: (February Cycle) Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (February Cycle) Rebuttal Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (February Cycle) Rebuttal End
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: (February Cycle) Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: San Jose, CA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - security-and-privacy
+      - information-retrieval
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/26/
+
+- title: KDD
   year: 2026
   id: kdd26
   full_name: The 2026 ACM International Conference on Knowledge Discovery and Data Mining

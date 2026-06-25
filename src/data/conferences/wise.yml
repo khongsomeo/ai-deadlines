@@ -6,6 +6,10 @@
   deadlines:
     - type: submission
       label: Paper Submission Deadline
+      date: "2026-06-17 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Extended) Paper Submission Deadline
       date: "2026-06-30 23:59:00"
       timezone: UTC-12
     - type: final_decision

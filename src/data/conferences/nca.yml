@@ -8,9 +8,13 @@
       label: "Submission Deadline"
       date: "2026-06-19 23:59:00"
       timezone: UTC-12
+    - type: submission
+      label: "(Extended) Submission Deadline"
+      date: "2026-07-03 23:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: "Acceptance Notification"
-      date: "2026-09-11 07:59:00"
+      date: "2026-09-11 23:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: "Syracuse"

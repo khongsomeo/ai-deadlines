@@ -1,4 +1,36 @@
 - title: ICIP
+  year: 2027
+  id: icip27
+  full_name: 2027 IEEE International Conference on Image Processing
+  link: "https://2027.ieeeicip.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Singapore
+  country: Singapore
+  venue: TBD
+  format: in-person
+  date: "November 29 - December 3, 2027"
+  start: 2027-11-29
+  end: 2027-12-03
+  tags:
+    - computer-vision
+    - multimedia
+    - machine-learning
+    - signal-processing
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/654/
+
+- title: ICIP
   year: 2026
   id: icip26
   full_name: 2026 IEEE International Conference on Image Processing

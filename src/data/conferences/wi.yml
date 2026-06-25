@@ -6,12 +6,12 @@
   deadlines:
     - type: submission
       label: Full Paper Submission Deadline
-      date: "2026-06-15 23:59:00"
+      date: "2026-07-15 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Paper Acceptance Notification
-      date: "2026-07-31 07:59:00"
-      timezone: UTC-1
+      date: "2026-08-31 23:59:00"
+      timezone: UTC-12
   timezone: UTC-12
   city: Brisbane
   country: Australia
