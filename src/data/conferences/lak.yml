@@ -1,4 +1,31 @@
 - title: LAK
+  year: 2027
+  id: lak27
+  full_name: International Conference on Learning Analytics & Knowledge
+  link: "https://www.solaresearch.org/events/lak/lak27/"
+  deadlines:
+    - type: submission
+      label: Paper Submission Deadline
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+    - machine-learning
+    - data-mining
+    - human-computer-interaction
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2268/
+
+- title: LAK
   year: 2026
   id: lak26
   full_name: International Conference on Learning Analytics & Knowledge

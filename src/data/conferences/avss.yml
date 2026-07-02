@@ -1,4 +1,45 @@
 - title: AVSS
+  year: 2027
+  id: avss27
+  full_name: The 23rd IEEE International Conference on Advanced Visual and Signal-Based Systems
+  link: "https://www.avss2027.org/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2027-03-05 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2027-03-12 23:59:00"
+      timezone: UTC-12
+    - type: review_released
+      label: Paper Review Available
+      date: "2027-05-07 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2027-05-21 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Macau
+  country: Macau
+  venue: University of Macau
+  format: in-person
+  date: July 15-17, 2027
+  start: 2027-07-15
+  end: 2027-07-17
+  tags:
+    - speech-processing
+    - signal-processing
+    - computer-vision
+    - security-and-privacy
+    - machine-learning
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/92/
+
+- title: AVSS
   year: 2026
   id: avss26
   full_name: The 22nd IEEE International Conference on Advanced Visual and Signal-Based Systems 

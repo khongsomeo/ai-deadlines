@@ -21,9 +21,9 @@
   country: TBD
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: "August 23-27, 2027"
+  start: 2027-08-23
+  end: 2027-08-27
   tags:
     - machine-learning
     - data-mining

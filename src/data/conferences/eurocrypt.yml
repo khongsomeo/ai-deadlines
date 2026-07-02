@@ -1,4 +1,33 @@
 - title: EUROCRYPT
+  year: 2027
+  id: eurocrypt27
+  full_name: The 46th Annual International Conference on the Theory and Applications of Cryptographic Techniques
+  link: "https://eurocrypt.iacr.org/2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-09-17 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2027-01-18 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Eindhoven
+  country: Netherlands
+  venue: Auditorium (Building 1), Eindhoven University of Technology (TU/e), De Zaale, Eindhoven, Netherlands
+  format: in-person
+  date: April 11-15, 2027
+  start: 2027-04-11
+  end: 2027-04-15
+  tags:
+    - cryptography
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1242/
+
+- title: EUROCRYPT
   year: 2026
   id: eurocrypt26
   full_name: The 45th Annual International Conference on the Theory and Applications of Cryptographic Techniques
