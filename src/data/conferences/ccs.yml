@@ -1,4 +1,30 @@
 - title: CCS
+  year: 2027
+  id: ccs27
+  full_name: ACM Conference on Computer and Communications Security
+  link: "https://www.sigsac.org/ccs/CCS2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Atlanta, GA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: October 2027
+  start: TBD
+  end: TBD
+  tags:
+      - cryptography
+      - security-and-privacy
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/12/
+
+- title: CCS
   year: 2026
   id: ccs26
   full_name: The 33rd ACM Conference on Computer and Communications Security

@@ -24,9 +24,9 @@
   country: Japan
   venue: TBD
   format: hybrid
-  date: TBD
-  start: TBD
-  end: TBD
+  date: August 17-22, 2027
+  start: 2027-08-17
+  end: 2027-08-22
   tags:
       - natural-language-processing
       - speech-processing

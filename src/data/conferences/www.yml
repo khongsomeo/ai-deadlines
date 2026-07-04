@@ -2,23 +2,23 @@
   year: 2027
   id: www27
   full_name: The 2027 ACM Web Conference
-  link: "https://www2027.thewebconf.org/"
+  link: "https://acmweb2027.org/"
   deadlines:
     - type: abstract
-      date: "TBD"
+      date: "2026-10-11 23:59:00"
       label: Abstract Submission
       timezone: UTC-12
     - type: submission
-      date: "TBD"
+      date: "2026-10-18 23:59:00"
       label: Paper Submission
       timezone: UTC-12
     - type: rebuttal_start
       label: Rebuttal Period Start
-      date: "TBD"
+      date: "2026-12-12 23:59:00"
       timezone: UTC-12
     - type: rebuttal_end
       label: Rebuttal Period End
-      date: "TBD"
+      date: "2026-12-19 23:59:00"
       timezone: UTC-12
     - type: final_decision
       date: "TBD"
@@ -29,9 +29,9 @@
   country: Ireland
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: May 10-14, 2027
+  start: 2027-05-10
+  end: 2027-05-14
   tags:
       - machine-learning
       - multimedia
