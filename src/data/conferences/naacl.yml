@@ -29,13 +29,13 @@
       date: "TBD"
       timezone: UTC-12
   timezone: UTC-12
-  city: TBD
-  country: TBD
+  city: San Francisco, CA
+  country: United States
   venue: TBD
   format: hybrid
-  date: TBD
-  start: TBD
-  end: TBD
+  date: June 1 - 5, 2027
+  start: 2027-06-01
+  end: 2027-06-05
   tags:
       - natural-language-processing
       - speech-processing

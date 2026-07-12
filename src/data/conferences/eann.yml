@@ -1,4 +1,38 @@
 - title: EANN
+  year: 2027
+  id: eann27
+  full_name: 28th International Conference on Engineering Applications and Advances of Artificial Intelligence
+  link: "https://eannconf.org/2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2027-04-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance/Rejection
+      date: "2027-06-13 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Rome
+  country: Italy
+  venue: Sapienza University of Rome
+  format: hybrid
+  date: "September 15-18, 2027"
+  start: 2027-09-15
+  end: 2027-09-18
+  tags:
+    - machine-learning
+    - computer-vision
+    - natural-language-processing
+    - security-and-privacy
+    - data-mining
+    - speech-processing
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1011/
+
+- title: EANN
   year: 2026
   id: eann26
   full_name: 27th International Conference on Engineering Applications and Advances of Artificial Intelligence
