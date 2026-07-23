@@ -6,16 +6,28 @@
   deadlines:
     - type: submission
       label: Paper Submission Deadline
-      date: "TBD"
+      date: "2026-09-28 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Submission Open"
+      date: "2026-11-02 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Deadline for Rebuttals"
+      date: "2026-11-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Acceptance"
+      date: "2026-11-24 07:59:00"
       timezone: UTC-12
   timezone: UTC-12
-  city: TBD
-  country: TBD
+  city: Recife
+  country: Brazil
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: March 8-12, 2027
+  start: 2027-03-08
+  end: 2027-03-12
   tags:
     - machine-learning
     - data-mining
