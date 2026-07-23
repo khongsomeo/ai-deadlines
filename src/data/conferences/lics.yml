@@ -1,4 +1,45 @@
 - title: LICS
+  year: 2027
+  id: lics27
+  full_name: ACM/IEEE Symposium on Logic in Computer Science
+  link: "https://lics.siglog.org/lics27/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Response Period Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Response Period End
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Montreal
+  country: Canada
+  venue: TBD
+  format: in-person
+  date: June 21-24, 2027
+  start: 2027-06-21
+  end: 2027-06-24
+  tags:
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/748/
+
+- title: LICS
   year: 2026
   id: lics26
   full_name: ACM/IEEE Symposium on Logic in Computer Science

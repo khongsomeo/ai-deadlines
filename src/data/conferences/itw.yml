@@ -1,4 +1,35 @@
 - title: ITW
+  year: 2027
+  id: itw27
+  full_name: The 2027 IEEE Information Theory Workshop
+  link: "https://2027.ieee-itw.org"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-10-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "2026-12-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Munich
+  country: Germany
+  venue: TBD
+  format: in-person
+  date: April 5-8, 2027
+  start: 2027-04-05
+  end: 2027-04-08
+  tags:
+    - information-theory
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/830/
+
+- title: ITW
   year: 2026
   id: itw26
   full_name: The 2026 IEEE Information Theory Workshop

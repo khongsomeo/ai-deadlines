@@ -1,4 +1,59 @@
 - title: ACMMM
+  year: 2027
+  id: acmmm27
+  full_name: 35th ACM International Conference on Multimedia
+  link: "https://2027.acmmm.org/"
+  deadlines:
+    - type: abstract
+      label: Paper Registration
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Regular Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Supplementary Material Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification (Main Track)
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Hong Kong
+  country: China
+  venue: TBD
+  format: hybrid
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+    - multimedia
+    - machine-learning
+    - data-mining
+    - information-retrieval
+    - robotics
+    - human-computer-interaction
+    - computer-vision
+    - natural-language-processing
+    - speech-processing
+    - security-and-privacy
+    - signal-processing
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/37/
+
+- title: ACMMM
   year: 2026
   id: acmmm26
   full_name: 34th ACM International Conference on Multimedia
@@ -36,21 +91,21 @@
   start: 2026-11-10
   end: 2026-11-14
   tags:
-      - multimedia
-      - machine-learning
-      - data-mining
-      - information-retrieval
-      - robotics
-      - human-computer-interaction
-      - computer-vision
-      - natural-language-processing
-      - speech-processing
-      - security-and-privacy
-      - signal-processing
+    - multimedia
+    - machine-learning
+    - data-mining
+    - information-retrieval
+    - robotics
+    - human-computer-interaction
+    - computer-vision
+    - natural-language-processing
+    - speech-processing
+    - security-and-privacy
+    - signal-processing
   rankings:
-      rank_name: A*
-      rank_source: ICORE2026
-      rank_source_url: https://portal.core.edu.au/conf-ranks/37/
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/37/
 
 - title: ACMMM
   year: 2025
@@ -98,19 +153,18 @@
   start: 2025-10-27
   end: 2025-10-31
   tags:
-      - multimedia
-      - machine-learning
-      - data-mining
-      - information-retrieval
-      - robotics
-      - human-computer-interaction
-      - computer-vision
-      - natural-language-processing
-      - speech-processing
-      - security-and-privacy
-      - signal-processing
+    - multimedia
+    - machine-learning
+    - data-mining
+    - information-retrieval
+    - robotics
+    - human-computer-interaction
+    - computer-vision
+    - natural-language-processing
+    - speech-processing
+    - security-and-privacy
+    - signal-processing
   rankings:
-      rank_name: A*
-      rank_source: ICORE2026
-      rank_source_url: https://portal.core.edu.au/conf-ranks/37/
-
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/37/

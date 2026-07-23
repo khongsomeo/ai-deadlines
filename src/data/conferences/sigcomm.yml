@@ -1,4 +1,50 @@
 - title: SIGCOMM
+  year: 2027
+  id: sigcomm27
+  full_name: ACM SIGCOMM 2027 Conference
+  link: "https://conferences.sigcomm.org/sigcomm/2027/"
+  deadlines:
+    - type: abstract
+      label: Abstract Registration
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Early Notification
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Review Results Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Bangkok
+  country: Thailand
+  venue: Queen Sirikit National Convention Center
+  format: in-person
+  date: August 8-12, 2027
+  start: 2027-08-08
+  end: 2027-08-12
+  tags:
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/11/
+
+- title: SIGCOMM
   year: 2026
   id: sigcomm26
   full_name: ACM SIGCOMM 2026 Conference

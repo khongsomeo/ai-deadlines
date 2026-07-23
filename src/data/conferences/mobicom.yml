@@ -1,4 +1,77 @@
 - title: MOBICOM
+  year: 2027
+  id: mobicom27
+  full_name: "The 33rd Annual International Conference on Mobile Computing and Networking"
+  link: "https://www.sigmobile.org/mobicom/2027/"
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: in-person
+  date: "October 18-22, 2027"
+  start: 2027-10-18
+  end: 2027-10-22
+  tags:
+    - robotics
+    - machine-learning
+    - multimedia
+    - human-computer-interaction
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/27/"
+  deadlines:
+    - type: abstract
+      label: "(Summer) Abstract Registration"
+      date: "2026-08-26 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(Summer) Paper Submission"
+      date: "2026-09-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Summer) Early Rejection Notification"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "(Summer) Rebuttal Period Starts"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "(Summer) Rebuttal Period Ends"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Summer) Final Notifications"
+      date: "TBD"
+      timezone: UTC-12
+    - type: abstract
+      label: "(Winter) Abstract Registration"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "(Winter) Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Winter) Early Rejection Notification"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "(Winter) Rebuttal Period Starts"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "(Winter) Rebuttal Period Ends"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Winter) Final Notifications"
+      date: "TBD"
+      timezone: UTC-12
+
+- title: MOBICOM
   year: 2026
   id: mobicom26
   full_name: "The 32nd Annual International Conference on Mobile Computing and Networking"
