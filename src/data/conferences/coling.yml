@@ -5,16 +5,16 @@
   link: "https://2027.coling-iccl.org/"
   deadlines:
     - type: submission
-      date: "TBD"
+      date: "2026-10-12 23:59:00"
       label: Paper Submission
       timezone: UTC-12
     - type: commitment
       label: Commitment Deadline
-      date: "TBD"
+      date: "2026-12-23 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Author Notification
-      date: "TBD"
+      date: "2027-02-10 23:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: Macau

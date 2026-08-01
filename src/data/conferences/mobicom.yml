@@ -32,19 +32,19 @@
       timezone: UTC-12
     - type: final_decision
       label: "(Summer) Early Rejection Notification"
-      date: "TBD"
+      date: "2026-10-23 07:59:00"
       timezone: UTC-12
     - type: rebuttal_start
       label: "(Summer) Rebuttal Period Starts"
-      date: "TBD"
+      date: "2026-11-03 07:59:00"
       timezone: UTC-12
     - type: rebuttal_end
       label: "(Summer) Rebuttal Period Ends"
-      date: "TBD"
+      date: "2026-11-06 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: "(Summer) Final Notifications"
-      date: "TBD"
+      date: "2026-11-19 07:59:00"
       timezone: UTC-12
     - type: abstract
       label: "(Winter) Abstract Registration"
