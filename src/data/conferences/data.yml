@@ -1,4 +1,37 @@
 - title: DATA
+  year: 2027
+  id: data27
+  full_name: The 16th International Conference on Data Science, Technology and Applications
+  link: "https://data.scitevents.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2027-02-16 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Position/Regular) Paper Submission
+      date: "2027-03-25 23:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Rome
+  country: Italy
+  venue: TBD
+  format: hybrid
+  date: July 19-21, 2027
+  start: 2027-07-19
+  end: 2027-07-21
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - computer-vision
+      - security-and-privacy
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2302/
+
+- title: DATA
   year: 2026
   id: data26
   full_name: The 15th International Conference on Data Science, Technology and Applications 
