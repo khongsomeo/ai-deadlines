@@ -17,9 +17,9 @@
   country: Australia
   venue: TBD
   format: in-person
-  date: August 17-22, 2028
-  start: 2028-08-17
-  end: 2028-08-22
+  date: August 20-24, 2028
+  start: 2028-08-20
+  end: 2028-08-24
   tags:
       - computer-vision
       - machine-learning
