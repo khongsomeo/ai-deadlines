@@ -1,4 +1,36 @@
 - title: RCIS
+  year: 2027
+  id: rcis27
+  full_name: "International Conference on Research Challenges in Information Science"
+  link: "https://www.rcis-conf.com/rcis2027/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Athens"
+  country: "Greece"
+  venue: TBD
+  format: in-person
+  date: "May 2027"
+  start: TBD
+  end: TBD
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: B
+    rank_source: ICORE2023
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1192/"
+
+- title: RCIS
   year: 2026
   id: rcis26
   full_name: "International Conference on Research Challenges in Information Science"

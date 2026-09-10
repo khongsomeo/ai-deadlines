@@ -25,6 +25,10 @@
       label: "Submission deadline"
       date: "2026-08-15 23:59:00"
       timezone: UTC-12
+    - type: submission
+      label: "(Extended) Submission deadline"
+      date: "2026-08-31 23:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: "Accepted Notifications"
       date: "2026-09-15 07:59:00"

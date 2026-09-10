@@ -10,15 +10,15 @@
       timezone: UTC-12
     - type: rebuttal_start
       label: Rebuttal Period Start
-      date: "TBD"
+      date: "2026-09-14 07:59:00"
       timezone: UTC-12
     - type: rebuttal_end
       label: Rebuttal Period End
-      date: "TBD"
+      date: "2026-09-19 23:59:00"
       timezone: UTC-12
     - type: review_release
       label: Review Release Date
-      date: "TBD"
+      date: "2026-10-02 23:59:00"
       timezone: UTC-12
     - type: commitment
       label: Commitment Deadline

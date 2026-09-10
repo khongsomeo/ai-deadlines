@@ -22,7 +22,7 @@
       timezone: UTC-12
     - type: rebuttal_end
       label: (1st cycle) Rebuttal Text Due
-      date: "2026-08-25 23:59:00"
+      date: "2026-08-27 23:59:00"
       timezone: UTC-12
     - type: rebuttal_start
       label: (1st cycle) Interactive Rebuttal Period Start
@@ -30,7 +30,7 @@
       timezone: UTC-12
     - type: rebuttal_end
       label: (1st cycle) Interactive Rebuttal End & Revised Manuscript Due
-      date: "2026-09-04 23:59:00"
+      date: "2026-09-03 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: (1st cycle) Acceptance Notification
@@ -71,11 +71,11 @@
   timezone: UTC-12
   city: Montreal
   country: Canada
-  venue: TBD
+  venue: Le Centre Sheraton Montreal Hotel
   format: in-person
-  date: May 2027
-  start: TBD
-  end: TBD
+  date: May 17-20, 2027
+  start: 2027-05-17
+  end: 2027-05-20
   tags:
       - security-and-privacy
       - cryptography

@@ -1,4 +1,50 @@
 - title: ICLR
+  year: 2027
+  id: iclr27
+  full_name: 15th International Conference on Learning Representations
+  link: "https://iclr.cc/Conferences/2027"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-09-18 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-09-25 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Start
+      date: "2026-11-05 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal End
+      date: "2026-11-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-12-16 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: San Francisco, CA
+  country: United States
+  venue: Moscone Center
+  format: in-person
+  date: April 26-30, 2027
+  start: 2027-04-26
+  end: 2027-04-30
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - speech-processing
+      - computer-vision
+      - robotics
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2273/
+  note: "OpenReview submission; Rebuttal period start at the same time reviews released."
+
+- title: ICLR
   year: 2026
   id: iclr26
   full_name: 14th International Conference on Learning Representations

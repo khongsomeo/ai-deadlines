@@ -4,26 +4,14 @@
   full_name: 2027 IEEE International Conference on Robotics & Automation 
   link: "https://2027.ieee-icra.org/"
   deadlines:
-    - type: abstract_deadline
-      label: Paper Registration
-      date: "TBD"
-      timezone: UTC-12
     - type: submission
       label: Regular Paper Submission
       date: "2026-09-15 23:59:00"
-      timezone: UTC-12
-    - type: rebuttal_start
-      label: Rebuttal Period Start
-      date: "TBD"
-      timezone: UTC-12
-    - type: rebuttal_end
-      label: Rebuttal Period Ends
-      date: "TBD"
-      timezone: UTC-12
+      timezone: UTC-8
     - type: final_decision
       label: Author Notification
-      date: "TBD"
-      timezone: UTC-12
+      date: "2027-01-31 23:59:00"
+      timezone: UTC-8
   city: Seoul
   country: South Korea
   venue: Coex, 513, Yeongdong-daero, Gangnam-gu, 06164 Seoul

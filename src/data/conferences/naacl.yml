@@ -8,25 +8,17 @@
       label: Paper Submission
       date: "2026-10-12 23:59:00"
       timezone: UTC-12
-    - type: rebuttal_start
-      label: Rebuttal Period Start
-      date: "TBD"
-      timezone: UTC-12
-    - type: rebuttal_end
-      label: Rebuttal Period End
-      date: "TBD"
-      timezone: UTC-12
     - type: review_release
       label: Review Released
-      date: "TBD"
+      date: "2026-12-18 23:59:00"
       timezone: UTC-12
     - type: commitment
       label: Commitment Deadline
-      date: "TBD"
+      date: "2026-12-23 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Author Notification
-      date: "TBD"
+      date: "2027-02-10 23:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: San Francisco, CA

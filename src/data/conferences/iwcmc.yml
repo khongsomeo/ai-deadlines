@@ -1,4 +1,37 @@
 - title: IWCMC
+  year: 2027
+  id: iwcmc27
+  full_name: "International Wireless Communications and Mobile Computing Conference"
+  link: "https://iwcmc.net/2027/index.php"
+  deadlines:
+    - type: submission
+      label: "Submission Deadline"
+      date: "2027-01-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2027-03-30 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Barcelona"
+  country: "Spain"
+  venue: TBD
+  format: in-person
+  date: "June 13-18, 2027"
+  start: 2027-06-13
+  end: 2027-06-18
+  tags:
+    - machine-learning
+    - computer-vision
+    - security-and-privacy
+    - multimedia
+    - signal-processing
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/34/"
+
+- title: IWCMC
   year: 2026
   id: iwcmc26
   full_name: "International Wireless Communications and Mobile Computing Conference"

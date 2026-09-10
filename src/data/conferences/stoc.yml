@@ -1,4 +1,32 @@
 - title: STOC
+  year: 2027
+  id: stoc27
+  full_name: 59th ACM Symposium on Theory of Computing
+  link: "https://acm-stoc.org/stoc2027/"
+  timezone: UTC-12
+  city: "Atlanta, GA"
+  country: United States
+  venue: TBD
+  format: in-person
+  date: "June 6-11, 2027"
+  start: 2027-06-06
+  end: 2027-06-11
+  tags:
+    - machine-learning
+    - cryptography
+    - data-mining
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/65/"
+  deadlines:
+    - type: submission
+      label: "STOC Paper Submission Deadline"
+      date: "TBD"
+      timezone: UTC-12
+
+- title: STOC
   year: 2026
   id: stoc26
   full_name: 58th ACM Symposium on Theory of Computing

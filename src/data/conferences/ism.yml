@@ -8,8 +8,12 @@
       date: "2026-09-01 23:59:00"
       label: "Paper Submission"
       timezone: "America/Los_Angeles"
+    - type: submission
+      date: "2026-09-20 23:59:00"
+      label: "(Extended) Paper Submission"
+      timezone: "America/Los_Angeles"
     - type: final_decision
-      date: "2026-10-01 07:59:59"
+      date: "2026-10-18 23:59:00"
       label: Author Notification
       timezone: "America/Los_Angeles"
   timezone: "America/Los_Angeles"

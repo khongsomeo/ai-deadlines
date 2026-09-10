@@ -1,4 +1,29 @@
 - title: ICMLA
+  year: 2027
+  id: icmla27
+  full_name: International Conference on Machine Learning and Applications
+  link: "https://www.icmla-conference.org/icmla27/"
+  deadlines:
+    - type: submission
+      label: Main Conference Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: TBD
+  country: TBD
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+    - machine-learning
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1122/
+
+- title: ICMLA
   year: 2026
   id: icmla26
   full_name: International Conference on Machine Learning and Applications

@@ -8,9 +8,17 @@
       label: "Paper Registration"
       date: "2026-09-04 23:59:00"
       timezone: UTC-12
+    - type: abstract
+      label: "(Extended) Paper Registration"
+      date: "2026-09-11 23:59:00"
+      timezone: UTC-12
     - type: submission
       label: "Paper Submission"
       date: "2026-09-11 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(Extended) Paper Submission"
+      date: "2026-09-18 23:59:00"
       timezone: UTC-12
     - type: rebuttal_start
       label: "Rebuttal Invitation / Early Rejection"

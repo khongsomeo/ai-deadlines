@@ -1,4 +1,37 @@
 - title: MOBISYS
+  year: 2027
+  id: mobisys27
+  full_name: "ACM International Conference on Mobile Systems, Applications, and Services"
+  link: "https://www.sigmobile.org/mobisys/2027/"
+  timezone: UTC-12
+  city: "Ho Chi Minh City"
+  country: "Vietnam"
+  venue: TBD
+  format: in-person
+  date: "June 21-25, 2027"
+  start: 2027-06-21
+  end: 2027-06-25
+  tags:
+    - robotics
+    - machine-learning
+    - multimedia
+    - human-computer-interaction
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/45/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Registration"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+
+- title: MOBISYS
   year: 2026
   id: mobisys26
   full_name: "ACM International Conference on Mobile Systems, Applications, and Services"

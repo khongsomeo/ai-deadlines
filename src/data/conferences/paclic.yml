@@ -7,7 +7,11 @@
     - type: submission
       label: Paper Submission
       date: "2026-08-01 23:59:00"
-      timezone: UTC-12    
+      timezone: UTC-12
+    - type: submission
+      label: (Extended) Paper Submission
+      date: "2026-08-15 23:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: Final Decision
       date: "2026-09-30 23:59:00"
