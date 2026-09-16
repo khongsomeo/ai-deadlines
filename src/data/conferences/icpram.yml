@@ -8,6 +8,10 @@
       date: "2026-09-15 23:59:00"
       label: Paper Submission
       timezone: UTC-12
+    - type: submission
+      date: "2026-09-29 23:59:00"
+      label: "(Extended) Paper Submission"
+      timezone: UTC-12
     - type: final_decision
       date: "2026-11-13 07:59:59"
       label: Author Notification

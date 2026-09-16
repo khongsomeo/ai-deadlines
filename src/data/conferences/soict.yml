@@ -10,11 +10,15 @@
       timezone: UTC+7
     - type: abstract
       label: "(Extended) Abstract Submission"
-      date: "2026-09-16 23:59:00"
+      date: "2026-09-20 23:59:00"
       timezone: UTC+7
     - type: submission
       label: Paper Submission
       date: "2026-09-16 23:59:00"
+      timezone: UTC+7
+    - type: submission
+      label: "(Extended) Paper Submission"
+      date: "2026-09-20 23:59:00"
       timezone: UTC+7
     - type: final_decision
       label: Author Notification
