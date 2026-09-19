@@ -23,7 +23,11 @@
   deadlines:
     - type: submission
       label: "STOC Paper Submission Deadline"
-      date: "TBD"
+      date: "2026-11-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Submitted Papers Notification"
+      date: "2027-02-01 07:59:00"
       timezone: UTC-12
 
 - title: STOC
