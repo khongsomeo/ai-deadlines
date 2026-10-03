@@ -1,3 +1,44 @@
+- title: IJCAI
+  year: 2027
+  id: ijcai27
+  full_name: 36th International Joint Conference on Artificial Intelligence
+  link: "https://2027.ijcai.org/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2027-01-04 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Full Paper Submission
+      date: "2027-01-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Paper Notification
+      date: "2027-04-21 23:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Kyoto
+  country: Japan
+  venue: TBD
+  format: in-person
+  date: August 7-13, 2027
+  start: 2027-08-07
+  end: 2027-08-13
+  tags:
+      - machine-learning
+      - natural-language-processing
+      - computer-vision
+      - speech-processing
+      - signal-processing
+      - data-mining
+      - robotics
+      - human-computer-interaction
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1313/
+  note: "Satellite event in Hengqin, China, from August 15–17, 2027."
+
 - title: IJCAI-ECAI
   year: 2026
   id: ijcai26

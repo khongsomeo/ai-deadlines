@@ -1,4 +1,31 @@
 - title: CRYPTO
+  year: 2027
+  id: crypto27
+  full_name: The 47th Annual International Cryptology Conference
+  link: "https://crypto.iacr.org/2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: TBD
+      timezone: America/Los_Angeles
+  timezone: America/Los_Angeles
+  city: Santa Barbara, CA
+  country: United States
+  venue: University of California, Santa Barbara
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - cryptography
+      - information-theory
+      - security-and-privacy
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/94/
+
+- title: CRYPTO
   year: 2026
   id: crypto26
   full_name: The 46th Annual International Cryptology Conference

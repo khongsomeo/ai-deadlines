@@ -1,4 +1,36 @@
 - title: EJC
+  year: 2027
+  id: ejc27
+  full_name: 37th International Conference on Information Modelling and Knowledge Bases
+  link: "https://ejc.um.si/"
+  deadlines:
+    - type: submission
+      date: "2027-01-15 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "2027-03-30 07:59:00"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Hamburg
+  country: Germany
+  venue: TBD
+  format: in-person
+  date: June 7-11, 2027
+  start: 2027-06-07
+  end: 2027-06-11
+  tags:
+      - data-mining
+      - natural-language-processing
+      - computer-vision
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/524/
+  note: "Submission site: http://ejc.komazawa-u.ac.jp/ejc2027review/"
+
+- title: EJC
   year: 2026
   id: ejc26
   full_name: International Conference on Information Modelling and Knowledge Bases

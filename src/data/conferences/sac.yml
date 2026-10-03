@@ -8,9 +8,13 @@
       label: Paper Submission
       date: "2026-10-02 23:59:00"
       timezone: America/New_York
+    - type: submission
+      label: "(Extended) Paper Submission"
+      date: "2026-10-16 23:59:00"
+      timezone: America/New_York
     - type: final_decision
       label: Final Decision
-      date: "2026-11-13 07:59:59"
+      date: "2026-11-20 23:59:00"
       timezone: America/New_York
   city: Gwangju
   country: South Korea

@@ -18,7 +18,7 @@
       timezone: Asia/Saigon
     - type: final_decision
       label: Author Notification
-      date: "2026-06-30 07:59:59"
+      date: "2026-07-06 23:59:59"
       timezone: Asia/Saigon
   timezone: Asia/Saigon
   city: Hue

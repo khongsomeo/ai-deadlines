@@ -1,4 +1,43 @@
 - title: SIGIR
+  year: 2027
+  id: sigir27
+  full_name: 50th International ACM SIGIR Conference on Research and Development in Information Retrieval
+  link: "https://sigir2027.org"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission (Full Paper Track)"
+      date: "2027-01-14 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission (Full Paper Track)"
+      date: "2027-01-21 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification (Full Paper Track)"
+      date: "2027-04-05 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: San Jose, CA
+  country: United States
+  venue: Signia by Hilton San Jose
+  format: in-person
+  date: July 18-24, 2027
+  start: 2027-07-18
+  end: 2027-07-24
+  tags:
+      - natural-language-processing
+      - machine-learning
+      - information-retrieval
+      - multimedia
+      - human-computer-interaction
+      - data-mining
+      - security-and-privacy
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/29/
+
+- title: SIGIR
   year: 2026
   id: sigir2026
   full_name: 49th International ACM SIGIR Conference on Research and Development in Information Retrieval

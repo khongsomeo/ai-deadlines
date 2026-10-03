@@ -21,9 +21,9 @@
   country: Netherlands
   venue: TBD
   format: in-person
-  date: September 20-24, 2027
-  start: 2027-09-20
-  end: 2027-09-24
+  date: "August 30 - September 3, 2027"
+  start: 2027-08-30
+  end: 2027-09-03
   tags:
       - machine-learning
       - data-mining
