@@ -1,0 +1,44 @@
+- title: KR
+  year: 2027
+  id: kr27
+  full_name: "24th International Conference on Principles of Knowledge Representation and Reasoning"
+  link: "https://kr.org/KR2027/"
+  deadlines:
+    - type: abstract
+      label: "Submission of title and abstract"
+      date: "2027-04-23 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper submission deadline"
+      date: "2027-04-28 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Author response period starts"
+      date: "2027-06-15 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Author response period ends"
+      date: "2027-06-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of acceptance"
+      date: "2027-06-30 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Buenos Aires"
+  country: "Argentina"
+  venue: TBD
+  format: in-person
+  date: "September 21-24, 2027"
+  start: 2027-09-21
+  end: 2027-09-24
+  tags:
+    - machine-learning
+    - robotics
+    - natural-language-processing
+    - security-and-privacy
+    - data-mining
+  rankings:
+    rank_name: "A*"
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1239/"

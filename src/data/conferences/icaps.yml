@@ -1,0 +1,41 @@
+- title: ICAPS
+  year: 2027
+  id: icaps27
+  full_name: "The 37th International Conference on Automated Planning and Scheduling"
+  link: "https://icaps27.icaps-conference.org/"
+  deadlines:
+    - type: abstract
+      label: "Abstract submission deadline"
+      date: "2026-12-07 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper submission deadline"
+      date: "2026-12-14 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Author response period starts"
+      date: "2027-02-01 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Author response period ends"
+      date: "2027-02-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification"
+      date: "2027-02-26 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Columbia, SC"
+  country: "United States"
+  venue: TBD
+  format: in-person
+  date: "June 27 - July 2, 2027"
+  start: 2027-06-27
+  end: 2027-07-02
+  tags:
+    - machine-learning
+    - human-computer-interaction
+  rankings:
+    rank_name: "A*"
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/919/"
