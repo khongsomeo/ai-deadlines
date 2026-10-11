@@ -1,4 +1,38 @@
 - title: MODELS
+  year: 2027
+  id: models27
+  full_name: "ACM/IEEE 30th International Conference on Model Driven Engineering Languages and Systems"
+  link: "https://conf.researchr.org/home/models-2027"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Budapest"
+  country: "Hungary"
+  venue: "Danubius Hotel Helia"
+  format: in-person
+  date: "September 26 – October 1, 2027"
+  start: 2027-09-26
+  end: 2027-10-01
+  tags:
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1244/"
+
+- title: MODELS
   year: 2026
   id: models26
   full_name: International Conference on Model Driven Engineering Languages and Systems

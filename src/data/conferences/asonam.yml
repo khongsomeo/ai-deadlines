@@ -1,4 +1,39 @@
 - title: ASONAM
+  year: 2027
+  id: asonam27
+  full_name: "The 19th International Conference on Advances in Social Networks Analysis and Mining"
+  link: "https://asonam.cpsc.ucalgary.ca/2027/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Acceptance"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Athens"
+  country: "Greece"
+  venue: TBD
+  format: in-person
+  date: "August 23-26, 2027"
+  start: 2027-08-23
+  end: 2027-08-26
+  tags:
+    - machine-learning
+    - data-mining
+    - security-and-privacy
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/2311/"
+
+- title: ASONAM
   year: 2026
   id: asonam26
   full_name: "The 18th International Conference on Advances in Social Networks Analysis and Mining"

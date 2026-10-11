@@ -1,4 +1,38 @@
 - title: ISMAR
+  year: 2027
+  id: ismar27
+  full_name: "The 26th IEEE International Symposium on Mixed and Augmented Reality"
+  link: "https://www.ieeeismar.net/2027/"
+  timezone: UTC-12
+  city: "Kobe"
+  country: "Japan"
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+    - human-computer-interaction
+    - multimedia
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/785/"
+  deadlines:
+    - type: abstract
+      label: "Paper Abstract"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Final Notification"
+      date: "TBD"
+      timezone: UTC-12
+
+- title: ISMAR
   year: 2026
   id: ismar26
   full_name: "The 25th IEEE International Symposium on Mixed and Augmented Reality"

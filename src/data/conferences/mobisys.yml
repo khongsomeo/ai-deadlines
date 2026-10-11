@@ -24,11 +24,27 @@
   deadlines:
     - type: abstract
       label: "Abstract Registration"
-      date: "TBD"
+      date: "2026-11-27 23:59:00"
       timezone: UTC-12
     - type: submission
       label: "Paper Submission"
-      date: "TBD"
+      date: "2026-12-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Early Rejection Notification"
+      date: "2027-01-26 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Rebuttal Period Starts"
+      date: "2027-02-08 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Rebuttal Period Ends"
+      date: "2027-02-12 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Final Decision Notification"
+      date: "2027-03-06 23:59:00"
       timezone: UTC-12
 
 - title: MOBISYS

@@ -5,8 +5,8 @@
   link: "https://2027.aclweb.org/"
   deadlines:
     - type: submission
-      label: Paper Submission (ARR) 
-      date: "TBD"
+      label: Paper Submission (ARR)
+      date: "2027-01-04 23:59:00"
       timezone: UTC-12
     - type: review_release
       label: Reviews Released (ARR)
@@ -35,6 +35,7 @@
       rank_name: A*
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/196/
+  note: "<b>January 2027 ACL Rolling Review</b>"
 
 - title: ACL
   year: 2026

@@ -2,23 +2,23 @@
   year: 2027
   id: icmr27
   full_name: The 17th ACM International Conference on Multimedia Retrieval
-  link: "https://icmr2027.org/index.html"
+  link: "https://www.icmr2027.org/"
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "TBD"
+      date: "2027-01-31 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Decision
-      date: "TBD"
+      date: "2027-04-01 23:59:00"
       timezone: UTC-12
   city: Singapore
   country: Singapore
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: "June 7-10, 2027"
+  start: 2027-06-07
+  end: 2027-06-10
   tags:
       - multimedia
   rankings:
