@@ -1,4 +1,34 @@
 - title: ICDCS
+  year: 2027
+  id: icdcs27
+  full_name: "IEEE International Conference on Distributed Computing Systems"
+  link: "https://icdcs2027.icdcs.org/"
+  deadlines:
+    - type: submission
+      label: "Research Papers Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Research Papers Notification"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Melbourne"
+  country: "Australia"
+  venue: TBD
+  format: in-person
+  date: "July 5–8, 2027"
+  start: 2027-07-05
+  end: 2027-07-08
+  tags:
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1002/"
+
+- title: ICDCS
   year: 2026
   id: icdcs26
   full_name: "IEEE International Conference on Distributed Computing Systems"
