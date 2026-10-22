@@ -1,4 +1,40 @@
 - title: KES
+  year: 2027
+  id: kes27
+  full_name: The 31st International Conference on Knowledge-Based and Intelligent Information & Engineering Systems
+  link: "http://kes2027.kesinternational.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Stockholm
+  country: Sweden
+  venue: Hilton Stockholm Slussen
+  format: hybrid
+  date: September 6-8, 2027
+  start: 2027-09-06
+  end: 2027-09-08
+  tags:
+    - data-mining
+    - machine-learning
+    - natural-language-processing
+    - speech-processing
+    - signal-processing
+    - computer-vision
+    - robotics
+    - multimedia
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1113/
+
+- title: KES
   year: 2026
   id: kes26
   full_name: The 30th International Conference on Knowledge-Based and Intelligent Information & Engineering Systems
@@ -12,6 +48,7 @@
       label: Final Decision
       date: "2026-05-14 07:59:00"
       timezone: UTC-12
+  timezone: UTC-12
   city: Dublin
   country: Ireland
   venue: Royal Marine Hotel, Marine Rd, Dún Laoghaire, Dublin, A96 K063, Ireland
@@ -20,15 +57,15 @@
   start: 2026-09-09
   end: 2026-09-11
   tags:
-      - data-mining
-      - machine-learning
-      - natural-language-processing
-      - speech-processing
-      - signal-processing
-      - computer-vision
-      - robotics
-      - multimedia
+    - data-mining
+    - machine-learning
+    - natural-language-processing
+    - speech-processing
+    - signal-processing
+    - computer-vision
+    - robotics
+    - multimedia
   rankings:
-      rank_name: B
-      rank_source: ICORE2026
-      rank_source_url: https://portal.core.edu.au/conf-ranks/1113/
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1113/

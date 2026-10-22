@@ -6,16 +6,16 @@
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "TBD"
+      date: "2027-01-10 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Author Notification
-      date: "TBD"
+      date: "2027-03-27 23:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: Sorrento
   country: Italy
-  venue: TBD
+  venue: Hilton Sorrento Palace, Via Rivolo Sant’Antonio 13, 80067 Sorrento, Italy
   format: in-person
   date: June 27 - July 02, 2027
   start: 2027-06-27

@@ -13,13 +13,13 @@
       date: "TBD"
       timezone: UTC-12
   timezone: UTC-12
-  city: TBD
-  country: TBD
-  venue: TBD
+  city: Penang
+  country: Malaysia
+  venue: G Hotel Gurney
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: December 5-8, 2027
+  start: 2027-12-05
+  end: 2027-12-08
   tags:
     - signal-processing
     - speech-processing

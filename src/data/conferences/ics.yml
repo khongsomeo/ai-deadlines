@@ -1,4 +1,49 @@
 - title: ICS
+  year: 2027
+  id: ics27
+  full_name: "ACM International Conference on Supercomputing"
+  link: "https://klab-ai3.github.io/ics2027/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission Deadline"
+      date: "2026-12-01 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission Deadline"
+      date: "2026-12-07 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Early Reject Decisions Notification"
+      date: "2027-02-11 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Author Revision Window Start"
+      date: "2027-02-11 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Author Revision Window End"
+      date: "2027-02-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Final Decisions Notification"
+      date: "2027-03-12 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Atlanta, GA"
+  country: "United States"
+  venue: "TBD"
+  format: in-person
+  date: "June 5–11, 2027"
+  start: 2027-06-05
+  end: 2027-06-11
+  tags:
+    - machine-learning
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/30/"
+
+- title: ICS
   year: 2026
   id: ics26
   full_name: "ACM International Conference on Supercomputing"
