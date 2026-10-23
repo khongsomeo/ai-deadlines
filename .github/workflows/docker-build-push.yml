@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - official-build
+  workflow_dispatch: # Allows you to manually trigger the rebuild from the Actions tab 🚀
 
 permissions:
   contents: read
@@ -33,7 +34,9 @@ jobs:
 
       - name: Build Images via Docker Compose
         run: |
-          docker compose build
+          # --pull forces Docker to check Docker Hub for the updated node:22-alpine base image
+          # --no-cache completely discards old local layers built on the runner
+          docker compose build --pull --no-cache
         env:
           VITE_API_URL: ${{ secrets.VITE_API_URL }}
 
