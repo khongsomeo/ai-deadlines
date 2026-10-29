@@ -1,0 +1,42 @@
+- title: EC-TEL
+  year: 2026
+  id: ectel26
+  full_name: Twenty-first European Conference on Technology Enhanced Learning
+  link: "https://ea-tel.eu/ectel2026"
+  deadlines:
+    - type: abstract
+      label: Mandatory Abstract Submission
+      date: "2026-03-13 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Extended) Mandatory Abstract Submission
+      date: "2026-03-20 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Full Paper Submission
+      date: "2026-04-03 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Extended) Full Paper Submission
+      date: "2026-04-12 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-05-31 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Valencia
+  country: Spain
+  venue: Centro Asociado UNED Valencia
+  format: in-person
+  date: September 14-18, 2026
+  start: 2026-09-14
+  end: 2026-09-18
+  tags:
+      - human-computer-interaction
+      - machine-learning
+      - data-mining
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/2262/

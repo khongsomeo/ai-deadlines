@@ -1,0 +1,39 @@
+- title: ALT
+  year: 2027
+  id: alt27
+  full_name: The 38th International Conference on Algorithmic Learning Theory
+  link: "https://algorithmiclearningtheory.org/alt2027/"
+  deadlines:
+    - type: submission
+      label: Paper submission deadline
+      date: "2026-10-12 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author feedback (Start)
+      date: "2026-11-30 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author feedback (End)
+      date: "2026-12-06 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author notification
+      date: "2027-01-05 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Leiden
+  country: Netherlands
+  venue: Scheltema Leiden, Marktsteeg 1, 2312 CS Leiden, Netherlands
+  format: in-person
+  date: March 9-12, 2027
+  start: 2027-03-09
+  end: 2027-03-12
+  tags:
+      - machine-learning
+      - information-theory
+      - security-and-privacy
+  rankings:
+      rank_name: B
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/106/
+  note: OpenReview submission; Proceedings in PMLR

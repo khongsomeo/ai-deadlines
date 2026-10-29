@@ -2,18 +2,18 @@
   year: 2027
   id: ida27
   full_name: The 2027 Symposium on Intelligent Data Analysis
-  link: "https://ida2027.org"
+  link: "https://ida2027.eu"
   deadlines:
     - type: abstract
-      date: "TBD"
+      date: "2026-11-28 23:59:00"
       label: "Abstract Submission"
       timezone: UTC-12
     - type: submission
-      date: "TBD"
+      date: "2026-12-05 23:59:00"
       label: "Paper Submission"
       timezone: UTC-12
     - type: final_decision
-      date: "TBD"
+      date: "2027-01-22 23:59:00"
       label: "Author Notification"
       timezone: UTC-12
   timezone: UTC-12
@@ -21,9 +21,9 @@
   country: Italy
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: "April 21-23, 2027"
+  start: 2027-04-21
+  end: 2027-04-23
   tags:
       - machine-learning
       - data-mining
