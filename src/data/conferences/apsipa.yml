@@ -5,12 +5,12 @@
   link: "https://www.apsipa2027.org"
   deadlines:
     - type: submission
-      label: "Paper Submission"
-      date: "TBD"
+      label: "Submission of Regular Papers"
+      date: "2027-07-15 23:59:00"
       timezone: UTC-12
     - type: final_decision
-      label: "Acceptance Notification"
-      date: "TBD"
+      label: "Notification of Papers Acceptance"
+      date: "2027-09-15 07:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: Penang
