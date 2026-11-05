@@ -1,4 +1,43 @@
 - title: KEOD
+  year: 2027
+  id: keod27
+  full_name: 19th International Conference on Knowledge Engineering and Ontology Development
+  link: "https://keod.scitevents.org/"
+  deadlines:
+    - type: submission
+      label: Regular Paper (1st Stage) Submission
+      date: "2027-04-27 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Regular Paper (1st Stage) Author Notification
+      date: "2027-06-18 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Position/Regular) Paper (2nd Stage) Submission
+      date: "2027-06-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Position/Regular) Paper (2nd Stage) Author Notification
+      date: "2027-07-26 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Porto
+  country: Portugal
+  venue: TBD
+  format: hybrid
+  date: October 27-29, 2027
+  start: 2027-10-27
+  end: 2027-10-29
+  tags:
+      - natural-language-processing
+      - machine-learning
+      - data-mining
+  rankings:
+      rank_name: C
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1111/
+
+- title: KEOD
   year: 2026
   id: keod26
   full_name: 18th International Conference on Knowledge Engineering and Ontology Development

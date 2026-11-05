@@ -6,19 +6,19 @@
   deadlines:
     - type: submission
       label: Paper Submission
-      date: "TBD"
+      date: "2027-02-01 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Decision
       date: "TBD"
       timezone: UTC-12
-  city: TBD
-  country: TBD
-  venue: TBD
+  city: Cádiz
+  country: Spain
+  venue: Edificio Constitución de 1812 (Aulario La Bomba), University of Cadiz
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: September 15-17, 2027
+  start: 2027-09-15
+  end: 2027-09-17
   tags:
       - machine-learning
       - natural-language-processing

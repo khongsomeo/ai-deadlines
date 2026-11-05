@@ -1,4 +1,46 @@
 - title: ICML
+  year: 2027
+  id: icml27
+  full_name: 44th International Conference on Machine Learning
+  link: "https://icml.cc/Conferences/2027"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Reviewer-Author discussion start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Reviewer-Author discussion end
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Author Notification"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Rio de Janeiro
+  country: Brazil
+  venue: Riocentro
+  format: in-person
+  date: July 31 - August 6, 2027
+  start: 2027-07-31
+  end: 2027-08-06
+  tags:
+      - machine-learning
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1121/
+  note: "OpenReview submission"
+
+- title: ICML
   year: 2026
   id: icml26
   full_name: 43rd International Conference on Machine Learning

@@ -1,4 +1,34 @@
 - title: SmartComp
+  year: 2027
+  id: smartcomp27
+  full_name: "The 13th IEEE International Conference on Smart Computing"
+  link: "https://smartcomp2027.org/"
+  deadlines:
+    - type: submission
+      label: "Paper Submission Deadline"
+      date: "2027-01-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Acceptance Notification"
+      date: "2027-04-08 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Boca Raton, FL"
+  country: "United States"
+  venue: "Florida Atlantic University, Executive Education Center"
+  format: in-person
+  date: "June 14-17, 2027"
+  start: 2027-06-14
+  end: 2027-06-17
+  tags:
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: B
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/2339/"
+
+- title: SmartComp
   year: 2026
   id: smartcomp26
   full_name: "IEEE International Conference on Smart Computing"

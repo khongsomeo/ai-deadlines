@@ -1,4 +1,40 @@
 - title: CAISE
+  year: 2027
+  id: caise27
+  full_name: 39th International Conference on Advanced Information Systems Engineering
+  link: "https://www.caise2027seville.org/"
+  deadlines:
+    - type: abstract
+      label: Abstract submission deadline (mandatory, firm)
+      date: "2026-11-04 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper submission deadline (firm)
+      date: "2026-11-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification to authors
+      date: "2027-02-10 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Seville
+  country: Spain
+  venue: Hotel Meliá Lebreros Sevilla, Calle Luis de Morales, 2, Nervión, Seville, Spain
+  format: in-person
+  date: "June 7-11, 2027"
+  start: 2027-06-07
+  end: 2027-06-11
+  tags:
+    - machine-learning
+    - data-mining
+    - information-retrieval
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/891/
+
+- title: CAISE
   year: 2026
   id: caise26
   full_name: International Conference on Advanced Information Systems Engineering
