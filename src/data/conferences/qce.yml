@@ -1,4 +1,39 @@
 - title: QCE
+  year: 2027
+  id: qce27
+  full_name: IEEE International Conference on Quantum Computing and Engineering
+  link: "https://qce.quantum.ieee.org/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Technical Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Raleigh, NC
+  country: United States
+  venue: Atlantic Union Bank Convention Center
+  format: hybrid
+  date: October 10-15, 2027
+  start: 2027-10-10
+  end: 2027-10-15
+  tags:
+    - machine-learning
+    - cryptography
+    - security-and-privacy
+  rankings:
+    rank_name: Non-ranked
+    rank_source: National - ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2325/
+
+- title: QCE
   year: 2026
   id: qce26
   full_name: IEEE International Conference on Quantum Computing and Engineering

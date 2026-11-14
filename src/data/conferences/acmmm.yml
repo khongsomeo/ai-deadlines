@@ -31,11 +31,11 @@
   timezone: UTC-12
   city: Hong Kong
   country: China
-  venue: TBD
-  format: hybrid
-  date: TBD
-  start: TBD
-  end: TBD
+  venue: AsiaWorld-Expo
+  format: in-person
+  date: November 8-12, 2027
+  start: 2027-11-08
+  end: 2027-11-12
   tags:
     - multimedia
     - machine-learning

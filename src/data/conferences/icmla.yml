@@ -6,16 +6,20 @@
   deadlines:
     - type: submission
       label: Main Conference Paper Submission
-      date: "TBD"
-      timezone: UTC-12
-  timezone: UTC-12
+      date: "2027-05-15 23:59:00"
+      timezone: UTC-8
+    - type: final_decision
+      label: Main Conference Paper Notification
+      date: "2027-06-15 23:59:00"
+      timezone: UTC-8
+  timezone: UTC-8
   city: TBD
   country: TBD
   venue: TBD
   format: in-person
-  date: TBD
-  start: TBD
-  end: TBD
+  date: "December 14-16, 2027"
+  start: 2027-12-14
+  end: 2027-12-16
   tags:
     - machine-learning
   rankings:

@@ -37,6 +37,10 @@
       label: "(2nd round) Registration"
       date: "2026-11-12 23:59:00"
       timezone: UTC-12
+    - type: abstract
+      label: "(Extended) (2nd round) Registration"
+      date: "2026-11-19 23:59:00"
+      timezone: UTC-12
     - type: submission
       label: "(2nd round) Submission"
       date: "2026-11-19 23:59:00"

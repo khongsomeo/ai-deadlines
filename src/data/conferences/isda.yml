@@ -1,4 +1,42 @@
 - title: ISDA
+  year: 2027
+  id: isda27
+  full_name: "The 2027 International Conference on Intelligent Systems and Digital Applications"
+  link: "https://isda-conf.org/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission Deadline"
+      date: "2027-01-31 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Full Paper Submission Deadline"
+      date: "2027-03-31 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Notification of Acceptance"
+      date: "2027-04-30 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Settat"
+  country: "Morocco"
+  venue: "Faculty of Sciences and Techniques (FST), Hassan First University"
+  format: hybrid
+  date: "June 24-25, 2027"
+  start: 2027-06-24
+  end: 2027-06-25
+  tags:
+    - machine-learning
+    - natural-language-processing
+    - robotics
+    - cryptography
+    - data-mining
+    - security-and-privacy
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1098/
+
+- title: ISDA
   year: 2026
   id: isda26
   full_name: The 2026 International Conference on Intelligent Systems and Digital Applications
@@ -21,11 +59,11 @@
   start: 2026-05-14
   end: 2026-05-15
   tags:
-      - machine-learning
-      - natural-language-processing
-      - robotics
-      - cryptography
+    - machine-learning
+    - natural-language-processing
+    - robotics
+    - cryptography
   rankings:
-      rank_name: C
-      rank_source: ICORE2026
-      rank_source_url: https://portal.core.edu.au/conf-ranks/1098/
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1098/

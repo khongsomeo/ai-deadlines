@@ -1,4 +1,39 @@
 - title: ICANN
+  year: 2027
+  id: icann27
+  full_name: 36th International Conference on Artificial Neural Networks
+  link: "https://e-nns.org/icann2027/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Linköping
+  country: Sweden
+  venue: Collegium, Linköping Science Park, Sweden
+  format: in-person
+  date: August 24-27, 2027
+  start: 2027-08-24
+  end: 2027-08-27
+  tags:
+    - machine-learning
+    - natural-language-processing
+    - speech-processing
+    - computer-vision
+    - robotics
+    - human-computer-interaction
+    - signal-processing
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/915/
+
+- title: ICANN
   year: 2026
   id: icann26
   full_name: International Conference on Artificial Neural Networks
@@ -20,13 +55,13 @@
   start: 2026-09-14
   end: 2026-09-17
   tags:
-      - machine-learning
-      - natural-language-processing
-      - speech-processing
-      - computer-vision
-      - robotics
-      - human-computer-interaction
+    - machine-learning
+    - natural-language-processing
+    - speech-processing
+    - computer-vision
+    - robotics
+    - human-computer-interaction
   rankings:
-      rank_name: C
-      rank_source: ICORE2026
-      rank_source_url: https://portal.core.edu.au/conf-ranks/915/
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/915/

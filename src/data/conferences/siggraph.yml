@@ -3,7 +3,7 @@
   id: siggraph27
   full_name: 54th International Conference & Exhibition On Computer Graphics & Interactive Techniques
   link: "https://s2027.siggraph.org/"
-  timezone: UTC-12
+  timezone: UTC
   city: "Anaheim, CA"
   country: United States
   venue: Anaheim Convention Center
@@ -18,14 +18,18 @@
     rank_source: ICORE2026
     rank_source_url: "https://portal.core.edu.au/conf-ranks/38/"
   deadlines:
-    - type: abstract
+    - type: abstract_submission
       label: "Submission form deadline"
-      date: "TBD"
-      timezone: UTC-12
+      date: "2027-01-21 22:00:00"
+      timezone: UTC
     - type: submission
       label: "Paper submission deadline"
-      date: "TBD"
-      timezone: UTC-12
+      date: "2027-01-28 22:00:00"
+      timezone: UTC
+    - type: submission
+      label: "Upload deadline"
+      date: "2027-01-29 22:00:00"
+      timezone: UTC
 
 - title: SIGGRAPH
   year: 2026

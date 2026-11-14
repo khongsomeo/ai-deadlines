@@ -1,4 +1,40 @@
 - title: MMSP
+  year: 2027
+  id: mmsp27
+  full_name: IEEE 29th International Workshop on Multimedia Signal Processing
+  link: "https://2027.ieeemmsp.org/"
+  deadlines:
+    - type: submission
+      label: Conference Paper Submission Deadline
+      date: "2027-05-14 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2027-06-16 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Klagenfurt
+  country: Austria
+  venue: TBD
+  format: in-person
+  date: October 6-8, 2027
+  start: 2027-10-06
+  end: 2027-10-08
+  tags:
+    - multimedia
+    - signal-processing
+    - speech-processing
+    - computer-vision
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - information-retrieval
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1508/
+
+- title: MMSP
   year: 2026
   id: mmsp26
   full_name: IEEE 28th International Workshop on Multimedia Signal Processing
@@ -21,15 +57,15 @@
   start: 2026-09-22
   end: 2026-09-24
   tags:
-      - multimedia
-      - signal-processing
-      - speech-processing
-      - computer-vision
-      - machine-learning
-      - security-and-privacy
-      - human-computer-interaction
-      - information-retrieval
+    - multimedia
+    - signal-processing
+    - speech-processing
+    - computer-vision
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - information-retrieval
   rankings:
-      rank_name: C
-      rank_source: ICORE2026
-      rank_source_url: https://portal.core.edu.au/conf-ranks/1508/
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1508/
