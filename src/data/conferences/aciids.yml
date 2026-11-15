@@ -22,7 +22,7 @@
       timezone: UTC-12
   city: Bali
   country: Indonesia
-  venue: TBD
+  venue: Bali Dynasty Resort
   format: hybrid
   date: April 5-7, 2027
   start: 2027-04-05
@@ -33,6 +33,7 @@
       - speech-processing
       - computer-vision
       - robotics
+      - quantum-computing
   rankings:
       rank_name: B
       rank_source: ICORE2026

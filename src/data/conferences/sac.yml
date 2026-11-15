@@ -28,6 +28,7 @@
       - natural-language-processing
       - multimedia
       - signal-processing
+      - quantum-computing
   rankings:
       rank_name: Multiconference
       rank_source: ICORE2026

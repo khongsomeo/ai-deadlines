@@ -16,14 +16,6 @@
       label: Early Notification
       date: "TBD"
       timezone: UTC-12
-    - type: rebuttal_start
-      label: Rebuttal Period Start
-      date: "TBD"
-      timezone: UTC-12
-    - type: rebuttal_end
-      label: Rebuttal Period End
-      date: "TBD"
-      timezone: UTC-12
     - type: final_decision
       label: Review Results Notification
       date: "TBD"

@@ -30,6 +30,7 @@
   end: 2027-04-15
   tags:
     - cryptography
+    - quantum-computing
   rankings:
     rank_name: A*
     rank_source: ICORE2026

@@ -24,6 +24,7 @@
       - natural-language-processing
       - speech-processing
       - computer-vision
+      - quantum-computing
   rankings:
       rank_name: B
       rank_source: ICORE2026

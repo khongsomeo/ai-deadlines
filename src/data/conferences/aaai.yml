@@ -46,6 +46,7 @@
       - data-mining
       - robotics
       - human-computer-interaction
+      - quantum-computing
   rankings:
       rank_name: A*
       rank_source: ICORE2026

@@ -14,11 +14,11 @@
       timezone: UTC-12
     - type: rebuttal_start
       label: Reviewer-Author discussion start
-      date: "TBD"
+      date: "2027-03-24 23:59:59"
       timezone: UTC-12
     - type: rebuttal_end
       label: Reviewer-Author discussion end
-      date: "TBD"
+      date: "2027-04-07 23:59:59"
       timezone: UTC-12
     - type: final_decision
       label: "Author Notification"
@@ -38,7 +38,7 @@
       rank_name: A*
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1121/
-  note: "OpenReview submission"
+  note: "<b>Review:</b> Double-blind (two-stage review; early rejections Feb 23). <b>Length:</b> Main paper max 8 pages + unlimited references/impact statement/appendices (+1 page camera-ready). <b>Platform:</b> OpenReview. <b>Preprints:</b> Allowed (no public promotion during review). <b>Presentation:</b> Optional in-person attendance (virtual registration option for proceedings-only). <b>Proceedings:</b> PMLR."
 
 - title: ICML
   year: 2026

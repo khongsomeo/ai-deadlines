@@ -29,6 +29,7 @@
     - machine-learning
     - data-mining
     - security-and-privacy
+    - quantum-computing
   rankings:
     rank_name: Non-ranked
     rank_source: IEEE Xplore

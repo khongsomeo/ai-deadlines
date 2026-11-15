@@ -32,6 +32,7 @@
       - signal-processing
       - speech-processing
       - computer-vision
+      - quantum-computing
   rankings:
       rank_name: Multiconference
       rank_source: ICORE2026

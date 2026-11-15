@@ -48,6 +48,7 @@
       - data-mining
       - machine-learning
       - security-and-privacy
+      - quantum-computing
   rankings:
       rank_name: A*
       rank_source: ICORE2026

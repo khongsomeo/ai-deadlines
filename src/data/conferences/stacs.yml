@@ -37,6 +37,7 @@
     - security-and-privacy
     - machine-learning
     - information-theory
+    - quantum-computing
   rankings:
     rank_name: A
     rank_source: ICORE2026

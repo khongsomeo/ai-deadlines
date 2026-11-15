@@ -38,6 +38,7 @@
   end: 2027-07-02
   tags:
       - machine-learning
+      - quantum-computing
   rankings:
       rank_name: A*
       rank_source: ICORE2026

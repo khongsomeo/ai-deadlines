@@ -8,9 +8,17 @@
       label: Paper Submission
       date: "2027-03-31 23:59:00"
       timezone: UTC-12
+    - type: review_release
+      label: Reviews Released
+      date: "2027-06-25 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Rebuttal Deadline
+      date: "2027-07-07 23:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: Author Notification
-      date: "TBD"
+      date: "2027-08-06 23:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: Singapore
@@ -25,10 +33,12 @@
     - multimedia
     - machine-learning
     - signal-processing
+    - quantum-computing
   rankings:
     rank_name: B
     rank_source: ICORE2026
     rank_source_url: https://portal.core.edu.au/conf-ranks/654/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Regular papers max 6 pages inclusive (5 pages technical + 1 page references); Journal track max 9 pages in OJ-SP. <b>Presentation:</b> In-person in Singapore. <b>Proceedings:</b> IEEE Xplore."
 
 - title: ICIP
   year: 2026

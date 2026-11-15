@@ -6,15 +6,23 @@
   deadlines:
     - type: abstract
       label: "Abstract Submission"
-      date: "TBD"
+      date: "2027-03-12 23:59:00"
       timezone: UTC-12
     - type: submission
       label: "Paper Submission"
-      date: "TBD"
+      date: "2027-03-19 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Author Responses Start"
+      date: "2027-05-19 00:00:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Author Responses End"
+      date: "2027-05-21 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: "Author Notification"
-      date: "TBD"
+      date: "2027-06-11 23:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: "Budapest"
@@ -24,6 +32,7 @@
   date: "September 26 – October 1, 2027"
   start: 2027-09-26
   end: 2027-10-01
+  note: "<b>Review:</b> Double-blind (Foundations Track) / Single-blind (Practice Track). <b>Length:</b> Max 10 pages + 2 pages references (IEEE 2-column format). <b>Platform:</b> EasyChair. <b>Preprints:</b> Allowed on arXiv or similar sites (without disclosing MODELS 2027 submission); dual submission prohibited. <b>Presentation:</b> In-person. <b>Proceedings:</b> IEEE."
   tags:
     - machine-learning
     - security-and-privacy

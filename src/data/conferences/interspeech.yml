@@ -14,11 +14,11 @@
       timezone: UTC-12
     - type: rebuttal_start
       label: Rebuttal Period Starts
-      date: "TBD"
+      date: "2027-04-13 23:59:00"
       timezone: UTC-12
     - type: rebuttal_end
       label: Rebuttal Period Ends
-      date: "TBD"
+      date: "2027-04-20 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Final Decision

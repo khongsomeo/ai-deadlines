@@ -28,6 +28,7 @@
     - machine-learning
     - cryptography
     - security-and-privacy
+    - quantum-computing
   rankings:
     rank_name: Non-ranked
     rank_source: National - ICORE2026

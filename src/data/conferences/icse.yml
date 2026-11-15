@@ -69,6 +69,7 @@
     - security-and-privacy
     - human-computer-interaction
     - data-mining
+    - quantum-computing
   rankings:
     rank_name: A*
     rank_source: ICORE2026

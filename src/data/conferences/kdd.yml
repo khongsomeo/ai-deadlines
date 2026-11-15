@@ -52,12 +52,14 @@
   date: "August 1-5, 2027"
   start: 2027-08-01
   end: 2027-08-05
+  note: "<b>Review:</b> Double-blind (Research, ADS) / Single-blind (AI4Sciences). <b>Length:</b> Max 8 content pages + unlimited references/appendix; accepted papers max 12 pages in proceedings (max 9 content pages + 3 references/appendix). <b>Platform:</b> OpenReview. <b>Preprints:</b> Non-archival preprints (arXiv/SSRN) permitted without citation; strict anonymity embargo applies. <b>Presentation:</b> In-person. <b>Proceedings:</b> ACM Digital Library (Open Access)."
   tags:
       - machine-learning
       - data-mining
       - natural-language-processing
       - security-and-privacy
       - information-retrieval
+      - quantum-computing
   rankings:
       rank_name: A*
       rank_source: ICORE2026

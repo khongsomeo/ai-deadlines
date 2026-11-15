@@ -14,6 +14,7 @@ export const CATEGORY_CONFIG = [
   { id: "information-retrieval", label: "Information Retrieval", color: "bg-lime-500" },
   { id: "cryptography", label: "Cryptography", color: "bg-indigo-500" },
   { id: "security-and-privacy", label: "Security & Privacy", color: "bg-teal-500" },
+  { id: "quantum-computing", label: "Quantum Computing", color: "bg-violet-500" },
 ] as const;
 
 export const CATEGORY_LABELS = new Map(CATEGORY_CONFIG.map(c => [c.id, c.label]));

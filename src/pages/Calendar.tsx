@@ -22,7 +22,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { CATEGORY_LABELS, CATEGORY_COLORS, ORDERED_CATEGORIES } from "@/utils/constants";
+import { CATEGORY_CONFIG, CATEGORY_LABELS, CATEGORY_COLORS, ORDERED_CATEGORIES } from "@/utils/constants";
 
 const USER_TIMEZONE = getUserTimezone();
 
@@ -500,28 +500,6 @@ const CalendarPage = () => {
 
 
 
-  const availableCategories = useMemo(() => {
-    const categoriesSet = new Set<string>();
-    if (!conferencesData) return categoriesSet;
-    for (let i = 0; i < conferencesData.length; i++) {
-      const tags = conferencesData[i].tags;
-      if (Array.isArray(tags)) {
-        for (let j = 0; j < tags.length; j++) {
-          categoriesSet.add(tags[j]);
-        }
-      }
-    }
-    return categoriesSet;
-  }, [conferencesData]);
-
-  const categories = useMemo(() => {
-    return ORDERED_CATEGORIES.flatMap(category =>
-      availableCategories.has(category)
-        ? [[category, CATEGORY_COLORS.get(category)]]
-        : []
-    );
-  }, [availableCategories]);
-
   const renderLegend = () => {
     return (
       <div className="flex flex-wrap gap-3 justify-center items-center mb-4">
@@ -553,7 +531,7 @@ const CalendarPage = () => {
 
         <div className="h-6 w-px bg-neutral-200" /> {/* Divider */}
 
-        {categories.map(([tag, color]) => (
+        {CATEGORY_CONFIG.map(({ id: tag, label, color }) => (
           <TooltipProvider key={tag}>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -577,11 +555,11 @@ const CalendarPage = () => {
                   `}
                 >
                   <div className={`w-3 h-3 rounded-full ${color}`} />
-                  <span className="text-sm">{CATEGORY_LABELS.get(tag) || tag}</span>
+                  <span className="text-sm">{label}</span>
                 </button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Click to toggle {CATEGORY_LABELS.get(tag) || tag}</p>
+                <p>Click to toggle {label}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
