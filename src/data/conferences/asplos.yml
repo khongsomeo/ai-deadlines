@@ -1,0 +1,53 @@
+- title: ASPLOS
+  year: 2027
+  id: asplos27
+  full_name: The 32nd ACM International Conference on Architectural Support for Programming Languages and Operating Systems
+  link: "https://www.asplos-conference.org/asplos2027/"
+  deadlines:
+    - type: submission
+      label: (April Cycle) Full Paper Submission
+      date: "2026-04-15 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (April Cycle) Author Response Starts
+      date: "2026-07-06 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (April Cycle) Author Response Ends
+      date: "2026-07-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (April Cycle) Notification
+      date: "2026-07-27 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (September Cycle) Full Paper Submission
+      date: "2026-09-09 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (September Cycle) Author Response Starts
+      date: "2026-12-01 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (September Cycle) Author Response Ends
+      date: "2026-12-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (September Cycle) Notification
+      date: "2026-12-21 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Heraklion
+  country: Greece
+  venue: TBD
+  format: in-person
+  date: April 11-15, 2027
+  start: 2027-04-11
+  end: 2027-04-15
+  tags:
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/147/
+  note: "<b>Review:</b> Double-blind (with a rapid review round evaluating only the first two pages). <b>Length:</b> Max 11 pages excluding references and appendices (+2 pages for camera-ready). <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed anytime (advertising embargo begins 2 weeks prior to deadline until decisions). <b>Presentation:</b> In-person in Heraklion, Crete, Greece. <b>Proceedings:</b> ACM DL (Open Access)."

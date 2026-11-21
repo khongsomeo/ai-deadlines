@@ -1,0 +1,40 @@
+- title: DAC
+  year: 2027
+  id: dac27
+  full_name: The 64th Design Automation Conference
+  link: "https://dac.com/2027"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission Deadline
+      date: "2026-11-11 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: Manuscript Submission Deadline
+      date: "2026-11-18 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: Accepted Manuscript IDs Published
+      date: "2027-02-22 07:59:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: Accept/Reject Notifications Sent
+      date: "2027-03-08 07:59:00"
+      timezone: America/Los_Angeles
+  timezone: America/Los_Angeles
+  city: San Jose, CA
+  country: United States
+  venue: San Jose McEnery Convention Center
+  format: in-person
+  date: "July 11-14, 2027"
+  start: 2027-07-11
+  end: 2027-07-14
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - cryptography
+    - quantum-computing
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1996/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 6 pages plus 1 additional page for references only (IEEE template). <b>Platform:</b> Softconf START. <b>Preprints:</b> arXiv allowed (authors must ensure double-blind compliance). <b>Presentation:</b> In-person attendance and presentation required. <b>Proceedings:</b> IEEE Xplore and ACM Digital Library."

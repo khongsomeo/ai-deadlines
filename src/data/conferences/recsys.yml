@@ -1,0 +1,89 @@
+- title: RecSys
+  year: 2027
+  id: recsys27
+  full_name: 21st ACM Conference on Recommender Systems
+  link: "https://recsys.acm.org/recsys27"
+  deadlines:
+    - type: abstract
+      label: Paper Abstracts Due
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Rebuttal Period Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Rebuttal Period End
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Paper Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Honolulu, HI
+  country: United States
+  venue: Hilton Hawaiian Village Waikiki Beach Resort
+  format: in-person
+  date: August 23-27, 2027
+  start: 2027-08-23
+  end: 2027-08-27
+  tags:
+      - information-retrieval
+      - machine-learning
+      - data-mining
+      - human-computer-interaction
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/28/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Long papers max 8 pages, short papers max 4 pages plus references. <b>Platform:</b> EasyChair. <b>Preprints:</b> Anonymous arXiv preprints permitted anytime; non-anonymized preprints prohibited during active review. <b>Presentation:</b> In-person in Honolulu, HI. <b>Proceedings:</b> ACM Digital Library."
+
+- title: RecSys
+  year: 2026
+  id: recsys26
+  full_name: 20th ACM Conference on Recommender Systems
+  link: "https://recsys.acm.org/recsys26/"
+  deadlines:
+    - type: abstract
+      label: Paper Abstracts Due
+      date: "2026-04-14 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Papers Due
+      date: "2026-04-21 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Rebuttal Period Start
+      date: "2026-06-04 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Rebuttal Period End
+      date: "2026-06-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Paper Notifications
+      date: "2026-07-09 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Minneapolis, MN
+  country: United States
+  venue: Minneapolis Marriott City Center
+  format: in-person
+  date: September 28 - October 2, 2026
+  start: 2026-09-28
+  end: 2026-10-02
+  tags:
+      - information-retrieval
+      - machine-learning
+      - data-mining
+      - human-computer-interaction
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/28/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Long papers max 8 pages, short papers max 4 pages plus references. <b>Platform:</b> EasyChair. <b>Preprints:</b> Anonymous arXiv preprints permitted anytime; non-anonymized preprints prohibited during active review. <b>Presentation:</b> In-person in Minneapolis, MN. <b>Proceedings:</b> ACM Digital Library."

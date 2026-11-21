@@ -1,0 +1,188 @@
+- title: VLDB
+  year: 2027
+  id: vldb27
+  full_name: 53rd International Conference on Very Large Data Bases
+  link: "https://vldb.org/2027/"
+  deadlines:
+    - type: abstract
+      label: (April Cycle) Abstract Submission
+      date: "2026-03-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (April Cycle) Paper Submission
+      date: "2026-04-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (April Cycle) Notification
+      date: "2026-05-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (May Cycle) Abstract Submission
+      date: "2026-04-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (May Cycle) Paper Submission
+      date: "2026-05-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (May Cycle) Notification
+      date: "2026-06-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (June Cycle) Abstract Submission
+      date: "2026-05-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (June Cycle) Paper Submission
+      date: "2026-06-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (June Cycle) Notification
+      date: "2026-07-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (July Cycle) Abstract Submission
+      date: "2026-06-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (July Cycle) Paper Submission
+      date: "2026-07-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (July Cycle) Notification
+      date: "2026-08-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (August Cycle) Abstract Submission
+      date: "2026-07-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (August Cycle) Paper Submission
+      date: "2026-08-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (August Cycle) Notification
+      date: "2026-09-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (September Cycle) Abstract Submission
+      date: "2026-08-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (September Cycle) Paper Submission
+      date: "2026-09-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (September Cycle) Notification
+      date: "2026-10-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (October Cycle) Abstract Submission
+      date: "2026-09-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (October Cycle) Paper Submission
+      date: "2026-10-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (October Cycle) Notification
+      date: "2026-11-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (November Cycle) Abstract Submission
+      date: "2026-10-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (November Cycle) Paper Submission
+      date: "2026-11-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (November Cycle) Notification
+      date: "2026-12-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (December Cycle) Abstract Submission
+      date: "2026-11-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (December Cycle) Paper Submission
+      date: "2026-12-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (December Cycle) Notification
+      date: "2027-01-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (January Cycle) Abstract Submission
+      date: "2026-12-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (January Cycle) Paper Submission
+      date: "2027-01-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (January Cycle) Notification
+      date: "2027-02-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (February Cycle) Abstract Submission
+      date: "2027-01-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (February Cycle) Paper Submission
+      date: "2027-02-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (February Cycle) Notification
+      date: "2027-03-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (March Cycle) Abstract Submission
+      date: "2027-02-25 17:00:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (March Cycle) Paper Submission
+      date: "2027-03-01 17:00:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (March Cycle) Notification
+      date: "2027-04-15 07:59:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (Industrial Track) Paper Submission
+      date: "2027-03-15 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Industrial Track) Initial Notification / Feedback Start
+      date: "2027-05-12 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Industrial Track) Author Feedback Deadline
+      date: "2027-05-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Industrial Track) Final Decisions
+      date: "2027-06-01 07:59:00"
+      timezone: UTC-12
+  timezone: America/Los_Angeles
+  city: Athens
+  country: Greece
+  venue: InterContinental Athenaeum Athens
+  format: in-person
+  date: August 23-27, 2027
+  start: 2027-08-23
+  end: 2027-08-27
+  tags:
+    - machine-learning
+    - data-mining
+    - information-retrieval
+    - security-and-privacy
+    - natural-language-processing
+    - human-computer-interaction
+    - multimedia
+    - quantum-computing
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1261/
+  note: "<b>Review:</b> Single-blind. <b>Length:</b> Regular Research and EA&B papers max 12 pages, Scalable Data Science max 8 pages, Vision max 6 pages, Industrial max 12 pages (excluding references). <b>Platform:</b> Microsoft CMT. <b>Preprints:</b> Allowed anytime (arXiv permitted before and after review). <b>Presentation:</b> In-person attendance required. <b>Proceedings:</b> Proceedings of the VLDB Endowment (PVLDB) / ACM DL."

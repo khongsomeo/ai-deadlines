@@ -1,0 +1,55 @@
+- title: UMAP
+  year: 2027
+  id: umap27
+  full_name: The 35th ACM International Conference on User Modeling, Adaptation and Personalization
+  link: "https://um.org/umap2027"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2027-01-22 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2027-01-29 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Phase Start
+      date: "2027-03-02 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Phase End
+      date: "2027-03-08 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification Date
+      date: "2027-03-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Industry Track) Paper Submission
+      date: "2027-03-22 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Industry Track) Notification Date
+      date: "2027-04-22 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Chicago, IL
+  country: United States
+  venue: Conviser Law Center
+  format: in-person
+  date: "June 9-12, 2027"
+  start: 2027-06-09
+  end: 2027-06-12
+  tags:
+      - human-computer-interaction
+      - information-retrieval
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - multimedia
+      - security-and-privacy
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1259/
+  note: "<b>Review:</b> Double-blind (single-blind for Industry track). <b>Length:</b> Long papers max 8 pages + 2 pages references (max 10 pages total); short papers max 4 pages + 2 pages references (max 6 pages total); Industry papers max 4 pages + 1 page references (ACM double-column sigconf format). <b>Platform:</b> EasyChair. <b>Preprints:</b> arXiv and non-peer-reviewed preprints allowed anytime provided anonymity is preserved; dual submission prohibited. <b>Presentation:</b> In-person in Chicago, IL, USA (at least one author must register and present). <b>Proceedings:</b> ACM Digital Library (Open Access via ACM Open or author APC)."

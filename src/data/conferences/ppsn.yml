@@ -1,0 +1,33 @@
+- title: PPSN
+  year: 2026
+  id: ppsn26
+  full_name: The 19th International Conference on Parallel Problem Solving from Nature
+  link: "https://ppsn2026.disi.unitn.it"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-03-28 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Extended) Paper Submission
+      date: "2026-04-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-05-22 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Trento
+  country: Italy
+  venue: Trento Expo, University of Trento
+  format: in-person
+  date: August 29 - September 2, 2026
+  start: 2026-08-29
+  end: 2026-09-02
+  tags:
+      - machine-learning
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1676/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 14 pages excluding references. <b>Template:</b> Springer LNCS. <b>Platform:</b> EasyChair. <b>Preprints:</b> Pre-peer-reviewed version permitted on arXiv per Springer Licence to Publish. <b>Presentation:</b> In-person poster presentation in Trento, Italy. <b>Proceedings:</b> Springer LNCS (Volumes 16985-16989)."

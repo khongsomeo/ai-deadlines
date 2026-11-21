@@ -1,0 +1,51 @@
+- title: CP
+  year: 2026
+  id: cp26
+  full_name: The 32nd International Conference on Principles and Practice of Constraint Programming
+  link: "https://cp2026.a4cp.org"
+  deadlines:
+    - type: abstract
+      label: Abstract Registration
+      date: "2026-02-28 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Extended) Abstract Registration
+      date: "2026-03-02 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-03-07 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Extended) Paper Submission
+      date: "2026-03-14 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Rebuttal Begins
+      date: "2026-04-17 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Rebuttal Ends
+      date: "2026-04-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Notification
+      date: "2026-04-30 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Lisbon
+  country: Portugal
+  venue: ISCTE – Instituto Universitário de Lisboa
+  format: in-person
+  date: "July 20-23, 2026"
+  start: 2026-07-20
+  end: 2026-07-23
+  tags:
+      - machine-learning
+      - security-and-privacy
+      - quantum-computing
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1175/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Full papers up to 15 pages, short papers up to 8 pages (excluding references and appendices; appendices max 6 pages for full, 3 pages for short; abstract max 150 words). <b>Platform:</b> HotCRP. <b>Preprints:</b> Preprints (e.g., arXiv) allowed before March 8, 2026 if not cited in submission; dual submission prohibited. <b>Presentation:</b> In-person in Lisbon, Portugal (physical meeting; part of FLoC 2026). <b>Proceedings:</b> LIPIcs (Leibniz International Proceedings in Informatics)."

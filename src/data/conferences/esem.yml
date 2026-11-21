@@ -1,0 +1,84 @@
+- title: ESEM
+  year: 2026
+  id: esem26
+  full_name: International Symposium on Empirical Software Engineering and Measurement
+  link: "https://conf.researchr.org/home/eseiw-2026"
+  deadlines:
+    - type: submission
+      label: (Registered Reports Track) Initial Report Submission
+      date: "2026-04-13 23:59:00"
+      timezone: UTC-12
+    - type: review_release
+      label: (Registered Reports Track) PC Members Provide Reviews
+      date: "2026-05-04 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Technical Track) Mandatory Abstract Submission
+      date: "2026-05-11 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Registered Reports Track) Response Letter and Revised Report Submission
+      date: "2026-05-18 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Technical Track) Paper Submission
+      date: "2026-05-18 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (SEIP Track) Mandatory Abstract Submission
+      date: "2026-05-22 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (ERVR Track) Mandatory Abstract Submission
+      date: "2026-05-22 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (SEIP Track) Paper Submission
+      date: "2026-05-27 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (ERVR Track) Paper Submission
+      date: "2026-05-29 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Registered Reports Track) Stage 1 Notification
+      date: "2026-06-08 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal-First Track) Paper Submission
+      date: "2026-07-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (SEIP Track) Author Notification
+      date: "2026-07-08 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (ERVR Track) Author Notification
+      date: "2026-07-10 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Technical Track) Author Notification
+      date: "2026-07-14 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Journal-First Track) Author Notification
+      date: "2026-08-03 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Munich
+  country: Germany
+  venue: Science Congress Center Munich
+  format: in-person
+  date: October 8-9, 2026
+  start: 2026-10-08
+  end: 2026-10-09
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1376/
+  note: "<b>Review:</b> Double-anonymous (Technical & ERVR tracks), Single-blind (SEIP track). <b>Length:</b> Technical: max 17 pages main text + 3 pages references/data availability (Dagstuhl LIPIcs format); ERVR: 10+2 pages regular, 4+1 pages extended abstract; SEIP: 17+3 pages full, 10+2 pages short; Registered Reports: 9+2 pages initial, 15+2 pages revision. <b>Platform:</b> HotCRP. <b>Preprints:</b> Open science encouraged; submissions must adhere to COPE ethics guidelines; accepted Stage 1 Registered Reports must be posted to arXiv. <b>Presentation:</b> In-person presentation on-site at Science Congress Center Munich is mandatory for publication. <b>Proceedings:</b> Dagstuhl LIPIcs (Open Access CC BY 4.0; transitioned from ACM/IEEE starting 2026)."

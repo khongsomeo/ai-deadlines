@@ -1,0 +1,72 @@
+- title: ICPC
+  year: 2027
+  id: icpc27
+  full_name: The 35th IEEE/ACM International Conference on Program Comprehension
+  link: "https://conf.researchr.org/home/icpc-2027"
+  deadlines:
+    - type: abstract
+      label: (Research Track) Abstract Deadline
+      date: "2026-10-29 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Paper Submission Deadline
+      date: "2026-11-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Notification Deadline
+      date: "2027-01-14 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (ERA Track) (Optional) Abstract Registration
+      date: "2026-11-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (ERA Track) Paper Submission
+      date: "2026-11-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (ERA Track) Author Notification
+      date: "2027-01-14 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (RENE Track) Abstract Deadline
+      date: "2026-12-11 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (RENE Track) Paper Submission Deadline
+      date: "2026-12-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (RENE Track) Notification Deadline
+      date: "2027-01-14 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Tool Demonstration Track) Paper Submission Deadline
+      date: "2026-11-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Tool Demonstration Track) Notification Deadline
+      date: "2027-01-14 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal First Track) Submission Deadline
+      date: "2027-01-16 23:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Dublin
+  country: Ireland
+  venue: The Convention Centre Dublin (CCD)
+  format: in-person
+  date: April 25-26, 2027
+  start: 2027-04-25
+  end: 2027-04-26
+  tags:
+    - machine-learning
+    - human-computer-interaction
+    - security-and-privacy
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1181/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 10 pages main text plus 2 pages references (ERA: max 4 pages plus 1 page references). Template: IEEE format (10pt IEEEtran). <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed with different paper title and no conference mention. <b>Presentation:</b> In-person in Dublin, Ireland. <b>Proceedings:</b> IEEE / ACM Digital Library."

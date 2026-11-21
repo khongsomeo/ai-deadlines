@@ -1,0 +1,41 @@
+- title: ISMB
+  year: 2027
+  id: ismb27
+  full_name: The 35th International Conference on Intelligent Systems for Molecular Biology and 26th European Conference on Computational Biology
+  link: "https://www.iscb.org/ismbeccb2027"
+  deadlines:
+    - type: submission
+      label: Proceedings Submission Deadline
+      date: "2027-01-14 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Conditional Acceptance Notification
+      date: "2027-03-02 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Revised Papers Deadline
+      date: "2027-03-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Acceptance Notification
+      date: "2027-03-30 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Copenhagen
+  country: Denmark
+  venue: Bella Center Copenhagen
+  format: hybrid
+  date: July 18-22, 2027
+  start: 2027-07-18
+  end: 2027-07-22
+  tags:
+      - machine-learning
+      - data-mining
+      - natural-language-processing
+      - security-and-privacy
+      - computer-vision
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/847/
+  note: "<b>Review:</b> Single-blind. <b>Length:</b> Max 9 pages in OUP Bioinformatics template including author information, structured abstract (max 250 words), figures, tables, and references. <b>Platform:</b> EasyChair. <b>Preprints:</b> Preprints on recognized servers (arXiv, bioRxiv, PeerJ) allowed; dual submission prohibited. <b>Presentation:</b> In-person in Copenhagen strongly preferred (virtual presentation requires approved waiver). <b>Proceedings:</b> Bioinformatics journal (Oxford University Press), indexed in PMC and Web of Science; potential transfer to Bioinformatics Advances."

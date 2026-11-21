@@ -1,0 +1,38 @@
+- title: USENIX
+  year: 2027
+  id: usenix27
+  full_name: 2027 ACM SIGOPS Annual Technical Conference (ATC)
+  link: "https://atc.sigops.org/2027"
+  deadlines:
+    - type: submission
+      label: Submission Deadline
+      date: "2027-01-19 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Response Period Begins
+      date: "2027-04-03 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Response Due
+      date: "2027-04-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2027-04-27 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Rennes
+  country: France
+  venue: Le Couvent des Jacobins
+  format: in-person
+  date: June 28 - July 1, 2027
+  start: 2027-06-28
+  end: 2027-07-01
+  tags:
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1838/
+  note: "<b>Review:</b> Double-blind (two rounds; first round evaluates first 2 pages; Operational Systems Track allows identified organizations where impractical). <b>Length:</b> Long papers max 12 pages, short papers max 6 pages, excluding references (includes appendices/tables/figures); ACM sigplan 10pt template; per-author cap of 2 submissions. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv, technical reports, and non-peer-reviewed preprints permitted anytime (must anonymize project name if widely known); dual submissions prohibited. <b>Presentation:</b> In-person in Rennes, France (at least one author must attend to present talk and/or poster). <b>Proceedings:</b> ACM Digital Library (Open Access via ACM Open / APCs); papers of merit forwarded to ACM TOCS and CACM RH."

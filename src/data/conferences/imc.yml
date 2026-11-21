@@ -1,0 +1,79 @@
+- title: IMC
+  year: 2027
+  id: imc27
+  full_name: ACM Internet Measurement Conference 2027
+  link: "https://conferences.sigcomm.org/imc/2027"
+  deadlines:
+    - type: abstract
+      label: (Cycle 1) Paper Registration
+      date: "2026-11-10 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Cycle 1) Paper Submission
+      date: "2026-11-17 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Cycle 1) One-Shot Revision Paper Submission
+      date: "2026-12-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Cycle 1) Early Reject Notification
+      date: "2027-01-05 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Cycle 1) Rebuttal Period Start
+      date: "2027-01-26 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Cycle 1) Rebuttal Period End
+      date: "2027-02-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Cycle 1) Author Notification
+      date: "2027-02-25 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Cycle 2 - Replicability Track) Expression of Interest
+      date: "2027-01-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Cycle 2 - Replicability Track) EoI Notification
+      date: "2027-02-10 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Cycle 2) Paper Registration
+      date: "2027-03-31 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Cycle 2) Paper Submission
+      date: "2027-04-07 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Cycle 2) One-Shot Revision Paper Submission
+      date: "2027-04-28 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Cycle 2) Early Reject Notification
+      date: "2027-05-19 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Cycle 2) Author Notification
+      date: "2027-07-22 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Atlanta, GA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: October 25-29, 2027
+  start: 2027-10-25
+  end: 2027-10-29
+  tags:
+    - security-and-privacy
+    - data-mining
+    - machine-learning
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1551/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Full papers max 13 pages of technical content + unlimited references and appendices; short papers max 6 pages + unlimited references and appendices. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv/technical reports allowed anytime (broadcasting on large mailing lists or social media prohibited during review). <b>Presentation:</b> In-person in Atlanta, Georgia, USA. <b>Proceedings:</b> ACM Digital Library (Open Access)."

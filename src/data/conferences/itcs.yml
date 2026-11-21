@@ -1,0 +1,77 @@
+- title: ITCS
+  year: 2027
+  id: itcs27
+  full_name: The 18th Innovations in Theoretical Computer Science Conference
+  link: "https://itcs-conf.org"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission Deadline
+      date: "2026-09-03 16:59:00"
+      timezone: UTC-7
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2026-09-08 16:59:00"
+      timezone: UTC-7
+    - type: final_decision
+      label: Notification to Authors
+      date: "2026-11-09 07:59:00"
+      timezone: UTC-7
+  timezone: UTC-7
+  city: Berkeley, CA
+  country: United States
+  venue: The Simons Institute for the Theory of Computing, UC Berkeley
+  format: in-person
+  date: January 12-15, 2027
+  start: 2027-01-12
+  end: 2027-01-15
+  tags:
+    - machine-learning
+    - cryptography
+    - quantum-computing
+    - information-theory
+    - security-and-privacy
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2176/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> No page limit (at least 11pt font, single column; strongly recommended first 10 pages contain a concise presentation of paper merits). <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv/ECCC/IACR posting allowed and encouraged; simultaneous journal submission allowed. <b>Presentation:</b> In-person at UC Berkeley (plus 20-25 min pre-recorded talk). <b>Proceedings:</b> LIPIcs (option for 1-page abstract with full version archived)."
+
+- title: ITCS
+  year: 2026
+  id: itcs26
+  full_name: The 17th Innovations in Theoretical Computer Science Conference
+  link: "https://itcs-conf.org/itcs26/itcs26-cfp.html"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission Deadline
+      date: "2025-09-04 16:59:00"
+      timezone: UTC-7
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2025-09-06 16:59:00"
+      timezone: UTC-7
+    - type: final_decision
+      label: Notification to Authors
+      date: "2025-11-10 07:59:00"
+      timezone: UTC-7
+  timezone: UTC-7
+  city: Milan
+  country: Italy
+  venue: Bocconi University
+  format: in-person
+  date: January 27-30, 2026
+  start: 2026-01-27
+  end: 2026-01-30
+  tags:
+    - machine-learning
+    - cryptography
+    - quantum-computing
+    - information-theory
+    - security-and-privacy
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2176/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> No page limit (at least 11pt font, single column; strongly recommended first 10 pages contain a concise presentation of paper merits). <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv/ECCC/IACR posting allowed and encouraged; simultaneous journal submission allowed. <b>Presentation:</b> In-person in Milan. <b>Proceedings:</b> LIPIcs (option for 1-page abstract with full version archived)."

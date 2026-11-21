@@ -1,0 +1,56 @@
+- title: FAST
+  year: 2027
+  id: fast27
+  full_name: 25th USENIX Conference on File and Storage Technologies
+  link: "https://www.usenix.org/conference/fast27"
+  deadlines:
+    - type: submission
+      label: (Spring deadline) Paper submissions due
+      date: "2026-03-17 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Spring deadline) Author response period begins
+      date: "2026-05-18 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Spring deadline) Author response period ends
+      date: "2026-05-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Spring deadline) Notification to authors
+      date: "2026-06-04 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Fall deadline) Paper submissions due
+      date: "2026-09-15 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Fall deadline) Author response period begins
+      date: "2026-11-17 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Fall deadline) Author response period ends
+      date: "2026-11-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Fall deadline) Notification to authors
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Renton, WA
+  country: United States
+  venue: Hyatt Regency Lake Washington
+  format: in-person
+  date: "February 23-25, 2027"
+  start: 2027-02-23
+  end: 2027-02-25
+  tags:
+    - security-and-privacy
+    - data-mining
+    - machine-learning
+    - information-retrieval
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1839/"
+  note: "<b>Review:</b> Double-blind (anonymized; one-shot revision decisions available). <b>Length:</b> Max 12 pages for long papers and max 6 pages for short papers, excluding references; USENIX 2-column LaTeX template. Optional separate supplemental PDF. <b>Platform:</b> HotCRP (Spring: https://fast27spring.usenix.hotcrp.com/, Fall: https://fast27fall.usenix.hotcrp.com/). <b>Preprints:</b> arXiv and non-peer-reviewed preprints permitted (must be disclosed); dual submission prohibited. <b>Presentation:</b> In-person at Hyatt Regency Lake Washington in Renton, WA, USA (at least one author must register at full price and present). <b>Proceedings:</b> USENIX (Open Access)."

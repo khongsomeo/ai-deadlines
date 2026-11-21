@@ -1,0 +1,43 @@
+- title: PLDI
+  year: 2027
+  id: pldi27
+  full_name: The 48th ACM SIGPLAN Conference on Programming Language Design and Implementation
+  link: "https://conf.researchr.org/home/pldi-2027"
+  deadlines:
+    - type: submission
+      label: Submission deadline
+      date: "2026-11-12 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author response period start
+      date: "2027-02-16 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author response period end
+      date: "2027-02-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author notification
+      date: "2027-03-04 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Revision deadline
+      date: "2027-03-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final acceptance notification
+      date: "2027-04-01 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Atlanta, GA"
+  country: United States
+  venue: Hyatt Regency Atlanta
+  format: in-person
+  date: "June 5-11, 2027"
+  start: 2027-06-05
+  end: 2027-06-11
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/84/"
+  note: "<b>Review:</b> Double-blind (two-round review with author response and revision). <b>Length:</b> Max 20 pages of text excluding references, data-availability statement, and supplementary material (PACMPL acmsmall template). <b>Platform:</b> HotCRP (https://pldi2027.hotcrp.com). <b>Preprints:</b> Allowed on arXiv or personal homepages, but broad advertising on social media or major mailing lists is prohibited during review. <b>Presentation:</b> In-person in Atlanta, GA, USA (remote presentations not permitted except for visa issues). <b>Proceedings:</b> PACMPL (ACM Digital Library, Gold Open Access)."

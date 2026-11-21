@@ -1,0 +1,136 @@
+- title: SANER
+  year: 2027
+  id: saner27
+  full_name: The 34th IEEE International Conference on Software Analysis, Evolution and Reengineering
+  link: "https://conf.researchr.org/home/saner-2027"
+  deadlines:
+    - type: abstract
+      label: (Research Track) Abstract submission (mandatory)
+      date: "2026-09-21 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Paper submission
+      date: "2026-09-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Notification
+      date: "2026-12-01 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Short Papers and Posters Track) Abstract submission (mandatory)
+      date: "2026-10-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Short Papers and Posters Track) Paper submission deadline
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Short Papers and Posters Track) Notifications
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (ERA Track) Abstract submission (mandatory)
+      date: "2026-10-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (ERA Track) Paper submission deadline
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (ERA Track) Notifications
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Industrial Track) Abstract submission (mandatory)
+      date: "2026-10-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Industrial Track) Paper submission deadline
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Industrial Track) Notifications
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Agentic AI4SE Track) Abstract submission (mandatory)
+      date: "2026-10-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Agentic AI4SE Track) Paper submission deadline
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Agentic AI4SE Track) Notifications
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (RENE Track) Abstract submission (mandatory)
+      date: "2026-10-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (RENE Track) Paper submission deadline
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (RENE Track) Notifications
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Registered Report Track) Authors submit an abstract of their initial report
+      date: "2026-10-30 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Registered Report Track) Authors submit their initial report
+      date: "2026-11-06 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Registered Report Track) Authors receive PC members’ reviews
+      date: "2026-11-30 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Registered Report Track) Authors submit a rebuttal letter and their revised report in a single PDF
+      date: "2026-12-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Registered Report Track) Final notification of Stage 1
+      date: "2026-12-24 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Tool Demo Track) Abstract submission (optional)
+      date: "2026-10-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Tool Demo Track) Paper submission deadline
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Tool Demo Track) Notifications
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal First Track) Paper submission deadline
+      date: "2026-12-08 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Journal First Track) Notifications
+      date: "2026-12-22 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Richmond, VA
+  country: United States
+  venue: Virginia Commonwealth University
+  format: in-person
+  date: March 9-12, 2027
+  start: 2027-03-09
+  end: 2027-03-12
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - data-mining
+    - human-computer-interaction
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2280/
+  note: "<b>Review:</b> Double-blind for Research, ERA, Short Papers, Agentic AI4SE, and RENE tracks; Single-blind for Industrial and Tool Demo tracks. <b>Length:</b> Research track max 10 pages plus 2 pages references (Short Papers max 6 pages, ERA max 5 pages plus 1 page references, Tool Demo max 5 pages) using IEEE 2-column conference template (10pt). <b>Platform:</b> EasyChair. <b>Preprints:</b> Preprints allowed prior to the anonymity period (starts 1 month before deadline); no updates or promotion during review. <b>Presentation:</b> In-person at Virginia Commonwealth University (remote Zoom presentation accommodated for exceptional circumstances like visa delays). <b>Proceedings:</b> IEEE Xplore."

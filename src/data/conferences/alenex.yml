@@ -1,0 +1,32 @@
+- title: ALENEX
+  year: 2027
+  id: alenex27
+  full_name: The 2027 SIAM Symposium on Algorithm Engineering and Experiments
+  link: "https://www.siam.org/conferences-events/siam-conferences/alenex27"
+  deadlines:
+    - type: submission
+      date: "2026-07-20 23:59:00"
+      label: "Paper Submission"
+      timezone: UTC-12
+    - type: final_decision
+      date: "TBD"
+      label: "Author Notification"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Philadelphia, PA
+  country: United States
+  venue: Sheraton Philadelphia Downtown
+  format: in-person
+  date: January 24-25, 2027
+  start: 2027-01-24
+  end: 2027-01-25
+  tags:
+      - machine-learning
+      - data-mining
+      - security-and-privacy
+      - quantum-computing
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1870/
+  note: "<b>Review:</b> Lightweight double-blind. <b>Length:</b> Max 10 pages in SIAM double-column format (excluding title/abstract on separate first page, references, and appendix). <b>Platform:</b> HotCRP. <b>Preprints:</b> Results accepted by a journal are not allowed; papers under journal review allowed if stated on front page. <b>Presentation:</b> In-person attendance required for speakers. <b>Proceedings:</b> Published by SIAM."

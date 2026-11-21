@@ -1,0 +1,52 @@
+- title: ASE
+  year: 2027
+  id: ase27
+  full_name: IEEE/ACM International Conference on Automated Software Engineering
+  link: "https://conf.researchr.org/home/ase-2027"
+  deadlines:
+    - type: submission
+      label: Paper submission
+      date: "2027-03-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Early rejection notification
+      date: "2027-05-12 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author response period start
+      date: "2027-05-12 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author response period end
+      date: "2027-05-17 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Initial notification
+      date: "2027-06-08 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "[Major Revisions] Revision submission"
+      date: "2027-07-08 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "[Major Revisions] Final notification"
+      date: "2027-07-27 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: El Paso, TX
+  country: United States
+  venue: El Paso Convention Center
+  format: in-person
+  date: October 24-28, 2027
+  start: 2027-10-24
+  end: 2027-10-28
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - data-mining
+    - human-computer-interaction
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/279/
+  note: "<b>Presentation:</b> In-person at El Paso Convention Center. <b>Proceedings:</b> IEEE/ACM."

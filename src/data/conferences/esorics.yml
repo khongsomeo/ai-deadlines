@@ -1,0 +1,42 @@
+- title: ESORICS
+  year: 2027
+  id: esorics27
+  full_name: The 32nd European Symposium on Research in Computer Security
+  link: "https://www.esorics2027.org"
+  deadlines:
+    - type: abstract
+      label: Abstract Registration Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Reviews Released / Rebuttal Starts
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Closes
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Vienna
+  country: Austria
+  venue: University of Vienna, Main Building
+  format: in-person
+  date: September 13-15, 2027
+  start: 2027-09-13
+  end: 2027-09-15
+  tags:
+      - cryptography
+      - security-and-privacy
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/515/
+  note: "<b>Review:</b> Single-blind. <b>Length:</b> Max 16 pages (up to 20 pages including references and well-marked appendices). <b>Template:</b> Springer LNCS format. <b>Proceedings:</b> Springer LNCS."

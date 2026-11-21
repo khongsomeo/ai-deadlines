@@ -1,0 +1,51 @@
+- title: ECOOP
+  year: 2027
+  id: ecoop27
+  full_name: European Conference on Object-Oriented Programming
+  link: "https://2027.ecoop.org"
+  deadlines:
+    - type: submission
+      label: (Round 1) Paper Submission
+      date: "2026-11-19 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 1) Author Response Period Start
+      date: "2027-01-11 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 1) Author Response Period End
+      date: "2027-01-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 1) Author Notification
+      date: "2027-01-28 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 2) Paper Submission
+      date: "2027-02-11 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 2) Author Response Period Start
+      date: "2027-03-22 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 2) Author Response Period End
+      date: "2027-03-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 2) Author Notification
+      date: "2027-04-08 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Turin
+  country: Italy
+  venue: TBD
+  format: in-person
+  date: "June 28 - July 2, 2027"
+  start: 2027-06-28
+  end: 2027-07-02
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/488/"
+  note: "<b>Review:</b> Double-anonymous (two-round review with author response). <b>Length:</b> No page limit on submissions; camera-ready version max 25 pages in LIPIcs format excluding references. <b>Platform:</b> HotCRP (https://ecoop27.hotcrp.com/). <b>Preprints:</b> Permitted on arXiv or institutional repositories before or after deadline; broad advertising to reviewers is prohibited; adheres to SIGPLAN Republication Policy and ACM Policy on Plagiarism. <b>Presentation:</b> In-person in Turin, Italy. <b>Proceedings:</b> Dagstuhl LIPIcs (Gold Open Access); accepted papers invited to ACM TOPLAS."

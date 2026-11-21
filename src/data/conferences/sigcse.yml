@@ -1,0 +1,35 @@
+- title: SIGCSE
+  year: 2027
+  id: sigcse27
+  full_name: ACM Technical Symposium on Computer Science Education
+  link: "https://2027.sigcse-ts.acm.org"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-06-26 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-07-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification to Authors
+      date: "2026-09-14 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Sacramento, CA
+  country: United States
+  venue: SAFE Credit Union Convention Center
+  format: hybrid
+  date: February 17-20, 2027
+  start: 2027-02-17
+  end: 2027-02-20
+  tags:
+    - human-computer-interaction
+    - machine-learning
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/55/
+  note: "<b>Review:</b> Double-blind (dual-anonymous; no author rebuttal). <b>Length:</b> Max 6 pages body content + 1 page strictly for references (2-column ACM SIG Proceedings format, no appendices). <b>Platform:</b> EasyChair. <b>Preprints:</b> arXiv allowed per ACM policy (requested not to publish until after review decisions). <b>Presentation:</b> In-person in Sacramento, CA (limited online Zoom presentation by special permission). <b>Proceedings:</b> ACM Digital Library (ACM Open access)."

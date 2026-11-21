@@ -1,0 +1,35 @@
+- title: OSDI
+  year: 2027
+  id: osdi27
+  full_name: 21st USENIX Symposium on Operating Systems Design and Implementation
+  link: "https://www.usenix.org/conference/osdi27"
+  deadlines:
+    - type: abstract
+      label: "Abstract Registration Deadline"
+      date: "2026-12-01 17:59:00"
+      timezone: UTC-5
+    - type: submission
+      label: "Paper Submission Deadline"
+      date: "2026-12-08 17:59:00"
+      timezone: UTC-5
+    - type: final_decision
+      label: "Notification to Authors"
+      date: "2027-03-16 07:59:00"
+      timezone: UTC-5
+  timezone: UTC-5
+  city: "Baltimore, MD"
+  country: "United States"
+  venue: "Hyatt Regency Baltimore Inner Harbor"
+  format: in-person
+  date: "July 7-9, 2027"
+  start: 2027-07-07
+  end: 2027-07-09
+  tags:
+    - machine-learning
+    - data-mining
+    - security-and-privacy
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1842/"
+  note: "<b>Review:</b> Double-blind (anonymized; may include early review round; author must nominate a Volunteer Candidate Senior Reviewer). <b>Length:</b> Max 12 pages including figures and tables, plus unlimited pages for references (no supplementary material in appendices). <b>Platform:</b> HotCRP (https://osdi27.usenix.hotcrp.com/). <b>Preprints:</b> Preprints on arXiv permitted anytime with anonymized project/system name; dual submission to peer-reviewed venues prohibited. <b>Presentation:</b> In-person at Hyatt Regency Baltimore Inner Harbor. <b>Proceedings:</b> USENIX (open access) in cooperation with ACM SIGOPS."

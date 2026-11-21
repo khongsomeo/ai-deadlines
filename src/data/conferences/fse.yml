@@ -1,0 +1,93 @@
+- title: FSE
+  year: 2027
+  id: fse27
+  full_name: The ACM International Conference on the Foundations of Software Engineering
+  link: "https://conf.researchr.org/home/fse-2027"
+  deadlines:
+    - type: submission
+      label: (Research Track) Full Paper Submission
+      date: "2026-10-02 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) (Extended) Full Paper Submission
+      date: "2026-10-03 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Research Track) Author Response Period Start
+      date: "2026-12-14 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Research Track) Author Response Period End
+      date: "2026-12-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Initial Notification
+      date: "2027-01-22 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Major Revision Submission
+      date: "2027-03-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Final Notification
+      date: "2027-03-31 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Industry Track) Paper Submission
+      date: "2027-01-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Industry Track) Author Notification
+      date: "2027-03-20 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (IVR Track) Paper Submission
+      date: "2027-02-12 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (IVR Track) Author Notification
+      date: "2027-03-12 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Tool Demonstrations Track) Paper Submission
+      date: "2027-01-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Tool Demonstrations Track) Author Notification
+      date: "2027-03-17 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (SEET Track) Paper Submission
+      date: "2027-01-29 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (SEET Track) Author Notification
+      date: "2027-03-26 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal-First) Paper Submission
+      date: "2027-02-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Journal-First) Author Notification
+      date: "2027-03-25 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Shenzhen
+  country: China
+  venue: TBD
+  format: in-person
+  date: July 12-16, 2027
+  start: 2027-07-12
+  end: 2027-07-16
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - data-mining
+    - information-retrieval
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/52/
+  note: "<b>Review:</b> Double-anonymous. <b>Length:</b> Max 18 pages for text and figures + 4 pages references (major revisions max 20 pages + 4 pages references) using ACM Small single-column template. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed anytime (avoid mentioning submission to FSE 2027). <b>Presentation:</b> In-person in Shenzhen, China strongly encouraged (attendance not mandatory for publication). <b>Proceedings:</b> ACM Digital Library (Open Access)."

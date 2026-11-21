@@ -1,0 +1,39 @@
+- title: SAT
+  year: 2027
+  id: sat27
+  full_name: The 30th International Conference on Theory and Applications of Satisfiability Testing
+  link: "https://satisfiability.org/SAT27"
+  deadlines:
+    - type: abstract
+      label: Abstract submission
+      date: "2027-02-15 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper submission
+      date: "2027-02-22 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author response period start
+      date: "2027-04-12 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author response period end
+      date: "2027-04-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author notification
+      date: "2027-04-20 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Barcelona
+  country: Spain
+  venue: TBD
+  format: in-person
+  date: July 5-9, 2027
+  start: 2027-07-05
+  end: 2027-07-09
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1250/
+  note: "<b>Review:</b> Single-blind. <b>Length:</b> Long papers 9–15 pages, short and tool papers up to 8 pages, excluding references and appendices (LIPIcs LaTeX style). <b>Preprints:</b> Dual submission is not allowed. <b>Presentation:</b> In-person in Barcelona, Spain (one author must present). <b>Proceedings:</b> Leibniz International Proceedings in Informatics (LIPIcs, open access CC-BY)."

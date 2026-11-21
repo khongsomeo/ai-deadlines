@@ -1,0 +1,67 @@
+- title: OOPSLA
+  year: 2027
+  id: oopsla27
+  full_name: ACM SIGPLAN Conference on Object-Oriented Programming, Systems, Languages, and Applications
+  link: "https://2027.splashcon.org/track/splashoopsla2027"
+  deadlines:
+    - type: submission
+      label: (Round 1) Submission
+      date: "2026-10-14 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 1) Author Response Start
+      date: "2026-12-01 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 1) Author Response End
+      date: "2026-12-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 1) Author Notification
+      date: "2026-12-18 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 1) Revision Submission
+      date: "2027-01-22 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 1) Final Acceptance Notification
+      date: "2027-02-12 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 2) Submission
+      date: "2027-04-07 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 2) Author Response Start
+      date: "2027-06-15 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 2) Author Response End
+      date: "2027-06-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 2) Author Notification
+      date: "2027-07-02 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 2) Revision Submission
+      date: "2027-07-30 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 2) Final Acceptance Notification
+      date: "2027-08-13 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Prague
+  country: Czechia
+  venue: Diplomat Hotel Prague
+  format: in-person
+  date: "October 10-15, 2027"
+  start: 2027-10-10
+  end: 2027-10-15
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/18/"
+  note: "<b>Review:</b> Double-blind (two-round reviewing with author response and revisions; senior authors must register as TPMS reserve reviewers; limit 5 submissions per author per round). <b>Length:</b> Initial submissions max 23 pages (revisions max 25 pages) in PACMPL acmart acmsmall format, excluding references, data-availability statement, and supplementary materials. <b>Platform:</b> HotCRP (https://oopsla27.hotcrp.com/). <b>Preprints:</b> Allowed on arXiv or homepages, but broad publicity on social media is prohibited; dual submission not permitted. <b>Presentation:</b> In-person at SPLASH 2027 in Prague, Czechia (remote presentations not possible). <b>Proceedings:</b> ACM PACMPL (Proceedings of the ACM on Programming Languages, Open Access in ACM Digital Library)."

@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect, useState, useMemo } from "react";
 import { useClockTick } from "@/contexts/ClockContext";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { isValid, isPast, format, differenceInMilliseconds } from "date-fns";
+import { isValid, format, differenceInMilliseconds } from "date-fns";
 import { getDeadlineInLocalTime } from '@/utils/dateUtils';
 import { useSharedResizeObserver } from "@/hooks/useSharedResizeObserver";
 
@@ -66,8 +66,9 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
 
     // allPassed lives here so its clock-reactivity is structural: this memo
     // re-runs every minute via tickMinute, guaranteeing allPassed is never stale.
-    const allPassed = validSteps.every(s => s.parsedDate.getTime() < nowMs);
-    if (allPassed) return { allPassed, extendedStartDate: null, stepPositions: [] as number[], progressPx: 0 };
+    const upcomingSteps = validSteps.filter(s => s.parsedDate.getTime() >= nowMs);
+    const allPassed = upcomingSteps.length === 0;
+    if (allPassed) return { allPassed, extendedStartDate: null, upcomingSteps: [] as typeof validSteps, stepPositions: [] as number[], progressPx: 0 };
 
     const singleDeadline = validSteps.length === 1;
     const firstStepDate = validSteps[0].parsedDate;
@@ -79,44 +80,47 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
       firstStepDate.getTime() - DAYS_BEFORE_START * 24 * 60 * 60 * 1000
     );
 
-    // Calculate base positions using time ratios
+    const totalSpanMs = differenceInMilliseconds(lastStepDate, firstStepDate);
+
+    // Calculate base positions for upcoming steps only, anchored to the original firstStepDate
     const baseStepPositions = barWidth > 0
-      ? validSteps.map(step => {
-          if (singleDeadline) return barWidth;
+      ? upcomingSteps.map(step => {
+          if (singleDeadline || totalSpanMs <= 0) return barWidth;
           const preDeadlineWidth = barWidth * 0.2;
           const deadlineWidth = barWidth * 0.8;
           return preDeadlineWidth +
-            (differenceInMilliseconds(step.parsedDate, firstStepDate) /
-              differenceInMilliseconds(lastStepDate, firstStepDate)) * deadlineWidth;
+            (differenceInMilliseconds(step.parsedDate, firstStepDate) / totalSpanMs) * deadlineWidth;
         })
-      : validSteps.map(() => 0);
+      : upcomingSteps.map(() => 0);
 
-    // Enforce minimum spacing between dots
-    const adjustedPositions: number[] = [];
-    for (let i = 0; i < baseStepPositions.length; i++) {
-      if (i === 0) {
-        adjustedPositions.push(baseStepPositions[i]);
-      } else {
-        const minPos = adjustedPositions[i - 1] + MIN_STEP_DISTANCE;
-        adjustedPositions.push(Math.max(baseStepPositions[i], minPos));
+    // Enforce minimum spacing between upcoming dots (Forward Pass + Backward Clamp from barWidth)
+    const stepPositions = [...baseStepPositions];
+    if (barWidth > 0 && stepPositions.length > 0) {
+      const k = stepPositions.length;
+      const effectiveMinDist = k > 1
+        ? Math.min(MIN_STEP_DISTANCE, (barWidth - MIN_STEP_DISTANCE) / (k - 1))
+        : MIN_STEP_DISTANCE;
+
+      // Forward pass: push overlapping neighbors to the right
+      for (let i = 1; i < k; i++) {
+        stepPositions[i] = Math.max(stepPositions[i], stepPositions[i - 1] + effectiveMinDist);
+      }
+
+      // Backward clamp: if the last dot exceeds barWidth, anchor it at barWidth and shift
+      // crowded predecessors left while preserving the minimum gap (instead of global downscaling)
+      if (stepPositions[k - 1] > barWidth) {
+        stepPositions[k - 1] = barWidth;
+        for (let i = k - 2; i >= 0; i--) {
+          stepPositions[i] = Math.min(stepPositions[i], stepPositions[i + 1] - effectiveMinDist);
+        }
       }
     }
 
-    // Scale down if adjusted positions exceed bar width
-    let stepPositions = adjustedPositions;
-    const lastAdj = adjustedPositions[adjustedPositions.length - 1];
-    if (adjustedPositions.length > 0 && lastAdj > barWidth) {
-      const scaleFactor = barWidth / lastAdj;
-      stepPositions = adjustedPositions.map(pos => pos * scaleFactor);
-    }
-
     // Build time→pixel anchor mapping for progress interpolation.
-    // 9.4 — Use step.parsedDate directly (already computed) instead of
-    //        re-calling getDeadlineInLocalTime in this loop.
     const anchorTimes: number[] = [extendedStartDate.getTime()];
     const anchorPx: number[] = [0];
-    validSteps.forEach((step, i) => {
-      const stepDate = step.parsedDate; // ← was: getDeadlineInLocalTime(step.date, step.timezone)
+    upcomingSteps.forEach((step, i) => {
+      const stepDate = step.parsedDate;
       if (stepDate && isValid(stepDate)) {
         anchorTimes.push(stepDate.getTime());
         anchorPx.push(stepPositions[i]);
@@ -141,7 +145,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
       }
     }
 
-    return { allPassed, extendedStartDate, stepPositions, progressPx };
+    return { allPassed, extendedStartDate, upcomingSteps, stepPositions, progressPx };
   }, [validSteps, barWidth, tickMinute]);
 
   if (validSteps.length === 0 || !computed || computed.allPassed) {
@@ -169,7 +173,7 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
     );
   }
 
-  const { extendedStartDate, stepPositions, progressPx } = computed;
+  const { extendedStartDate, upcomingSteps, stepPositions, progressPx } = computed;
 
   return (
     <div className="flex justify-center w-full mt-14 mb-4">
@@ -198,10 +202,8 @@ const DeadlineProgress = ({ steps }: DeadlineProgressProps) => {
           ) : null}
 
           {/* Step markers */}
-          {validSteps.map((step, idx) => {
+          {upcomingSteps.map((step, idx) => {
             const stepDate = step.parsedDate;
-            if (stepDate && isPast(stepDate)) return null;
-
             const leftPx = stepPositions[idx];
             const dateLabel = stepDate ? format(stepDate, "MMM d") : 'TBD';
 

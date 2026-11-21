@@ -8,6 +8,10 @@
       label: "Paper Submission Deadline"
       date: "2026-11-15 23:59:00"
       timezone: UTC-12
+    - type: submission
+      label: "(Extended) Paper Submission Deadline"
+      date: "2026-12-01 23:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: "Notification of Acceptance"
       date: "2026-12-15 07:59:00"
@@ -30,6 +34,7 @@
     rank_name: C
     rank_source: ICORE2026
     rank_source_url: https://portal.core.edu.au/conf-ranks/1402/
+  note: "<b>Review:</b> Peer review. <b>Length:</b> Nominal 10 pages, maximum 12 pages in Springer LNCS format. <b>Platform:</b> OpenReview (https://openreview.net/group?id=ISNN/2027/Symposium). <b>Presentation:</b> In-person in Hangzhou, China. <b>Proceedings:</b> Springer LNCS."
 
 - title: ISNN
   year: 2026

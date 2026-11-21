@@ -1,0 +1,46 @@
+- title: POPL
+  year: 2027
+  id: popl27
+  full_name: ACM SIGPLAN Symposium on Principles of Programming Languages
+  link: https://conf.researchr.org/home/POPL-2027
+  deadlines:
+    - type: submission
+      label: Paper submission deadline
+      date: "2026-07-09 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author response period (start)
+      date: "2026-09-07 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author response period (end)
+      date: "2026-09-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author notification
+      date: "2026-10-05 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Revision deadline
+      date: "2026-10-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final acceptance notification
+      date: "2026-11-09 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Mexico City
+  country: Mexico
+  venue: Hilton Mexico City Reforma
+  format: in-person
+  date: "January 10-16, 2027"
+  start: 2027-01-10
+  end: 2027-01-16
+  tags:
+    - security-and-privacy
+    - quantum-computing
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/82/
+  note: "<b>Review:</b> Full double-blind. <b>Length:</b> Max 25 pages of text excluding bibliography (PACMPL acmart LaTeX format with acmsmall option); all appendices must be submitted as supplemental material. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv and institutional preprints permitted anytime, but broad advertising through media likely to reach reviewers is prohibited. <b>Presentation:</b> Authors of papers published in PACMPL Issue POPL 2027 are invited (not required) to present at the conference. <b>Proceedings:</b> ACM PACMPL (Proceedings of the ACM on Programming Languages)."

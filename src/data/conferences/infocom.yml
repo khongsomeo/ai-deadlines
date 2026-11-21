@@ -1,0 +1,42 @@
+- title: INFOCOM
+  year: 2027
+  id: infocom27
+  full_name: IEEE International Conference on Computer Communications
+  link: "https://infocom2027.ieee-infocom.org/"
+  deadlines:
+    - type: abstract
+      label: Abstract Due
+      date: "2026-07-24 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Full Paper Due
+      date: "2026-07-31 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Early-Reject Notification
+      date: "2026-10-09 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Honolulu, HI
+  country: United States
+  venue: Hilton Hawaiian Village
+  format: in-person
+  date: "May 24-27, 2027"
+  start: 2027-05-24
+  end: 2027-05-27
+  tags:
+    - machine-learning
+    - multimedia
+    - robotics
+    - human-computer-interaction
+    - security-and-privacy
+    - quantum-computing
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2074/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 10 pages (main text including figures, tables, and appendices max 9 pages; references excluded from the 9-page limit; submission cap of 5 papers per author). <b>Platform:</b> EDAS. <b>Preprints:</b> Preprints permitted on arXiv, but authors should refrain from widely advertising results. <b>Presentation:</b> In-person presentation required by an author registered at the full rate. <b>Proceedings:</b> IEEE INFOCOM 2027 Conference Proceedings and IEEE Xplore."

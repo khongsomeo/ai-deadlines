@@ -1,0 +1,43 @@
+- title: SOSP
+  year: 2026
+  id: sosp26
+  full_name: "The 32nd ACM Symposium on Operating Systems Principles"
+  link: "https://sigops.org/s/conferences/sosp/2026/"
+  deadlines:
+    - type: abstract
+      label: Deadline to register abstracts
+      date: "2026-03-26 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Submission deadline
+      date: "2026-04-01 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Reviews available for author response
+      date: "2026-06-22 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author response due
+      date: "2026-06-24 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author notification
+      date: "2026-07-03 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Prague
+  country: Czechia
+  venue: Clarion Congress Hotel Prague
+  format: in-person
+  date: "September 29 - October 2, 2026"
+  start: 2026-09-29
+  end: 2026-10-02
+  tags:
+    - security-and-privacy
+    - machine-learning
+    - data-mining
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/48/"
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 12 pages excluding references. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv and non-peer-reviewed publications permitted. <b>Presentation:</b> In-person in Prague, Czechia (at least one author must register). <b>Proceedings:</b> ACM DL (Open Access)."

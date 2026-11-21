@@ -1,0 +1,42 @@
+- title: MICRO
+  year: 2026
+  id: micro26
+  full_name: 59th IEEE/ACM International Symposium on Microarchitecture
+  link: "https://www.microarch.org/micro59/"
+  deadlines:
+    - type: abstract
+      label: Abstract Deadline
+      date: "2026-03-31 23:59:00"
+      timezone: UTC-4
+    - type: submission
+      label: Full Paper Deadline
+      date: "2026-04-07 23:59:00"
+      timezone: UTC-4
+    - type: rebuttal_start
+      label: Rebuttal/Revision Starts
+      date: "2026-06-03 07:59:00"
+      timezone: UTC-4
+    - type: rebuttal_end
+      label: Rebuttal/Revision Ends
+      date: "2026-06-17 23:59:00"
+      timezone: UTC-4
+    - type: final_decision
+      label: Author Notification
+      date: "2026-07-07 07:59:00"
+      timezone: UTC-4
+  timezone: UTC-4
+  city: Athens
+  country: Greece
+  venue: InterContinental Athenaeum Athens Hotel
+  format: in-person
+  date: October 31 - November 4, 2026
+  start: 2026-10-31
+  end: 2026-11-04
+  tags:
+    - security-and-privacy
+    - quantum-computing
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2098/
+  note: "<b>Review:</b> Double-blind peer review (single-blind for Industry Track). <b>Length:</b> Max 11 pages (two-column, minimum 9pt font) excluding references (unlimited references; no appendix allowed). <b>Platform:</b> HotCRP (https://micro2026.hotcrp.com/). <b>Preprints:</b> arXiv preprints allowed without compromising anonymity; concurrent submissions prohibited. <b>Presentation:</b> In-person in Athens, Greece. <b>Proceedings:</b> IEEE/ACM."

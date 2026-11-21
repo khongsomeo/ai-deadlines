@@ -1,0 +1,62 @@
+- title: CCC
+  year: 2027
+  id: ccc27
+  full_name: The 42nd Computational Complexity Conference
+  link: "https://computationalcomplexity.org"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: TBD
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Seattle, WA"
+  country: United States
+  venue: University of Washington
+  format: in-person
+  date: "July 19-22, 2027"
+  start: 2027-07-19
+  end: 2027-07-22
+  tags:
+      - quantum-computing
+      - cryptography
+      - security-and-privacy
+      - machine-learning
+      - information-theory
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/602/
+
+- title: CCC
+  year: 2026
+  id: ccc26
+  full_name: The 41st Computational Complexity Conference
+  link: "https://computationalcomplexity.org/Archive/2026/index.html"
+  deadlines:
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2026-02-06 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-05-01 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Lisbon
+  country: Portugal
+  venue: Faculty of Sciences of the University of Lisbon
+  format: in-person
+  date: "August 3-6, 2026"
+  start: 2026-08-03
+  end: 2026-08-06
+  tags:
+      - quantum-computing
+      - cryptography
+      - security-and-privacy
+      - machine-learning
+      - information-theory
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/602/
+  note: "<b>Review:</b> Lightweight double-blind. <b>Length:</b> Title page with abstract + first 10 pages for core presentation and key technical ideas; no bound on total length (material beyond abstract, references, and first 10 pages is considered supplementary and read at committee's discretion). Single-column, min 11pt font, 1-inch margins. <b>Platform:</b> HotCRP. <b>Preprints:</b> Allowed; posting drafts to arXiv/ECCC/IACR is encouraged. Dual/simultaneous submission to another conference with published proceedings or prior journal publication is prohibited. <b>Presentation:</b> Authors of accepted papers are expected to present their work at the conference (talks between 15 and 45 minutes). <b>Proceedings:</b> Leibniz International Proceedings in Informatics (LIPIcs) series under CC BY license. Select papers invited to JACM and ACM Transactions on Computation Theory (ToCT)."

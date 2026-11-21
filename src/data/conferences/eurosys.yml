@@ -1,0 +1,64 @@
+- title: EuroSys
+  year: 2027
+  id: eurosys27
+  full_name: European Conference on Computer Systems
+  link: "https://2027.eurosys.org"
+  deadlines:
+    - type: abstract
+      label: (Spring Deadline) Paper titles and abstracts due
+      date: "2026-05-07 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Spring Deadline) Full paper submissions due
+      date: "2026-05-14 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Spring Deadline) Reviews available
+      date: "2026-07-29 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Spring Deadline) Author responses due
+      date: "2026-07-31 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Spring Deadline) Notification to authors
+      date: "2026-08-21 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Fall Deadline) Paper titles and abstracts due
+      date: "2026-09-17 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Fall Deadline) Full paper submissions due
+      date: "2026-09-24 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Fall Deadline) Reviews available
+      date: "2027-01-06 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Fall Deadline) Author responses due
+      date: "2027-01-08 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Fall Deadline) Notification to authors
+      date: "2027-01-29 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Rabat
+  country: Morocco
+  venue: UM6P Campus
+  format: in-person
+  date: "April 19-23, 2027"
+  start: 2027-04-19
+  end: 2027-04-23
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - data-mining
+    - quantum-computing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/525/"
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 12 pages of technical content plus unlimited references (SIGPLAN template, 10pt font on 12pt leading, 2 columns); optional separate supplementary material. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv/preprints allowed, but submission must have a substantially different title and system name; dual submission to peer-reviewed venues prohibited. <b>Presentation:</b> In-person in Rabat, Morocco. <b>Proceedings:</b> ACM Digital Library (Open Access)."

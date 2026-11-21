@@ -1,0 +1,33 @@
+- title: KES-IDT
+  year: 2027
+  id: kes-idt27
+  full_name: 19th International Conference on Intelligent Decision Technologies
+  link: "http://idt-27.kesinternational.org/"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2027-02-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Decision
+      date: "2027-03-26 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Iași
+  country: Romania
+  venue: Hotel International Iași
+  format: hybrid
+  date: June 14-16, 2027
+  start: 2027-06-14
+  end: 2027-06-16
+  tags:
+    - machine-learning
+    - data-mining
+    - information-retrieval
+    - human-computer-interaction
+    - robotics
+  rankings:
+    rank_name: C
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1579/
+  note: "<b>Review:</b> Peer review by two expert referees. <b>Length:</b> Guide length of 10 pages in Springer publisher format (extra pages subject to charge). <b>Platform:</b> EasyChair. <b>Preprints:</b> Original work required; dual submissions not permitted during review. <b>Presentation:</b> In-person in Iași, Romania or virtual via KES Online Conference Centre. <b>Proceedings:</b> Springer SIST (Smart Innovation Systems and Technologies), indexed in Scopus, CPCI, and Web of Science."

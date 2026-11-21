@@ -1,0 +1,39 @@
+- title: CADE
+  year: 2027
+  id: cade27
+  full_name: The 31st International Conference on Automated Deduction
+  link: "https://fscd-cade.science.ru.nl/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission Deadline
+      date: "2027-02-15 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2027-02-22 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Response/Rebuttal Period Start
+      date: "2027-04-26 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Response/Rebuttal Period End
+      date: "2027-04-30 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Paper Notification
+      date: "2027-05-17 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Nijmegen
+  country: The Netherlands
+  venue: Van der Valk Hotel Nijmegen-Lent
+  format: in-person
+  date: "August 22-25, 2027"
+  start: 2027-08-22
+  end: 2027-08-25
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/918/"
+  note: "<b>Length:</b> Regular papers up to 16 pages in LIPIcs style excluding references; short papers up to 10 pages excluding references. <b>Platform:</b> EasyChair (https://easychair.org/conferences/?conf=cade31). <b>Preprints:</b> Dual submission prohibited (submissions must be unpublished and not under review elsewhere). <b>Proceedings:</b> Leibniz International Proceedings in Informatics (LIPIcs), open access."

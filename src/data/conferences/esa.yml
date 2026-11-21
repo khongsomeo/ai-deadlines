@@ -1,0 +1,37 @@
+- title: ESA
+  year: 2026
+  id: esa26
+  full_name: The 34th European Symposium on Algorithms
+  link: "https://algo-conference.org/2026/esa/"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-04-21 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-04-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification
+      date: "2026-06-26 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "L'Aquila"
+  country: Italy
+  venue: "Department of Human Studies and “Luigi Zordan” Congress Center, University of L’Aquila"
+  format: in-person
+  date: "August 31 - September 4, 2026"
+  start: 2026-08-31
+  end: 2026-09-04
+  tags:
+    - information-theory
+    - quantum-computing
+    - information-retrieval
+    - data-mining
+    - machine-learning
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/511/
+  note: "<b>Review:</b> Single-blind (submissions are not anonymous; indicate Conflict of Interest with PC members). <b>Length:</b> Max 500 lines of text (excluding front matter, references, and appendix). Must use LaTeX class socg-lipics-v2021.cls (wrapper for lipics-v2021). Appendix read at PC discretion and not published in proceedings. <b>Platform:</b> EasyChair. <b>Preprints:</b> Prior published work or simultaneous dual submission prohibited. <b>Presentation:</b> In-person attendance required; at least one author must register at ALGO 2026 and present on-site. <b>Proceedings:</b> Published in the Leibniz International Proceedings in Informatics (LIPIcs) series by Schloss Dagstuhl. Features Track A (Design and Analysis of Algorithms), Track E (Engineering and Applications of Algorithms), and Track S (Simplicity Track)."

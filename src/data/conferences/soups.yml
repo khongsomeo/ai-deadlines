@@ -1,0 +1,46 @@
+- title: SOUPS
+  year: 2027
+  id: soups27
+  full_name: Twenty-Third Symposium on Usable Privacy and Security
+  link: "https://www.usenix.org/conference/soups2027"
+  deadlines:
+    - type: abstract
+      label: Mandatory Paper Registration
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Early Rejection Notification
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Response Period Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Response Period End
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Paper Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Denver, CO
+  country: United States
+  venue: Hyatt Regency Denver at Colorado Convention Center
+  format: in-person
+  date: August 8-10, 2027
+  start: 2027-08-08
+  end: 2027-08-10
+  tags:
+    - human-computer-interaction
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2167/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 12 pages excluding acknowledgments, bibliography, and appendices. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv / technical reports allowed. <b>Presentation:</b> In-person in Denver, CO (remote presentation allowed in exceptional cases with PC approval). <b>Proceedings:</b> USENIX."

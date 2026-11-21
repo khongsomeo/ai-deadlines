@@ -42,21 +42,25 @@
   full_name: The 29th International Conference on Pattern Recognition
   link: "https://www.icpr2027.com/"
   deadlines:
-    - type: submission
-      label: Paper Submission
+    - type: abstract
+      label: Paper Registration Deadline
       date: "2027-03-01 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2027-03-08 23:59:00"
       timezone: UTC-12
     - type: rebuttal_start
       label: Reviews Released & Rebuttal Period Starts
-      date: "2027-04-09 07:59:59"
+      date: "2027-05-10 07:59:00"
       timezone: UTC-12
     - type: rebuttal_end
-      label: Rebuttal Period Ends
-      date: "2027-04-16 23:59:00"
+      label: Rebuttal Period Ends (Provisional)
+      date: "2027-05-17 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: Author Notification
-      date: "2027-05-24 07:59:59"
+      date: "2027-06-14 07:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: ""
@@ -80,7 +84,7 @@
       rank_name: B
       rank_source: ICORE2026
       rank_source_url: https://portal.core.edu.au/conf-ranks/1169/
-  note: "Virtual conference. Single-blind review (author names required). Short papers (8 pages, not included in Springer proceedings) and long papers (15 pages) accepted. Springer LNCS format."
+  note: "<b>Review:</b> Double-blind peer review; mandatory 2-page self-review after references. <b>Length:</b> Long papers max 15 pages; short papers max 8 pages (excluding references and 2-page self-review; Springer LNCS format). <b>Platform:</b> Microsoft CMT. <b>Preprints:</b> Non-peer-reviewed preprints (e.g. arXiv) permitted without compromising anonymity; dual submission prohibited. <b>Presentation:</b> 100% virtual conference; at least one author must register and present in 2-hour thematic sessions. <b>Proceedings:</b> Springer LNCS (both long and short papers published)."
 
 - title: ICPR
   year: 2026

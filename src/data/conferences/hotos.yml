@@ -1,0 +1,30 @@
+- title: HotOS
+  year: 2027
+  id: hotos27
+  full_name: The ACM SIGOPS 21st Workshop on Hot Topics in Operating Systems
+  link: "https://sigops.org/s/conferences/hotos/2027"
+  deadlines:
+    - type: submission
+      label: Paper or Panel Proposal Submission Deadline
+      date: "2027-02-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notifications
+      date: "2027-04-09 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Burghausen
+  country: Germany
+  venue: TUM Science & Study Center Raitenhaslach
+  format: in-person
+  date: "May 24-26, 2027"
+  start: 2027-05-24
+  end: 2027-05-26
+  tags:
+    - security-and-privacy
+    - machine-learning
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1845/"
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 5 pages including figures and tables, plus unlimited references (acmart sigconf, 10pt font, two columns). <b>Platform:</b> HotCRP (https://hotos27.hotcrp.com/). <b>Preprints:</b> Preprints on arXiv permitted anytime with an anonymized project/system name; dual submission prohibited. <b>Presentation:</b> In-person in Burghausen, Germany (at least one author must present; attendance limited to two invitations per accepted paper). <b>Proceedings:</b> ACM DL (Open Access)."

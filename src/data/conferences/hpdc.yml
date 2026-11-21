@@ -6,15 +6,15 @@
   deadlines:
     - type: abstract
       label: "Abstract Registration"
-      date: "TBD"
+      date: "2027-01-11 23:59:00"
       timezone: UTC-12
     - type: submission
-      label: "Paper Submission"
-      date: "TBD"
+      label: "Paper Submission (Firm)"
+      date: "2027-01-18 23:59:00"
       timezone: UTC-12
     - type: final_decision
       label: "Notification of Acceptance"
-      date: "TBD"
+      date: "2027-03-30 07:59:00"
       timezone: UTC-12
   timezone: UTC-12
   city: "Atlanta, GA"
@@ -31,6 +31,7 @@
     rank_name: A
     rank_source: ICORE2026
     rank_source_url: "https://portal.core.edu.au/conf-ranks/33/"
+  note: "<b>Review:</b> Dual-anonymous (double-blind). <b>Length:</b> Max 11 pages in PDF excluding references (ACM Proceedings Style sigconf). <b>Platform:</b> HotCRP (https://hpdc27.hotcrp.com/). <b>Preprints:</b> Non-archival preprints (arXiv) allowed without compromising anonymity; dual submission prohibited. <b>Presentation:</b> In-person in Atlanta, GA, USA. <b>Proceedings:</b> ACM."
 
 - title: HPDC
   year: 2026

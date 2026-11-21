@@ -1,0 +1,73 @@
+- title: Middleware
+  year: 2027
+  id: middleware27
+  full_name: The 28th ACM/IFIP International Middleware Conference
+  link: "https://middleware-conf.github.io/2027"
+  deadlines:
+    - type: abstract
+      label: (Winter Cycle) Paper Abstract Registration
+      date: "2026-11-27 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Winter Cycle) Full Paper Submission
+      date: "2026-12-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Winter Cycle) Early Rejection Notification
+      date: "2027-02-02 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Winter Cycle) Rebuttal Period Start
+      date: "2027-03-03 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Winter Cycle) Rebuttal Period End
+      date: "2027-03-07 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Winter Cycle) Author Notification
+      date: "2027-03-29 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Summer Cycle) Paper Abstract Registration
+      date: "2027-05-28 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Summer Cycle) Full Paper Submission
+      date: "2027-06-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Summer Cycle) Early Rejection Notification
+      date: "2027-07-13 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Summer Cycle) Rebuttal Period Start
+      date: "2027-08-18 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Summer Cycle) Rebuttal Period End
+      date: "2027-08-22 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Summer Cycle) Author Notification
+      date: "2027-09-13 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Kyoto
+  country: Japan
+  venue: TBD
+  format: in-person
+  date: "December 13-17, 2027"
+  start: 2027-12-13
+  end: 2027-12-17
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - data-mining
+    - robotics
+    - quantum-computing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/79/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 12 pages technical content plus unlimited references, AI and ethics mentions (Big Ideas papers max 6 pages); ACM SIGCONF 9pt template. <b>Platform:</b> HotCRP. <b>Preprints:</b> Flexible preprint policy (arXiv allowed, no wide advertising). <b>Presentation:</b> In-person in Kyoto, Japan (no hybrid option). <b>Proceedings:</b> ACM Digital Library."

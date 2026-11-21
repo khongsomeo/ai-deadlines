@@ -1,0 +1,69 @@
+- title: GD
+  year: 2027
+  id: gd27
+  full_name: The 35th International Symposium on Graph Drawing and Network Visualization
+  link: "https://graphdrawing.github.io/gd2027"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Paper Notification"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Budapest
+  country: Hungary
+  venue: Rényi Institute
+  format: in-person
+  date: "September 15-17, 2027"
+  start: 2027-09-15
+  end: 2027-09-17
+  tags:
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/572/
+  note: "<b>Review:</b> Lightweight double-blind for long and short papers; single-blind for posters. <b>Length:</b> Max 500 lines for long papers, 250 lines for short papers (using gd-lipics-v3.cls wrapper around LIPIcs, excluding front matter, references, and appendices). <b>Platform:</b> EasyChair. <b>Preprints:</b> Preprints allowed; simultaneous submissions to other venues prohibited. <b>Presentation:</b> In-person (Budapest, Hungary); limited remote presentation available (max 4 papers) with legitimate reasons and author registration. <b>Proceedings:</b> LIPIcs (special issues in JGAA and IEEE TVCG)."
+
+- title: GD
+  year: 2026
+  id: gd26
+  full_name: The 34th International Symposium on Graph Drawing and Network Visualization
+  link: "https://graphdrawing.github.io/gd2026"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission Deadline"
+      date: "2026-05-06 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper (Long and Short) Deadline"
+      date: "2026-05-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Paper Notification"
+      date: "2026-06-24 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: St. Catharines, ON
+  country: Canada
+  venue: Brock University
+  format: in-person
+  date: "August 19-21, 2026"
+  start: 2026-08-19
+  end: 2026-08-21
+  tags:
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/572/
+  note: "<b>Review:</b> Lightweight double-blind for long and short papers; single-blind for posters. <b>Length:</b> Max 500 lines for long papers, 250 lines for short papers (using gd-lipics-v3.cls wrapper around LIPIcs, excluding front matter, references, and appendices). <b>Platform:</b> EasyChair. <b>Preprints:</b> Preprints allowed; simultaneous submissions to other venues prohibited. <b>Presentation:</b> In-person (Brock University); limited remote presentation available (max 4 papers) with legitimate reasons and author registration. <b>Proceedings:</b> LIPIcs (special issues in JGAA and IEEE TVCG)."

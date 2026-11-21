@@ -1,0 +1,45 @@
+- title: ER
+  year: 2027
+  id: er27
+  full_name: 46th International Conference on Conceptual Modeling
+  link: "https://er2027.dsi.uminho.pt"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "TBD"
+      timezone: UTC-12
+    - type: review_release
+      label: Reviews Released
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Guimarães
+  country: Portugal
+  venue: Centro Cultural Vila Flor (CCVF)
+  format: in-person
+  date: "October 19-22, 2027"
+  start: 2027-10-19
+  end: 2027-10-22
+  tags:
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/971/
+  note: "<b>Proceedings:</b> Springer LNCS."

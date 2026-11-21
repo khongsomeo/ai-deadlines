@@ -1,0 +1,33 @@
+- title: DIS
+  year: 2027
+  id: dis27
+  full_name: ACM Designing Interactive Systems Conference 2027
+  link: "https://dis.acm.org/2027"
+  deadlines:
+    - type: abstract
+      label: Title and Abstract Submission
+      date: "2027-01-11 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2027-01-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Notification
+      date: "2027-03-19 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Stockholm
+  country: Sweden
+  venue: KTH Royal Institute of Technology
+  format: hybrid
+  date: "June 28 - July 2, 2027"
+  start: 2027-06-28
+  end: 2027-07-02
+  tags:
+    - human-computer-interaction
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/422/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> No page limit; expected ~7,000–8,000 words excluding references/captions/appendices (single-column ACM Primary Article template; desk rejection for <4,000 or >12,000 words). <b>Platform:</b> Precision Conference (PCS). <b>Preprints:</b> Non-archival preprints (e.g., arXiv) allowed before/during review; dual submission not permitted. <b>Presentation:</b> Hybrid (online presentations June 21–25, 2027, or in-person in Stockholm). <b>Proceedings:</b> ACM Digital Library."

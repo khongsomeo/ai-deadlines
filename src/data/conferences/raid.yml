@@ -1,0 +1,43 @@
+- title: RAID
+  year: 2027
+  id: raid27
+  full_name: The 30th International Symposium on Research in Attacks, Intrusions and Defenses
+  link: "https://raid2027.org"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Reviews Released / Rebuttal Starts
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Ends
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Chicago, IL
+  country: United States
+  venue: TBD
+  format: in-person
+  date: TBD
+  start: TBD
+  end: TBD
+  tags:
+      - security-and-privacy
+      - cryptography
+      - machine-learning
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1408/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 20 pages excluding references (Springer LNCS template) with unlimited appendices. <b>Platform:</b> HotCRP. <b>Preprints:</b> Preprints permitted without compromising double-blind review anonymity; dual submissions prohibited. <b>Presentation:</b> In-person in Chicago, IL. <b>Proceedings:</b> Springer LNCS."

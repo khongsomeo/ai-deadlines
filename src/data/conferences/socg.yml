@@ -1,0 +1,33 @@
+- title: SoCG
+  year: 2027
+  id: socg27
+  full_name: The 43rd International Symposium on Computational Geometry
+  link: "https://cgweek27.computational-geometry.org/"
+  deadlines:
+    - type: abstract
+      label: Registration deadline
+      date: "2026-11-25 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Submission deadline
+      date: "2026-12-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author notification
+      date: "2027-02-05 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Bengaluru
+  country: India
+  venue: Indian Institute of Science
+  format: hybrid
+  date: June 21-25, 2027
+  start: 2027-06-21
+  end: 2027-06-25
+  tags:
+      - data-mining
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/60/
+  note: "<b>Review:</b> Lightweight double-blind. <b>Length:</b> Max 500 lines using LIPIcs class (socg-lipics-v2021) excluding front matter, references, and appendix; max 6 submissions per co-author. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv/HAL preprints allowed; no simultaneous submissions to venues with published proceedings. <b>Presentation:</b> In-person or online (presenting author must be a CG Society member). <b>Proceedings:</b> LIPIcs (special issues in DCG, JoCG, JACM, and TheoretiCS)."

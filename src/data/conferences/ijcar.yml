@@ -1,0 +1,41 @@
+- title: IJCAR
+  year: 2026
+  id: ijcar26
+  full_name: The 13th International Joint Conference on Automated Reasoning
+  link: "https://www.floc26.org/ijcar"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-02-06 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-02-15 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2026-03-31 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "2026-04-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2026-04-14 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Lisbon
+  country: Portugal
+  venue: ISCTE – Instituto Universitário de Lisboa
+  format: in-person
+  date: "July 26-29, 2026"
+  start: 2026-07-26
+  end: 2026-07-29
+  tags:
+      - machine-learning
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1314/
+  note: "<b>Review:</b> Single-blind. <b>Length:</b> Regular papers max 15 pages in LNCS style excluding references and appendices; short papers max 7 pages excluding references and appendices. <b>Platform:</b> HotCRP (https://submissions.floc26.org/ijcar). <b>Preprints:</b> Dual submission prohibited (must be original, unpublished work). <b>Presentation:</b> In-person in Lisbon, Portugal. <b>Proceedings:</b> Springer LNCS."

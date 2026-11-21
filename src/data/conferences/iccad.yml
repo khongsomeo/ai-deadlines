@@ -1,0 +1,35 @@
+- title: ICCAD
+  year: 2026
+  id: iccad26
+  full_name: IEEE/ACM International Conference on Computer-Aided Design
+  link: "https://iccad.com/2026"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission Deadline
+      date: "2026-04-07 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2026-04-14 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance
+      date: "2026-07-11 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: San Jose, CA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: "November 8-12, 2026"
+  start: 2026-11-08
+  end: 2026-11-12
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - quantum-computing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/783/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Regular papers up to 8 pages including references (IEEE two-column format). <b>Platform:</b> HotCRP. <b>Preprints:</b> Allowed; dual submission prohibited. <b>Presentation:</b> In-person in San Jose, CA, USA. <b>Proceedings:</b> IEEE / ACM Digital Library."

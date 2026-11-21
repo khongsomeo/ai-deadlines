@@ -1,0 +1,41 @@
+- title: CSCW
+  year: 2027
+  id: cscw27
+  full_name: "The 30th ACM Conference on Computer-Supported Cooperative Work and Social Computing"
+  link: "https://cscw.acm.org/2027/"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submission"
+      date: "TBD"
+      timezone: UTC-12
+    - type: submission
+      label: "Paper Submission Cutoff"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Author Response Begins"
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Author Response Ends"
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Final Acceptance Notification"
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Philadelphia, PA"
+  country: "United States"
+  venue: "Loews Philadelphia Hotel"
+  format: hybrid
+  date: "October 16-20, 2027"
+  start: 2027-10-16
+  end: 2027-10-20
+  tags:
+    - human-computer-interaction
+  rankings:
+    rank_name: "A"
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/13/"
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> No arbitrary page limit; length must be commensurate with contribution (ACM single-column format). <b>PACMHCI Cycles:</b> Rolling journal submissions via PACM HCI (CSCW track) and ToCHI; papers accepted before the program is set are invited to present at CSCW 2027. <b>Platform:</b> Precision Conference (PCS). <b>Template:</b> ACM Primary Article Template (LaTeX single-column with documentclass[manuscript,review,anonymous]{acmart} or Word). <b>Proceedings:</b> ACM PACM HCI."

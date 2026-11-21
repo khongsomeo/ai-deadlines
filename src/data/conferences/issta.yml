@@ -1,0 +1,53 @@
+- title: ISSTA
+  year: 2027
+  id: issta27
+  full_name: The 36th ACM SIGSOFT International Symposium on Software Testing and Analysis
+  link: "https://conf.researchr.org/home/issta-2027"
+  deadlines:
+    - type: abstract
+      label: (Research Track) Mandatory Abstract Submission
+      date: "2027-01-08 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Full Paper Submission
+      date: "2027-01-11 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Research Track) Author Response Period Start
+      date: "2027-03-22 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Research Track) Author Response Period End
+      date: "2027-03-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Initial Notification (Including Early Reject)
+      date: "2027-04-20 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Major Revision Submission
+      date: "2027-05-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Final Notification
+      date: "2027-06-17 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Singapore
+  country: Singapore
+  venue: TBD
+  format: in-person
+  date: September 7-10, 2027
+  start: 2027-09-07
+  end: 2027-09-10
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - data-mining
+    - human-computer-interaction
+    - quantum-computing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1412/
+  note: "<b>Review:</b> Double-anonymous (two-phase review with early rejection). <b>Length:</b> Max 18 pages including appendices (excluding Data Availability section and unlimited references) using ACM Small single-column template (\\documentclass[acmsmall,screen,review,anonymous]{acmart}). <b>Platform:</b> HotCRP (https://issta2027.hotcrp.com/). <b>Preprints:</b> Dual submission strictly prohibited per ACM policy; prior publication not permitted. <b>Presentation:</b> In-person in Singapore. <b>Proceedings:</b> Proceedings of the ACM on Software Engineering (PACMSE) / ACM Digital Library (Open Access)."

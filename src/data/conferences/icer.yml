@@ -1,0 +1,42 @@
+- title: ICER
+  year: 2027
+  id: icer27
+  full_name: The 23rd ACM Conference on International Computing Education Research
+  link: "https://2027.icer.acm.org"
+  deadlines:
+    - type: abstract
+      label: Titles, abstracts, and authors due
+      date: "2027-04-02 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Full paper submission deadline
+      date: "2027-04-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Decisions announced
+      date: "2027-05-28 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: '"Conditional Accept" revisions due'
+      date: "2027-06-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: '"Conditional Accept" revisions approval notification'
+      date: "2027-06-21 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Sacramento, CA
+  country: United States
+  venue: Tsakopoulos Library Galleria
+  format: in-person
+  date: August 2-5, 2027
+  start: 2027-08-02
+  end: 2027-08-05
+  tags:
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/872/
+  note: "<b>Review:</b> Author-reviewer model (at least one author must volunteer to review three other papers; desk-rejection for non-compliance or unauthorized AI-generated reviews). <b>Proceedings:</b> ACM Digital Library (100% Open Access via ACM Open or subsidized APCs)."

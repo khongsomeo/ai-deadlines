@@ -1,0 +1,59 @@
+- title: EASE
+  year: 2027
+  id: ease27
+  full_name: The 31st International Conference on Evaluation and Assessment in Software Engineering
+  link: "https://conf.researchr.org/home/ease-2027"
+  deadlines:
+    - type: abstract
+      label: (Research Track) Abstract Submission
+      date: "2027-01-15 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Paper Submission
+      date: "2027-01-22 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Author Notification
+      date: "2027-03-12 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Short Papers and Emerging Results) Abstract Submission
+      date: "2027-02-22 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Short Papers and Emerging Results) Paper Submission
+      date: "2027-03-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Short Papers and Emerging Results) Author Notification
+      date: "2027-04-05 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Industry Track) Abstract Submission
+      date: "2027-02-22 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Industry Track) Paper Submission
+      date: "2027-03-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Industry Track) Author Notification
+      date: "2027-04-12 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Hanoi
+  country: Vietnam
+  venue: Hanoi University of Science and Technology and the PAN Pacific Hotel
+  format: in-person
+  date: June 15-18, 2027
+  start: 2027-06-15
+  end: 2027-06-18
+  tags:
+    - machine-learning
+    - data-mining
+    - human-computer-interaction
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1022/
+  note: "<b>Review:</b> Double-anonymous (single-anonymous for Industry track). <b>Length:</b> Research papers max 10 pages plus 2 pages for references only; Short papers max 6 pages all-inclusive; Industry long papers max 8+2 pages, short papers max 4+1 pages (ACM Primary Article Template sigconf). <b>Platform:</b> EasyChair. <b>Preprints:</b> Dual submission prohibited; SIGSOFT Open Science policy. <b>Presentation:</b> In-person in Hanoi, Vietnam (at least one author must register and present). <b>Proceedings:</b> ACM ICPS in ACM Digital Library (Open Access; selected best papers invited to EMSE journal special issue)."

@@ -1,0 +1,44 @@
+- title: DATE
+  year: 2027
+  id: date27
+  full_name: Design, Automation and Test in Europe Conference
+  link: "https://www.date-conference.com"
+  deadlines:
+    - type: abstract
+      label: (Research Papers) Abstract Submission
+      date: "2026-09-13 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Papers) Final Paper Submission
+      date: "2026-09-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Papers) Notification of Acceptance
+      date: "2026-11-23 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Late Breaking Results) Final Paper Submission
+      date: "2026-11-29 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Late Breaking Results) Notification of Acceptance
+      date: "2027-01-13 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Dresden
+  country: Germany
+  venue: ICD | International Congress Center Dresden
+  format: in-person
+  date: "March 22-24, 2027"
+  start: 2027-03-22
+  end: 2027-03-24
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - cryptography
+    - quantum-computing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/421/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Regular papers max 6 pages plus 1 additional page exclusively for references (extended abstracts and LBR max 2 pages plus 1 reference page; IEEE format, min 10pt). <b>Platform:</b> Softconf START (https://softconf.com/date27/conference/). <b>Preprints:</b> Dual submission prohibited; arXiv preprints allowed only AFTER notification of acceptance/rejection. <b>Presentation:</b> In-person in Dresden, Germany (mandatory author attendance and presentation). <b>Proceedings:</b> IEEE Xplore."

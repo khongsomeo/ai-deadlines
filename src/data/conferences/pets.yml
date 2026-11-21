@@ -1,0 +1,102 @@
+- title: PETS
+  year: 2027
+  id: pets27
+  full_name: 27th Privacy Enhancing Technologies Symposium
+  link: "https://petsymposium.org/2027"
+  deadlines:
+    - type: submission
+      label: (Issue 1) Paper Submission
+      date: "2026-05-31 23:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Issue 1) Rebuttal Period Start
+      date: "2026-07-11 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Issue 1) Rebuttal Period End
+      date: "2026-07-17 23:59:59"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Issue 1) Author Notification
+      date: "2026-08-01 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Issue 1) Revision Deadline
+      date: "2026-09-01 23:59:59"
+      timezone: UTC-12
+    - type: submission
+      label: (Issue 2) Paper Submission
+      date: "2026-08-31 23:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Issue 2) Rebuttal Period Start
+      date: "2026-10-10 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Issue 2) Rebuttal Period End
+      date: "2026-10-18 23:59:59"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Issue 2) Author Notification
+      date: "2026-11-01 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Issue 2) Revision Deadline
+      date: "2026-12-01 23:59:59"
+      timezone: UTC-12
+    - type: submission
+      label: (Issue 3) Paper Submission
+      date: "2026-11-30 23:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Issue 3) Rebuttal Period Start
+      date: "2027-01-12 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Issue 3) Rebuttal Period End
+      date: "2027-01-18 23:59:59"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Issue 3) Author Notification
+      date: "2027-02-01 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Issue 3) Revision Deadline
+      date: "2027-03-01 23:59:59"
+      timezone: UTC-12
+    - type: submission
+      label: (Issue 4) Paper Submission
+      date: "2027-02-28 23:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Issue 4) Rebuttal Period Start
+      date: "2027-04-10 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Issue 4) Rebuttal Period End
+      date: "2027-04-16 23:59:59"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Issue 4) Author Notification
+      date: "2027-05-01 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Issue 4) Revision Deadline
+      date: "2027-06-01 23:59:59"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Delft
+  country: The Netherlands
+  venue: TBD
+  format: hybrid
+  date: July 19–24, 2027
+  start: 2027-07-19
+  end: 2027-07-24
+  tags:
+    - cryptography
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1442/
+  note: "<b>Review:</b> Double-blind (quick-reject tier; mandatory inclusion of prior reviews if previously rejected; max 4 submissions/issue). <b>Length:</b> Max 12 pages main body excluding mandatory ethical considerations, open science, AI use, acknowledgments, references, and appendices (+1 page for revisions/camera-ready); requires PoPETs 2027 LaTeX template. <b>Platform:</b> HotCRP (https://submit.petsymposium.org). <b>Preprints:</b> Preprints discouraged during review; dual submissions prohibited. <b>Presentation:</b> In-person presentation in Delft, The Netherlands strongly encouraged (not strictly mandatory for publication). <b>Proceedings:</b> Proceedings on Privacy Enhancing Technologies (PoPETs, Diamond Open Access)."

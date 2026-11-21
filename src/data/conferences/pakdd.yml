@@ -8,6 +8,10 @@
       label: Paper Submission Deadline
       date: "2026-11-20 23:59:00"
       timezone: UTC-12
+    - type: submission
+      label: "(Extended) Paper Submission Deadline"
+      date: "2026-12-04 23:59:00"
+      timezone: UTC-12
     - type: final_decision
       label: Paper Acceptance Notification
       date: "2027-02-26 23:59:00"

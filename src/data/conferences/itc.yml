@@ -1,0 +1,36 @@
+- title: ITC
+  year: 2027
+  id: itc27
+  full_name: IEEE International Test Conference
+  link: "https://www.itctestweek.org"
+  deadlines:
+    - type: abstract
+      label: Paper Title/Abstract Submission
+      date: "2027-03-05 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2027-04-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2027-06-01 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: San Antonio, TX
+  country: United States
+  venue: Grand Hyatt San Antonio Riverwalk
+  format: in-person
+  date: "October 10-15, 2027"
+  start: 2027-10-10
+  end: 2027-10-15
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - quantum-computing
+    - signal-processing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/710/
+  note: "<b>Review:</b> Single-blind. <b>Length:</b> Regular papers up to 10 pages including references (typically 6-10 pages; short industrial practices papers 3-5 pages; submissions < 4 pages rarely accepted; AI-focused papers may include an appendix up to 6 pages; IEEE format). <b>Platform:</b> EasyChair. <b>Preprints:</b> Dual submission strictly prohibited (papers under simultaneous review or already accepted elsewhere will be summarily rejected). <b>Presentation:</b> In-person at Grand Hyatt San Antonio Riverwalk, San Antonio, TX, USA (presentation slides collected on-site). <b>Proceedings:</b> IEEE Xplore."

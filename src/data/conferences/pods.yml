@@ -1,0 +1,80 @@
+- title: PODS
+  year: 2027
+  id: pods27
+  full_name: ACM Symposium on Principles of Database Systems
+  link: "https://2027.sigmod.org/index.shtml"
+  deadlines:
+    - type: abstract
+      label: (1st Cycle) Abstract Submission
+      date: "2026-05-23 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (1st Cycle) Full Paper Submission
+      date: "2026-05-30 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (1st Cycle) Rebuttal Phase Start
+      date: "2026-07-29 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (1st Cycle) Rebuttal Phase End
+      date: "2026-08-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st Cycle) Initial Notification
+      date: "2026-08-11 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (1st Cycle) Revision Submission
+      date: "2026-08-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st Cycle) Final Notification
+      date: "2026-09-01 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (2nd Cycle) Abstract Submission
+      date: "2026-12-03 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd Cycle) Full Paper Submission
+      date: "2026-12-10 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (2nd Cycle) Rebuttal Phase Start
+      date: "2027-01-26 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (2nd Cycle) Rebuttal Phase End
+      date: "2027-01-29 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd Cycle) Initial Notification
+      date: "2027-02-08 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd Cycle) Revision Submission
+      date: "2027-02-22 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd Cycle) Final Notification
+      date: "2027-03-01 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Huntington Beach, CA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: June 13-18, 2027
+  start: 2027-06-13
+  end: 2027-06-18
+  tags:
+      - data-mining
+      - machine-learning
+      - security-and-privacy
+      - information-retrieval
+  rankings:
+      rank_name: A*
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/46/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 15 pages (ACM acmsmall format) excluding references, plus unlimited references and optional appendix of unlimited length. <b>Platform:</b> EasyChair. <b>Preprints:</b> Drafts/preprints on the web are allowed; dual submissions strictly prohibited. <b>Presentation:</b> Invited for presentation at the SIGMOD/PODS 2027 conference. <b>Proceedings:</b> Published in a PODS 2027 issue of PACMMOD (ACM Digital Library)."

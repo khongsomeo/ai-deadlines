@@ -1,0 +1,60 @@
+- title: ISCA
+  year: 2027
+  id: isca27
+  full_name: The 54th International Symposium on Computer Architecture
+  link: "https://iscaconf.org/isca2027/"
+  deadlines:
+    - type: abstract
+      label: Abstract Deadline
+      date: "2026-11-09 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Deadline
+      date: "2026-11-16 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: Industry Track Abstract Deadline
+      date: "2026-12-06 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Industry Track Paper Deadline
+      date: "2026-12-13 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Industry Track Rebuttal Period Start
+      date: "2027-02-15 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal/Revision Period Start
+      date: "2027-02-16 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Industry Track Rebuttal Period End
+      date: "2027-02-26 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal/Revision Period End
+      date: "2027-03-08 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author Notification
+      date: "2027-03-26 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Atlanta, GA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: June 5-9, 2027
+  start: 2027-06-05
+  end: 2027-06-09
+  tags:
+    - machine-learning
+    - quantum-computing
+    - security-and-privacy
+    - human-computer-interaction
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/32/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 11 pages excluding references (ACM sigconf format). <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed with different title and disclosure on submission form. <b>Presentation:</b> In-person in Atlanta, GA. <b>Proceedings:</b> ACM Digital Library / IEEE Xplore (ACM Open Access)."

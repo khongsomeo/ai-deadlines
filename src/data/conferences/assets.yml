@@ -1,0 +1,75 @@
+- title: ASSETS
+  year: 2027
+  id: assets27
+  full_name: The 29th International ACM SIGACCESS Conference on Computers and Accessibility
+  link: "https://assets27.sigaccess.org"
+  deadlines:
+    - type: submission
+      label: Submission Deadline
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Reviews Sent to Authors, Rebuttal Phase Opens
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Phase Closes
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Decisions Sent to Authors
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Tokyo
+  country: Japan
+  venue: Miraikan – The National Museum of Emerging Science and Innovation
+  format: hybrid
+  date: October 24-27, 2027
+  start: 2027-10-24
+  end: 2027-10-27
+  tags:
+    - human-computer-interaction
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2258/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> 7,500–10,000 words for technical papers, 4,000–5,000 words for short papers (excluding references, ACM single-column format). <b>Platform:</b> Precision Conference (PCS). <b>Presentation:</b> At least one author of accepted submissions must register as the presenter by the early registration deadline. <b>Proceedings:</b> ACM Digital Library."
+
+- title: ASSETS
+  year: 2026
+  id: assets26
+  full_name: The 28th International ACM SIGACCESS Conference on Computers and Accessibility
+  link: "https://assets26.sigaccess.org"
+  deadlines:
+    - type: submission
+      label: Technical Papers Submission Deadline
+      date: "2026-04-22 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Reviews Sent to Authors, Rebuttal Phase Opens
+      date: "2026-06-03 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Phase Closes
+      date: "2026-06-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Acceptance Decisions Sent to Authors
+      date: "2026-06-24 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Vila Nova de Gaia
+  country: Portugal
+  venue: Hilton Porto Gaia
+  format: hybrid
+  date: October 25-28, 2026
+  start: 2026-10-25
+  end: 2026-10-28
+  tags:
+    - human-computer-interaction
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2258/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> 7,500–10,000 words for technical papers, 4,000–5,000 words for short papers (excluding references, ACM single-column format). <b>Platform:</b> Precision Conference (PCS). <b>Presentation:</b> At least one author of accepted submissions must register as the presenter by the early registration deadline. <b>Proceedings:</b> ACM Digital Library."

@@ -1,0 +1,46 @@
+- title: CSF
+  year: 2027
+  id: csf27
+  full_name: The 40th IEEE Computer Security Foundations Symposium
+  link: "https://csf2027.ieee-security.org"
+  deadlines:
+    - type: submission
+      label: (Summer cycle) Paper Submission
+      date: "2026-08-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Summer cycle) Author Notification
+      date: "2026-10-07 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Fall cycle) Paper Submission
+      date: "2026-10-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Fall cycle) Author Notification
+      date: "2026-12-14 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Winter cycle) Paper Submission
+      date: "2027-01-28 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Winter cycle) Author Notification
+      date: "2027-04-05 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Tokyo
+  country: Japan
+  venue: TBD
+  format: in-person
+  date: "September 13-17, 2027"
+  start: 2027-09-13
+  end: 2027-09-17
+  tags:
+    - cryptography
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/599/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 12 pages in two-column IEEE Proceedings style excluding AI acknowledgments, bibliography, and appendices (major revisions max 16 pages all-inclusive). <b>Platform:</b> HotCRP (https://hotcrp.csf2027.ieee-security.org/). <b>Preprints:</b> Dual submission prohibited. <b>Presentation:</b> In-person in Tokyo, Japan (at least one co-author must attend). <b>Proceedings:</b> IEEE Computer Society Press."

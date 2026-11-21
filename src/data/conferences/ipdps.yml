@@ -1,0 +1,52 @@
+- title: IPDPS
+  year: 2027
+  id: ipdps27
+  full_name: "IEEE International Parallel and Distributed Processing Symposium"
+  link: "https://www.ipdps.org"
+  deadlines:
+    - type: abstract
+      label: "Abstract Submissions"
+      date: "2026-10-01 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Full Manuscript Submissions"
+      date: "2026-10-08 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: "Author Response/Rebuttal Period Begins"
+      date: "2026-11-30 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: "Author Response/Rebuttal Due"
+      date: "2026-12-03 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "First Round Decisions"
+      date: "2026-12-18 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "Revised Submissions Due"
+      date: "2027-01-18 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "Final Decisions"
+      date: "2027-02-02 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: "Seattle, WA"
+  country: "United States"
+  venue: "Hyatt Regency Bellevue"
+  format: in-person
+  date: "June 1-5, 2027"
+  start: 2027-06-01
+  end: 2027-06-05
+  tags:
+    - machine-learning
+    - quantum-computing
+    - security-and-privacy
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/688/"
+  note: "<b>Review:</b> Double-anonymous (two-round review). <b>Length:</b> Max 10 pages in IEEE 2-column format (10pt font) including figures/tables + unlimited references (no appendices at submission; reproducibility appendix required post-acceptance; max 8 submissions per author). <b>Platform:</b> Linklings (https://ssl.linklings.net/conferences/ipdps/). <b>Preprints:</b> arXiv allowed anytime (must preserve double-anonymous review; dual submission strictly prohibited). <b>Presentation:</b> In-person in Seattle, WA, USA. <b>Proceedings:</b> IEEE."

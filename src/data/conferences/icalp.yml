@@ -1,0 +1,54 @@
+- title: ICALP
+  year: 2027
+  id: icalp27
+  full_name: 54th International Colloquium on Automata, Languages and Programming
+  link: "https://icalp.uj.edu.pl/"
+  deadlines:
+    - type: submission
+      label: (1st round - Track B) Submissions
+      date: "2026-09-15 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (1st round - Track B) Rebuttal Start
+      date: "2026-11-05 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (1st round - Track B) Rebuttal End
+      date: "2026-11-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st round - Track B) Author Notification
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd round) Submissions
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (2nd round - Track B) Rebuttal Start
+      date: "TBD"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (2nd round - Track B) Rebuttal End
+      date: "TBD"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd round) Author Notification
+      date: "TBD"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Kraków
+  country: Poland
+  venue: Jagiellonian University
+  format: in-person
+  date: July 5-9, 2027
+  start: 2027-07-05
+  end: 2027-07-09
+  tags:
+    - security-and-privacy
+    - machine-learning
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/864/
+  note: "<b>Review:</b> Double-blind (with rebuttal for Track B). <b>Length:</b> No page limit; key contributions within the initial 10 pages after title page; discretionary reading of subsequent material. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv, HAL, and ECCC preprints encouraged anytime. <b>Presentation:</b> In-person in Kraków, Poland. <b>Proceedings:</b> LIPIcs (Schloss Dagstuhl, Open Access)."

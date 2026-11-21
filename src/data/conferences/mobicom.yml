@@ -22,6 +22,7 @@
     rank_name: A*
     rank_source: ICORE2026
     rank_source_url: "https://portal.core.edu.au/conf-ranks/27/"
+  note: "<b>Review:</b> Double-blind with reciprocal reviewing (1 senior author reviews up to 3 papers), optional 500-word rebuttal, one-shot revision option, and anonymous shepherding. <b>Length:</b> Max 12 pages (ACM sigconf, 10pt) plus unlimited references and appendices. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed (no concurrent submissions; avoid social media publicity during review). <b>Presentation:</b> In-person in Athens, Greece (full talk or lightning talk + poster; 90s teaser video required). <b>Proceedings:</b> ACM Digital Library (Open Access via ACM Open or subsidized 2027 APC)."
   deadlines:
     - type: abstract
       label: "(Summer) Abstract Registration"
@@ -95,6 +96,7 @@
     rank_name: A*
     rank_source: ICORE2026
     rank_source_url: "https://portal.core.edu.au/conf-ranks/27/"
+  note: "<b>Review:</b> Double-blind with reciprocal reviewing (1 senior author reviews up to 3 papers), optional 500-word rebuttal, one-shot revision option, and anonymous shepherding. <b>Length:</b> Max 12 pages (ACM sigconf, 10pt) plus unlimited references and appendices. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed (no concurrent submissions; avoid social media publicity during review). <b>Presentation:</b> In-person in Athens, Greece (full talk or lightning talk + poster; 90s teaser video required). <b>Proceedings:</b> ACM Digital Library (Open Access via ACM Open or subsidized 2027 APC)."
   deadlines:
     - type: abstract
       label: "(Summer) Abstract Registration"

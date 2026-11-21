@@ -1,0 +1,33 @@
+- title: FOGA
+  year: 2027
+  id: foga27
+  full_name: The 19th ACM/SIGEVO Conference on Foundations of Genetic Algorithms
+  link: "https://foga2027.dei.uc.pt"
+  deadlines:
+    - type: submission
+      label: Paper submission deadline
+      date: "2027-05-03 23:59:00"
+      timezone: UTC-12
+    - type: review_release
+      label: Review reports due
+      date: "2027-06-14 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Author notification
+      date: "2027-06-28 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Coimbra
+  country: Portugal
+  venue: TBD
+  format: in-person
+  date: September 1-3, 2027
+  start: 2027-09-01
+  end: 2027-09-03
+  tags:
+      - machine-learning
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/546/
+  note: "<b>Review:</b> Single-blind (author names visible; at least 3 reviews per paper). <b>Length:</b> Max 14 pages including references and appendices (two-page abstract for short exploratory work); ACM sigconf template (single-column for review). <b>Preprints:</b> Original unpublished work; dual submission prohibited. <b>Proceedings:</b> ACM Digital Library (ACM Open Access)."

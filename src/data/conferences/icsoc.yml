@@ -1,0 +1,52 @@
+- title: ICSOC
+  year: 2026
+  id: icsoc26
+  full_name: The 24th International Conference on Service-Oriented Computing
+  link: "https://icsoc2026.it.p.lodz.pl"
+  deadlines:
+    - type: submission
+      label: (Early Round) Paper Submission
+      date: "2026-05-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Early Round) Notification
+      date: "2026-06-25 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: Abstract Submission
+      date: "2026-07-05 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Extended) Abstract Submission
+      date: "2026-07-12 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2026-07-12 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Extended) Paper Submission
+      date: "2026-07-19 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Notification to Authors
+      date: "2026-09-18 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Lodz
+  country: Poland
+  venue: Lodz University of Technology
+  format: in-person
+  date: "December 1-4, 2026"
+  start: 2026-12-01
+  end: 2026-12-04
+  tags:
+      - machine-learning
+      - data-mining
+      - security-and-privacy
+      - quantum-computing
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1204/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Initial submission 10-15 pages including references (accepted full papers max 15 pages, short papers max 8 pages, Springer LNCS format). <b>Platform:</b> EasyChair. <b>Preprints:</b> arXiv preprints allowed; dual submissions prohibited. <b>Presentation:</b> In-person in Lodz, Poland. <b>Proceedings:</b> Springer LNCS."

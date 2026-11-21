@@ -1,0 +1,42 @@
+- title: TACAS
+  year: 2027
+  id: tacas27
+  full_name: 33rd International Conference on Tools and Algorithms for the Construction and Analysis of Systems
+  link: "https://etaps.org/2027/conferences/tacas"
+  deadlines:
+    - type: submission
+      label: Paper Submission
+      date: "2026-10-15 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Mandatory Artifact Submission
+      date: "2026-10-29 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Start
+      date: "2026-12-07 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period End
+      date: "2026-12-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Paper Notification
+      date: "2026-12-22 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Copenhagen
+  country: Denmark
+  venue: TBD
+  format: in-person
+  date: "April 12-15, 2027"
+  start: 2027-04-12
+  end: 2027-04-15
+  tags:
+    - machine-learning
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/1818/"
+  note: "<b>Review:</b> Double-blind for regular research papers (single-blind for case study and tool papers). <b>Length:</b> Max 18 pages excluding bibliography (+ optional appendix) for regular research, case study, and regular tool papers; max 6 pages excluding bibliography (+ optional appendix) for tool demonstration papers (max 5 submissions per author; Springer LNCS format). <b>Platform:</b> EasyChair. <b>Preprints:</b> arXiv allowed (posting around 2 weeks before and after deadline discouraged); dual submission forbidden. <b>Presentation:</b> In-person in Copenhagen, Denmark (at least one author must attend). <b>Proceedings:</b> Springer LNCS ARCoSS (Gold Open Access CC-BY)."

@@ -1,0 +1,59 @@
+- title: CGO
+  year: 2027
+  id: cgo27
+  full_name: IEEE/ACM International Symposium on Code Generation and Optimization
+  link: "https://2027.cgo.org"
+  deadlines:
+    - type: submission
+      label: (Round 1) Paper Submission
+      date: "2026-06-11 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 1) Author Response Start
+      date: "2026-07-21 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 1) Author Response End
+      date: "2026-07-23 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 1) Author Notification
+      date: "2026-08-03 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 2) Paper Submission
+      date: "2026-09-10 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Round 1) Invited Revision Submission
+      date: "2026-09-24 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Round 2) Author Response Start
+      date: "2026-10-27 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Round 2) Author Response End
+      date: "2026-10-29 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Round 2) Author Notification
+      date: "2026-11-09 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Salt Lake City, UT
+  country: United States
+  venue: TBD
+  format: in-person
+  date: March 20-24, 2027
+  start: 2027-03-20
+  end: 2027-03-24
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - quantum-computing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1362/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 11 pages excluding bibliography (ACM SIGPLAN format). <b>Platform:</b> HotCRP (https://cgo27.hotcrp.com/). <b>Preprints:</b> Dual submission prohibited; uncopyrighted workshop presentations permitted. <b>Presentation:</b> In-person in Salt Lake City, UT, USA. <b>Proceedings:</b> IEEE/ACM."

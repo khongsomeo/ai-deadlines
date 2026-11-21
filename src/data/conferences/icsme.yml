@@ -1,0 +1,47 @@
+- title: ICSME
+  year: 2027
+  id: icsme27
+  full_name: The 43rd IEEE International Conference on Software Maintenance and Evolution
+  link: "https://conf.researchr.org/home/icsme-2027"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2027-02-19 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission
+      date: "2027-02-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Early Decisions Notification
+      date: "2027-04-26 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Response Period Start
+      date: "2027-04-27 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Response Period End
+      date: "2027-04-30 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Notification
+      date: "2027-05-25 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Toronto
+  country: Canada
+  venue: TBD
+  format: in-person
+  date: September 7-11, 2027
+  start: 2027-09-07
+  end: 2027-09-11
+  tags:
+    - machine-learning
+    - data-mining
+    - human-computer-interaction
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/676/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 10 pages plus up to 2 pages containing only references (IEEE two-column format). <b>Platform:</b> EasyChair. <b>Preprints:</b> Submission title must differ from arXiv preprints; title must not be used publicly during review. <b>Presentation:</b> In-person in Toronto, Canada. <b>Proceedings:</b> IEEE Xplore (select papers invited to Springer EMSE special issue)."

@@ -1,0 +1,97 @@
+- title: MSR
+  year: 2027
+  id: msr27
+  full_name: The 24th IEEE/ACM International Conference on Mining Software Repositories
+  link: "https://conf.researchr.org/home/msr-2027"
+  deadlines:
+    - type: abstract
+      label: (Technical Papers Track) Abstract Submission Deadline
+      date: "2026-10-20 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Technical Papers Track) Paper Submission Deadline
+      date: "2026-10-23 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Data and Tool Showcase Track) Abstract Deadline
+      date: "2026-11-05 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Data and Tool Showcase Track) Paper Deadline
+      date: "2026-11-10 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Registered Reports Track) Initial Report Abstract
+      date: "2026-11-13 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Registered Reports Track) Initial Report Submission
+      date: "2026-11-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Technical Papers Track) Early Reject Notification
+      date: "2026-12-03 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Technical Papers Track) Author Response Period Start
+      date: "2026-12-04 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Technical Papers Track) Author Response Period End
+      date: "2026-12-08 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Industry Track) Paper Deadline
+      date: "2026-12-18 23:59:00"
+      timezone: UTC-12
+    - type: review_release
+      label: (Registered Reports Track) Authors Receive PC Member's Reviews
+      date: "2026-12-23 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Data and Tool Showcase Track) Acceptance Notification
+      date: "2027-01-05 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Technical Papers Track) Author Notification
+      date: "2027-01-08 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Industry Track) Author Notification
+      date: "2027-01-11 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Registered Reports Track) Response letter + Revised Report Submission
+      date: "2027-01-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Registered Reports Track) Stage 1 Notification
+      date: "2027-02-04 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Registered Reports Track) Accepted RR Report Submission
+      date: "2027-02-28 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Registered Reports Track) Full Paper Submission to EMSE
+      date: "2027-09-30 23:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Dublin
+  country: Ireland
+  venue: The Convention Centre Dublin (CCD)
+  format: in-person
+  date: April 26-27, 2027
+  start: 2027-04-26
+  end: 2027-04-27
+  tags:
+    - machine-learning
+    - data-mining
+    - human-computer-interaction
+    - information-retrieval
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/711/
+  note: "<b>Review:</b> Double-anonymous (single-anonymous for Data and Tool Showcase and Industry tracks). <b>Length:</b> Technical full papers max 10 pages + 2 pages references; short WIP papers max 4 pages + 1 page references; Data and Tool Showcase max 4 pages + 1 page references; Industry max 1 page + 1 page references. <b>Template:</b> IEEE Conference Proceedings (10pt font, LaTeX \\documentclass[10pt,conference]{IEEEtran}). <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed anytime without mentioning MSR submission; dual submission prohibited. <b>Presentation:</b> In-person at The Convention Centre Dublin (CCD), Dublin, Ireland. <b>Proceedings:</b> IEEE / ACM Digital Library."

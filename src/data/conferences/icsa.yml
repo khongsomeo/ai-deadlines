@@ -1,0 +1,84 @@
+- title: ICSA
+  year: 2027
+  id: icsa27
+  full_name: The 24th IEEE International Conference on Software Architecture
+  link: "https://conf.researchr.org/home/icsa-2027"
+  deadlines:
+    - type: abstract
+      label: (Research Track) Abstract Submission
+      date: "2026-10-30 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Paper Submission
+      date: "2026-11-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Author Notification
+      date: "2026-12-15 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Software Architecture in Practice Track) Abstract Submission
+      date: "2026-10-30 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Software Architecture in Practice Track) Paper Submission
+      date: "2026-11-04 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Software Architecture in Practice Track) Author Notification
+      date: "2026-12-15 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (New and Emerging Ideas Track) Abstract Submission
+      date: "2026-12-16 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (New and Emerging Ideas Track) Paper Submission
+      date: "2026-12-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (New and Emerging Ideas Track) Acceptance Notification
+      date: "2027-01-19 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal-First Track) Paper Submission
+      date: "2026-12-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Journal-First Track) Acceptance Notification
+      date: "2027-01-19 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Software Architecture Showcase Track) Submission
+      date: "2026-12-20 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Software Architecture Showcase Track) Acceptance Notification
+      date: "2027-01-19 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Early Career Track) Paper Submission
+      date: "2027-01-15 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Early Career Track) Acceptance Notification
+      date: "2027-02-08 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Sydney
+  country: Australia
+  venue: Rydges World Square (Main) & UTS (Workshops)
+  format: in-person
+  date: March 8-12, 2027
+  start: 2027-03-08
+  end: 2027-03-12
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/791/
+  note: "<b>Review:</b> Double-anonymous. <b>Length:</b> Max 10 pages main text + 2 additional pages references (short papers max 8 pages including references). <b>Platform:</b> EasyChair. <b>Preprints:</b> Dual submission prohibited; anonymized draft artifact recommended via anonymous.4open.science. <b>Presentation:</b> In-person presentation required. <b>Proceedings:</b> IEEE Xplore Digital Library (companion proceedings for short papers)."

@@ -1,0 +1,50 @@
+- title: ISSRE
+  year: 2027
+  id: issre27
+  full_name: The 38th IEEE International Symposium on Software Reliability Engineering
+  link: "https://conf.researchr.org/home/issre-2027"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission Deadline
+      date: "2027-04-09 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2027-04-16 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Rebuttal Period Start
+      date: "2027-06-07 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Rebuttal Period End
+      date: "2027-06-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Decisions and Early Notification
+      date: "2027-06-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Author Revision Deadline
+      date: "2027-07-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification to Authors
+      date: "2027-07-09 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Macau
+  country: Macau
+  venue: Galaxy Macau
+  format: in-person
+  date: October 19-22, 2027
+  start: 2027-10-19
+  end: 2027-10-22
+  tags:
+      - machine-learning
+      - security-and-privacy
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1411/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> RES and PER papers max 12 pages including references; TAR papers 6-10 pages including references (IEEE two-column format). <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed anytime without mentioning ISSRE 2027 submission; no dual submissions. <b>Presentation:</b> In-person in Macau. <b>Proceedings:</b> IEEE CPS (IEEE Xplore)."

@@ -1,0 +1,83 @@
+- title: SIGSPATIAL
+  year: 2026
+  id: sigspatial26
+  full_name: The 34th ACM SIGSPATIAL International Conference on Advances in Geographic Information Systems
+  link: "https://sigspatial2026.sigspatial.org"
+  deadlines:
+    - type: abstract
+      label: (Research Track) Abstract Submission
+      date: "2026-05-22 23:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (Research Track) (Extended) Abstract Submission
+      date: "2026-05-29 23:59:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (Research Track) Paper Submission
+      date: "2026-05-29 23:59:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (Research Track) (Extended) Paper Submission
+      date: "2026-06-05 23:59:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (Research Track) Notification of Accept/Reject
+      date: "2026-08-05 23:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (Short Paper Track) Abstract Submission
+      date: "2026-06-09 23:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (Short Paper Track) (Extended) Abstract Submission
+      date: "2026-06-16 23:59:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (Short Paper Track) Paper Submission
+      date: "2026-06-12 23:59:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (Short Paper Track) (Extended) Paper Submission
+      date: "2026-06-19 23:59:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (Short Paper Track) Notification of Accept/Reject
+      date: "2026-08-10 23:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (Industry Track) Abstract Submission
+      date: "2026-06-05 23:59:00"
+      timezone: America/Los_Angeles
+    - type: abstract
+      label: (Industry Track) (Extended) Abstract Submission
+      date: "2026-06-12 23:59:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (Industry Track) Paper Submission
+      date: "2026-06-12 23:59:00"
+      timezone: America/Los_Angeles
+    - type: submission
+      label: (Industry Track) (Extended) Paper Submission
+      date: "2026-06-19 23:59:00"
+      timezone: America/Los_Angeles
+    - type: final_decision
+      label: (Industry Track) Notification of Accept/Reject
+      date: "2026-08-07 23:59:00"
+      timezone: America/Los_Angeles
+  timezone: America/Los_Angeles
+  city: Riverside, CA
+  country: United States
+  venue: Riverside Convention Center
+  format: in-person
+  date: "November 3-6, 2026"
+  start: 2026-11-03
+  end: 2026-11-06
+  tags:
+      - data-mining
+      - machine-learning
+      - information-retrieval
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/22/
+  note: "<b>Review:</b> Single-blind. <b>Length:</b> Regular research & experiment papers max 10 pages excluding references plus up to 2 pages for appendices; short papers max 4 pages including references (ACM two-column format). <b>Platform:</b> EasyChair (https://easychair.org/conferences/?conf=acmsigspatial2026). <b>Preprints:</b> Dual submission prohibited; preprints permitted; generative AI tool usage must be disclosed. <b>Presentation:</b> In-person in Riverside, CA (mandatory registration and presentation). <b>Proceedings:</b> ACM Digital Library (Open Access via ACM OPEN)."

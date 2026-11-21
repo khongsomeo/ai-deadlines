@@ -1,0 +1,86 @@
+- title: CHES
+  year: 2027
+  id: ches27
+  full_name: Conference on Cryptographic Hardware and Embedded Systems
+  link: "https://ches.iacr.org/2027"
+  deadlines:
+    - type: submission
+      label: (1st round) Paper Submission
+      date: "2026-07-15 23:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (1st round) Rebuttal Period Start
+      date: "2026-08-23 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (1st round) Rebuttal Period End
+      date: "2026-08-28 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (1st round) Notification
+      date: "2026-09-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (2nd round) Paper Submission
+      date: "2026-10-15 23:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (2nd round) Rebuttal Period Start
+      date: "2026-11-23 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (2nd round) Rebuttal Period End
+      date: "2026-11-28 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (2nd round) Notification
+      date: "2026-12-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (3rd round) Paper Submission
+      date: "2027-01-15 23:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (3rd round) Rebuttal Period Start
+      date: "2027-02-23 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (3rd round) Rebuttal Period End
+      date: "2027-02-28 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (3rd round) Notification
+      date: "2027-03-15 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (4th round) Paper Submission
+      date: "2027-04-15 23:59:59"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (4th round) Rebuttal Period Start
+      date: "2027-05-23 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (4th round) Rebuttal Period End
+      date: "2027-05-28 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (4th round) Notification
+      date: "2027-06-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Cancún
+  country: Mexico
+  venue: TBD
+  format: in-person
+  date: "September 6–9, 2027"
+  start: 2027-09-06
+  end: 2027-09-09
+  tags:
+    - cryptography
+    - security-and-privacy
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1894/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Regular papers max 20 pages excluding bibliography, long papers max 40 pages (starting Volume 2027/3 requires the iacrj LaTeX class). <b>Preprints:</b> Preprints permitted (e.g. IACR Cryptology ePrint Archive). <b>Presentation:</b> In-person presentation at CHES 2027 in Cancún, Mexico is mandatory for accepted papers. <b>Proceedings:</b> IACR Transactions on Cryptographic Hardware and Embedded Systems (TCHES), Diamond Open Access."

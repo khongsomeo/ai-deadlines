@@ -1,0 +1,46 @@
+- title: ICFP
+  year: 2027
+  id: icfp27
+  full_name: ACM SIGPLAN International Conference on Functional Programming
+  link: https://icfp27.sigplan.org
+  deadlines:
+    - type: submission
+      label: Submission deadline
+      date: "2027-02-25 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Reviews released / Author response start
+      date: "2027-04-19 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author response end
+      date: "2027-04-22 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of conditional acceptance
+      date: "2027-05-07 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Revised papers deadline
+      date: "2027-06-01 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final notification
+      date: "2027-06-11 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Nijmegen
+  country: Netherlands
+  venue: Van der Valk Hotel Nijmegen
+  format: in-person
+  date: "September 26 - October 1, 2027"
+  start: 2027-09-26
+  end: 2027-10-01
+  tags:
+    - security-and-privacy
+    - machine-learning
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1037/
+  note: "<b>Review:</b> Full double-blind (two-stage review process with author response and revisions). <b>Length:</b> Max 25 pages for full papers or Functional Pearls and 12 pages for Experience Reports, excluding bibliography and optional appendix (ACM Small LaTeX template: \\documentclass[acmsmall,screen,anonymous,review]{acmart}). <b>Platform:</b> HotCRP (https://icfp27.hotcrp.com). <b>Preprints:</b> Allowed on arXiv, institutional repositories, or personal websites; broad advertising on social media or major mailing lists is prohibited during review. <b>Presentation:</b> In-person in Nijmegen, Netherlands (remote presentations accommodated only for unavoidable reasons). <b>Proceedings:</b> PACMPL (Proceedings of the ACM on Programming Languages, Gold Open Access)."

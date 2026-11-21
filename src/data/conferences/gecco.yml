@@ -1,0 +1,37 @@
+- title: GECCO
+  year: 2027
+  id: gecco27
+  full_name: The Genetic and Evolutionary Computation Conference
+  link: "https://gecco-2027.sigevo.org"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission
+      date: "2027-01-18 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Full Paper Submission
+      date: "2027-01-25 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Poster-Only Paper Submission
+      date: "2027-01-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance/Rejection
+      date: "2027-03-19 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Kraków
+  country: Poland
+  venue: TBD
+  format: in-person
+  date: July 12-16, 2027
+  start: 2027-07-12
+  end: 2027-07-16
+  tags:
+      - machine-learning
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/556/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Regular full papers max 8 pages excluding references (appendices as supplementary material); poster-only papers max 4 pages including references. <b>Template:</b> ACM acmart sigconf (\\documentclass[dvipsnames, format=sigconf, anonymous=true, review=true]{acmart}). <b>Preprints:</b> arXiv allowed. <b>Presentation:</b> In-person in Kraków, Poland. <b>Proceedings:</b> ACM Digital Library (Main Proceedings for full papers, Companion Proceedings for poster-only papers)."

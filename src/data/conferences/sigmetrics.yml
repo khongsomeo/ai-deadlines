@@ -1,0 +1,60 @@
+- title: SIGMETRICS
+  year: 2027
+  id: sigmetrics27
+  full_name: ACM SIGMETRICS 2027 Conference
+  link: "https://www.sigmetrics.org/sigmetrics2027/"
+  deadlines:
+    - type: abstract
+      label: "(Summer) Abstract Registration"
+      date: "2026-07-03 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(Summer) Paper Submission"
+      date: "2026-07-10 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Summer) Notification"
+      date: "2026-09-09 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: "(Fall) Abstract Registration"
+      date: "2026-10-02 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(Fall) Paper Submission"
+      date: "2026-10-09 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Fall) Notification"
+      date: "2026-12-09 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: "(Winter) Abstract Registration"
+      date: "2027-01-04 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: "(Winter) Paper Submission"
+      date: "2027-01-11 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: "(Winter) Notification"
+      date: "2027-03-10 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Atlanta, GA
+  country: United States
+  venue: TBD
+  format: in-person
+  date: June 7-10, 2027
+  start: 2027-06-07
+  end: 2027-06-10
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - quantum-computing
+    - multimedia
+  rankings:
+    rank_name: A*
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/39/
+  note: "<b>Review:</b> Double-blind (Operational Systems Track may reveal deploying organization/system; three outcomes: Accept with Shepherding, Reject, Resubmit). <b>Length:</b> Max 20 pages in single-column acmsmall format for technical content + unlimited references and appendix. <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed (no public broadcasting; simultaneous submissions prohibited). <b>Presentation:</b> In-person attendance required (at least one co-author must present; 3-minute video summary requested). <b>Proceedings:</b> ACM POMACS (Open Access; opt-out option for journal expedited review with extended abstract in PER)."

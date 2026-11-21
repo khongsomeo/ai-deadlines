@@ -1,0 +1,64 @@
+- title: ICST
+  year: 2027
+  id: icst27
+  full_name: The 20th IEEE International Conference on Software Testing, Verification and Validation
+  link: "https://conf.researchr.org/home/icst-2027"
+  deadlines:
+    - type: submission
+      label: (Research Track) Full Paper Submission
+      date: "2026-11-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Initial Notification
+      date: "2026-12-22 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Major Revision Submission
+      date: "2027-01-31 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Final Notification
+      date: "2027-02-20 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (NIER Track) Paper Submission
+      date: "2027-01-13 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (NIER Track) Author Notification
+      date: "2027-02-19 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Industry Track) Full Paper Submission
+      date: "2027-01-21 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Industry Track) Author Notification
+      date: "2027-03-04 07:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Journal-First) Paper Submission
+      date: "2027-03-05 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Journal-First) Author Notification
+      date: "2027-03-25 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: San Sebastian
+  country: Spain
+  venue: Kursaal Exhibition Center
+  format: in-person
+  date: May 17-21, 2027
+  start: 2027-05-17
+  end: 2027-05-21
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - human-computer-interaction
+    - data-mining
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/1221/
+  note: "<b>Review:</b> Double-blind. <b>Length:</b> Max 10 pages including figures and tables plus up to 2 pages references (short papers not accepted in research track). <b>Platform:</b> HotCRP. <b>Preprints:</b> arXiv allowed (must not specify ICST submission); dual submission prohibited. <b>Presentation:</b> In-person in San Sebastian, Spain (at least one author must register and present). <b>Proceedings:</b> IEEE."

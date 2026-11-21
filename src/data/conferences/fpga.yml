@@ -1,0 +1,43 @@
+- title: FPGA
+  year: 2027
+  id: fpga27
+  full_name: The 35th ACM/SIGDA International Symposium on Field-Programmable Gate Arrays
+  link: "https://www.isfpga.org"
+  deadlines:
+    - type: abstract
+      label: Abstracts Due (All Papers)
+      date: "2026-10-01 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Submissions Due (All Papers)
+      date: "2026-10-08 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Rebuttal Period Starts
+      date: "2026-11-20 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Rebuttal Period Ends
+      date: "2026-11-25 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification of Acceptance (All Papers)
+      date: "2026-12-08 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: TBD
+  country: United States
+  venue: TBD
+  format: in-person
+  date: "March 14-16, 2027"
+  start: 2027-03-14
+  end: 2027-03-16
+  tags:
+    - machine-learning
+    - security-and-privacy
+    - signal-processing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: https://portal.core.edu.au/conf-ranks/2319/
+  note: "<b>Review:</b> Double-blind (author names and affiliations blinded for research papers; industry track blinds author names but discloses company/product affiliations). <b>Length:</b> Long papers max 10 pages, short papers max 6 pages (excluding references; ACM sigconf template). <b>Platform:</b> HotCRP (https://fpga27.hotcrp.com/). <b>Preprints:</b> arXiv preprints allowed without disqualification; concurrent submissions prohibited. <b>Presentation:</b> In-person in California, USA (accommodations provided for documented travel/visa restrictions). <b>Proceedings:</b> ACM Digital Library (Open Access; top papers invited to ACM TRETS special issue)."

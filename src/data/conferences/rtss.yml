@@ -1,0 +1,51 @@
+- title: RTSS
+  year: 2026
+  id: rtss26
+  full_name: The 47th IEEE Real-Time Systems Symposium
+  link: "https://2026.rtss.org"
+  deadlines:
+    - type: abstract
+      label: Abstract Submission Deadline
+      date: "2026-05-21 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: Paper Submission Deadline
+      date: "2026-05-26 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Stage 1 Notification (Early Rejection)
+      date: "2026-06-24 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: Author Response Period Start
+      date: "2026-07-13 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: Author Response Period End
+      date: "2026-07-17 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Notification
+      date: "2026-07-25 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: Final Accept/Reject Decision (Shepherding)
+      date: "2026-09-15 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Yokohama
+  country: Japan
+  venue: Vision Center at Yokohama Station East (K-Arena)
+  format: in-person
+  date: December 8-11, 2026
+  start: 2026-12-08
+  end: 2026-12-11
+  tags:
+      - machine-learning
+      - robotics
+      - security-and-privacy
+  rankings:
+      rank_name: A
+      rank_source: ICORE2026
+      rank_source_url: https://portal.core.edu.au/conf-ranks/1701/
+  note: "<b>Review:</b> Double-blind (two-stage review with early rejection). <b>Length:</b> Max 11 pages of technical content for submission (12 pages for camera-ready) excluding acknowledgements and bibliography (IEEE conference template). <b>Platform:</b> HotCRP (https://rtss26.hotcrp.com/). <b>Preprints:</b> Dual submission strictly prohibited; original unpublished work only (workshop papers with DOI require >=30% new material). <b>Presentation:</b> In-person attendance required (pre-recorded video presentations not permitted). <b>Proceedings:</b> IEEE Xplore."

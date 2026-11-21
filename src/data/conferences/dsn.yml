@@ -1,0 +1,73 @@
+- title: DSN
+  year: 2027
+  id: dsn27
+  full_name: The 57th Annual IEEE International Conference on Dependable Systems and Networks
+  link: "https://dsn2027-berlin.github.io"
+  deadlines:
+    - type: abstract
+      label: (Research Track) Abstract Submission Deadline
+      date: "2026-11-25 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Research Track) Paper Submission Deadline
+      date: "2026-12-02 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Early Reject Notification
+      date: "2027-01-26 07:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Disrupt Track) Abstract Submission Deadline
+      date: "2027-01-25 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Disrupt Track) Paper Submission Deadline
+      date: "2027-02-01 23:59:00"
+      timezone: UTC-12
+    - type: rebuttal_start
+      label: (Research Track) Author Rebuttal & Revision Period Opens
+      date: "2027-02-12 07:59:00"
+      timezone: UTC-12
+    - type: rebuttal_end
+      label: (Research Track) Author Rebuttal & Revision Deadline
+      date: "2027-02-26 23:59:00"
+      timezone: UTC-12
+    - type: abstract
+      label: (Industry Track) Abstract Submission Deadline
+      date: "2027-03-01 23:59:00"
+      timezone: UTC-12
+    - type: submission
+      label: (Industry Track) Paper Submission Deadline
+      date: "2027-03-08 23:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Research Track) Notification to Authors
+      date: "2027-03-18 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Disrupt Track) Notification to Authors
+      date: "2027-04-01 07:59:00"
+      timezone: UTC-12
+    - type: final_decision
+      label: (Industry Track) Notification to Authors
+      date: "2027-04-19 07:59:00"
+      timezone: UTC-12
+  timezone: UTC-12
+  city: Berlin
+  country: Germany
+  venue: Tagungswerk
+  format: in-person
+  date: "June 22-25, 2027"
+  start: 2027-06-22
+  end: 2027-06-25
+  tags:
+    - security-and-privacy
+    - machine-learning
+    - cryptography
+    - robotics
+    - quantum-computing
+  rankings:
+    rank_name: A
+    rank_source: ICORE2026
+    rank_source_url: "https://portal.core.edu.au/conf-ranks/787/"
+  note: "<b>Review:</b> Double-blind (Research Track & Disrupt; single-blind for Industry Track). <b>Length:</b> Regular papers max 11 pages; Practical experience reports & Tool demonstrations max 7 pages (excluding references; +1 extra page for revised/final versions); Industry Track max 6 pages; Disrupt max 4 pages. <b>Template:</b> IEEE Computer Society 8.5″×11″ two-column camera-ready format (10pt font, 12pt leading). <b>Platform:</b> HotCRP (https://dsn27.hotcrp.com) for Research Track; EasyChair (https://easychair.org/conferences/?conf=dsn2027) for Disrupt. <b>Preprints:</b> arXiv permitted under a different title without mentioning DSN submission; dual submission prohibited. <b>Presentation:</b> In-person in Berlin, Germany. <b>Proceedings:</b> IEEE Computer Society (IEEE Xplore)."
